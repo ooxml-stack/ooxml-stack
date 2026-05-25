@@ -25,6 +25,7 @@ are intentionally conservative and should not be treated as an API guarantee.
 - `README.md` - public overview.
 - `VISIBILITY.md` - public/private boundary policy.
 - `CONTRIBUTING.md` - contribution and disclosure rules.
+- `docs/COMPATIBILITY-CONTRACT.md` - public compatibility claim boundary.
 
 No generated Office files, private datasets, CI artifacts, secrets, or local
 machine paths should be committed here.
