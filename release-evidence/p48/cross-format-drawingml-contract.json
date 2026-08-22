@@ -1,0 +1,107 @@
+{
+  "docx_only_families": [
+    "bookmark",
+    "comment",
+    "content_control",
+    "drawing_container",
+    "endnote",
+    "field",
+    "floating_drawing",
+    "footer",
+    "footnote",
+    "header",
+    "hyperlink",
+    "inline_drawing",
+    "paragraph",
+    "run",
+    "section",
+    "smartart",
+    "textbox",
+    "tracked_change",
+    "unknown_docx_object"
+  ],
+  "failures": [],
+  "gate_pass": true,
+  "pptx_only_families": [
+    "graphic_frame",
+    "group_shape",
+    "layout",
+    "master",
+    "notes",
+    "shape",
+    "slide",
+    "text_frame",
+    "unknown_pptx_object"
+  ],
+  "rows": [
+    {
+      "docx_count": 2440,
+      "family": "picture",
+      "pptx_count": 11584,
+      "shared_in_core": true
+    },
+    {
+      "docx_count": 40,
+      "family": "chart",
+      "pptx_count": 9754,
+      "shared_in_core": true
+    },
+    {
+      "docx_count": 1341,
+      "family": "table",
+      "pptx_count": 927,
+      "shared_in_core": true
+    },
+    {
+      "docx_count": 2480,
+      "family": "media_reference",
+      "pptx_count": 13015,
+      "shared_in_core": true
+    },
+    {
+      "docx_count": 0,
+      "family": "group_shape",
+      "pptx_count": 25627,
+      "shared_in_core": false
+    },
+    {
+      "docx_count": 0,
+      "family": "text_frame",
+      "pptx_count": 380165,
+      "shared_in_core": false
+    },
+    {
+      "docx_count": 2519,
+      "family": "alternate_content",
+      "pptx_count": 7628,
+      "shared_in_core": true
+    }
+  ],
+  "schema_version": "p48-cross-format-drawingml-contract-v1",
+  "summary": {
+    "docx_adapter_contract_pass": 1,
+    "docx_only_family_count": 19,
+    "host_specific_leak_count": 0,
+    "pptx_adapter_contract_pass": 1,
+    "pptx_only_family_count": 9,
+    "public_api_break_count": 0,
+    "semantic_status_values": [
+      "active-editable",
+      "inspectable",
+      "preserve-only",
+      "unsupported"
+    ],
+    "shared_families": [
+      "picture",
+      "chart",
+      "table",
+      "media_reference",
+      "alternate_content"
+    ],
+    "shared_family_count": 5,
+    "touched_repo_tests": {
+      "ooxml-core tests/test_drawing_contract.py": "85 passed"
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,41 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "required_element_ids": [
+    "status",
+    "metrics",
+    "gates",
+    "family-status",
+    "format-family",
+    "reasons",
+    "relationships",
+    "p42",
+    "cases",
+    "claim",
+    "dashboard-data"
+  ],
+  "schema_version": "p49-dashboard-validation-v1",
+  "summary": {
+    "case_table_row_count": 1488628,
+    "dashboard_static_open_pass": true,
+    "dashboard_validation_pass": true,
+    "green_used_only_for_100_percent_pass": true,
+    "hardcoded_metric_count": 0,
+    "json_source_metric_count": 97,
+    "matrix_family_count": 32,
+    "matrix_status_count": 4,
+    "p42_docx_drawing_active_handle_count": 208,
+    "p42_new_unique_handle_count": 78,
+    "p42_semantic_operation_count": 13,
+    "p43_inventory_gate_pass": true,
+    "p44_opc_graph_gate_pass": true,
+    "p45_docx_non_drawing_handle_gate_pass": true,
+    "p46_docx_drawing_deep_semantics_gate_pass": true,
+    "p47_pptx_semantic_handle_gate_pass": true,
+    "p48_cross_format_drawingml_gate_pass": true,
+    "part_node_count": 108535,
+    "red_used_only_for_blockers": true,
+    "relationship_edge_count": 112082
+  },
+  "warnings": []
+}

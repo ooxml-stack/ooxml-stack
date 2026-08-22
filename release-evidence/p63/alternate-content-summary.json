@@ -1,0 +1,38 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-03T02:53:47.785248+00:00",
+  "schema_version": "p63-alternate-content-summary-v2",
+  "summary": {
+    "alternate_content_active_edit_row_count": 10147,
+    "alternate_content_branch_selection_exception_count": 0,
+    "alternate_content_office_open_pass_count": 10147,
+    "alternate_content_preserve_only_count": 0,
+    "alternate_content_row_count": 10147,
+    "alternate_content_semantic_hit_count": 10147,
+    "alternate_content_unresolved_branch_count": 0,
+    "alternate_content_wrong_branch_mutation_count": 0,
+    "choice_branch_selected_count": 10147,
+    "fallback_branch_selected_count": 0,
+    "mutated_package_count": 244,
+    "requires_guard_additional_prefix_count": 10147,
+    "requires_guard_duplicate_prefix_count": 0,
+    "requires_prefix_counts": {
+      "a14": 5,
+      "am3d": 38,
+      "c14": 4886,
+      "cx1": 16,
+      "cx2": 2,
+      "cx4": 7,
+      "p14": 2195,
+      "p15": 284,
+      "p159": 63,
+      "v": 154,
+      "wp14": 1,
+      "wpc": 35,
+      "wpg": 396,
+      "wps": 2065
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "name": "opaque-extension-active-policy.json",
+      "path": "release-evidence/p65/opaque-extension-active-policy.json",
+      "role": "p65-opaque-extension-active-policy",
+      "sha256": "3f41f5515347c03a9c5743d4eb9d17cdb42c03fc392c4466ba542a58a97caa8c",
+      "size_bytes": 9995
+    },
+    {
+      "name": "opaque-extension-summary.json",
+      "path": "release-evidence/p65/opaque-extension-summary.json",
+      "role": "p65-opaque-extension-summary",
+      "sha256": "f5183a76c73958893b1ad83085051dda2e692e1b12f3fdcb546fcdf75a44a008",
+      "size_bytes": 1022
+    },
+    {
+      "name": "P65-OPAQUE-EXTENSION-ACTIVE-POLICY.md",
+      "path": "docs/P65-OPAQUE-EXTENSION-ACTIVE-POLICY.md",
+      "role": "p65-doc",
+      "sha256": "c727b3472b49d78040a5a622e992ece19edbec7593514272d980cc467ed9dc7b",
+      "size_bytes": 1142
+    }
+  ],
+  "schema_version": "p65-opaque-extension-manifest-v1"
+}

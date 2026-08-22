@@ -1,0 +1,30 @@
+OOXML release stack verification
+[OK] ooxml-test-framework: local and remote tag v0.5.16 point at HEAD
+[OK] ooxml-test-framework: ooxml-spec tag v0.3.1 exists
+[OK] ooxml-core: local and remote tag v0.3.29 point at HEAD
+[OK] ooxml-core: ooxml-spec tag v0.3.1 exists
+[OK] ooxml-core: ooxml-test-framework tag v0.5.15 exists
+[OK] ooxml-stubs: local and remote tag v0.2.10 point at HEAD
+[OK] ooxml-stubs: ooxml-core tag v0.3.27 exists
+[OK] ooxml-stubs: ooxml-spec tag v0.3.1 exists
+[OK] python-pptx: ooxml-core tag v0.3.27 exists
+[OK] python-pptx: ooxml-stubs tag v0.2.10 exists
+[OK] python-pptx: ooxml-test-framework tag v0.5.15 exists
+[OK] python-docx: ooxml-core tag v0.3.27 exists
+[OK] python-docx: ooxml-spec tag v0.3.1 exists
+[OK] python-docx: ooxml-stubs tag v0.2.9 exists
+[OK] python-docx: ooxml-test-framework tag v0.5.14 exists
+[OK] ooxml-spec: 269 passed in 3.54s
+[OK] ooxml-test-framework: 336 passed, 6 skipped in 1.13s
+[OK] ooxml-core: 1527 passed, 1 skipped, 18 warnings in 41.15s
+[OK] ooxml-stubs: 68 passed in 17.98s
+[OK] python-pptx: 4894 passed, 6 skipped in 153.54s (0:02:33)
+[OK] python-docx: 3568 passed, 5 skipped, 1 warning in 201.89s (0:03:21)
+[OK] ooxml-stubs: python-pptx stubs preserve gate: 1 passed in 1.94s
+[OK] ooxml-stubs: python-docx stubs preserve gate: 1 passed in 0.48s
+[OK] schema: 78 passed in 32.82s
+[OK] compat-smoke: DOCX/PPTX batch-size=2 completed
+[OK] generated-output: selected=504 docx=252 pptx=252 repair_dialogs=0
+[PASS] docx drawing regression gate: selected_cases=60 represented_bucket_count=7 semantic_assertion_count=8 semantic_target_pass=60 semantic_target_fail=0 office_checked=True office_pass_total=60
+[OK] office-open: repair dialogs: 0
+[OK] fresh-install: installed and imported release tags

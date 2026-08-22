@@ -1,0 +1,20 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "schema_version": "p78-dashboard-validation-v1",
+  "summary": {
+    "dashboard_aggregate_replay_counted_as_object_level_count": 0,
+    "dashboard_object_level_active_editable_count": 296144,
+    "dashboard_package_level_oracle_counted_as_object_level_count": 0,
+    "dashboard_semantic_editable_count": 0,
+    "dashboard_static_open_pass": true,
+    "dashboard_surface_editable_count": 296144,
+    "dashboard_validation_pass": true,
+    "family_row_count": 14,
+    "hardcoded_metric_count": 0,
+    "json_source_metric_count": 22,
+    "operation_row_count": 4,
+    "sample_object_row_count": 14
+  },
+  "warnings": []
+}

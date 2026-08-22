@@ -1,0 +1,13 @@
+{
+  "claim_boundary": "100% inspectable diffs under the P35 measured DOCX drawing stable-handle denominator.",
+  "gate_pass": true,
+  "hits": [],
+  "public_claim_beyond_measured_cells": 0,
+  "scanned_files": [
+    "../ooxml-stack/docs/P36-DOCX-DRAWING-ACTIVE-EDITING-DIFF-INSPECTOR.md",
+    "../ooxml-stack/release-evidence/p36/dashboard/index.html",
+    "../ooxml-stack/docs/P35-DOCX-DRAWING-STABLE-HANDLE-ACTIVE-EDITING-GATE.md",
+    "../ooxml-stack/docs/P36-P40-DOCX-DRAWING-ACTIVE-EDITING-V2-GOAL.md"
+  ],
+  "schema_version": "p36-public-claim-boundary-scan-v1"
+}

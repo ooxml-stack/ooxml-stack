@@ -1,0 +1,130 @@
+{
+  "schema_version": "p74-per-object-replay-manifest-v1",
+  "combined_rows_jsonl_sha256": "0b6d52e52657d86e09db92938ecbe071ce70cb012a3a49e0261656d1fc253784",
+  "combined_rows_jsonl_size_bytes": 441320747,
+  "combined_rows_jsonl_line_count": 296144,
+  "artifacts": [
+    {
+      "name": "rows.jsonl.part-000",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-000",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 0,
+      "sha256": "9b6c66bb2c74ed91e8b41ce045e91f0debd901c3a117896681ea666c8e9da864",
+      "size_bytes": 36704333,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-001",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-001",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 1,
+      "sha256": "8d195a0f041bce3468ff97b1b8e1dcddf705cee5d8480ec01c95971db5e0348a",
+      "size_bytes": 37420131,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-002",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-002",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 2,
+      "sha256": "f91b33259acd9c48522038971cd24768f2fc34f8a7e59bce4b6219c4034f1ea7",
+      "size_bytes": 37109701,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-003",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-003",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 3,
+      "sha256": "683613205490745e8563e89c40f8f001e1650316477b9a08206802a4f0e6c3ff",
+      "size_bytes": 37196368,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-004",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-004",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 4,
+      "sha256": "a5e03407f31370ed96198c79e9eabc54b16150696a273bde4306c2528848d616",
+      "size_bytes": 37281632,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-005",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-005",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 5,
+      "sha256": "c22b18ca9d9f60642d4206464346716eb65a3f79d47e2c2a5c62536fd115742c",
+      "size_bytes": 37022899,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-006",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-006",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 6,
+      "sha256": "01a55f26dad138c1f1a95948c1139ab477580656970196c0389000fe800930a5",
+      "size_bytes": 36713499,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-007",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-007",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 7,
+      "sha256": "666b5e70a4e03a6ea6a405c448f20339505a8ce6652f32389fc48f4c7d97d45c",
+      "size_bytes": 37533028,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-008",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-008",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 8,
+      "sha256": "b955880e80a7eda15dfd03904a08466f0b510823209fae9780c0aa6c4b4d89fa",
+      "size_bytes": 37242591,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-009",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-009",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 9,
+      "sha256": "42aa1bd2f27ca22d4fae676f9b4125870ab4c35d2c2b8d6da7bd0ac5d2cfa463",
+      "size_bytes": 37435563,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-010",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-010",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 10,
+      "sha256": "5f5dd71a50fc700b0b5122f70216d9592c6b9d4e0c49fbe53af5784c7d3766e6",
+      "size_bytes": 37880879,
+      "line_count": 25000
+    },
+    {
+      "name": "rows.jsonl.part-011",
+      "path": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-011",
+      "role": "p74-per-object-replay-jsonl-shard",
+      "shard_index": 11,
+      "sha256": "a3a7357ec0edbee886f0edf5e5a612e6ee54735ab8bbee3345f56e82351fd7c6",
+      "size_bytes": 31780123,
+      "line_count": 21144
+    },
+    {
+      "name": "per-object-replay-summary.json",
+      "path": "release-evidence/p74/per-object-replay-summary.json",
+      "role": "p74-summary",
+      "sha256": "b69bf31708f813fb5b852a4d0c283e642a2bc5b0a55b98f2ace4be4c9c196a9a",
+      "size_bytes": 1254
+    },
+    {
+      "name": "P74-PER-OBJECT-REPLAY-DEAGGREGATION.md",
+      "path": "docs/P74-PER-OBJECT-REPLAY-DEAGGREGATION.md",
+      "role": "p74-doc",
+      "sha256": "a367feea4de669b9c3bf12d33ec29888d2cbbdb878da4d0671f108551a6dabe8",
+      "size_bytes": 1651
+    }
+  ]
+}

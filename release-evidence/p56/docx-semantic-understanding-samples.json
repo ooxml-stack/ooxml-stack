@@ -1,0 +1,31 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-02T00:21:35.372155+00:00",
+  "generator_name": "docx-semantic-understanding-samples",
+  "generator_version_or_commit": "local-worktree",
+  "input_evidence": {},
+  "rows": [],
+  "schema_version": "p56-docx-semantic-understanding-samples-v1",
+  "summary": {
+    "docx_dependency_owner_pass_count": 361745,
+    "docx_dependency_resolution_exception_count": 0,
+    "docx_family_count": 24,
+    "docx_family_format_cell_count": 24,
+    "docx_inspection_pass_count": 361745,
+    "docx_missing_part_count": 0,
+    "docx_object_candidate_count": 361745,
+    "docx_office_open_pass_count": 185,
+    "docx_office_repair_dialog_count": 0,
+    "docx_package_count": 185,
+    "docx_parse_failure_count": 0,
+    "docx_public_overclaim_count": 0,
+    "docx_relationship_loss_count": 0,
+    "docx_understanding_level_at_least_u2_count": 361745,
+    "docx_unexplained_missing_field_count": 0,
+    "docx_unintended_binary_mutation_count": 0,
+    "source_p54_gate_pass": true,
+    "source_p55_gate_pass": true
+  },
+  "warnings": []
+}

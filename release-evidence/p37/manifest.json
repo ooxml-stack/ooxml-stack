@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-public-api-summary.json",
+      "path": "release-evidence/p37/docx-drawing-public-api-summary.json",
+      "role": "summary",
+      "sha256": "cb014307036b204edc727ce4503cda24c8a5a031350cddc0c0e39ab825a0effb",
+      "size_bytes": 1271
+    },
+    {
+      "name": "docx-drawing-public-api-cases.json",
+      "path": "release-evidence/p37/docx-drawing-public-api-cases.json",
+      "role": "cases",
+      "sha256": "2cc5eaef0eafa0a48a98817c470b38a37b3bd2a1f06e3215410d12f8cffbcf8c",
+      "size_bytes": 167140
+    },
+    {
+      "name": "docx-drawing-public-api-office-gate.json",
+      "path": "release-evidence/p37/docx-drawing-public-api-office-gate.json",
+      "role": "office-gate",
+      "sha256": "4afce0f54668c2938fb0eaa16e0d398557e0e2e1c4c0fb586b7b1c761a533072",
+      "size_bytes": 91703
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "release-evidence/p37/public-claim-boundary-scan.json",
+      "role": "claim-scan",
+      "sha256": "75e98c26f2204a62502af91c5150e37f031b10e6036017875a3745bdf1a2fa64",
+      "size_bytes": 396
+    },
+    {
+      "name": "P37-DOCX-DRAWING-PUBLIC-API-V1.md",
+      "path": "docs/P37-DOCX-DRAWING-PUBLIC-API-V1.md",
+      "role": "audit-doc",
+      "sha256": "d1afb0a57076c18dff27321d05573292b9df6e700b547cf74d14ccf6ca83612f",
+      "size_bytes": 2246
+    }
+  ],
+  "schema_version": "p37-release-evidence-manifest-v1"
+}

@@ -1,0 +1,344 @@
+{
+  "claim": "100% object-level active editability under the measured former preserve-only DOCX/PPTX denominator, with surface-editable depth for all 296,144 rows.",
+  "claim_boundary": "P78 displays object-level surface editability for the former preserve-only denominator. It does not claim vendor-private semantic interior editing, full OOXML semantics, full Office compatibility, or renderer/layout/cache parity.",
+  "family_rows": [
+    {
+      "edit_depth": "surface-editable",
+      "family": "alternate_content",
+      "row_count": 10147
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "chart_drawing",
+      "row_count": 530
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "custom_xml_payload",
+      "row_count": 274
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "custom_xml_schema",
+      "row_count": 3883
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "drawing_extension",
+      "row_count": 36
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "legacy_office_drawing",
+      "row_count": 1089
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "math_object",
+      "row_count": 2405
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "office_chart_extension",
+      "row_count": 1305
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "office_drawing_sketch_extension",
+      "row_count": 4
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "office_extension",
+      "row_count": 272319
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "sharepoint_property",
+      "row_count": 135
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "vendor_private_extension",
+      "row_count": 47
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "vml_drawing",
+      "row_count": 3314
+    },
+    {
+      "edit_depth": "surface-editable",
+      "family": "wps_extension",
+      "row_count": 656
+    }
+  ],
+  "format_counts": {
+    "docx": 20147,
+    "pptx": 275997
+  },
+  "operation_rows": [
+    {
+      "edit_depth": "surface-editable",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "row_count": 284688
+    },
+    {
+      "edit_depth": "surface-editable",
+      "operation_id": "controlled-value-edit",
+      "row_count": 970
+    },
+    {
+      "edit_depth": "surface-editable",
+      "operation_id": "namespace-metadata-edit",
+      "row_count": 339
+    },
+    {
+      "edit_depth": "surface-editable",
+      "operation_id": "selected-choice-requires-guard-edit",
+      "row_count": 10147
+    }
+  ],
+  "sample_rows": [
+    {
+      "after_digest": "sha256:51f327d50ab8af22d04562633ac4c5bb95b7194d6fa32bfdce54c710ea9823da",
+      "before_digest": "sha256:71f544597a827d967b80db40bd2e8d6be473e08df4a5f4c24778915fda3f0871",
+      "edit_depth": "surface-editable",
+      "family": "alternate_content",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_annual_report_headers_media.docx",
+      "office_status": "pass",
+      "operation_id": "selected-choice-requires-guard-edit",
+      "part_name": "word/document.xml",
+      "qname": "{http://schemas.openxmlformats.org/markup-compatibility/2006}AlternateContent",
+      "selector": "/w:document/w:body/w:p[190]/w:r/mc:AlternateContent",
+      "stable_id": "alternate_content:1:8293b97243e8f718"
+    },
+    {
+      "after_digest": "sha256:9bb6d05b16010dbabd8e5117656d1120cb61f18c1df8cd3fc9c5302ecaccfa36",
+      "before_digest": "sha256:b2b263286fda396f52b5b476d40463328f3802ca3b2c095cec85ba311bcaed30",
+      "edit_depth": "surface-editable",
+      "family": "chart_drawing",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_ms_expansion_110_testchartoleobjectembeddings.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "word/drawings/drawing1.xml",
+      "qname": "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}relSizeAnchor",
+      "selector": "/c:userShapes/cdr:relSizeAnchor",
+      "stable_id": "generic_extension:fcb741170abc5af4"
+    },
+    {
+      "after_digest": "sha256:b534f9405f47aa5e1250a87b4286b25369a2fc8637869a5a0d764920c448e6a1",
+      "before_digest": "sha256:a46d41a80b7c319c9f7f5eda83e6e3de780b9011c4e01adbc9f5d91e2f1e3648",
+      "edit_depth": "surface-editable",
+      "family": "custom_xml_payload",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_layout_business_proposal.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "customXml/item1.xml",
+      "qname": "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Background",
+      "selector": "/p:properties/documentManagement/*[1]",
+      "stable_id": "generic_extension:220adef7533e4b73"
+    },
+    {
+      "after_digest": "sha256:140a0c791f18364c7857b66777f8556453556a640c84eb9df0d65ca9db0a2a9a",
+      "before_digest": "sha256:e221ba2664dbbc32f5a9e41b7158856da919c969d610ad4dc2ce5692b1bcc620",
+      "edit_depth": "surface-editable",
+      "family": "custom_xml_schema",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_business_report_footer.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "customXml/item1.xml",
+      "qname": "{http://www.w3.org/2001/XMLSchema}schema",
+      "selector": "/ct:contentTypeSchema/xsd:schema[1]",
+      "stable_id": "generic_extension:1954372192295be5"
+    },
+    {
+      "after_digest": "sha256:e27a11a3c647460c168dd5ce4f01df1d1a1bbf18e1135a968df0871884085dcd",
+      "before_digest": "sha256:f65597d26316353367f324539ee2b224221150985279899531f6019114c913b9",
+      "edit_depth": "surface-editable",
+      "family": "drawing_extension",
+      "format": "pptx",
+      "input_file": "corpus/pptx/pptx_ms_expansion_221_p2-02.pptx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "ppt/slides/slide15.xml",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+      "selector": "/p:sld/p:cSld/p:spTree/p:grpSp[2]/p:grpSp/p:sp[3]/p:spPr/a:ln/a:extLst/a:ext/ask:lineSketchStyleProps",
+      "stable_id": "generic_extension:18c0b192dab21c43"
+    },
+    {
+      "after_digest": "sha256:da9537a1d1745334e5da44dd8777927e8236452e65e516bd346b17a5ab4e0a19",
+      "before_digest": "sha256:c87a81fe81460b267178796989ff344b8989163242d386fa29b606633a13b703",
+      "edit_depth": "surface-editable",
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_budget_embedded_objects.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "word/document.xml",
+      "qname": "{urn:schemas-microsoft-com:office:office}lock",
+      "selector": "/w:document/w:body/w:p[1]/w:r[1]/mc:AlternateContent/mc:Fallback/w:pict/v:line/o:lock",
+      "stable_id": "generic_extension:38e2df8b258e1e0f"
+    },
+    {
+      "after_digest": "sha256:5498152fd6834bd8bd611ce215b01ec4e2532f956e27eb82a488a3971a0fd3df",
+      "before_digest": "sha256:998df5751c6ce9a802817de7d0b4a7cd4f0b7bf04fe58557d72f3ab3eeb1fce8",
+      "edit_depth": "surface-editable",
+      "family": "math_object",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_business_report_footer.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "word/settings.xml",
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}mathPr",
+      "selector": "/w:settings/m:mathPr",
+      "stable_id": "generic_extension:2ff38734fbc9f3bf"
+    },
+    {
+      "after_digest": "sha256:848e4299e25be59f3e01f31c5ebdb16888958e893226f2691a4ad0a1e904e038",
+      "before_digest": "sha256:66dc7dc39da1e9951834c3751151b382638e27d2be7447806dc347f1b6d467de",
+      "edit_depth": "surface-editable",
+      "family": "office_chart_extension",
+      "format": "pptx",
+      "input_file": "corpus/pptx/pptx_chart_dense_203slides.pptx",
+      "office_status": "pass",
+      "operation_id": "controlled-value-edit",
+      "part_name": "ppt/charts/chart100.xml",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2007/8/2/chart}style",
+      "selector": "/c:chartSpace/mc:AlternateContent/mc:Choice/c14:style",
+      "stable_id": "unknown_extension_object:1:48fa877b2888ed6f"
+    },
+    {
+      "after_digest": "sha256:f2b2f5295849a3ff35724e4f8e0f30b347e83ab92937747b1c721357f97c9334",
+      "before_digest": "sha256:7d6b4106d61c94f1b339125940ca34402739f795329a627796530a92b5625735",
+      "edit_depth": "surface-editable",
+      "family": "office_drawing_sketch_extension",
+      "format": "pptx",
+      "input_file": "corpus/pptx/pptx_chart_dense_203slides.pptx",
+      "office_status": "pass",
+      "operation_id": "namespace-metadata-edit",
+      "part_name": "ppt/charts/chart338.xml",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+      "selector": "/c:chartSpace/c:chart/c:plotArea/c:doughnutChart/c:ser/c:dLbls/c:dLbl[1]/c:spPr/a:ln/a:extLst/a:ext/ask:lineSketchStyleProps",
+      "stable_id": "unknown_extension_object:3:89b2e6726a8c450b"
+    },
+    {
+      "after_digest": "sha256:eed1ee5c524e6f9e979791cce64b914258716286a71a4d0fb9e590d35f958bfa",
+      "before_digest": "sha256:ebd70b13a7f7c0b7551c0713245ae88dabacd35ccf5a41cb0a3d36c4058e1222",
+      "edit_depth": "surface-editable",
+      "family": "office_extension",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_budget_embedded_objects.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "word/document.xml",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+      "selector": "/w:document/w:body/w:p[1]/w:r[1]/mc:AlternateContent/mc:Choice/w:drawing/wp:anchor/a:graphic/a:graphicData/wps:wsp",
+      "stable_id": "generic_extension:cfcad44aea72113b"
+    },
+    {
+      "after_digest": "sha256:0e7b22689911dfd713abd63559c0b8f02fb9dde3583a3934f0cdbd297fde9c9c",
+      "before_digest": "sha256:fec6078a3cfd1c17589499d947fdd0baca4e46adc346a53e4c6f197602998b30",
+      "edit_depth": "surface-editable",
+      "family": "sharepoint_property",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_business_report_footer.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "customXml/item2.xml",
+      "qname": "{http://schemas.microsoft.com/sharepoint/v3/contenttype/forms}FormTemplates",
+      "selector": "/*",
+      "stable_id": "generic_extension:b9b1eb0f28893a0b"
+    },
+    {
+      "after_digest": "sha256:e1eb628e7a2332bdaa31a1c32a6f70f6e2dbb0356166076dcaed7a4b3b765304",
+      "before_digest": "sha256:81c1e1b93ce3da1b61a57b216a6080d2d02885328dccd614e10b38f453875064",
+      "edit_depth": "surface-editable",
+      "family": "vendor_private_extension",
+      "format": "pptx",
+      "input_file": "corpus/pptx/pptx_ms_expansion_094_37p-ppt.pptx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "ppt/ink/ink1.xml",
+      "qname": "{http://www.w3.org/2003/InkML}ink",
+      "selector": "/inkml:ink",
+      "stable_id": "generic_extension:1a2526fd278213f8"
+    },
+    {
+      "after_digest": "sha256:df52f07e29faada72b5a7dd712e5ba1d005042e4f2dabaf6f1d2d4e1a1481893",
+      "before_digest": "sha256:d00841b2f754cc6cf6d0819fe2dc97fc4cd48f6f67757cf3f8b63849ab1a1fa1",
+      "edit_depth": "surface-editable",
+      "family": "vml_drawing",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_budget_embedded_objects.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "word/document.xml",
+      "qname": "{urn:schemas-microsoft-com:vml}line",
+      "selector": "/w:document/w:body/w:p[1]/w:r[1]/mc:AlternateContent/mc:Fallback/w:pict/v:line",
+      "stable_id": "generic_extension:2828ce8f1483fd80"
+    },
+    {
+      "after_digest": "sha256:fd3fee2d1fbf34eaa0a5f0aaa2b5d9a09b3f78b91d64ab4037bdb802ffa064dd",
+      "before_digest": "sha256:35e1a34ddf7e00e0620cac7914daa19f1860be6b9c03924904cc0c29ba1cfeb7",
+      "edit_depth": "surface-editable",
+      "family": "wps_extension",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_annual_report_headers_media.docx",
+      "office_status": "pass",
+      "operation_id": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "customXml/item1.xml",
+      "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customData",
+      "selector": "/s:customData",
+      "stable_id": "generic_extension:a7fa5ec00d6da28e"
+    }
+  ],
+  "schema_version": "p78-object-level-owner-dashboard-data-v1",
+  "status": "PASS",
+  "summary": {
+    "aggregate_replay_counted_as_object_level_count": 0,
+    "former_preserve_only_total": 296144,
+    "macro_dialog_timeout_count": 0,
+    "missing_part_after_edit_count": 0,
+    "object_level_active_editable_count": 296144,
+    "object_level_active_editable_rate": 100,
+    "object_office_bound_fail_count": 0,
+    "object_office_bound_pass_count": 296144,
+    "office_crash_count": 0,
+    "office_repair_dialog_count": 0,
+    "office_security_dialog_count": 0,
+    "package_level_oracle_counted_as_object_level_count": 0,
+    "public_api_edit_pass_count": 296144,
+    "public_api_save_reload_locate_pass_count": 296144,
+    "raw_xml_mutation_escape_hatch_required_count": 0,
+    "relationship_loss_count": 0,
+    "semantic_editable_count": 0,
+    "sibling_unexpected_mutation_count": 0,
+    "surface_editable_count": 296144,
+    "typed_error_contract_pass": true,
+    "unexpected_binary_mutation_count": 0,
+    "wrong_handle_mutation_count": 0
+  },
+  "typed_error_rows": [
+    {
+      "contract": "unsupported operation",
+      "pass_count": 1
+    },
+    {
+      "contract": "stale handle",
+      "pass_count": 1
+    },
+    {
+      "contract": "ambiguous handle",
+      "pass_count": 1
+    },
+    {
+      "contract": "wrong qname handle",
+      "pass_count": 1
+    }
+  ]
+}

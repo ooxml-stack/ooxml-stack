@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "name": "opc-relationship-graph.json",
+      "path": "opc-relationship-graph.json",
+      "role": "p44-opc-graph",
+      "sha256": "d9f5a5bfe90496865f2df846a6967a10912ef6f3437a9f8b5df5fd2ea8a74ea2",
+      "size_bytes": 3018624
+    },
+    {
+      "name": "part-ownership-summary.json",
+      "path": "part-ownership-summary.json",
+      "role": "p44-summary",
+      "sha256": "3d17eacc04a8cb55a7acaad56ba743a4dfed1c19106812c0bf4d7798aa320dfb",
+      "size_bytes": 6783
+    },
+    {
+      "name": "P44-OPC-RELATIONSHIP-GRAPH.md",
+      "path": "../../docs/P44-OPC-RELATIONSHIP-GRAPH.md",
+      "role": "audit-doc",
+      "sha256": "9a532afd1d092299023d1e6240f05d09b7597a72da2899c8f3a563abc64c11c6",
+      "size_bytes": 6626
+    }
+  ],
+  "schema_version": "p44-release-evidence-manifest-v1"
+}

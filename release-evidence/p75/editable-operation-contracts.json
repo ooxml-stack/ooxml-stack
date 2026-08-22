@@ -1,0 +1,198 @@
+{
+  "schema_version": "p75-editable-operation-contracts-v1",
+  "generated_at_utc": "2026-06-04T05:59:41.254727+00:00",
+  "generator_name": "former-preserve-contracts",
+  "generator_version_or_commit": "local-worktree",
+  "summary": {
+    "family_count": 14,
+    "object_count": 296144,
+    "family_without_operation_contract_count": 0,
+    "object_without_operation_contract_count": 0,
+    "operation_id_missing_count": 0,
+    "edit_depth_missing_count": 0,
+    "surface_editable_count": 296144,
+    "semantic_editable_count": 0,
+    "semantic_editable_overclaim_count": 0,
+    "vendor_private_semantic_overclaim_count": 0,
+    "operation_contract_validation_failure_count": 0,
+    "family_counts": {
+      "alternate_content": 10147,
+      "chart_drawing": 530,
+      "custom_xml_payload": 274,
+      "custom_xml_schema": 3883,
+      "drawing_extension": 36,
+      "legacy_office_drawing": 1089,
+      "math_object": 2405,
+      "office_chart_extension": 1305,
+      "office_drawing_sketch_extension": 4,
+      "office_extension": 272319,
+      "sharepoint_property": 135,
+      "vendor_private_extension": 47,
+      "vml_drawing": 3314,
+      "wps_extension": 656
+    },
+    "operation_counts": {
+      "p74-row-bound-surface-marker": 296144
+    },
+    "gate_pass": true
+  },
+  "contracts": [
+    {
+      "family": "alternate_content",
+      "object_count": 10147,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "chart_drawing",
+      "object_count": 530,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "custom_xml_payload",
+      "object_count": 274,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "custom_xml_schema",
+      "object_count": 3883,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "drawing_extension",
+      "object_count": 36,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "legacy_office_drawing",
+      "object_count": 1089,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "math_object",
+      "object_count": 2405,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "office_chart_extension",
+      "object_count": 1305,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "office_drawing_sketch_extension",
+      "object_count": 4,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "office_extension",
+      "object_count": 272319,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "sharepoint_property",
+      "object_count": 135,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "vendor_private_extension",
+      "object_count": 47,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "vml_drawing",
+      "object_count": 3314,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    },
+    {
+      "family": "wps_extension",
+      "object_count": 656,
+      "operation_id": "p74-row-bound-surface-marker",
+      "operation_family": "former-preserve-only-surface-replay",
+      "operation_contract_version": "p75-v1",
+      "edit_depth": "surface-editable",
+      "semantic_editable": false,
+      "semantic_nonclaim_reason": "opaque or compatibility extension; only row-bound metadata surface editing is measured",
+      "vendor_private_semantic_support": false
+    }
+  ],
+  "gate_pass": true,
+  "failures": [],
+  "warnings": []
+}

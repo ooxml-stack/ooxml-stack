@@ -1,0 +1,78 @@
+{
+  "completed_packages": [
+    "pptx_ms_expansion_023_15",
+    "pptx_ms_expansion_051_p1-01",
+    "pptx_ms_expansion_097_p3-03",
+    "pptx_ms_expansion_224_13p-ppt"
+  ],
+  "records": [
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 4,
+        "failures": {},
+        "row_count": 4
+      },
+      "candidate": {
+        "family": "office_extension",
+        "label": "ledger-officeext-pptx023-15-b3",
+        "package_id": "pptx_ms_expansion_023_15",
+        "planned": 4,
+        "rows": 7,
+        "skipped_policy": 1
+      },
+      "status": "promoted"
+    },
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 4,
+        "failures": {},
+        "row_count": 4
+      },
+      "candidate": {
+        "family": "office_extension",
+        "label": "ledger-officeext-pptx224-13p-ppt-b1",
+        "package_id": "pptx_ms_expansion_224_13p-ppt",
+        "planned": 4,
+        "rows": 6,
+        "skipped_policy": 2
+      },
+      "status": "promoted"
+    },
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 20,
+        "failures": {},
+        "row_count": 20
+      },
+      "candidate": {
+        "family": "office_extension",
+        "label": "ledger-officeext-policy-pptx097-p3-03-b1",
+        "package_id": "pptx_ms_expansion_097_p3-03",
+        "planned": 20,
+        "rows": 23,
+        "skipped_policy": 2
+      },
+      "status": "promoted"
+    },
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 15,
+        "failures": {},
+        "row_count": 15
+      },
+      "candidate": {
+        "family": "office_extension",
+        "label": "ledger-officeext-policy-pptx051-p1-01-b1",
+        "package_id": "pptx_ms_expansion_051_p1-01",
+        "planned": 15,
+        "rows": 23,
+        "skipped_policy": 7
+      },
+      "status": "promoted"
+    }
+  ]
+}

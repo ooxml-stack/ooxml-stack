@@ -1,0 +1,18 @@
+{
+  "env": {
+    "OOXML_GENERATED_OUTPUT_GATE_JSON": "/tmp/ooxml-generated-output-gate/20260527T-generated-v1/generated-output-office-gate-final.json",
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_DOCX_DRAWING_REGRESSION_JSON": "/tmp/p12-docx-drawing-regression-gate-office-ingest/docx-drawing-regression-summary.json",
+    "OOXML_FRESH_TAG_INSTALL": "1",
+    "OOXML_OFFICE_GATE_JSON": "/tmp/ooxml-native-office-supported-valid-full-retry-180s.json"
+  },
+  "expected_metrics": {
+    "warn_count": 0,
+    "fail_count": 0,
+    "generated_output_ok": 1,
+    "docx_drawing_pass": 1,
+    "stubs_preserve_ok": 2,
+    "office_repair_zero": 1,
+    "fresh_install_ok": 1
+  }
+}

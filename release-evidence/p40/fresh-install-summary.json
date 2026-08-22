@@ -1,0 +1,14 @@
+{
+  "changed_release_tags": {
+    "ooxml-core": "v0.3.39",
+    "ooxml-stubs": "v0.2.12",
+    "ooxml-test-framework": "v0.5.21",
+    "python-docx": "v1.2.8",
+    "python-pptx": "v2.0.9"
+  },
+  "claim_boundary": "Fresh install/import validates release tags only; it is not a full Office compatibility claim.",
+  "fresh_install_ok_count": 1,
+  "gate_pass": true,
+  "schema_version": "p40-fresh-install-summary-v1",
+  "verifier_output_path": "/tmp/ooxml-p40-honesty-clean-profile-output.txt"
+}

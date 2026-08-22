@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-semantic-understanding-summary.json",
+      "path": "docx-semantic-understanding-summary.json",
+      "role": "summary",
+      "sha256": "b660feb9d9e81361b6b028219d0e7b19e578daa336bda5a18fee22af8a016bd5",
+      "size_bytes": 1071
+    },
+    {
+      "name": "docx-semantic-understanding-matrix.json",
+      "path": "docx-semantic-understanding-matrix.json",
+      "role": "matrix",
+      "sha256": "2101e71104e2b0f46838ed5a1bbf33b7ed95c622ebf86332f4b72ec807f688f2",
+      "size_bytes": 5259
+    },
+    {
+      "name": "docx-semantic-understanding-samples.json",
+      "path": "docx-semantic-understanding-samples.json",
+      "role": "samples",
+      "sha256": "ae0bf5eed5c5764160c1f162c7398c0c9bf9adb727bb10377f35e904fe97aee7",
+      "size_bytes": 1087
+    },
+    {
+      "name": "P56-DOCX-SEMANTIC-UNDERSTANDING-1-FREEZE.md",
+      "path": "../../docs/P56-DOCX-SEMANTIC-UNDERSTANDING-1-FREEZE.md",
+      "role": "doc",
+      "sha256": "cde7d64f41caeeac6f4769e5f7fadc7816f855b623ee3623fb022047c629397f",
+      "size_bytes": 3182
+    }
+  ],
+  "schema_version": "p56-manifest-v1"
+}

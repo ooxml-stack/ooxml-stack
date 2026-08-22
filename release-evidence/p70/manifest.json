@@ -1,0 +1,40 @@
+{
+  "schema_version": "p70-preserve-only-zero-manifest-v3",
+  "artifacts": [
+    {
+      "name": "p70-preserve-only-zero.locked.json",
+      "path": "release-profiles/p70-preserve-only-zero.locked.json",
+      "role": "p70-locked-profile",
+      "sha256": "6c539cd57c36be992d10a9cddff0582995a91d51333978573149822bbc5a1493",
+      "size_bytes": 14180
+    },
+    {
+      "name": "release-profile-summary.json",
+      "path": "release-evidence/p70/release-profile-summary.json",
+      "role": "p70-release-profile-summary",
+      "sha256": "d05caa57bcafa24b6e4378fad248c3407c95bf7391512494d08bc8410f830bc6",
+      "size_bytes": 2693
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "release-evidence/p70/public-claim-boundary-scan.json",
+      "role": "p70-public-claim-boundary-scan",
+      "sha256": "c41e3d4c2eb11969159f343118f0c29fe14e6c74410fa3ff62e36b0a520908fe",
+      "size_bytes": 9921
+    },
+    {
+      "name": "P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+      "path": "docs/P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+      "role": "p70-doc",
+      "sha256": "d0b4f34dd9a38358e0773afe0dd40570ecb22d6057e870c46f3385dbb2d0e7ac",
+      "size_bytes": 2775
+    },
+    {
+      "name": "READINESS-98-AUDIT.md",
+      "path": "docs/READINESS-98-AUDIT.md",
+      "role": "p70-readiness-audit",
+      "sha256": "a45cc42afdfabef0160bd07fd1c13c03a69d4d2b633b70574b5c02db773710c5",
+      "size_bytes": 32035
+    }
+  ]
+}

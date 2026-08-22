@@ -1,0 +1,68 @@
+{
+  "artifacts": [
+    {
+      "name": "P71-P80-OBJECT-LEVEL-ACTIVE-EDITABILITY-GOAL.md",
+      "path": "docs/P71-P80-OBJECT-LEVEL-ACTIVE-EDITABILITY-GOAL.md",
+      "role": "p71-p80-goal",
+      "sha256": "e527095647f790ca1f6fbd1d9127245513007774e9e13a2f82b907a2e2b374e2",
+      "size_bytes": 27402
+    },
+    {
+      "name": "evidence-granularity-split.json",
+      "path": "release-evidence/p71/evidence-granularity-split.json",
+      "role": "p71-evidence-granularity-split",
+      "sha256": "99c13932688ad5e6405f556e8e9979c0ec1a6abdf5980c001bb63075db9315e7",
+      "size_bytes": 2106
+    },
+    {
+      "name": "P71-P70-CLAIM-CORRECTION-AND-GRANULARITY-SPLIT.md",
+      "path": "docs/P71-P70-CLAIM-CORRECTION-AND-GRANULARITY-SPLIT.md",
+      "role": "p71-doc",
+      "sha256": "8b7770a81f069f4481481b30967dbf38a3ee0d233a60b8bb465f797e1f56ecb9",
+      "size_bytes": 1809
+    },
+    {
+      "name": "P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "path": "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "role": "p69-corrected-doc",
+      "sha256": "ff38f21213753c5ed45c30190d06502718c51fc9b4b984a9b915390c71a3076f",
+      "size_bytes": 1481
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "release-evidence/p69/dashboard-data.json",
+      "role": "p69-corrected-dashboard-data",
+      "sha256": "61f3adbad19c0bd3927864abd9ab287318dcae3efbd6a19f56216584e15a7026",
+      "size_bytes": 7619
+    },
+    {
+      "name": "public-api-zero-preserve-contract.json",
+      "path": "release-evidence/p69/public-api-zero-preserve-contract.json",
+      "role": "p69-corrected-contract",
+      "sha256": "b80cb6e8342500ae9e5944e199a70a284431cde2ffad251a341ad5f983e534fa",
+      "size_bytes": 8089
+    },
+    {
+      "name": "P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+      "path": "docs/P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+      "role": "p70-corrected-doc",
+      "sha256": "d0b4f34dd9a38358e0773afe0dd40570ecb22d6057e870c46f3385dbb2d0e7ac",
+      "size_bytes": 2775
+    },
+    {
+      "name": "p70-preserve-only-zero.locked.json",
+      "path": "release-profiles/p70-preserve-only-zero.locked.json",
+      "role": "p70-corrected-profile",
+      "sha256": "6c539cd57c36be992d10a9cddff0582995a91d51333978573149822bbc5a1493",
+      "size_bytes": 14180
+    },
+    {
+      "name": "READINESS-98-AUDIT.md",
+      "path": "docs/READINESS-98-AUDIT.md",
+      "role": "readiness-corrected-audit",
+      "sha256": "6e2c36613a5e6f7fb83a55c6731cd2d511f82a12dca9e0cad72ad63304923fff",
+      "size_bytes": 33697
+    }
+  ],
+  "schema_version": "p71-claim-correction-granularity-split-manifest-v1"
+}

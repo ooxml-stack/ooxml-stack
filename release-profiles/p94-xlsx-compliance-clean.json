@@ -1,0 +1,87 @@
+{
+  "claim": "P94 GATE: the P93 P0 is closed. Over the same 846-file corpus the compliance stage — which found 29 workbooks shipping two shared string tables at P93 — now finds zero introduced defects, and active roundtrip recovers to 840/841. The one remaining active failure is the known placeholder-sheet boundary, reported as a typed error.",
+  "ok": true,
+  "env": {
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_XLSX_COMPAT_JSON": "/tmp/p94/results_xlsx.json",
+    "OOXML_XLSX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/xlsx",
+    "OOXML_XLSX_RUNNER": "../ooxml-test-framework/tools/compat-test/run_xlsx.py"
+  },
+  "expected_metrics": {
+    "total": 846,
+    "zip_valid": 841,
+    "open_pass": 841,
+    "open_fail": 5,
+    "open_timeout": 0,
+    "passive_roundtrip_pass": 841,
+    "passive_roundtrip_fail": 0,
+    "preserve_all_pass": 787,
+    "preserve_partial": 54,
+    "preserve_none": 0,
+    "preserve_compatible_all": 841,
+    "preserve_partial_unexplained": 0,
+    "synthesized_content_types": 0,
+    "strict_namespace_normalization": 0,
+    "part_name_normalization": 54,
+    "active_roundtrip_pass": 840,
+    "active_roundtrip_fail": 1,
+    "active_roundtrip_skip": 5,
+    "compliance_clean": 841,
+    "compliance_introduced": 0,
+    "compliance_error": 0,
+    "open_pass_rate": 99.4,
+    "passive_roundtrip_pass_rate": 100.0,
+    "preserve_compatible_rate": 100.0,
+    "active_roundtrip_pass_rate": 99.88,
+    "compliance_clean_rate": 100.0
+  },
+  "closed_since_p93": [
+    {
+      "id": "xlsx-duplicate-sst-part-different-case",
+      "severity": "P0",
+      "was": 29,
+      "now": 0,
+      "fix": [
+        {
+          "repo": "python-xlsx",
+          "commit": "41e3866",
+          "layer": "writer",
+          "effect": "SharedStrings.flush() and the part lookup fall back to a case-insensitive match, so a package already carrying xl/sharedstrings.xml is not treated as having no shared string table. Kept as defense-in-depth."
+        },
+        {
+          "repo": "ooxml-core",
+          "commit": "eec69a3",
+          "layer": "OPC",
+          "effect": "Root cause. _Relationships.load_from_xml resolved internal targets by literal part name; a rel Target=\"/xl/sharedStrings.xml\" against entry xl/sharedstrings.xml was reported dangling, hiding the part from the object model. Now falls back to a case-insensitive lookup when exactly one candidate matches; ambiguous packages still warn."
+        }
+      ],
+      "verification": "spreadJS/1111.xlsx — open, write a string cell, save: archive holds exactly one shared string part, count 38 -> 39 with the marker appended rather than a fresh 1-entry table."
+    },
+    {
+      "id": "xlsx-chartsheet-no-flush",
+      "severity": "P1",
+      "was": 7,
+      "now": 0,
+      "fix": [{"repo": "python-xlsx", "layer": "sheet", "effect": "Chartsheet implements the save-time flush protocol; RED test test_save_after_accessing_chartsheet_does_not_crash."}]
+    }
+  ],
+  "open_items": [
+    {
+      "id": "xlsx-placeholder-sheet-empty-rid",
+      "severity": "P2",
+      "count": 1,
+      "owner": "python-xlsx",
+      "symptom": "'ARIMA Module' has no worksheet part (empty r:id); it is a placeholder sheet and cannot be opened. Typed error, not a bare KeyError. sample29.xlsx.",
+      "note": "Decide whether a placeholder sheet should be skipped on save rather than raising."
+    },
+    {
+      "id": "xlsx-non-zip-ole2",
+      "severity": "boundary",
+      "count": 5,
+      "owner": "none",
+      "symptom": "BadZipFile — legacy OLE2 .xls content with an .xlsx extension. Documented substrate boundary."
+    }
+  ],
+  "next_gate": "P95 should re-run the docx and pptx corpora under the compliance stage — they have only been smoke-run at 10 files each. The stage is format-agnostic and shares compat_core, so any introduced-defect class in those two libraries is currently unmeasured.",
+  "notes": "Compliance counts only findings absent from the source package. The corpus run predates the ooxml-core OPC fix and already reads clean on the writer-layer fix alone; the OPC fix removes the underlying mis-report and is covered by ooxml-core tests/test_opc_dangling_rels.py::DescribeCaseInsensitivePartResolution."
+}

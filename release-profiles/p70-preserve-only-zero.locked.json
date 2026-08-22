@@ -1,0 +1,364 @@
+{
+  "claim": "100% preserve-only accounting closure under the P70 measured P61-P68 DOCX/PPTX denominator, with aggregate replay explicitly separated from object-level active-editability.",
+  "expected_metrics": {
+    "active_edit_attempt_count": 296144,
+    "active_operation_count": 3,
+    "alternate_content_uneditable_branch_count": 0,
+    "alternate_content_unresolved_branch_count": 0,
+    "ambiguous_handle_silent_success_count": 0,
+    "baseline_preserve_only_status_count": 296144,
+    "clean_root_replay_ok": true,
+    "dangling_required_dependency_count": 0,
+    "dashboard_blocker_rows_count": 0,
+    "dashboard_validation_pass": true,
+    "desktop_powerpoint_open_pass": 275997,
+    "desktop_powerpoint_open_pass_rate": 100,
+    "desktop_word_open_pass": 20147,
+    "desktop_word_open_pass_rate": 100,
+    "docx_preserve_only_count": 0,
+    "explicit_preserve_only_row_count": 0,
+    "fail_count": 0,
+    "fresh_install_commit": "a750243285a26af4c689117a0a1bc0d45d9ff07b",
+    "fresh_install_ok_count": 1,
+    "fresh_install_package": "ooxml-test-framework",
+    "fresh_install_version": "0.5.28",
+    "gate_pass": true,
+    "generic_replay_package_open_pass": 359,
+    "generic_replay_package_selected_count": 359,
+    "hash_checked_count": 40,
+    "label_only_promotion_count": 0,
+    "legacy_preserve_only_status_count": 0,
+    "macro_dialog_timeout_count": 0,
+    "missing_part_after_edit_count": 0,
+    "missing_required_part_count": 0,
+    "object_without_dependency_decision_count": 0,
+    "object_without_owner_decision_count": 0,
+    "office_crash_count": 0,
+    "office_repair_dialog_count": 0,
+    "office_security_dialog_count": 0,
+    "ok": true,
+    "opaque_extension_without_active_operation_count": 0,
+    "opaque_extension_without_policy_count": 0,
+    "out_of_scope_object_count": 0,
+    "package_invariant_pass_rate": 100,
+    "pptx_preserve_only_count": 0,
+    "preserve_only_mutation_allowed_count": 0,
+    "preserve_only_reason_row_count": 0,
+    "preserve_only_status_count": 0,
+    "promoted_from_preserve_only_count": 296144,
+    "public_claim_beyond_measured_cells": 0,
+    "raw_xml_mutation_escape_hatch_required_count": 0,
+    "relationship_loss_count": 0,
+    "relationship_target_unclassified_count": 0,
+    "required_field_unexplained_missing_count": 0,
+    "semantic_hit_count": 296144,
+    "semantic_hit_rate": 100,
+    "size_checked_count": 40,
+    "stale_handle_silent_success_count": 0,
+    "unclassified_object_count": 0,
+    "unexpected_binary_mutation_count": 0,
+    "unknown_extension_object_count": 0,
+    "unsafe_edit_silent_noop_count": 0,
+    "unsupported_mutation_allowed_count": 0,
+    "unsupported_object_count": 0,
+    "warn_count": 0,
+    "wrong_handle_mutation_count": 0,
+    "xml_part_parse_failure_count": 0
+  },
+  "generated_at_utc": "2026-06-04T01:31:48.475434+00:00",
+  "locked_artifacts": [
+    {
+      "name": "preserve-only-zero-ledger.json",
+      "path": "release-evidence/p61/preserve-only-zero-ledger.json",
+      "role": "p61-ledger",
+      "sha256": "c2560505040ae9453a604982bda3715a3913e62027723f88eaeabe531f09e3b4",
+      "size_bytes": 2256747
+    },
+    {
+      "name": "preserve-only-zero-summary.json",
+      "path": "release-evidence/p61/preserve-only-zero-summary.json",
+      "role": "p61-summary",
+      "sha256": "44fd652ec61a5d19e5c6b5671580735139d6a29ac34ec3eb5f6654e8f7a4ca29",
+      "size_bytes": 1314
+    },
+    {
+      "name": "P61-PRESERVE-ONLY-ZERO-LEDGER.md",
+      "path": "docs/P61-PRESERVE-ONLY-ZERO-LEDGER.md",
+      "role": "p61-doc",
+      "sha256": "fffddefbb7ec4dd00784224e7a270d069594e06a38babab48d4589bcdf604d21",
+      "size_bytes": 876
+    },
+    {
+      "name": "classifier-gap-elimination.json",
+      "path": "release-evidence/p62/classifier-gap-elimination.json",
+      "role": "p62-classifier-gap-details",
+      "sha256": "467ca07d3571532158f1c6215652e5eafd774186161de0cabadc146985179fe3",
+      "size_bytes": 2929
+    },
+    {
+      "name": "classifier-gap-summary.json",
+      "path": "release-evidence/p62/classifier-gap-summary.json",
+      "role": "p62-classifier-gap-summary",
+      "sha256": "40f3fad84530e3287ccfd9b682c71b03c42cddfbc3f4215cbdfcad506af59b0f",
+      "size_bytes": 1289
+    },
+    {
+      "name": "P62-CLASSIFIER-GAP-ELIMINATION.md",
+      "path": "docs/P62-CLASSIFIER-GAP-ELIMINATION.md",
+      "role": "p62-doc",
+      "sha256": "23f8e882a05f81ccf1e33278e2bbdc0619e06f5425bb9bbd9e223a6534fcc518",
+      "size_bytes": 1136
+    },
+    {
+      "name": "alternate-content-active-editing.json",
+      "path": "release-evidence/p63/alternate-content-active-editing.json",
+      "role": "p63-alternate-content-active-editing",
+      "sha256": "75e79d911fd37c3fe45595d9389409922a539ff5b23c21c9208af6672d078671",
+      "size_bytes": 9470665
+    },
+    {
+      "name": "alternate-content-office-gate.json",
+      "path": "release-evidence/p63/alternate-content-office-gate.json",
+      "role": "p63-alternate-content-office-gate",
+      "sha256": "df104be45c8712dcdc0247d9d78c1f35c7d6229622574701b28bd155777c607c",
+      "size_bytes": 70747
+    },
+    {
+      "name": "alternate-content-summary.json",
+      "path": "release-evidence/p63/alternate-content-summary.json",
+      "role": "p63-alternate-content-summary",
+      "sha256": "58719d6be0767e59b9c9cfe084780b82f5f3912cf2f1b8af08a00116d04b8246",
+      "size_bytes": 1113
+    },
+    {
+      "name": "P63-ALTERNATE-CONTENT-ACTIVE-EDITING.md",
+      "path": "docs/P63-ALTERNATE-CONTENT-ACTIVE-EDITING.md",
+      "role": "p63-doc",
+      "sha256": "31b32a58464bcb7514d2ad3a5636b77311d4bf9bf9e9efadf848cdb22c1f2971",
+      "size_bytes": 1221
+    },
+    {
+      "name": "office-extension-active-models.json",
+      "path": "release-evidence/p64/office-extension-active-models.json",
+      "role": "p64-office-extension-active-models",
+      "sha256": "db7c810eb5122f82bebcf4477631fd9c9a357d60b25a9f5e6a9e694316013da5",
+      "size_bytes": 1438616
+    },
+    {
+      "name": "office-extension-office-gate.json",
+      "path": "release-evidence/p64/office-extension-office-gate.json",
+      "role": "p64-office-extension-office-gate",
+      "sha256": "0ec36f82141f9edcc1417da1d7ced82066c0981af7efa6423858bfcc23caf1cd",
+      "size_bytes": 989
+    },
+    {
+      "name": "office-extension-summary.json",
+      "path": "release-evidence/p64/office-extension-summary.json",
+      "role": "p64-office-extension-summary",
+      "sha256": "708a1e1e76c98bd266414562ec471e650cb58472e60b32c13b1940f2c3aa5339",
+      "size_bytes": 1793
+    },
+    {
+      "name": "P64-OFFICE-EXTENSION-ACTIVE-MODELS.md",
+      "path": "docs/P64-OFFICE-EXTENSION-ACTIVE-MODELS.md",
+      "role": "p64-doc",
+      "sha256": "27fa2acae54cae728b4785c6496c8f855f0fbffa01510c4f5891a87d52e29381",
+      "size_bytes": 1841
+    },
+    {
+      "name": "opaque-extension-active-policy.json",
+      "path": "release-evidence/p65/opaque-extension-active-policy.json",
+      "role": "p65-opaque-extension-active-policy",
+      "sha256": "3f41f5515347c03a9c5743d4eb9d17cdb42c03fc392c4466ba542a58a97caa8c",
+      "size_bytes": 9995
+    },
+    {
+      "name": "opaque-extension-summary.json",
+      "path": "release-evidence/p65/opaque-extension-summary.json",
+      "role": "p65-opaque-extension-summary",
+      "sha256": "f5183a76c73958893b1ad83085051dda2e692e1b12f3fdcb546fcdf75a44a008",
+      "size_bytes": 1022
+    },
+    {
+      "name": "P65-OPAQUE-EXTENSION-ACTIVE-POLICY.md",
+      "path": "docs/P65-OPAQUE-EXTENSION-ACTIVE-POLICY.md",
+      "role": "p65-doc",
+      "sha256": "c727b3472b49d78040a5a622e992ece19edbec7593514272d980cc467ed9dc7b",
+      "size_bytes": 1142
+    },
+    {
+      "name": "dependency-aware-active-mutators.json",
+      "path": "release-evidence/p66/dependency-aware-active-mutators.json",
+      "role": "p66-dependency-aware-active-mutators",
+      "sha256": "ec3b783bf42b96941c03c291aa1f8030a0cdcf32b5e36eb6ecc91584c8e0530d",
+      "size_bytes": 8591
+    },
+    {
+      "name": "dependency-aware-summary.json",
+      "path": "release-evidence/p66/dependency-aware-summary.json",
+      "role": "p66-dependency-aware-summary",
+      "sha256": "7336bf4c8608aba39b85e1b442176bb1076d9351bc0a25b5da13b15e80f93dec",
+      "size_bytes": 1391
+    },
+    {
+      "name": "P66-DEPENDENCY-AWARE-ACTIVE-MUTATORS.md",
+      "path": "docs/P66-DEPENDENCY-AWARE-ACTIVE-MUTATORS.md",
+      "role": "p66-doc",
+      "sha256": "932e35a8d6ce5b8cdf3b053047d3a70d50700fff9fbda26f889a501f198a5d21",
+      "size_bytes": 988
+    },
+    {
+      "name": "docx-preserve-only-zero.json",
+      "path": "release-evidence/p67/docx-preserve-only-zero.json",
+      "role": "p67-docx-preserve-only-zero",
+      "sha256": "e778d1638eaee0671bde14e95012606a19d00bdab0738110136b5a68563ac767",
+      "size_bytes": 1397
+    },
+    {
+      "name": "docx-preserve-only-zero-summary.json",
+      "path": "release-evidence/p67/docx-preserve-only-zero-summary.json",
+      "role": "p67-docx-preserve-only-zero-summary",
+      "sha256": "22ad9bdf196e81b306221ae4d4aff49a6f8a8e16ff7038c9b5fa9b90449a3377",
+      "size_bytes": 877
+    },
+    {
+      "name": "P67-DOCX-PRESERVE-ONLY-ZERO.md",
+      "path": "docs/P67-DOCX-PRESERVE-ONLY-ZERO.md",
+      "role": "p67-doc",
+      "sha256": "c3110d7b37241519cc901dd678a41f76c7b3d45d6edb7baae67a211a0e0a94ca",
+      "size_bytes": 1341
+    },
+    {
+      "name": "generic-extension-replay.json",
+      "path": "release-evidence/p67-p68/generic-extension-replay.json",
+      "role": "p67-p68-generic-extension-replay",
+      "sha256": "8446c096ce27a000b938bdd97262d3b650a3e63244c72aeae2568201e05950fe",
+      "size_bytes": 172772
+    },
+    {
+      "name": "generic-extension-office-gate.json",
+      "path": "release-evidence/p67-p68/generic-extension-office-gate.json",
+      "role": "p67-p68-generic-extension-office-gate",
+      "sha256": "882421dd0d0d32f9d7a0a03a979fb4aefedbb3fd80da8025cbe10fb0926c092f",
+      "size_bytes": 122386
+    },
+    {
+      "name": "excluded-original-office-gate.json",
+      "path": "release-evidence/p67-p68/excluded-original-office-gate.json",
+      "role": "p67-p68-excluded-original-office-gate",
+      "sha256": "483492738f71dde68c9c72131a71bfec1b5e6c611dee469bd76674c9dfb6bf6a",
+      "size_bytes": 1110
+    },
+    {
+      "name": "pptx-preserve-only-zero.json",
+      "path": "release-evidence/p68/pptx-preserve-only-zero.json",
+      "role": "p68-pptx-preserve-only-zero",
+      "sha256": "c833c8bde50b477d99db18612834bfc12e4582e55f6c8d6a9e069e78153e4283",
+      "size_bytes": 1481
+    },
+    {
+      "name": "pptx-preserve-only-zero-summary.json",
+      "path": "release-evidence/p68/pptx-preserve-only-zero-summary.json",
+      "role": "p68-pptx-preserve-only-zero-summary",
+      "sha256": "19165d25277e5d6935c5590f32806f4d9bce240d40b450fc7443cb23966e0d4d",
+      "size_bytes": 920
+    },
+    {
+      "name": "P68-PPTX-PRESERVE-ONLY-ZERO.md",
+      "path": "docs/P68-PPTX-PRESERVE-ONLY-ZERO.md",
+      "role": "p68-doc",
+      "sha256": "4779d4774a6fe98b7d8fc8443e07db234b897960aac46b5a7a9cbaf8bc668f8c",
+      "size_bytes": 1378
+    },
+    {
+      "name": "public-api-zero-preserve-contract.json",
+      "path": "release-evidence/p69/public-api-zero-preserve-contract.json",
+      "role": "p69-public-api-zero-preserve-contract",
+      "sha256": "b80cb6e8342500ae9e5944e199a70a284431cde2ffad251a341ad5f983e534fa",
+      "size_bytes": 8089
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "release-evidence/p69/dashboard-data.json",
+      "role": "p69-dashboard-data",
+      "sha256": "61f3adbad19c0bd3927864abd9ab287318dcae3efbd6a19f56216584e15a7026",
+      "size_bytes": 7619
+    },
+    {
+      "name": "index.html",
+      "path": "release-evidence/p69/dashboard/index.html",
+      "role": "p69-dashboard-html",
+      "sha256": "d805930782f693dce75861c42220d7c338fc65d8840e3988dbc4ba94cb454348",
+      "size_bytes": 12505
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "release-evidence/p69/dashboard/dashboard-data.json",
+      "role": "p69-dashboard-data-copy",
+      "sha256": "61f3adbad19c0bd3927864abd9ab287318dcae3efbd6a19f56216584e15a7026",
+      "size_bytes": 7619
+    },
+    {
+      "name": "dashboard-validation.json",
+      "path": "release-evidence/p69/dashboard-validation.json",
+      "role": "p69-dashboard-validation",
+      "sha256": "bd84122a61701c05cd46da862f062a01b5dfb4fb58feeced2b1cf899f4f72c26",
+      "size_bytes": 678
+    },
+    {
+      "name": "P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "path": "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "role": "p69-doc",
+      "sha256": "ff38f21213753c5ed45c30190d06502718c51fc9b4b984a9b915390c71a3076f",
+      "size_bytes": 1481
+    }
+  ],
+  "metric_sources": [
+    {
+      "metrics": {
+        "baseline_preserve_only_status_count": "summary.baseline_preserve_only_status_count"
+      },
+      "path": "../release-evidence/p61/preserve-only-zero-summary.json"
+    },
+    {
+      "metrics": {
+        "docx_preserve_only_count": "summary.docx_preserve_only_count"
+      },
+      "path": "../release-evidence/p67/docx-preserve-only-zero-summary.json"
+    },
+    {
+      "metrics": {
+        "pptx_preserve_only_count": "summary.pptx_preserve_only_count"
+      },
+      "path": "../release-evidence/p68/pptx-preserve-only-zero-summary.json"
+    },
+    {
+      "metrics": {
+        "promoted_from_preserve_only_count": "summary.promoted_from_preserve_only_count"
+      },
+      "path": "../release-evidence/p69/public-api-zero-preserve-contract.json"
+    },
+    {
+      "metrics": {
+        "public_claim_beyond_measured_cells": "public_claim_beyond_measured_cells"
+      },
+      "path": "../release-evidence/p70/public-claim-boundary-scan.json"
+    }
+  ],
+  "non_claims": [
+    "full Office compatibility",
+    "full ECMA-376 universe coverage",
+    "renderer/pixel/layout/cache parity",
+    "macro support",
+    "encrypted package support",
+    "arbitrary vendor-private semantic interior parity"
+  ],
+  "release_tag_checks": {
+    "ooxml-test-framework": {
+      "commit": "a750243285a26af4c689117a0a1bc0d45d9ff07b",
+      "fresh_install_import": true,
+      "tag": "v0.5.28"
+    }
+  },
+  "schema_version": "p70-preserve-only-zero-locked-profile-v1"
+}

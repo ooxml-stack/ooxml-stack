@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-stable-handle-diff-summary.json",
+      "path": "../p36/docx-drawing-stable-handle-diff-summary.json",
+      "role": "p36-diff-summary",
+      "sha256": "bd82743cf109c550964a2d5e1e3d2319038685d5317e1cd49c492871616e86ae",
+      "size_bytes": 1749
+    },
+    {
+      "name": "docx-drawing-stable-handle-diff-cases.json",
+      "path": "../p36/docx-drawing-stable-handle-diff-cases.json",
+      "role": "p36-diff-cases",
+      "sha256": "e1b4eec9b7b48de8efdc6d134720134d742814f4eb9a017850f368f17f7f04d6",
+      "size_bytes": 212316
+    },
+    {
+      "name": "index.html",
+      "path": "../p36/dashboard/index.html",
+      "role": "p36-dashboard",
+      "sha256": "6d0f3fc635a2723fc4177c3d3549d9f783f3bb893f53d6301289744201355eb1",
+      "size_bytes": 187319
+    },
+    {
+      "name": "docx-drawing-public-api-summary.json",
+      "path": "../p37/docx-drawing-public-api-summary.json",
+      "role": "p37-summary",
+      "sha256": "cb014307036b204edc727ce4503cda24c8a5a031350cddc0c0e39ab825a0effb",
+      "size_bytes": 1271
+    },
+    {
+      "name": "docx-drawing-public-api-cases.json",
+      "path": "../p37/docx-drawing-public-api-cases.json",
+      "role": "p37-cases",
+      "sha256": "2cc5eaef0eafa0a48a98817c470b38a37b3bd2a1f06e3215410d12f8cffbcf8c",
+      "size_bytes": 167140
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-denominator.json",
+      "path": "../p38/docx-drawing-active-editing-v2-denominator.json",
+      "role": "p38-denominator",
+      "sha256": "ea1344ac0ee94503517aadbe371705a22836ee3bf87e2f32a139e4f95403a20c",
+      "size_bytes": 614055
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-gate.json",
+      "path": "../p38/docx-drawing-active-editing-v2-gate.json",
+      "role": "p38-active-gate",
+      "sha256": "6233f93be80d0b350c6451f8216c2f3dc6341d3284649a7b692df93772e70702",
+      "size_bytes": 351960
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-cases.json",
+      "path": "../p38/docx-drawing-active-editing-v2-cases.json",
+      "role": "p38-cases",
+      "sha256": "a633d5aa502f859425581ef696a3e7fcd7739fa9119b701f62c5c47846f9b1cd",
+      "size_bytes": 350588
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-summary.json",
+      "path": "../p38/docx-drawing-active-editing-v2-summary.json",
+      "role": "p38-summary",
+      "sha256": "e23661b0d1b60ee2a237af05195add2325b401f23f4aaee8a13e3a2693ca75f9",
+      "size_bytes": 3102
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-office-gate.json",
+      "path": "../p38/docx-drawing-active-editing-v2-office-gate.json",
+      "role": "p38-office-gate",
+      "sha256": "62868210b05cac46bc7faab4327e8714ee93a03e59ef2811872654679de8431b",
+      "size_bytes": 188809
+    },
+    {
+      "name": "drawing-contract-alignment-summary.json",
+      "path": "../p39/drawing-contract-alignment-summary.json",
+      "role": "p39-summary",
+      "sha256": "e119289b006950f77fa02285e5d51310cfef829093313813222c136e1a8fd808",
+      "size_bytes": 827
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "public-claim-boundary-scan.json",
+      "role": "p40-claim-scan",
+      "sha256": "3974aeb245b001737e81d860f0372906bcbdfbd71e28bbaa3e945f6b66f1405b",
+      "size_bytes": 816
+    }
+  ],
+  "schema_version": "p40-release-evidence-manifest-v1"
+}

@@ -1,0 +1,108 @@
+{
+  "rows": [
+    {
+      "row_id": "p82-text|docx_policy_embedded_objects|sth_7fceeff82533e2095b9b4e46",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_policy_embedded_objects.docx",
+      "output_file": "ooxml-stack/release-evidence/p83/outputs/mcp-0-docx_policy_embedded_objects-sth_7fceeff82533e2095b9b4e46.docx",
+      "family": "text_container",
+      "stable_id": "sth_7fceeff82533e2095b9b4e46",
+      "selector": "paragraphs[5]",
+      "operation_id": "text.set_container",
+      "interface": "mcp",
+      "semantic_model_id": "text.container.v1",
+      "before_text": "XX集团股份有限公司",
+      "after_text": "P83 mcp semantic edit 0 docx text_container",
+      "target_semantic_hit": true,
+      "sibling_unchanged": true,
+      "sibling_checked_count": 1963,
+      "validation_pass": true,
+      "standalone_validation_pass": true,
+      "recon": {
+        "overview_pass": true,
+        "search_found_stable_id": true,
+        "detail_kind": "paragraph",
+        "raw_enumerate_used_as_overview": false
+      },
+      "pass": true
+    },
+    {
+      "row_id": "p82-text|docx_policy_embedded_objects|sth_1fe0391498c5153776eaf7d5",
+      "format": "docx",
+      "input_file": "corpus/docx/docx_policy_embedded_objects.docx",
+      "output_file": "ooxml-stack/release-evidence/p83/outputs/mcp-1-docx_policy_embedded_objects-sth_1fe0391498c5153776eaf7d5.docx",
+      "family": "table_cell_text",
+      "stable_id": "sth_1fe0391498c5153776eaf7d5",
+      "selector": "tables[0].cell(0,0)",
+      "operation_id": "table.set_cell_text",
+      "interface": "mcp",
+      "semantic_model_id": "table.cell.text.v1",
+      "before_text": "费用报销单",
+      "after_text": "P83 mcp semantic edit 1 docx table_cell_text",
+      "target_semantic_hit": true,
+      "sibling_unchanged": true,
+      "sibling_checked_count": 1963,
+      "validation_pass": true,
+      "standalone_validation_pass": true,
+      "recon": {
+        "overview_pass": true,
+        "search_found_stable_id": true,
+        "detail_kind": "cell",
+        "raw_enumerate_used_as_overview": false
+      },
+      "pass": true
+    },
+    {
+      "row_id": "p82-text|pptx_bgy_standard_sales_flow|sth_e3fafe50be8501365a4c4ecf",
+      "format": "pptx",
+      "input_file": "corpus/pptx/pptx_bgy_standard_sales_flow.pptx",
+      "output_file": "ooxml-stack/release-evidence/p83/outputs/mcp-2-pptx_bgy_standard_sales_flow-sth_e3fafe50be8501365a4c4ecf.pptx",
+      "family": "text_container",
+      "stable_id": "sth_e3fafe50be8501365a4c4ecf",
+      "selector": "slides[0].shapes[0]",
+      "operation_id": "text.set_container",
+      "interface": "mcp",
+      "semantic_model_id": "text.container.v1",
+      "before_text": "标准销售流程及\n销售流程管控要点",
+      "after_text": "P83 mcp semantic edit 2 pptx text_container",
+      "target_semantic_hit": true,
+      "sibling_unchanged": true,
+      "sibling_checked_count": 179,
+      "validation_pass": true,
+      "standalone_validation_pass": true,
+      "recon": {
+        "overview_pass": true,
+        "search_found_stable_id": true,
+        "detail_kind": "slide",
+        "raw_enumerate_used_as_overview": false
+      },
+      "pass": true
+    },
+    {
+      "row_id": "p82-text|pptx_pdca_training|sth_63feac8b34db3f9b9e138868",
+      "format": "pptx",
+      "input_file": "corpus/pptx/pptx_pdca_training.pptx",
+      "output_file": "ooxml-stack/release-evidence/p83/outputs/mcp-3-pptx_pdca_training-sth_63feac8b34db3f9b9e138868.pptx",
+      "family": "table_cell_text",
+      "stable_id": "sth_63feac8b34db3f9b9e138868",
+      "selector": "slides[26].shapes[4].table.cell(0,0)",
+      "operation_id": "table.set_cell_text",
+      "interface": "mcp",
+      "semantic_model_id": "table.cell.text.v1",
+      "before_text": "时间",
+      "after_text": "P83 mcp semantic edit 3 pptx table_cell_text",
+      "target_semantic_hit": true,
+      "sibling_unchanged": true,
+      "sibling_checked_count": 392,
+      "validation_pass": true,
+      "standalone_validation_pass": true,
+      "recon": {
+        "overview_pass": true,
+        "search_found_stable_id": true,
+        "detail_kind": "slide",
+        "raw_enumerate_used_as_overview": false
+      },
+      "pass": true
+    }
+  ]
+}

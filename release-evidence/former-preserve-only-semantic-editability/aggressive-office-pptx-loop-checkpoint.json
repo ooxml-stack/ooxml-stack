@@ -1,0 +1,42 @@
+{
+  "completed_packages": [
+    "pptx_report_207slides_blue",
+    "pptx_report_344slides_multimedia"
+  ],
+  "records": [
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 25,
+        "failures": {},
+        "row_count": 25
+      },
+      "candidate": {
+        "family": "office_extension",
+        "label": "aggr-office-pptx-pptx-report-207slides-blue-b1",
+        "package_id": "pptx_report_207slides_blue",
+        "planned": 25,
+        "rows": 135,
+        "skipped_policy": 0
+      },
+      "status": "promoted"
+    },
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 25,
+        "failures": {},
+        "row_count": 25
+      },
+      "candidate": {
+        "family": "office_extension",
+        "label": "aggr-office-pptx-pptx-report-344slides-multimedia-b1",
+        "package_id": "pptx_report_344slides_multimedia",
+        "planned": 25,
+        "rows": 142,
+        "skipped_policy": 0
+      },
+      "status": "promoted"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    {
+      "name": "generated-output-office-gate-final.json",
+      "path": "generated-output-office-gate-final.json",
+      "role": "generated_output_gate",
+      "sha256": "1f2e82a6651a6e5838ce3f9c57dca22f422f64a928a37fea9a01a9fd7abe3d4d",
+      "size_bytes": 365954
+    },
+    {
+      "name": "docx-drawing-regression-summary.json",
+      "path": "docx-drawing-regression-summary.json",
+      "role": "docx_drawing_regression",
+      "sha256": "a39dfbcbbf42d38d895fc8e6f5e02afd0450ff10005eaafb3dd4b4551663370c",
+      "size_bytes": 1483
+    },
+    {
+      "name": "docx-drawing-office-gate.json",
+      "path": "docx-drawing-office-gate.json",
+      "role": "docx_drawing_office_gate",
+      "sha256": "99458fd9a46e364bdeea3e9543d3aca0957d4858c76e5ba9fd544f739138d534",
+      "size_bytes": 39004
+    },
+    {
+      "name": "native-office-supported-valid-full.json",
+      "path": "native-office-supported-valid-full.json",
+      "role": "native_office_gate_p23_full",
+      "sha256": "b83a37b1ca6ed56ec7771b3d80022c800d40ff55e0ca9873d942cb4b5564cf5f",
+      "size_bytes": 136849
+    },
+    {
+      "name": "native-corpus-manifest.csv",
+      "path": "native-corpus-manifest.csv",
+      "role": "native_corpus_manifest",
+      "sha256": "9f56564deaad068e59e21c0c8ddc14301f0e25688a7aa948bd5bf91389882143",
+      "size_bytes": 184941
+    },
+    {
+      "name": "p21-p27-coverage-summary.json",
+      "path": "p21-p27-coverage-summary.json",
+      "role": "p21_p27_coverage_summary",
+      "sha256": "84c7a527863d8b490906664dbcec8b9ce7cc7d19868cefb2cfcf2c5e3b33c912",
+      "size_bytes": 17156
+    }
+  ]
+}

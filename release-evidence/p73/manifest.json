@@ -1,0 +1,94 @@
+{
+  "schema_version": "p73-stable-handle-locate-manifest-v1",
+  "combined_rows_jsonl_sha256": "7f8af02c882bc156d86f101fe131a2f10e83c801e027a153d04d62afc194e4a8",
+  "combined_rows_jsonl_size_bytes": 242777670,
+  "combined_rows_jsonl_line_count": 296144,
+  "artifacts": [
+    {
+      "name": "rows.jsonl.part-000",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-000",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 0,
+      "sha256": "ec9eefe279aa6d47908e57bd19eaa7ff1860b600b95056da4763892ac76a3039",
+      "size_bytes": 32443439,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-001",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-001",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 1,
+      "sha256": "ee29c8ec96fb1de2f2d76ae005caf2b9960b30d96fa553b822095bb3b9146b12",
+      "size_bytes": 32538289,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-002",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-002",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 2,
+      "sha256": "b6236bfa74f14b6a5bf82dc56657e5fda2ad0f251882d3d883f89e55536a3443",
+      "size_bytes": 32902344,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-003",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-003",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 3,
+      "sha256": "083f44e8ae1e68871738e375631754947e9bda6abf44ef907a29224137e8168a",
+      "size_bytes": 32343866,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-004",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-004",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 4,
+      "sha256": "893c898202c173e8c78707e926c9c1ad1d043fc5df37943cff97d12380e91422",
+      "size_bytes": 32741981,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-005",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-005",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 5,
+      "sha256": "cd530df194ef13cbd76c2150addd807a6fde1aeb25fde5d9d64fddba8828afa3",
+      "size_bytes": 32817483,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-006",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-006",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 6,
+      "sha256": "8156d52f642ef7f2f681963505cf71155cf9be61dad8630a70e3814d07e3152a",
+      "size_bytes": 33549967,
+      "line_count": 40000
+    },
+    {
+      "name": "rows.jsonl.part-007",
+      "path": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-007",
+      "role": "p73-stable-handle-locate-jsonl-shard",
+      "shard_index": 7,
+      "sha256": "fa91d5baf35e2b4b3a89ce8f889d7946d6e199cfb1a44ef621d5116417f407c2",
+      "size_bytes": 13440301,
+      "line_count": 16144
+    },
+    {
+      "name": "stable-handle-locate-summary.json",
+      "path": "release-evidence/p73/stable-handle-locate-summary.json",
+      "role": "p73-summary",
+      "sha256": "defb076e473129338f0a685da10ab244e78bda934a45b1229df258c11c7b2a16",
+      "size_bytes": 977
+    },
+    {
+      "name": "P73-FORMER-PRESERVE-ONLY-STABLE-HANDLE-LOCATE.md",
+      "path": "docs/P73-FORMER-PRESERVE-ONLY-STABLE-HANDLE-LOCATE.md",
+      "role": "p73-doc",
+      "sha256": "db6365f2e8c5a03f508ec8311eaf9c7cab12ce6f25cb6907edafda0e495e5f94",
+      "size_bytes": 1306
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "schema_version": "p53-semantic-object-registry-summary-v1",
+  "summary": {
+    "docx_only_family_count": 17,
+    "docx_registered_family_count": 24,
+    "duplicate_family_key_count": 0,
+    "family_with_dependency_rules_count": 39,
+    "family_with_required_fields_count": 39,
+    "family_with_status_rules_count": 39,
+    "host_specific_leak_count": 0,
+    "pptx_only_family_count": 8,
+    "pptx_registered_family_count": 15,
+    "registered_family_format_cells": 39,
+    "registry_schema_version_present": true,
+    "shared_family_count": 6,
+    "undefined_status_reference_count": 0,
+    "undefined_understanding_level_reference_count": 0
+  },
+  "warnings": []
+}

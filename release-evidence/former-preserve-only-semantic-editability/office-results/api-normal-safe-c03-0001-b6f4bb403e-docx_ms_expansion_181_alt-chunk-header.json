@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-23T08:29:17Z",
+    "timeout_seconds": 240,
+    "dialog_wait_seconds": 30
+  },
+  "summary": {
+    "total": 1,
+    "pass": 0,
+    "pass_total": 1,
+    "repair_dialog_count": 0,
+    "unreadable_content_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 1,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "pass_with_dialog": 1
+    },
+    "gate_pass": true
+  },
+  "results": [
+    {
+      "file": "ooxml-stack/release-evidence/former-preserve-only-semantic-editability/promotion-outputs/api-normal-safe-c03-0001-b6f4bb403e-docx_ms_expansion_181_alt-chunk-header.docx",
+      "app": "Microsoft Word",
+      "status": "pass_with_dialog",
+      "message": "BENIGN_DIALOG: AXWindow AXDialog NoYes Microsoft WordThis document contains fields that may refer to other files. Do you want to update the fields in this document? NoYes",
+      "exit_code": 0,
+      "stdout": "PASS_WITH_DIALOG:BENIGN_DIALOG:   AXWindow AXDialog NoYes   Microsoft WordThis document contains fields that may refer to other files. Do you want to update the fields in this document? NoYes",
+      "stderr": "",
+      "elapsed_seconds": 84.097
+    }
+  ]
+}

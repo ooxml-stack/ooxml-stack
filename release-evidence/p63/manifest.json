@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "name": "alternate-content-active-editing.json",
+      "path": "release-evidence/p63/alternate-content-active-editing.json",
+      "role": "p63-alternate-content-active-editing",
+      "sha256": "75e79d911fd37c3fe45595d9389409922a539ff5b23c21c9208af6672d078671",
+      "size_bytes": 9470665
+    },
+    {
+      "name": "alternate-content-office-gate.json",
+      "path": "release-evidence/p63/alternate-content-office-gate.json",
+      "role": "p63-alternate-content-office-gate",
+      "sha256": "df104be45c8712dcdc0247d9d78c1f35c7d6229622574701b28bd155777c607c",
+      "size_bytes": 70747
+    },
+    {
+      "name": "alternate-content-summary.json",
+      "path": "release-evidence/p63/alternate-content-summary.json",
+      "role": "p63-alternate-content-summary",
+      "sha256": "58719d6be0767e59b9c9cfe084780b82f5f3912cf2f1b8af08a00116d04b8246",
+      "size_bytes": 1113
+    },
+    {
+      "name": "P63-ALTERNATE-CONTENT-ACTIVE-EDITING.md",
+      "path": "docs/P63-ALTERNATE-CONTENT-ACTIVE-EDITING.md",
+      "role": "p63-doc",
+      "sha256": "31b32a58464bcb7514d2ad3a5636b77311d4bf9bf9e9efadf848cdb22c1f2971",
+      "size_bytes": 1221
+    }
+  ],
+  "schema_version": "p63-alternate-content-manifest-v2"
+}

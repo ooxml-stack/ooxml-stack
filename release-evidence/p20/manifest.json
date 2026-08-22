@@ -1,0 +1,18 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-coverage-matrix.json",
+      "path": "docx-drawing-coverage-matrix.json",
+      "role": "docx_drawing_coverage_matrix",
+      "sha256": "512d6e19f60da2fde6707aa1c27ad2e47388aea00cf8fed918352b9fafde8eec",
+      "size_bytes": 366427
+    },
+    {
+      "name": "docx-drawing-coverage-summary.json",
+      "path": "docx-drawing-coverage-summary.json",
+      "role": "docx_drawing_coverage_summary",
+      "sha256": "e5d5928b9c4564ceadc847d4d790a8d04de18bca90cde262d63a49396cce5ef8",
+      "size_bytes": 14576
+    }
+  ]
+}

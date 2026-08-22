@@ -1,0 +1,32 @@
+{
+  "schema_version": "p74-per-object-replay-v1",
+  "generated_at_utc": "2026-06-04T05:28:31.410011+00:00",
+  "generator_name": "former-preserve-replay",
+  "generator_version_or_commit": "local-worktree",
+  "summary": {
+    "per_object_replay_row_count": 296144,
+    "per_object_replay_pass_count": 296144,
+    "per_object_replay_fail_count": 0,
+    "target_digest_changed_count": 296144,
+    "target_digest_unchanged_after_edit_count": 0,
+    "before_digest_missing_count": 0,
+    "after_digest_missing_count": 0,
+    "semantic_or_surface_hit_count": 296144,
+    "package_invariant_failure_count": 0,
+    "aggregate_replay_counted_as_object_level_count": 0,
+    "sibling_unexpected_mutation_count": 0,
+    "wrong_handle_mutation_count": 0,
+    "relationship_loss_count": 0,
+    "missing_part_after_edit_count": 0,
+    "unexpected_binary_mutation_count": 0,
+    "gate_pass": true
+  },
+  "rows_jsonl": "release-evidence/p74/per-object-replay-rows-shards/rows.jsonl.part-*",
+  "gate_pass": true,
+  "failures": [],
+  "warnings": [],
+  "rows_jsonl_shard_count": 12,
+  "rows_jsonl_combined_sha256": "0b6d52e52657d86e09db92938ecbe071ce70cb012a3a49e0261656d1fc253784",
+  "rows_jsonl_combined_size_bytes": 441320747,
+  "rows_jsonl_combined_line_count": 296144
+}

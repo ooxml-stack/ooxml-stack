@@ -1,0 +1,32 @@
+{
+  "schema_version": "p72-former-preserve-only-materialization-v1",
+  "generated_at_utc": "2026-06-04T04:01:42.306215+00:00",
+  "generator_name": "former-preserve-materialize",
+  "generator_version_or_commit": "local-worktree",
+  "summary": {
+    "former_preserve_only_object_row_count": 296144,
+    "materialized_from_p63_count": 10147,
+    "materialized_from_p64_count": 1309,
+    "materialized_from_p67_p68_generic_count": 284688,
+    "aggregate_row_remaining_count": 0,
+    "missing_package_id_count": 0,
+    "missing_part_name_count": 0,
+    "missing_selector_count": 0,
+    "missing_stable_id_count": 0,
+    "missing_qname_count": 0,
+    "missing_family_count": 0,
+    "duplicate_row_id_count": 0,
+    "duplicate_stable_id_within_package_count": 0,
+    "selector_resolve_failure_count": 0,
+    "selector_multi_match_count": 0,
+    "gate_pass": true
+  },
+  "rows_jsonl": "release-evidence/p72/former-preserve-only-object-rows-shards/rows.jsonl.part-*",
+  "gate_pass": true,
+  "failures": [],
+  "warnings": [],
+  "rows_jsonl_shard_count": 6,
+  "rows_jsonl_combined_sha256": "70c70f2b073a937becff5181ca223102577871cebcc413571a4d6c2c72db947d",
+  "rows_jsonl_combined_size_bytes": 355330611,
+  "rows_jsonl_combined_line_count": 296144
+}

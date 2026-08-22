@@ -1,0 +1,26 @@
+{
+  "schema_version": "p75-operation-contract-manifest-v1",
+  "artifacts": [
+    {
+      "name": "editable-operation-contracts.json",
+      "path": "release-evidence/p75/editable-operation-contracts.json",
+      "role": "p75-contracts",
+      "sha256": "13fec4bdca267c392de08545e79a4c20cd1804af6bd6ed1f97c5b65df6e135cd",
+      "size_bytes": 8193
+    },
+    {
+      "name": "editable-operation-coverage-summary.json",
+      "path": "release-evidence/p75/editable-operation-coverage-summary.json",
+      "role": "p75-summary",
+      "sha256": "4aabebcad8e57a1bcd0ed92c95aa251feb15d1f4f8fb7992340abdc7706a989e",
+      "size_bytes": 1336
+    },
+    {
+      "name": "P75-FAMILY-EDITABLE-OPERATION-CONTRACTS.md",
+      "path": "docs/P75-FAMILY-EDITABLE-OPERATION-CONTRACTS.md",
+      "role": "p75-doc",
+      "sha256": "c1713f1282746bb981285c0ff952566e514a0ee38d541a1bc086a2fda65ba1e5",
+      "size_bytes": 1413
+    }
+  ]
+}

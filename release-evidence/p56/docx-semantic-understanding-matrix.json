@@ -1,0 +1,198 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-02T00:21:35.372153+00:00",
+  "generator_name": "p56-docx-semantic-understanding-matrix-v1",
+  "rows": [
+    {
+      "candidate_count": 2519,
+      "family": "alternate_content",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 5381,
+      "family": "bookmark",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 40,
+      "family": "chart",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 38,
+      "family": "comment",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 1844,
+      "family": "content_control",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 3662,
+      "family": "drawing_container",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 568,
+      "family": "endnote",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 2931,
+      "family": "field",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 2768,
+      "family": "floating_drawing",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 326,
+      "family": "footer",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 588,
+      "family": "footnote",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 235,
+      "family": "header",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 1175,
+      "family": "hyperlink",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 894,
+      "family": "inline_drawing",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 2480,
+      "family": "media_reference",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 147088,
+      "family": "paragraph",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 2440,
+      "family": "picture",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 160095,
+      "family": "run",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 1027,
+      "family": "section",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 14,
+      "family": "smartart",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 1341,
+      "family": "table",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 6550,
+      "family": "textbox",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 113,
+      "family": "tracked_change",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 17628,
+      "family": "unknown_extension_object",
+      "format": "docx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    }
+  ],
+  "schema_version": "p56-docx-semantic-understanding-matrix-v1",
+  "summary": {
+    "docx_dependency_owner_pass_count": 361745,
+    "docx_dependency_resolution_exception_count": 0,
+    "docx_family_count": 24,
+    "docx_family_format_cell_count": 24,
+    "docx_inspection_pass_count": 361745,
+    "docx_missing_part_count": 0,
+    "docx_object_candidate_count": 361745,
+    "docx_office_open_pass_count": 185,
+    "docx_office_repair_dialog_count": 0,
+    "docx_package_count": 185,
+    "docx_parse_failure_count": 0,
+    "docx_public_overclaim_count": 0,
+    "docx_relationship_loss_count": 0,
+    "docx_understanding_level_at_least_u2_count": 361745,
+    "docx_unexplained_missing_field_count": 0,
+    "docx_unintended_binary_mutation_count": 0,
+    "source_p54_gate_pass": true,
+    "source_p55_gate_pass": true
+  },
+  "warnings": []
+}

@@ -1,0 +1,94 @@
+{
+  "claim": "P93 MEASUREMENT: with the part-name-normalization preserve class and the new compliance stage in place, python-xlsx reads 841/841 preserve-compatible over the 846-file corpus, and the compliance stage — pointed at real artifacts for the first time — finds 29 workbooks whose active edit ships two shared string tables. Not a gate: it records the water level the new instruments actually measure.",
+  "ok": false,
+  "env": {
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_XLSX_COMPAT_JSON": "../ooxml-test-framework/tools/compat-test/results/runs/xlsx-p93-20260803T2100Z/results_xlsx.json",
+    "OOXML_XLSX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/xlsx",
+    "OOXML_XLSX_RUNNER": "../ooxml-test-framework/tools/compat-test/run_xlsx.py"
+  },
+  "expected_metrics": {
+    "total": 846,
+    "zip_valid": 841,
+    "open_pass": 841,
+    "open_fail": 5,
+    "open_timeout": 0,
+    "passive_roundtrip_pass": 841,
+    "passive_roundtrip_fail": 0,
+    "preserve_all_pass": 787,
+    "preserve_partial": 54,
+    "preserve_none": 0,
+    "preserve_compatible_all": 841,
+    "preserve_partial_unexplained": 0,
+    "synthesized_content_types": 0,
+    "strict_namespace_normalization": 0,
+    "part_name_normalization": 54,
+    "active_roundtrip_pass": 833,
+    "active_roundtrip_fail": 8,
+    "active_roundtrip_skip": 5,
+    "compliance_clean": 812,
+    "compliance_introduced": 29,
+    "compliance_error": 0,
+    "open_pass_rate": 99.4,
+    "passive_roundtrip_pass_rate": 100.0,
+    "preserve_compatible_rate": 100.0,
+    "active_roundtrip_pass_rate": 99.05,
+    "compliance_clean_rate": 96.55
+  },
+  "framework_changes": [
+    {
+      "id": "preserve-part-name-normalization",
+      "repo": "ooxml-test-framework",
+      "commit": "8a840c7",
+      "effect": "preserve_partial_unexplained 54 -> 0. All 54 were source packages spelling parts with backslash separators or a lower-cased [content_types].xml; python-xlsx writing the canonical OPC name is a repair, and there was no compatibility class for it. python-xlsx preserve is 841/841, not 93.6%."
+    },
+    {
+      "id": "compat-compliance-stage",
+      "repo": "ooxml-test-framework",
+      "commit": "73d50f5",
+      "effect": "The shared rule registry now scans every roundtrip output, with source findings subtracted so only introduced defects count. Preserve cannot see this class: it compares output to input, so a package broken the same way on both sides passes 7/7. That is precisely how the P91 P0 survived preserve and passive roundtrip and surfaced only as a chance IndexError on reopen."
+    },
+    {
+      "id": "rule-robustness",
+      "repo": "ooxml-test-framework",
+      "commit": "9ca9158",
+      "effect": "UTF-16 XML parts no longer crash a scan (16 files); part lookup is case- and separator-insensitive per OPC (removed 3 false positives); new rule part_name_case_unique."
+    }
+  ],
+  "open_items": [
+    {
+      "id": "xlsx-duplicate-sst-part-different-case",
+      "severity": "P0",
+      "count": 29,
+      "owner": "python-xlsx",
+      "symptom": "Active edit output contains both xl/sharedstrings.xml (the source table, e.g. 38 entries) and xl/sharedStrings.xml (a fresh table holding only the newly written string). Reported as part_name_case_unique plus 408 shared_string_index_in_range findings.",
+      "root_cause": "SharedStrings.flush() looks the part up by its canonical name only. OPC compares part names case-insensitively, so a package already carrying the lower-cased spelling is treated as having no shared string table and a second one is created.",
+      "impact": "Silent data corruption. A reader resolving the new part sees every existing index rebound to a different string. Preserve passes 7/7 and the reopen check passes; only the compliance stage names it.",
+      "repro": "spreadJS/1111.xlsx — open, write any string cell, save, list the archive."
+    },
+    {
+      "id": "xlsx-chartsheet-no-flush",
+      "severity": "P1",
+      "count": 7,
+      "owner": "python-xlsx",
+      "symptom": "AttributeError: 'Chartsheet' object has no attribute 'flush' during save.",
+      "note": "Regression against the P92 measurement (active 840 -> 833). The chartsheet type dispatch added after P92 plugs the API leak but the new type does not implement the save-time protocol."
+    },
+    {
+      "id": "xlsx-placeholder-sheet-empty-rid",
+      "severity": "P2",
+      "count": 1,
+      "owner": "python-xlsx",
+      "symptom": "KeyError: \"'ARIMA Module' has no worksheet part (empty r:id); it is a placeholder sheet\". Was the P92 open item; now a typed error rather than a bare KeyError on ''."
+    },
+    {
+      "id": "xlsx-non-zip-ole2",
+      "severity": "boundary",
+      "count": 5,
+      "owner": "none",
+      "symptom": "BadZipFile — legacy OLE2 .xls content with an .xlsx extension. Documented substrate boundary."
+    }
+  ],
+  "next_gate": "P94 requires compliance_introduced == 0 with xlsx-duplicate-sst-part-different-case closed and a regression test that opens a workbook whose sst part is spelled xl/sharedstrings.xml, writes a string cell, saves, and asserts the archive holds exactly one shared string part. active_roundtrip_pass_rate must also return to >= 99.8 with the chartsheet save path implemented.",
+  "notes": "Compliance counts only findings absent from the source package; every number above is attributable to the library. The docx and pptx corpora have not yet been re-run under the compliance stage — 10-file smoke runs of each are clean."
+}

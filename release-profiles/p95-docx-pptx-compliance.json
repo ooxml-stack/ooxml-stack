@@ -1,0 +1,88 @@
+{
+  "claim": "P95 MEASUREMENT: the compliance stage — new at P93, previously only smoke-run at 10 files per format — was pointed at the full docx (2333) and pptx (720) corpora for the first time. pptx is clean at 715/715. docx found two introduced defects; one was a silent image-loss bug in the OPC reader, now fixed, leaving a single pathological LibreOffice fixture.",
+  "ok": false,
+  "env": {
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_DOCX_COMPAT_JSON": "/tmp/p95b/results_docx.json",
+    "OOXML_PPTX_COMPAT_JSON": "/tmp/p95/results_pptx.json",
+    "OOXML_DOCX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/docx",
+    "OOXML_PPTX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/pptx"
+  },
+  "expected_metrics": {
+    "docx": {
+      "total": 2333,
+      "zip_valid": 2319,
+      "open_pass": 2311,
+      "open_fail": 22,
+      "passive_roundtrip_pass": 2311,
+      "passive_roundtrip_fail": 0,
+      "preserve_compatible_all": 2310,
+      "preserve_partial_unexplained": 1,
+      "active_roundtrip_pass": 2311,
+      "active_roundtrip_fail": 0,
+      "active_roundtrip_skip": 22,
+      "compliance_clean": 2310,
+      "compliance_introduced": 1,
+      "compliance_error": 0
+    },
+    "pptx": {
+      "total": 720,
+      "zip_valid": 716,
+      "open_pass": 715,
+      "open_fail": 5,
+      "passive_roundtrip_pass": 715,
+      "passive_roundtrip_fail": 0,
+      "preserve_compatible_all": 714,
+      "preserve_partial_unexplained": 1,
+      "active_roundtrip_pass": 715,
+      "active_roundtrip_fail": 0,
+      "active_roundtrip_skip": 5,
+      "compliance_clean": 715,
+      "compliance_introduced": 0,
+      "compliance_error": 0
+    }
+  },
+  "closed_in_p95": [
+    {
+      "id": "opc-declared-tmp-part-dropped",
+      "severity": "P1",
+      "repo": "ooxml-core",
+      "commit": "103d288",
+      "symptom": "blip_fill_integrity: <a:blip r:embed=\"rId4\"> target \"media/image1.tmp\" not found in package (libreoffice/fdo65833.docx).",
+      "root_cause": "_is_zip_trash treated any entry ending .tmp/.bak/.swp/~ as an editor backup. The package declares <Default Extension=\"tmp\" ContentType=\"image/png\"/> and references word/media/image1.tmp from a relationship — it is a part. The reader deleted it, the rel went dangling, and save() wrote a document whose image was gone.",
+      "impact": "Silent data loss on open/save. Preserve missed it because the part was dropped consistently on both sides of the comparison; only the compliance stage, which validates the output against the rules rather than against the input, named it.",
+      "fix": "A [Content_Types].xml Override or Default outranks the backup-suffix heuristic. Location-based trash ([trash]/, __MACOSX/, .DS_Store, ~$lock) is still dropped unconditionally.",
+      "verification": "fdo65833.docx open->save now loses zero entries; docx compliance_introduced 2 -> 1."
+    }
+  ],
+  "open_items": [
+    {
+      "id": "docx-casing-duplicate-rels-part",
+      "severity": "P2",
+      "count": 1,
+      "owner": "python-docx",
+      "symptom": "part_name_case_unique: output contains 'WORD/_rels/DOCUMENT.XML.rels' duplicating 'word/_rels/document.xml.rels'. libreoffice/casing.docx.",
+      "root_cause": "The source deliberately ships both word/document.xml and WORD/DOCUMENT.XML as separate ZIP entries. Both load as distinct parts and the writer emits a rels item for each; under OPC case-insensitive comparison the two rels items are the same part name.",
+      "note": "Pathological LibreOffice fixture, not a shape seen outside it. The fix is to fold case-duplicate parts on load rather than to special-case the writer."
+    },
+    {
+      "id": "docx-open-fail-22",
+      "severity": "boundary",
+      "count": 22,
+      "owner": "none",
+      "symptom": "Triaged: 14 non-ZIP (12 libreoffice, 2 openoffice), 4 missing [Content_Types].xml, 4 malformed XML in the main part (tag mismatch, duplicate w:val, invalid StartTag, trailing content).",
+      "evidence": "libreoffice/tdf132596.docx (no content types), libreoffice/math-malformed_xml.docx, libreoffice/tdf165348_broken_package.docx, phpoffice/corrupted_main_document_part.docx, phpoffice/header-footer-with-custom-macro.docx.",
+      "note": "Every one is a deliberately corrupt bug-repro fixture from the LibreOffice/phpoffice suites. Rejecting them is correct behaviour, not a gap."
+    },
+    {
+      "id": "pptx-open-fail-5",
+      "severity": "boundary",
+      "count": 5,
+      "owner": "none",
+      "symptom": "Triaged: 4 non-ZIP (incl. libreoffice/empty.pptx, a zero-content fixture, and phpoffice/SamplePassword.pptx, an encrypted OLE2 container) and 1 malformed XML (phpoffice/Sample_01_Simple.pptx, bad attribute name at line 25).",
+      "note": "SamplePassword.pptx is the only one with a plausible future path — ooxml-core ships opc/crypto.py, so agile-encrypted packages could be opened with a password rather than reported as non-ZIP."
+    }
+  ],
+  "next_gate": "P96 requires docx compliance_introduced == 0 with docx-casing-duplicate-rels-part resolved, the open-failure triage is now recorded.",
+  "notes": "Compliance counts only findings absent from the source package. The docx figures above are the post-fix re-run (/tmp/p95b); the first run at 103d288's parent read compliance_introduced 2. pptx was not re-run — its single change is in the shared OPC reader and its introduced count was already 0."
+}

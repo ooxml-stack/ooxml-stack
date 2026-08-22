@@ -1,0 +1,4 @@
+# Explicitly retained Office packages under release-evidence.
+#
+# Keep this list narrow. Add only failure reproductions, release gate bundles,
+# or pinned golden samples that must remain in git/LFS.

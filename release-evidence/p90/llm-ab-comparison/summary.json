@@ -1,0 +1,13 @@
+{
+  "claim": "P90 paired A/B comparison: SH public path vs model-default Office editing path under the same task set.",
+  "gate_pass": true,
+  "paired_ab_task_count": 20,
+  "paired_required_task_count": 20,
+  "paired_ab_sh_pass_count": 20,
+  "paired_ab_model_default_result_recorded_count": 20,
+  "paired_ab_model_default_contract_pass_count": 0,
+  "paired_ab_sh_native_office_fail_count": 0,
+  "paired_ab_sh_wrong_target_count": 0,
+  "paired_ab_sh_sibling_mutation_count": 0,
+  "baseline_boundary": "Baseline failures mean no comparable object-level contract was available, not that raw XML editing is impossible."
+}

@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "name": "pptx-semantic-handle-inventory.json",
+      "path": "pptx-semantic-handle-inventory.json",
+      "role": "p47-pptx-handle-inventory",
+      "sha256": "07e9ee298773aa10b04ef06c982d224383db7f87ba00850142fa19889dd6a8c0",
+      "size_bytes": 2255283
+    },
+    {
+      "name": "pptx-semantic-status-summary.json",
+      "path": "pptx-semantic-status-summary.json",
+      "role": "p47-summary",
+      "sha256": "3b32845faa9ed0301a7abbb205d6275a01efb03c9175498643fb85ccae67e102",
+      "size_bytes": 1104
+    },
+    {
+      "name": "P47-PPTX-SHAPE-DRAWING-SEMANTIC-HANDLES.md",
+      "path": "../../docs/P47-PPTX-SHAPE-DRAWING-SEMANTIC-HANDLES.md",
+      "role": "audit-doc",
+      "sha256": "58166283826588ca8d5f48cd765669c29b64d38d8a25e515101ffe757199a08a",
+      "size_bytes": 1123
+    }
+  ],
+  "schema_version": "p47-release-evidence-manifest-v1"
+}

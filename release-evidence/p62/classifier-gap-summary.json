@@ -1,0 +1,40 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-02T16:58:51.150011+00:00",
+  "generator_name": "classifier-gap-summary",
+  "generator_version_or_commit": "local-worktree",
+  "input_evidence": {},
+  "rows": [],
+  "schema_version": "p62-classifier-gap-summary-v1",
+  "summary": {
+    "alternate_content_count": 10147,
+    "classified_family_counts": {
+      "bibliography": 166,
+      "chart_drawing": 1179,
+      "chart_extension": 37718,
+      "custom_xml_payload": 1052,
+      "custom_xml_property": 1835,
+      "custom_xml_schema": 10810,
+      "drawing_extension": 300,
+      "legacy_office_drawing": 10225,
+      "math_object": 4361,
+      "office_extension": 1461046,
+      "package_property": 34247,
+      "sharepoint_property": 320,
+      "vendor_private_extension": 2089254,
+      "vml_drawing": 41361,
+      "wps_extension": 1063
+    },
+    "classifier_exception_count": 0,
+    "docprops_extension_misclassification_count": 0,
+    "known_office_extension_classified_count": 1555011,
+    "object_candidate_count": 4897568,
+    "preserve_only_count": 10147,
+    "selected_supported_valid_package_count": 361,
+    "unclassified_object_count": 0,
+    "unknown_extension_object_count": 0,
+    "unknown_namespace_without_family_count": 0
+  },
+  "warnings": []
+}

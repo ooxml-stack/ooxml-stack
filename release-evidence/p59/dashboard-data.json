@@ -1,0 +1,3381 @@
+{
+  "case_rows_sample": [
+    {
+      "family": "alternate_content",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "bookmark",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "chart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "comment",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "content_control",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "drawing_container",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "endnote",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "field",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "floating_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "footer",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "footnote",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "header",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "hyperlink",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "inline_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "media_reference",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "paragraph",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "picture",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "run",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "section",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "smartart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "table",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "textbox",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "tracked_change",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "chart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "graphic_frame",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "group_shape",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "layout",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "master",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "media_reference",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "notes",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "picture",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "shape",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "slide",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "smartart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "table",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "text_frame",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "bookmark",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "chart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "comment",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "content_control",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "drawing_container",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "endnote",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "field",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "floating_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "footer",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "footnote",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "header",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "hyperlink",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "inline_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "media_reference",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "paragraph",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "picture",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "run",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "section",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "smartart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "table",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "textbox",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "tracked_change",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "chart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "graphic_frame",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "group_shape",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "layout",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "master",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "media_reference",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "notes",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "picture",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "shape",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "slide",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "smartart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "table",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "text_frame",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:1:cf93060175c522cc",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:2:c229db9ebbf65212",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:3:1d3c015cfe0efe14",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:4:a6daf1d87afe1d32",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:5:8191ba4d0a943daa",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:6:1fb81a99ec53370c",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:7:363ab0e99c45de30",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:8:3980dcb25565c4f8",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:9:2c8088beb4874249",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:10:1037a094f898f4ae",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:11:d3abb373dbd67631",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:12:3dfba115495624d6",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:13:cc03f50e6b3044f4",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:14:cfad1f70ce2a8829",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:15:b1b911dc336366ac",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:16:06fe095e061f40c0",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:17:28df4ac9ffa3a041",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:18:228a6eb3ebafda63",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:19:0e8402bb1c0b12ea",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:20:7da0fb87007db5ec",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:21:a80429536abb97c6",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/app.xml",
+      "stable_id": "unknown_extension_object:22:f41e462bebf9748d",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:1:412b4bb96fca56f3",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:2:2c611699d050b5d1",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:3:e2165eb2183aa7af",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:4:ac4affdc9e115eb9",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:5:30e84916cdb42597",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:6:e5979d300a29bb44",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "docProps/core.xml",
+      "stable_id": "unknown_extension_object:7:d7e812d60b72362d",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart1.xml",
+      "stable_id": "alternate_content:1:868b365ec5cfadb8",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart1.xml",
+      "stable_id": "unknown_extension_object:1:f0f7be19b35db07a",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart1.xml",
+      "stable_id": "chart:1:43c6cbf6beff876f",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart1.xml",
+      "stable_id": "unknown_extension_object:2:cb2267e4914cf89e",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart10.xml",
+      "stable_id": "alternate_content:1:dbf7746a8009aabf",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart10.xml",
+      "stable_id": "unknown_extension_object:1:b193724d775fea7f",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart10.xml",
+      "stable_id": "chart:1:a78ea13c2280f8ec",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart10.xml",
+      "stable_id": "unknown_extension_object:2:7ef68f4d7430fa70",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart100.xml",
+      "stable_id": "alternate_content:1:8b344239c81d4dfc",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart100.xml",
+      "stable_id": "unknown_extension_object:1:48fa877b2888ed6f",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart100.xml",
+      "stable_id": "chart:1:f5134869522d3843",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart100.xml",
+      "stable_id": "unknown_extension_object:2:a934137ba8fd9bf0",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart101.xml",
+      "stable_id": "alternate_content:1:658e3ea0294a5c91",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart101.xml",
+      "stable_id": "unknown_extension_object:1:ec4bc7f32ced4632",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart101.xml",
+      "stable_id": "chart:1:0b16d7c0bd568d9c",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart101.xml",
+      "stable_id": "unknown_extension_object:2:bfff2986dd19b6bf",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart101.xml",
+      "stable_id": "unknown_extension_object:3:d0646193cb240daa",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart101.xml",
+      "stable_id": "unknown_extension_object:4:86b2774163b30473",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "alternate_content:1:d724916519501063",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "unknown_extension_object:1:0e2a4d98c8896aca",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "chart:1:0bc42615b431051f",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "unknown_extension_object:2:75569164ca6bdd39",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "unknown_extension_object:3:059f9c722a200ff7",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "unknown_extension_object:4:bf24b426a6309329",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart102.xml",
+      "stable_id": "unknown_extension_object:5:6b1dd4304c905652",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "alternate_content:1:60c9ce2a6702ecaa",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "unknown_extension_object:1:da7c1dbf5f58ff45",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "chart:1:f28a3349ad457506",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "unknown_extension_object:2:d3885033baa86ce3",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "unknown_extension_object:3:c5725db88a816199",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "unknown_extension_object:4:592d2dede3124104",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "unknown_extension_object:5:147eece4d8d2913c",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart103.xml",
+      "stable_id": "unknown_extension_object:6:dc1e519676d1be13",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart104.xml",
+      "stable_id": "alternate_content:1:010f7069a29a6c44",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart104.xml",
+      "stable_id": "unknown_extension_object:1:8ba365b9d871fe17",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart104.xml",
+      "stable_id": "chart:1:a66579784b37761d",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart104.xml",
+      "stable_id": "unknown_extension_object:2:3dbfdeeaa425a56c",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart104.xml",
+      "stable_id": "unknown_extension_object:3:311ee41ba0647251",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart104.xml",
+      "stable_id": "unknown_extension_object:4:83ddcafc3ac32cd1",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart105.xml",
+      "stable_id": "alternate_content:1:9f9a4a9526ec13d0",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart105.xml",
+      "stable_id": "unknown_extension_object:1:7f9a7a792d9d1906",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart105.xml",
+      "stable_id": "chart:1:3fa0366ec5fcb490",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart105.xml",
+      "stable_id": "unknown_extension_object:2:9580f570f21156b9",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart105.xml",
+      "stable_id": "unknown_extension_object:3:155aab6f61a8a552",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart106.xml",
+      "stable_id": "alternate_content:1:632d76a7378da061",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart106.xml",
+      "stable_id": "unknown_extension_object:1:5b3f3283d9c63319",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart106.xml",
+      "stable_id": "chart:1:99c09ca428ab6c8f",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart106.xml",
+      "stable_id": "unknown_extension_object:2:4d6d777b48d30d38",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart107.xml",
+      "stable_id": "alternate_content:1:00339e52e7767a4d",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart107.xml",
+      "stable_id": "unknown_extension_object:1:620ddf24a0429b57",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart107.xml",
+      "stable_id": "chart:1:6f3e0c54d6914fd9",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart107.xml",
+      "stable_id": "unknown_extension_object:2:52a103963ba334bb",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart108.xml",
+      "stable_id": "alternate_content:1:a884d4c965f08610",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart108.xml",
+      "stable_id": "unknown_extension_object:1:ea0f8f04581cba63",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart108.xml",
+      "stable_id": "chart:1:46c954a55c3c3134",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart108.xml",
+      "stable_id": "unknown_extension_object:2:fc50fb02363201c7",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart108.xml",
+      "stable_id": "unknown_extension_object:3:dfb4b0a6093d453d",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart108.xml",
+      "stable_id": "unknown_extension_object:4:aa801e2e7d68d40d",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart109.xml",
+      "stable_id": "alternate_content:1:bc74270ec67f6dd4",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart109.xml",
+      "stable_id": "unknown_extension_object:1:140136f9f240e1d4",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart109.xml",
+      "stable_id": "chart:1:9000834d84a29cb8",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart109.xml",
+      "stable_id": "unknown_extension_object:2:51441583cf77345a",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart109.xml",
+      "stable_id": "unknown_extension_object:3:05d41751fb6a4e3c",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart109.xml",
+      "stable_id": "unknown_extension_object:4:700e7e4a910925b2",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart11.xml",
+      "stable_id": "alternate_content:1:79ef744960b81ae3",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart11.xml",
+      "stable_id": "unknown_extension_object:1:6f983cd90e59f796",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart11.xml",
+      "stable_id": "chart:1:be4257482151f4e4",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart11.xml",
+      "stable_id": "unknown_extension_object:2:62f0580e59f7fafe",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "part_name": "ppt/charts/chart110.xml",
+      "stable_id": "alternate_content:1:44eff7b0d74c0e68",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "part_name": "ppt/charts/chart110.xml",
+      "stable_id": "unknown_extension_object:1:22d4b6cecf709a16",
+      "status": "preserve-only",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "part_name": "ppt/charts/chart110.xml",
+      "stable_id": "chart:1:56935097322ea7bd",
+      "status": "inspectable",
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "",
+      "part_name": "",
+      "stable_id": "",
+      "status": "",
+      "understanding_level": ""
+    },
+    {
+      "family": "picture",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "picture",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "textbox",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "textbox",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "smartart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "smartart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "wordart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "wordart",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "inline_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "inline_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "floating_anchor",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "floating_anchor",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "canvas_wpc",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "canvas_wpc",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "group_wpg",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "group_wpg",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "chart_in_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "chart_in_drawing",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "mixed_drawing_case",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    },
+    {
+      "family": "mixed_drawing_case",
+      "part_name": "",
+      "stable_id": "",
+      "status": "active-proven-from-p42",
+      "understanding_level": ""
+    }
+  ],
+  "claim_boundary": "Measured DOCX/PPTX object-candidate semantic understanding; not full Office compatibility or universal editing.",
+  "family_status_matrix": [
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "bookmark",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "comment",
+      "value": ""
+    },
+    {
+      "family": "content_control",
+      "value": ""
+    },
+    {
+      "family": "drawing_container",
+      "value": ""
+    },
+    {
+      "family": "endnote",
+      "value": ""
+    },
+    {
+      "family": "field",
+      "value": ""
+    },
+    {
+      "family": "floating_drawing",
+      "value": ""
+    },
+    {
+      "family": "footer",
+      "value": ""
+    },
+    {
+      "family": "footnote",
+      "value": ""
+    },
+    {
+      "family": "header",
+      "value": ""
+    },
+    {
+      "family": "hyperlink",
+      "value": ""
+    },
+    {
+      "family": "inline_drawing",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "paragraph",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "run",
+      "value": ""
+    },
+    {
+      "family": "section",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "textbox",
+      "value": ""
+    },
+    {
+      "family": "tracked_change",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "graphic_frame",
+      "value": ""
+    },
+    {
+      "family": "group_shape",
+      "value": ""
+    },
+    {
+      "family": "layout",
+      "value": ""
+    },
+    {
+      "family": "master",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "notes",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "shape",
+      "value": ""
+    },
+    {
+      "family": "slide",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "text_frame",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "bookmark",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "comment",
+      "value": ""
+    },
+    {
+      "family": "content_control",
+      "value": ""
+    },
+    {
+      "family": "drawing_container",
+      "value": ""
+    },
+    {
+      "family": "endnote",
+      "value": ""
+    },
+    {
+      "family": "field",
+      "value": ""
+    },
+    {
+      "family": "floating_drawing",
+      "value": ""
+    },
+    {
+      "family": "footer",
+      "value": ""
+    },
+    {
+      "family": "footnote",
+      "value": ""
+    },
+    {
+      "family": "header",
+      "value": ""
+    },
+    {
+      "family": "hyperlink",
+      "value": ""
+    },
+    {
+      "family": "inline_drawing",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "paragraph",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "run",
+      "value": ""
+    },
+    {
+      "family": "section",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "textbox",
+      "value": ""
+    },
+    {
+      "family": "tracked_change",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "graphic_frame",
+      "value": ""
+    },
+    {
+      "family": "group_shape",
+      "value": ""
+    },
+    {
+      "family": "layout",
+      "value": ""
+    },
+    {
+      "family": "master",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "notes",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "shape",
+      "value": ""
+    },
+    {
+      "family": "slide",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "text_frame",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "alternate_content",
+      "value": "preserve-only"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "preserve-only"
+    },
+    {
+      "family": "chart",
+      "value": "inspectable"
+    },
+    {
+      "family": "picture",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "picture",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "textbox",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "textbox",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "smartart",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "smartart",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "wordart",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "wordart",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "inline_drawing",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "inline_drawing",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "floating_anchor",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "floating_anchor",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "canvas_wpc",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "canvas_wpc",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "group_wpg",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "group_wpg",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "chart_in_drawing",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "chart_in_drawing",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "mixed_drawing_case",
+      "value": "active-proven-from-p42"
+    },
+    {
+      "family": "mixed_drawing_case",
+      "value": "active-proven-from-p42"
+    }
+  ],
+  "family_understanding_matrix": [
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "bookmark",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "comment",
+      "value": ""
+    },
+    {
+      "family": "content_control",
+      "value": ""
+    },
+    {
+      "family": "drawing_container",
+      "value": ""
+    },
+    {
+      "family": "endnote",
+      "value": ""
+    },
+    {
+      "family": "field",
+      "value": ""
+    },
+    {
+      "family": "floating_drawing",
+      "value": ""
+    },
+    {
+      "family": "footer",
+      "value": ""
+    },
+    {
+      "family": "footnote",
+      "value": ""
+    },
+    {
+      "family": "header",
+      "value": ""
+    },
+    {
+      "family": "hyperlink",
+      "value": ""
+    },
+    {
+      "family": "inline_drawing",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "paragraph",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "run",
+      "value": ""
+    },
+    {
+      "family": "section",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "textbox",
+      "value": ""
+    },
+    {
+      "family": "tracked_change",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "graphic_frame",
+      "value": ""
+    },
+    {
+      "family": "group_shape",
+      "value": ""
+    },
+    {
+      "family": "layout",
+      "value": ""
+    },
+    {
+      "family": "master",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "notes",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "shape",
+      "value": ""
+    },
+    {
+      "family": "slide",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "text_frame",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "bookmark",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "comment",
+      "value": ""
+    },
+    {
+      "family": "content_control",
+      "value": ""
+    },
+    {
+      "family": "drawing_container",
+      "value": ""
+    },
+    {
+      "family": "endnote",
+      "value": ""
+    },
+    {
+      "family": "field",
+      "value": ""
+    },
+    {
+      "family": "floating_drawing",
+      "value": ""
+    },
+    {
+      "family": "footer",
+      "value": ""
+    },
+    {
+      "family": "footnote",
+      "value": ""
+    },
+    {
+      "family": "header",
+      "value": ""
+    },
+    {
+      "family": "hyperlink",
+      "value": ""
+    },
+    {
+      "family": "inline_drawing",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "paragraph",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "run",
+      "value": ""
+    },
+    {
+      "family": "section",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "textbox",
+      "value": ""
+    },
+    {
+      "family": "tracked_change",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "alternate_content",
+      "value": ""
+    },
+    {
+      "family": "chart",
+      "value": ""
+    },
+    {
+      "family": "graphic_frame",
+      "value": ""
+    },
+    {
+      "family": "group_shape",
+      "value": ""
+    },
+    {
+      "family": "layout",
+      "value": ""
+    },
+    {
+      "family": "master",
+      "value": ""
+    },
+    {
+      "family": "media_reference",
+      "value": ""
+    },
+    {
+      "family": "notes",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "shape",
+      "value": ""
+    },
+    {
+      "family": "slide",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "table",
+      "value": ""
+    },
+    {
+      "family": "text_frame",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": ""
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "alternate_content",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "unknown_extension_object",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "chart",
+      "value": "U2-dependency-resolved"
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "picture",
+      "value": ""
+    },
+    {
+      "family": "textbox",
+      "value": ""
+    },
+    {
+      "family": "textbox",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "smartart",
+      "value": ""
+    },
+    {
+      "family": "wordart",
+      "value": ""
+    },
+    {
+      "family": "wordart",
+      "value": ""
+    },
+    {
+      "family": "inline_drawing",
+      "value": ""
+    },
+    {
+      "family": "inline_drawing",
+      "value": ""
+    },
+    {
+      "family": "floating_anchor",
+      "value": ""
+    },
+    {
+      "family": "floating_anchor",
+      "value": ""
+    },
+    {
+      "family": "canvas_wpc",
+      "value": ""
+    },
+    {
+      "family": "canvas_wpc",
+      "value": ""
+    },
+    {
+      "family": "group_wpg",
+      "value": ""
+    },
+    {
+      "family": "group_wpg",
+      "value": ""
+    },
+    {
+      "family": "chart_in_drawing",
+      "value": ""
+    },
+    {
+      "family": "chart_in_drawing",
+      "value": ""
+    },
+    {
+      "family": "mixed_drawing_case",
+      "value": ""
+    },
+    {
+      "family": "mixed_drawing_case",
+      "value": ""
+    }
+  ],
+  "generated_at_utc": "2026-06-02T00:21:35.388754+00:00",
+  "schema_version": "p59-semantic-understanding-dashboard-data-v1",
+  "summaries": {
+    "p52-semantic-understanding-contract-v1": {
+      "family_without_inspect_spec_count": 0,
+      "p51_docx_object_candidate_count": 361745,
+      "p51_docx_package_count": 185,
+      "p51_object_candidate_count": 1488628,
+      "p51_pptx_object_candidate_count": 1126883,
+      "p51_pptx_package_count": 176,
+      "p51_selected_supported_valid_package_count": 361,
+      "public_claim_beyond_measured_contract": 0,
+      "required_docx_family_count": 24,
+      "required_inspect_field_spec_count": 770,
+      "required_pptx_family_count": 15,
+      "required_total_family_format_cells": 39,
+      "status_value_count": 5,
+      "status_without_definition_count": 0,
+      "understanding_level_count": 6,
+      "understanding_level_without_definition_count": 0
+    },
+    "p53-semantic-object-registry-v1": {
+      "docx_only_family_count": 17,
+      "docx_registered_family_count": 24,
+      "duplicate_family_key_count": 0,
+      "family_with_dependency_rules_count": 39,
+      "family_with_required_fields_count": 39,
+      "family_with_status_rules_count": 39,
+      "host_specific_leak_count": 0,
+      "pptx_only_family_count": 8,
+      "pptx_registered_family_count": 15,
+      "registered_family_format_cells": 39,
+      "registry_schema_version_present": true,
+      "shared_family_count": 6,
+      "undefined_status_reference_count": 0,
+      "undefined_understanding_level_reference_count": 0
+    },
+    "p54-semantic-inspection-inventory-v1": {
+      "docx_inspection_row_count": 361745,
+      "duplicate_row_id_count": 0,
+      "family_format_cell_count": 39,
+      "family_format_cell_pass_count": 39,
+      "family_present_count": 1488628,
+      "inspect_extraction_exception_count": 0,
+      "inspection_row_count": 1488628,
+      "object_candidate_count": 1488628,
+      "pptx_inspection_row_count": 1126883,
+      "required_field_evaluated_count": 35187832,
+      "required_field_unexplained_missing_count": 0,
+      "selected_supported_valid_package_count": 361,
+      "stable_id_present_count": 1488628,
+      "status_present_count": 1488628,
+      "unclassified_object_count": 0,
+      "understanding_level_at_least_u1_count": 1488628
+    },
+    "p55-semantic-dependency-ownership-v1": {
+      "binary_dependency_hash_count": 29519,
+      "chart_dependency_bound_count": 9794,
+      "dangling_required_dependency_count": 0,
+      "dependency_category_counts": {
+        "alternate_content_branch": 10147,
+        "binary_media": 29519,
+        "chart_cache_or_data": 9794,
+        "chart_part": 9794,
+        "external_relationship": 604,
+        "internal_part": 1202631,
+        "layout_part": 15980,
+        "master_part": 3536,
+        "none": 0,
+        "notes_part": 6756,
+        "ole_or_embedded_package": 5693,
+        "opaque_extension": 285997,
+        "smartart_diagram_part": 183,
+        "theme_part": 3536
+      },
+      "dependency_owner_row_count": 1488628,
+      "dependency_resolution_exception_count": 0,
+      "family_format_cell_pass_count": 39,
+      "missing_required_part_count": 0,
+      "object_candidate_count": 1488628,
+      "object_with_dependency_decision_count": 1488628,
+      "object_with_owner_decision_count": 1488628,
+      "object_without_dependency_decision_count": 0,
+      "object_without_owner_decision_count": 0,
+      "opaque_dependency_reason_missing_count": 0,
+      "relationship_edge_count": 112082,
+      "relationship_target_unclassified_count": 0,
+      "selected_supported_valid_package_count": 361,
+      "smartart_dependency_bound_count": 183,
+      "theme_or_layout_dependency_bound_count": 19516
+    },
+    "p56-docx-semantic-understanding-v1": {
+      "docx_dependency_owner_pass_count": 361745,
+      "docx_dependency_resolution_exception_count": 0,
+      "docx_family_count": 24,
+      "docx_family_format_cell_count": 24,
+      "docx_inspection_pass_count": 361745,
+      "docx_missing_part_count": 0,
+      "docx_object_candidate_count": 361745,
+      "docx_office_open_pass_count": 185,
+      "docx_office_repair_dialog_count": 0,
+      "docx_package_count": 185,
+      "docx_parse_failure_count": 0,
+      "docx_public_overclaim_count": 0,
+      "docx_relationship_loss_count": 0,
+      "docx_understanding_level_at_least_u2_count": 361745,
+      "docx_unexplained_missing_field_count": 0,
+      "docx_unintended_binary_mutation_count": 0,
+      "source_p54_gate_pass": true,
+      "source_p55_gate_pass": true
+    },
+    "p57-pptx-semantic-understanding-v1": {
+      "pptx_dependency_owner_pass_count": 1126883,
+      "pptx_dependency_resolution_exception_count": 0,
+      "pptx_family_count": 15,
+      "pptx_family_format_cell_count": 15,
+      "pptx_inspection_pass_count": 1126883,
+      "pptx_missing_part_count": 0,
+      "pptx_object_candidate_count": 1126883,
+      "pptx_office_open_pass_count": 176,
+      "pptx_office_repair_dialog_count": 0,
+      "pptx_package_count": 176,
+      "pptx_parse_failure_count": 0,
+      "pptx_public_overclaim_count": 0,
+      "pptx_relationship_loss_count": 0,
+      "pptx_understanding_level_at_least_u2_count": 1126883,
+      "pptx_unexplained_missing_field_count": 0,
+      "pptx_unintended_binary_mutation_count": 0,
+      "source_p54_gate_pass": true,
+      "source_p55_gate_pass": true
+    },
+    "p58-cross-format-semantic-ir-v1": {
+      "docx_adapter_contract_pass": true,
+      "host_specific_leak_count": 0,
+      "ir_validation_error_count": 0,
+      "pptx_adapter_contract_pass": true,
+      "public_api_break_count": 0,
+      "registry_roundtrip_fail_count": 0,
+      "registry_roundtrip_pass_count": 39,
+      "shared_family_count": 6,
+      "shared_ir_concept_count": 12
+    },
+    "p60-semantic-editing-v1-launch-contract": {
+      "edit_contract_public_overclaim_count": 0,
+      "p42_active_editing_preserved": true,
+      "p42_desktop_word_open_pass": 208,
+      "p42_public_api_edit_or_control_pass": 208,
+      "p42_unique_handle_count": 208,
+      "p42_wrong_handle_mutation_count": 0,
+      "preserve_only_mutation_allowed_count": 0,
+      "semantic_editing_launch_family_count": 10,
+      "semantic_editing_launch_operation_count": 20,
+      "semantic_editing_launch_rows_active_proven": 208,
+      "semantic_editing_launch_rows_contract_only": 0,
+      "semantic_editing_launch_rows_defined": 208,
+      "unsafe_edit_silent_noop_count": 0,
+      "unsupported_mutation_allowed_count": 0
+    },
+    "p60-semantic-understanding-1-summary-v1": {
+      "docx_object_candidate_count": 361745,
+      "docx_package_count": 185,
+      "edit_contract_public_overclaim_count": 0,
+      "macro_dialog_timeout_count": 0,
+      "missing_required_part_count": 0,
+      "object_candidate_count": 1488628,
+      "object_without_dependency_decision_count": 0,
+      "object_without_owner_decision_count": 0,
+      "office_crash_count": 0,
+      "office_repair_dialog_count": 0,
+      "office_security_dialog_count": 0,
+      "p42_active_editing_preserved": true,
+      "p42_desktop_word_open_pass": 208,
+      "p42_public_api_edit_or_control_pass": 208,
+      "p42_unique_handle_count": 208,
+      "p42_wrong_handle_mutation_count": 0,
+      "p52_contract_gate_pass": true,
+      "p53_registry_gate_pass": true,
+      "p54_inspection_gate_pass": true,
+      "p55_dependency_ownership_gate_pass": true,
+      "p56_docx_understanding_gate_pass": true,
+      "p57_pptx_understanding_gate_pass": true,
+      "p58_cross_format_ir_gate_pass": true,
+      "p59_dashboard_validation_pass": true,
+      "pptx_object_candidate_count": 1126883,
+      "pptx_package_count": 176,
+      "preserve_only_mutation_allowed_count": 0,
+      "public_claim_beyond_measured_cells": 0,
+      "relationship_target_unclassified_count": 0,
+      "required_field_unexplained_missing_count": 0,
+      "selected_supported_valid_package_count": 361,
+      "semantic_editing_launch_family_count": 10,
+      "semantic_editing_launch_operation_count": 20,
+      "semantic_editing_launch_rows_active_proven": 208,
+      "semantic_editing_launch_rows_contract_only": 0,
+      "semantic_editing_launch_rows_defined": 208,
+      "semantic_understanding_fail_count": 0,
+      "semantic_understanding_pass_count": 1488628,
+      "semantic_understanding_row_count": 1488628,
+      "understanding_level_at_least_u2_count": 1488628,
+      "unsafe_edit_silent_noop_count": 0,
+      "unsupported_mutation_allowed_count": 0,
+      "xml_part_parse_failure_count": 0
+    }
+  },
+  "summary": {
+    "dashboard_static_open_pass": true,
+    "dashboard_validation_pass": true,
+    "docx_understanding_pass_displayed": true,
+    "edit_ready_family_rows_displayed": 10,
+    "family_format_cell_count_displayed": 39,
+    "hardcoded_metric_count": 0,
+    "json_source_metric_count": 166,
+    "object_candidate_count_displayed": 1488628,
+    "p42_active_editing_preserved_displayed": true,
+    "package_count_displayed": 361,
+    "pptx_understanding_pass_displayed": true,
+    "preserve_only_reason_rows_displayed": 1,
+    "public_claim_beyond_measured_cells": 0,
+    "unsupported_reason_rows_displayed": 0
+  }
+}

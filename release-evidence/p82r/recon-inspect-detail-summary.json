@@ -1,0 +1,19 @@
+{
+  "claim": "P82R inspect detail returns grouped previews before LLM acceptance.",
+  "inspect_detail_task_count": 1,
+  "inspect_detail_pass_count": 1,
+  "inspect_detail_missing_grouping_count": 0,
+  "tasks": [
+    {
+      "task_id": "pptx-slide-detail",
+      "input_file": "ooxml-native-corpus/corpus/pptx/pptx_chart_dense_203slides.pptx",
+      "target": "slides[0]",
+      "size_bytes": 1361,
+      "pass": true,
+      "shape_count": 4,
+      "has_preview": true,
+      "has_grouping": true
+    }
+  ],
+  "gate_pass": true
+}

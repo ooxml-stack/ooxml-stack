@@ -1,0 +1,24 @@
+{
+  "circular_dependency_count": 0,
+  "claim_boundary": "P39 aligns shared drawing contract vocabulary only; it does not claim full Office compatibility or full Word drawing parity.",
+  "commits": {
+    "ooxml_core": "f37f07b",
+    "python_docx": "5663444",
+    "python_pptx": "299a306c"
+  },
+  "docx_adapter_tests": 60,
+  "docx_regressions": 0,
+  "gate_pass": true,
+  "p38_docx_gate_after_alignment": "pass",
+  "pptx_adapter_tests": 26,
+  "pptx_regressions": 0,
+  "public_claim_beyond_measured_cells": 0,
+  "schema_version": "p39-drawing-contract-alignment-summary-v1",
+  "shared_contract_unit_tests": 62,
+  "shared_status_values": 4,
+  "status_out_of_scope": "present",
+  "status_preserve_only": "present",
+  "status_supported_active": "present",
+  "status_unsupported": "present",
+  "word_only_semantics_moved_to_core": 0
+}

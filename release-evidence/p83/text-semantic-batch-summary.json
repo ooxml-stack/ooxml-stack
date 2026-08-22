@@ -1,0 +1,52 @@
+{
+  "claim": "P83 expanded text semantic active editing batch evidence; still not full text/table denominator completion.",
+  "gate_pass": true,
+  "full_denominator_pass": false,
+  "rows_per_group": 25,
+  "max_input_bytes": 2000000,
+  "object_row_count": 100,
+  "object_row_pass_count": 100,
+  "package_output_count": 4,
+  "target_semantic_miss_count": 0,
+  "sibling_unexpected_semantic_mutation_count": 0,
+  "validation_failure_count": 0,
+  "groups": {
+    "docx:text_container": 25,
+    "docx:table_cell_text": 25,
+    "pptx:text_container": 25,
+    "pptx:table_cell_text": 25
+  },
+  "packages": [
+    {
+      "input_file": "corpus/docx/docx_policy_embedded_objects.docx",
+      "output_file": "ooxml-stack/release-evidence/p83/batch-outputs/batch-docx_policy_embedded_objects.docx",
+      "row_count": 50,
+      "pass": true
+    },
+    {
+      "input_file": "corpus/pptx/pptx_bgy_standard_sales_flow.pptx",
+      "output_file": "ooxml-stack/release-evidence/p83/batch-outputs/batch-pptx_bgy_standard_sales_flow.pptx",
+      "row_count": 25,
+      "pass": true
+    },
+    {
+      "input_file": "corpus/pptx/pptx_pdca_training.pptx",
+      "output_file": "ooxml-stack/release-evidence/p83/batch-outputs/batch-pptx_pdca_training.pptx",
+      "row_count": 24,
+      "pass": true
+    },
+    {
+      "input_file": "corpus/pptx/pptx_update_250715_charts.pptx",
+      "output_file": "ooxml-stack/release-evidence/p83/batch-outputs/batch-pptx_update_250715_charts.pptx",
+      "row_count": 1,
+      "pass": true
+    }
+  ],
+  "native_office_gate_pass": true,
+  "native_office_pass_count": 4,
+  "native_office_total_count": 4,
+  "native_office_repair_dialog_count": 0,
+  "native_office_security_dialog_count": 0,
+  "native_office_crash_count": 0,
+  "native_office_timeout_count": 0
+}

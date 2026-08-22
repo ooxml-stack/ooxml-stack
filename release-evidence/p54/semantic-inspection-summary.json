@@ -1,0 +1,24 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "schema_version": "p54-semantic-inspection-inventory-summary-v1",
+  "summary": {
+    "docx_inspection_row_count": 361745,
+    "duplicate_row_id_count": 0,
+    "family_format_cell_count": 39,
+    "family_format_cell_pass_count": 39,
+    "family_present_count": 1488628,
+    "inspect_extraction_exception_count": 0,
+    "inspection_row_count": 1488628,
+    "object_candidate_count": 1488628,
+    "pptx_inspection_row_count": 1126883,
+    "required_field_evaluated_count": 35187832,
+    "required_field_unexplained_missing_count": 0,
+    "selected_supported_valid_package_count": 361,
+    "stable_id_present_count": 1488628,
+    "status_present_count": 1488628,
+    "unclassified_object_count": 0,
+    "understanding_level_at_least_u1_count": 1488628
+  },
+  "warnings": []
+}

@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "name": "semantic-dependency-ownership.json",
+      "path": "semantic-dependency-ownership.json",
+      "role": "ownership",
+      "sha256": "1aa4a78d049051f4422615c999236890dea8c615efcb5021343da84b727fef5b",
+      "size_bytes": 2771
+    },
+    {
+      "name": "dependency-ownership-summary.json",
+      "path": "dependency-ownership-summary.json",
+      "role": "summary",
+      "sha256": "e21022137aa0a248c57d2823235497f6b7f0f41b9856c06f53a689c5888cb78f",
+      "size_bytes": 1445
+    },
+    {
+      "name": "dependency-coverage-matrix.json",
+      "path": "dependency-coverage-matrix.json",
+      "role": "matrix",
+      "sha256": "f5097534e3f2a8556b020e4599173bccb1f19a109ba3e489be408eb6cc71bbfc",
+      "size_bytes": 36345
+    },
+    {
+      "name": "P55-DOCX-PPTX-SEMANTIC-DEPENDENCY-OWNERSHIP-GATE.md",
+      "path": "../../docs/P55-DOCX-PPTX-SEMANTIC-DEPENDENCY-OWNERSHIP-GATE.md",
+      "role": "doc",
+      "sha256": "7f4111c80daa3dcc91081f48a5703cb89b88e143d1316250916654ad56f05b1b",
+      "size_bytes": 1545
+    }
+  ],
+  "schema_version": "p55-manifest-v1"
+}

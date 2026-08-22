@@ -1,0 +1,194 @@
+{
+  "artifacts": [
+    {
+      "name": "ooxml-semantic-inventory.json",
+      "path": "../p43/ooxml-semantic-inventory.json",
+      "role": "p43-inventory",
+      "sha256": "5102918f8b7b3aa3e8ed66907141779d8a6c42372c0d62e9548752767587bcd3",
+      "size_bytes": 4370974
+    },
+    {
+      "name": "ooxml-semantic-status-summary.json",
+      "path": "../p43/ooxml-semantic-status-summary.json",
+      "role": "p43-summary",
+      "sha256": "cde9c930ff3b2f49fa58ac834129d76b134708ea917c6d979ec9b754adc8d34d",
+      "size_bytes": 8950
+    },
+    {
+      "name": "P43-GLOBAL-OOXML-SEMANTIC-INVENTORY.md",
+      "path": "../../docs/P43-GLOBAL-OOXML-SEMANTIC-INVENTORY.md",
+      "role": "p43-doc",
+      "sha256": "e3757df44ae92ba82d682dc7bd0f7da98c296cd692e5c8fcbd0b81723b2fbe6f",
+      "size_bytes": 6052
+    },
+    {
+      "name": "opc-relationship-graph.json",
+      "path": "../p44/opc-relationship-graph.json",
+      "role": "p44-graph",
+      "sha256": "b79200f1511a3b25d263ab42fe81a4b71921834084ac18ef593667d0dac6b2ae",
+      "size_bytes": 3018673
+    },
+    {
+      "name": "part-ownership-summary.json",
+      "path": "../p44/part-ownership-summary.json",
+      "role": "p44-summary",
+      "sha256": "5f31c19586d99d7e7792d015a076c9bd420e9359042edc0127d80deee7e0319a",
+      "size_bytes": 6832
+    },
+    {
+      "name": "P44-OPC-RELATIONSHIP-GRAPH.md",
+      "path": "../../docs/P44-OPC-RELATIONSHIP-GRAPH.md",
+      "role": "p44-doc",
+      "sha256": "35d2dc6841a8a93f185536f6ceb6753e2510c0f057db3c78ea98aa3f51c2f59b",
+      "size_bytes": 6675
+    },
+    {
+      "name": "docx-non-drawing-handle-inventory.json",
+      "path": "../p45/docx-non-drawing-handle-inventory.json",
+      "role": "p45-inventory",
+      "sha256": "2de364f936cb29948588b07c01768216d7dbc49867827289336489965e37cd36",
+      "size_bytes": 1984400
+    },
+    {
+      "name": "docx-non-drawing-status-summary.json",
+      "path": "../p45/docx-non-drawing-status-summary.json",
+      "role": "p45-summary",
+      "sha256": "2ff3f8b454fe704b0247e2425a0e86e18d81accc66a6635b614832a8840042bb",
+      "size_bytes": 1110
+    },
+    {
+      "name": "P45-DOCX-NON-DRAWING-SEMANTIC-HANDLES.md",
+      "path": "../../docs/P45-DOCX-NON-DRAWING-SEMANTIC-HANDLES.md",
+      "role": "p45-doc",
+      "sha256": "d1741b08477b3d08284c7c4867d9185bf93769f5512e4d45f6c69864f1568af3",
+      "size_bytes": 1127
+    },
+    {
+      "name": "docx-drawing-deep-semantic-inventory.json",
+      "path": "../p46/docx-drawing-deep-semantic-inventory.json",
+      "role": "p46-inventory",
+      "sha256": "99068e1dcfcfd7b9a26f455a3206f4ae6e0c4c1df833c1aa29defc172a060ff8",
+      "size_bytes": 2529
+    },
+    {
+      "name": "docx-drawing-dependency-graph.json",
+      "path": "../p46/docx-drawing-dependency-graph.json",
+      "role": "p46-graph",
+      "sha256": "f5fc5cbb055359b166b217f00787439a5123b506a068f9a970a225d97119d2a7",
+      "size_bytes": 2124
+    },
+    {
+      "name": "docx-drawing-deep-summary.json",
+      "path": "../p46/docx-drawing-deep-summary.json",
+      "role": "p46-summary",
+      "sha256": "8d562527dcb60b748953c89388e5f6edfe3df697a24082b20fdc3d92b57520c9",
+      "size_bytes": 1328
+    },
+    {
+      "name": "P46-DOCX-DRAWING-DEEP-SEMANTICS.md",
+      "path": "../../docs/P46-DOCX-DRAWING-DEEP-SEMANTICS.md",
+      "role": "p46-doc",
+      "sha256": "2a3e8e592a66f7afe16052f367747ccd58f6595a39ad1fa7ea8458292f1764f4",
+      "size_bytes": 1373
+    },
+    {
+      "name": "pptx-semantic-handle-inventory.json",
+      "path": "../p47/pptx-semantic-handle-inventory.json",
+      "role": "p47-inventory",
+      "sha256": "07e9ee298773aa10b04ef06c982d224383db7f87ba00850142fa19889dd6a8c0",
+      "size_bytes": 2255283
+    },
+    {
+      "name": "pptx-semantic-status-summary.json",
+      "path": "../p47/pptx-semantic-status-summary.json",
+      "role": "p47-summary",
+      "sha256": "3b32845faa9ed0301a7abbb205d6275a01efb03c9175498643fb85ccae67e102",
+      "size_bytes": 1104
+    },
+    {
+      "name": "P47-PPTX-SHAPE-DRAWING-SEMANTIC-HANDLES.md",
+      "path": "../../docs/P47-PPTX-SHAPE-DRAWING-SEMANTIC-HANDLES.md",
+      "role": "p47-doc",
+      "sha256": "58166283826588ca8d5f48cd765669c29b64d38d8a25e515101ffe757199a08a",
+      "size_bytes": 1123
+    },
+    {
+      "name": "cross-format-drawingml-contract.json",
+      "path": "../p48/cross-format-drawingml-contract.json",
+      "role": "p48-contract",
+      "sha256": "d77112ac398b50e3580f3d70b6abd3f13c04f91b715035f1b0df13308f8995e0",
+      "size_bytes": 2167
+    },
+    {
+      "name": "P48-CROSS-FORMAT-DRAWINGML-SEMANTIC-CORE.md",
+      "path": "../../docs/P48-CROSS-FORMAT-DRAWINGML-SEMANTIC-CORE.md",
+      "role": "p48-doc",
+      "sha256": "57894b698996673fc5d85688b16080f44b4e63d430fc60913617ad3a37e22fc6",
+      "size_bytes": 1243
+    },
+    {
+      "name": "index.html",
+      "path": "../p49/dashboard/index.html",
+      "role": "p49-dashboard",
+      "sha256": "7b60dc92ae39e2da09ce5586bdb60fd401ff5779c45867a8c6aecaa23f75d1ae",
+      "size_bytes": 205166
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "../p49/dashboard-data.json",
+      "role": "p49-data",
+      "sha256": "2068662e07ac525ec93af483b45d25f5d78a85a8240678bc0a6f0d2406de8a07",
+      "size_bytes": 240298
+    },
+    {
+      "name": "dashboard-validation.json",
+      "path": "../p49/dashboard-validation.json",
+      "role": "p49-validation",
+      "sha256": "aa4756c71f5cf3117be04afd5445d4adbe1ccad2102a5090201ac144b9968739",
+      "size_bytes": 1153
+    },
+    {
+      "name": "P49-NATIVE-OFFICE-SEMANTIC-ORACLE-DASHBOARD.md",
+      "path": "../../docs/P49-NATIVE-OFFICE-SEMANTIC-ORACLE-DASHBOARD.md",
+      "role": "p49-doc",
+      "sha256": "ce021ea6208bfb35c15472c84395f6cdc8de5828d96f19e27de9d30e2a5fd367",
+      "size_bytes": 1072
+    },
+    {
+      "name": "public-api-capability-contract.json",
+      "path": "../p50/public-api-capability-contract.json",
+      "role": "p50-contract",
+      "sha256": "38d3c355d6c0a5694aee8e6aa47f0d3a43e1a78eaa16ed619b5ad962af676306",
+      "size_bytes": 1926
+    },
+    {
+      "name": "P50-PUBLIC-API-CAPABILITY-CONTRACT.md",
+      "path": "../../docs/P50-PUBLIC-API-CAPABILITY-CONTRACT.md",
+      "role": "p50-doc",
+      "sha256": "c3a924afe4093146613224347f5377811c82b07aece376bb087d2ab3a025d8ab",
+      "size_bytes": 1164
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "public-claim-boundary-scan.json",
+      "role": "p51-claim-scan",
+      "sha256": "9473344f58c372791c6c8d59757980a448a7c9623ab35d480de52328e910e5ad",
+      "size_bytes": 129
+    },
+    {
+      "name": "P51-OOXML-SEMANTIC-COMPATIBILITY-1-FREEZE.md",
+      "path": "../../docs/P51-OOXML-SEMANTIC-COMPATIBILITY-1-FREEZE.md",
+      "role": "p51-doc",
+      "sha256": "a72dc7346dc2f2a8fc5f78fdfab6fe71dd86f9dfc4f65641dd11d1279ebb5048",
+      "size_bytes": 4332
+    },
+    {
+      "name": "READINESS-98-AUDIT.md",
+      "path": "../../docs/READINESS-98-AUDIT.md",
+      "role": "readiness-audit",
+      "sha256": "ac409783d64a31ba11dda3b949eca8612b323e2b4136dad8549a973d168725d1",
+      "size_bytes": 28622
+    }
+  ],
+  "schema_version": "p51-ooxml-semantic-compatibility-manifest-v1"
+}

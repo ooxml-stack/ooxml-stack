@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-17T22:24:18Z",
+    "timeout_seconds": 240,
+    "dialog_wait_seconds": 30
+  },
+  "summary": {
+    "total": 1,
+    "pass": 0,
+    "pass_total": 0,
+    "repair_dialog_count": 0,
+    "unreadable_content_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 0,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "close_error": 1
+    },
+    "gate_pass": false
+  },
+  "results": [
+    {
+      "file": "ooxml-stack/release-evidence/former-preserve-only-semantic-editability/promotion-outputs/api-chunk-0002-62d0c21215-docx_p18_drawing_014_drawing.docx",
+      "app": "Microsoft Word",
+      "status": "close_error",
+      "message": "Microsoft Word got an error: User canceled.",
+      "exit_code": 0,
+      "stdout": "CLOSE_ERROR:Microsoft Word got an error: User canceled.",
+      "stderr": "",
+      "elapsed_seconds": 218.434
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "p68-pptx-preserve-only-zero-manifest-v1",
+  "artifacts": [
+    {
+      "name": "pptx-preserve-only-zero.json",
+      "path": "release-evidence/p68/pptx-preserve-only-zero.json",
+      "role": "p68-pptx-preserve-only-zero",
+      "sha256": "c833c8bde50b477d99db18612834bfc12e4582e55f6c8d6a9e069e78153e4283",
+      "size_bytes": 1481
+    },
+    {
+      "name": "pptx-preserve-only-zero-summary.json",
+      "path": "release-evidence/p68/pptx-preserve-only-zero-summary.json",
+      "role": "p68-pptx-preserve-only-zero-summary",
+      "sha256": "19165d25277e5d6935c5590f32806f4d9bce240d40b450fc7443cb23966e0d4d",
+      "size_bytes": 920
+    },
+    {
+      "name": "P68-PPTX-PRESERVE-ONLY-ZERO.md",
+      "path": "docs/P68-PPTX-PRESERVE-ONLY-ZERO.md",
+      "role": "p68-doc",
+      "sha256": "4779d4774a6fe98b7d8fc8443e07db234b897960aac46b5a7a9cbaf8bc668f8c",
+      "size_bytes": 1378
+    },
+    {
+      "name": "generic-extension-replay.json",
+      "path": "release-evidence/p67-p68/generic-extension-replay.json",
+      "role": "p67-p68-generic-extension-replay",
+      "sha256": "8446c096ce27a000b938bdd97262d3b650a3e63244c72aeae2568201e05950fe",
+      "size_bytes": 172772
+    },
+    {
+      "name": "generic-extension-office-gate.json",
+      "path": "release-evidence/p67-p68/generic-extension-office-gate.json",
+      "role": "p67-p68-generic-extension-office-gate",
+      "sha256": "882421dd0d0d32f9d7a0a03a979fb4aefedbb3fd80da8025cbe10fb0926c092f",
+      "size_bytes": 122386
+    },
+    {
+      "name": "excluded-original-office-gate.json",
+      "path": "release-evidence/p67-p68/excluded-original-office-gate.json",
+      "role": "p67-p68-excluded-original-office-gate",
+      "sha256": "483492738f71dde68c9c72131a71bfec1b5e6c611dee469bd76674c9dfb6bf6a",
+      "size_bytes": 1110
+    }
+  ]
+}

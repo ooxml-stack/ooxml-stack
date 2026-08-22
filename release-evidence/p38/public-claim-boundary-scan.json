@@ -1,0 +1,11 @@
+{
+  "claim_boundary": "100% compatibility under the P40 measured DOCX drawing active-editing v2 public-operation-row denominator.",
+  "gate_pass": true,
+  "hits": [],
+  "public_claim_beyond_measured_cells": 0,
+  "scanned_files": [
+    "ooxml-stack/docs/P38-DOCX-DRAWING-ACTIVE-OPERATION-EXPANSION-V2.md",
+    "python-docx/docs/dev/analysis/features/drawing-active-editing.rst"
+  ],
+  "schema_version": "p38-public-claim-boundary-scan-v1"
+}

@@ -1,0 +1,388 @@
+{
+  "claimable_measured_cells": [
+    "chart_in_drawing:family=chart_in_drawing",
+    "chart_in_drawing:office_pass=true",
+    "chart_in_drawing:producer=microsoft_word",
+    "chart_in_drawing:story_part=body",
+    "floating_anchor:family=floating_anchor",
+    "floating_anchor:office_pass=true",
+    "floating_anchor:placement=floating",
+    "floating_anchor:producer=microsoft_word",
+    "floating_anchor:story_part=body",
+    "floating_anchor:wrap_type=behindDoc",
+    "group_wpg:family=group_wpg",
+    "group_wpg:group_depth=0",
+    "group_wpg:group_depth=1",
+    "group_wpg:mixed_child_types=shape",
+    "group_wpg:office_pass=true",
+    "group_wpg:placement=mixed",
+    "group_wpg:producer=microsoft_word",
+    "group_wpg:story_part=body",
+    "smartart:family=smartart",
+    "smartart:office_pass=true",
+    "smartart:producer=microsoft_word",
+    "smartart:smartart_cache_state=cache_present",
+    "smartart:story_part=body",
+    "textbox:family=textbox",
+    "textbox:office_pass=true",
+    "textbox:producer=microsoft_word",
+    "textbox:story_part=body",
+    "textbox:textbox_density=dense",
+    "wordart:family=wordart",
+    "wordart:office_pass=true",
+    "wordart:producer=microsoft_word",
+    "wordart:relationship_state=external",
+    "wordart:story_part=body"
+  ],
+  "denominators": {
+    "docx_docm_rows": 190,
+    "drawing_docx_docm_files": 148,
+    "macro_docm_rows": 4,
+    "quarantine_rows": 1,
+    "selected_regression_cases": 100,
+    "supported_valid_docx_docm_rows": 189
+  },
+  "families": {
+    "canvas_wpc": {
+      "claim_tier": "regression_covered",
+      "corpus_count": 10,
+      "selected_regression_count": 6,
+      "status": "regression_covered"
+    },
+    "chart_in_drawing": {
+      "claim_tier": "claimable_measured_high_risk",
+      "corpus_count": 23,
+      "selected_regression_count": 10,
+      "status": "claimable_measured"
+    },
+    "floating_anchor": {
+      "claim_tier": "claimable_measured_broad",
+      "corpus_count": 121,
+      "selected_regression_count": 15,
+      "status": "claimable_measured"
+    },
+    "group_wpg": {
+      "claim_tier": "claimable_measured_standard",
+      "corpus_count": 63,
+      "selected_regression_count": 15,
+      "status": "claimable_measured"
+    },
+    "inline_drawing": {
+      "claim_tier": "preserve_only",
+      "corpus_count": 72,
+      "selected_regression_count": 0,
+      "status": "preserve_only"
+    },
+    "mixed_drawing_case": {
+      "claim_tier": "preserve_only",
+      "corpus_count": 142,
+      "selected_regression_count": 0,
+      "status": "preserve_only"
+    },
+    "picture": {
+      "claim_tier": "preserve_only",
+      "corpus_count": 81,
+      "selected_regression_count": 0,
+      "status": "preserve_only"
+    },
+    "smartart": {
+      "claim_tier": "claimable_measured_high_risk",
+      "corpus_count": 8,
+      "selected_regression_count": 8,
+      "status": "claimable_measured"
+    },
+    "textbox": {
+      "claim_tier": "claimable_measured_standard",
+      "corpus_count": 87,
+      "selected_regression_count": 15,
+      "status": "claimable_measured"
+    },
+    "wordart": {
+      "claim_tier": "claimable_measured_standard",
+      "corpus_count": 49,
+      "selected_regression_count": 15,
+      "status": "claimable_measured"
+    }
+  },
+  "p21_gap_list": [
+    {
+      "cell": "canvas_wpc:family=canvas_wpc",
+      "priority": 1,
+      "recommendation": "raise selected-case count to claim threshold",
+      "status": "regression_covered"
+    },
+    {
+      "cell": "inline_drawing:family=inline_drawing",
+      "priority": 2,
+      "recommendation": "add targeted selected regression cases before claiming active coverage",
+      "status": "preserve_only"
+    },
+    {
+      "cell": "mixed_drawing_case:family=mixed_drawing_case",
+      "priority": 3,
+      "recommendation": "add targeted selected regression cases before claiming active coverage",
+      "status": "preserve_only"
+    },
+    {
+      "cell": "picture:family=picture",
+      "priority": 4,
+      "recommendation": "add targeted selected regression cases before claiming active coverage",
+      "status": "preserve_only"
+    },
+    {
+      "cell": "canvas_wpc:story_part=comment",
+      "priority": 5,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "canvas_wpc:story_part=endnote",
+      "priority": 6,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "canvas_wpc:story_part=footer",
+      "priority": 7,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "canvas_wpc:story_part=footnote",
+      "priority": 8,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "canvas_wpc:story_part=header",
+      "priority": 9,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:placement=floating",
+      "priority": 10,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:placement=inline",
+      "priority": 11,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:placement=mixed",
+      "priority": 12,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:story_part=comment",
+      "priority": 13,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:story_part=endnote",
+      "priority": 14,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:story_part=footer",
+      "priority": 15,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:story_part=footnote",
+      "priority": 16,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "chart_in_drawing:story_part=header",
+      "priority": 17,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "floating_anchor:placement=inline",
+      "priority": 18,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "floating_anchor:placement=mixed",
+      "priority": 19,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "floating_anchor:story_part=comment",
+      "priority": 20,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "floating_anchor:story_part=endnote",
+      "priority": 21,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "floating_anchor:story_part=footnote",
+      "priority": 22,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "group_wpg:story_part=comment",
+      "priority": 23,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "group_wpg:story_part=endnote",
+      "priority": 24,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    },
+    {
+      "cell": "group_wpg:story_part=footnote",
+      "priority": 25,
+      "recommendation": "add native samples or classify as out of scope",
+      "status": "unsupported_gap"
+    }
+  ],
+  "preserve_only_cells": [
+    "canvas_wpc:mixed_child_types=picture",
+    "canvas_wpc:mixed_child_types=smartart",
+    "canvas_wpc:producer=microsoft_word",
+    "floating_anchor:producer=wps",
+    "floating_anchor:wrap_type=tight",
+    "floating_anchor:wrap_type=topBottom",
+    "group_wpg:mixed_child_types=smartart",
+    "group_wpg:story_part=footer",
+    "inline_drawing:family=inline_drawing",
+    "inline_drawing:office_pass=true",
+    "inline_drawing:placement=inline",
+    "inline_drawing:producer=microsoft_word",
+    "inline_drawing:producer=wps",
+    "inline_drawing:relationship_state=complete",
+    "inline_drawing:relationship_state=external",
+    "inline_drawing:story_part=body",
+    "inline_drawing:story_part=footer",
+    "inline_drawing:story_part=header",
+    "mixed_drawing_case:family=mixed_drawing_case",
+    "mixed_drawing_case:mixed_child_types=canvas",
+    "mixed_drawing_case:mixed_child_types=chart",
+    "mixed_drawing_case:mixed_child_types=group",
+    "mixed_drawing_case:mixed_child_types=picture",
+    "mixed_drawing_case:mixed_child_types=shape",
+    "mixed_drawing_case:mixed_child_types=smartart",
+    "mixed_drawing_case:mixed_child_types=textbox",
+    "mixed_drawing_case:mixed_child_types=wordart",
+    "mixed_drawing_case:office_pass=true",
+    "mixed_drawing_case:producer=microsoft_word",
+    "mixed_drawing_case:producer=wps",
+    "mixed_drawing_case:relationship_state=complete",
+    "mixed_drawing_case:relationship_state=external",
+    "picture:family=picture",
+    "picture:office_pass=true",
+    "picture:producer=microsoft_word",
+    "picture:producer=wps",
+    "picture:relationship_state=complete",
+    "picture:relationship_state=external",
+    "picture:story_part=body",
+    "picture:story_part=footer"
+  ],
+  "privacy_scan": {
+    "forbidden_hits": [],
+    "passed": true
+  },
+  "question_answers": {
+    "canvas_concentration": "canvas observed values: microsoft_word=1, wps=9",
+    "chart_gap": "P19 chart_embedded=22; DOCX/DOCM chart_in_drawing corpus=23 selected=10; missing cells stay in P21 gap list.",
+    "group_depth": "group_depth=['0', '1', '2', '3_plus']; mixed_child_types=['canvas', 'chart', 'picture', 'shape', 'smartart', 'textbox', 'wordart']",
+    "picture_textbox_wordart": "picture selected=0 corpus=81 status=preserve_only; textbox selected=15 corpus=87 status=claimable_measured; wordart selected=15 corpus=49 status=claimable_measured",
+    "smartart_variety": "SmartArt observed values: urn:microsoft.com/office/officeart/2005/8/layout/StepDownProcess=1, urn:microsoft.com/office/officeart/2005/8/layout/chevron2=1, urn:microsoft.com/office/officeart/2005/8/layout/cycle5=1, urn:microsoft.com/office/officeart/2005/8/layout/default=2, urn:microsoft.com/office/officeart/2005/8/layout/equation1=1, urn:microsoft.com/office/officeart/2005/8/layout/hProcess4=1, urn:microsoft.com/office/officeart/2005/8/layout/hProcess9=2, urn:microsoft.com/office/officeart/2005/8/layout/hierarchy1=1"
+  },
+  "schema_version": "p20-docx-drawing-coverage-matrix-v1",
+  "smoke_only_cells": [
+    "chart_in_drawing:producer=wps",
+    "floating_anchor:story_part=footer",
+    "floating_anchor:story_part=header",
+    "floating_anchor:wrap_type=square",
+    "floating_anchor:wrap_type=through",
+    "group_wpg:group_depth=3_plus",
+    "group_wpg:mixed_child_types=canvas",
+    "group_wpg:mixed_child_types=chart",
+    "group_wpg:producer=wps",
+    "smartart:relationship_state=external",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/StepDownProcess",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/chevron2",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/cycle5",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/default",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/equation1",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/hProcess4",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/hProcess9",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/hierarchy1",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2005/8/layout/process1",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2009/3/layout/PhasedProcess",
+    "smartart:smartart_layout_family=urn:microsoft.com/office/officeart/2009/3/layout/RandomtoResultProcess",
+    "textbox:story_part=header",
+    "wordart:story_part=footer"
+  ],
+  "status_counts": {
+    "claimable_measured": 33,
+    "preserve_only": 43,
+    "regression_covered": 33,
+    "smoke_only": 23,
+    "unknown_unclassified": 11,
+    "unsupported_gap": 49
+  },
+  "unsupported_gap_cells": [
+    "canvas_wpc:story_part=comment",
+    "canvas_wpc:story_part=endnote",
+    "canvas_wpc:story_part=footer",
+    "canvas_wpc:story_part=footnote",
+    "canvas_wpc:story_part=header",
+    "chart_in_drawing:placement=floating",
+    "chart_in_drawing:placement=inline",
+    "chart_in_drawing:placement=mixed",
+    "chart_in_drawing:story_part=comment",
+    "chart_in_drawing:story_part=endnote",
+    "chart_in_drawing:story_part=footer",
+    "chart_in_drawing:story_part=footnote",
+    "chart_in_drawing:story_part=header",
+    "floating_anchor:placement=inline",
+    "floating_anchor:placement=mixed",
+    "floating_anchor:story_part=comment",
+    "floating_anchor:story_part=endnote",
+    "floating_anchor:story_part=footnote",
+    "group_wpg:story_part=comment",
+    "group_wpg:story_part=endnote",
+    "group_wpg:story_part=footnote",
+    "inline_drawing:placement=floating",
+    "inline_drawing:placement=mixed",
+    "inline_drawing:story_part=comment",
+    "inline_drawing:story_part=endnote",
+    "inline_drawing:story_part=footnote",
+    "mixed_drawing_case:story_part=body",
+    "mixed_drawing_case:story_part=comment",
+    "mixed_drawing_case:story_part=endnote",
+    "mixed_drawing_case:story_part=footer",
+    "mixed_drawing_case:story_part=footnote",
+    "mixed_drawing_case:story_part=header",
+    "picture:placement=floating",
+    "picture:placement=inline",
+    "picture:placement=mixed",
+    "picture:story_part=comment",
+    "picture:story_part=endnote",
+    "picture:story_part=footnote",
+    "smartart:story_part=comment",
+    "smartart:story_part=endnote"
+  ]
+}

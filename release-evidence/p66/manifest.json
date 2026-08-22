@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "name": "dependency-aware-active-mutators.json",
+      "path": "release-evidence/p66/dependency-aware-active-mutators.json",
+      "role": "p66-dependency-aware-active-mutators",
+      "sha256": "ec3b783bf42b96941c03c291aa1f8030a0cdcf32b5e36eb6ecc91584c8e0530d",
+      "size_bytes": 8591
+    },
+    {
+      "name": "dependency-aware-summary.json",
+      "path": "release-evidence/p66/dependency-aware-summary.json",
+      "role": "p66-dependency-aware-summary",
+      "sha256": "7336bf4c8608aba39b85e1b442176bb1076d9351bc0a25b5da13b15e80f93dec",
+      "size_bytes": 1391
+    },
+    {
+      "name": "P66-DEPENDENCY-AWARE-ACTIVE-MUTATORS.md",
+      "path": "docs/P66-DEPENDENCY-AWARE-ACTIVE-MUTATORS.md",
+      "role": "p66-doc",
+      "sha256": "932e35a8d6ce5b8cdf3b053047d3a70d50700fff9fbda26f889a501f198a5d21",
+      "size_bytes": 988
+    }
+  ],
+  "schema_version": "p66-dependency-aware-manifest-v1"
+}

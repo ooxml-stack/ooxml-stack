@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-deep-semantic-inventory.json",
+      "path": "docx-drawing-deep-semantic-inventory.json",
+      "role": "p46-deep-inventory",
+      "sha256": "034a598ecb41d07eef947254470eff6fd41bfdb6c7ecc4b9cce27e76af2ed2c2",
+      "size_bytes": 2434
+    },
+    {
+      "name": "docx-drawing-dependency-graph.json",
+      "path": "docx-drawing-dependency-graph.json",
+      "role": "p46-dependency-graph",
+      "sha256": "69ccf041c3b8b51d1f504c235298c1ae3b1843b5391f2c5e15246069c2f1dc80",
+      "size_bytes": 2029
+    },
+    {
+      "name": "docx-drawing-deep-summary.json",
+      "path": "docx-drawing-deep-summary.json",
+      "role": "p46-summary",
+      "sha256": "bc57240c5b973d87b3bf1a6417c451f454dc74318830aa4230fcf3ec26c12540",
+      "size_bytes": 1233
+    },
+    {
+      "name": "P46-DOCX-DRAWING-DEEP-SEMANTICS.md",
+      "path": "../../docs/P46-DOCX-DRAWING-DEEP-SEMANTICS.md",
+      "role": "audit-doc",
+      "sha256": "5b905032de7d959cbd45f42f2fbd03d12bd8133785d59dd1ddf7eb8b9e351f8f",
+      "size_bytes": 1098
+    }
+  ],
+  "schema_version": "p46-release-evidence-manifest-v1"
+}

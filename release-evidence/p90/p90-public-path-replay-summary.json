@@ -1,0 +1,8 @@
+{
+  "cli_path_pass_count": 131,
+  "gate_pass": true,
+  "mcp_path_pass_count": 131,
+  "row_count": 131,
+  "row_pass_count": 131,
+  "schema_version": "p90-public-path-replay-v1"
+}
