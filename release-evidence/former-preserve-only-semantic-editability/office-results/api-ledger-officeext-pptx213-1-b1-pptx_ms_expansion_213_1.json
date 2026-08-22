@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-14T06:22:03Z",
+    "timeout_seconds": 240,
+    "dialog_wait_seconds": 30
+  },
+  "summary": {
+    "total": 1,
+    "pass": 0,
+    "pass_total": 0,
+    "repair_dialog_count": 1,
+    "unreadable_content_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 0,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "repair_dialog": 1
+    },
+    "gate_pass": false
+  },
+  "results": [
+    {
+      "file": "ooxml-stack/release-evidence/former-preserve-only-semantic-editability/promotion-outputs/api-ledger-officeext-pptx213-1-b1-pptx_ms_expansion_213_1.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "repair_dialog",
+      "message": "api-ledger-officeext-pptx213-1-b1-pptx_ms_expansion_213_1 AXWindow AXStandardWindow missing valuemissing valuemissing value api-ledger-officeext-pptx213-1-b1-pptx_ms_expansion_213_1 missing valuemissing valuemissing value Output - Repaired AXWindow AXStandardWindow missing valuemissing valuemissing value Output - Repaired missing valuemissing valuemissing value",
+      "exit_code": 0,
+      "stdout": "REPAIR_DIALOG:  api-ledger-officeext-pptx213-1-b1-pptx_ms_expansion_213_1 AXWindow AXStandardWindow missing valuemissing valuemissing value  api-ledger-officeext-pptx213-1-b1-pptx_ms_expansion_213_1  missing valuemissing valuemissing value  Output  -  Repaired AXWindow AXStandardWindow missing valuemissing valuemissing value  Output  -  Repaired  missing valuemissing valuemissing value",
+      "stderr": "",
+      "elapsed_seconds": 5.509
+    }
+  ]
+}

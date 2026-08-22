@@ -1,0 +1,68 @@
+{
+  "claim": "P91 BASELINE: first measured python-xlsx compatibility water level over the 846-file real-world xlsx corpus. Not a gate — this profile records where xlsx starts, so later runs can only be compared against a locked number.",
+  "ok": false,
+  "env": {
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_XLSX_COMPAT_JSON": "../ooxml-test-framework/tools/compat-test/results/runs/xlsx-baseline-20260803T181124Z/results_xlsx.json",
+    "OOXML_XLSX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/xlsx",
+    "OOXML_XLSX_RUNNER": "../ooxml-test-framework/tools/compat-test/run_xlsx.py"
+  },
+  "expected_metrics": {
+    "total": 846,
+    "zip_valid": 841,
+    "open_pass": 841,
+    "open_fail": 5,
+    "open_timeout": 0,
+    "passive_roundtrip_pass": 841,
+    "passive_roundtrip_fail": 0,
+    "preserve_all_pass": 787,
+    "preserve_partial": 54,
+    "preserve_none": 0,
+    "active_roundtrip_pass": 582,
+    "active_roundtrip_fail": 259,
+    "active_roundtrip_skip": 5,
+    "open_pass_rate": 99.4,
+    "passive_roundtrip_pass_rate": 100.0,
+    "preserve_seven_of_seven_rate": 93.6,
+    "active_roundtrip_pass_rate": 69.2
+  },
+  "known_blockers": [
+    {
+      "id": "xlsx-sst-part-not-materialized",
+      "severity": "P0",
+      "count": 246,
+      "symptom": "IndexError: list index out of range at xlsx/oxml/shared_strings.py:16 (_si_text(self.si_lst[index])) on reopen after an active edit.",
+      "root_cause": "Setting a string cell on a workbook that has no xl/sharedStrings.xml part writes t=\"s\" with an index into an in-memory SST that is never serialized. Saved package still has no sst part and no Content_Types override.",
+      "impact": "Silent data loss; Excel treats the result as needing repair."
+    },
+    {
+      "id": "xlsx-chartsheet-no-sheetdata",
+      "severity": "P1",
+      "count": 8,
+      "symptom": "AttributeError: 'lxml.etree._Element' object has no attribute 'sheetData'",
+      "root_cause": "Chartsheet parts are routed through the worksheet element class, which assumes a sheetData child."
+    },
+    {
+      "id": "xlsx-cell-missing-r-attr",
+      "severity": "P2",
+      "count": 4,
+      "symptom": "InvalidXmlError: required 'r' attribute not present",
+      "root_cause": "<c> without @r is legal (position implied by document order) but the oxml layer treats @r as required."
+    },
+    {
+      "id": "xlsx-empty-rel-key",
+      "severity": "P2",
+      "count": 1,
+      "symptom": "KeyError: no relationship with key ''"
+    },
+    {
+      "id": "xlsx-non-zip-ole2",
+      "severity": "boundary",
+      "count": 5,
+      "symptom": "BadZipFile",
+      "root_cause": "Legacy OLE2 .xls content with an .xlsx extension. Documented substrate boundary, not a defect."
+    }
+  ],
+  "next_gate": "P92 requires active_roundtrip_pass_rate >= 99.0 with xlsx-sst-part-not-materialized closed and a regression test that opens an sst-less workbook, writes a string cell, saves, and reopens.",
+  "notes": "Measured on the standalone compat-test fork before it was folded back into ooxml-test-framework/tools/compat-test. The tracked harness additionally classifies preserve-compatible vs preserve-exact, so a re-run under P92 will report a preserve figure that is not directly comparable to preserve_all_pass here."
+}

@@ -1,0 +1,54 @@
+{
+  "hydrated_by_family": {
+    "alternate_content": 151,
+    "chart_drawing": 150,
+    "legacy_office_drawing": 249,
+    "math_object": 612,
+    "office_chart_extension": 828,
+    "office_extension": 6698,
+    "sharepoint_property": 38,
+    "vendor_private_extension": 47,
+    "vml_drawing": 155,
+    "wps_extension": 72
+  },
+  "hydrated_by_operation": {
+    "alternate_content.choice.metadata.set_value": 151,
+    "chart.drawing.marker_coordinate.set_value": 52,
+    "chart.drawing.metadata.set_value": 98,
+    "custom_xml.element.set_text": 5,
+    "math.object.metadata.set_value": 445,
+    "math.run.set_text": 167,
+    "office_extension.known_metadata.set_value": 7621,
+    "office_extension.picture_effect.artistic_blur.presence.set_enabled": 2,
+    "office_extension.picture_effect.film_grain.presence.set_enabled": 3,
+    "office_extension.relative_size.set_percentage": 182,
+    "vendor_private.attribute.set_value": 36,
+    "vendor_private.text_node.set_value": 11,
+    "vml.formula.eqn.set_value": 56,
+    "vml.image.metadata.set_title": 38,
+    "vml.path.metadata.set_value": 15,
+    "vml.shadow.set_enabled": 5,
+    "vml.shape.geometry.set": 24,
+    "vml.stroke.set_enabled": 3,
+    "vml.stroke.set_join_style": 13,
+    "vml.textpath.set_enabled": 1,
+    "wps_extension.known_field.set_value": 72
+  },
+  "hydrated_count": 9000,
+  "row_count": 20934,
+  "schema_version": "former-preserve-only-operation-hydration-v1",
+  "status_counts": {
+    "hydrated": 9000,
+    "not_applicable": 8827,
+    "unresolved": 338,
+    "unsupported_mapping": 2769
+  },
+  "unsupported_by_family": {
+    "chart_drawing": 172,
+    "custom_xml_payload": 108,
+    "office_drawing_sketch_extension": 2,
+    "office_extension": 1624,
+    "sharepoint_property": 4,
+    "vml_drawing": 859
+  }
+}

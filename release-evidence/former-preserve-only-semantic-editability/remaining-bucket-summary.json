@@ -1,0 +1,3143 @@
+{
+  "by_attribute_top50": {
+    "Requires": 151,
+    "Type": 23,
+    "amount": 22,
+    "anchorx": 25,
+    "bright": 273,
+    "bwMode": 242,
+    "colorTemp": 66,
+    "contrast": 119,
+    "coordsize": 43,
+    "enabled": 40,
+    "eqn": 56,
+    "flipH": 17,
+    "idx": 115,
+    "inset": 32,
+    "lIns": 41,
+    "modelId": 115,
+    "n": 119,
+    "name": 1210,
+    "noChangeArrowheads": 29,
+    "noChangeAspect": 27,
+    "noChangeShapeType": 110,
+    "orient": 270,
+    "pos": 17,
+    "position": 17,
+    "r": 64,
+    "rad": 20,
+    "rot": 331,
+    "rotWithShape": 18,
+    "sat": 955,
+    "spid": 72,
+    "style": 24,
+    "t": 209,
+    "txBox": 476,
+    "type": 117,
+    "upright": 157,
+    "val": 1093,
+    "w": 125,
+    "x": 770,
+    "{http://schemas.microsoft.com/office/2006/metadata/contentType}_": 27,
+    "{http://schemas.microsoft.com/office/word/2010/wordml}anchorId": 271,
+    "{http://schemas.microsoft.com/office/word/2010/wordml}pos": 27,
+    "{http://schemas.microsoft.com/office/word/2010/wordml}prst": 27,
+    "{http://schemas.microsoft.com/office/word/2010/wordml}val": 132,
+    "{http://schemas.microsoft.com/office/word/2012/wordml}val": 48,
+    "{http://schemas.openxmlformats.org/officeDocument/2006/math}val": 352,
+    "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}ascii": 56,
+    "{http://www.w3.org/2001/XMLSchema-instance}nil": 135,
+    "{urn:schemas-microsoft-com:office:office}spid": 278,
+    "{urn:schemas-microsoft-com:office:office}title": 38,
+    "{urn:schemas-microsoft-com:vml}ext": 169
+  },
+  "by_blocker": {
+    "binary_payload_reference": 2975,
+    "needs_family_model": 2433,
+    "needs_vendor_family_model": 440,
+    "relationship_identity_like": 2989,
+    "semantic_value_available_pending_proof": 12097
+  },
+  "by_family": {
+    "alternate_content": 151,
+    "chart_drawing": 322,
+    "custom_xml_payload": 129,
+    "custom_xml_schema": 342,
+    "drawing_extension": 36,
+    "legacy_office_drawing": 249,
+    "math_object": 621,
+    "office_chart_extension": 833,
+    "office_drawing_sketch_extension": 4,
+    "office_extension": 16599,
+    "sharepoint_property": 42,
+    "vendor_private_extension": 47,
+    "vml_drawing": 1047,
+    "wps_extension": 512
+  },
+  "by_family_blocker": {
+    "alternate_content": {
+      "semantic_value_available_pending_proof": 151
+    },
+    "chart_drawing": {
+      "semantic_value_available_pending_proof": 322
+    },
+    "custom_xml_payload": {
+      "needs_family_model": 21,
+      "semantic_value_available_pending_proof": 108
+    },
+    "custom_xml_schema": {
+      "needs_family_model": 4,
+      "semantic_value_available_pending_proof": 338
+    },
+    "drawing_extension": {
+      "needs_family_model": 36
+    },
+    "legacy_office_drawing": {
+      "semantic_value_available_pending_proof": 249
+    },
+    "math_object": {
+      "needs_family_model": 9,
+      "semantic_value_available_pending_proof": 612
+    },
+    "office_chart_extension": {
+      "needs_family_model": 5,
+      "semantic_value_available_pending_proof": 828
+    },
+    "office_drawing_sketch_extension": {
+      "needs_family_model": 2,
+      "semantic_value_available_pending_proof": 2
+    },
+    "office_extension": {
+      "binary_payload_reference": 2975,
+      "needs_family_model": 2323,
+      "relationship_identity_like": 2989,
+      "semantic_value_available_pending_proof": 8312
+    },
+    "sharepoint_property": {
+      "semantic_value_available_pending_proof": 42
+    },
+    "vendor_private_extension": {
+      "semantic_value_available_pending_proof": 47
+    },
+    "vml_drawing": {
+      "needs_family_model": 33,
+      "semantic_value_available_pending_proof": 1014
+    },
+    "wps_extension": {
+      "needs_vendor_family_model": 440,
+      "semantic_value_available_pending_proof": 72
+    }
+  },
+  "by_family_qname_top50": {
+    "alternate_content": {
+      "{http://schemas.openxmlformats.org/markup-compatibility/2006}AlternateContent": 151
+    },
+    "chart_drawing": {
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}cNvPr": 33,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}from": 40,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}nvSpPr": 28,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}relSizeAnchor": 40,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}sp": 35,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}spPr": 21,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}style": 2,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}to": 40,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}txBody": 31,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}x": 26,
+      "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}y": 26
+    },
+    "custom_xml_payload": {
+      "{230e9df3-be65-4c73-a93b-d1236ebd677e}TaxCatchAll": 19,
+      "{24d2b330-88ce-49e3-8b6f-fdd8af3fd243}TaxCatchAll": 1,
+      "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Description": 19,
+      "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image": 19,
+      "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}ImageTagsTaxHTField": 19,
+      "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}MediaServiceKeyPoints": 20,
+      "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Url": 19,
+      "{b2fd34f3-8106-420e-86d0-e2d269742751}lcf76f155ced4ddcb4097134ff3c332f": 1,
+      "{http://ns.axespdf.com/word/configuration}group": 2,
+      "{http://ns.axespdf.com/word/configuration}property": 7,
+      "{http://schemas.fabasoft.com/folio/2007/fields}field": 1,
+      "{http://schemas.opentext.com/novous/objectid}contentconnect": 1,
+      "{http://schemas.opentext.com/novous/product_name}contentconnect": 1
+    },
+    "custom_xml_schema": {
+      "{http://www.w3.org/2001/XMLSchema}all": 2,
+      "{http://www.w3.org/2001/XMLSchema}complexType": 21,
+      "{http://www.w3.org/2001/XMLSchema}element": 281,
+      "{http://www.w3.org/2001/XMLSchema}schema": 19,
+      "{http://www.w3.org/2001/XMLSchema}sequence": 19
+    },
+    "drawing_extension": {
+      "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchNone": 12,
+      "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps": 12,
+      "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type": 12
+    },
+    "legacy_office_drawing": {
+      "{urn:schemas-microsoft-com:office:office}OLEObject": 23,
+      "{urn:schemas-microsoft-com:office:office}lock": 127,
+      "{urn:schemas-microsoft-com:office:office}shapedefaults": 28,
+      "{urn:schemas-microsoft-com:office:office}shapelayout": 14,
+      "{urn:schemas-microsoft-com:office:word}wrap": 57
+    },
+    "math_object": {
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}begChr": 3,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}brk": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}brkBin": 11,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}brkBinSub": 11,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}chr": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}ctrlPr": 5,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}d": 17,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}dPr": 18,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}defJc": 10,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}deg": 5,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}den": 6,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}dispDef": 24,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}e": 29,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}endChr": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}eqArr": 4,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}eqArrPr": 4,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}f": 9,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}fPr": 14,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}funcPr": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}intLim": 10,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}jc": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}lMargin": 38,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}mathFont": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}mathPr": 102,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}nary": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}naryLim": 9,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}naryPr": 3,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}num": 6,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}oMath": 28,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}oMathPara": 15,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}r": 17,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}rMargin": 36,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}rPr": 53,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}rad": 2,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}radPr": 4,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSub": 5,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSubPr": 11,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSubSup": 5,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSubSupPr": 5,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSup": 8,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSupPr": 13,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}scr": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sepChr": 1,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}smallFrac": 12,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sub": 11,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}sup": 10,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}t": 3,
+      "{http://schemas.openxmlformats.org/officeDocument/2006/math}wrapIndent": 36
+    },
+    "office_chart_extension": {
+      "{http://schemas.microsoft.com/office/drawing/2007/8/2/chart}style": 8,
+      "{http://schemas.microsoft.com/office/drawing/2012/chart}dlblFieldTable": 5,
+      "{http://schemas.microsoft.com/office/drawing/2012/chart}layout": 15,
+      "{http://schemas.microsoft.com/office/drawing/2012/chart}leaderLines": 104,
+      "{http://schemas.microsoft.com/office/drawing/2012/chart}showDataLabelsRange": 5,
+      "{http://schemas.microsoft.com/office/drawing/2012/chart}showLeaderLines": 95,
+      "{http://schemas.microsoft.com/office/drawing/2012/chart}xForSave": 1,
+      "{http://schemas.microsoft.com/office/drawing/2014/chart}uniqueId": 328,
+      "{http://schemas.microsoft.com/office/drawing/2017/03/chart}dataDisplayOptions16": 117,
+      "{http://schemas.microsoft.com/office/drawing/2017/03/chart}dispNaAsBlank": 155
+    },
+    "office_drawing_sketch_extension": {
+      "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps": 2,
+      "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type": 2
+    },
+    "office_extension": {
+      "{http://schemas.microsoft.com/office/2006/metadata/contentType}contentTypeSchema": 27,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvGrpSpPr": 172,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr": 124,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}dataModelExt": 177,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}drawing": 27,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}grpSpPr": 169,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr": 62,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvSpPr": 55,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp": 115,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree": 75,
+      "{http://schemas.microsoft.com/office/drawing/2008/diagram}txBody": 81,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}backgroundRemoval": 42,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}brightnessContrast": 146,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}hiddenFill": 1109,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect": 419,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer": 392,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}imgProps": 386,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}saturation": 250,
+      "{http://schemas.microsoft.com/office/drawing/2010/main}useLocalDpi": 54,
+      "{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip": 2937,
+      "{http://schemas.microsoft.com/office/drawing/2017/decorative}decorative": 85,
+      "{http://schemas.microsoft.com/office/drawing/2017/model3d}blip": 38,
+      "{http://schemas.microsoft.com/office/drawing/2017/model3d}clr": 38,
+      "{http://schemas.microsoft.com/office/drawing/2017/model3d}pos": 39,
+      "{http://schemas.microsoft.com/office/powerpoint/2010/main}modId": 102,
+      "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldId": 2989,
+      "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldIdLst": 136,
+      "{http://schemas.microsoft.com/office/powerpoint/2012/main}guide": 160,
+      "{http://schemas.microsoft.com/office/powerpoint/2012/main}notesGuideLst": 29,
+      "{http://schemas.microsoft.com/office/powerpoint/2012/main}sldGuideLst": 280,
+      "{http://schemas.microsoft.com/office/word/2010/wordml}docId": 46,
+      "{http://schemas.microsoft.com/office/word/2010/wordml}solidFill": 29,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing}pctHeight": 90,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing}pctWidth": 92,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing}sizeRelH": 336,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing}sizeRelV": 331,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}cNvGrpSpPr": 112,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}cNvPr": 36,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSp": 32,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr": 77,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp": 59,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr": 630,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr": 133,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvPr": 432,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvSpPr": 469,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr": 739,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}style": 113,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}txbx": 391,
+      "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp": 884,
+      "{http://schemas.microsoft.com/office/word/2012/wordml}docId": 48
+    },
+    "sharepoint_property": {
+      "{http://schemas.microsoft.com/sharepoint/v3/contenttype/forms}Display": 1,
+      "{http://schemas.microsoft.com/sharepoint/v3/contenttype/forms}Edit": 1,
+      "{http://schemas.microsoft.com/sharepoint/v3/contenttype/forms}FormTemplates": 1,
+      "{http://schemas.microsoft.com/sharepoint/v3/contenttype/forms}New": 1,
+      "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties": 19,
+      "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction": 19
+    },
+    "vendor_private_extension": {
+      "{http://schemas.microsoft.com/ink/2010/main}context": 4,
+      "{http://www.w3.org/2003/04/emma}emma": 4,
+      "{http://www.w3.org/2003/04/emma}interpretation": 9,
+      "{http://www.w3.org/2003/04/emma}literal": 5,
+      "{http://www.w3.org/2003/04/emma}one-of": 1,
+      "{http://www.w3.org/2003/InkML}annotationXML": 4,
+      "{http://www.w3.org/2003/InkML}brush": 1,
+      "{http://www.w3.org/2003/InkML}brushProperty": 3,
+      "{http://www.w3.org/2003/InkML}channel": 2,
+      "{http://www.w3.org/2003/InkML}channelProperties": 1,
+      "{http://www.w3.org/2003/InkML}channelProperty": 2,
+      "{http://www.w3.org/2003/InkML}context": 1,
+      "{http://www.w3.org/2003/InkML}definitions": 1,
+      "{http://www.w3.org/2003/InkML}ink": 1,
+      "{http://www.w3.org/2003/InkML}inkSource": 1,
+      "{http://www.w3.org/2003/InkML}timestamp": 1,
+      "{http://www.w3.org/2003/InkML}trace": 1,
+      "{http://www.w3.org/2003/InkML}traceFormat": 1,
+      "{http://www.w3.org/2003/InkML}traceGroup": 4
+    },
+    "vml_drawing": {
+      "{urn:schemas-microsoft-com:vml}f": 38,
+      "{urn:schemas-microsoft-com:vml}fill": 45,
+      "{urn:schemas-microsoft-com:vml}formulas": 37,
+      "{urn:schemas-microsoft-com:vml}group": 89,
+      "{urn:schemas-microsoft-com:vml}h": 9,
+      "{urn:schemas-microsoft-com:vml}handles": 8,
+      "{urn:schemas-microsoft-com:vml}imagedata": 38,
+      "{urn:schemas-microsoft-com:vml}line": 60,
+      "{urn:schemas-microsoft-com:vml}oval": 22,
+      "{urn:schemas-microsoft-com:vml}path": 50,
+      "{urn:schemas-microsoft-com:vml}rect": 117,
+      "{urn:schemas-microsoft-com:vml}roundrect": 3,
+      "{urn:schemas-microsoft-com:vml}shadow": 5,
+      "{urn:schemas-microsoft-com:vml}shape": 334,
+      "{urn:schemas-microsoft-com:vml}shapetype": 82,
+      "{urn:schemas-microsoft-com:vml}stroke": 54,
+      "{urn:schemas-microsoft-com:vml}textbox": 53,
+      "{urn:schemas-microsoft-com:vml}textpath": 3
+    },
+    "wps_extension": {
+      "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customData": 27,
+      "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectPr": 408,
+      "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectProps": 29,
+      "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customShpExts": 23,
+      "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customShpInfo": 25
+    }
+  },
+  "by_operation_top50": {
+    "alternate_content.choice.metadata.set_value": 151,
+    "chart.drawing.marker_coordinate.set_value": 52,
+    "chart.drawing.metadata.set_value": 98,
+    "custom_xml.element.set_text": 5,
+    "math.object.metadata.set_value": 445,
+    "math.run.set_text": 167,
+    "office_extension.known_metadata.set_value": 7621,
+    "office_extension.picture_effect.artistic_blur.presence.set_enabled": 2,
+    "office_extension.picture_effect.film_grain.presence.set_enabled": 3,
+    "office_extension.relative_size.set_percentage": 182,
+    "vendor_private.attribute.set_value": 36,
+    "vendor_private.text_node.set_value": 11,
+    "vml.formula.eqn.set_value": 56,
+    "vml.image.metadata.set_title": 38,
+    "vml.path.metadata.set_value": 15,
+    "vml.shadow.set_enabled": 5,
+    "vml.shape.geometry.set": 24,
+    "vml.stroke.set_enabled": 3,
+    "vml.stroke.set_join_style": 13,
+    "vml.textpath.set_enabled": 1,
+    "wps_extension.known_field.set_value": 72
+  },
+  "candidate_packages": [
+    {
+      "estimated_package_mb": 21.333,
+      "family": "office_chart_extension",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "pptx_chart_dense_203slides",
+      "planned_safe_rows": 316,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 459,
+      "runner_schema_policy_skipped_rows": 343,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 775
+    },
+    {
+      "estimated_package_mb": 21.333,
+      "family": "office_extension",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "pptx_chart_dense_203slides",
+      "planned_safe_rows": 127,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 4,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 131
+    },
+    {
+      "estimated_package_mb": 37.569,
+      "family": "office_extension",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+      "planned_safe_rows": 117,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 65,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 182
+    },
+    {
+      "estimated_package_mb": 0.16,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_019_canvas",
+      "planned_safe_rows": 113,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 22,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 135
+    },
+    {
+      "estimated_package_mb": 0.157,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_018_canvas",
+      "planned_safe_rows": 88,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 13,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 101
+    },
+    {
+      "estimated_package_mb": 0.083,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_011_canvas",
+      "planned_safe_rows": 76,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 42,
+      "runner_schema_policy_skipped_rows": 20,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 118
+    },
+    {
+      "estimated_package_mb": 0.159,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_014_drawing",
+      "planned_safe_rows": 76,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 41,
+      "runner_schema_policy_skipped_rows": 28,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 117
+    },
+    {
+      "estimated_package_mb": 0.631,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_020_drawing",
+      "planned_safe_rows": 73,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 28,
+      "runner_schema_policy_skipped_rows": 12,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 101
+    },
+    {
+      "estimated_package_mb": 0.715,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_013_canvas",
+      "planned_safe_rows": 70,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 23,
+      "runner_schema_policy_skipped_rows": 13,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 93
+    },
+    {
+      "estimated_package_mb": 1.802,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_184_photo-cover-letter",
+      "planned_safe_rows": 62,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 31,
+      "runner_schema_policy_skipped_rows": 12,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 93
+    },
+    {
+      "estimated_package_mb": 0.225,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_017_drawing",
+      "planned_safe_rows": 59,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 18,
+      "runner_schema_policy_skipped_rows": 9,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 77
+    },
+    {
+      "estimated_package_mb": 0.045,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_007_canvas",
+      "planned_safe_rows": 58,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 28,
+      "runner_schema_policy_skipped_rows": 19,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 86
+    },
+    {
+      "estimated_package_mb": 0.105,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_012_canvas",
+      "planned_safe_rows": 54,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 14,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 68
+    },
+    {
+      "estimated_package_mb": 0.115,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p5_track_changes_02",
+      "planned_safe_rows": 52,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 17,
+      "runner_schema_policy_skipped_rows": 9,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 69
+    },
+    {
+      "estimated_package_mb": 21.333,
+      "family": "chart_drawing",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "chart.drawing.marker_coordinate.set_value",
+      "package_id": "pptx_chart_dense_203slides",
+      "planned_safe_rows": 44,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 44
+    },
+    {
+      "estimated_package_mb": 3.114,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_table_of_contents_01",
+      "planned_safe_rows": 43,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 4,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 47
+    },
+    {
+      "estimated_package_mb": 0.073,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_010_canvas",
+      "planned_safe_rows": 42,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 27,
+      "runner_schema_policy_skipped_rows": 18,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 69
+    },
+    {
+      "estimated_package_mb": 0.152,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_016_drawing",
+      "planned_safe_rows": 42,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 21,
+      "runner_schema_policy_skipped_rows": 9,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 63
+    },
+    {
+      "estimated_package_mb": 37.569,
+      "family": "alternate_content",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "alternate_content.choice.metadata.set_value",
+      "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+      "planned_safe_rows": 41,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 41
+    },
+    {
+      "estimated_package_mb": 0.092,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+      "planned_safe_rows": 36,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 18,
+      "runner_schema_policy_skipped_rows": 9,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 54
+    },
+    {
+      "estimated_package_mb": 0.056,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_008_canvas",
+      "planned_safe_rows": 36,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 20,
+      "runner_schema_policy_skipped_rows": 14,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 56
+    },
+    {
+      "estimated_package_mb": 0.066,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_202_organic-boho-digital-strategist-resu",
+      "planned_safe_rows": 35,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 2,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 37
+    },
+    {
+      "estimated_package_mb": 0.906,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_116_winter-holiday-party-checklist",
+      "planned_safe_rows": 33,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 10,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 43
+    },
+    {
+      "estimated_package_mb": 0.214,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_resume_customxml",
+      "planned_safe_rows": 33,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 3,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 42
+    },
+    {
+      "estimated_package_mb": 1.821,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_135_1-resume-docx",
+      "planned_safe_rows": 32,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 8,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 40
+    },
+    {
+      "estimated_package_mb": 0.136,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_173_resume",
+      "planned_safe_rows": 32,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 4,
+      "runner_schema_policy_skipped_rows": 2,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 36
+    },
+    {
+      "estimated_package_mb": 0.101,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_117_wdatevalueformat",
+      "planned_safe_rows": 31,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 13,
+      "runner_schema_policy_skipped_rows": 2,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 44
+    },
+    {
+      "estimated_package_mb": 1.822,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_136_1-resume-docx",
+      "planned_safe_rows": 31,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 7,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 38
+    },
+    {
+      "estimated_package_mb": 2.657,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+      "planned_safe_rows": 30,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 12,
+      "runner_schema_policy_skipped_rows": 6,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 42
+    },
+    {
+      "estimated_package_mb": 0.059,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_009_canvas",
+      "planned_safe_rows": 30,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 29,
+      "runner_schema_policy_skipped_rows": 20,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 59
+    },
+    {
+      "estimated_package_mb": 1.081,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_travel_record_media",
+      "planned_safe_rows": 30,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 21,
+      "runner_schema_policy_skipped_rows": 8,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 51
+    },
+    {
+      "estimated_package_mb": 4.18,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_208_coverletter-a4",
+      "planned_safe_rows": 28,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 3,
+      "runner_schema_policy_skipped_rows": 1,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 31
+    },
+    {
+      "estimated_package_mb": 0.107,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_procurement_rules_track",
+      "planned_safe_rows": 28,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 14,
+      "runner_schema_policy_skipped_rows": 11,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 42
+    },
+    {
+      "estimated_package_mb": 0.117,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout_operations_media",
+      "planned_safe_rows": 27,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 5,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 32
+    },
+    {
+      "estimated_package_mb": 0.544,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_119_small-business-email-marketing-templ",
+      "planned_safe_rows": 27,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 14,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 41
+    },
+    {
+      "estimated_package_mb": 0.225,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_130_classroom-newsletter",
+      "planned_safe_rows": 27,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 18,
+      "runner_schema_policy_skipped_rows": 8,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 45
+    },
+    {
+      "estimated_package_mb": 2.719,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p5_large_docx_01",
+      "planned_safe_rows": 26,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 17,
+      "runner_schema_policy_skipped_rows": 8,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 43
+    },
+    {
+      "estimated_package_mb": 0.156,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_160_tdf160077-layoutincellb",
+      "planned_safe_rows": 25,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 15,
+      "runner_schema_policy_skipped_rows": 7,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 40
+    },
+    {
+      "estimated_package_mb": 1.051,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout16_footer_media",
+      "planned_safe_rows": 24,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 12,
+      "runner_schema_policy_skipped_rows": 6,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 36
+    },
+    {
+      "estimated_package_mb": 0.13,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout_market_analysis",
+      "planned_safe_rows": 24,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 2,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 26
+    },
+    {
+      "estimated_package_mb": 0.495,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_204_pink-floral-cover-letter",
+      "planned_safe_rows": 24,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 17,
+      "runner_schema_policy_skipped_rows": 8,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 41
+    },
+    {
+      "estimated_package_mb": 21.333,
+      "family": "chart_drawing",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "chart.drawing.metadata.set_value",
+      "package_id": "pptx_chart_dense_203slides",
+      "planned_safe_rows": 24,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 8,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 32
+    },
+    {
+      "estimated_package_mb": 0.08,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_182_modern-chronological-resume",
+      "planned_safe_rows": 23,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 10,
+      "runner_schema_policy_skipped_rows": 3,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 33
+    },
+    {
+      "estimated_package_mb": 0.863,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_budget_rules_embedded",
+      "planned_safe_rows": 22,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 22
+    },
+    {
+      "estimated_package_mb": 0.108,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_financing_plan_chart",
+      "planned_safe_rows": 22,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 31
+    },
+    {
+      "estimated_package_mb": 2.492,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_175_childrens-s-holiday-wish-list",
+      "planned_safe_rows": 22,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 4,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 31
+    },
+    {
+      "estimated_package_mb": 0.059,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_009_canvas",
+      "planned_safe_rows": 22,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 22
+    },
+    {
+      "estimated_package_mb": 1.635,
+      "family": "office_extension",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "pptx_ms_expansion_080_28p-ppt",
+      "planned_safe_rows": 22,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 21,
+      "runner_schema_policy_skipped_rows": 20,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 43
+    },
+    {
+      "estimated_package_mb": 0.204,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_015_drawing",
+      "planned_safe_rows": 21,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 21,
+      "runner_schema_policy_skipped_rows": 10,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 42
+    },
+    {
+      "estimated_package_mb": 0.225,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p5_fields_03",
+      "planned_safe_rows": 21,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 6,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 27
+    },
+    {
+      "estimated_package_mb": 0.423,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_policy_embedded_objects",
+      "planned_safe_rows": 21,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 21
+    },
+    {
+      "estimated_package_mb": 0.405,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_realestate_finance_policy",
+      "planned_safe_rows": 21,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 10,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 31
+    },
+    {
+      "estimated_package_mb": 0.104,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout_service_product",
+      "planned_safe_rows": 20,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 3,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 23
+    },
+    {
+      "estimated_package_mb": 0.448,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+      "planned_safe_rows": 20,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 18,
+      "runner_schema_policy_skipped_rows": 8,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 38
+    },
+    {
+      "estimated_package_mb": 0.204,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_015_drawing",
+      "planned_safe_rows": 20,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 20
+    },
+    {
+      "estimated_package_mb": 4.168,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_project_intro_media",
+      "planned_safe_rows": 20,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 7,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 27
+    },
+    {
+      "estimated_package_mb": 3.236,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout01_media",
+      "planned_safe_rows": 19,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 2,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 21
+    },
+    {
+      "estimated_package_mb": 0.634,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout_financial_statement",
+      "planned_safe_rows": 19,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 3,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 22
+    },
+    {
+      "estimated_package_mb": 0.686,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_207_metro-report",
+      "planned_safe_rows": 19,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 28
+    },
+    {
+      "estimated_package_mb": 0.045,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_007_canvas",
+      "planned_safe_rows": 19,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 19
+    },
+    {
+      "estimated_package_mb": 0.24,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p5_track_changes_01",
+      "planned_safe_rows": 19,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 1,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 28
+    },
+    {
+      "estimated_package_mb": 0.11,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_competitive_analysis_charts",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 4,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 22
+    },
+    {
+      "estimated_package_mb": 0.139,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_development_history",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 1,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 19
+    },
+    {
+      "estimated_package_mb": 0.117,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.relative_size.set_percentage",
+      "package_id": "docx_layout_operations_media",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 18
+    },
+    {
+      "estimated_package_mb": 0.128,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_marketing_strategy_charts",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 5,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 23
+    },
+    {
+      "estimated_package_mb": 2.197,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_139_reimbursement-form",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 7,
+      "runner_schema_policy_skipped_rows": 2,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 25
+    },
+    {
+      "estimated_package_mb": 0.124,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_159_resume-a4",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 8,
+      "runner_schema_policy_skipped_rows": 4,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 26
+    },
+    {
+      "estimated_package_mb": 0.045,
+      "family": "vml_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "vml.image.metadata.set_title",
+      "package_id": "docx_p18_drawing_007_canvas",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 18
+    },
+    {
+      "estimated_package_mb": 0.087,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p5_embedded_objects_01",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 14,
+      "runner_schema_policy_skipped_rows": 4,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 32
+    },
+    {
+      "estimated_package_mb": 1.255,
+      "family": "office_extension",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "pptx_ms_expansion_028_24p-ppt",
+      "planned_safe_rows": 18,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 18
+    },
+    {
+      "estimated_package_mb": 0.173,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_148_fdo74605",
+      "planned_safe_rows": 17,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 26
+    },
+    {
+      "estimated_package_mb": 0.155,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_203_photo-resume",
+      "planned_safe_rows": 17,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 13,
+      "runner_schema_policy_skipped_rows": 9,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 30
+    },
+    {
+      "estimated_package_mb": 2.434,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_budget_embedded_objects",
+      "planned_safe_rows": 16,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 16
+    },
+    {
+      "estimated_package_mb": 2.657,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.relative_size.set_percentage",
+      "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+      "planned_safe_rows": 16,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 16
+    },
+    {
+      "estimated_package_mb": 0.054,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_meeting_record",
+      "planned_safe_rows": 15,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 15
+    },
+    {
+      "estimated_package_mb": 1.821,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.relative_size.set_percentage",
+      "package_id": "docx_ms_expansion_135_1-resume-docx",
+      "planned_safe_rows": 15,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 15
+    },
+    {
+      "estimated_package_mb": 1.293,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_197_business-report-prefiessional-design",
+      "planned_safe_rows": 15,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 8,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 23
+    },
+    {
+      "estimated_package_mb": 0.401,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_layout11_footer_media",
+      "planned_safe_rows": 14,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 4,
+      "runner_schema_policy_skipped_rows": 1,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 18
+    },
+    {
+      "estimated_package_mb": 1.822,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.relative_size.set_percentage",
+      "package_id": "docx_ms_expansion_136_1-resume-docx",
+      "planned_safe_rows": 13,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 13
+    },
+    {
+      "estimated_package_mb": 1.702,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+      "planned_safe_rows": 13,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 7,
+      "runner_schema_policy_skipped_rows": 4,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 20
+    },
+    {
+      "estimated_package_mb": 0.159,
+      "family": "alternate_content",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "alternate_content.choice.metadata.set_value",
+      "package_id": "docx_p18_drawing_014_drawing",
+      "planned_safe_rows": 13,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 13
+    },
+    {
+      "estimated_package_mb": 0.227,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_production_performance_track",
+      "planned_safe_rows": 13,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 9,
+      "runner_schema_policy_skipped_rows": 5,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 22
+    },
+    {
+      "estimated_package_mb": 5.184,
+      "family": "math_object",
+      "format": "pptx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.run.set_text",
+      "package_id": "pptx_p5_transitions_03",
+      "planned_safe_rows": 13,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 14,
+      "runner_schema_policy_skipped_rows": 14,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 27
+    },
+    {
+      "estimated_package_mb": 0.167,
+      "family": "vml_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "vml.formula.eqn.set_value",
+      "package_id": "docx_ms_expansion_121_office-file",
+      "planned_safe_rows": 12,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 1,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 13
+    },
+    {
+      "estimated_package_mb": 0.056,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_154_tdf143384-tableinfoot-negativemargin",
+      "planned_safe_rows": 12,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 8,
+      "runner_schema_policy_skipped_rows": 2,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 20
+    },
+    {
+      "estimated_package_mb": 0.092,
+      "family": "alternate_content",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "alternate_content.choice.metadata.set_value",
+      "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+      "planned_safe_rows": 12,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 12
+    },
+    {
+      "estimated_package_mb": 8.581,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_p18_drawing_005_smartart",
+      "planned_safe_rows": 12,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 3,
+      "runner_schema_policy_skipped_rows": 2,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 15
+    },
+    {
+      "estimated_package_mb": 2.434,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_budget_embedded_objects",
+      "planned_safe_rows": 11,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 2,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 13
+    },
+    {
+      "estimated_package_mb": 0.448,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+      "planned_safe_rows": 11,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 11
+    },
+    {
+      "estimated_package_mb": 0.036,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_layout21_footer",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 3.42,
+      "family": "legacy_office_drawing",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_108_complex-400p",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 0.321,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_114_pinstripes-business-cards",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 5,
+      "runner_schema_policy_skipped_rows": 2,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 15
+    },
+    {
+      "estimated_package_mb": 9.076,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_126_bold-business-report",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 2.131,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_131_restaurant-brochure",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 10,
+      "runner_schema_policy_skipped_rows": 10,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 20
+    },
+    {
+      "estimated_package_mb": 0.033,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_137_mba",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 0.077,
+      "family": "office_extension",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "docx_ms_expansion_146_geometric-cover-letter",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 10,
+      "runner_schema_policy_skipped_rows": 8,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 20
+    },
+    {
+      "estimated_package_mb": 1.702,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 0.023,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_189_fly-minimal-wrap",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 0.026,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_190_fdo78333-1-minimized",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    },
+    {
+      "estimated_package_mb": 0.155,
+      "family": "math_object",
+      "format": "docx",
+      "has_prior_office_boundary_failure": true,
+      "has_prior_office_pass": false,
+      "operation_id": "math.object.metadata.set_value",
+      "package_id": "docx_ms_expansion_203_photo-resume",
+      "planned_safe_rows": 10,
+      "reason": "prior native Office boundary failure",
+      "recommended_action": "skip_boundary",
+      "runner_plan_error_rows": 0,
+      "runner_policy_or_overlap_skipped_rows": 0,
+      "runner_schema_policy_skipped_rows": 0,
+      "skipped_policy_rows": 0,
+      "total_remaining_rows": 10
+    }
+  ],
+  "family_model_opportunities": [],
+  "hydration_status_counts": {
+    "hydrated": 9000,
+    "not_applicable": 8827,
+    "unresolved": 338,
+    "unsupported_mapping": 2769
+  },
+  "known_boundary_packages": [
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c06-0001-62dc000d0a-docx_budget_embedded_objects.json",
+      "package_id": "docx_budget_embedded_objects",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c03-0001-3ef7c6d861-docx_budget_rules_embedded.json",
+      "package_id": "docx_budget_rules_embedded",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-next-0001-9b9d9b8fe1-docx_competitive_analysis_charts.json",
+      "package_id": "docx_competitive_analysis_charts",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c01-0001-68c7da69f6-docx_development_history.json",
+      "package_id": "docx_development_history",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-close-rerun-recovery-c03-0002-cc2dce7b03-docx_finance_tables_track.json",
+      "package_id": "docx_finance_tables_track",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c27-full-0001-f2ddb55be4-docx_financing_plan_chart.json",
+      "package_id": "docx_financing_plan_chart",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-blocker-v1-c03-0001-f79f1067ad-docx_founder_intro_media.json",
+      "package_id": "docx_founder_intro_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-next-0001-9cf340ddce-docx_layout01_media.json",
+      "package_id": "docx_layout01_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-schema-bool-batch2-0001-522aff1086-docx_layout10_footer_media.json",
+      "package_id": "docx_layout10_footer_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c03-0001-1920e9b3e3-docx_layout11_footer_media.json",
+      "package_id": "docx_layout11_footer_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c24-full-0001-195cd38391-docx_layout16_footer_media.json",
+      "package_id": "docx_layout16_footer_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-layout21-b1-docx_layout21_footer.json",
+      "package_id": "docx_layout21_footer",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-next-0001-775c502de6-docx_layout_financial_statement.json",
+      "package_id": "docx_layout_financial_statement",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c02-0001-51c93ada29-docx_layout_market_analysis.json",
+      "package_id": "docx_layout_market_analysis",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c04-0001-b792a4725b-docx_layout_meeting_arrangement.json",
+      "package_id": "docx_layout_meeting_arrangement",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c26-full-0001-f97f552584-docx_layout_operations_media.json",
+      "package_id": "docx_layout_operations_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0002-cd6a5bd136-docx_layout_resume.json",
+      "package_id": "docx_layout_resume",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-next-0001-adc48bd2e3-docx_layout_service_product.json",
+      "package_id": "docx_layout_service_product",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c24-full-0001-8ac67f311f-docx_marketing_strategy_charts.json",
+      "package_id": "docx_marketing_strategy_charts",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx-meeting-record-b1-docx_meeting_record.json",
+      "package_id": "docx_meeting_record",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-altcontent-canary-c03-0001-081f562fdb-docx_ms_expansion_109_hexagon-labels-30-per-page.json",
+      "package_id": "docx_ms_expansion_109_hexagon-labels-30-per-page",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c25-full-0001-cf0b8da866-docx_ms_expansion_112_generative-ai-at-isb.json",
+      "package_id": "docx_ms_expansion_112_generative-ai-at-isb",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx113-b1-docx_ms_expansion_113_swiss-design-resume.json",
+      "package_id": "docx_ms_expansion_113_swiss-design-resume",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c07-0001-cd65c4f078-docx_ms_expansion_114_pinstripes-business-cards.json",
+      "package_id": "docx_ms_expansion_114_pinstripes-business-cards",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-5b5bbe0209-docx_ms_expansion_116_winter-holiday-party-checklist.json",
+      "package_id": "docx_ms_expansion_116_winter-holiday-party-checklist",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-dd7fc1c8e5-docx_ms_expansion_117_wdatevalueformat.json",
+      "package_id": "docx_ms_expansion_117_wdatevalueformat",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-geometric-cards-c01-0001-7191eb5c7f-docx_ms_expansion_118_geometric-business-cards.json",
+      "package_id": "docx_ms_expansion_118_geometric-business-cards",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c17-canary-0001-73aae246ea-docx_ms_expansion_119_small-business-email-marketing-templ.json",
+      "package_id": "docx_ms_expansion_119_small-business-email-marketing-templ",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c16-canary-0001-cfce1f461e-docx_ms_expansion_120_whitepaper-with-cover-image.json",
+      "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c05-0001-5b0916f28e-docx_ms_expansion_122_eighties-business-cards.json",
+      "package_id": "docx_ms_expansion_122_eighties-business-cards",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx-ms-expansion-126-bold-business-report-b1-docx_ms_expansion_126_bold-business-report.json",
+      "package_id": "docx_ms_expansion_126_bold-business-report",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0001-b3ed29e39a-docx_ms_expansion_130_classroom-newsletter.json",
+      "package_id": "docx_ms_expansion_130_classroom-newsletter",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0002-13712db088-docx_ms_expansion_131_restaurant-brochure.json",
+      "package_id": "docx_ms_expansion_131_restaurant-brochure",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c19-canary-0001-b62bd93e86-docx_ms_expansion_135_1-resume-docx.json",
+      "package_id": "docx_ms_expansion_135_1-resume-docx",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c23-canary-0001-5f89bafdea-docx_ms_expansion_136_1-resume-docx.json",
+      "package_id": "docx_ms_expansion_136_1-resume-docx",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx137-b1-docx_ms_expansion_137_mba.json",
+      "package_id": "docx_ms_expansion_137_mba",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c12-0001-52e0622a67-docx_ms_expansion_138_reader.json",
+      "package_id": "docx_ms_expansion_138_reader",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-quick-proof-c02-0001-252e3ac882-docx_ms_expansion_139_reimbursement-form.json",
+      "package_id": "docx_ms_expansion_139_reimbursement-form",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c04-canary-0001-cf4a9fb3f5-docx_ms_expansion_140_headshot-cover-letter.json",
+      "package_id": "docx_ms_expansion_140_headshot-cover-letter",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c12-0001-19b8b6304a-docx_ms_expansion_141_fdo58949.json",
+      "package_id": "docx_ms_expansion_141_fdo58949",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0002-b86d921288-docx_ms_expansion_146_geometric-cover-letter.json",
+      "package_id": "docx_ms_expansion_146_geometric-cover-letter",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c03-canary-0001-3e90048523-docx_ms_expansion_147_basic-business-card.json",
+      "package_id": "docx_ms_expansion_147_basic-business-card",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c01-0001-befca382a0-docx_ms_expansion_148_fdo74605.json",
+      "package_id": "docx_ms_expansion_148_fdo74605",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c04-0001-c47591f7fc-docx_ms_expansion_154_tdf143384-tableinfoot-negativemargin.json",
+      "package_id": "docx_ms_expansion_154_tdf143384-tableinfoot-negativemargin",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0002-ec89d09ed5-docx_ms_expansion_158_organic-shapes-letterhead.json",
+      "package_id": "docx_ms_expansion_158_organic-shapes-letterhead",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c20-canary-0001-5c593d3b41-docx_ms_expansion_159_resume-a4.json",
+      "package_id": "docx_ms_expansion_159_resume-a4",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-c88f77e409-docx_ms_expansion_160_tdf160077-layoutincellb.json",
+      "package_id": "docx_ms_expansion_160_tdf160077-layoutincellb",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-b54bb4c1bf-docx_ms_expansion_162_playful-business-cover-letter.json",
+      "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-quick-proof-c03-0001-19b0296947-docx_ms_expansion_163_mergers-acquisitions-report.json",
+      "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx169-b1-docx_ms_expansion_169_modern-initials-resume.json",
+      "package_id": "docx_ms_expansion_169_modern-initials-resume",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx170-b1-docx_ms_expansion_170_test-segfault-while-save.json",
+      "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c24-full-0001-444c48042e-docx_ms_expansion_173_resume.json",
+      "package_id": "docx_ms_expansion_173_resume",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c26-full-0001-445ddbce8d-docx_ms_expansion_175_childrens-s-holiday-wish-list.json",
+      "package_id": "docx_ms_expansion_175_childrens-s-holiday-wish-list",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c21-canary-0001-3bd5273d70-docx_ms_expansion_182_modern-chronological-resume.json",
+      "package_id": "docx_ms_expansion_182_modern-chronological-resume",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-eca3d36dc6-docx_ms_expansion_183_modern-calendar-with-highlights.json",
+      "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-docx184-office-canary-0001-4ee5673b1d-docx_ms_expansion_184_photo-cover-letter.json",
+      "package_id": "docx_ms_expansion_184_photo-cover-letter",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx189-b1-docx_ms_expansion_189_fly-minimal-wrap.json",
+      "package_id": "docx_ms_expansion_189_fly-minimal-wrap",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx190-b1-docx_ms_expansion_190_fdo78333-1-minimized.json",
+      "package_id": "docx_ms_expansion_190_fdo78333-1-minimized",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx196-b1-docx_ms_expansion_196_bunny-ears-easter-party-flyer.json",
+      "package_id": "docx_ms_expansion_196_bunny-ears-easter-party-flyer",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c03-0001-cd8850abc9-docx_ms_expansion_197_business-report-prefiessional-design.json",
+      "package_id": "docx_ms_expansion_197_business-report-prefiessional-design",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c24-full-0001-61869da342-docx_ms_expansion_202_organic-boho-digital-strategist-resu.json",
+      "package_id": "docx_ms_expansion_202_organic-boho-digital-strategist-resu",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0002-6ec45664d3-docx_ms_expansion_203_photo-resume.json",
+      "package_id": "docx_ms_expansion_203_photo-resume",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-d57a802338-docx_ms_expansion_204_pink-floral-cover-letter.json",
+      "package_id": "docx_ms_expansion_204_pink-floral-cover-letter",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c25-full-0001-d01b63d87f-docx_ms_expansion_207_metro-report.json",
+      "package_id": "docx_ms_expansion_207_metro-report",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c14-canary-0001-1df9775bbe-docx_ms_expansion_208_coverletter-a4.json",
+      "package_id": "docx_ms_expansion_208_coverletter-a4",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c07-0001-312c060be9-docx_p18_drawing_005_smartart.json",
+      "package_id": "docx_p18_drawing_005_smartart",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-docx007-office-canary-0001-8f55c95a27-docx_p18_drawing_007_canvas.json",
+      "package_id": "docx_p18_drawing_007_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c02-0001-67bf880c8a-docx_p18_drawing_008_canvas.json",
+      "package_id": "docx_p18_drawing_008_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c06-canary-0001-1a1ac83fab-docx_p18_drawing_009_canvas.json",
+      "package_id": "docx_p18_drawing_009_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c02-0001-bdeb58dc67-docx_p18_drawing_010_canvas.json",
+      "package_id": "docx_p18_drawing_010_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0001-74c3812ad1-docx_p18_drawing_011_canvas.json",
+      "package_id": "docx_p18_drawing_011_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c01-0001-1219c8d89e-docx_p18_drawing_012_canvas.json",
+      "package_id": "docx_p18_drawing_012_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c01-0001-22101feb40-docx_p18_drawing_013_canvas.json",
+      "package_id": "docx_p18_drawing_013_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0001-b253ef642b-docx_p18_drawing_014_drawing.json",
+      "package_id": "docx_p18_drawing_014_drawing",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-5557937bc5-docx_p18_drawing_015_drawing.json",
+      "package_id": "docx_p18_drawing_015_drawing",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c07-0001-6386e9b9b4-docx_p18_drawing_016_drawing.json",
+      "package_id": "docx_p18_drawing_016_drawing",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c01-0001-01c5d8569c-docx_p18_drawing_017_drawing.json",
+      "package_id": "docx_p18_drawing_017_drawing",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-docx018-0002-131457bfc8-docx_p18_drawing_018_canvas.json",
+      "package_id": "docx_p18_drawing_018_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-docx019-tail-0005-9805f6f6b3-docx_p18_drawing_019_canvas.json",
+      "package_id": "docx_p18_drawing_019_canvas",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0001-a8f75103cc-docx_p18_drawing_020_drawing.json",
+      "package_id": "docx_p18_drawing_020_drawing",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-docx-p5customxml02-b1-docx_p5_customxml_02.json",
+      "package_id": "docx_p5_customxml_02",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c27-full-0001-eba351f59a-docx_p5_embedded_objects_01.json",
+      "package_id": "docx_p5_embedded_objects_01",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c02-0001-a8b534ad92-docx_p5_fields_03.json",
+      "package_id": "docx_p5_fields_03",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c15-canary-0001-e56310bd8b-docx_p5_large_docx_01.json",
+      "package_id": "docx_p5_large_docx_01",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-8h-c01-0001-08e56791a4-docx_p5_track_changes_01.json",
+      "package_id": "docx_p5_track_changes_01",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c02-0001-757ec94e84-docx_p5_track_changes_02.json",
+      "package_id": "docx_p5_track_changes_02",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-close-rerun-recovery-c02-0001-39926a4f22-docx_policy_embedded_objects.json",
+      "package_id": "docx_policy_embedded_objects",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c25-full-0001-94c549370d-docx_project_intro_media.json",
+      "package_id": "docx_project_intro_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c13-0001-3bff95e5d4-docx_resume_customxml.json",
+      "package_id": "docx_resume_customxml",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c09-canary-0001-59de1e10f7-docx_table_of_contents_01.json",
+      "package_id": "docx_table_of_contents_01",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-docx-travel-office-canary-0001-2f882a7cc2-docx_travel_record_media.json",
+      "package_id": "docx_travel_record_media",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-safe-c03-0001-bd0e1b24e8-pptx_brainstorm_training.json",
+      "package_id": "pptx_brainstorm_training",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-pptx028-office-0001-f7dfd1b8f6-pptx_ms_expansion_028_24p-ppt.json",
+      "package_id": "pptx_ms_expansion_028_24p-ppt",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-small-pptx036-financial-pitch-deck-b1-pptx_ms_expansion_036_financial-pitch-deck.json",
+      "package_id": "pptx_ms_expansion_036_financial-pitch-deck",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-artistic-blur-canary-pptx_ms_expansion_041_office-file.json",
+      "package_id": "pptx_ms_expansion_041_office-file",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c01-0002-073c014014-pptx_ms_expansion_049_7.json",
+      "package_id": "pptx_ms_expansion_049_7",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-pptx080-office-0001-d481633658-pptx_ms_expansion_080_28p-ppt.json",
+      "package_id": "pptx_ms_expansion_080_28p-ppt",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx094-b1-pptx_ms_expansion_094_37p-ppt.json",
+      "package_id": "pptx_ms_expansion_094_37p-ppt",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-small2-pptx099-oasis-b1-pptx_ms_expansion_099_oasis.json",
+      "package_id": "pptx_ms_expansion_099_oasis",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-small-pptx211-bevel-b1-pptx_ms_expansion_211_bevel.json",
+      "package_id": "pptx_ms_expansion_211_bevel",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-film-grain-canary-pptx_p5_animations_15.json",
+      "package_id": "pptx_p5_animations_15",
+      "status": "close_error"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-legacy-docx-docx-ms-expansion-108-complex-400p-b1-docx_ms_expansion_108_complex-400p.json",
+      "package_id": "docx_ms_expansion_108_complex-400p",
+      "status": "pass_with_dialog"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-safe-c03-0001-b6f4bb403e-docx_ms_expansion_181_alt-chunk-header.json",
+      "package_id": "docx_ms_expansion_181_alt-chunk-header",
+      "status": "pass_with_dialog"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx020-b1-pptx_ms_expansion_020_80p-ppt.json",
+      "package_id": "pptx_ms_expansion_020_80p-ppt",
+      "status": "repair_dialog"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx213-1-b1-pptx_ms_expansion_213_1.json",
+      "package_id": "pptx_ms_expansion_213_1",
+      "status": "repair_dialog"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-schema-vml-idmap-ext-normal-34-docx_ms_expansion_171_tdf169843.json",
+      "package_id": "docx_ms_expansion_171_tdf169843",
+      "status": "timeout"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-next12h-production-fill-canary-docx_production_performance_track.json",
+      "package_id": "docx_production_performance_track",
+      "status": "timeout"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-next12h-realestate-fill-canary-docx_realestate_finance_policy.json",
+      "package_id": "docx_realestate_finance_policy",
+      "status": "timeout"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-next12h-resume-fill-canary-docx_resume_a4_embedded_charts.json",
+      "package_id": "docx_resume_a4_embedded_charts",
+      "status": "timeout"
+    },
+    {
+      "office_result": "chunk-promotion-checkpoint.json#chunk-pptx-report-207slides-blue-office-extension-0003-fc95e1db3b",
+      "package_id": "pptx_report_207slides_blue",
+      "status": "timeout"
+    },
+    {
+      "office_result": "chunk-promotion-checkpoint.json#chunk-pptx-report-344slides-multimedia-office-extension-0003-f1e52affb1",
+      "package_id": "pptx_report_344slides_multimedia",
+      "status": "timeout"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-theme-family-batch5-0001-fa3467be5d-pptx_six_management_models.json",
+      "package_id": "pptx_six_management_models",
+      "status": "timeout"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr2-docx121-vml-0001-5b5ee89ece-docx_ms_expansion_121_office-file.json",
+      "package_id": "docx_ms_expansion_121_office-file",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-normal-24h-c08-canary-0001-d4c40f3ed2-docx_procurement_rules_track.json",
+      "package_id": "docx_procurement_rules_track",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-aggr-chartdense-long-0003-a3cfd7ad8f-pptx_chart_dense_203slides.json",
+      "package_id": "pptx_chart_dense_203slides",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx016-office-file-b1-pptx_ms_expansion_016_office-file.json",
+      "package_id": "pptx_ms_expansion_016_office-file",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx047-office-file-b1-pptx_ms_expansion_047_office-file.json",
+      "package_id": "pptx_ms_expansion_047_office-file",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-chunk-0001-c83d58a165-pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-.json",
+      "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx087-2-b1-pptx_ms_expansion_087_2.json",
+      "package_id": "pptx_ms_expansion_087_2",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx-p5-animations-07-b1-pptx_p5_animations_07.json",
+      "package_id": "pptx_p5_animations_07",
+      "status": "unreadable_content"
+    },
+    {
+      "office_result": "release-evidence/former-preserve-only-semantic-editability/office-results/api-ledger-officeext-pptx-p5-transitions-03-b1-pptx_p5_transitions_03.json",
+      "package_id": "pptx_p5_transitions_03",
+      "status": "unreadable_content"
+    }
+  ],
+  "known_replay_timeout_packages": [
+    {
+      "checkpoint_record": "chunk-promotion-checkpoint.json#chunk-docx-annual-report-headers-media-alternate-content-0001-7e7153b4f5",
+      "chunk_ids": [
+        "chunk-docx-annual-report-headers-media-alternate-content-0001-7e7153b4f5",
+        "chunk-docx-annual-report-headers-media-alternate-content-0001-13e1bc2862",
+        "chunk-docx-annual-report-headers-media-alternate-content-0002-d185759e0a"
+      ],
+      "family": "alternate_content",
+      "operation_id": "",
+      "package_id": "docx_annual_report_headers_media",
+      "reason": "chunk-level timeout without Office-stage/result timeout evidence",
+      "slow_replay_state": "small_chunk_canary_passed",
+      "small_chunk_canary_chunk_id": "chunk-docx-annual-report-headers-media-alternate-content-0045-e6fdeec6e0",
+      "small_chunk_canary_duration_s": 178.842,
+      "small_chunk_canary_rows": 1,
+      "status": "replay_timeout"
+    },
+    {
+      "checkpoint_record": "chunk-promotion-checkpoint.json#chunk-docx-halfyear-financial-report-track-alternate-content-0001-ed24bc0d59",
+      "chunk_ids": [
+        "chunk-docx-halfyear-financial-report-track-alternate-content-0001-ed24bc0d59",
+        "chunk-docx-halfyear-financial-report-track-alternate-content-0002-6ac1de9538"
+      ],
+      "family": "alternate_content",
+      "operation_id": "",
+      "package_id": "docx_halfyear_financial_report_track",
+      "reason": "chunk-level timeout without Office-stage/result timeout evidence",
+      "slow_replay_state": "small_chunk_canary_passed",
+      "small_chunk_canary_chunk_id": "chunk-docx-halfyear-financial-report-track-alternate-content-0039-4ad68c6cb9",
+      "small_chunk_canary_duration_s": 145.489,
+      "small_chunk_canary_rows": 3,
+      "status": "replay_timeout"
+    },
+    {
+      "checkpoint_record": "chunk-promotion-checkpoint.json#chunk-pptx-finance-diagram-charts-office-extension-0001-71bc1abfee",
+      "chunk_ids": [
+        "chunk-pptx-finance-diagram-charts-office-extension-0001-71bc1abfee"
+      ],
+      "family": "office_extension",
+      "operation_id": "",
+      "package_id": "pptx_finance_diagram_charts",
+      "reason": "chunk-level timeout without Office-stage/result timeout evidence",
+      "status": "replay_timeout"
+    },
+    {
+      "checkpoint_record": "chunk-promotion-checkpoint.json#chunk-pptx-finance-diagram-charts-office-extension-0001-1c313e82ef",
+      "chunk_ids": [],
+      "family": "office_extension",
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_id": "pptx_finance_diagram_charts",
+      "reason": "prior package replay timeout; exact operation canary passed",
+      "slow_replay_state": "small_chunk_canary_passed",
+      "small_chunk_canary_chunk_id": "chunk-pptx-finance-diagram-charts-office-extension-0001-1c313e82ef",
+      "small_chunk_canary_duration_s": 191.163,
+      "small_chunk_canary_rows": 3,
+      "status": "replay_timeout"
+    },
+    {
+      "checkpoint_record": "chunk-promotion-checkpoint.json#chunk-pptx-report-411slides-notes-office-extension-0001-69e83af22d",
+      "chunk_ids": [
+        "chunk-pptx-report-411slides-notes-office-extension-0001-69e83af22d"
+      ],
+      "family": "office_extension",
+      "operation_id": "",
+      "package_id": "pptx_report_411slides_notes",
+      "reason": "chunk-level timeout without Office-stage/result timeout evidence",
+      "status": "replay_timeout"
+    }
+  ],
+  "must_remain_unsupported": [
+    {
+      "count": 2975,
+      "examples": [
+        {
+          "family": "office_extension",
+          "package_id": "docx_layout_meeting_arrangement",
+          "qname": "{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip",
+          "row_id": "docx|docx_layout_meeting_arrangement|word/document.xml|generic_extension:f51bc3ae2e5fab38"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_layout_operations_media",
+          "qname": "{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip",
+          "row_id": "docx|docx_layout_operations_media|word/document.xml|generic_extension:ce01d18bef36031e"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_ms_expansion_114_pinstripes-business-cards",
+          "qname": "{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip",
+          "row_id": "docx|docx_ms_expansion_114_pinstripes-business-cards|word/document.xml|generic_extension:bfcbc56155c84116"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_ms_expansion_114_pinstripes-business-cards",
+          "qname": "{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip",
+          "row_id": "docx|docx_ms_expansion_114_pinstripes-business-cards|word/document.xml|generic_extension:f985280f5ddecc00"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_ms_expansion_114_pinstripes-business-cards",
+          "qname": "{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip",
+          "row_id": "docx|docx_ms_expansion_114_pinstripes-business-cards|word/document.xml|generic_extension:529b9b8ff0691a4e"
+        }
+      ],
+      "reason": "binary_payload_reference",
+      "why_not_safe_yet": "binary targets need a payload or relationship oracle before mutation"
+    },
+    {
+      "count": 440,
+      "examples": [
+        {
+          "family": "wps_extension",
+          "package_id": "docx_annual_report_headers_media",
+          "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectProps",
+          "row_id": "docx|docx_annual_report_headers_media|customXml/item1.xml|generic_extension:6e61c303e73de5f2"
+        },
+        {
+          "family": "wps_extension",
+          "package_id": "docx_annual_report_headers_media",
+          "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectPr",
+          "row_id": "docx|docx_annual_report_headers_media|customXml/item1.xml|generic_extension:91c552e4266cdbcb"
+        },
+        {
+          "family": "wps_extension",
+          "package_id": "docx_annual_report_headers_media",
+          "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectPr",
+          "row_id": "docx|docx_annual_report_headers_media|customXml/item1.xml|generic_extension:a060ec4a9f566bef"
+        },
+        {
+          "family": "wps_extension",
+          "package_id": "docx_annual_report_headers_media",
+          "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectPr",
+          "row_id": "docx|docx_annual_report_headers_media|customXml/item1.xml|generic_extension:705734c91cce9681"
+        },
+        {
+          "family": "wps_extension",
+          "package_id": "docx_annual_report_headers_media",
+          "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customSectPr",
+          "row_id": "docx|docx_annual_report_headers_media|customXml/item1.xml|generic_extension:0f135fb4ef3693a5"
+        }
+      ],
+      "reason": "needs_vendor_family_model",
+      "why_not_safe_yet": "vendor-private semantics need an explicit field model"
+    },
+    {
+      "count": 2433,
+      "examples": [
+        {
+          "family": "office_extension",
+          "package_id": "docx_budget_embedded_objects",
+          "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr",
+          "row_id": "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:5872ed5909db273b"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_budget_embedded_objects",
+          "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}txbx",
+          "row_id": "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:388c203fe242750e"
+        },
+        {
+          "family": "vml_drawing",
+          "package_id": "docx_budget_embedded_objects",
+          "qname": "{urn:schemas-microsoft-com:vml}textbox",
+          "row_id": "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:febd58d5bbe9d990"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_development_history",
+          "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}hiddenFill",
+          "row_id": "docx|docx_development_history|word/document.xml|generic_extension:a1593e007f91fe49"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "docx_development_history",
+          "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr",
+          "row_id": "docx|docx_development_history|word/document.xml|generic_extension:53b289a3de1dcdce"
+        }
+      ],
+      "reason": "no_semantic_field_available",
+      "why_not_safe_yet": "the target has no attribute, text, or descendant scalar to edit"
+    },
+    {
+      "count": 2989,
+      "examples": [
+        {
+          "family": "office_extension",
+          "package_id": "pptx_finance_diagram_charts",
+          "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldId",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:6dba6f304a13b01b"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "pptx_finance_diagram_charts",
+          "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldId",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:695f63d2d97b5adf"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "pptx_finance_diagram_charts",
+          "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldId",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:50c0469c1a08a3ee"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "pptx_finance_diagram_charts",
+          "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldId",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:38db3071f21e83b4"
+        },
+        {
+          "family": "office_extension",
+          "package_id": "pptx_finance_diagram_charts",
+          "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldId",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:75c97b8dca8cbad9"
+        }
+      ],
+      "reason": "relationship_identity_like",
+      "why_not_safe_yet": "changing identity/reference fields can sever cross-part links"
+    }
+  ],
+  "safe_policy_expansion_opportunities": [
+    {
+      "attribute_name": "val",
+      "count": 438,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "txBox",
+      "count": 406,
+      "current_rejection_reason": "schema_policy_unsafe_textbox-flag",
+      "family": "office_extension",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvSpPr",
+      "risk": "medium",
+      "sample_row_ids": [
+        "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:bbee1ed6032a372c"
+      ],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "modelId",
+      "count": 115,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "name",
+      "count": 33,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "style",
+      "count": 24,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "paraId",
+      "count": 10,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "classid",
+      "count": 7,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "version",
+      "count": 7,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "lang",
+      "count": 6,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "Ignorable",
+      "count": 4,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "chg",
+      "count": 4,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "medium",
+      "count": 4,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "type",
+      "count": 4,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "ascii",
+      "count": 3,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "channel",
+      "count": 3,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "creationId",
+      "count": 3,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "rsidR",
+      "count": 3,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "userId",
+      "count": 3,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "author",
+      "count": 2,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    },
+    {
+      "attribute_name": "providerId",
+      "count": 2,
+      "current_rejection_reason": "schema_policy_unsafe_untyped-attribute",
+      "family": "",
+      "proposed_policy": "allow only named attributes with exact before/requested/after oracle",
+      "qname": "",
+      "risk": "medium",
+      "sample_row_ids": [],
+      "spec_type_if_known": ""
+    }
+  ],
+  "schema_version": "semantic-editability-remaining-buckets-v1",
+  "starting_remaining_count": 20934,
+  "starting_semantic_editable_count": 275210
+}

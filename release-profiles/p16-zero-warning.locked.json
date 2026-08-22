@@ -1,0 +1,42 @@
+{
+  "env": {
+    "OOXML_DOCX_DRAWING_REGRESSION_JSON": {
+      "path": "../release-evidence/p17/docx-drawing-regression-summary.json",
+      "sha256": "aa22f3078002e0771a5805fc4077ba01f31fdc445c3bf36ea5dd69b8cc25d319",
+      "size_bytes": 1234
+    },
+    "OOXML_FRESH_TAG_INSTALL": {
+      "value": "1"
+    },
+    "OOXML_GENERATED_OUTPUT_GATE_JSON": {
+      "path": "../release-evidence/p17/generated-output-office-gate-final.json",
+      "sha256": "2d54d645ded653f3fc7688b383aca425037c1f029f5ad57118996a2c540ee4ab",
+      "size_bytes": 366142
+    },
+    "OOXML_NATIVE_CORPUS_DIR": {
+      "path": "../../ooxml-native-corpus",
+      "required_files": [
+        {
+          "path": "manifests/corpus.csv",
+          "sha256": "8992bbb6f8b751d52d82fd11f71f59e36abcf356853c5052436568a3e2828efb",
+          "size_bytes": 173220
+        }
+      ]
+    },
+    "OOXML_OFFICE_GATE_JSON": {
+      "path": "../release-evidence/p17/native-office-supported-valid-full-retry-180s.json",
+      "sha256": "9bce465c8f56f15a48afdb1cf4d16b82fd707c3b98281c16c8ef89cb9d0db9ad",
+      "size_bytes": 127373
+    }
+  },
+  "evidence_manifest": "../release-evidence/p17/manifest.json",
+  "expected_metrics": {
+    "docx_drawing_pass": 1,
+    "fail_count": 0,
+    "fresh_install_ok": 1,
+    "generated_output_ok": 1,
+    "office_repair_zero": 1,
+    "stubs_preserve_ok": 2,
+    "warn_count": 0
+  }
+}

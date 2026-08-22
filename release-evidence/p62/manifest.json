@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "name": "classifier-gap-elimination.json",
+      "path": "release-evidence/p62/classifier-gap-elimination.json",
+      "role": "p62-classifier-gap-details",
+      "sha256": "467ca07d3571532158f1c6215652e5eafd774186161de0cabadc146985179fe3",
+      "size_bytes": 2929
+    },
+    {
+      "name": "classifier-gap-summary.json",
+      "path": "release-evidence/p62/classifier-gap-summary.json",
+      "role": "p62-classifier-gap-summary",
+      "sha256": "40f3fad84530e3287ccfd9b682c71b03c42cddfbc3f4215cbdfcad506af59b0f",
+      "size_bytes": 1289
+    },
+    {
+      "name": "P62-CLASSIFIER-GAP-ELIMINATION.md",
+      "path": "docs/P62-CLASSIFIER-GAP-ELIMINATION.md",
+      "role": "p62-doc",
+      "sha256": "23f8e882a05f81ccf1e33278e2bbdc0619e06f5425bb9bbd9e223a6534fcc518",
+      "size_bytes": 1136
+    }
+  ],
+  "schema_version": "p62-classifier-gap-manifest-v1"
+}

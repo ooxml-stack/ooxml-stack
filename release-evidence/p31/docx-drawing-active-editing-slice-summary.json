@@ -1,0 +1,37 @@
+{
+  "active_edit_cases": 52,
+  "claim_boundary": "100% compatibility under the P33 measured DOCX drawing active-editing v1 denominator.",
+  "desktop_word_open_pass": 64,
+  "desktop_word_source": "release-evidence/p33/docx-drawing-active-edit-office-gate.json",
+  "gate_pass": true,
+  "library_open_save_pass": 64,
+  "macro_dialogs_timeouts": 0,
+  "missing_parts": 0,
+  "non_claims": [
+    "No full Office compatibility claim.",
+    "No full Word drawing parity claim.",
+    "No SmartArt editor parity claim.",
+    "No OfficeArt pixel/layout/cache recomputation parity claim."
+  ],
+  "office_crashes": 0,
+  "operation_counts": {
+    "anchor_resize": 15,
+    "inline_metadata": 12,
+    "noop/preserve_control": 12,
+    "picture_metadata": 10,
+    "textbox_text": 15
+  },
+  "operation_outcome_pass": 64,
+  "package_invariant_pass": 64,
+  "preserve_control_cases": 12,
+  "preserve_control_pass": 12,
+  "relationship_loss": 0,
+  "schema_version": "p31-docx-drawing-active-editing-summary-v1",
+  "selected_cases": 64,
+  "semantic_edit_hit": 52,
+  "source_gate": "release-evidence/p33/docx-drawing-active-edit-gate.json",
+  "unintended_binary_media_mutation": 0,
+  "unsupported_silent_noop": 0,
+  "word_repair_dialogs": 0,
+  "word_security_dialogs": 0
+}

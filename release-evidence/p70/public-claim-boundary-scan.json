@@ -1,0 +1,142 @@
+{
+  "schema_version": "p70-public-claim-boundary-scan-v2",
+  "checked_docs": [
+    "docs/P61-PRESERVE-ONLY-ZERO-LEDGER.md",
+    "docs/P62-CLASSIFIER-GAP-ELIMINATION.md",
+    "docs/P63-ALTERNATE-CONTENT-ACTIVE-EDITING.md",
+    "docs/P64-OFFICE-EXTENSION-ACTIVE-MODELS.md",
+    "docs/P65-OPAQUE-EXTENSION-ACTIVE-POLICY.md",
+    "docs/P66-DEPENDENCY-AWARE-ACTIVE-MUTATORS.md",
+    "docs/P67-DOCX-PRESERVE-ONLY-ZERO.md",
+    "docs/P68-PPTX-PRESERVE-ONLY-ZERO.md",
+    "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+    "docs/P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+    "docs/READINESS-98-AUDIT.md"
+  ],
+  "forbidden_phrase_count": 24,
+  "public_claim_beyond_measured_cells": 0,
+  "flagged_claims": [],
+  "allowed_non_claim_mentions": [
+    {
+      "path": "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "phrase": "full Office compatibility",
+      "context": "72-P80 materialize object rows, stable handles, per-object diffs, and object-bound Office evidence. This does not claim full Office compatibility, full ECMA-376 coverage, renderer/pixel/layout/cache parity, macro support, encrypted package support, or arbitrary ven"
+    },
+    {
+      "path": "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "phrase": "full ECMA-376",
+      "context": "ows, stable handles, per-object diffs, and object-bound Office evidence. This does not claim full Office compatibility, full ECMA-376 coverage, renderer/pixel/layout/cache parity, macro support, encrypted package support, or arbitrary vendor-private sem"
+    },
+    {
+      "path": "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "phrase": "renderer/pixel/layout",
+      "context": "-object diffs, and object-bound Office evidence. This does not claim full Office compatibility, full ECMA-376 coverage, renderer/pixel/layout/cache parity, macro support, encrypted package support, or arbitrary vendor-private semantic interior parity. "
+    },
+    {
+      "path": "docs/P69-PUBLIC-API-AND-OWNER-UI-ZERO-PRESERVE.md",
+      "phrase": "arbitrary vendor-private semantic interior parity",
+      "context": "compatibility, full ECMA-376 coverage, renderer/pixel/layout/cache parity, macro support, encrypted package support, or arbitrary vendor-private semantic interior parity. "
+    },
+    {
+      "path": "docs/P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+      "phrase": "renderer/pixel/layout",
+      "context": "required before claiming object-level active editability for every former preserve-only object. P70 also does not prove renderer/pixel/layout parity, macro support, encrypted package support, or arbitrary vendor-private semantic interior parity beyond the measu"
+    },
+    {
+      "path": "docs/P70-PRESERVE-ONLY-ZERO-FREEZE.md",
+      "phrase": "arbitrary vendor-private semantic interior parity",
+      "context": "reserve-only object. P70 also does not prove renderer/pixel/layout parity, macro support, encrypted package support, or arbitrary vendor-private semantic interior parity beyond the measured active operations. "
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "ary: this enforces measured P12 DOCX drawing regression evidence when supplied; it is not a full Word drawing parity or full Office compatibility claim  P15 zero-warning release verifier closure, local current tags:  - command: `OOXML_GENERATED_OUTPUT_GATE_JSON=<tm"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": " fresh install/import passed - boundary: this proves a warning-free measured release verifier profile only; it is not a full Office compatibility or full Word drawing parity claim  P16 release profile freeze, local current tags:  - profile: `ooxml-stack/release-pro"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "unt` 1; `fresh_install_ok_count` 1 - boundary: this freezes the measured P15 zero-warning verifier profile; it is not a full Office compatibility or full Word drawing parity claim  P17 release evidence bundle freeze, local current tags:  - locked profile: `ooxml-st"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "nt` 6; `required_dir_count` 1 - boundary: this freezes and hash-validates the measured P16 evidence bundle; it is not a full Office compatibility or full Word drawing parity claim   P20 DOCX drawing coverage matrix, current evidence:  - evidence directory: `ooxml-s"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "1 pass_total, repair/crash/macro/security blockers 0 - boundary: this freezes the measured P18 denominator; it is not a full Office compatibility or full Word drawing parity claim  P28 DOCX drawing profile freeze, current evidence:  - locked profile: `ooxml-stack/r"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "h_dialog, repair/crash/macro/security blockers 0 - boundary: this freezes the measured P21/P23 denominator; it is not a full Office compatibility or full Word drawing parity claim  P33 DOCX drawing active-editing v1, current evidence:  - claim: `100% compatibility "
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "blic overclaim all 0 - boundary: this is active editing compatibility only under the fixed P33 denominator; it is not a full Office compatibility or full Word drawing parity claim  P35 stable-handle active-editing gate, current evidence:  - claim: `100% stable-hand"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "/crash/macro/timeout blockers - boundary: this is stable-handle targeting under the selected P35 denominator; it is not full Office compatibility or full Word drawing parity  P18 DOCX drawing coverage expansion, local current evidence:  - doc: `ooxml-stack/docs/P18"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "locker counts 0 - boundary: this expands the measured DOCX drawing denominator; it is not a full Word drawing parity or full Office compatibility claim  Real Office non-macro smoke result, local 2-file sample:  - command: `uv run python tools/office-open-gate/offic"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "y: this is active editing compatibility only under the fixed P40 measured public-operation-row denominator; it is not a full Office compatibility, full Word drawing parity, larger unique-handle denominator, or 20-independent-mutator claim  P41 DOCX drawing active-e"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": " binary mutation, silent no-op, and public overclaim all 0 - boundary: this adds inspectable owner evidence for P40; no full Office compatibility claim, no full Word drawing parity claim, no SmartArt editor parity claim, no pixel/layout/cache parity claim, and no O"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "all 0 - boundary: this is active editing compatibility only under the fixed P42 measured real-expansion denominator; no full Office compatibility claim, no full Word drawing parity claim, no SmartArt editor parity claim, no pixel/layout/cache parity claim, and no O"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "ws are not every XML element instance, and `unsupported=0` means the current classifier emitted no unsupported rows. No full Office compatibility claim, no full ECMA-376 universe coverage claim, no full format parity claim, no SmartArt editor parity claim, and no r"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full Office compatibility",
+      "context": "X object-candidate understanding plus a bounded DOCX drawing active-edit preservation contract. No full OOXML claim, no full Office compatibility claim, no full ECMA-376 universe coverage claim, no full Word/PPTX parity claim, no universal editing claim, no SmartAr"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full ECMA-376",
+      "context": "e, and `unsupported=0` means the current classifier emitted no unsupported rows. No full Office compatibility claim, no full ECMA-376 universe coverage claim, no full format parity claim, no SmartArt editor parity claim, and no renderer/layout/cache rec"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "full ECMA-376",
+      "context": "s a bounded DOCX drawing active-edit preservation contract. No full OOXML claim, no full Office compatibility claim, no full ECMA-376 universe coverage claim, no full Word/PPTX parity claim, no universal editing claim, no SmartArt editor parity claim, a"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "renderer/pixel/layout",
+      "context": " handles, diffs, and object-bound Office evidence for the 284688 aggregate replay-covered rows. P70 also does not prove renderer/pixel/layout parity, macro support, encrypted package support, or arbitrary vendor-private semantic interior parity beyond the measu"
+    },
+    {
+      "path": "docs/READINESS-98-AUDIT.md",
+      "phrase": "arbitrary vendor-private semantic interior parity",
+      "context": "replay-covered rows. P70 also does not prove renderer/pixel/layout parity, macro support, encrypted package support, or arbitrary vendor-private semantic interior parity beyond the measured active operations."
+    }
+  ],
+  "gate_pass": true
+}

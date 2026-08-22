@@ -29,6 +29,9 @@ For supported-valid files, readiness claims require machine evidence for:
 - No missing parts, relationship loss, or binary mutation is introduced.
 - Exact preserve and compatible preserve are reported separately.
 - Office open gates report zero repair dialogs for the release corpus.
+- Macro/security prompts are detected and reported separately from repair
+  dialogs; they cannot be folded into a normal pass unless desktop Office opens
+  and closes the file without enabling macros.
 - Schema validation reports zero errors for generated release artifacts.
 - Fresh install from release tags passes smoke validation.
 

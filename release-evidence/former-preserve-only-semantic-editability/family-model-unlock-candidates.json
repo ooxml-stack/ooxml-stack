@@ -1,0 +1,226 @@
+{
+  "candidate_count": 10,
+  "candidates": [
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 8312,
+      "current_remaining_count": 16599,
+      "current_unsupported_count": 8287,
+      "disallowed_fields": "identity/reference/binary payload fields",
+      "editable_semantic_fields": "allowlisted metadata attributes",
+      "family_id": "office_extension",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 1,
+      "readable_semantic_fields": "qname, known metadata attributes, semantic value kind, and selector",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "Office extension metadata"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "parse owner XML node and extract leaf text or allowlisted attribute",
+      "current_pending_proof_count": 1014,
+      "current_remaining_count": 1047,
+      "current_unsupported_count": 33,
+      "disallowed_fields": "geometry without layout oracle",
+      "editable_semantic_fields": "text and metadata fields",
+      "family_id": "vml_drawing",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 2,
+      "readable_semantic_fields": "VML shape text, lock/wrap metadata, and safe style fields",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "legacy VML drawing object"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "parse owner XML node and extract leaf text or allowlisted attribute",
+      "current_pending_proof_count": 612,
+      "current_remaining_count": 621,
+      "current_unsupported_count": 9,
+      "disallowed_fields": "math tree restructuring",
+      "editable_semantic_fields": "token text and run text",
+      "family_id": "math_object",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 3,
+      "readable_semantic_fields": "OMML token/run text and math metadata",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "OMML math object"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 828,
+      "current_remaining_count": 833,
+      "current_unsupported_count": 5,
+      "disallowed_fields": "chart data series edits",
+      "editable_semantic_fields": "known chart metadata",
+      "family_id": "office_chart_extension",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 4,
+      "readable_semantic_fields": "qname, known metadata attributes, semantic value kind, and selector",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "Office chart extension metadata"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 322,
+      "current_remaining_count": 322,
+      "current_unsupported_count": 0,
+      "disallowed_fields": "chart data or geometry",
+      "editable_semantic_fields": "shape/title metadata",
+      "family_id": "chart_drawing",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 5,
+      "readable_semantic_fields": "qname, known metadata attributes, semantic value kind, and selector",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "chart drawing surface"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 338,
+      "current_remaining_count": 342,
+      "current_unsupported_count": 4,
+      "disallowed_fields": "schema structural changes",
+      "editable_semantic_fields": "safe schema annotations",
+      "family_id": "custom_xml_schema",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 6,
+      "readable_semantic_fields": "schema element names, types, and annotations",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "custom XML schema declaration"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "parse owner XML node and extract leaf text or allowlisted attribute",
+      "current_pending_proof_count": 108,
+      "current_remaining_count": 129,
+      "current_unsupported_count": 21,
+      "disallowed_fields": "mixed-content subtree rewrite",
+      "editable_semantic_fields": "leaf text nodes",
+      "family_id": "custom_xml_payload",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 7,
+      "readable_semantic_fields": "leaf text and attribute values",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "custom XML payload"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 72,
+      "current_remaining_count": 512,
+      "current_unsupported_count": 440,
+      "disallowed_fields": "unmodeled vendor-private semantics",
+      "editable_semantic_fields": "allowlisted vendor fields",
+      "family_id": "wps_extension",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 8,
+      "readable_semantic_fields": "qname, known metadata attributes, semantic value kind, and selector",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "WPS vendor extension"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 249,
+      "current_remaining_count": 249,
+      "current_unsupported_count": 0,
+      "disallowed_fields": "binary or geometry internals",
+      "editable_semantic_fields": "known lock/wrap metadata",
+      "family_id": "legacy_office_drawing",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 9,
+      "readable_semantic_fields": "qname, known metadata attributes, semantic value kind, and selector",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "legacy Office drawing metadata"
+    },
+    {
+      "after_value_oracle": "requested value equals after semantic value and target_semantic_changed is true",
+      "before_value_extraction": "read allowlisted attribute or descendant metadata value from operation target selector",
+      "current_pending_proof_count": 151,
+      "current_remaining_count": 151,
+      "current_unsupported_count": 0,
+      "disallowed_fields": "fallback branch deletion or rewrite",
+      "editable_semantic_fields": "choice metadata",
+      "family_id": "alternate_content",
+      "first_small_batch_target": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "native_office_gate_requirements": "exact edited output opens in Word/PowerPoint with no repair/security/crash/timeout",
+      "package_invariant_checks": "OPC parts, relationships, content types, binary hashes, and package open remain valid",
+      "priority": 10,
+      "readable_semantic_fields": "qname, known metadata attributes, semantic value kind, and selector",
+      "sibling_unchanged_oracle": "same package/family/operation siblings keep before semantic values",
+      "stable_handle_requirements": "package-local stable_id, part_name, selector, qname, and unambiguous operation target",
+      "what_the_object_represents_in_user_terms": "markup compatibility branch wrapper"
+    }
+  ],
+  "schema_version": "family-model-unlock-candidates-v1"
+}

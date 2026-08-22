@@ -1,0 +1,51 @@
+{
+  "scanned_docx_rows": 166,
+  "supported_docx_rows": 165,
+  "drawing_docx_files": 120,
+  "selected_cases": 60,
+  "represented_bucket_count": 7,
+  "library_open_save_pass": 60,
+  "package_invariant_pass": 60,
+  "semantic_target_pass": 60,
+  "semantic_target_fail": 0,
+  "semantic_assertion_count": 8,
+  "office_total": 60,
+  "office_pass_total": 60,
+  "office_repair_dialog_count": 0,
+  "office_crash_count": 0,
+  "office_security_dialog_count": 0,
+  "office_macro_security_dialog_count": 0,
+  "office_macro_timeout_count": 0,
+  "office_checked": true,
+  "gate_pass": true,
+  "bucket_inventory": {
+    "chart_embedded": 22,
+    "drawing_canvas": 1,
+    "floating_anchor": 107,
+    "group_shape": 51,
+    "smartart": 2,
+    "textbox": 72,
+    "wordart": 48
+  },
+  "operation_counts": {
+    "anchor_resize": 10,
+    "canvas_metadata": 1,
+    "chart_metadata": 10,
+    "group_metadata": 10,
+    "noop": 7,
+    "smartart_text": 2,
+    "textbox_text": 10,
+    "wordart_metadata": 10
+  },
+  "semantic_assertion_counts": {
+    "anchor_resize": 10,
+    "canvas_metadata": 1,
+    "chart_metadata": 10,
+    "group_metadata": 10,
+    "noop": 7,
+    "smartart_text": 2,
+    "textbox_text": 10,
+    "wordart_metadata": 10
+  },
+  "failures": []
+}

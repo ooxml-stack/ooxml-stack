@@ -1,0 +1,19 @@
+{
+  "artifacts": [
+    {
+      "name": "cross-format-drawingml-contract.json",
+      "path": "cross-format-drawingml-contract.json",
+      "role": "p48-contract",
+      "sha256": "d77112ac398b50e3580f3d70b6abd3f13c04f91b715035f1b0df13308f8995e0",
+      "size_bytes": 2167
+    },
+    {
+      "name": "P48-CROSS-FORMAT-DRAWINGML-SEMANTIC-CORE.md",
+      "path": "../../docs/P48-CROSS-FORMAT-DRAWINGML-SEMANTIC-CORE.md",
+      "role": "audit-doc",
+      "sha256": "57894b698996673fc5d85688b16080f44b4e63d430fc60913617ad3a37e22fc6",
+      "size_bytes": 1243
+    }
+  ],
+  "schema_version": "p48-release-evidence-manifest-v1"
+}

@@ -1,0 +1,30 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-03T03:13:39.116864+00:00",
+  "schema_version": "p65-opaque-extension-summary-v1",
+  "summary": {
+    "opaque_extension_baseline_count": 285997,
+    "opaque_extension_preserve_only_count": 0,
+    "opaque_extension_without_active_operation_count": 0,
+    "opaque_extension_without_policy_count": 0,
+    "p64_office_extension_office_open_rate": 100,
+    "p64_office_extension_semantic_hit_rate": 100,
+    "policy_category_counts": {
+      "binary_media": 1,
+      "cache_payload": 3,
+      "embedded_object_payload": 1,
+      "external_reference": 1,
+      "known_office_extension": 6,
+      "package_metadata": 4,
+      "vendor_private_extension": 3
+    },
+    "policy_row_count": 19,
+    "policy_source_count": 3740547,
+    "vendor_private_extension_active_operation_count": 3,
+    "vendor_private_extension_policy_count": 3,
+    "whole_payload_replace_policy_count": 1,
+    "whole_payload_replace_semantic_overclaim_count": 0
+  },
+  "warnings": []
+}

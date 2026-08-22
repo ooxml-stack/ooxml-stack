@@ -1,0 +1,104 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-02T00:21:35.372044+00:00",
+  "generator_name": "semantic-dependency-ownership",
+  "generator_version_or_commit": "local-worktree",
+  "input_evidence": {},
+  "rows": [
+    {
+      "count": 1202631,
+      "dependency_category": "internal_part"
+    },
+    {
+      "count": 604,
+      "dependency_category": "external_relationship"
+    },
+    {
+      "count": 29519,
+      "dependency_category": "binary_media"
+    },
+    {
+      "count": 9794,
+      "dependency_category": "chart_part"
+    },
+    {
+      "count": 9794,
+      "dependency_category": "chart_cache_or_data"
+    },
+    {
+      "count": 183,
+      "dependency_category": "smartart_diagram_part"
+    },
+    {
+      "count": 3536,
+      "dependency_category": "theme_part"
+    },
+    {
+      "count": 15980,
+      "dependency_category": "layout_part"
+    },
+    {
+      "count": 3536,
+      "dependency_category": "master_part"
+    },
+    {
+      "count": 6756,
+      "dependency_category": "notes_part"
+    },
+    {
+      "count": 5693,
+      "dependency_category": "ole_or_embedded_package"
+    },
+    {
+      "count": 10147,
+      "dependency_category": "alternate_content_branch"
+    },
+    {
+      "count": 285997,
+      "dependency_category": "opaque_extension"
+    },
+    {
+      "count": 0,
+      "dependency_category": "none"
+    }
+  ],
+  "schema_version": "p55-semantic-dependency-ownership-v1",
+  "summary": {
+    "binary_dependency_hash_count": 29519,
+    "chart_dependency_bound_count": 9794,
+    "dangling_required_dependency_count": 0,
+    "dependency_category_counts": {
+      "alternate_content_branch": 10147,
+      "binary_media": 29519,
+      "chart_cache_or_data": 9794,
+      "chart_part": 9794,
+      "external_relationship": 604,
+      "internal_part": 1202631,
+      "layout_part": 15980,
+      "master_part": 3536,
+      "none": 0,
+      "notes_part": 6756,
+      "ole_or_embedded_package": 5693,
+      "opaque_extension": 285997,
+      "smartart_diagram_part": 183,
+      "theme_part": 3536
+    },
+    "dependency_owner_row_count": 1488628,
+    "dependency_resolution_exception_count": 0,
+    "family_format_cell_pass_count": 39,
+    "missing_required_part_count": 0,
+    "object_candidate_count": 1488628,
+    "object_with_dependency_decision_count": 1488628,
+    "object_with_owner_decision_count": 1488628,
+    "object_without_dependency_decision_count": 0,
+    "object_without_owner_decision_count": 0,
+    "opaque_dependency_reason_missing_count": 0,
+    "relationship_edge_count": 112082,
+    "relationship_target_unclassified_count": 0,
+    "selected_supported_valid_package_count": 361,
+    "smartart_dependency_bound_count": 183,
+    "theme_or_layout_dependency_bound_count": 19516
+  },
+  "warnings": []
+}

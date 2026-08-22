@@ -1,0 +1,24 @@
+{
+  "completed_packages": [
+    "docx_ms_expansion_108_complex-400p"
+  ],
+  "records": [
+    {
+      "audit": {
+        "audit_pass": true,
+        "expected_count": 25,
+        "failures": {},
+        "row_count": 25
+      },
+      "candidate": {
+        "family": "vml_drawing",
+        "label": "aggr-vml-docx-docx-ms-expansion-108-complex-400p-b1",
+        "package_id": "docx_ms_expansion_108_complex-400p",
+        "planned": 25,
+        "rows": 36,
+        "skipped_policy": 7
+      },
+      "status": "promoted"
+    }
+  ]
+}

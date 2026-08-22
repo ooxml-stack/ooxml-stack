@@ -26,6 +26,8 @@ are intentionally conservative and should not be treated as an API guarantee.
 - `VISIBILITY.md` - public/private boundary policy.
 - `CONTRIBUTING.md` - contribution and disclosure rules.
 - `docs/COMPATIBILITY-CONTRACT.md` - public compatibility claim boundary.
+- `docs/OOXML-ELEMENT-CAPABILITY-LEDGER.md` - stable capability ledger for
+  measured OOXML readability/editability claims.
 
 No generated Office files, private datasets, CI artifacts, secrets, or local
 machine paths should be committed here.

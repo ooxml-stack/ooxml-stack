@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "name": "ooxml-semantic-inventory.json",
+      "path": "ooxml-semantic-inventory.json",
+      "role": "p43-inventory",
+      "sha256": "73139fcc7f224af77326f74b27e8022dee156ca5ea41c6a17e29a1638a81da64",
+      "size_bytes": 4370869
+    },
+    {
+      "name": "ooxml-semantic-status-summary.json",
+      "path": "ooxml-semantic-status-summary.json",
+      "role": "p43-summary",
+      "sha256": "01ee286b2cd14ee203abb5f788137aa1c7864206d812122e004c5231d7198b36",
+      "size_bytes": 8845
+    },
+    {
+      "name": "P43-GLOBAL-OOXML-SEMANTIC-INVENTORY.md",
+      "path": "../../docs/P43-GLOBAL-OOXML-SEMANTIC-INVENTORY.md",
+      "role": "audit-doc",
+      "sha256": "530cd69ef3f74ada5183658f8df5de46dee78f2d86cdb4c71347455faf95606e",
+      "size_bytes": 5803
+    }
+  ],
+  "schema_version": "p43-release-evidence-manifest-v1"
+}

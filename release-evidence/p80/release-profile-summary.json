@@ -1,0 +1,102 @@
+{
+  "boundaries": [
+    "all 296,144 former preserve-only rows are surface-editable, not semantic-editable",
+    "not full Office compatibility",
+    "not full OOXML semantic understanding",
+    "not renderer/pixel/layout/cache parity",
+    "not macro or encrypted-package support",
+    "not arbitrary vendor-private semantic interior editing"
+  ],
+  "clean_root_replay_ok_count": 1,
+  "fail_count": 0,
+  "fresh_install_ok_count": 1,
+  "gate_pass": true,
+  "hash_checked_count": 108,
+  "metrics": {
+    "active_edit_attempt_count": 296144,
+    "after_digest_missing_count": 0,
+    "aggregate_ledger_row_count": 0,
+    "aggregate_replay_counted_as_object_level_count": 0,
+    "ambiguous_handle_silent_success_count": 0,
+    "baseline_former_preserve_only_count": 296144,
+    "before_digest_missing_count": 0,
+    "clean_root_replay_ok_count": 1,
+    "dashboard_validation_pass": true,
+    "edit_depth_missing_count": 0,
+    "fail_count": 0,
+    "family_missing_count": 0,
+    "former_preserve_only_object_row_count": 296144,
+    "fresh_install_ok_count": 1,
+    "gate_pass": true,
+    "hash_checked_count": 108,
+    "label_only_promotion_count": 0,
+    "macro_dialog_timeout_count": 0,
+    "missing_part_after_edit_count": 0,
+    "object_level_active_editable_count": 296144,
+    "object_level_active_editable_rate": 100,
+    "object_office_bound_fail_count": 0,
+    "object_office_bound_pass_count": 296144,
+    "office_crash_count": 0,
+    "office_repair_dialog_count": 0,
+    "office_security_dialog_count": 0,
+    "ok": true,
+    "operation_id_missing_count": 0,
+    "package_invariant_failure_count": 0,
+    "package_level_oracle_counted_as_object_level_count": 0,
+    "part_name_missing_count": 0,
+    "policy_only_promotion_count": 0,
+    "public_api_edit_pass_count": 296144,
+    "public_api_handle_locate_pass_count": 296144,
+    "public_claim_beyond_measured_cells": 0,
+    "qname_missing_count": 0,
+    "raw_xml_escape_hatch_required_count": 0,
+    "relationship_loss_count": 0,
+    "selector_missing_count": 0,
+    "selector_multi_match_count": 0,
+    "selector_resolve_failure_count": 0,
+    "semantic_editable_count": 0,
+    "semantic_or_surface_hit_count": 296144,
+    "semantic_or_surface_hit_rate": 100,
+    "sibling_unexpected_mutation_count": 0,
+    "size_checked_count": 108,
+    "stable_handle_assigned_count": 296144,
+    "stable_handle_duplicate_count": 0,
+    "stable_handle_missing_count": 0,
+    "stale_handle_silent_success_count": 0,
+    "status_only_promotion_count": 0,
+    "surface_editable_count": 296144,
+    "target_digest_changed_count": 296144,
+    "target_digest_unchanged_after_edit_count": 0,
+    "typed_error_contract_pass": true,
+    "unexpected_binary_mutation_count": 0,
+    "warn_count": 0,
+    "wrong_handle_mutation_count": 0,
+    "xml_part_parse_failure_count": 0
+  },
+  "ok": true,
+  "release_tags": {
+    "ooxml-core": {
+      "commit_sha": "18623d3f2178c86ad66247b598a48b4c4009de64",
+      "tag": "v0.3.45"
+    },
+    "ooxml-stubs": {
+      "commit_sha": "308e825e3014995820b0b0db44204311af3644c2",
+      "tag": "v0.2.15"
+    },
+    "ooxml-test-framework": {
+      "commit_sha": "7b627e60c1aa02b8c7ea9d67ae936e31813d378f",
+      "tag": "v0.5.28"
+    },
+    "python-docx": {
+      "commit_sha": "3a28d1dfff7b72a38211a0e3a6bcc8e24422b925",
+      "tag": "v1.2.10"
+    },
+    "python-pptx": {
+      "commit_sha": "58cf062deaf80885cafcc4cf5f3f4e97a0fa288f",
+      "tag": "v2.0.10"
+    }
+  },
+  "schema_version": "p80-release-profile-summary-v1",
+  "size_checked_count": 108,
+  "warn_count": 0
+}

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-07-30T15:57:55Z",
+    "timeout_seconds": 240,
+    "dialog_wait_seconds": 30
+  },
+  "summary": {
+    "total": 1,
+    "pass": 0,
+    "pass_total": 0,
+    "repair_dialog_count": 1,
+    "unreadable_content_count": 1,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 0,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "unreadable_content": 1
+    },
+    "gate_pass": false
+  },
+  "results": [
+    {
+      "file": "ooxml-stack/release-evidence/former-preserve-only-semantic-editability/promotion-outputs/api-aggr2-docx121-vml-0001-5b5ee89ece-docx_ms_expansion_121_office-file.docx",
+      "app": "Microsoft Word",
+      "status": "unreadable_content",
+      "message": "REPAIR_DIALOG: AXWindow AXDialog NoYes Microsoft WordWord found unreadable content in api-aggr2-docx121-vml-0001-5b5ee89ece-docx_ms_expansion_121_.... Do you want to recover the contents of this document? If you trust the source of this document, click Yes. NoYes",
+      "exit_code": 0,
+      "stdout": "REPAIR_DIALOG:   AXWindow AXDialog NoYes   Microsoft WordWord found unreadable content in api-aggr2-docx121-vml-0001-5b5ee89ece-docx_ms_expansion_121_.... Do you want to recover the contents of this document? If you trust the source of this document, click Yes. NoYes",
+      "stderr": "",
+      "elapsed_seconds": 3.569
+    }
+  ]
+}

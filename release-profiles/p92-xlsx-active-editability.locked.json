@@ -1,0 +1,77 @@
+{
+  "claim": "P92 PASS: python-xlsx active-editability over the 846-file real-world xlsx corpus reaches 840/841 openable workbooks (99.88%), up from 582/841 (69.2%) at P91.",
+  "ok": true,
+  "env": {
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_XLSX_COMPAT_JSON": "../ooxml-test-framework/tools/compat-test/results/runs/xlsx-p92-final-20260804T003025Z/results_xlsx.json",
+    "OOXML_XLSX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/xlsx",
+    "OOXML_XLSX_RUNNER": "../ooxml-test-framework/tools/compat-test/run_xlsx.py"
+  },
+  "expected_metrics": {
+    "total": 846,
+    "zip_valid": 841,
+    "open_pass": 841,
+    "open_fail": 5,
+    "open_timeout": 0,
+    "passive_roundtrip_pass": 841,
+    "passive_roundtrip_fail": 0,
+    "preserve_all_pass": 787,
+    "preserve_partial": 54,
+    "preserve_none": 0,
+    "preserve_compatible_all": 787,
+    "preserve_partial_unexplained": 54,
+    "synthesized_content_types": 0,
+    "strict_namespace_normalization": 0,
+    "active_roundtrip_pass": 840,
+    "active_roundtrip_fail": 1,
+    "active_roundtrip_skip": 5,
+    "open_pass_rate": 99.4,
+    "passive_roundtrip_pass_rate": 100.0,
+    "preserve_seven_of_seven_rate": 93.6,
+    "active_roundtrip_pass_rate": 99.88
+  },
+  "closed_since_p91": [
+    {
+      "id": "xlsx-sst-part-not-materialized",
+      "was": 246,
+      "fix": "SharedStrings.flush() creates and relates xl/sharedStrings.xml when the package has none."
+    },
+    {
+      "id": "xlsx-sst-duplicate-rel",
+      "was": 29,
+      "fix": "Reuse/drop a pre-existing dangling sharedStrings relationship instead of adding a second one. Regression introduced by the fix above and caught by re-running this corpus, not by unit tests."
+    },
+    {
+      "id": "xlsx-cell-missing-r-attr",
+      "was": 4,
+      "fix": "CT_Cell.r is OptionalAttribute; coordinates resolved by document order without writing @r back."
+    },
+    {
+      "id": "xlsx-chartsheet-no-sheetdata",
+      "was": 8,
+      "fix": "Typed TypeError on chartsheet-as-worksheet in the library; harness walks to the first sheet with a cell grid."
+    }
+  ],
+  "open_items": [
+    {
+      "id": "xlsx-empty-rel-key",
+      "severity": "P2",
+      "count": 1,
+      "file": "sample29.xlsx",
+      "symptom": "KeyError: no relationship with key ''"
+    },
+    {
+      "id": "xlsx-non-zip-ole2",
+      "severity": "boundary",
+      "count": 5,
+      "symptom": "BadZipFile — legacy OLE2 content behind an .xlsx extension. Not a defect."
+    },
+    {
+      "id": "preserve-partial-name-normalization",
+      "severity": "classifier-gap",
+      "count": 54,
+      "symptom": "All 54 preserve partials are source packages using backslash part separators and a lowercase [content_types].xml. python-xlsx writes canonical OPC names, which is correct; verify_preserve has no compatibility class for it, so they land in preserve_partial_unexplained. Real preserve is 841/841 once classified."
+    }
+  ],
+  "next_gate": "P93: classify the 54 name-normalization preserve partials, then run the ooxml_testing SpreadsheetML registry over every saved package as a harness stage. Roundtrip plus preserve did not catch the P91 shared-strings data loss — a compliance pass over output would have."
+}

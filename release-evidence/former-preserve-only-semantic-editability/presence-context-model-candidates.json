@@ -1,0 +1,3413 @@
+{
+  "candidate_count": 0,
+  "candidates": [
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 1046
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "hiddenFill",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}hiddenFill",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 1046,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_development_history",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_development_history|word/document.xml|generic_extension:a1593e007f91fe49",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:39793ad0d8ed5bf3",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:0c58af3c62faf392",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:aaf707725a6cbe3f",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:fc7ed7999c295411",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 177
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "dataModelExt",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}dataModelExt",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 177,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_enterprise_finance_policy_fields",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/diagrams/data1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_enterprise_finance_policy_fields|word/diagrams/data1.xml|generic_extension:6a7df2be5f28deb2",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_110_testchartoleobjectembeddings",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/diagrams/data1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_110_testchartoleobjectembeddings|word/diagrams/data1.xml|generic_extension:1aafd74bdcdd4f38",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_110_testchartoleobjectembeddings",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/diagrams/data3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_110_testchartoleobjectembeddings|word/diagrams/data3.xml|generic_extension:1059492fd38b4512",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_110_testchartoleobjectembeddings",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/diagrams/data4.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_110_testchartoleobjectembeddings|word/diagrams/data4.xml|generic_extension:8b49a4885e4066c5",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_110_testchartoleobjectembeddings",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "word/diagrams/data5.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_110_testchartoleobjectembeddings|word/diagrams/data5.xml|generic_extension:3acf0289c4b08afe",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 172
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "cNvGrpSpPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvGrpSpPr",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 172,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_001_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+          "part_name": "word/diagrams/drawing1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_001_smartart|word/diagrams/drawing1.xml|generic_extension:4da24061950d72af",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_002_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+          "part_name": "word/diagrams/drawing3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_002_smartart|word/diagrams/drawing3.xml|generic_extension:7ff56b875abd3010",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_002_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+          "part_name": "word/diagrams/drawing2.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_002_smartart|word/diagrams/drawing2.xml|generic_extension:d18539ab34f72192",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_002_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+          "part_name": "word/diagrams/drawing1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_002_smartart|word/diagrams/drawing1.xml|generic_extension:001a5c2db08cbb20",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_003_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+          "part_name": "word/diagrams/drawing1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_003_smartart|word/diagrams/drawing1.xml|generic_extension:652e1ebbe822a4c7",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 169
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "grpSpPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}grpSpPr",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 169,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_001_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree",
+          "part_name": "word/diagrams/drawing1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_001_smartart|word/diagrams/drawing1.xml|generic_extension:3af13d0398016e72",
+          "sibling_scalar_count": 5,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_002_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree",
+          "part_name": "word/diagrams/drawing3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_002_smartart|word/diagrams/drawing3.xml|generic_extension:b2476fae88ed7f22",
+          "sibling_scalar_count": 9,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_002_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree",
+          "part_name": "word/diagrams/drawing2.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_002_smartart|word/diagrams/drawing2.xml|generic_extension:1d5446765357bc22",
+          "sibling_scalar_count": 10,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_002_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree",
+          "part_name": "word/diagrams/drawing1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_002_smartart|word/diagrams/drawing1.xml|generic_extension:8673147ec4f37538",
+          "sibling_scalar_count": 5,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_003_smartart",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree",
+          "part_name": "word/diagrams/drawing1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_003_smartart|word/diagrams/drawing1.xml|generic_extension:732b669cf79d75e5",
+          "sibling_scalar_count": 15,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+            "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 157
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "sldGuideLst",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2012/main}sldGuideLst",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 157,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_bgy_sales_recommendation",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slideMasters/slideMaster1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_bgy_sales_recommendation|ppt/slideMasters/slideMaster1.xml|generic_extension:91ac668dc7b41167",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/presentation.xml|generic_extension:b52740ccbafa73f0",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slideLayouts/slideLayout2.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/slideLayouts/slideLayout2.xml|generic_extension:666da850480bfb48",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slideLayouts/slideLayout4.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/slideLayouts/slideLayout4.xml|generic_extension:3161d1eed2f0b0eb",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slideLayouts/slideLayout5.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/slideLayouts/slideLayout5.xml|generic_extension:7343fe1f27ebc78c",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 136
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "sldIdLst",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}sldIdLst",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 136,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}section",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:5058854471bd91ff",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 9
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}section",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:a94f8c863ff6faac",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 6
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}section",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:2fbc7809a18fd2f3",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 3
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}section",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:5c09577a8d22e1e9",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 5
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}section",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/presentation.xml|generic_extension:a8f86a4465128c3a",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 15
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 119
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "bodyPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 119,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_budget_embedded_objects",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:5872ed5909db273b",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_development_history",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_development_history|word/document.xml|generic_extension:53b289a3de1dcdce",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:c25af1103727e1c9",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:1e2b6d2e9164a6e3",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_financing_plan_chart",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_financing_plan_chart|word/document.xml|generic_extension:2c4edd072cb032e9",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 93,
+        "structural_subtree_without_scalar": 15
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "cNvGrpSpPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}cNvGrpSpPr",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "mixed classifications need a narrower report before modeling",
+      "risk": "high",
+      "row_count": 108,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_layout21_footer",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_layout21_footer|word/document.xml|generic_extension:07cbc317618b5c43",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_layout_media_large",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_layout_media_large|word/document.xml|generic_extension:5d9fd8760085cc76",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.openxmlformats.org/drawingml/2006/picture}pic",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_layout_media_large",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_layout_media_large|word/document.xml|generic_extension:8cbc7cf2622f0e04",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.openxmlformats.org/drawingml/2006/picture}pic",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_layout_resume",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_layout_resume|word/document.xml|generic_extension:336c3dd056b2a5b4",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_layout_resume",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_layout_resume|word/document.xml|generic_extension:ab8abbcc77ac3f2c",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 76
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "cNvCnPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 76,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_139_reimbursement-form",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_139_reimbursement-form|word/document.xml|generic_extension:7f980c05d68f4861",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}style"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_140_headshot-cover-letter",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_140_headshot-cover-letter|word/document.xml|generic_extension:c6f6955624c34db9",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_157_tdf146802",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_157_tdf146802|word/document.xml|generic_extension:0431fbc38c95f3a2",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_157_tdf146802",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_157_tdf146802|word/document.xml|generic_extension:b22d642fcf8d612d",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_157_tdf146802",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_157_tdf146802|word/document.xml|generic_extension:d1ee4400077706da",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 25
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "chart",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2014/chartex}chart",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 25,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_finance_chartex_transitions",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}graphicData",
+          "part_name": "ppt/slides/slide13.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_finance_chartex_transitions|ppt/slides/slide13.xml|generic_extension:a5119e9c7dbf60cf",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_finance_chartex_transitions",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}graphicData",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_finance_chartex_transitions|ppt/slides/slide15.xml|generic_extension:cf2d0e84455807e2",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_finance_chartex_transitions",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}graphicData",
+          "part_name": "ppt/slides/slide35.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_finance_chartex_transitions|ppt/slides/slide35.xml|generic_extension:c9006927dc430e66",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}graphicData",
+          "part_name": "ppt/slides/slide13.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/slides/slide13.xml|generic_extension:0c7532b062bc5d7e",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_finance_diagram_charts",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}graphicData",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_finance_diagram_charts|ppt/slides/slide15.xml|generic_extension:0e963be0efa92120",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 25
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "notesGuideLst",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2012/main}notesGuideLst",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 25,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_bgy_standard_sales_flow",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_bgy_standard_sales_flow|ppt/presentation.xml|generic_extension:74dd2fc3a4a20d6e",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_026_cirnicate|ppt/presentation.xml|generic_extension:70d6716905708d51",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_036_financial-pitch-deck",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_036_financial-pitch-deck|ppt/presentation.xml|generic_extension:a990d4e7549d7216",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_037_classical-academia-sales-presentatio",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_037_classical-academia-sales-presentatio|ppt/presentation.xml|generic_extension:25422e06977b0a68",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_047_office-file",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/presentation.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_047_office-file|ppt/presentation.xml|generic_extension:2bbf2389f423174b",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "empty_structural_container": 20
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "Terms",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/infopath/2007/PartnerControls}Terms",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 20,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_layout_business_proposal",
+          "parent_qname": "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}ImageTagsTaxHTField",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_layout_business_proposal|customXml/item1.xml|generic_extension:f0ce2b60a9cf7e5a",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "parent_qname": "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}ImageTagsTaxHTField",
+          "part_name": "customXml/item2.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_126_bold-business-report|customXml/item2.xml|generic_extension:68c659d0237e7a18",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "parent_qname": "{b2fd34f3-8106-420e-86d0-e2d269742751}lcf76f155ced4ddcb4097134ff3c332f",
+          "part_name": "customXml/item3.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_161_tdf166205-first-page-header-footer-v|customXml/item3.xml|generic_extension:d3adbdcec479abfa",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+          "parent_qname": "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}ImageTagsTaxHTField",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_163_mergers-acquisitions-report|customXml/item1.xml|generic_extension:13e9d3740224a163",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "parent_qname": "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}ImageTagsTaxHTField",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_169_modern-initials-resume|customXml/item1.xml|generic_extension:986c361652fb73a5",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 19
+      },
+      "family": "custom_xml_payload",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "ImageTagsTaxHTField",
+      "presence_semantic": "",
+      "qname": "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}ImageTagsTaxHTField",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 19,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_layout_business_proposal",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_layout_business_proposal|customXml/item1.xml|generic_extension:aafa2699b6b04c5a",
+          "sibling_scalar_count": 7,
+          "sibling_scalar_qnames": [
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Background",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Status",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item2.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_126_bold-business-report|customXml/item2.xml|generic_extension:7b4f6e7436f38d59",
+          "sibling_scalar_count": 7,
+          "sibling_scalar_qnames": [
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Status",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}MediaServiceKeyPoints",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Background"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_163_mergers-acquisitions-report|customXml/item1.xml|generic_extension:a37dad07b59cf65d",
+          "sibling_scalar_count": 7,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Status",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Background",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_169_modern-initials-resume|customXml/item1.xml|generic_extension:8102c17062d053bd",
+          "sibling_scalar_count": 7,
+          "sibling_scalar_qnames": [
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Background",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Status",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item2.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_026_cirnicate|customXml/item2.xml|generic_extension:f8f4af4efb0a3666",
+          "sibling_scalar_count": 7,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Status",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Background",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 19
+      },
+      "family": "vml_drawing",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "formulas",
+      "presence_semantic": "",
+      "qname": "{urn:schemas-microsoft-com:vml}formulas",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "empty v:formulas has no v:f children; formula semantics live in v:f/@eqn",
+      "risk": "high",
+      "row_count": 19,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_119_small-business-email-marketing-templ",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_119_small-business-email-marketing-templ|word/document.xml|generic_extension:d3d818b421c70022",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:vml}path"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_144_a4-manfred-martinsson",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_144_a4-manfred-martinsson|word/document.xml|generic_extension:3851996982e70a91",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}path",
+            "{urn:schemas-microsoft-com:office:word}wrap"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_144_a4-manfred-martinsson",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_144_a4-manfred-martinsson|word/document.xml|generic_extension:6cad3d25911dce6b",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}path",
+            "{urn:schemas-microsoft-com:office:word}wrap"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_145_manfred-martinsson",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_145_manfred-martinsson|word/document.xml|generic_extension:e34fb9226b6f6a13",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}path",
+            "{urn:schemas-microsoft-com:office:word}wrap"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_145_manfred-martinsson",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_145_manfred-martinsson|word/document.xml|generic_extension:5e2f184be007319d",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}path",
+            "{urn:schemas-microsoft-com:office:word}wrap"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 13
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "media",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}media",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 13,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_communication_skills_animations",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slides/slide1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_communication_skills_animations|ppt/slides/slide1.xml|generic_extension:186d8d76a769009c",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_021_49p-ppt",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slideLayouts/slideLayout11.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_021_49p-ppt|ppt/slideLayouts/slideLayout11.xml|generic_extension:2f6d02947f7725c8",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_024_office-file",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slides/slide1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_024_office-file|ppt/slides/slide1.xml|generic_extension:956330df92df95ec",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_025_2",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slides/slide1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_025_2|ppt/slides/slide1.xml|generic_extension:dd80e1b1c9706727",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}ext",
+          "part_name": "ppt/slides/slide1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide1.xml|generic_extension:6502206a6339b9b0",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "empty_structural_container": 12
+      },
+      "family": "drawing_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "lineSketchNone",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchNone",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 12,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:1cd1d25e5752876e",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:91fc1fe775c1e879",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:af0d431a4f55e6b6",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:f492afc0b0bde0a1",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_original_model_framework",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+          "part_name": "ppt/slides/slide141.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_original_model_framework|ppt/slides/slide141.xml|generic_extension:091d9741a60615f6",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 12
+      },
+      "family": "drawing_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "lineSketchStyleProps",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 12,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:18c0b192dab21c43",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:ca0b27b93ecbe379",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:3a672902835e3989",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:08038aaac7d2dd5a",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_original_model_framework",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide141.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_original_model_framework|ppt/slides/slide141.xml|generic_extension:f141fd3c28c010b2",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 12
+      },
+      "family": "drawing_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "type",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 12,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:8bf865f38b5f6c65",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:f510a09a49e0af07",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:a5e24fa2f61696c2",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_221_p2-02",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/slides/slide15.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_221_p2-02|ppt/slides/slide15.xml|generic_extension:4f80437410846cb9",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_original_model_framework",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/slides/slide141.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_original_model_framework|ppt/slides/slide141.xml|generic_extension:7ca1749486c93bd2",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 10
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "rot",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}rot",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 10,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}trans",
+          "part_name": "ppt/slides/slide3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-|ppt/slides/slide3.xml|generic_extension:731f242a8fd6a071",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}meterPerModelUnit",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}preTrans",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}scale",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}postTrans"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}trans",
+          "part_name": "ppt/slides/slide3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-|ppt/slides/slide3.xml|generic_extension:d08c4b6507056218",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}meterPerModelUnit",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}preTrans",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}scale",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}postTrans"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}trans",
+          "part_name": "ppt/slides/slide3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-|ppt/slides/slide3.xml|generic_extension:9449adfc5bbb2572",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}meterPerModelUnit",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}preTrans",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}scale",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}postTrans"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}trans",
+          "part_name": "ppt/slides/slide3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-|ppt/slides/slide3.xml|generic_extension:19581e10e4c4f0d4",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}meterPerModelUnit",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}preTrans",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}scale",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}postTrans"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}trans",
+          "part_name": "ppt/slides/slide3.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-|ppt/slides/slide3.xml|generic_extension:3573095da243fc5a",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}meterPerModelUnit",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}preTrans",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}scale",
+            "{http://schemas.microsoft.com/office/drawing/2017/model3d}postTrans"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 9,
+        "empty_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "docMk",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}docMk",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "mixed classifications need a narrower report before modeling",
+      "risk": "high",
+      "row_count": 10,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_064_forum-mso-de-138303",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}docMkLst",
+          "part_name": "ppt/changesInfos/changesInfo1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_064_forum-mso-de-138303|ppt/changesInfos/changesInfo1.xml|generic_extension:4fcfc17249379207",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_064_forum-mso-de-138303",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldMkLst",
+          "part_name": "ppt/changesInfos/changesInfo1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_064_forum-mso-de-138303|ppt/changesInfos/changesInfo1.xml|generic_extension:f8945954589b4b8f",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldMk"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_064_forum-mso-de-138303",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2013/main/command}spMkLst",
+          "part_name": "ppt/changesInfos/changesInfo1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_064_forum-mso-de-138303|ppt/changesInfos/changesInfo1.xml|generic_extension:7166569b466c25f2",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldMk",
+            "{http://schemas.microsoft.com/office/drawing/2013/main/command}spMk"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_064_forum-mso-de-138303",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2013/main/command}spMkLst",
+          "part_name": "ppt/changesInfos/changesInfo1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_064_forum-mso-de-138303|ppt/changesInfos/changesInfo1.xml|generic_extension:6827b93c3c011213",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldMk",
+            "{http://schemas.microsoft.com/office/drawing/2013/main/command}spMk"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_064_forum-mso-de-138303",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2013/main/command}graphicFrameMkLst",
+          "part_name": "ppt/changesInfos/changesInfo1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_064_forum-mso-de-138303|ppt/changesInfos/changesInfo1.xml|generic_extension:6269cc599edae7e0",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldMk",
+            "{http://schemas.microsoft.com/office/drawing/2013/main/command}graphicFrameMk"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 10
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "stylisticSets",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordml}stylisticSets",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 10,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_156_tdf167527-title-letters-cut-from-bel",
+          "parent_qname": "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rPr",
+          "part_name": "word/numbering.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_156_tdf167527-title-letters-cut-from-bel|word/numbering.xml|generic_extension:c9589192b575c81b",
+          "sibling_scalar_count": 23,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rFonts",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}bCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}i",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}iCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}caps"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_156_tdf167527-title-letters-cut-from-bel",
+          "parent_qname": "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rPr",
+          "part_name": "word/numbering.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_156_tdf167527-title-letters-cut-from-bel|word/numbering.xml|generic_extension:29915759d4042745",
+          "sibling_scalar_count": 27,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rFonts",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}bCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}i",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}iCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}caps"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "parent_qname": "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rPr",
+          "part_name": "word/numbering.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_161_tdf166205-first-page-header-footer-v|word/numbering.xml|generic_extension:5c47ace74908e46d",
+          "sibling_scalar_count": 29,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}b",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}bCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}i",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}iCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}caps"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "parent_qname": "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rPr",
+          "part_name": "word/numbering.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_161_tdf166205-first-page-header-footer-v|word/numbering.xml|generic_extension:62935809bf32ce75",
+          "sibling_scalar_count": 24,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rFonts",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}bCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}i",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}iCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}caps"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "parent_qname": "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rPr",
+          "part_name": "word/numbering.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_161_tdf166205-first-page-header-footer-v|word/numbering.xml|generic_extension:0f6b205e81cfb8da",
+          "sibling_scalar_count": 30,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rFonts",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}bCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}i",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}iCs",
+            "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}caps"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 10
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "txbx",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}txbx",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 10,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_budget_embedded_objects",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:388c203fe242750e",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvSpPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:34e23da8c040c85f",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:6ba6967de73892d5",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:0f2ab7bf3f1b5d98",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:7302c1c9e8166c3f",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 9
+      },
+      "family": "vml_drawing",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "textbox",
+      "presence_semantic": "",
+      "qname": "{urn:schemas-microsoft-com:vml}textbox",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 9,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_budget_embedded_objects",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}rect",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_budget_embedded_objects|word/document.xml|generic_extension:febd58d5bbe9d990",
+          "sibling_scalar_count": 5,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock",
+            "{urn:schemas-microsoft-com:office:word}wrap"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:3b9dbe440f4fe85c",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:46ed26e7f74ad096",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:f729ccd22c380c35",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p5_customxml_03",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p5_customxml_03|word/document.xml|generic_extension:15bb8deff3dcf55a",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}stroke",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 8
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "bg",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}bg",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 8,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_enterprise_finance_policy_fields",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_enterprise_finance_policy_fields|word/document.xml|generic_extension:0b7f30f600a79a88",
+          "sibling_scalar_count": 35,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_007_canvas|word/document.xml|generic_extension:3e4ace27b6f153ef",
+          "sibling_scalar_count": 20,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}whole",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_009_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_009_canvas|word/document.xml|generic_extension:c00b378d0ecd0826",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_010_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_010_canvas|word/document.xml|generic_extension:b3e921962baea2b6",
+          "sibling_scalar_count": 16,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_011_canvas|word/document.xml|generic_extension:2888d0aad9cdb3f5",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 5
+      },
+      "family": "math_object",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "deg",
+      "presence_semantic": "",
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}deg",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 5,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_166_tablecurrupt",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rad",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_166_tablecurrupt|word/document.xml|generic_extension:1f450a6ef2a28beb",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}radPr",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}e"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_166_tablecurrupt",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rad",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_166_tablecurrupt|word/document.xml|generic_extension:6cbec8ed06bf4e5d",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}radPr",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}e"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_166_tablecurrupt",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rad",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_166_tablecurrupt|word/document.xml|generic_extension:498e6ca3b8081e97",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}radPr",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}e"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_166_tablecurrupt",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rad",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_166_tablecurrupt|word/document.xml|generic_extension:a63bac4241b336c5",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}radPr",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}e"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rad",
+          "part_name": "ppt/slides/slide9.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_014_complex-100p|ppt/slides/slide9.xml|generic_extension:d6dac27802b06b77",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}radPr",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}e"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 5
+      },
+      "family": "office_chart_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "dlblFieldTable",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2012/chart}dlblFieldTable",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 5,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/chart}ext",
+          "part_name": "ppt/charts/chart159.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart159.xml|unknown_extension_object:4:614461a27065d0c5",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}layout",
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}showDataLabelsRange"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/chart}ext",
+          "part_name": "ppt/charts/chart209.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart209.xml|unknown_extension_object:5:1c654b9f17667005",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}spPr",
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}layout",
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}showDataLabelsRange"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/chart}ext",
+          "part_name": "ppt/charts/chart315.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart315.xml|unknown_extension_object:3:b3a255e618917b6e",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}showDataLabelsRange"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/chart}ext",
+          "part_name": "ppt/charts/chart381.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart381.xml|unknown_extension_object:4:509aa56cca28eb17",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}layout",
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}showDataLabelsRange"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/chart}ext",
+          "part_name": "ppt/charts/chart397.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart397.xml|unknown_extension_object:5:c9fb69da805b756e",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2012/chart}showDataLabelsRange"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 5
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "imgEffect",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 5,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer",
+          "part_name": "ppt/slides/slide4.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide4.xml|generic_extension:5bf5206f1a764c7e",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer",
+          "part_name": "ppt/slides/slide6.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide6.xml|generic_extension:709ab10eabd8aa39",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_p5_animations_15",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer",
+          "part_name": "ppt/slides/slide1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_p5_animations_15|ppt/slides/slide1.xml|generic_extension:adbdbf4405a48ed2",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_p5_animations_15",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer",
+          "part_name": "ppt/slides/slide10.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_p5_animations_15|ppt/slides/slide10.xml|generic_extension:a1a9d87cd2bdf3ba",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_p5_animations_15",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer",
+          "part_name": "ppt/slides/slide22.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_p5_animations_15|ppt/slides/slide22.xml|generic_extension:d7b702ebb5f76a3b",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1,
+        "structural_subtree_without_scalar": 4
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "whole",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}whole",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 5,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_enterprise_finance_policy_fields",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_enterprise_finance_policy_fields|word/document.xml|generic_extension:3889a07e8da5444b",
+          "sibling_scalar_count": 35,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_009_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_009_canvas|word/document.xml|generic_extension:905d5d849151b33a",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_010_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_010_canvas|word/document.xml|generic_extension:ca72594910b72a49",
+          "sibling_scalar_count": 16,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_011_canvas|word/document.xml|generic_extension:f45ad3cff44715d2",
+          "sibling_scalar_count": 2,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp"
+          ],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_p18_drawing_012_canvas",
+          "parent_qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas}wpc",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_p18_drawing_012_canvas|word/document.xml|generic_extension:77e773c6cdeee6d8",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 5
+      },
+      "family": "vml_drawing",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "stroke",
+      "presence_semantic": "",
+      "qname": "{urn:schemas-microsoft-com:vml}stroke",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "empty v:stroke may express inherited/default stroke state without a scalar oracle",
+      "risk": "high",
+      "row_count": 5,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_014_drawing|word/document.xml|generic_extension:176e478d656393f7",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock",
+            "{urn:schemas-microsoft-com:vml}textbox"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}shape",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_014_drawing|word/document.xml|generic_extension:29a8818b98d74fef",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock",
+            "{urn:schemas-microsoft-com:vml}textbox"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}line",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_014_drawing|word/document.xml|generic_extension:2080dbfe92a89809",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}path",
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}rect",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_014_drawing|word/document.xml|generic_extension:fc071339963ebc26",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock",
+            "{urn:schemas-microsoft-com:vml}textbox"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "parent_qname": "{urn:schemas-microsoft-com:vml}line",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_p18_drawing_014_drawing|word/document.xml|generic_extension:50abc787229711c1",
+          "sibling_scalar_count": 4,
+          "sibling_scalar_qnames": [
+            "{urn:schemas-microsoft-com:vml}path",
+            "{urn:schemas-microsoft-com:vml}fill",
+            "{urn:schemas-microsoft-com:vml}imagedata",
+            "{urn:schemas-microsoft-com:office:office}lock"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "empty_structural_container": 3
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "artisticFilmGrain",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}artisticFilmGrain",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 3,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_p5_animations_15",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect",
+          "part_name": "ppt/slides/slide1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_p5_animations_15|ppt/slides/slide1.xml|generic_extension:8586a58008b924ce",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_p5_animations_15",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect",
+          "part_name": "ppt/slides/slide10.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_p5_animations_15|ppt/slides/slide10.xml|generic_extension:a13c9af5491da693",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_p5_animations_15",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect",
+          "part_name": "ppt/slides/slide22.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_p5_animations_15|ppt/slides/slide22.xml|generic_extension:557e8c9472354b25",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "empty_structural_container": 2
+      },
+      "family": "custom_xml_schema",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "all",
+      "presence_semantic": "",
+      "qname": "{http://www.w3.org/2001/XMLSchema}all",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_ms_expansion_152_tdf127814",
+          "parent_qname": "{http://www.w3.org/2001/XMLSchema}complexType",
+          "part_name": "customXml/item2.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_152_tdf127814|customXml/item2.xml|generic_extension:44c8b64bff65b6ea",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "docx_ms_expansion_199_tdf123054",
+          "parent_qname": "{http://www.w3.org/2001/XMLSchema}complexType",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_199_tdf123054|customXml/item1.xml|generic_extension:123558d89c317618",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 2
+      },
+      "family": "custom_xml_schema",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "complexType",
+      "presence_semantic": "",
+      "qname": "{http://www.w3.org/2001/XMLSchema}complexType",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_152_tdf127814",
+          "parent_qname": "{http://www.w3.org/2001/XMLSchema}element",
+          "part_name": "customXml/item2.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_152_tdf127814|customXml/item2.xml|generic_extension:982250b494b73cd7",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_199_tdf123054",
+          "parent_qname": "{http://www.w3.org/2001/XMLSchema}element",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_199_tdf123054|customXml/item1.xml|generic_extension:2e8864766c116369",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 2
+      },
+      "family": "math_object",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "e",
+      "presence_semantic": "",
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}e",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_164_2120112713-openbrace",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}d",
+          "part_name": "word/document.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_164_2120112713-openbrace|word/document.xml|generic_extension:844d4869e3f19f15",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}dPr"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_p5_transitions_03",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}nary",
+          "part_name": "ppt/slides/slide75.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_p5_transitions_03|ppt/slides/slide75.xml|generic_extension:5a73e8902c0bd500",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}naryPr",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}sub",
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}sup"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 2
+      },
+      "family": "office_drawing_sketch_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "type",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}type",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/charts/chart338.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart338.xml|unknown_extension_object:4:7b183c538c6778d1",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/drawingml/2006/main}custGeom"
+          ],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_chart_dense_203slides",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2018/sketchyshapes}lineSketchStyleProps",
+          "part_name": "ppt/charts/chart339.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_chart_dense_203slides|ppt/charts/chart339.xml|unknown_extension_object:4:4c0a2e5b6c520501",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/drawingml/2006/main}custGeom"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 2
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "properties",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/2006/metadata/properties}properties",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_152_tdf127814",
+          "parent_qname": "",
+          "part_name": "customXml/item3.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_152_tdf127814|customXml/item3.xml|generic_extension:8acf58680bd45751",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_199_tdf123054",
+          "parent_qname": "",
+          "part_name": "customXml/item3.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_199_tdf123054|customXml/item3.xml|generic_extension:c12cb3d24c0795ad",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "empty_structural_container": 2
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "artisticBlur",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}artisticBlur",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect",
+          "part_name": "ppt/slides/slide4.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide4.xml|generic_extension:9e07be17c7eda13b",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgEffect",
+          "part_name": "ppt/slides/slide6.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide6.xml|generic_extension:a0e2a00769962f09",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 2
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "imgLayer",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgLayer",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgProps",
+          "part_name": "ppt/slides/slide4.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide4.xml|generic_extension:af0b4600c406a17b",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgProps",
+          "part_name": "ppt/slides/slide6.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide6.xml|generic_extension:c3e516b63c877037",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 2
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "imgProps",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}imgProps",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide4.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide4.xml|generic_extension:30b1ef54246046a7",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        },
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_041_office-file",
+          "parent_qname": "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+          "part_name": "ppt/slides/slide6.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_041_office-file|ppt/slides/slide6.xml|generic_extension:e2498798f02ebe49",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 2
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "honeycomb",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}honeycomb",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 2,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_p5_transitions_03",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}transition",
+          "part_name": "ppt/slides/slide16.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_p5_transitions_03|ppt/slides/slide16.xml|generic_extension:dbc4d8ea486b4e88",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        },
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_p5_transitions_03",
+          "parent_qname": "{http://schemas.openxmlformats.org/presentationml/2006/main}transition",
+          "part_name": "ppt/slides/slide2.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_p5_transitions_03|ppt/slides/slide2.xml|generic_extension:63e872aa58beabdc",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "custom_xml_payload",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "TaxCatchAll",
+      "presence_semantic": "",
+      "qname": "{230e9df3-be65-4c73-a93b-d1236ebd677e}TaxCatchAll",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_036_financial-pitch-deck",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item2.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_036_financial-pitch-deck|customXml/item2.xml|generic_extension:dadef29bcae2a399",
+          "sibling_scalar_count": 5,
+          "sibling_scalar_qnames": [
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Status",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}Image",
+            "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties",
+            "{71af3243-3dd4-4a8d-8c0d-dd76da1f02a5}MediaServiceKeyPoints"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 1
+      },
+      "family": "custom_xml_payload",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "lcf76f155ced4ddcb4097134ff3c332f",
+      "presence_semantic": "",
+      "qname": "{b2fd34f3-8106-420e-86d0-e2d269742751}lcf76f155ced4ddcb4097134ff3c332f",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "parent_qname": "documentManagement",
+          "part_name": "customXml/item3.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_161_tdf166205-first-page-header-footer-v|customXml/item3.xml|generic_extension:21b3ad122a970e5f",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{24d2b330-88ce-49e3-8b6f-fdd8af3fd243}TaxCatchAll"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 1
+      },
+      "family": "math_object",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "rPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rPr",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "docx_ms_expansion_180_tdf170171",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}r",
+          "part_name": "word/document.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "docx|docx_ms_expansion_180_tdf170171|word/document.xml|generic_extension:2a8840d136234907",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/officeDocument/2006/math}t"
+          ],
+          "target_child_count": 2
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "math_object",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "t",
+      "presence_semantic": "",
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}t",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_p5_transitions_03",
+          "parent_qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}r",
+          "part_name": "ppt/slides/slide75.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_p5_transitions_03|ppt/slides/slide75.xml|generic_extension:afb4d55dc456dd98",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.openxmlformats.org/drawingml/2006/main}rPr"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "Abstract",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}Abstract",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "parent_qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CoverPageProperties",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_170_test-segfault-while-save|customXml/item1.xml|generic_extension:7cec977f825d8e71",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/2006/coverPageProps}PublishDate"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "CompanyAddress",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CompanyAddress",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "parent_qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CoverPageProperties",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_170_test-segfault-while-save|customXml/item1.xml|generic_extension:7efe63a73619be6f",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/2006/coverPageProps}PublishDate"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "CompanyEmail",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CompanyEmail",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "parent_qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CoverPageProperties",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_170_test-segfault-while-save|customXml/item1.xml|generic_extension:5ba22b542923130e",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/2006/coverPageProps}PublishDate"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "CompanyFax",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CompanyFax",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "parent_qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CoverPageProperties",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_170_test-segfault-while-save|customXml/item1.xml|generic_extension:abac93ce44b7c3b7",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/2006/coverPageProps}PublishDate"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "CompanyPhone",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CompanyPhone",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "parent_qname": "{http://schemas.microsoft.com/office/2006/coverPageProps}CoverPageProperties",
+          "part_name": "customXml/item1.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "docx|docx_ms_expansion_170_test-segfault-while-save|customXml/item1.xml|generic_extension:119214d7d01504f8",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/2006/coverPageProps}PublishDate"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "cNvContentPartPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}cNvContentPartPr",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_094_37p-ppt",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}nvContentPartPr",
+          "part_name": "ppt/slides/slide4.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_094_37p-ppt|ppt/slides/slide4.xml|generic_extension:84b45a6e7b4267d6",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2010/main}cNvPr"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "context_only_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "nvPr",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}nvPr",
+      "recommended_action": "needs_reference_oracle",
+      "required_oracle": "presence-only semantics need a family-specific user meaning and Office oracle",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "context_only_structural_container",
+          "package_id": "pptx_ms_expansion_094_37p-ppt",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}nvContentPartPr",
+          "part_name": "ppt/slides/slide4.xml",
+          "recommended_action": "investigate_context_model",
+          "row_id": "pptx|pptx_ms_expansion_094_37p-ppt|ppt/slides/slide4.xml|generic_extension:765cb5aec4901e2b",
+          "sibling_scalar_count": 1,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2010/main}cNvPr"
+          ],
+          "target_child_count": 0
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "structural_subtree_without_scalar": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "docMkLst",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}docMkLst",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "structural_subtree_without_scalar",
+          "package_id": "pptx_ms_expansion_064_forum-mso-de-138303",
+          "parent_qname": "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}docChg",
+          "part_name": "ppt/changesInfos/changesInfo1.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_ms_expansion_064_forum-mso-de-138303|ppt/changesInfos/changesInfo1.xml|generic_extension:e764f1a75c59c4a7",
+          "sibling_scalar_count": 3,
+          "sibling_scalar_qnames": [
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}chgData",
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldChg",
+            "{http://schemas.microsoft.com/office/powerpoint/2013/main/command}sldMasterChg"
+          ],
+          "target_child_count": 1
+        }
+      ]
+    },
+    {
+      "classification_counts": {
+        "empty_structural_container": 1
+      },
+      "family": "office_extension",
+      "first_canary": {
+        "chunk_size": 0,
+        "operation_id": "",
+        "row_count": 0
+      },
+      "local_name": "revInfo",
+      "presence_semantic": "",
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2015/10/main}revInfo",
+      "recommended_action": "keep_unsupported",
+      "required_oracle": "target is not a context-only presence candidate",
+      "risk": "high",
+      "row_count": 1,
+      "sample_rows": [
+        {
+          "classification": "empty_structural_container",
+          "package_id": "pptx_communication_skills_animations",
+          "parent_qname": "",
+          "part_name": "ppt/revisionInfo.xml",
+          "recommended_action": "keep_unsupported",
+          "row_id": "pptx|pptx_communication_skills_animations|ppt/revisionInfo.xml|generic_extension:fbbad8d184810820",
+          "sibling_scalar_count": 0,
+          "sibling_scalar_qnames": [],
+          "target_child_count": 0
+        }
+      ]
+    }
+  ],
+  "expected_canary_row_count": 0,
+  "input_group_count": 52,
+  "schema_version": "presence-context-model-candidates-v1",
+  "source_schema_version": "no-semantic-field-discovery-v1"
+}

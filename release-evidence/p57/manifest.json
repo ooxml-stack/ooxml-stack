@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "name": "pptx-semantic-understanding-summary.json",
+      "path": "pptx-semantic-understanding-summary.json",
+      "role": "summary",
+      "sha256": "511a1d560cfd0aca43aaf0892518f57db7de9b0121b2b9c198423c362cbcbe54",
+      "size_bytes": 1075
+    },
+    {
+      "name": "pptx-semantic-understanding-matrix.json",
+      "path": "pptx-semantic-understanding-matrix.json",
+      "role": "matrix",
+      "sha256": "cb81ce73574288ebe1da29376491051a69775950ef33c618acbd4106c8b2cb2e",
+      "size_bytes": 3677
+    },
+    {
+      "name": "pptx-semantic-understanding-samples.json",
+      "path": "pptx-semantic-understanding-samples.json",
+      "role": "samples",
+      "sha256": "544708aae0cc81bf28b21d07c2f867bb321e320b1e8c7030b6ecbbb1820dc4e4",
+      "size_bytes": 653572
+    },
+    {
+      "name": "P57-PPTX-SEMANTIC-UNDERSTANDING-1-FREEZE.md",
+      "path": "../../docs/P57-PPTX-SEMANTIC-UNDERSTANDING-1-FREEZE.md",
+      "role": "doc",
+      "sha256": "c3bce84059c955afe1481efb92f937a487b4833cbb04af5ae84b37b3fa3d6db8",
+      "size_bytes": 2540
+    }
+  ],
+  "schema_version": "p57-manifest-v1"
+}

@@ -1,0 +1,92 @@
+{
+  "claim": "P96 GATE: compliance_introduced == 0 on all three formats. docx 2311/2311 and pptx 715/715 clean after the last OPC writer fix; xlsx was already clean at P94. Every remaining non-pass across the three corpora is a deliberately corrupt fixture, and each one now has a named cause on record.",
+  "ok": true,
+  "env": {
+    "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
+    "OOXML_DOCX_COMPAT_JSON": "/tmp/p96/results_docx.json",
+    "OOXML_PPTX_COMPAT_JSON": "/tmp/p96/results_pptx.json",
+    "OOXML_XLSX_COMPAT_JSON": "/tmp/p94/results_xlsx.json"
+  },
+  "expected_metrics": {
+    "docx": {
+      "total": 2333,
+      "open_pass": 2311,
+      "open_fail": 22,
+      "passive_roundtrip_pass": 2311,
+      "preserve_compatible_all": 2311,
+      "preserve_partial_unexplained": 0,
+      "active_roundtrip_pass": 2311,
+      "active_roundtrip_fail": 0,
+      "compliance_clean": 2311,
+      "compliance_introduced": 0,
+      "compliance_error": 0
+    },
+    "pptx": {
+      "total": 720,
+      "open_pass": 715,
+      "open_fail": 5,
+      "passive_roundtrip_pass": 715,
+      "preserve_compatible_all": 714,
+      "preserve_partial_unexplained": 1,
+      "active_roundtrip_pass": 715,
+      "active_roundtrip_fail": 0,
+      "compliance_clean": 715,
+      "compliance_introduced": 0,
+      "compliance_error": 0
+    },
+    "xlsx": {
+      "total": 846,
+      "open_pass": 841,
+      "open_fail": 5,
+      "passive_roundtrip_pass": 841,
+      "preserve_compatible_all": 841,
+      "preserve_partial_unexplained": 0,
+      "active_roundtrip_pass": 840,
+      "active_roundtrip_fail": 1,
+      "compliance_clean": 841,
+      "compliance_introduced": 0,
+      "compliance_error": 0
+    }
+  },
+  "closed_in_p96": [
+    {
+      "id": "docx-casing-duplicate-rels-part",
+      "severity": "P2",
+      "repo": "ooxml-core",
+      "commit": "c411327",
+      "symptom": "part_name_case_unique: output shipped WORD/_rels/DOCUMENT.XML.rels alongside word/_rels/document.xml.rels (libreoffice/casing.docx).",
+      "root_cause": "The source ships word/document.xml and WORD/DOCUMENT.XML as separate ZIP entries. The rels item resolves case-insensitively, so both parts hold the same relationships; serializing both emitted a second rels item that is the same OPC part name as the first.",
+      "fix": "Rels items absent from the source ZIP entry order are dropped when they case-duplicate one already written. A package that genuinely shipped both is written back unchanged.",
+      "verification": "casing.docx open->save now adds zero entries; docx compliance_introduced 1 -> 0."
+    }
+  ],
+  "open_items": [
+    {
+      "id": "pptx-tdf169781-empty-sldlayoutidlst",
+      "severity": "accepted",
+      "count": 1,
+      "owner": "python-pptx",
+      "symptom": "preserve known_xml_minimal_diff fails on ppt/slideMasters/slideMaster2.xml: the 11 <p:sldLayoutId> children are dropped, leaving <p:sldLayoutIdLst/>.",
+      "root_cause": "The master's rels point at slideLayout12..22, none of which exist in the package — it only ships slideLayout7 and slideLayout8. The ids are dropped because their relationships are dangling.",
+      "verdict": "Accepted, not a defect. The source is a fuzzed LibreOffice bug fixture; PowerPoint repairs it the same way. Recorded so it is never re-triaged from scratch."
+    },
+    {
+      "id": "xlsx-placeholder-sheet-empty-rid",
+      "severity": "P2",
+      "count": 1,
+      "owner": "python-xlsx",
+      "symptom": "sample29.xlsx: 'ARIMA Module' has no worksheet part (empty r:id). Typed error on save.",
+      "note": "Decide whether a placeholder sheet should be skipped rather than raising."
+    },
+    {
+      "id": "corrupt-fixture-boundary",
+      "severity": "boundary",
+      "count": 32,
+      "owner": "none",
+      "symptom": "22 docx + 5 pptx + 5 xlsx open failures. Triaged at P95: non-ZIP, missing [Content_Types].xml, malformed main-part XML, and legacy OLE2 .xls content. All are deliberately corrupt bug-repro fixtures.",
+      "note": "phpoffice/SamplePassword.pptx is the only one with a plausible future path — ooxml-core ships opc/crypto.py, so an encrypted package could be opened with a password instead of reported as non-ZIP."
+    }
+  ],
+  "next_gate": "P97 is no longer about the compliance stage — all three formats are clean. The next unmeasured surface is rule coverage itself: 27 rules is what the registry happens to contain, not what the corpus needs. Candidate work is a mutation check — inject a known defect class into a healthy package and confirm some rule fires — so 'compliance_introduced == 0' means the instrument looked rather than that it was blind.",
+  "notes": "Compliance counts only findings absent from the source package. Fixes landed this cycle, all in ooxml-core: eec69a3 (case-insensitive rel target resolution), 103d288 (content-types declaration outranks the backup-suffix filter), c411327 (no invented case-duplicate rels item). Downstream suites green: ooxml-core 1647, python-docx 3634, python-pptx 4051."
+}

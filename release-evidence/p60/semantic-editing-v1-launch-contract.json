@@ -1,0 +1,128 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-02T00:21:35.388681+00:00",
+  "generator_name": "semantic-editing-launch-contract",
+  "generator_version_or_commit": "local-worktree",
+  "input_evidence": {},
+  "rows": [
+    {
+      "family": "picture",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "picture",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "textbox",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "textbox",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "smartart",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "smartart",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "wordart",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "wordart",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "inline_drawing",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "inline_drawing",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "floating_anchor",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "floating_anchor",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "canvas_wpc",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "canvas_wpc",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "group_wpg",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "group_wpg",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "chart_in_drawing",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "chart_in_drawing",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "mixed_drawing_case",
+      "operation": "metadata",
+      "status": "active-proven-from-p42"
+    },
+    {
+      "family": "mixed_drawing_case",
+      "operation": "content-or-geometry",
+      "status": "active-proven-from-p42"
+    }
+  ],
+  "schema_version": "p60-semantic-editing-v1-launch-contract",
+  "summary": {
+    "edit_contract_public_overclaim_count": 0,
+    "p42_active_editing_preserved": true,
+    "p42_desktop_word_open_pass": 208,
+    "p42_public_api_edit_or_control_pass": 208,
+    "p42_unique_handle_count": 208,
+    "p42_wrong_handle_mutation_count": 0,
+    "preserve_only_mutation_allowed_count": 0,
+    "semantic_editing_launch_family_count": 10,
+    "semantic_editing_launch_operation_count": 20,
+    "semantic_editing_launch_rows_active_proven": 208,
+    "semantic_editing_launch_rows_contract_only": 0,
+    "semantic_editing_launch_rows_defined": 208,
+    "unsafe_edit_silent_noop_count": 0,
+    "unsupported_mutation_allowed_count": 0
+  },
+  "warnings": []
+}

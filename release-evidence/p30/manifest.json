@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-locator-gate.json",
+      "path": "release-evidence/p30/docx-drawing-locator-gate.json",
+      "role": "docx_drawing_locator_gate",
+      "sha256": "e6ac161eebbea6ddeac6da506b64a2627603d390986f077e4f591766dfc36cbc",
+      "size_bytes": 120887
+    },
+    {
+      "name": "docx-drawing-locator-summary.json",
+      "path": "release-evidence/p30/docx-drawing-locator-summary.json",
+      "role": "docx_drawing_locator_summary",
+      "sha256": "0e4b317bb6b143ad585c6d26ccbd1ef605b8fa40ed7c81c7bbdbf723b9c1ccdd",
+      "size_bytes": 989
+    },
+    {
+      "name": "docx-drawing-office-gate.json",
+      "path": "release-evidence/p30/docx-drawing-office-gate.json",
+      "role": "docx_drawing_office_baseline",
+      "sha256": "99458fd9a46e364bdeea3e9543d3aca0957d4858c76e5ba9fd544f739138d534",
+      "size_bytes": 39004
+    },
+    {
+      "name": "P30-DOCX-DRAWING-LOCATOR-HANDLES.md",
+      "path": "docs/P30-DOCX-DRAWING-LOCATOR-HANDLES.md",
+      "role": "docx_drawing_locator_markdown",
+      "sha256": "b0785345e1e77b219f81743e40a5b020b3143b336ca9dd146d7f98002776d335",
+      "size_bytes": 1455
+    }
+  ]
+}

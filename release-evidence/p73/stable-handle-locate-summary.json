@@ -1,0 +1,25 @@
+{
+  "schema_version": "p73-stable-handle-locate-v1",
+  "generated_at_utc": "2026-06-04T05:17:39.100873+00:00",
+  "generator_name": "former-preserve-locate",
+  "generator_version_or_commit": "local-worktree",
+  "summary": {
+    "stable_handle_assigned_count": 296144,
+    "public_api_handle_locate_pass_count": 296144,
+    "public_api_handle_locate_fail_count": 0,
+    "stable_handle_duplicate_count": 0,
+    "stale_handle_silent_success_count": 0,
+    "ambiguous_handle_silent_success_count": 0,
+    "wrong_handle_silent_success_count": 0,
+    "typed_error_contract_pass": true,
+    "gate_pass": true
+  },
+  "rows_jsonl": "release-evidence/p73/stable-handle-locate-rows-shards/rows.jsonl.part-*",
+  "gate_pass": true,
+  "failures": [],
+  "warnings": [],
+  "rows_jsonl_shard_count": 8,
+  "rows_jsonl_combined_sha256": "7f8af02c882bc156d86f101fe131a2f10e83c801e027a153d04d62afc194e4a8",
+  "rows_jsonl_combined_size_bytes": 242777670,
+  "rows_jsonl_combined_line_count": 296144
+}

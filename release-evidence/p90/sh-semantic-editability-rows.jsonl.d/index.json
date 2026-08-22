@@ -1,0 +1,153 @@
+{
+  "logical_name": "sh-semantic-editability-rows.jsonl",
+  "part_count": 29,
+  "parts": [
+    {
+      "path": "part-0000.jsonl",
+      "row_count": 9131,
+      "size": 20970993
+    },
+    {
+      "path": "part-0001.jsonl",
+      "row_count": 9074,
+      "size": 20969770
+    },
+    {
+      "path": "part-0002.jsonl",
+      "row_count": 9064,
+      "size": 20969450
+    },
+    {
+      "path": "part-0003.jsonl",
+      "row_count": 9109,
+      "size": 20970973
+    },
+    {
+      "path": "part-0004.jsonl",
+      "row_count": 9008,
+      "size": 20969661
+    },
+    {
+      "path": "part-0005.jsonl",
+      "row_count": 9048,
+      "size": 20969617
+    },
+    {
+      "path": "part-0006.jsonl",
+      "row_count": 9206,
+      "size": 20970320
+    },
+    {
+      "path": "part-0007.jsonl",
+      "row_count": 8921,
+      "size": 20970477
+    },
+    {
+      "path": "part-0008.jsonl",
+      "row_count": 9285,
+      "size": 20970734
+    },
+    {
+      "path": "part-0009.jsonl",
+      "row_count": 9205,
+      "size": 20971347
+    },
+    {
+      "path": "part-0010.jsonl",
+      "row_count": 9130,
+      "size": 20971055
+    },
+    {
+      "path": "part-0011.jsonl",
+      "row_count": 9137,
+      "size": 20970583
+    },
+    {
+      "path": "part-0012.jsonl",
+      "row_count": 9155,
+      "size": 20970365
+    },
+    {
+      "path": "part-0013.jsonl",
+      "row_count": 9243,
+      "size": 20971423
+    },
+    {
+      "path": "part-0014.jsonl",
+      "row_count": 9143,
+      "size": 20970191
+    },
+    {
+      "path": "part-0015.jsonl",
+      "row_count": 8602,
+      "size": 20970852
+    },
+    {
+      "path": "part-0016.jsonl",
+      "row_count": 8375,
+      "size": 20969544
+    },
+    {
+      "path": "part-0017.jsonl",
+      "row_count": 8546,
+      "size": 20969790
+    },
+    {
+      "path": "part-0018.jsonl",
+      "row_count": 8550,
+      "size": 20969873
+    },
+    {
+      "path": "part-0019.jsonl",
+      "row_count": 8539,
+      "size": 20969644
+    },
+    {
+      "path": "part-0020.jsonl",
+      "row_count": 8350,
+      "size": 20971132
+    },
+    {
+      "path": "part-0021.jsonl",
+      "row_count": 8515,
+      "size": 20970145
+    },
+    {
+      "path": "part-0022.jsonl",
+      "row_count": 8651,
+      "size": 20971013
+    },
+    {
+      "path": "part-0023.jsonl",
+      "row_count": 8666,
+      "size": 20970072
+    },
+    {
+      "path": "part-0024.jsonl",
+      "row_count": 8736,
+      "size": 20971397
+    },
+    {
+      "path": "part-0025.jsonl",
+      "row_count": 8762,
+      "size": 20970000
+    },
+    {
+      "path": "part-0026.jsonl",
+      "row_count": 8994,
+      "size": 20971077
+    },
+    {
+      "path": "part-0027.jsonl",
+      "row_count": 8893,
+      "size": 20970599
+    },
+    {
+      "path": "part-0028.jsonl",
+      "row_count": 3845,
+      "size": 9148354
+    }
+  ],
+  "row_count": 252883,
+  "schema_version": "p90-jsonl-shards-v1"
+}

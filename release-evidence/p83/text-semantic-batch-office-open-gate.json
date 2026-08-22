@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-05T16:49:41Z",
+    "timeout_seconds": 60,
+    "dialog_wait_seconds": 3
+  },
+  "summary": {
+    "total": 4,
+    "pass": 4,
+    "pass_total": 4,
+    "repair_dialog_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 0,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "pass": 4
+    },
+    "gate_pass": true
+  },
+  "results": [
+    {
+      "file": "../ooxml-stack/release-evidence/p83/batch-outputs/batch-docx_policy_embedded_objects.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 12.838
+    },
+    {
+      "file": "../ooxml-stack/release-evidence/p83/batch-outputs/batch-pptx_bgy_standard_sales_flow.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 12.621
+    },
+    {
+      "file": "../ooxml-stack/release-evidence/p83/batch-outputs/batch-pptx_pdca_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 12.626
+    },
+    {
+      "file": "../ooxml-stack/release-evidence/p83/batch-outputs/batch-pptx_update_250715_charts.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 12.66
+    }
+  ]
+}
