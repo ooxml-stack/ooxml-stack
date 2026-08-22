@@ -20,3 +20,7 @@
   regenerate mutable aggregate ledgers once in the final publish commit.
 - Keep per-chunk evidence files and Office gate results as replayable audit
   inputs; treat aggregate ledgers as derived publish artifacts.
+- Office packages (docx/pptx/xlsx) added under `release-evidence/` must be
+  allowlisted in `release-evidence/RETAINED-ARTIFACTS.txt` in the same commit;
+  the Evidence Retention CI check fails otherwise. Only failure, release, or
+  pinned samples may be allowlisted.
