@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "name": "index.html",
+      "path": "dashboard/index.html",
+      "role": "dashboard",
+      "sha256": "0f0e7995a5d82c2cac0b75d9831b0baf5b1a2b3493b26c8af04a7b29b5bdfa70",
+      "size_bytes": 66110
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "dashboard/dashboard-data.json",
+      "role": "dashboard-data",
+      "sha256": "83097aa2bb8e6736256bcb26e37c4e9c03aae3013435f232d92d417f819b268a",
+      "size_bytes": 81837
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "dashboard-data.json",
+      "role": "data",
+      "sha256": "83097aa2bb8e6736256bcb26e37c4e9c03aae3013435f232d92d417f819b268a",
+      "size_bytes": 81837
+    },
+    {
+      "name": "dashboard-validation.json",
+      "path": "dashboard-validation.json",
+      "role": "validation",
+      "sha256": "3ee18a3edb313570421e1922a057869eaaa022a70268e262b7d35f5c85bf689b",
+      "size_bytes": 735
+    },
+    {
+      "name": "P59-SEMANTIC-UNDERSTANDING-DASHBOARD-V3.md",
+      "path": "../../docs/P59-SEMANTIC-UNDERSTANDING-DASHBOARD-V3.md",
+      "role": "doc",
+      "sha256": "b286ea063534308082cb8b6a1f5b7c033998ba4ebff4dbdd4658b51b311208de",
+      "size_bytes": 883
+    }
+  ],
+  "schema_version": "p59-manifest-v1"
+}

@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-05T15:24:19Z",
+    "timeout_seconds": 60,
+    "dialog_wait_seconds": 3
+  },
+  "summary": {
+    "total": 2,
+    "pass": 2,
+    "pass_total": 2,
+    "repair_dialog_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 0,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "pass": 2
+    },
+    "gate_pass": true
+  },
+  "results": [
+    {
+      "file": "../ooxml-operation-engine/tests/fixtures/minimal.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 14.63
+    },
+    {
+      "file": "../ooxml-operation-engine/tests/fixtures/minimal.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 12.962
+    }
+  ]
+}

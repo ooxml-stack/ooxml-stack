@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "name": "semantic-inspection-inventory.json",
+      "path": "semantic-inspection-inventory.json",
+      "role": "inventory",
+      "sha256": "f04ec45ed8b29be62060cb6a8d28d62bdf20484734623374a1ebc0ae6cae9bb5",
+      "size_bytes": 1635303
+    },
+    {
+      "name": "semantic-inspection-summary.json",
+      "path": "semantic-inspection-summary.json",
+      "role": "summary",
+      "sha256": "c650999cae526fa2aa4761a9de61b8ac9b0f38440392ac20b0617ef9b02d5d27",
+      "size_bytes": 815
+    },
+    {
+      "name": "field-coverage-matrix.json",
+      "path": "field-coverage-matrix.json",
+      "role": "matrix",
+      "sha256": "3dcbd88ddd218c88919d116a17cc22fecc337f47d77f50c678182204beda9ea2",
+      "size_bytes": 38678
+    },
+    {
+      "name": "P54-DOCX-PPTX-SEMANTIC-INSPECTION-GATE.md",
+      "path": "../../docs/P54-DOCX-PPTX-SEMANTIC-INSPECTION-GATE.md",
+      "role": "doc",
+      "sha256": "2e10a99f1914f78f5658ef38f913c403f8a889dc32aa2f2d0e5915bb6a1a6b4c",
+      "size_bytes": 1005
+    }
+  ],
+  "schema_version": "p54-manifest-v1"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "p97-evidence-manifest-v1",
+  "generated_at_utc": "2026-08-06T19:13:50.294635+00:00",
+  "files": [
+    {
+      "path": "release-evidence/p97/rule-coverage-mutation-gate-summary.json",
+      "sha256": "0fa85207ab4f936a6c6062484ba1e5ab1d1e5db784bf28d3d98fb15aa97d504e",
+      "size_bytes": 25417
+    }
+  ]
+}

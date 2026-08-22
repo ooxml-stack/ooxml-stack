@@ -1,0 +1,11 @@
+{
+  "gate_pass": true,
+  "local_user_path_count": 0,
+  "path_hits": [],
+  "raw_absolute_path_count": 0,
+  "scanned_artifact_count": 93,
+  "schema_version": "p79-path-hygiene-scan-v1",
+  "secret_hits": [],
+  "secret_pattern_hit_count": 0,
+  "tmp_path_in_committed_evidence_count": 0
+}

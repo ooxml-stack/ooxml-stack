@@ -1,0 +1,25 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-active-editing-capability-matrix.json",
+      "path": "release-evidence/p29/docx-drawing-active-editing-capability-matrix.json",
+      "role": "docx_drawing_active_capability_matrix",
+      "sha256": "6e793f0db2b43d97a0a2c81fe7ee1a0e5ad79436b56e23f2620466cdcf1ab437",
+      "size_bytes": 94743
+    },
+    {
+      "name": "docx-drawing-active-editing-capability-summary.json",
+      "path": "release-evidence/p29/docx-drawing-active-editing-capability-summary.json",
+      "role": "docx_drawing_active_capability_summary",
+      "sha256": "606e8dfb6a101d215fb454de7950f5b70474f2bdfc3a84540bdb2a397b55c2e5",
+      "size_bytes": 2079
+    },
+    {
+      "name": "P29-DOCX-DRAWING-ACTIVE-EDITING-CAPABILITY-MATRIX.md",
+      "path": "docs/P29-DOCX-DRAWING-ACTIVE-EDITING-CAPABILITY-MATRIX.md",
+      "role": "docx_drawing_active_capability_markdown",
+      "sha256": "522a91cad5b814caf58d95f165a875bcb6ea798fb261b9457ceb88391232bf8b",
+      "size_bytes": 2251
+    }
+  ]
+}

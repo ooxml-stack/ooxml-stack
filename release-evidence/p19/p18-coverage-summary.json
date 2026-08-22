@@ -1,0 +1,62 @@
+{
+  "claim_boundary": "Measured DOCX drawing and supported-valid native Office evidence only; not full Office compatibility or full Word drawing parity.",
+  "docx_drawing": {
+    "bucket_inventory": {
+      "chart_embedded": 22,
+      "drawing_canvas": 10,
+      "floating_anchor": 119,
+      "group_shape": 61,
+      "smartart": 8,
+      "textbox": 86,
+      "wordart": 49
+    },
+    "drawing_docx_files": 140,
+    "library_open_save_pass": 100,
+    "office_blockers": {
+      "macro_security_dialog_count": 0,
+      "macro_timeout_count": 0,
+      "office_crash_count": 0,
+      "repair_dialog_count": 0,
+      "security_dialog_count": 0
+    },
+    "office_pass_total": 100,
+    "operation_counts": {
+      "anchor_resize": 15,
+      "canvas_metadata": 6,
+      "chart_metadata": 10,
+      "group_metadata": 15,
+      "noop": 16,
+      "smartart_text": 8,
+      "textbox_text": 15,
+      "wordart_metadata": 15
+    },
+    "package_invariant_pass": 100,
+    "represented_bucket_count": 7,
+    "scanned_docx_rows": 186,
+    "selected_cases": 100,
+    "semantic_target_fail": 0,
+    "semantic_target_pass": 100,
+    "supported_docx_rows": 185
+  },
+  "native_corpus": {
+    "docx_docm_rows": 190,
+    "expected_status_counts": {
+      "pass": 369,
+      "quarantine": 1
+    },
+    "macro_enabled_rows": 8,
+    "manifest_rows": 370,
+    "pptx_pptm_rows": 180,
+    "supported_valid_non_macro_selected": 361
+  },
+  "native_office_current": {
+    "completed": 361,
+    "gate_pass": true,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "office_crash_count": 0,
+    "pass_total": 361,
+    "repair_dialog_count": 0,
+    "selected_count": 361
+  }
+}

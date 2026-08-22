@@ -1,0 +1,329 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "schema_version": "p43-ooxml-semantic-status-summary-v1",
+  "summary": {
+    "active_editable_count": 0,
+    "allowed_status_count": 4,
+    "allowed_status_violation_count": 0,
+    "distinct_qname_count": 1682,
+    "element_instance_count": 43163913,
+    "family_count": 32,
+    "family_counts": {
+      "alternate_content": 10147,
+      "bookmark": 5381,
+      "chart": 9794,
+      "comment": 38,
+      "content_control": 1844,
+      "drawing_container": 3662,
+      "endnote": 568,
+      "field": 2931,
+      "floating_drawing": 2768,
+      "footer": 326,
+      "footnote": 588,
+      "graphic_frame": 6182,
+      "group_shape": 25627,
+      "header": 235,
+      "hyperlink": 1175,
+      "inline_drawing": 894,
+      "layout": 3285,
+      "master": 251,
+      "media_reference": 15495,
+      "notes": 3164,
+      "paragraph": 147088,
+      "picture": 14024,
+      "run": 160095,
+      "section": 1027,
+      "shape": 384068,
+      "slide": 12695,
+      "smartart": 183,
+      "table": 2268,
+      "text_frame": 380165,
+      "textbox": 6550,
+      "tracked_change": 113,
+      "unknown_extension_object": 285997
+    },
+    "family_format_counts": {
+      "docx:alternate_content": 2519,
+      "docx:bookmark": 5381,
+      "docx:chart": 40,
+      "docx:comment": 38,
+      "docx:content_control": 1844,
+      "docx:drawing_container": 3662,
+      "docx:endnote": 568,
+      "docx:field": 2931,
+      "docx:floating_drawing": 2768,
+      "docx:footer": 326,
+      "docx:footnote": 588,
+      "docx:header": 235,
+      "docx:hyperlink": 1175,
+      "docx:inline_drawing": 894,
+      "docx:media_reference": 2480,
+      "docx:paragraph": 147088,
+      "docx:picture": 2440,
+      "docx:run": 160095,
+      "docx:section": 1027,
+      "docx:smartart": 14,
+      "docx:table": 1341,
+      "docx:textbox": 6550,
+      "docx:tracked_change": 113,
+      "docx:unknown_extension_object": 17628,
+      "pptx:alternate_content": 7628,
+      "pptx:chart": 9754,
+      "pptx:graphic_frame": 6182,
+      "pptx:group_shape": 25627,
+      "pptx:layout": 3285,
+      "pptx:master": 251,
+      "pptx:media_reference": 13015,
+      "pptx:notes": 3164,
+      "pptx:picture": 11584,
+      "pptx:shape": 384068,
+      "pptx:slide": 12695,
+      "pptx:smartart": 169,
+      "pptx:table": 927,
+      "pptx:text_frame": 380165,
+      "pptx:unknown_extension_object": 268369
+    },
+    "format_counts": {
+      "docx": 361745,
+      "pptx": 1126883
+    },
+    "handle_identity_assigned_count": 1488628,
+    "inspectable_count": 1192484,
+    "object_candidate_count": 1488628,
+    "p42_docx_drawing_active_handle_count": 208,
+    "p42_new_unique_handle_count": 78,
+    "p42_semantic_operation_count": 13,
+    "package_scan_failure_count": 0,
+    "package_scan_pass_count": 361,
+    "part_count": 108535,
+    "preserve_only_count": 296144,
+    "preserve_only_reason_missing_count": 0,
+    "public_overclaim_count": 0,
+    "relationship_count": 112082,
+    "scan_failure_count": 0,
+    "selected_supported_valid_package_count": 361,
+    "semantic_status_classified_count": 1488628,
+    "stable_handle_duplicate_count": 0,
+    "status_counts": {
+      "inspectable": 1192484,
+      "preserve-only": 296144
+    },
+    "status_format_counts": {
+      "docx:inspectable": 341598,
+      "docx:preserve-only": 20147,
+      "pptx:inspectable": 850886,
+      "pptx:preserve-only": 275997
+    },
+    "top_qnames": [
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}pt",
+        2828028
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}gd",
+        2718665
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}schemeClr",
+        1553213
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}solidFill",
+        1358519
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}cxn",
+        995509
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}pos",
+        995509
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}noFill",
+        920718
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}latin",
+        910516
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}ext",
+        895345
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}ea",
+        838585
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}ln",
+        803700
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}lnTo",
+        788580
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}cs",
+        700493
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}cubicBezTo",
+        647435
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}defRPr",
+        617073
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}effectLst",
+        572346
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}spcPts",
+        546416
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}srgbClr",
+        527481
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}p",
+        483068
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}cNvPr",
+        482466
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}nvPr",
+        482466
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}off",
+        475369
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}xfrm",
+        468170
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}rPr",
+        445127
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}t",
+        443905
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}bodyPr",
+        437151
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}lstStyle",
+        436751
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}r",
+        435975
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}spPr",
+        431091
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}avLst",
+        424275
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}pPr",
+        423958
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}spcPct",
+        414962
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}uLnTx",
+        406723
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}uFillTx",
+        406627
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}extLst",
+        406156
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}sp",
+        384068
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}nvSpPr",
+        384068
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}cNvSpPr",
+        384068
+      ],
+      [
+        "{http://schemas.openxmlformats.org/presentationml/2006/main}txBody",
+        380165
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}prstGeom",
+        370342
+      ],
+      [
+        "{http://schemas.microsoft.com/office/drawing/2014/main}creationId",
+        356305
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}lnSpc",
+        335062
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}spcBef",
+        330188
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}endParaRPr",
+        321846
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}spcAft",
+        296128
+      ],
+      [
+        "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}rPr",
+        284000
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}lumMod",
+        278846
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}buNone",
+        276722
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}buSzTx",
+        256633
+      ],
+      [
+        "{http://schemas.openxmlformats.org/drawingml/2006/main}buClrTx",
+        254531
+      ]
+    ],
+    "unclassified_object_count": 0,
+    "unsupported_count": 0,
+    "unsupported_reason_missing_count": 0,
+    "xml_part_count": 90864,
+    "xml_part_parse_failure_count": 0,
+    "xml_part_parse_pass_count": 90864,
+    "zip_open_pass_count": 361
+  },
+  "warnings": []
+}

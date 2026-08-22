@@ -1,0 +1,183 @@
+{
+  "env": {
+    "OOXML_DOCX_DRAWING_REGRESSION_JSON": {
+      "path": "../release-evidence/p42/docx-drawing-active-editing-v3-summary.json",
+      "sha256": "7aa3c1796da95be99523436568ed9625e098d78c6c2fdbc15b479e1c6378d376",
+      "size_bytes": 3171
+    },
+    "OOXML_FRESH_TAG_INSTALL": {
+      "value": "1"
+    },
+    "OOXML_GENERATED_OUTPUT_GATE_JSON": {
+      "path": "../release-evidence/p28/generated-output-office-gate-final.json",
+      "sha256": "1f2e82a6651a6e5838ce3f9c57dca22f422f64a928a37fea9a01a9fd7abe3d4d",
+      "size_bytes": 365954
+    },
+    "OOXML_NATIVE_CORPUS_DIR": {
+      "path": "../../ooxml-native-corpus",
+      "required_files": [
+        {
+          "path": "manifests/corpus.csv",
+          "sha256": "9f56564deaad068e59e21c0c8ddc14301f0e25688a7aa948bd5bf91389882143",
+          "size_bytes": 184941
+        }
+      ]
+    },
+    "OOXML_OFFICE_GATE_JSON": {
+      "path": "../release-evidence/p28/native-office-supported-valid-full.json",
+      "sha256": "b83a37b1ca6ed56ec7771b3d80022c800d40ff55e0ca9873d942cb4b5564cf5f",
+      "size_bytes": 136849
+    }
+  },
+  "evidence_manifest": "../release-evidence/p51/manifest.json",
+  "expected_metrics": {
+    "active_edit_rows": 208,
+    "active_semantic_hit": 208,
+    "alias_operation_row_count": 0,
+    "allowed_status_violation_count": 0,
+    "denominator_gate_pass": true,
+    "desktop_word_open_pass": 208,
+    "docx_drawing_office_checked": true,
+    "docx_drawing_office_pass_total": 208,
+    "docx_drawing_pass": 1,
+    "docx_drawing_represented_bucket_count": 13,
+    "docx_drawing_selected_cases": 208,
+    "docx_drawing_semantic_assertion_count": 13,
+    "docx_drawing_semantic_target_fail": 0,
+    "docx_drawing_semantic_target_pass": 208,
+    "editable_operation_bucket_count": 13,
+    "fail_count": 0,
+    "fresh_install_ok": 1,
+    "generated_output_ok": 1,
+    "hash_checked_count": 31,
+    "macro_dialog_timeout_count": 0,
+    "missing_part_count": 0,
+    "missing_parts": 0,
+    "new_schema_semantic_blocker": 0,
+    "new_unique_handle_count": 78,
+    "object_candidate_count": 1488628,
+    "observation_error_count": 0,
+    "office_crash_count": 0,
+    "office_repair_zero": 1,
+    "p35_base_handle_count": 130,
+    "p42_real_extra_rows": 78,
+    "p43_inventory_gate_pass": true,
+    "p44_missing_required_part_count": 0,
+    "p44_opc_graph_gate_pass": true,
+    "p44_relationship_target_unclassified_count": 0,
+    "p45_docx_non_drawing_handle_gate_pass": true,
+    "p46_docx_drawing_deep_semantics_gate_pass": true,
+    "p47_pptx_semantic_handle_gate_pass": true,
+    "p48_cross_format_drawingml_gate_pass": true,
+    "p49_dashboard_validation_pass": true,
+    "p50_public_api_contract_pass": true,
+    "package_scan_failure_count": 0,
+    "public_api_edit_or_control_pass": 208,
+    "public_api_handle_locate_pass": 208,
+    "public_claim_beyond_measured_cells": 0,
+    "public_claim_beyond_measured_matrix": 0,
+    "public_operation_label_count": 13,
+    "public_operation_row_count": 208,
+    "real_operation_expansion_pass": true,
+    "relationship_loss": 0,
+    "relationship_loss_count": 0,
+    "relationship_target_unclassified_count": 0,
+    "repair_dialog_count": 0,
+    "represented_drawing_family_count": 10,
+    "required_dir_count": 1,
+    "same_operation_sibling_check_count": 1920,
+    "same_operation_sibling_unchanged_pass": 1920,
+    "scan_failure_count": 0,
+    "security_dialog_count": 0,
+    "selected_denominator_pass": 208,
+    "selected_denominator_total": 208,
+    "selected_supported_valid_package_count": 361,
+    "semantic_base_operation_count": 13,
+    "semantic_status_classified_count": 1488628,
+    "size_checked_count": 31,
+    "stubs_preserve_ok": 2,
+    "unclassified_object_count": 0,
+    "unintended_binary_media_mutation": 0,
+    "unintended_binary_media_mutation_count": 0,
+    "unique_input_file_stable_id_count": 208,
+    "unsupported_silent_noop": 0,
+    "unsupported_silent_noop_count": 0,
+    "warn_count": 0,
+    "wrong_handle_mutation_count": 0,
+    "xml_part_parse_failure_count": 0,
+    "xml_part_parse_pass_count": 90864
+  },
+  "metric_sources": [
+    {
+      "metrics": {
+        "allowed_status_violation_count": "summary.allowed_status_violation_count",
+        "object_candidate_count": "summary.object_candidate_count",
+        "p43_inventory_gate_pass": "gate_pass",
+        "package_scan_failure_count": "summary.package_scan_failure_count",
+        "scan_failure_count": "summary.scan_failure_count",
+        "selected_supported_valid_package_count": "summary.selected_supported_valid_package_count",
+        "semantic_status_classified_count": "summary.semantic_status_classified_count",
+        "unclassified_object_count": "summary.unclassified_object_count",
+        "xml_part_parse_failure_count": "summary.xml_part_parse_failure_count",
+        "xml_part_parse_pass_count": "summary.xml_part_parse_pass_count"
+      },
+      "path": "../release-evidence/p43/ooxml-semantic-status-summary.json"
+    },
+    {
+      "metrics": {
+        "p44_opc_graph_gate_pass": "gate_pass",
+        "relationship_target_unclassified_count": "summary.relationship_target_unclassified_count"
+      },
+      "path": "../release-evidence/p44/part-ownership-summary.json"
+    },
+    {
+      "metrics": {
+        "p45_docx_non_drawing_handle_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p45/docx-non-drawing-status-summary.json"
+    },
+    {
+      "metrics": {
+        "p44_missing_required_part_count": "summary.p44_missing_required_part_count",
+        "p44_relationship_target_unclassified_count": "summary.p44_relationship_target_unclassified_count",
+        "p46_docx_drawing_deep_semantics_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p46/docx-drawing-deep-summary.json"
+    },
+    {
+      "metrics": {
+        "p47_pptx_semantic_handle_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p47/pptx-semantic-status-summary.json"
+    },
+    {
+      "metrics": {
+        "p48_cross_format_drawingml_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p48/cross-format-drawingml-contract.json"
+    },
+    {
+      "metrics": {
+        "p49_dashboard_validation_pass": "summary.dashboard_validation_pass"
+      },
+      "path": "../release-evidence/p49/dashboard-validation.json"
+    },
+    {
+      "metrics": {
+        "missing_part_count": "summary.missing_part_count",
+        "p50_public_api_contract_pass": "summary.p50_public_api_contract_pass",
+        "public_claim_beyond_measured_matrix": "summary.public_claim_beyond_measured_matrix",
+        "relationship_loss_count": "summary.relationship_loss_count",
+        "unintended_binary_media_mutation_count": "summary.unintended_binary_media_mutation_count",
+        "unsupported_silent_noop_count": "summary.unsupported_silent_noop_count"
+      },
+      "path": "../release-evidence/p50/public-api-capability-contract.json"
+    },
+    {
+      "metrics": {
+        "public_claim_beyond_measured_cells": "public_claim_beyond_measured_cells"
+      },
+      "path": "../release-evidence/p51/public-claim-boundary-scan.json"
+    }
+  ]
+}

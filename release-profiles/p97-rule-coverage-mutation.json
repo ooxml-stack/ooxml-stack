@@ -1,0 +1,186 @@
+{
+  "claim": "P97 GATE: expanded compliance-rule mutation checks pass across docx, pptx, and xlsx. This proves the compliance stage has live-rule evidence for representative OPC/content-type, relationship, DrawingML blip/table/color, and format-specific structural defect classes; it does not claim complete mutation coverage for every registered rule.",
+  "ok": true,
+  "command": "make p97-mutation-gate && python3 -m pytest tests/test_p97_mutation_gate.py",
+  "evidence": {
+    "summary": "release-evidence/p97/rule-coverage-mutation-gate-summary.json",
+    "manifest": "release-evidence/p97/manifest.json"
+  },
+  "expected_metrics": {
+    "mutation_case_count": 21,
+    "mutation_case_pass_count": 21,
+    "mutation_case_fail_count": 0,
+    "mutation_proven_format_rule_count": 21,
+    "mutation_proven_unique_rule_count": 16,
+    "formats": {
+      "docx": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      "pptx": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      "xlsx": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      }
+    }
+  },
+  "coverage_counts": {
+    "docx": {
+      "mutation_proven": 7,
+      "uncovered_in_p97": 31,
+      "not_applicable_to_format": 29
+    },
+    "pptx": {
+      "mutation_proven": 7,
+      "uncovered_in_p97": 29,
+      "not_applicable_to_format": 31
+    },
+    "xlsx": {
+      "mutation_proven": 7,
+      "uncovered_in_p97": 16,
+      "not_applicable_to_format": 44
+    }
+  },
+  "mutation_cases": [
+    {
+      "id": "docx-content-types",
+      "format": "docx",
+      "rule_id": "content_types_integrity",
+      "rule_family": "opc_content_types"
+    },
+    {
+      "id": "docx-image-rel",
+      "format": "docx",
+      "rule_id": "image_rel_integrity",
+      "rule_family": "drawingml_blip_rel"
+    },
+    {
+      "id": "docx-color-no-hash",
+      "format": "docx",
+      "rule_id": "color_no_hash",
+      "rule_family": "drawingml_color"
+    },
+    {
+      "id": "docx-drawing-table-grid",
+      "format": "docx",
+      "rule_id": "table_grid_consistency",
+      "rule_family": "drawingml_table"
+    },
+    {
+      "id": "docx-wml-table-grid",
+      "format": "docx",
+      "rule_id": "wml_table_grid_consistency",
+      "rule_family": "word_table"
+    },
+    {
+      "id": "docx-numbering-ref",
+      "format": "docx",
+      "rule_id": "numbering_ref_valid",
+      "rule_family": "word_numbering"
+    },
+    {
+      "id": "docx-body-required",
+      "format": "docx",
+      "rule_id": "body_required",
+      "rule_family": "word_structure"
+    },
+    {
+      "id": "pptx-content-types",
+      "format": "pptx",
+      "rule_id": "content_types_integrity",
+      "rule_family": "opc_content_types"
+    },
+    {
+      "id": "pptx-slide-rel",
+      "format": "pptx",
+      "rule_id": "slide_rel_completeness",
+      "rule_family": "presentation_relationship"
+    },
+    {
+      "id": "pptx-blip-rel",
+      "format": "pptx",
+      "rule_id": "blip_fill_integrity",
+      "rule_family": "drawingml_blip_rel"
+    },
+    {
+      "id": "pptx-color-no-hash",
+      "format": "pptx",
+      "rule_id": "color_no_hash",
+      "rule_family": "drawingml_color"
+    },
+    {
+      "id": "pptx-table-grid",
+      "format": "pptx",
+      "rule_id": "table_grid_consistency",
+      "rule_family": "drawingml_table"
+    },
+    {
+      "id": "pptx-element-order",
+      "format": "pptx",
+      "rule_id": "element_order",
+      "rule_family": "presentation_structure"
+    },
+    {
+      "id": "pptx-animation-target",
+      "format": "pptx",
+      "rule_id": "animation_target_ref",
+      "rule_family": "presentation_animation"
+    },
+    {
+      "id": "xlsx-sheet-rid",
+      "format": "xlsx",
+      "rule_id": "sheet_rid_resolvable",
+      "rule_family": "spreadsheet_relationship"
+    },
+    {
+      "id": "xlsx-rel-id-unique",
+      "format": "xlsx",
+      "rule_id": "rel_id_unique",
+      "rule_family": "opc_relationship"
+    },
+    {
+      "id": "xlsx-blip-rel",
+      "format": "xlsx",
+      "rule_id": "blip_fill_integrity",
+      "rule_family": "drawingml_blip_rel"
+    },
+    {
+      "id": "xlsx-style-rgb-width",
+      "format": "xlsx",
+      "rule_id": "styles_rgb_argb_width",
+      "rule_family": "spreadsheet_color"
+    },
+    {
+      "id": "xlsx-drawing-table-grid",
+      "format": "xlsx",
+      "rule_id": "table_grid_consistency",
+      "rule_family": "drawingml_table"
+    },
+    {
+      "id": "xlsx-sst-count",
+      "format": "xlsx",
+      "rule_id": "sst_count_consistent",
+      "rule_family": "spreadsheet_shared_strings"
+    },
+    {
+      "id": "xlsx-cell-ref-row",
+      "format": "xlsx",
+      "rule_id": "cell_ref_matches_row",
+      "rule_family": "spreadsheet_structure"
+    }
+  ],
+  "boundaries": [
+    "No native Office replay was run for P97.",
+    "P97 does not change semantic-editable row counts.",
+    "Rules marked uncovered_in_p97 are not claimed mutation-covered.",
+    "ooxml-stack self commit is not stored in source_heads because evidence files change the commit hash.",
+    "P97 validates representative compliance alarm paths; it is not a full OOXML compatibility claim."
+  ],
+  "next_gate": "P98 can expand mutation coverage across currently uncovered rules or choose one high-risk uncovered rule family and add targeted negative fixtures before treating future compliance-clean profiles as stronger evidence."
+}

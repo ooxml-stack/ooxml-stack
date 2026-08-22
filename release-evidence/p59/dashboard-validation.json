@@ -1,0 +1,22 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "schema_version": "p59-dashboard-validation-v1",
+  "summary": {
+    "dashboard_static_open_pass": true,
+    "dashboard_validation_pass": true,
+    "docx_understanding_pass_displayed": true,
+    "edit_ready_family_rows_displayed": 10,
+    "family_format_cell_count_displayed": 39,
+    "hardcoded_metric_count": 0,
+    "json_source_metric_count": 166,
+    "object_candidate_count_displayed": 1488628,
+    "p42_active_editing_preserved_displayed": true,
+    "package_count_displayed": 361,
+    "pptx_understanding_pass_displayed": true,
+    "preserve_only_reason_rows_displayed": 1,
+    "public_claim_beyond_measured_cells": 0,
+    "unsupported_reason_rows_displayed": 0
+  },
+  "warnings": []
+}

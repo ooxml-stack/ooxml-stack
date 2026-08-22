@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "100% inspectable owner dashboard under the P40 measured DOCX drawing active-editing v2 public-operation-row denominator.",
+  "gate_pass": true,
+  "hits": [],
+  "public_claim_beyond_measured_cells": 0,
+  "scanned_files": [
+    "../ooxml-stack/docs/P41-DOCX-DRAWING-ACTIVE-EDITING-V2-DASHBOARD.md",
+    "../ooxml-stack/release-evidence/p41/dashboard/index.html",
+    "../ooxml-stack/docs/P37-DOCX-DRAWING-PUBLIC-API-V1.md",
+    "../ooxml-stack/docs/P40-DOCX-DRAWING-ACTIVE-EDITING-V2-FREEZE.md",
+    "../ooxml-stack/docs/READINESS-98-AUDIT.md"
+  ],
+  "schema_version": "p41-public-claim-boundary-scan-v1"
+}

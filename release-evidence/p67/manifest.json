@@ -1,0 +1,47 @@
+{
+  "schema_version": "p67-docx-preserve-only-zero-manifest-v1",
+  "artifacts": [
+    {
+      "name": "docx-preserve-only-zero.json",
+      "path": "release-evidence/p67/docx-preserve-only-zero.json",
+      "role": "p67-docx-preserve-only-zero",
+      "sha256": "e778d1638eaee0671bde14e95012606a19d00bdab0738110136b5a68563ac767",
+      "size_bytes": 1397
+    },
+    {
+      "name": "docx-preserve-only-zero-summary.json",
+      "path": "release-evidence/p67/docx-preserve-only-zero-summary.json",
+      "role": "p67-docx-preserve-only-zero-summary",
+      "sha256": "22ad9bdf196e81b306221ae4d4aff49a6f8a8e16ff7038c9b5fa9b90449a3377",
+      "size_bytes": 877
+    },
+    {
+      "name": "P67-DOCX-PRESERVE-ONLY-ZERO.md",
+      "path": "docs/P67-DOCX-PRESERVE-ONLY-ZERO.md",
+      "role": "p67-doc",
+      "sha256": "c3110d7b37241519cc901dd678a41f76c7b3d45d6edb7baae67a211a0e0a94ca",
+      "size_bytes": 1341
+    },
+    {
+      "name": "generic-extension-replay.json",
+      "path": "release-evidence/p67-p68/generic-extension-replay.json",
+      "role": "p67-p68-generic-extension-replay",
+      "sha256": "8446c096ce27a000b938bdd97262d3b650a3e63244c72aeae2568201e05950fe",
+      "size_bytes": 172772
+    },
+    {
+      "name": "generic-extension-office-gate.json",
+      "path": "release-evidence/p67-p68/generic-extension-office-gate.json",
+      "role": "p67-p68-generic-extension-office-gate",
+      "sha256": "882421dd0d0d32f9d7a0a03a979fb4aefedbb3fd80da8025cbe10fb0926c092f",
+      "size_bytes": 122386
+    },
+    {
+      "name": "excluded-original-office-gate.json",
+      "path": "release-evidence/p67-p68/excluded-original-office-gate.json",
+      "role": "p67-p68-excluded-original-office-gate",
+      "sha256": "483492738f71dde68c9c72131a71bfec1b5e6c611dee469bd76674c9dfb6bf6a",
+      "size_bytes": 1110
+    }
+  ]
+}

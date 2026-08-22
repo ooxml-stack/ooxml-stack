@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "name": "drawing-contract-alignment-summary.json",
+      "path": "release-evidence/p39/drawing-contract-alignment-summary.json",
+      "role": "summary",
+      "sha256": "e119289b006950f77fa02285e5d51310cfef829093313813222c136e1a8fd808",
+      "size_bytes": 827
+    },
+    {
+      "name": "docx-contract-adapter-summary.json",
+      "path": "release-evidence/p39/docx-contract-adapter-summary.json",
+      "role": "docx-adapter",
+      "sha256": "36086baa8be582b581ae0af3e9009a1e376e0eec1ec6f41a76502a72ab12e891",
+      "size_bytes": 337
+    },
+    {
+      "name": "pptx-contract-adapter-summary.json",
+      "path": "release-evidence/p39/pptx-contract-adapter-summary.json",
+      "role": "pptx-adapter",
+      "sha256": "231abfc70fcf2e2c2273b791f6146720aa16df62abb4b13603fb6ca69c6adc38",
+      "size_bytes": 310
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "release-evidence/p39/public-claim-boundary-scan.json",
+      "role": "claim-scan",
+      "sha256": "6510ffc1caf0f8e3519044fb5140c7e1f227a0604fd78e330c966199e5ccbcc8",
+      "size_bytes": 138
+    },
+    {
+      "name": "P39-DOCX-PPTX-DRAWING-CONTRACT-ALIGNMENT.md",
+      "path": "docs/P39-DOCX-PPTX-DRAWING-CONTRACT-ALIGNMENT.md",
+      "role": "audit-doc",
+      "sha256": "cf63a9bb61b93edf863382e0d38c6694ebd09fdc769d6cfc4da70b69e7fdbbb9",
+      "size_bytes": 1131
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-gate.json",
+      "path": "release-evidence/p38/docx-drawing-active-editing-v2-gate.json",
+      "role": "p38-after-alignment-gate",
+      "sha256": "625a57bf1a194ba477ccca44d81aa3bb8cc4dfa049da275d4c18e81f76c49ccf",
+      "size_bytes": 351967
+    }
+  ],
+  "schema_version": "p39-release-evidence-manifest-v1"
+}

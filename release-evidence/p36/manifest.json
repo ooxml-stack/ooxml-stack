@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-stable-handle-diff-summary.json",
+      "path": "release-evidence/p36/docx-drawing-stable-handle-diff-summary.json",
+      "role": "summary",
+      "sha256": "bd82743cf109c550964a2d5e1e3d2319038685d5317e1cd49c492871616e86ae",
+      "size_bytes": 1749
+    },
+    {
+      "name": "docx-drawing-stable-handle-diff-cases.json",
+      "path": "release-evidence/p36/docx-drawing-stable-handle-diff-cases.json",
+      "role": "cases",
+      "sha256": "e1b4eec9b7b48de8efdc6d134720134d742814f4eb9a017850f368f17f7f04d6",
+      "size_bytes": 212316
+    },
+    {
+      "name": "docx-drawing-stable-handle-diff-matrix.json",
+      "path": "release-evidence/p36/docx-drawing-stable-handle-diff-matrix.json",
+      "role": "matrix",
+      "sha256": "d73ebe8d56e90c89aeee34bd282cd303675df4a9ea9a5c00904f68912a7058cc",
+      "size_bytes": 1229
+    },
+    {
+      "name": "index.html",
+      "path": "release-evidence/p36/dashboard/index.html",
+      "role": "dashboard",
+      "sha256": "6d0f3fc635a2723fc4177c3d3549d9f783f3bb893f53d6301289744201355eb1",
+      "size_bytes": 187319
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "release-evidence/p36/public-claim-boundary-scan.json",
+      "role": "claim-scan",
+      "sha256": "bba6404977e1e6dc7e00815466d9cfe235e24da45b8799d95fb6857e0b952e5a",
+      "size_bytes": 568
+    },
+    {
+      "name": "P36-DOCX-DRAWING-ACTIVE-EDITING-DIFF-INSPECTOR.md",
+      "path": "docs/P36-DOCX-DRAWING-ACTIVE-EDITING-DIFF-INSPECTOR.md",
+      "role": "audit-doc",
+      "sha256": "578457e57bf4b99a37ccac911b67c8ede2b5a78970331da4d918efc7dde2ef39",
+      "size_bytes": 1298
+    }
+  ],
+  "schema_version": "p36-release-evidence-manifest-v1"
+}

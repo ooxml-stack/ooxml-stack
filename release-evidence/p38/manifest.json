@@ -1,0 +1,54 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-active-editing-v2-denominator.json",
+      "path": "release-evidence/p38/docx-drawing-active-editing-v2-denominator.json",
+      "role": "denominator",
+      "sha256": "ea1344ac0ee94503517aadbe371705a22836ee3bf87e2f32a139e4f95403a20c",
+      "size_bytes": 614055
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-gate.json",
+      "path": "release-evidence/p38/docx-drawing-active-editing-v2-gate.json",
+      "role": "active-edit-gate",
+      "sha256": "6233f93be80d0b350c6451f8216c2f3dc6341d3284649a7b692df93772e70702",
+      "size_bytes": 351960
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-cases.json",
+      "path": "release-evidence/p38/docx-drawing-active-editing-v2-cases.json",
+      "role": "cases",
+      "sha256": "a633d5aa502f859425581ef696a3e7fcd7739fa9119b701f62c5c47846f9b1cd",
+      "size_bytes": 350588
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-summary.json",
+      "path": "release-evidence/p38/docx-drawing-active-editing-v2-summary.json",
+      "role": "summary",
+      "sha256": "e23661b0d1b60ee2a237af05195add2325b401f23f4aaee8a13e3a2693ca75f9",
+      "size_bytes": 3102
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-office-gate.json",
+      "path": "release-evidence/p38/docx-drawing-active-editing-v2-office-gate.json",
+      "role": "office-gate",
+      "sha256": "62868210b05cac46bc7faab4327e8714ee93a03e59ef2811872654679de8431b",
+      "size_bytes": 188809
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "release-evidence/p38/public-claim-boundary-scan.json",
+      "role": "claim-scan",
+      "sha256": "5fe49583ffc684aa39c974e4229f7f9deeb9244d50f916d045dc79f7fb38db78",
+      "size_bytes": 440
+    },
+    {
+      "name": "P38-DOCX-DRAWING-ACTIVE-OPERATION-EXPANSION-V2.md",
+      "path": "docs/P38-DOCX-DRAWING-ACTIVE-OPERATION-EXPANSION-V2.md",
+      "role": "audit-doc",
+      "sha256": "3a4049472fc95997df62d446f33b3da1034e080e98a3d09ec173016247508cea",
+      "size_bytes": 3627
+    }
+  ],
+  "schema_version": "p38-release-evidence-manifest-v1"
+}

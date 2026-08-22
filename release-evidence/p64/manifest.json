@@ -1,0 +1,33 @@
+{
+  "schema_version": "p64-office-extension-manifest-v1",
+  "artifacts": [
+    {
+      "name": "office-extension-active-models.json",
+      "path": "release-evidence/p64/office-extension-active-models.json",
+      "role": "p64-office-extension-active-models",
+      "sha256": "db7c810eb5122f82bebcf4477631fd9c9a357d60b25a9f5e6a9e694316013da5",
+      "size_bytes": 1438616
+    },
+    {
+      "name": "office-extension-office-gate.json",
+      "path": "release-evidence/p64/office-extension-office-gate.json",
+      "role": "p64-office-extension-office-gate",
+      "sha256": "0ec36f82141f9edcc1417da1d7ced82066c0981af7efa6423858bfcc23caf1cd",
+      "size_bytes": 989
+    },
+    {
+      "name": "office-extension-summary.json",
+      "path": "release-evidence/p64/office-extension-summary.json",
+      "role": "p64-office-extension-summary",
+      "sha256": "708a1e1e76c98bd266414562ec471e650cb58472e60b32c13b1940f2c3aa5339",
+      "size_bytes": 1793
+    },
+    {
+      "name": "P64-OFFICE-EXTENSION-ACTIVE-MODELS.md",
+      "path": "docs/P64-OFFICE-EXTENSION-ACTIVE-MODELS.md",
+      "role": "p64-doc",
+      "sha256": "27fa2acae54cae728b4785c6496c8f855f0fbffa01510c4f5891a87d52e29381",
+      "size_bytes": 1841
+    }
+  ]
+}

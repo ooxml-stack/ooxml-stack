@@ -1,0 +1,3626 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-04T09:52:57Z",
+    "timeout_seconds": 120,
+    "dialog_wait_seconds": 8
+  },
+  "summary": {
+    "total": 360,
+    "pass": 359,
+    "pass_total": 360,
+    "repair_dialog_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 1,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "pass": 359,
+      "pass_with_dialog": 1
+    },
+    "gate_pass": true
+  },
+  "results": [
+    {
+      "file": "docx/docx_annual_report_headers_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 29.77
+    },
+    {
+      "file": "docx/docx_budget_embedded_objects.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.032
+    },
+    {
+      "file": "docx/docx_budget_rules_embedded.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.833
+    },
+    {
+      "file": "docx/docx_business_report_footer.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.505
+    },
+    {
+      "file": "docx/docx_competitive_analysis_charts.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.601
+    },
+    {
+      "file": "docx/docx_development_history.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.565
+    },
+    {
+      "file": "docx/docx_enterprise_finance_policy_fields.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.113
+    },
+    {
+      "file": "docx/docx_finance_mindmap_track.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.62
+    },
+    {
+      "file": "docx/docx_finance_tables_track.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 26.17
+    },
+    {
+      "file": "docx/docx_financing_plan_chart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.661
+    },
+    {
+      "file": "docx/docx_founder_intro_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.511
+    },
+    {
+      "file": "docx/docx_halfyear_financial_report_track.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 27.491
+    },
+    {
+      "file": "docx/docx_layout01_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.592
+    },
+    {
+      "file": "docx/docx_layout06_footer_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.492
+    },
+    {
+      "file": "docx/docx_layout07_footer_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.564
+    },
+    {
+      "file": "docx/docx_layout10_footer_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.559
+    },
+    {
+      "file": "docx/docx_layout11_footer_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 24.683
+    },
+    {
+      "file": "docx/docx_layout16_footer_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.569
+    },
+    {
+      "file": "docx/docx_layout20_header_footer.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.559
+    },
+    {
+      "file": "docx/docx_layout21_footer.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.556
+    },
+    {
+      "file": "docx/docx_layout_business_proposal.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.693
+    },
+    {
+      "file": "docx/docx_layout_financial_statement.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.711
+    },
+    {
+      "file": "docx/docx_layout_market_analysis.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.703
+    },
+    {
+      "file": "docx/docx_layout_media_large.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.533
+    },
+    {
+      "file": "docx/docx_layout_meeting_arrangement.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.668
+    },
+    {
+      "file": "docx/docx_layout_operations_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.657
+    },
+    {
+      "file": "docx/docx_layout_resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 31.717
+    },
+    {
+      "file": "docx/docx_layout_service_product.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.584
+    },
+    {
+      "file": "docx/docx_marketing_strategy_charts.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.3
+    },
+    {
+      "file": "docx/docx_meeting_record.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.179
+    },
+    {
+      "file": "docx/docx_ms_expansion_106_fdo76316.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.086
+    },
+    {
+      "file": "docx/docx_ms_expansion_107_word.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.229
+    },
+    {
+      "file": "docx/docx_ms_expansion_108_complex-400p.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 27.208
+    },
+    {
+      "file": "docx/docx_ms_expansion_109_hexagon-labels-30-per-page.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.265
+    },
+    {
+      "file": "docx/docx_ms_expansion_110_testchartoleobjectembeddings.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 34.527
+    },
+    {
+      "file": "docx/docx_ms_expansion_111_word.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.258
+    },
+    {
+      "file": "docx/docx_ms_expansion_112_generative-ai-at-isb.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.196
+    },
+    {
+      "file": "docx/docx_ms_expansion_113_swiss-design-resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.154
+    },
+    {
+      "file": "docx/docx_ms_expansion_114_pinstripes-business-cards.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.291
+    },
+    {
+      "file": "docx/docx_ms_expansion_115_small-business-startup-checklist.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.152
+    },
+    {
+      "file": "docx/docx_ms_expansion_116_winter-holiday-party-checklist.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.263
+    },
+    {
+      "file": "docx/docx_ms_expansion_117_wdatevalueformat.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 25.252
+    },
+    {
+      "file": "docx/docx_ms_expansion_118_geometric-business-cards.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.2
+    },
+    {
+      "file": "docx/docx_ms_expansion_119_small-business-email-marketing-templ.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.214
+    },
+    {
+      "file": "docx/docx_ms_expansion_120_whitepaper-with-cover-image.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.412
+    },
+    {
+      "file": "docx/docx_ms_expansion_121_office-file.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.274
+    },
+    {
+      "file": "docx/docx_ms_expansion_122_eighties-business-cards.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.124
+    },
+    {
+      "file": "docx/docx_ms_expansion_123_tdf164905.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.769
+    },
+    {
+      "file": "docx/docx_ms_expansion_124_tdf154478.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.834
+    },
+    {
+      "file": "docx/docx_ms_expansion_126_bold-business-report.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.295
+    },
+    {
+      "file": "docx/docx_ms_expansion_127_fdo69649.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.726
+    },
+    {
+      "file": "docx/docx_ms_expansion_128_style-inheritance.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.225
+    },
+    {
+      "file": "docx/docx_ms_expansion_130_classroom-newsletter.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.176
+    },
+    {
+      "file": "docx/docx_ms_expansion_131_restaurant-brochure.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.246
+    },
+    {
+      "file": "docx/docx_ms_expansion_132_invoice-document.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.376
+    },
+    {
+      "file": "docx/docx_ms_expansion_134_demo.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.569
+    },
+    {
+      "file": "docx/docx_ms_expansion_135_1-resume-docx.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.282
+    },
+    {
+      "file": "docx/docx_ms_expansion_136_1-resume-docx.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.163
+    },
+    {
+      "file": "docx/docx_ms_expansion_137_mba.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.353
+    },
+    {
+      "file": "docx/docx_ms_expansion_138_reader.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.044
+    },
+    {
+      "file": "docx/docx_ms_expansion_139_reimbursement-form.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.531
+    },
+    {
+      "file": "docx/docx_ms_expansion_140_headshot-cover-letter.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.533
+    },
+    {
+      "file": "docx/docx_ms_expansion_141_fdo58949.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.544
+    },
+    {
+      "file": "docx/docx_ms_expansion_142_tdf158360.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.354
+    },
+    {
+      "file": "docx/docx_ms_expansion_143_tdf155736-pagenumbers-footer.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.311
+    },
+    {
+      "file": "docx/docx_ms_expansion_144_a4-manfred-martinsson.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.099
+    },
+    {
+      "file": "docx/docx_ms_expansion_145_manfred-martinsson.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.487
+    },
+    {
+      "file": "docx/docx_ms_expansion_146_geometric-cover-letter.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.032
+    },
+    {
+      "file": "docx/docx_ms_expansion_147_basic-business-card.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.308
+    },
+    {
+      "file": "docx/docx_ms_expansion_148_fdo74605.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.201
+    },
+    {
+      "file": "docx/docx_ms_expansion_149_interior-design-cv-resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.14
+    },
+    {
+      "file": "docx/docx_ms_expansion_150_floatingtbl-with-formula.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.23
+    },
+    {
+      "file": "docx/docx_ms_expansion_151_tdf149555.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.525
+    },
+    {
+      "file": "docx/docx_ms_expansion_152_tdf127814.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.441
+    },
+    {
+      "file": "docx/docx_ms_expansion_153_2120112713.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.165
+    },
+    {
+      "file": "docx/docx_ms_expansion_154_tdf143384-tableinfoot-negativemargin.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.349
+    },
+    {
+      "file": "docx/docx_ms_expansion_155_sample-11-readword2007.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.198
+    },
+    {
+      "file": "docx/docx_ms_expansion_156_tdf167527-title-letters-cut-from-bel.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.301
+    },
+    {
+      "file": "docx/docx_ms_expansion_157_tdf146802.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.25
+    },
+    {
+      "file": "docx/docx_ms_expansion_158_organic-shapes-letterhead.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.156
+    },
+    {
+      "file": "docx/docx_ms_expansion_159_resume-a4.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.46
+    },
+    {
+      "file": "docx/docx_ms_expansion_160_tdf160077-layoutincellb.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.305
+    },
+    {
+      "file": "docx/docx_ms_expansion_161_tdf166205-first-page-header-footer-v.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.34
+    },
+    {
+      "file": "docx/docx_ms_expansion_162_playful-business-cover-letter.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.869
+    },
+    {
+      "file": "docx/docx_ms_expansion_163_mergers-acquisitions-report.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 38.026
+    },
+    {
+      "file": "docx/docx_ms_expansion_164_2120112713-openbrace.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.811
+    },
+    {
+      "file": "docx/docx_ms_expansion_165_fdo79973.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 50.288
+    },
+    {
+      "file": "docx/docx_ms_expansion_166_tablecurrupt.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.031
+    },
+    {
+      "file": "docx/docx_ms_expansion_167_tdf166850.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.798
+    },
+    {
+      "file": "docx/docx_ms_expansion_168_04-kathrine-lovins.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.733
+    },
+    {
+      "file": "docx/docx_ms_expansion_169_modern-initials-resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.567
+    },
+    {
+      "file": "docx/docx_ms_expansion_170_test-segfault-while-save.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 26.929
+    },
+    {
+      "file": "docx/docx_ms_expansion_171_tdf169843.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.635
+    },
+    {
+      "file": "docx/docx_ms_expansion_172_floattable-from-bottom.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.61
+    },
+    {
+      "file": "docx/docx_ms_expansion_173_resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.505
+    },
+    {
+      "file": "docx/docx_ms_expansion_174_bauhaus-shape-creative-agency-brand-.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.719
+    },
+    {
+      "file": "docx/docx_ms_expansion_175_childrens-s-holiday-wish-list.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.698
+    },
+    {
+      "file": "docx/docx_ms_expansion_176_equationasscientificnumbering.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 25.292
+    },
+    {
+      "file": "docx/docx_ms_expansion_177_tdf162070-export.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.249
+    },
+    {
+      "file": "docx/docx_ms_expansion_178_tdf149649.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.153
+    },
+    {
+      "file": "docx/docx_ms_expansion_179_floattable-header.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.062
+    },
+    {
+      "file": "docx/docx_ms_expansion_180_tdf170171.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.468
+    },
+    {
+      "file": "docx/docx_ms_expansion_181_alt-chunk-header.docx",
+      "app": "Microsoft Word",
+      "status": "pass_with_dialog",
+      "message": "BENIGN_DIALOG: AXWindow AXDialog NoYes Microsoft WordThis document contains fields that may refer to other files. Do you want to update the fields in this document? NoYes",
+      "exit_code": 0,
+      "stdout": "PASS_WITH_DIALOG:BENIGN_DIALOG:   AXWindow AXDialog NoYes   Microsoft WordThis document contains fields that may refer to other files. Do you want to update the fields in this document? NoYes",
+      "stderr": "",
+      "elapsed_seconds": 22.873
+    },
+    {
+      "file": "docx/docx_ms_expansion_182_modern-chronological-resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.5
+    },
+    {
+      "file": "docx/docx_ms_expansion_183_modern-calendar-with-highlights.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 24.008
+    },
+    {
+      "file": "docx/docx_ms_expansion_184_photo-cover-letter.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.593
+    },
+    {
+      "file": "docx/docx_ms_expansion_185_tdf171433-equation.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.53
+    },
+    {
+      "file": "docx/docx_ms_expansion_186_tdf119952-negativemargins.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.62
+    },
+    {
+      "file": "docx/docx_ms_expansion_187_tdf159032.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.467
+    },
+    {
+      "file": "docx/docx_ms_expansion_188_floattable-header-overlap.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.517
+    },
+    {
+      "file": "docx/docx_ms_expansion_189_fly-minimal-wrap.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.093
+    },
+    {
+      "file": "docx/docx_ms_expansion_190_fdo78333-1-minimized.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.404
+    },
+    {
+      "file": "docx/docx_ms_expansion_191_tdf145215.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.368
+    },
+    {
+      "file": "docx/docx_ms_expansion_192_floattable-negative-height.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.983
+    },
+    {
+      "file": "docx/docx_ms_expansion_193_tdf134987.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.463
+    },
+    {
+      "file": "docx/docx_ms_expansion_194_mixednumberings.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.101
+    },
+    {
+      "file": "docx/docx_ms_expansion_195_tdf107111.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.679
+    },
+    {
+      "file": "docx/docx_ms_expansion_196_bunny-ears-easter-party-flyer.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.667
+    },
+    {
+      "file": "docx/docx_ms_expansion_197_business-report-prefiessional-design.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.075
+    },
+    {
+      "file": "docx/docx_ms_expansion_198_equationwithaboveandbelowcaption.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.468
+    },
+    {
+      "file": "docx/docx_ms_expansion_199_tdf123054.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.543
+    },
+    {
+      "file": "docx/docx_ms_expansion_200_tdf123705.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.771
+    },
+    {
+      "file": "docx/docx_ms_expansion_201_tdf38575-fullwidthline.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.752
+    },
+    {
+      "file": "docx/docx_ms_expansion_202_organic-boho-digital-strategist-resu.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.769
+    },
+    {
+      "file": "docx/docx_ms_expansion_203_photo-resume.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.648
+    },
+    {
+      "file": "docx/docx_ms_expansion_204_pink-floral-cover-letter.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.51
+    },
+    {
+      "file": "docx/docx_ms_expansion_205_fdo78292.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.53
+    },
+    {
+      "file": "docx/docx_ms_expansion_206_14.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.702
+    },
+    {
+      "file": "docx/docx_ms_expansion_207_metro-report.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.639
+    },
+    {
+      "file": "docx/docx_ms_expansion_208_coverletter-a4.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.025
+    },
+    {
+      "file": "docx/docx_ms_expansion_209_field-char-height-header-toc.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.838
+    },
+    {
+      "file": "docx/docx_ms_expansion_210_tdf117137.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.785
+    },
+    {
+      "file": "docx/docx_ms_expansion_225_floattable-heading-split-hyphen.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.756
+    },
+    {
+      "file": "docx/docx_ms_expansion_226_tdf134902.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.535
+    },
+    {
+      "file": "docx/docx_ms_expansion_227_fdo78469.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.54
+    },
+    {
+      "file": "docx/docx_newspaper_customxml.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.785
+    },
+    {
+      "file": "docx/docx_p18_drawing_001_smartart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.836
+    },
+    {
+      "file": "docx/docx_p18_drawing_002_smartart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.627
+    },
+    {
+      "file": "docx/docx_p18_drawing_003_smartart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.608
+    },
+    {
+      "file": "docx/docx_p18_drawing_004_smartart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.614
+    },
+    {
+      "file": "docx/docx_p18_drawing_005_smartart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.711
+    },
+    {
+      "file": "docx/docx_p18_drawing_006_smartart.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.891
+    },
+    {
+      "file": "docx/docx_p18_drawing_007_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.575
+    },
+    {
+      "file": "docx/docx_p18_drawing_008_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.56
+    },
+    {
+      "file": "docx/docx_p18_drawing_009_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.606
+    },
+    {
+      "file": "docx/docx_p18_drawing_010_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.635
+    },
+    {
+      "file": "docx/docx_p18_drawing_011_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.068
+    },
+    {
+      "file": "docx/docx_p18_drawing_012_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.556
+    },
+    {
+      "file": "docx/docx_p18_drawing_013_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.755
+    },
+    {
+      "file": "docx/docx_p18_drawing_014_drawing.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.88
+    },
+    {
+      "file": "docx/docx_p18_drawing_015_drawing.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.616
+    },
+    {
+      "file": "docx/docx_p18_drawing_016_drawing.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.95
+    },
+    {
+      "file": "docx/docx_p18_drawing_017_drawing.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.595
+    },
+    {
+      "file": "docx/docx_p18_drawing_018_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.836
+    },
+    {
+      "file": "docx/docx_p18_drawing_019_canvas.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.119
+    },
+    {
+      "file": "docx/docx_p18_drawing_020_drawing.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.768
+    },
+    {
+      "file": "docx/docx_p5_content_controls_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.613
+    },
+    {
+      "file": "docx/docx_p5_content_controls_02.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.748
+    },
+    {
+      "file": "docx/docx_p5_content_controls_03.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.187
+    },
+    {
+      "file": "docx/docx_p5_customxml_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.717
+    },
+    {
+      "file": "docx/docx_p5_customxml_02.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.051
+    },
+    {
+      "file": "docx/docx_p5_customxml_03.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.449
+    },
+    {
+      "file": "docx/docx_p5_embedded_objects_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.78
+    },
+    {
+      "file": "docx/docx_p5_fields_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.654
+    },
+    {
+      "file": "docx/docx_p5_fields_02.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.817
+    },
+    {
+      "file": "docx/docx_p5_fields_03.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.693
+    },
+    {
+      "file": "docx/docx_p5_hyperlinks_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.486
+    },
+    {
+      "file": "docx/docx_p5_large_docx_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.127
+    },
+    {
+      "file": "docx/docx_p5_track_changes_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.543
+    },
+    {
+      "file": "docx/docx_p5_track_changes_02.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.92
+    },
+    {
+      "file": "docx/docx_p5_track_changes_03.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.937
+    },
+    {
+      "file": "docx/docx_policy_embedded_objects.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.815
+    },
+    {
+      "file": "docx/docx_procurement_rules_track.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.779
+    },
+    {
+      "file": "docx/docx_procurement_training_math.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.181
+    },
+    {
+      "file": "docx/docx_production_performance_track.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 24.418
+    },
+    {
+      "file": "docx/docx_project_intro_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.813
+    },
+    {
+      "file": "docx/docx_realestate_finance_policy.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.84
+    },
+    {
+      "file": "docx/docx_restaurant_operations_fields.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.702
+    },
+    {
+      "file": "docx/docx_resume_a4_embedded_charts.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.718
+    },
+    {
+      "file": "docx/docx_resume_caitlyn_hyperlinks.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.939
+    },
+    {
+      "file": "docx/docx_resume_customxml.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.666
+    },
+    {
+      "file": "docx/docx_resume_giulia_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.883
+    },
+    {
+      "file": "docx/docx_table_of_contents_01.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.683
+    },
+    {
+      "file": "docx/docx_tax_planning_fields.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 24.524
+    },
+    {
+      "file": "docx/docx_travel_record_media.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.98
+    },
+    {
+      "file": "pptx/pptx_5w2h_analysis_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.66
+    },
+    {
+      "file": "pptx/pptx_bgy_sales_recommendation.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.64
+    },
+    {
+      "file": "pptx/pptx_bgy_standard_sales_flow.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.533
+    },
+    {
+      "file": "pptx/pptx_brainstorm_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.427
+    },
+    {
+      "file": "pptx/pptx_chart_dense_203slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.321
+    },
+    {
+      "file": "pptx/pptx_communication_skills_animations.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.414
+    },
+    {
+      "file": "pptx/pptx_effective_structured_thinking.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.531
+    },
+    {
+      "file": "pptx/pptx_finance_chartex_transitions.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.288
+    },
+    {
+      "file": "pptx/pptx_finance_diagram_charts.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.318
+    },
+    {
+      "file": "pptx/pptx_gtd_time_management_cases.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.169
+    },
+    {
+      "file": "pptx/pptx_leadership_execution_119slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.258
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_001_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.373
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_002_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.263
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_003_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.209
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_004_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.263
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_005_130.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.186
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_006_130.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.387
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_007_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.17
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_008_100.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.424
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_009_100.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.296
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_010_100.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.161
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_011_07.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.21
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_012_07.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.292
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_013_08.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.437
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_014_complex-100p.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.233
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_015_54p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.297
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_016_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.265
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_017_05.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.332
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_018_03.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.225
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_019_02.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.219
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_020_80p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.481
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_021_49p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.567
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_022_5w2h-27p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.396
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_023_15.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.208
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_024_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.208
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_025_2.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.22
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_026_cirnicate.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.397
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_027_ppt-49p.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.257
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_028_24p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.249
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_030_32p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.157
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_032_p1-04.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.266
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_034_95p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.719
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_035_okr-19p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.676
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_036_financial-pitch-deck.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.192
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_037_classical-academia-sales-presentatio.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.241
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_038_19.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.187
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_039_okr-29p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.209
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_040_50p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.307
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_041_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.201
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_042_funnel-pp1.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.292
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_043_plain-200p.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.233
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_044_p1-03.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.169
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_046_4.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.203
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_047_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.244
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_048_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.362
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_049_7.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.241
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_050_ppt-9-17.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.227
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_051_p1-01.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.257
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_052_p2-03.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.271
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_054_10.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.24
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_055_31p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.272
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_056_modern-helena-presentation.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.287
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_057_modern-minimalist-keynote-presentati.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.46
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_058_grident-aura-keynote-presentation.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.292
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_059_18.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.289
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_060_p2-04.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.243
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_062_okr-23p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.553
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_063_9-pptx.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.354
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_064_forum-mso-de-138303.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.44
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_065_donut-column-and-bar-chart-dashboard.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.33
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_066_blockwork-elegance.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.8
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_067_roman-fresco.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.299
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_068_p2-06.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.204
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_070_p1-02.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.191
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_072_retro-from-fusion-marketing-presenta.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.555
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_073_48-26p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.264
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_074_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.341
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.17
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_076_ppt-10-18.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.678
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_077_monochrome-black.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.216
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_078_51p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 22.876
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_079_ppt-11-5.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.741
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_080_28p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 23.829
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_081_p1-06.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.767
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_083_p1-05.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.545
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_085_pdca-37p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.301
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_087_2.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.289
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_088_13.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.389
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_089_brush-presentation.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.249
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_090_japandi-linear-marketing-presentatio.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.296
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_091_24p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.301
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_092_ppt-8-15.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.316
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_093_ppt-10-6.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.437
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_094_37p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.29
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_095_p2-05.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.302
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_097_p3-03.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.345
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_099_oasis.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.403
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_100_p2-01.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.313
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_102_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.469
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_103_ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.274
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_104_tdf129372.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.328
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_105_06.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.311
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_211_bevel.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.376
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_212_p2-07.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.3
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_213_1.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.466
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_214_office-file.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.275
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_215_6.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.303
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_216_hr-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.419
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_217_4-scqa-11p.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.316
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_218_ppt-12-5.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.323
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_219_19p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.472
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_220_30p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.337
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_221_p2-02.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.272
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_222_28p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.372
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_223_abc-14p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.354
+    },
+    {
+      "file": "pptx/pptx_ms_expansion_224_13p-ppt.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.5
+    },
+    {
+      "file": "pptx/pptx_multimaster_136slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.234
+    },
+    {
+      "file": "pptx/pptx_okr_method_transitions.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.295
+    },
+    {
+      "file": "pptx/pptx_okr_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.427
+    },
+    {
+      "file": "pptx/pptx_original_model_framework.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.291
+    },
+    {
+      "file": "pptx/pptx_p5_animations_01.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.288
+    },
+    {
+      "file": "pptx/pptx_p5_animations_02.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.285
+    },
+    {
+      "file": "pptx/pptx_p5_animations_03.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.275
+    },
+    {
+      "file": "pptx/pptx_p5_animations_04.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.368
+    },
+    {
+      "file": "pptx/pptx_p5_animations_05.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.297
+    },
+    {
+      "file": "pptx/pptx_p5_animations_06.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.245
+    },
+    {
+      "file": "pptx/pptx_p5_animations_07.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.262
+    },
+    {
+      "file": "pptx/pptx_p5_animations_08.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.292
+    },
+    {
+      "file": "pptx/pptx_p5_animations_09.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.595
+    },
+    {
+      "file": "pptx/pptx_p5_animations_10.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 30.071
+    },
+    {
+      "file": "pptx/pptx_p5_animations_11.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.443
+    },
+    {
+      "file": "pptx/pptx_p5_animations_12.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.322
+    },
+    {
+      "file": "pptx/pptx_p5_animations_13.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.419
+    },
+    {
+      "file": "pptx/pptx_p5_animations_14.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.262
+    },
+    {
+      "file": "pptx/pptx_p5_animations_15.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.285
+    },
+    {
+      "file": "pptx/pptx_p5_animations_16.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.35
+    },
+    {
+      "file": "pptx/pptx_p5_animations_19.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.314
+    },
+    {
+      "file": "pptx/pptx_p5_chartex_01.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.243
+    },
+    {
+      "file": "pptx/pptx_p5_multi_master_01.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.257
+    },
+    {
+      "file": "pptx/pptx_p5_transitions_01.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.264
+    },
+    {
+      "file": "pptx/pptx_p5_transitions_02.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.293
+    },
+    {
+      "file": "pptx/pptx_p5_transitions_03.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.273
+    },
+    {
+      "file": "pptx/pptx_p5_transitions_04.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.284
+    },
+    {
+      "file": "pptx/pptx_p5_transitions_05.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.418
+    },
+    {
+      "file": "pptx/pptx_pdca_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.299
+    },
+    {
+      "file": "pptx/pptx_procurement_strategy_animations.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.3
+    },
+    {
+      "file": "pptx/pptx_pyramid_structured_thinking_51slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.498
+    },
+    {
+      "file": "pptx/pptx_report_100slides_animation_transition.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.278
+    },
+    {
+      "file": "pptx/pptx_report_100slides_brightblue.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.486
+    },
+    {
+      "file": "pptx/pptx_report_146slides_lavared.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.294
+    },
+    {
+      "file": "pptx/pptx_report_146slides_mogreen.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.283
+    },
+    {
+      "file": "pptx/pptx_report_160slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.452
+    },
+    {
+      "file": "pptx/pptx_report_207slides_blue.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.241
+    },
+    {
+      "file": "pptx/pptx_report_300slides_transitions.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.267
+    },
+    {
+      "file": "pptx/pptx_report_344slides_multimedia.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.31
+    },
+    {
+      "file": "pptx/pptx_report_411slides_notes.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.318
+    },
+    {
+      "file": "pptx/pptx_report_orange_200slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.25
+    },
+    {
+      "file": "pptx/pptx_review_methodology_38slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.354
+    },
+    {
+      "file": "pptx/pptx_section_logic_thinking.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.45
+    },
+    {
+      "file": "pptx/pptx_six_management_models.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.442
+    },
+    {
+      "file": "pptx/pptx_smart_goal_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.327
+    },
+    {
+      "file": "pptx/pptx_structured_thinking_52slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.286
+    },
+    {
+      "file": "pptx/pptx_swot_model.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.254
+    },
+    {
+      "file": "pptx/pptx_thinking_model_redorange_transition.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.311
+    },
+    {
+      "file": "pptx/pptx_time_management_training.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.299
+    },
+    {
+      "file": "pptx/pptx_update_240827_animations.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.267
+    },
+    {
+      "file": "pptx/pptx_update_241030_charts.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.364
+    },
+    {
+      "file": "pptx/pptx_update_250114_multimaster.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.235
+    },
+    {
+      "file": "pptx/pptx_update_250422_graphic_layout.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.473
+    },
+    {
+      "file": "pptx/pptx_update_250615_charts_media.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.401
+    },
+    {
+      "file": "pptx/pptx_update_250715_charts.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.444
+    },
+    {
+      "file": "pptx/pptx_update_251223_chart_pack.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.289
+    },
+    {
+      "file": "pptx/pptx_update_260116_chart_pack.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.274
+    },
+    {
+      "file": "pptx/pptx_visual_management_183slides.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.253
+    },
+    {
+      "file": "pptx/pptx_work_plan_goal_management.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 21.326
+    }
+  ]
+}

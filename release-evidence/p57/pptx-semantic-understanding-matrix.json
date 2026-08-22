@@ -1,0 +1,135 @@
+{
+  "failures": [],
+  "gate_pass": true,
+  "generated_at_utc": "2026-06-02T00:21:35.388570+00:00",
+  "generator_name": "p57-pptx-semantic-understanding-matrix-v1",
+  "rows": [
+    {
+      "candidate_count": 7628,
+      "family": "alternate_content",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 9754,
+      "family": "chart",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 6182,
+      "family": "graphic_frame",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 25627,
+      "family": "group_shape",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 3285,
+      "family": "layout",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 251,
+      "family": "master",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 13015,
+      "family": "media_reference",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 3164,
+      "family": "notes",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 11584,
+      "family": "picture",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 384068,
+      "family": "shape",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 12695,
+      "family": "slide",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 169,
+      "family": "smartart",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 927,
+      "family": "table",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 380165,
+      "family": "text_frame",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    },
+    {
+      "candidate_count": 268369,
+      "family": "unknown_extension_object",
+      "format": "pptx",
+      "gate_pass": true,
+      "understanding_level": "U2-dependency-resolved"
+    }
+  ],
+  "schema_version": "p57-pptx-semantic-understanding-matrix-v1",
+  "summary": {
+    "pptx_dependency_owner_pass_count": 1126883,
+    "pptx_dependency_resolution_exception_count": 0,
+    "pptx_family_count": 15,
+    "pptx_family_format_cell_count": 15,
+    "pptx_inspection_pass_count": 1126883,
+    "pptx_missing_part_count": 0,
+    "pptx_object_candidate_count": 1126883,
+    "pptx_office_open_pass_count": 176,
+    "pptx_office_repair_dialog_count": 0,
+    "pptx_package_count": 176,
+    "pptx_parse_failure_count": 0,
+    "pptx_public_overclaim_count": 0,
+    "pptx_relationship_loss_count": 0,
+    "pptx_understanding_level_at_least_u2_count": 1126883,
+    "pptx_unexplained_missing_field_count": 0,
+    "pptx_unintended_binary_mutation_count": 0,
+    "source_p54_gate_pass": true,
+    "source_p55_gate_pass": true
+  },
+  "warnings": []
+}

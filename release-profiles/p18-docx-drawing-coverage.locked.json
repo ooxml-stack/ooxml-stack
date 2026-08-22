@@ -1,0 +1,48 @@
+{
+  "env": {
+    "OOXML_DOCX_DRAWING_REGRESSION_JSON": {
+      "path": "../release-evidence/p19/docx-drawing-regression-summary.json",
+      "sha256": "e505150f3b29829e0fa9b13cd2ec63962ed657c39d5e65dc6a74da82037de131",
+      "size_bytes": 1243
+    },
+    "OOXML_FRESH_TAG_INSTALL": {
+      "value": "1"
+    },
+    "OOXML_GENERATED_OUTPUT_GATE_JSON": {
+      "path": "../release-evidence/p19/generated-output-office-gate-final.json",
+      "sha256": "1f2e82a6651a6e5838ce3f9c57dca22f422f64a928a37fea9a01a9fd7abe3d4d",
+      "size_bytes": 365954
+    },
+    "OOXML_NATIVE_CORPUS_DIR": {
+      "path": "../../ooxml-native-corpus",
+      "required_files": [
+        {
+          "path": "manifests/corpus.csv",
+          "sha256": "9f56564deaad068e59e21c0c8ddc14301f0e25688a7aa948bd5bf91389882143",
+          "size_bytes": 184941
+        }
+      ]
+    },
+    "OOXML_OFFICE_GATE_JSON": {
+      "path": "../release-evidence/p19/native-office-supported-valid-current-full.json",
+      "sha256": "b0066338db788cfc7b13c9d624fe8ba328e024b0b516852ba7ac5d74cd86f6a1",
+      "size_bytes": 128747
+    }
+  },
+  "evidence_manifest": "../release-evidence/p19/manifest.json",
+  "expected_metrics": {
+    "docx_drawing_office_checked": true,
+    "docx_drawing_office_pass_total": 100,
+    "docx_drawing_pass": 1,
+    "docx_drawing_represented_bucket_count": 7,
+    "docx_drawing_selected_cases": 100,
+    "docx_drawing_semantic_target_fail": 0,
+    "docx_drawing_semantic_target_pass": 100,
+    "fail_count": 0,
+    "fresh_install_ok": 1,
+    "generated_output_ok": 1,
+    "office_repair_zero": 1,
+    "stubs_preserve_ok": 2,
+    "warn_count": 0
+  }
+}

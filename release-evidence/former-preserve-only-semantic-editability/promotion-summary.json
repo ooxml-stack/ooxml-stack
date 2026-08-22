@@ -1,0 +1,17 @@
+{
+  "alias_operation_row_count": 0,
+  "cli_path_pass_count": 22467,
+  "deduped_semantic_edit_pass_count": 22467,
+  "gate_pass": true,
+  "label": "vml-completion-ms126path-expand",
+  "latest_label": "vml-completion-ms126path-expand",
+  "latest_new_row_count": 2,
+  "mcp_path_pass_count": 22467,
+  "native_office_pass_count": 22467,
+  "new_row_count": 2,
+  "row_count": 22467,
+  "row_pass_count": 22467,
+  "schema_version": "former-preserve-only-campaign-promotion-v1",
+  "semantic_edit_pass_count": 22467,
+  "summary_scope": "cumulative_promotion_rows"
+}

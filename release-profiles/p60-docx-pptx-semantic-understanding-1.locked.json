@@ -1,0 +1,216 @@
+{
+  "env": {
+    "OOXML_DOCX_DRAWING_REGRESSION_JSON": {
+      "path": "../release-evidence/p42/docx-drawing-active-editing-v3-summary.json",
+      "sha256": "7aa3c1796da95be99523436568ed9625e098d78c6c2fdbc15b479e1c6378d376",
+      "size_bytes": 3171
+    },
+    "OOXML_FRESH_TAG_INSTALL": {
+      "value": "1"
+    },
+    "OOXML_GENERATED_OUTPUT_GATE_JSON": {
+      "path": "../release-evidence/p28/generated-output-office-gate-final.json",
+      "sha256": "1f2e82a6651a6e5838ce3f9c57dca22f422f64a928a37fea9a01a9fd7abe3d4d",
+      "size_bytes": 365954
+    },
+    "OOXML_NATIVE_CORPUS_DIR": {
+      "path": "../../ooxml-native-corpus",
+      "required_files": [
+        {
+          "path": "manifests/corpus.csv",
+          "sha256": "9f56564deaad068e59e21c0c8ddc14301f0e25688a7aa948bd5bf91389882143",
+          "size_bytes": 184941
+        }
+      ]
+    },
+    "OOXML_OFFICE_GATE_JSON": {
+      "path": "../release-evidence/p28/native-office-supported-valid-full.json",
+      "sha256": "b83a37b1ca6ed56ec7771b3d80022c800d40ff55e0ca9873d942cb4b5564cf5f",
+      "size_bytes": 136849
+    }
+  },
+  "evidence_manifest": "../release-evidence/p60/manifest.json",
+  "expected_metrics": {
+    "active_edit_rows": 208,
+    "active_semantic_hit": 208,
+    "alias_operation_row_count": 0,
+    "denominator_gate_pass": true,
+    "desktop_word_open_pass": 208,
+    "docx_drawing_pass": 1,
+    "docx_object_candidate_count": 361745,
+    "docx_package_count": 185,
+    "edit_contract_public_overclaim_count": 0,
+    "editable_operation_bucket_count": 13,
+    "fail_count": 0,
+    "fresh_install_ok": 1,
+    "generated_output_ok": 1,
+    "hash_checked_count": 45,
+    "macro_dialog_timeout_count": 0,
+    "missing_parts": 0,
+    "missing_required_part_count": 0,
+    "new_schema_semantic_blocker": 0,
+    "new_unique_handle_count": 78,
+    "object_candidate_count": 1488628,
+    "object_without_dependency_decision_count": 0,
+    "object_without_owner_decision_count": 0,
+    "observation_error_count": 0,
+    "office_crash_count": 0,
+    "office_repair_dialog_count": 0,
+    "office_repair_zero": 1,
+    "office_security_dialog_count": 0,
+    "p35_base_handle_count": 130,
+    "p42_active_editing_preserved": true,
+    "p42_desktop_word_open_pass": 208,
+    "p42_public_api_edit_or_control_pass": 208,
+    "p42_real_extra_rows": 78,
+    "p42_unique_handle_count": 208,
+    "p42_wrong_handle_mutation_count": 0,
+    "p52_contract_gate_pass": true,
+    "p53_registry_gate_pass": true,
+    "p54_inspection_gate_pass": true,
+    "p55_dependency_ownership_gate_pass": true,
+    "p56_docx_understanding_gate_pass": true,
+    "p57_pptx_understanding_gate_pass": true,
+    "p58_cross_format_ir_gate_pass": true,
+    "p59_dashboard_validation_pass": true,
+    "pptx_object_candidate_count": 1126883,
+    "pptx_package_count": 176,
+    "preserve_only_mutation_allowed_count": 0,
+    "public_api_edit_or_control_pass": 208,
+    "public_api_handle_locate_pass": 208,
+    "public_claim_beyond_measured_cells": 0,
+    "public_operation_label_count": 13,
+    "public_operation_row_count": 208,
+    "real_operation_expansion_pass": true,
+    "relationship_loss": 0,
+    "relationship_target_unclassified_count": 0,
+    "repair_dialog_count": 0,
+    "represented_drawing_family_count": 10,
+    "required_dir_count": 1,
+    "required_field_unexplained_missing_count": 0,
+    "same_operation_sibling_check_count": 1920,
+    "same_operation_sibling_unchanged_pass": 1920,
+    "security_dialog_count": 0,
+    "selected_denominator_pass": 208,
+    "selected_denominator_total": 208,
+    "selected_supported_valid_package_count": 361,
+    "semantic_base_operation_count": 13,
+    "semantic_editing_launch_family_count": 10,
+    "semantic_editing_launch_operation_count": 20,
+    "semantic_editing_launch_rows_active_proven": 208,
+    "semantic_editing_launch_rows_contract_only": 0,
+    "semantic_editing_launch_rows_defined": 208,
+    "semantic_understanding_fail_count": 0,
+    "semantic_understanding_pass_count": 1488628,
+    "semantic_understanding_row_count": 1488628,
+    "size_checked_count": 45,
+    "stubs_preserve_ok": 2,
+    "understanding_level_at_least_u2_count": 1488628,
+    "unintended_binary_media_mutation": 0,
+    "unique_input_file_stable_id_count": 208,
+    "unsafe_edit_silent_noop_count": 0,
+    "unsupported_mutation_allowed_count": 0,
+    "unsupported_silent_noop": 0,
+    "warn_count": 0,
+    "wrong_handle_mutation_count": 0,
+    "xml_part_parse_failure_count": 0
+  },
+  "metric_sources": [
+    {
+      "metrics": {
+        "p52_contract_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p52/semantic-understanding-contract-summary.json"
+    },
+    {
+      "metrics": {
+        "p53_registry_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p53/semantic-object-registry-summary.json"
+    },
+    {
+      "metrics": {
+        "p54_inspection_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p54/semantic-inspection-summary.json"
+    },
+    {
+      "metrics": {
+        "p55_dependency_ownership_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p55/dependency-ownership-summary.json"
+    },
+    {
+      "metrics": {
+        "p56_docx_understanding_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p56/docx-semantic-understanding-summary.json"
+    },
+    {
+      "metrics": {
+        "p57_pptx_understanding_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p57/pptx-semantic-understanding-summary.json"
+    },
+    {
+      "metrics": {
+        "p58_cross_format_ir_gate_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p58/cross-format-semantic-ir-summary.json"
+    },
+    {
+      "metrics": {
+        "p59_dashboard_validation_pass": "gate_pass"
+      },
+      "path": "../release-evidence/p59/dashboard-validation.json"
+    },
+    {
+      "metrics": {
+        "docx_object_candidate_count": "summary.docx_object_candidate_count",
+        "docx_package_count": "summary.docx_package_count",
+        "edit_contract_public_overclaim_count": "summary.edit_contract_public_overclaim_count",
+        "macro_dialog_timeout_count": "summary.macro_dialog_timeout_count",
+        "missing_required_part_count": "summary.missing_required_part_count",
+        "object_candidate_count": "summary.object_candidate_count",
+        "object_without_dependency_decision_count": "summary.object_without_dependency_decision_count",
+        "object_without_owner_decision_count": "summary.object_without_owner_decision_count",
+        "office_crash_count": "summary.office_crash_count",
+        "office_repair_dialog_count": "summary.office_repair_dialog_count",
+        "office_security_dialog_count": "summary.office_security_dialog_count",
+        "p42_active_editing_preserved": "summary.p42_active_editing_preserved",
+        "p42_desktop_word_open_pass": "summary.p42_desktop_word_open_pass",
+        "p42_public_api_edit_or_control_pass": "summary.p42_public_api_edit_or_control_pass",
+        "p42_unique_handle_count": "summary.p42_unique_handle_count",
+        "p42_wrong_handle_mutation_count": "summary.p42_wrong_handle_mutation_count",
+        "p52_contract_gate_pass": "summary.p52_contract_gate_pass",
+        "p53_registry_gate_pass": "summary.p53_registry_gate_pass",
+        "p54_inspection_gate_pass": "summary.p54_inspection_gate_pass",
+        "p55_dependency_ownership_gate_pass": "summary.p55_dependency_ownership_gate_pass",
+        "p56_docx_understanding_gate_pass": "summary.p56_docx_understanding_gate_pass",
+        "p57_pptx_understanding_gate_pass": "summary.p57_pptx_understanding_gate_pass",
+        "p58_cross_format_ir_gate_pass": "summary.p58_cross_format_ir_gate_pass",
+        "p59_dashboard_validation_pass": "summary.p59_dashboard_validation_pass",
+        "pptx_object_candidate_count": "summary.pptx_object_candidate_count",
+        "pptx_package_count": "summary.pptx_package_count",
+        "preserve_only_mutation_allowed_count": "summary.preserve_only_mutation_allowed_count",
+        "public_claim_beyond_measured_cells": "summary.public_claim_beyond_measured_cells",
+        "relationship_target_unclassified_count": "summary.relationship_target_unclassified_count",
+        "required_field_unexplained_missing_count": "summary.required_field_unexplained_missing_count",
+        "selected_supported_valid_package_count": "summary.selected_supported_valid_package_count",
+        "semantic_editing_launch_family_count": "summary.semantic_editing_launch_family_count",
+        "semantic_editing_launch_operation_count": "summary.semantic_editing_launch_operation_count",
+        "semantic_editing_launch_rows_active_proven": "summary.semantic_editing_launch_rows_active_proven",
+        "semantic_editing_launch_rows_contract_only": "summary.semantic_editing_launch_rows_contract_only",
+        "semantic_editing_launch_rows_defined": "summary.semantic_editing_launch_rows_defined",
+        "semantic_understanding_fail_count": "summary.semantic_understanding_fail_count",
+        "semantic_understanding_pass_count": "summary.semantic_understanding_pass_count",
+        "semantic_understanding_row_count": "summary.semantic_understanding_row_count",
+        "understanding_level_at_least_u2_count": "summary.understanding_level_at_least_u2_count",
+        "unsafe_edit_silent_noop_count": "summary.unsafe_edit_silent_noop_count",
+        "unsupported_mutation_allowed_count": "summary.unsupported_mutation_allowed_count",
+        "xml_part_parse_failure_count": "summary.xml_part_parse_failure_count"
+      },
+      "path": "../release-evidence/p60/semantic-understanding-1-summary.json"
+    }
+  ]
+}

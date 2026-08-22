@@ -1,0 +1,5238 @@
+{
+  "audited_target_count": 100,
+  "exclusion_counts": {
+    "already_promoted": 1517,
+    "known_office_boundary": 4666,
+    "known_row_level_failure": 1,
+    "public_path_unsupported_part": 177,
+    "runner_schema_policy": 181
+  },
+  "remaining_candidate_action_counts": {
+    "skip_boundary": 100
+  },
+  "schema_version": "target-queue-exclusion-audit-v1",
+  "source_counts": {
+    "ranked_target_count": 351,
+    "remaining_candidate_package_count": 100,
+    "starting_blocker_count": 20934,
+    "starting_semantic_editable_count": 275210
+  },
+  "targets": [
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 11,
+        "known_office_boundary": 728
+      },
+      "expected_row_gain": 739,
+      "family": "office_extension",
+      "hydrated_count": 739,
+      "matching_row_count": 739,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_019_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 37
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_018_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 35
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 28
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_012_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 26
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 24
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}spPr",
+      "rank": 1,
+      "remaining_count": 739,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 78,
+        "known_office_boundary": 417
+      },
+      "expected_row_gain": 515,
+      "family": "office_extension",
+      "hydrated_count": 515,
+      "matching_row_count": 515,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_019_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 22
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_012_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 14
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 13
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_018_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 13
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}wsp",
+      "rank": 2,
+      "remaining_count": 515,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 511
+      },
+      "expected_row_gain": 511,
+      "family": "office_extension",
+      "hydrated_count": 511,
+      "matching_row_count": 511,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_019_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 36
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 27
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_018_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 27
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_013_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 23
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 19
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}bodyPr",
+      "rank": 3,
+      "remaining_count": 511,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 469
+      },
+      "expected_row_gain": 469,
+      "family": "office_extension",
+      "hydrated_count": 469,
+      "matching_row_count": 469,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 28
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_020_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 21
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_009_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 19
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvSpPr",
+      "rank": 4,
+      "remaining_count": 469,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 65,
+        "known_office_boundary": 350
+      },
+      "expected_row_gain": 432,
+      "family": "office_extension",
+      "hydrated_count": 432,
+      "matching_row_count": 432,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_019_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 37
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_012_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 26
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 24
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_018_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 24
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_013_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 23
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvPr",
+      "rank": 5,
+      "remaining_count": 432,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 250
+      },
+      "expected_row_gain": 250,
+      "family": "office_extension",
+      "hydrated_count": 250,
+      "matching_row_count": 250,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_009_100",
+          "reason": "already_promoted",
+          "row_count": 26
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_010_100",
+          "reason": "already_promoted",
+          "row_count": 26
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_01",
+          "reason": "already_promoted",
+          "row_count": 26
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_report_411slides_notes",
+          "reason": "already_promoted",
+          "row_count": 26
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_report_100slides_brightblue",
+          "reason": "already_promoted",
+          "row_count": 25
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}saturation",
+      "rank": 6,
+      "remaining_count": 250,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 136,
+        "known_office_boundary": 22
+      },
+      "expected_row_gain": 160,
+      "family": "office_extension",
+      "hydrated_count": 160,
+      "matching_row_count": 160,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_056_modern-helena-presentation",
+          "reason": "already_promoted",
+          "row_count": 12
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_review_methodology_38slides",
+          "reason": "already_promoted",
+          "row_count": 10
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "already_promoted",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_037_classical-academia-sales-presentatio",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_072_retro-from-fusion-marketing-presenta",
+          "reason": "already_promoted",
+          "row_count": 7
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2012/main}guide",
+      "rank": 7,
+      "remaining_count": 160,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 117
+      },
+      "expected_row_gain": 155,
+      "family": "office_chart_extension",
+      "hydrated_count": 155,
+      "matching_row_count": 155,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_chart_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 117
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/03/chart}dispNaAsBlank",
+      "rank": 8,
+      "remaining_count": 155,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 150,
+        "known_row_level_failure": 1
+      },
+      "expected_row_gain": 151,
+      "family": "alternate_content",
+      "hydrated_count": 151,
+      "matching_row_count": 151,
+      "operation_id": "alternate_content.choice.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "alternate_content",
+          "format": "pptx",
+          "operation_id": "alternate_content.choice.metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 41
+        },
+        {
+          "family": "alternate_content",
+          "format": "docx",
+          "operation_id": "alternate_content.choice.metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 13
+        },
+        {
+          "family": "alternate_content",
+          "format": "docx",
+          "operation_id": "alternate_content.choice.metadata.set_value",
+          "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+          "reason": "known_office_boundary",
+          "row_count": 12
+        },
+        {
+          "family": "alternate_content",
+          "format": "docx",
+          "operation_id": "alternate_content.choice.metadata.set_value",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "alternate_content",
+          "format": "docx",
+          "operation_id": "alternate_content.choice.metadata.set_value",
+          "package_id": "docx_ms_expansion_140_headshot-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/markup-compatibility/2006}AlternateContent",
+      "rank": 9,
+      "remaining_count": 151,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 146
+      },
+      "expected_row_gain": 146,
+      "family": "office_extension",
+      "hydrated_count": 146,
+      "matching_row_count": 146,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_07",
+          "reason": "already_promoted",
+          "row_count": 41
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_06",
+          "reason": "already_promoted",
+          "row_count": 19
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "already_promoted",
+          "row_count": 11
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_01",
+          "reason": "already_promoted",
+          "row_count": 11
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_008_100",
+          "reason": "already_promoted",
+          "row_count": 9
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}brightnessContrast",
+      "rank": 10,
+      "remaining_count": 146,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 127
+      },
+      "expected_row_gain": 127,
+      "family": "legacy_office_drawing",
+      "hydrated_count": 127,
+      "matching_row_count": 127,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_009_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 21
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_015_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 19
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_policy_embedded_objects",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:office:office}lock",
+      "rank": 11,
+      "remaining_count": 127,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 123,
+        "known_office_boundary": 1
+      },
+      "expected_row_gain": 124,
+      "family": "office_extension",
+      "hydrated_count": 124,
+      "matching_row_count": 124,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_standard_sales_flow",
+          "reason": "already_promoted",
+          "row_count": 21
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_04",
+          "reason": "already_promoted",
+          "row_count": 17
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_055_31p-ppt",
+          "reason": "already_promoted",
+          "row_count": 13
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_080_28p-ppt",
+          "reason": "already_promoted",
+          "row_count": 13
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_sales_recommendation",
+          "reason": "already_promoted",
+          "row_count": 10
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}cNvPr",
+      "rank": 12,
+      "remaining_count": 124,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 114,
+        "known_office_boundary": 9
+      },
+      "expected_row_gain": 123,
+      "family": "office_extension",
+      "hydrated_count": 123,
+      "matching_row_count": 123,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_review_methodology_38slides",
+          "reason": "already_promoted",
+          "row_count": 16
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_057_modern-minimalist-keynote-presentati",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_077_monochrome-black",
+          "reason": "already_promoted",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "already_promoted",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_036_financial-pitch-deck",
+          "reason": "already_promoted",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2012/main}sldGuideLst",
+      "rank": 13,
+      "remaining_count": 123,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 116
+      },
+      "expected_row_gain": 117,
+      "family": "office_chart_extension",
+      "hydrated_count": 117,
+      "matching_row_count": 117,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_chart_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 116
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/03/chart}dataDisplayOptions16",
+      "rank": 14,
+      "remaining_count": 117,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "runner_schema_policy",
+      "exclusion_counts": {
+        "known_office_boundary": 21,
+        "runner_schema_policy": 94
+      },
+      "expected_row_gain": 115,
+      "family": "office_extension",
+      "hydrated_count": 115,
+      "matching_row_count": 115,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_04",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 23,
+          "runner_policy_or_overlap_skipped_rows": 23,
+          "runner_schema_policy_skipped_rows": 23
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_055_31p-ppt",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 22,
+          "runner_policy_or_overlap_skipped_rows": 22,
+          "runner_schema_policy_skipped_rows": 22
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_080_28p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_standard_sales_flow",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 17,
+          "runner_policy_or_overlap_skipped_rows": 17,
+          "runner_schema_policy_skipped_rows": 17
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_sales_recommendation",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 15,
+          "runner_policy_or_overlap_skipped_rows": 15,
+          "runner_schema_policy_skipped_rows": 15
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}sp",
+      "rank": 15,
+      "remaining_count": 115,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 113
+      },
+      "expected_row_gain": 113,
+      "family": "office_extension",
+      "hydrated_count": 113,
+      "matching_row_count": 113,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 12
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_202_organic-boho-digital-strategist-resu",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_rules_track",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}style",
+      "rank": 16,
+      "remaining_count": 113,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 101
+      },
+      "expected_row_gain": 104,
+      "family": "office_chart_extension",
+      "hydrated_count": 104,
+      "matching_row_count": 104,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_chart_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 101
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2012/chart}leaderLines",
+      "rank": 17,
+      "remaining_count": 104,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 100,
+        "known_office_boundary": 1
+      },
+      "expected_row_gain": 102,
+      "family": "math_object",
+      "hydrated_count": 102,
+      "matching_row_count": 102,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout06_footer_media",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout11_footer_media",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout16_footer_media",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout_meeting_arrangement",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}mathPr",
+      "rank": 18,
+      "remaining_count": 102,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 92
+      },
+      "expected_row_gain": 95,
+      "family": "office_chart_extension",
+      "hydrated_count": 95,
+      "matching_row_count": 95,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_chart_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 92
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2012/chart}showLeaderLines",
+      "rank": 19,
+      "remaining_count": 95,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 92
+      },
+      "expected_row_gain": 92,
+      "family": "office_extension",
+      "hydrated_count": 92,
+      "matching_row_count": 92,
+      "operation_id": "office_extension.relative_size.set_percentage",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_layout_operations_media",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_135_1-resume-docx",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_136_1-resume-docx",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_117_wdatevalueformat",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing}pctWidth",
+      "rank": 20,
+      "remaining_count": 92,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 90
+      },
+      "expected_row_gain": 90,
+      "family": "office_extension",
+      "hydrated_count": 90,
+      "matching_row_count": 90,
+      "operation_id": "office_extension.relative_size.set_percentage",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_layout_operations_media",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_135_1-resume-docx",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_136_1-resume-docx",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.relative_size.set_percentage",
+          "package_id": "docx_ms_expansion_117_wdatevalueformat",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing}pctHeight",
+      "rank": 21,
+      "remaining_count": 90,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 85
+      },
+      "expected_row_gain": 85,
+      "family": "office_extension",
+      "hydrated_count": 85,
+      "matching_row_count": 85,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_119_small-business-email-marketing-templ",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_175_childrens-s-holiday-wish-list",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/decorative}decorative",
+      "rank": 22,
+      "remaining_count": 85,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 12,
+        "known_office_boundary": 62
+      },
+      "expected_row_gain": 77,
+      "family": "office_extension",
+      "hydrated_count": 77,
+      "matching_row_count": 77,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_020_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_017_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_130_classroom-newsletter",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSpPr",
+      "rank": 23,
+      "remaining_count": 77,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 63
+      },
+      "expected_row_gain": 63,
+      "family": "office_extension",
+      "hydrated_count": 63,
+      "matching_row_count": 63,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 24
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_080_28p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 16
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_028_24p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 12
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p5_track_changes_01",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_204_pink-floral-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}hiddenFill",
+      "rank": 24,
+      "remaining_count": 63,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 61,
+        "known_office_boundary": 1
+      },
+      "expected_row_gain": 62,
+      "family": "office_extension",
+      "hydrated_count": 62,
+      "matching_row_count": 62,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 13
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_standard_sales_flow",
+          "reason": "already_promoted",
+          "row_count": 10
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_sales_recommendation",
+          "reason": "already_promoted",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_055_31p-ppt",
+          "reason": "already_promoted",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_215_6",
+          "reason": "already_promoted",
+          "row_count": 4
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvGrpSpPr",
+      "rank": 25,
+      "remaining_count": 62,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 57
+      },
+      "expected_row_gain": 57,
+      "family": "legacy_office_drawing",
+      "hydrated_count": 57,
+      "matching_row_count": 57,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_183_modern-calendar-with-highlights",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_budget_rules_embedded",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_budget_embedded_objects",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_policy_embedded_objects",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:office:word}wrap",
+      "rank": 26,
+      "remaining_count": 57,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 57
+      },
+      "expected_row_gain": 57,
+      "family": "office_extension",
+      "hydrated_count": 57,
+      "matching_row_count": 57,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_016_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 12
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_realestate_finance_policy",
+          "reason": "known_office_boundary",
+          "row_count": 10
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_154_tdf143384-tableinfoot-negativemargin",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p5_fields_03",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_financing_plan_chart",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}cNvCnPr",
+      "rank": 27,
+      "remaining_count": 57,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 55
+      },
+      "expected_row_gain": 55,
+      "family": "office_extension",
+      "hydrated_count": 55,
+      "matching_row_count": 55,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_055_31p-ppt",
+          "reason": "already_promoted",
+          "row_count": 11
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_standard_sales_flow",
+          "reason": "already_promoted",
+          "row_count": 10
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_bgy_sales_recommendation",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_080_28p-ppt",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_04",
+          "reason": "already_promoted",
+          "row_count": 8
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}nvSpPr",
+      "rank": 28,
+      "remaining_count": 55,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 54
+      },
+      "expected_row_gain": 54,
+      "family": "office_extension",
+      "hydrated_count": 54,
+      "matching_row_count": 54,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_120_whitepaper-with-cover-image",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_119_small-business-email-marketing-templ",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_travel_record_media",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout_service_product",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_117_wdatevalueformat",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}useLocalDpi",
+      "rank": 29,
+      "remaining_count": 54,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 51,
+        "known_office_boundary": 1
+      },
+      "expected_row_gain": 52,
+      "family": "math_object",
+      "hydrated_count": 52,
+      "matching_row_count": 52,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_procurement_training_math",
+          "reason": "already_promoted",
+          "row_count": 16
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_176_equationasscientificnumbering",
+          "reason": "already_promoted",
+          "row_count": 11
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_166_tablecurrupt",
+          "reason": "already_promoted",
+          "row_count": 10
+        },
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 6
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "reason": "already_promoted",
+          "row_count": 3
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rPr",
+      "rank": 30,
+      "remaining_count": 52,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 39,
+        "known_office_boundary": 2
+      },
+      "expected_row_gain": 42,
+      "family": "office_extension",
+      "hydrated_count": 42,
+      "matching_row_count": 42,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_224_13p-ppt",
+          "reason": "already_promoted",
+          "row_count": 11
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_procurement_strategy_animations",
+          "reason": "already_promoted",
+          "row_count": 10
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_038_19",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_gtd_time_management_cases",
+          "reason": "already_promoted",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_034_95p-ppt",
+          "reason": "already_promoted",
+          "row_count": 4
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}backgroundRemoval",
+      "rank": 31,
+      "remaining_count": 42,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 21
+      },
+      "expected_row_gain": 39,
+      "family": "office_extension",
+      "hydrated_count": 39,
+      "matching_row_count": 39,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 21
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}pos",
+      "rank": 32,
+      "remaining_count": 39,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 38
+      },
+      "expected_row_gain": 38,
+      "family": "math_object",
+      "hydrated_count": 38,
+      "matching_row_count": 38,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout11_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout16_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout_meeting_arrangement",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}lMargin",
+      "rank": 33,
+      "remaining_count": 38,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 26
+      },
+      "expected_row_gain": 38,
+      "family": "office_extension",
+      "hydrated_count": 38,
+      "matching_row_count": 38,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 26
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}clr",
+      "rank": 34,
+      "remaining_count": 38,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 15,
+        "known_office_boundary": 22
+      },
+      "expected_row_gain": 38,
+      "family": "vml_drawing",
+      "hydrated_count": 38,
+      "matching_row_count": 38,
+      "operation_id": "vml.formula.eqn.set_value",
+      "package_examples": [
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_ms_expansion_121_office-file",
+          "reason": "known_office_boundary",
+          "row_count": 12
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_p5_customxml_02",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_ms_expansion_195_tdf107111",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_layout16_footer_media",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:vml}f",
+      "rank": 35,
+      "remaining_count": 38,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 38
+      },
+      "expected_row_gain": 38,
+      "family": "vml_drawing",
+      "hydrated_count": 38,
+      "matching_row_count": 38,
+      "operation_id": "vml.image.metadata.set_title",
+      "package_examples": [
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.image.metadata.set_title",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 18
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.image.metadata.set_title",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 9
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.image.metadata.set_title",
+          "package_id": "docx_p5_customxml_02",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.image.metadata.set_title",
+          "package_id": "docx_ms_expansion_108_complex-400p",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.image.metadata.set_title",
+          "package_id": "docx_ms_expansion_121_office-file",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:vml}imagedata",
+      "rank": 36,
+      "remaining_count": 38,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 36
+      },
+      "expected_row_gain": 36,
+      "family": "math_object",
+      "hydrated_count": 36,
+      "matching_row_count": 36,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout11_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout16_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_175_childrens-s-holiday-wish-list",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}rMargin",
+      "rank": 37,
+      "remaining_count": 36,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 36
+      },
+      "expected_row_gain": 36,
+      "family": "math_object",
+      "hydrated_count": 36,
+      "matching_row_count": 36,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout11_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout16_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_170_test-segfault-while-save",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_175_childrens-s-holiday-wish-list",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}wrapIndent",
+      "rank": 38,
+      "remaining_count": 36,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 4,
+        "known_office_boundary": 30
+      },
+      "expected_row_gain": 36,
+      "family": "office_extension",
+      "hydrated_count": 36,
+      "matching_row_count": 36,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_020_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_017_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_147_basic-business-card",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}cNvPr",
+      "rank": 39,
+      "remaining_count": 36,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 10,
+        "known_office_boundary": 25
+      },
+      "expected_row_gain": 36,
+      "family": "office_extension",
+      "hydrated_count": 36,
+      "matching_row_count": 36,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_130_classroom-newsletter",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_117_wdatevalueformat",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_158_organic-shapes-letterhead",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_160_tdf160077-layoutincellb",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_206_14",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}wgp",
+      "rank": 40,
+      "remaining_count": 36,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 12,
+        "known_office_boundary": 16
+      },
+      "expected_row_gain": 33,
+      "family": "chart_drawing",
+      "hydrated_count": 33,
+      "matching_row_count": 33,
+      "operation_id": "chart.drawing.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_report_146slides_mogreen",
+          "reason": "already_promoted",
+          "row_count": 4
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_report_344slides_multimedia",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_report_160slides",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_p5_chartex_01",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}cNvPr",
+      "rank": 41,
+      "remaining_count": 33,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 29
+      },
+      "expected_row_gain": 29,
+      "family": "office_extension",
+      "hydrated_count": 29,
+      "matching_row_count": 29,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_resume_a4_embedded_charts",
+          "reason": "already_promoted",
+          "row_count": 12
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_tax_planning_fields",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_rules_track",
+          "reason": "already_promoted",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_training_math",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_realestate_finance_policy",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordml}solidFill",
+      "rank": 42,
+      "remaining_count": 29,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 7,
+        "known_office_boundary": 16
+      },
+      "expected_row_gain": 28,
+      "family": "chart_drawing",
+      "hydrated_count": 28,
+      "matching_row_count": 28,
+      "operation_id": "chart.drawing.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 8
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_report_344slides_multimedia",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_finance_diagram_charts",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_multimaster_136slides",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}nvSpPr",
+      "rank": 43,
+      "remaining_count": 28,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 28
+      },
+      "expected_row_gain": 28,
+      "family": "legacy_office_drawing",
+      "hydrated_count": 28,
+      "matching_row_count": 28,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout21_footer",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:office:office}shapedefaults",
+      "rank": 44,
+      "remaining_count": 28,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "runner_schema_policy",
+      "exclusion_counts": {
+        "known_office_boundary": 1,
+        "runner_schema_policy": 26
+      },
+      "expected_row_gain": 27,
+      "family": "math_object",
+      "hydrated_count": 27,
+      "matching_row_count": 27,
+      "operation_id": "math.run.set_text",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 12,
+          "runner_policy_or_overlap_skipped_rows": 12,
+          "runner_schema_policy_skipped_rows": 12
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_111_word",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 4,
+          "runner_policy_or_overlap_skipped_rows": 4,
+          "runner_schema_policy_skipped_rows": 4
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_150_floatingtbl-with-formula",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 4,
+          "runner_policy_or_overlap_skipped_rows": 4,
+          "runner_schema_policy_skipped_rows": 4
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_177_tdf162070-export",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_185_tdf171433-equation",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}e",
+      "rank": 45,
+      "remaining_count": 27,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "runner_schema_policy",
+      "exclusion_counts": {
+        "known_office_boundary": 5,
+        "runner_schema_policy": 22
+      },
+      "expected_row_gain": 27,
+      "family": "math_object",
+      "hydrated_count": 27,
+      "matching_row_count": 27,
+      "operation_id": "math.run.set_text",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_111_word",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 5,
+          "runner_policy_or_overlap_skipped_rows": 5,
+          "runner_schema_policy_skipped_rows": 5
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_procurement_training_math",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 3,
+          "runner_policy_or_overlap_skipped_rows": 3,
+          "runner_schema_policy_skipped_rows": 3
+        },
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.run.set_text",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_150_floatingtbl-with-formula",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_198_equationwithaboveandbelowcaption",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}oMath",
+      "rank": 46,
+      "remaining_count": 27,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 27
+      },
+      "expected_row_gain": 27,
+      "family": "office_extension",
+      "hydrated_count": 27,
+      "matching_row_count": 27,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_business_report_footer",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout_business_proposal",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_152_tdf127814",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/2006/metadata/contentType}contentTypeSchema",
+      "rank": 47,
+      "remaining_count": 27,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 26
+      },
+      "expected_row_gain": 26,
+      "family": "chart_drawing",
+      "hydrated_count": 26,
+      "matching_row_count": 26,
+      "operation_id": "chart.drawing.marker_coordinate.set_value",
+      "package_examples": [
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.marker_coordinate.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 22
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.marker_coordinate.set_value",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}x",
+      "rank": 48,
+      "remaining_count": 26,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 26
+      },
+      "expected_row_gain": 26,
+      "family": "chart_drawing",
+      "hydrated_count": 26,
+      "matching_row_count": 26,
+      "operation_id": "chart.drawing.marker_coordinate.set_value",
+      "package_examples": [
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.marker_coordinate.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 22
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.marker_coordinate.set_value",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}y",
+      "rank": 49,
+      "remaining_count": 26,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 7
+      },
+      "expected_row_gain": 26,
+      "family": "office_extension",
+      "hydrated_count": 26,
+      "matching_row_count": 26,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}ambientLight",
+      "rank": 50,
+      "remaining_count": 26,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 26
+      },
+      "expected_row_gain": 26,
+      "family": "office_extension",
+      "hydrated_count": 26,
+      "matching_row_count": 26,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_094_37p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 7
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_047_office-file",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_020_80p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_028_24p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2012/main}clr",
+      "rank": 51,
+      "remaining_count": 26,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 5
+      },
+      "expected_row_gain": 25,
+      "family": "office_extension",
+      "hydrated_count": 25,
+      "matching_row_count": 25,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}meterPerModelUnit",
+      "rank": 52,
+      "remaining_count": 25,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 25
+      },
+      "expected_row_gain": 25,
+      "family": "office_extension",
+      "hydrated_count": 25,
+      "matching_row_count": 25,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_brainstorm_training",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_020_80p-ppt",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_087_2",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_213_1",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/thememl/2012/main}themeFamily",
+      "rank": 53,
+      "remaining_count": 25,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 25
+      },
+      "expected_row_gain": 25,
+      "family": "wps_extension",
+      "hydrated_count": 25,
+      "matching_row_count": 25,
+      "operation_id": "wps_extension.known_field.set_value",
+      "package_examples": [
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_policy_embedded_objects",
+          "reason": "public_path_unsupported_part",
+          "row_count": 3
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_budget_embedded_objects",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_finance_tables_track",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_p18_drawing_008_canvas",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customShpInfo",
+      "rank": 54,
+      "remaining_count": 25,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 24
+      },
+      "expected_row_gain": 24,
+      "family": "math_object",
+      "hydrated_count": 24,
+      "matching_row_count": 24,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout11_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout_meeting_arrangement",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_finance_tables_track",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout10_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}dispDef",
+      "rank": 55,
+      "remaining_count": 24,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 24
+      },
+      "expected_row_gain": 24,
+      "family": "wps_extension",
+      "hydrated_count": 24,
+      "matching_row_count": 24,
+      "operation_id": "wps_extension.known_field.set_value",
+      "package_examples": [
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_annual_report_headers_media",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_budget_embedded_objects",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_finance_mindmap_track",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_finance_tables_track",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_halfyear_financial_report_track",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customData",
+      "rank": 56,
+      "remaining_count": 24,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 23
+      },
+      "expected_row_gain": 23,
+      "family": "wps_extension",
+      "hydrated_count": 23,
+      "matching_row_count": 23,
+      "operation_id": "wps_extension.known_field.set_value",
+      "package_examples": [
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_budget_embedded_objects",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_finance_tables_track",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_p18_drawing_007_canvas",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_p18_drawing_008_canvas",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "wps_extension",
+          "format": "docx",
+          "operation_id": "wps_extension.known_field.set_value",
+          "package_id": "docx_p18_drawing_009_canvas",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://www.wps.cn/officeDocument/2013/wpsCustomData}customShpExts",
+      "rank": 57,
+      "remaining_count": 23,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 3
+      },
+      "expected_row_gain": 22,
+      "family": "office_extension",
+      "hydrated_count": 22,
+      "matching_row_count": 22,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}model3d",
+      "rank": 58,
+      "remaining_count": 22,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 5
+      },
+      "expected_row_gain": 22,
+      "family": "office_extension",
+      "hydrated_count": 22,
+      "matching_row_count": 22,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}sx",
+      "rank": 59,
+      "remaining_count": 22,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 21
+      },
+      "expected_row_gain": 21,
+      "family": "chart_drawing",
+      "hydrated_count": 21,
+      "matching_row_count": 21,
+      "operation_id": "chart.drawing.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 11
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_report_344slides_multimedia",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_report_207slides_blue",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "chart_drawing",
+          "format": "pptx",
+          "operation_id": "chart.drawing.metadata.set_value",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/drawingml/2006/chartDrawing}spPr",
+      "rank": 60,
+      "remaining_count": 21,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 5
+      },
+      "expected_row_gain": 21,
+      "family": "office_extension",
+      "hydrated_count": 21,
+      "matching_row_count": 21,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}scale",
+      "rank": 61,
+      "remaining_count": 21,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 20
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_132_invoice-document",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_204_pink-floral-cover-letter",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_207_metro-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/2020/mipLabelMetadata}label",
+      "rank": 62,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 20
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_132_invoice-document",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_204_pink-floral-cover-letter",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_207_metro-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/2020/mipLabelMetadata}labelList",
+      "rank": 63,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 20
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_10",
+          "reason": "already_promoted",
+          "row_count": 8
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_report_344slides_multimedia",
+          "reason": "already_promoted",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_update_250422_graphic_layout",
+          "reason": "already_promoted",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_finance_diagram_charts",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_chartex_01",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}colorTemperature",
+      "rank": 64,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 2
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}camera",
+      "rank": 65,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 20
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}intensity",
+      "rank": 66,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 20
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 20
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}ptLight",
+      "rank": 67,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 20
+      },
+      "expected_row_gain": 20,
+      "family": "office_extension",
+      "hydrated_count": 20,
+      "matching_row_count": 20,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_tax_planning_fields",
+          "reason": "already_promoted",
+          "row_count": 15
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_rules_track",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_training_math",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_resume_a4_embedded_charts",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordml}textFill",
+      "rank": 68,
+      "remaining_count": 20,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 3
+      },
+      "expected_row_gain": 19,
+      "family": "office_extension",
+      "hydrated_count": 19,
+      "matching_row_count": 19,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}spPr",
+      "rank": 69,
+      "remaining_count": 19,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 19
+      },
+      "expected_row_gain": 19,
+      "family": "sharepoint_property",
+      "hydrated_count": 19,
+      "matching_row_count": 19,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout_business_proposal",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyProperties",
+      "rank": 70,
+      "remaining_count": 19,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "public_path_unsupported_part",
+      "exclusion_counts": {
+        "public_path_unsupported_part": 19
+      },
+      "expected_row_gain": 19,
+      "family": "sharepoint_property",
+      "hydrated_count": 19,
+      "matching_row_count": 19,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout_business_proposal",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_163_mergers-acquisitions-report",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_169_modern-initials-resume",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        },
+        {
+          "family": "sharepoint_property",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_026_cirnicate",
+          "reason": "public_path_unsupported_part",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/sharepoint/v3}_ip_UnifiedCompliancePolicyUIAction",
+      "rank": 71,
+      "remaining_count": 19,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 17,
+        "known_office_boundary": 1
+      },
+      "expected_row_gain": 18,
+      "family": "math_object",
+      "hydrated_count": 18,
+      "matching_row_count": 18,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_198_equationwithaboveandbelowcaption",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_107_word",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_111_word",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_176_equationasscientificnumbering",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}dPr",
+      "rank": 72,
+      "remaining_count": 18,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 18
+      },
+      "expected_row_gain": 18,
+      "family": "office_extension",
+      "hydrated_count": 18,
+      "matching_row_count": 18,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_travel_record_media",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_158_organic-shapes-letterhead",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_competitive_analysis_charts",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_financing_plan_chart",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}hiddenLine",
+      "rank": 73,
+      "remaining_count": 18,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 5
+      },
+      "expected_row_gain": 18,
+      "family": "office_extension",
+      "hydrated_count": 18,
+      "matching_row_count": 18,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_075_fabrikam-residences-the-ultimate-in-",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2017/model3d}trans",
+      "rank": 74,
+      "remaining_count": 18,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "already_promoted": 5,
+        "known_office_boundary": 13
+      },
+      "expected_row_gain": 18,
+      "family": "office_extension",
+      "hydrated_count": 18,
+      "matching_row_count": 18,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 6
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_147_basic-business-card",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_122_eighties-business-cards",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_011_canvas",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_020_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingGroup}grpSp",
+      "rank": 75,
+      "remaining_count": 18,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 18
+      },
+      "expected_row_gain": 18,
+      "family": "office_extension",
+      "hydrated_count": 18,
+      "matching_row_count": 18,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_rules_track",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_resume_a4_embedded_charts",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_131_restaurant-brochure",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_159_resume-a4",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_p18_drawing_020_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordprocessingShape}txbx",
+      "rank": 76,
+      "remaining_count": 18,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 15,
+        "known_office_boundary": 3
+      },
+      "expected_row_gain": 18,
+      "family": "vml_drawing",
+      "hydrated_count": 18,
+      "matching_row_count": 18,
+      "operation_id": "vml.formula.eqn.set_value",
+      "package_examples": [
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_layout_business_proposal",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_layout_media_large",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_ms_expansion_108_complex-400p",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_ms_expansion_117_wdatevalueformat",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.formula.eqn.set_value",
+          "package_id": "docx_ms_expansion_118_geometric-business-cards",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:vml}formulas",
+      "rank": 77,
+      "remaining_count": 18,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "runner_schema_policy",
+      "exclusion_counts": {
+        "known_office_boundary": 1,
+        "runner_schema_policy": 15
+      },
+      "expected_row_gain": 16,
+      "family": "math_object",
+      "hydrated_count": 16,
+      "matching_row_count": 16,
+      "operation_id": "math.run.set_text",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 5,
+          "runner_policy_or_overlap_skipped_rows": 5,
+          "runner_schema_policy_skipped_rows": 5
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_198_equationwithaboveandbelowcaption",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 3,
+          "runner_policy_or_overlap_skipped_rows": 3,
+          "runner_schema_policy_skipped_rows": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_111_word",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_176_equationasscientificnumbering",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_107_word",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 1,
+          "runner_policy_or_overlap_skipped_rows": 1,
+          "runner_schema_policy_skipped_rows": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}d",
+      "rank": 78,
+      "remaining_count": 16,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 16
+      },
+      "expected_row_gain": 16,
+      "family": "office_extension",
+      "hydrated_count": 16,
+      "matching_row_count": 16,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_02",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_080_28p-ppt",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_055_31p-ppt",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_094_37p-ppt",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}spTree",
+      "rank": 79,
+      "remaining_count": 16,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 16
+      },
+      "expected_row_gain": 16,
+      "family": "office_extension",
+      "hydrated_count": 16,
+      "matching_row_count": 16,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_123_tdf164905",
+          "reason": "already_promoted",
+          "row_count": 10
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_161_tdf166205-first-page-header-footer-v",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_179_floattable-header",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_194_mixednumberings",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordml}camera",
+      "rank": 80,
+      "remaining_count": 16,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "runner_schema_policy",
+      "exclusion_counts": {
+        "known_office_boundary": 1,
+        "runner_schema_policy": 14
+      },
+      "expected_row_gain": 15,
+      "family": "math_object",
+      "hydrated_count": 15,
+      "matching_row_count": 15,
+      "operation_id": "math.run.set_text",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_111_word",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 4,
+          "runner_policy_or_overlap_skipped_rows": 4,
+          "runner_schema_policy_skipped_rows": 4
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_procurement_training_math",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 3,
+          "runner_policy_or_overlap_skipped_rows": 3,
+          "runner_schema_policy_skipped_rows": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_150_floatingtbl-with-formula",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_141_fdo58949",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_165_fdo79973",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 1,
+          "runner_policy_or_overlap_skipped_rows": 1,
+          "runner_schema_policy_skipped_rows": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}oMathPara",
+      "rank": 81,
+      "remaining_count": 15,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 15
+      },
+      "expected_row_gain": 15,
+      "family": "math_object",
+      "hydrated_count": 15,
+      "matching_row_count": 15,
+      "operation_id": "math.run.set_text",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.run.set_text",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 13
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_141_fdo58949",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_171_tdf169843",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}r",
+      "rank": 82,
+      "remaining_count": 15,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 15
+      },
+      "expected_row_gain": 15,
+      "family": "office_chart_extension",
+      "hydrated_count": 15,
+      "matching_row_count": 15,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_chart_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_chart_dense_203slides",
+          "reason": "known_office_boundary",
+          "row_count": 15
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2012/chart}layout",
+      "rank": 83,
+      "remaining_count": 15,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 15
+      },
+      "expected_row_gain": 15,
+      "family": "office_extension",
+      "hydrated_count": 15,
+      "matching_row_count": 15,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_resume_a4_embedded_charts",
+          "reason": "already_promoted",
+          "row_count": 11
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_procurement_rules_track",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_realestate_finance_policy",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordml}schemeClr",
+      "rank": 84,
+      "remaining_count": 15,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 15
+      },
+      "expected_row_gain": 15,
+      "family": "vml_drawing",
+      "hydrated_count": 15,
+      "matching_row_count": 15,
+      "operation_id": "vml.path.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.path.metadata.set_value",
+          "package_id": "docx_p18_drawing_014_drawing",
+          "reason": "known_office_boundary",
+          "row_count": 4
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.path.metadata.set_value",
+          "package_id": "docx_layout_operations_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.path.metadata.set_value",
+          "package_id": "docx_ms_expansion_108_complex-400p",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.path.metadata.set_value",
+          "package_id": "docx_ms_expansion_136_1-resume-docx",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.path.metadata.set_value",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:vml}path",
+      "rank": 85,
+      "remaining_count": 15,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 14
+      },
+      "expected_row_gain": 14,
+      "family": "legacy_office_drawing",
+      "hydrated_count": 14,
+      "matching_row_count": 14,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout21_footer",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "legacy_office_drawing",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_138_reader",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:office:office}shapelayout",
+      "rank": 86,
+      "remaining_count": 14,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 14
+      },
+      "expected_row_gain": 14,
+      "family": "math_object",
+      "hydrated_count": 14,
+      "matching_row_count": 14,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 4
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_198_equationwithaboveandbelowcaption",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_procurement_training_math",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}fPr",
+      "rank": 87,
+      "remaining_count": 14,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 14
+      },
+      "expected_row_gain": 14,
+      "family": "office_extension",
+      "hydrated_count": 14,
+      "matching_row_count": 14,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_p5_animations_02",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_080_28p-ppt",
+          "reason": "already_promoted",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2008/diagram}drawing",
+      "rank": 88,
+      "remaining_count": 14,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 13
+      },
+      "expected_row_gain": 13,
+      "family": "math_object",
+      "hydrated_count": 13,
+      "matching_row_count": 13,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_176_equationasscientificnumbering",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_198_equationwithaboveandbelowcaption",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_111_word",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSupPr",
+      "rank": 89,
+      "remaining_count": 13,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 13
+      },
+      "expected_row_gain": 13,
+      "family": "vml_drawing",
+      "hydrated_count": 13,
+      "matching_row_count": 13,
+      "operation_id": "vml.stroke.set_join_style",
+      "package_examples": [
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.stroke.set_join_style",
+          "package_id": "docx_p5_customxml_02",
+          "reason": "known_office_boundary",
+          "row_count": 3
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.stroke.set_join_style",
+          "package_id": "docx_layout_operations_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.stroke.set_join_style",
+          "package_id": "docx_ms_expansion_108_complex-400p",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.stroke.set_join_style",
+          "package_id": "docx_ms_expansion_136_1-resume-docx",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "vml_drawing",
+          "format": "docx",
+          "operation_id": "vml.stroke.set_join_style",
+          "package_id": "docx_ms_expansion_184_photo-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{urn:schemas-microsoft-com:vml}stroke",
+      "rank": 90,
+      "remaining_count": 13,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 12
+      },
+      "expected_row_gain": 12,
+      "family": "math_object",
+      "hydrated_count": 12,
+      "matching_row_count": 12,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout21_footer",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_141_fdo58949",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}smallFrac",
+      "rank": 91,
+      "remaining_count": 12,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 12
+      },
+      "expected_row_gain": 12,
+      "family": "office_extension",
+      "hydrated_count": 12,
+      "matching_row_count": 12,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_travel_record_media",
+          "reason": "known_office_boundary",
+          "row_count": 5
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_130_classroom-newsletter",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_112_generative-ai-at-isb",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_119_small-business-email-marketing-templ",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_203_photo-resume",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/drawing/2010/main}shadowObscured",
+      "rank": 92,
+      "remaining_count": 12,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 12
+      },
+      "expected_row_gain": 12,
+      "family": "office_extension",
+      "hydrated_count": 12,
+      "matching_row_count": 12,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_finance_diagram_charts",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_gtd_time_management_cases",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_018_03",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_ms_expansion_215_6",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "pptx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "pptx_multimaster_136slides",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/powerpoint/2010/main}section",
+      "rank": 93,
+      "remaining_count": 12,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 12
+      },
+      "expected_row_gain": 12,
+      "family": "office_extension",
+      "hydrated_count": 12,
+      "matching_row_count": 12,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout11_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_175_childrens-s-holiday-wish-list",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout16_footer_media",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_layout_meeting_arrangement",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2012/wordml}chartTrackingRefBased",
+      "rank": 94,
+      "remaining_count": 12,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 11
+      },
+      "expected_row_gain": 11,
+      "family": "math_object",
+      "hydrated_count": 11,
+      "matching_row_count": 11,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout21_footer",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}brkBin",
+      "rank": 95,
+      "remaining_count": 11,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 11
+      },
+      "expected_row_gain": 11,
+      "family": "math_object",
+      "hydrated_count": 11,
+      "matching_row_count": 11,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout21_footer",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}brkBinSub",
+      "rank": 96,
+      "remaining_count": 11,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 11
+      },
+      "expected_row_gain": 11,
+      "family": "math_object",
+      "hydrated_count": 11,
+      "matching_row_count": 11,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_107_word",
+          "reason": "already_promoted",
+          "row_count": 5
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "reason": "already_promoted",
+          "row_count": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_177_tdf162070-export",
+          "reason": "already_promoted",
+          "row_count": 2
+        },
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "pptx_ms_expansion_014_complex-100p",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}sSubPr",
+      "rank": 97,
+      "remaining_count": 11,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "runner_schema_policy",
+      "exclusion_counts": {
+        "known_office_boundary": 1,
+        "runner_schema_policy": 10
+      },
+      "expected_row_gain": 11,
+      "family": "math_object",
+      "hydrated_count": 11,
+      "matching_row_count": 11,
+      "operation_id": "math.run.set_text",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_150_floatingtbl-with-formula",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 4,
+          "runner_policy_or_overlap_skipped_rows": 4,
+          "runner_schema_policy_skipped_rows": 4
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_153_2120112713",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 3,
+          "runner_policy_or_overlap_skipped_rows": 3,
+          "runner_schema_policy_skipped_rows": 3
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_177_tdf162070-export",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 2,
+          "runner_policy_or_overlap_skipped_rows": 2,
+          "runner_schema_policy_skipped_rows": 2
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.run.set_text",
+          "package_id": "docx_ms_expansion_185_tdf171433-equation",
+          "planned_safe_rows": 0,
+          "reason": "runner_schema_policy",
+          "row_count": 1,
+          "runner_policy_or_overlap_skipped_rows": 1,
+          "runner_schema_policy_skipped_rows": 1
+        },
+        {
+          "family": "math_object",
+          "format": "pptx",
+          "operation_id": "math.run.set_text",
+          "package_id": "pptx_p5_transitions_03",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}sub",
+      "rank": 98,
+      "remaining_count": 11,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "already_promoted",
+      "exclusion_counts": {
+        "already_promoted": 11
+      },
+      "expected_row_gain": 11,
+      "family": "office_extension",
+      "hydrated_count": 11,
+      "matching_row_count": 11,
+      "operation_id": "office_extension.known_metadata.set_value",
+      "package_examples": [
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_123_tdf164905",
+          "reason": "already_promoted",
+          "row_count": 9
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_156_tdf167527-title-letters-cut-from-bel",
+          "reason": "already_promoted",
+          "row_count": 1
+        },
+        {
+          "family": "office_extension",
+          "format": "docx",
+          "operation_id": "office_extension.known_metadata.set_value",
+          "package_id": "docx_ms_expansion_194_mixednumberings",
+          "reason": "already_promoted",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.microsoft.com/office/word/2010/wordml}scene3d",
+      "rank": 99,
+      "remaining_count": 11,
+      "target_action": "promote"
+    },
+    {
+      "dominant_exclusion": "known_office_boundary",
+      "exclusion_counts": {
+        "known_office_boundary": 10
+      },
+      "expected_row_gain": 10,
+      "family": "math_object",
+      "hydrated_count": 10,
+      "matching_row_count": 10,
+      "operation_id": "math.object.metadata.set_value",
+      "package_examples": [
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_layout21_footer",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_meeting_record",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_126_bold-business-report",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_137_mba",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        },
+        {
+          "family": "math_object",
+          "format": "docx",
+          "operation_id": "math.object.metadata.set_value",
+          "package_id": "docx_ms_expansion_162_playful-business-cover-letter",
+          "reason": "known_office_boundary",
+          "row_count": 1
+        }
+      ],
+      "planned_safe_rows_seen": 0,
+      "qname": "{http://schemas.openxmlformats.org/officeDocument/2006/math}defJc",
+      "rank": 100,
+      "remaining_count": 10,
+      "target_action": "promote"
+    }
+  ]
+}

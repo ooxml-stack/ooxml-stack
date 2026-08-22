@@ -1,0 +1,54 @@
+{
+  "artifacts": [
+    {
+      "name": "docx-drawing-active-editing-v2-diff-cases.json",
+      "path": "release-evidence/p41/docx-drawing-active-editing-v2-diff-cases.json",
+      "role": "diff-cases",
+      "sha256": "45e1dc5e9893274bb73b86c47efbc6747c6993243946d8e8a3add7c294981fd4",
+      "size_bytes": 663665
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-diff-summary.json",
+      "path": "release-evidence/p41/docx-drawing-active-editing-v2-diff-summary.json",
+      "role": "diff-summary",
+      "sha256": "092f1bd24c52f5f17f239199638fc257e6b2af1eba2687f682b288c4df77ecb7",
+      "size_bytes": 2948
+    },
+    {
+      "name": "docx-drawing-active-editing-v2-diff-matrix.json",
+      "path": "release-evidence/p41/docx-drawing-active-editing-v2-diff-matrix.json",
+      "role": "matrix",
+      "sha256": "18cfc8af9c42c2a20de3c8cba8e8d010b4b1bc1c8186f38e74c58813a312c3c9",
+      "size_bytes": 2832
+    },
+    {
+      "name": "dashboard-data.json",
+      "path": "release-evidence/p41/dashboard-data.json",
+      "role": "dashboard-data",
+      "sha256": "5d292d43def3fe72410b29bc6d572947d1d864168ac98ac9dfd5396a7f5efaca",
+      "size_bytes": 669898
+    },
+    {
+      "name": "index.html",
+      "path": "release-evidence/p41/dashboard/index.html",
+      "role": "dashboard",
+      "sha256": "650e0481702270cbc5e53229f521ce98faa19b59949d0e34b7444229e36536d8",
+      "size_bytes": 567014
+    },
+    {
+      "name": "public-claim-boundary-scan.json",
+      "path": "release-evidence/p41/public-claim-boundary-scan.json",
+      "role": "claim-scan",
+      "sha256": "cb84a4b567c91941bf2114c46c51773c8dfd69888e7aabbdc2c8ea83e1af2c74",
+      "size_bytes": 628
+    },
+    {
+      "name": "P41-DOCX-DRAWING-ACTIVE-EDITING-V2-DASHBOARD.md",
+      "path": "docs/P41-DOCX-DRAWING-ACTIVE-EDITING-V2-DASHBOARD.md",
+      "role": "audit-doc",
+      "sha256": "b7a5ef368e00ab7a20211be62cdf83065b249685a158e8a430145834ceac0da3",
+      "size_bytes": 2164
+    }
+  ],
+  "schema_version": "p41-release-evidence-manifest-v1"
+}

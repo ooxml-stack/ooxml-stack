@@ -1,0 +1,45 @@
+{
+  "schema_version": "p68-pptx-preserve-only-zero-v1",
+  "generated_at_utc": "2026-06-04T01:10:13.964682+00:00",
+  "generator_name": "pptx-preserve-only-zero",
+  "generator_version_or_commit": "local-worktree",
+  "format": "pptx",
+  "summary": {
+    "pptx_package_count": 176,
+    "pptx_object_candidate_count": 1126883,
+    "pptx_baseline_preserve_only_count": 275997,
+    "pptx_preserve_only_count": 0,
+    "pptx_unknown_extension_object_count": 0,
+    "pptx_unclassified_object_count": 0,
+    "pptx_unsupported_object_count": 0,
+    "pptx_active_editable_promoted_from_preserve_only_count": 275997,
+    "pptx_policy_only_replay_gap_count": 0,
+    "pptx_active_edit_attempt_count": 275997,
+    "pptx_semantic_hit_count": 275997,
+    "pptx_office_open_pass_count": 275997,
+    "pptx_repair_dialog_count": 0,
+    "pptx_wrong_handle_mutation_count": 0,
+    "pptx_real_replay_source_count": 3,
+    "pptx_real_replay_source_counts": {
+      "p63-alternate-content": 7628,
+      "p64-office-extension": 1309,
+      "p67-p68-generic-extension-replay": 267060
+    }
+  },
+  "rows": [
+    {
+      "format": "pptx",
+      "baseline_preserve_only_count": 275997,
+      "real_replay_promoted_count": 275997,
+      "policy_only_replay_gap_count": 0,
+      "real_replay_source_counts": {
+        "p63-alternate-content": 7628,
+        "p64-office-extension": 1309,
+        "p67-p68-generic-extension-replay": 267060
+      }
+    }
+  ],
+  "gate_pass": true,
+  "failures": [],
+  "warnings": []
+}

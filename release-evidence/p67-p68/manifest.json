@@ -1,0 +1,26 @@
+{
+  "schema_version": "p67-p68-generic-extension-replay-manifest-v1",
+  "artifacts": [
+    {
+      "name": "generic-extension-replay.json",
+      "path": "release-evidence/p67-p68/generic-extension-replay.json",
+      "role": "p67-p68-generic-extension-replay",
+      "sha256": "8446c096ce27a000b938bdd97262d3b650a3e63244c72aeae2568201e05950fe",
+      "size_bytes": 172772
+    },
+    {
+      "name": "generic-extension-office-gate.json",
+      "path": "release-evidence/p67-p68/generic-extension-office-gate.json",
+      "role": "p67-p68-generic-extension-office-gate",
+      "sha256": "882421dd0d0d32f9d7a0a03a979fb4aefedbb3fd80da8025cbe10fb0926c092f",
+      "size_bytes": 122386
+    },
+    {
+      "name": "excluded-original-office-gate.json",
+      "path": "release-evidence/p67-p68/excluded-original-office-gate.json",
+      "role": "p67-p68-excluded-original-office-gate",
+      "sha256": "483492738f71dde68c9c72131a71bfec1b5e6c611dee469bd76674c9dfb6bf6a",
+      "size_bytes": 1110
+    }
+  ]
+}

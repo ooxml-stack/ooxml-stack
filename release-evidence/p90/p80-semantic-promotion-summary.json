@@ -1,0 +1,10 @@
+{
+  "schema_version": "p90-p80-semantic-promotion-v1",
+  "gate_pass": true,
+  "row_count": 252743,
+  "row_pass_count": 252743,
+  "semantic_edit_pass_count": 113861,
+  "native_office_pass_count": 252743,
+  "pending_native_office_count": 0,
+  "office_gate_pass": true
+}

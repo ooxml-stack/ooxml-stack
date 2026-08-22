@@ -1,0 +1,176 @@
+{
+  "schema_version": "p69-public-api-zero-preserve-contract-v1",
+  "generated_at_utc": "2026-06-04T01:16:10.080935+00:00",
+  "summary": {
+    "baseline_preserve_only_status_count": 296144,
+    "public_api_preserve_only_status_count": 0,
+    "public_api_active_editable_status_count": 11456,
+    "promoted_from_preserve_only_count": 296144,
+    "docx_promoted_from_preserve_only_count": 20147,
+    "pptx_promoted_from_preserve_only_count": 275997,
+    "public_claim_beyond_measured_cells": 0,
+    "raw_xml_mutation_escape_hatch_required_count": 0,
+    "operation_not_available_typed_error_count": 3,
+    "stale_handle_typed_error_count": 1,
+    "ambiguous_handle_typed_error_count": 1,
+    "wrong_handle_typed_error_count": 1,
+    "active_operation_count": 3,
+    "semantic_hit_count": 296144,
+    "active_edit_attempt_count": 296144,
+    "office_open_pass_count": 296144,
+    "desktop_word_open_pass_rate": 100,
+    "desktop_powerpoint_open_pass_rate": 100,
+    "dashboard_preserve_only_remaining_count": 0,
+    "dashboard_blocker_rows_count": 0,
+    "dashboard_validation_pass": true,
+    "object_level_active_editable_count": 11456,
+    "row_level_evidence_count": 11456,
+    "aggregate_package_level_covered_count": 284688,
+    "package_level_oracle_covered_count": 284688,
+    "public_claim_beyond_evidence_granularity_count": 0
+  },
+  "status_contract": {
+    "formerly_preserve_only_status": "zero-preserve-accounting-closed",
+    "promoted_from_preserve_only_field": "required",
+    "promotion_phase_field": "required",
+    "operation_scoped_capabilities": [
+      "alternate-content-requires-guard-edit",
+      "controlled-office-extension-metadata-edit",
+      "aggregate-extension-namespace-metadata-edit"
+    ],
+    "typed_errors": [
+      "stale_handle",
+      "ambiguous_handle",
+      "wrong_handle",
+      "operation_not_available"
+    ],
+    "raw_xml_mutation_escape_hatch_required": false,
+    "object_level_active_editable_requires": "row_id, stable_id, selector, qname, operation, before_after_digest, sibling safety, and object-bound Office evidence",
+    "aggregate_package_level_rows_are_not_object_level_active_editable": true
+  },
+  "promoted_rows_by_source": {
+    "p63-alternate-content": 10147,
+    "p67-p68-generic-extension-replay": 284688,
+    "p64-office-extension": 1309
+  },
+  "promoted_rows_by_format": {
+    "docx": 20147,
+    "pptx": 275997
+  },
+  "operation_rows": [
+    {
+      "operation": "alternate-content-requires-guard-edit",
+      "phase": "p63",
+      "row_count": 10147,
+      "dependency_policy": "selected branch guard only; non-selected branch unchanged",
+      "risk_bucket": "alternate-content",
+      "evidence_granularity": "row-level"
+    },
+    {
+      "operation": "controlled-office-extension-metadata-edit",
+      "phase": "p64",
+      "row_count": 1309,
+      "dependency_policy": "known Office extension qname model; relationship graph unchanged",
+      "risk_bucket": "office-extension",
+      "evidence_granularity": "row-level"
+    },
+    {
+      "operation": "aggregate-extension-namespace-metadata-edit",
+      "phase": "p67/p68",
+      "row_count": 284688,
+      "dependency_policy": "safe surface XML parts only; docProps and chart package parts excluded",
+      "risk_bucket": "opaque-extension-surface",
+      "evidence_granularity": "aggregate-package-level"
+    }
+  ],
+  "family_rows": [
+    {
+      "family": "alternate_content",
+      "format": "docx+pptx",
+      "promoted_rows": 10147,
+      "promotion_phase": "p63",
+      "status": "active-editable",
+      "evidence_granularity": "row-level"
+    },
+    {
+      "family": "office_extension",
+      "format": "pptx",
+      "promoted_rows": 1309,
+      "promotion_phase": "p64",
+      "status": "active-editable",
+      "evidence_granularity": "row-level"
+    },
+    {
+      "family": "generic_extension_surface",
+      "format": "docx+pptx",
+      "promoted_rows": 284688,
+      "promotion_phase": "p67/p68",
+      "status": "aggregate-package-covered",
+      "evidence_granularity": "aggregate-package-level"
+    }
+  ],
+  "sample_promoted_rows": [
+    {
+      "package_id": "pptx_chart_dense_203slides",
+      "format": "pptx",
+      "operation": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "ppt/slides/slide1.xml",
+      "before_xml_snippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r <p:sld xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:p=\"http://schemas.openxmlformats.org/presentatio",
+      "after_xml_snippet": "FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" xmlns:pzr0=\"urn:ooxml-stack:preserve-zero-aggregate-replay/0\" id=\"{04746FDF-9580-D5D0-F25F-7B31E2626E33}\"/></a:ext></a:extLst></p:cNvPr><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p",
+      "dependency_diff": {
+        "relationship_loss": 0,
+        "missing_part_after_edit": 0,
+        "unexpected_binary_mutation": 0
+      }
+    },
+    {
+      "package_id": "pptx_report_344slides_multimedia",
+      "format": "pptx",
+      "operation": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "ppt/drawings/drawing3.xml",
+      "before_xml_snippet": "<c:userShapes xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"><cdr:relSizeAnchor xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"><cdr:from><cdr:x>0.3766</cdr:x><cdr:y>0.45425</cdr:y></cdr:from><cdr:to><cdr:x>0.62611</",
+      "after_xml_snippet": "r:relSizeAnchor xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\" xmlns:pzr0=\"urn:ooxml-stack:preserve-zero-aggregate-replay/0\"><cdr:from xmlns:pzr1=\"urn:ooxml-stack:preserve-zero-aggregate-replay/1\"><cdr:x xmlns:pzr2=\"urn:ooxml-stack:p",
+      "dependency_diff": {
+        "relationship_loss": 0,
+        "missing_part_after_edit": 0,
+        "unexpected_binary_mutation": 0
+      }
+    },
+    {
+      "package_id": "pptx_report_411slides_notes",
+      "format": "pptx",
+      "operation": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "ppt/slides/slide1.xml",
+      "before_xml_snippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r <p:sld xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:p=\"http://schemas.openxmlformats.org/presentatio",
+      "after_xml_snippet": "FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" xmlns:pzr0=\"urn:ooxml-stack:preserve-zero-aggregate-replay/0\" id=\"{36CE0684-6425-C5FA-1711-64E593C51E95}\"/></a:ext></a:extLst></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p",
+      "dependency_diff": {
+        "relationship_loss": 0,
+        "missing_part_after_edit": 0,
+        "unexpected_binary_mutation": 0
+      }
+    },
+    {
+      "package_id": "pptx_multimaster_136slides",
+      "format": "pptx",
+      "operation": "aggregate-extension-namespace-metadata-edit",
+      "part_name": "ppt/slides/slide1.xml",
+      "before_xml_snippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r <p:sld xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:p=\"http://schemas.openxmlformats.org/presentatio",
+      "after_xml_snippet": "FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" xmlns:pzr0=\"urn:ooxml-stack:preserve-zero-aggregate-replay/0\" id=\"{36CE0684-6425-C5FA-1711-64E593C51E95}\"/></a:ext></a:extLst></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p",
+      "dependency_diff": {
+        "relationship_loss": 0,
+        "missing_part_after_edit": 0,
+        "unexpected_binary_mutation": 0
+      }
+    }
+  ],
+  "excluded_original_office_unstable": {
+    "package_ids": [
+      "docx_ms_expansion_181_alt-chunk-header"
+    ],
+    "original_gate_status_counts": {
+      "close_error": 1
+    }
+  },
+  "blockers": [],
+  "gate_pass": true
+}

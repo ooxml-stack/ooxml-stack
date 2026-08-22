@@ -1,0 +1,43 @@
+{
+  "schema_version": "p67-docx-preserve-only-zero-v1",
+  "generated_at_utc": "2026-06-04T01:10:13.934415+00:00",
+  "generator_name": "docx-preserve-only-zero",
+  "generator_version_or_commit": "local-worktree",
+  "format": "docx",
+  "summary": {
+    "docx_package_count": 185,
+    "docx_object_candidate_count": 361745,
+    "docx_baseline_preserve_only_count": 20147,
+    "docx_preserve_only_count": 0,
+    "docx_unknown_extension_object_count": 0,
+    "docx_unclassified_object_count": 0,
+    "docx_unsupported_object_count": 0,
+    "docx_active_editable_promoted_from_preserve_only_count": 20147,
+    "docx_policy_only_replay_gap_count": 0,
+    "docx_active_edit_attempt_count": 20147,
+    "docx_semantic_hit_count": 20147,
+    "docx_office_open_pass_count": 20147,
+    "docx_repair_dialog_count": 0,
+    "docx_wrong_handle_mutation_count": 0,
+    "docx_real_replay_source_count": 2,
+    "docx_real_replay_source_counts": {
+      "p63-alternate-content": 2519,
+      "p67-p68-generic-extension-replay": 17628
+    }
+  },
+  "rows": [
+    {
+      "format": "docx",
+      "baseline_preserve_only_count": 20147,
+      "real_replay_promoted_count": 20147,
+      "policy_only_replay_gap_count": 0,
+      "real_replay_source_counts": {
+        "p63-alternate-content": 2519,
+        "p67-p68-generic-extension-replay": 17628
+      }
+    }
+  ],
+  "gate_pass": true,
+  "failures": [],
+  "warnings": []
+}

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "tool": "office_open_gate",
+    "timestamp": "2026-06-05T17:11:38Z",
+    "timeout_seconds": 120,
+    "dialog_wait_seconds": 8
+  },
+  "summary": {
+    "total": 3,
+    "pass": 3,
+    "pass_total": 3,
+    "repair_dialog_count": 0,
+    "security_dialog_count": 0,
+    "benign_dialog_count": 0,
+    "office_crash_count": 0,
+    "macro_security_dialog_count": 0,
+    "macro_timeout_count": 0,
+    "by_status": {
+      "pass": 3
+    },
+    "gate_pass": true
+  },
+  "results": [
+    {
+      "file": "<repo>/release-evidence/p84/outputs/p84-docx_business_report_footer.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 35.348
+    },
+    {
+      "file": "<repo>/release-evidence/p84/outputs/p84-docx_layout_business_proposal.docx",
+      "app": "Microsoft Word",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.585
+    },
+    {
+      "file": "<repo>/release-evidence/p84/outputs/p84-pptx_ms_expansion_026_cirnicate.pptx",
+      "app": "Microsoft PowerPoint",
+      "status": "pass",
+      "message": "opened without detected repair dialog",
+      "exit_code": 0,
+      "stdout": "PASS",
+      "stderr": "",
+      "elapsed_seconds": 33.675
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "logical_name": "p80-semantic-promotion-rows.jsonl",
+  "part_count": 28,
+  "parts": [
+    {
+      "path": "part-0000.jsonl",
+      "row_count": 9533,
+      "size": 20970574
+    },
+    {
+      "path": "part-0001.jsonl",
+      "row_count": 9517,
+      "size": 20969230
+    },
+    {
+      "path": "part-0002.jsonl",
+      "row_count": 9560,
+      "size": 20970160
+    },
+    {
+      "path": "part-0003.jsonl",
+      "row_count": 9551,
+      "size": 20970009
+    },
+    {
+      "path": "part-0004.jsonl",
+      "row_count": 9474,
+      "size": 20969931
+    },
+    {
+      "path": "part-0005.jsonl",
+      "row_count": 9570,
+      "size": 20970387
+    },
+    {
+      "path": "part-0006.jsonl",
+      "row_count": 9646,
+      "size": 20969925
+    },
+    {
+      "path": "part-0007.jsonl",
+      "row_count": 9620,
+      "size": 20969636
+    },
+    {
+      "path": "part-0008.jsonl",
+      "row_count": 9596,
+      "size": 20969892
+    },
+    {
+      "path": "part-0009.jsonl",
+      "row_count": 9608,
+      "size": 20969930
+    },
+    {
+      "path": "part-0010.jsonl",
+      "row_count": 9580,
+      "size": 20969705
+    },
+    {
+      "path": "part-0011.jsonl",
+      "row_count": 9606,
+      "size": 20970683
+    },
+    {
+      "path": "part-0012.jsonl",
+      "row_count": 9692,
+      "size": 20970760
+    },
+    {
+      "path": "part-0013.jsonl",
+      "row_count": 9598,
+      "size": 20971492
+    },
+    {
+      "path": "part-0014.jsonl",
+      "row_count": 9237,
+      "size": 20970283
+    },
+    {
+      "path": "part-0015.jsonl",
+      "row_count": 8780,
+      "size": 20970168
+    },
+    {
+      "path": "part-0016.jsonl",
+      "row_count": 8894,
+      "size": 20970662
+    },
+    {
+      "path": "part-0017.jsonl",
+      "row_count": 8959,
+      "size": 20969805
+    },
+    {
+      "path": "part-0018.jsonl",
+      "row_count": 8931,
+      "size": 20971255
+    },
+    {
+      "path": "part-0019.jsonl",
+      "row_count": 8762,
+      "size": 20969908
+    },
+    {
+      "path": "part-0020.jsonl",
+      "row_count": 8913,
+      "size": 20970521
+    },
+    {
+      "path": "part-0021.jsonl",
+      "row_count": 9084,
+      "size": 20970995
+    },
+    {
+      "path": "part-0022.jsonl",
+      "row_count": 9087,
+      "size": 20970658
+    },
+    {
+      "path": "part-0023.jsonl",
+      "row_count": 9157,
+      "size": 20969444
+    },
+    {
+      "path": "part-0024.jsonl",
+      "row_count": 9307,
+      "size": 20970780
+    },
+    {
+      "path": "part-0025.jsonl",
+      "row_count": 9315,
+      "size": 20970057
+    },
+    {
+      "path": "part-0026.jsonl",
+      "row_count": 9409,
+      "size": 20971407
+    },
+    {
+      "path": "part-0027.jsonl",
+      "row_count": 757,
+      "size": 1763933
+    }
+  ],
+  "row_count": 252743,
+  "schema_version": "p90-jsonl-shards-v1"
+}
