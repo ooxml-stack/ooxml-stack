@@ -2,3 +2,55 @@
 #
 # Keep this list narrow. Add only failure reproductions, release gate bundles,
 # or pinned golden samples that must remain in git/LFS.
+#
+# Pinned samples from the p76-p97 compatibility contract evidence campaign
+# (publish commit 7ef94ef0). Per AGENTS.md: only failure, release, or pinned
+# samples may be allowlisted; keep pass evidence as JSON/JSONL with hashes.
+release-evidence/p83/batch-outputs/batch-docx_policy_embedded_objects.docx
+release-evidence/p83/batch-outputs/batch-pptx_bgy_standard_sales_flow.pptx
+release-evidence/p83/batch-outputs/batch-pptx_pdca_training.pptx
+release-evidence/p83/batch-outputs/batch-pptx_update_250715_charts.pptx
+release-evidence/p83/outputs/api-0-docx_annual_report_headers_media-sth_c8d983428d00ac59675863ac.docx
+release-evidence/p83/outputs/api-1-docx_annual_report_headers_media-sth_1fe0391498c5153776eaf7d5.docx
+release-evidence/p83/outputs/api-2-pptx_chart_dense_203slides-sth_e3fafe50be8501365a4c4ecf.pptx
+release-evidence/p83/outputs/api-3-pptx_chart_dense_203slides-sth_c98b17fa4d9f61d7eb221942.pptx
+release-evidence/p83/outputs/cli-0-docx_policy_embedded_objects-sth_7fceeff82533e2095b9b4e46.docx
+release-evidence/p83/outputs/cli-1-docx_policy_embedded_objects-sth_1fe0391498c5153776eaf7d5.docx
+release-evidence/p83/outputs/cli-2-pptx_bgy_standard_sales_flow-sth_e3fafe50be8501365a4c4ecf.pptx
+release-evidence/p83/outputs/cli-3-pptx_pdca_training-sth_63feac8b34db3f9b9e138868.pptx
+release-evidence/p83/outputs/mcp-0-docx_policy_embedded_objects-sth_7fceeff82533e2095b9b4e46.docx
+release-evidence/p83/outputs/mcp-1-docx_policy_embedded_objects-sth_1fe0391498c5153776eaf7d5.docx
+release-evidence/p83/outputs/mcp-2-pptx_bgy_standard_sales_flow-sth_e3fafe50be8501365a4c4ecf.pptx
+release-evidence/p83/outputs/mcp-3-pptx_pdca_training-sth_63feac8b34db3f9b9e138868.pptx
+release-evidence/p84/outputs/p84-docx_business_report_footer.docx
+release-evidence/p84/outputs/p84-docx_layout_business_proposal.docx
+release-evidence/p84/outputs/p84-pptx_ms_expansion_026_cirnicate.pptx
+release-evidence/p85/outputs/p85-docx_ms_expansion_107_word.docx
+release-evidence/p85/outputs/p85-pptx_ms_expansion_014_complex-100p.pptx
+release-evidence/p86/outputs/p86-docx_budget_embedded_objects.docx
+release-evidence/p87/outputs/p87-docx_ms_expansion_110_testchartoleobjectembeddings.docx
+release-evidence/p87/outputs/p87-pptx_chart_dense_203slides.pptx
+release-evidence/p88/outputs/p88-docx_ms_expansion_189_fly-minimal-wrap.docx
+release-evidence/p88/outputs/p88-docx_p18_drawing_007_canvas.docx
+release-evidence/p88/outputs/p88-pptx_ms_expansion_064_forum-mso-de-138303.pptx
+release-evidence/p88/outputs/p88-pptx_ms_expansion_094_37p-ppt.pptx
+release-evidence/p90/llm-acceptance/outputs/cli-000-docx_ms_expansion_189_fly-minimal-wrap-sho_43d481f1f4c1884c4d09ad58.docx
+release-evidence/p90/llm-acceptance/outputs/cli-001-docx_ms_expansion_110_testchartoleobjectembeddings-sho_373091483d0166af7b3059af.docx
+release-evidence/p90/llm-acceptance/outputs/cli-002-docx_ms_expansion_198_equationwithaboveandbelowcaption-sho_9a1d0f27a910cc9e08ee3e76.docx
+release-evidence/p90/llm-acceptance/outputs/cli-003-docx_ms_expansion_150_floatingtbl-with-formula-sth_1fe0391498c5153776eaf7d5.docx
+release-evidence/p90/llm-acceptance/outputs/cli-004-docx_ms_expansion_198_equationwithaboveandbelowcaption-sth_c8d983428d00ac59675863ac.docx
+release-evidence/p90/llm-acceptance/outputs/cli-005-docx_ms_expansion_198_equationwithaboveandbelowcaption-sho_5d34bfcc8ad5a78571f13e9a.docx
+release-evidence/p90/llm-acceptance/outputs/cli-006-pptx_update_251223_chart_pack-sth_923667daa2769063c64c1157.pptx
+release-evidence/p90/llm-acceptance/outputs/cli-007-pptx_ms_expansion_065_donut-column-and-bar-chart-dashboard-sth_e3fafe50be8501365a4c4ecf.pptx
+release-evidence/p90/llm-acceptance/outputs/cli-008-pptx_ms_expansion_094_37p-ppt-sho_148a0c521398dca5e3bc7a51.pptx
+release-evidence/p90/llm-acceptance/outputs/cli-009-docx_ms_expansion_189_fly-minimal-wrap-sho_3cc81cf051c2067cd485f116.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-000-docx_ms_expansion_190_fdo78333-1-minimized-sho_eb1c39260d4945316916bc34.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-001-docx_ms_expansion_110_testchartoleobjectembeddings-sho_968bbafd1452d911a28f68f9.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-002-docx_ms_expansion_198_equationwithaboveandbelowcaption-sho_121ca3663c6f686213ac7f1e.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-003-docx_ms_expansion_150_floatingtbl-with-formula-sth_e39f2ade104af7bd085948b6.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-004-docx_ms_expansion_198_equationwithaboveandbelowcaption-sth_d51d312a887731232c5fb268.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-005-docx_ms_expansion_198_equationwithaboveandbelowcaption-sho_87e6a2a384a155622d9efd6f.docx
+release-evidence/p90/llm-acceptance/outputs/mcp-006-pptx_update_251223_chart_pack-sth_181e712cbd39471d6ccd8418.pptx
+release-evidence/p90/llm-acceptance/outputs/mcp-007-pptx_ms_expansion_065_donut-column-and-bar-chart-dashboard-sth_bf2bc6b78987e1ebd090acf7.pptx
+release-evidence/p90/llm-acceptance/outputs/mcp-008-pptx_ms_expansion_094_37p-ppt-sho_cfe521973d2121fcc5b6b858.pptx
+release-evidence/p90/llm-acceptance/outputs/mcp-009-docx_ms_expansion_189_fly-minimal-wrap-sho_5358ddf32d2e824b9a48d745.docx
