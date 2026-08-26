@@ -1,0 +1,140 @@
+{
+  "schema_version": "p98-coverage-budget-v1",
+  "generated_at_utc": "2026-08-26T15:00:44.794004+00:00",
+  "description": "Tracked mutation-coverage budget. The P97 phase documented 76 uncovered rules (docx 31, pptx 29, xlsx 16). P98-A proved 12 new format-rule pairs. This baseline is recomputed against the live registry so follow-ups can run it; the counts below are registry-current, not a restatement of the P97 historical number.",
+  "p97_historical_baseline": {
+    "docx": 31,
+    "pptx": 29,
+    "xlsx": 16,
+    "total": 76
+  },
+  "p98_proven_additions": {
+    "docx": [
+      "chartex_style_id",
+      "document_rels_required",
+      "header_footer_rel_valid",
+      "hyperlink_rel_valid"
+    ],
+    "pptx": [
+      "chart_embedded_xlsx",
+      "chartex_mc_wrapper",
+      "chartex_strdim_order",
+      "chartex_style_id",
+      "media_rel_integrity",
+      "smartart_drawing_part"
+    ],
+    "xlsx": [
+      "slicer_cache_definition_consistency",
+      "slicer_part_contract",
+      "workbook_slicer_cache_structure"
+    ]
+  },
+  "total_uncovered": 59,
+  "by_format": {
+    "docx": {
+      "tagged_rule_count": 38,
+      "mutation_proven_count": 13,
+      "uncovered_count": 25,
+      "uncovered_rules": [
+        "anchor_extent_positive",
+        "avlst_required",
+        "bodypr_required",
+        "chartex_funnel_no_parentlabel",
+        "chartex_strdim_order",
+        "chartex_waterfall_subtotals",
+        "cols_space_sane",
+        "comment_id_consistency",
+        "core_properties_namespace",
+        "defrpr_child_order",
+        "docpr_id_unique",
+        "font_embed_charset",
+        "font_table_integrity",
+        "hyperlink_structure",
+        "omml_math_structure",
+        "omml_mc_choice_a14_scope",
+        "omml_nested_omath",
+        "omml_no_nested_omath",
+        "part_name_case_unique",
+        "prsttxwarp_avlst",
+        "prsttxwarp_valid",
+        "sectpr_pgSz_required",
+        "sppr_child_order",
+        "style_basedon_valid",
+        "text_columns_range"
+      ],
+      "deferred_families": [
+        {
+          "family": "word_drawing_geometry",
+          "rules": [
+            "anchor_extent_positive",
+            "bodypr_required",
+            "docpr_id_unique",
+            "prsttxwarp_avlst",
+            "sppr_child_order"
+          ],
+          "reason": "mentor-preserve-only drawing shape fixtures are not yet promoted into the negative-mutation corpus; needs a dedicated P99 extension."
+        }
+      ]
+    },
+    "pptx": {
+      "tagged_rule_count": 36,
+      "mutation_proven_count": 14,
+      "uncovered_count": 22,
+      "uncovered_rules": [
+        "animation_no_grpid",
+        "avlst_required",
+        "background_fill_structure",
+        "chartex_funnel_no_parentlabel",
+        "chartex_waterfall_subtotals",
+        "defrpr_child_order",
+        "font_embed_charset",
+        "hyperlink_structure",
+        "master_layout_binding",
+        "namespace_chartex",
+        "notes_slide_structure",
+        "omml_math_structure",
+        "omml_mc_choice_a14_scope",
+        "omml_nested_omath",
+        "part_name_case_unique",
+        "prsttxwarp_valid",
+        "shape_id_overflow",
+        "slidemaster_element_order",
+        "slidemaster_rel_conflict",
+        "sptree_first_children",
+        "text_columns_range",
+        "timing_structure"
+      ],
+      "deferred_families": [
+        {
+          "family": "presentation_animation",
+          "rules": [
+            "animation_no_grpid",
+            "timing_structure"
+          ],
+          "reason": "animation timing graphs need realistic trigger/timing parts; assigned to a dedicated follow-up phase."
+        }
+      ]
+    },
+    "xlsx": {
+      "tagged_rule_count": 23,
+      "mutation_proven_count": 11,
+      "uncovered_count": 12,
+      "uncovered_rules": [
+        "avlst_required",
+        "cell_style_index_in_range",
+        "defrpr_child_order",
+        "font_embed_charset",
+        "hyperlink_structure",
+        "merge_cells_count_consistent",
+        "numfmt_id_resolvable",
+        "part_name_case_unique",
+        "prsttxwarp_valid",
+        "shared_string_index_in_range",
+        "text_columns_range",
+        "worksheet_rid_resolvable"
+      ],
+      "deferred_families": []
+    }
+  },
+  "budget_rule": "Each follow-up phase must reduce total_uncovered in this baseline or explicitly defer a family with a reason; no new broad compatibility claim may exceed what the mutation evidence supports."
+}

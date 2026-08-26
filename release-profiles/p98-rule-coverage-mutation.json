@@ -1,0 +1,137 @@
+{
+  "claim": "P98-A GATE: added mutation fixtures for four previously-uncovered high-risk complex rule families — ChartEx, SmartArt/diagram relationships, spreadsheet slicers, and embedded package/media relationships. 13 representative format-rule pairs (12 unique rules) now alarm fail-closed on targeted malformed packages across docx, pptx, and xlsx. This does not claim complete mutation coverage or full Office compatibility.",
+  "ok": true,
+  "command": "make p98-mutation-gate && python3 -m pytest tests/test_p98_mutation_gate.py",
+  "evidence": {
+    "summary": "release-evidence/p98/rule-coverage-mutation-gate-summary.json",
+    "manifest": "release-evidence/p98/manifest.json"
+  },
+  "expected_metrics": {
+    "mutation_case_count": 13,
+    "mutation_case_pass_count": 13,
+    "mutation_case_fail_count": 0,
+    "mutation_proven_format_rule_count": 13,
+    "mutation_proven_unique_rule_count": 12,
+    "formats": {
+      "docx": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0
+      },
+      "pptx": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      },
+      "xlsx": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0
+      }
+    }
+  },
+  "coverage_counts": {
+    "docx": {
+      "mutation_proven": 4,
+      "uncovered_in_p98": 34,
+      "not_applicable_to_format": 29
+    },
+    "pptx": {
+      "mutation_proven": 6,
+      "uncovered_in_p98": 30,
+      "not_applicable_to_format": 31
+    },
+    "xlsx": {
+      "mutation_proven": 3,
+      "uncovered_in_p98": 20,
+      "not_applicable_to_format": 44
+    }
+  },
+  "mutation_cases": [
+    {
+      "id": "pptx-chartex-mc-wrapper",
+      "format": "pptx",
+      "rule_id": "chartex_mc_wrapper",
+      "rule_family": "chartex"
+    },
+    {
+      "id": "pptx-chartex-style-id",
+      "format": "pptx",
+      "rule_id": "chartex_style_id",
+      "rule_family": "chartex"
+    },
+    {
+      "id": "pptx-chartex-strdim-order",
+      "format": "pptx",
+      "rule_id": "chartex_strdim_order",
+      "rule_family": "chartex"
+    },
+    {
+      "id": "pptx-smartart-drawing-part",
+      "format": "pptx",
+      "rule_id": "smartart_drawing_part",
+      "rule_family": "smartart_diagram_rel"
+    },
+    {
+      "id": "pptx-media-rel-integrity",
+      "format": "pptx",
+      "rule_id": "media_rel_integrity",
+      "rule_family": "embedded_media_rel"
+    },
+    {
+      "id": "pptx-chart-embedded-xlsx",
+      "format": "pptx",
+      "rule_id": "chart_embedded_xlsx",
+      "rule_family": "embedded_package_rel"
+    },
+    {
+      "id": "docx-chartex-style-id",
+      "format": "docx",
+      "rule_id": "chartex_style_id",
+      "rule_family": "chartex"
+    },
+    {
+      "id": "docx-hyperlink-rel-valid",
+      "format": "docx",
+      "rule_id": "hyperlink_rel_valid",
+      "rule_family": "embedded_media_rel"
+    },
+    {
+      "id": "docx-header-footer-rel",
+      "format": "docx",
+      "rule_id": "header_footer_rel_valid",
+      "rule_family": "embedded_media_rel"
+    },
+    {
+      "id": "docx-document-rels-required",
+      "format": "docx",
+      "rule_id": "document_rels_required",
+      "rule_family": "embedded_package_rel"
+    },
+    {
+      "id": "xlsx-workbook-slicer-cache",
+      "format": "xlsx",
+      "rule_id": "workbook_slicer_cache_structure",
+      "rule_family": "spreadsheet_slicer"
+    },
+    {
+      "id": "xlsx-slicer-part-contract",
+      "format": "xlsx",
+      "rule_id": "slicer_part_contract",
+      "rule_family": "spreadsheet_slicer"
+    },
+    {
+      "id": "xlsx-slicer-cache-consistency",
+      "format": "xlsx",
+      "rule_id": "slicer_cache_definition_consistency",
+      "rule_family": "spreadsheet_slicer"
+    }
+  ],
+  "boundaries": [
+    "P98-A proves representative alarm paths in four previously-uncovered complex families; it does not claim complete mutation coverage for every registered rule.",
+    "P98-A is separate from P98-B native Office live evidence; no Office repair-dialog claim is made from the mutation gate.",
+    "The coverage map counts rules proven by P98-A; P97-proven rules are treated as uncovered_in_p98 by this gate and tracked separately in the P98-C coverage-budget baseline.",
+    "ooxml-stack self commit is not stored in source_heads because evidence files change the commit hash."
+  ],
+  "next_gate": "P98-C turns the uncovered count into a tracked mutation-coverage budget so each follow-up phase either reduces the uncovered count or explicitly defers a rule family with a reason."
+}

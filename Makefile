@@ -1,4 +1,4 @@
-.PHONY: ledger dashboard dashboard-md evidence-hygiene repo-hygiene p97-mutation-gate campaign-schema-policy campaign-preflight campaign-gap-ledger campaign-ledgers campaign-target-queue campaign-remaining-buckets campaign-target-exclusion-audit campaign-high-yield-candidates campaign-no-semantic-discovery campaign-presence-context-candidates campaign-chunk-plan campaign-chunk-replay campaign-burndown campaign-unlock-plan campaign-close-error-diagnostics campaign-close-error-rerun campaign-close-error-exact-replay
+.PHONY: ledger dashboard dashboard-md evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget campaign-schema-policy campaign-preflight campaign-gap-ledger campaign-ledgers campaign-target-queue campaign-remaining-buckets campaign-target-exclusion-audit campaign-high-yield-candidates campaign-no-semantic-discovery campaign-presence-context-candidates campaign-chunk-plan campaign-chunk-replay campaign-burndown campaign-unlock-plan campaign-close-error-diagnostics campaign-close-error-rerun campaign-close-error-exact-replay
 
 LEDGER_OUT ?= artifacts/ooxml-element-capability-ledger.json
 
@@ -19,6 +19,12 @@ repo-hygiene: evidence-hygiene
 
 p97-mutation-gate:
 	@python3 scripts/run_p97_mutation_gate.py
+
+p98-mutation-gate:
+	@python3 scripts/run_p98_mutation_gate.py
+
+p98-coverage-budget:
+	@python3 scripts/build_p98_coverage_budget.py
 
 campaign-schema-policy:
 	@python3 scripts/former_preserve_only_schema_policy_audit.py --write $(if $(LIMIT),--limit $(LIMIT),)

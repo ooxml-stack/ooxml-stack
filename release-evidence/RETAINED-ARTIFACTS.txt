@@ -3,6 +3,12 @@
 # Keep this list narrow. Add only failure reproductions, release gate bundles,
 # or pinned golden samples that must remain in git/LFS.
 #
+# P98-A mutation fixtures (scripts/p98_mutation_cases.py) are intentionally
+# NOT retained as Office packages: the gate writes control/mutant docx/pptx/xlsx
+# into a throwaway temp dir and persists only JSON evidence under
+# release-evidence/p98/. No Office package is added under release-evidence by
+# P98, so no allowlist entry is required here for P98.
+#
 # Pinned samples from the p76-p97 compatibility contract evidence campaign
 # (publish commit 7ef94ef0). Per AGENTS.md: only failure, release, or pinned
 # samples may be allowlisted; keep pass evidence as JSON/JSONL with hashes.
