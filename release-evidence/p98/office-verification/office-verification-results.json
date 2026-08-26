@@ -1,0 +1,43 @@
+{
+  "schema_version": "p98-office-verification-v1",
+  "generated_at_utc": "2026-08-26T13:53:22.843208+00:00",
+  "claim": "Best-effort native Office open check of representative generated outputs on macOS. A pass here is evidence surfaced through desktop Office, not a full native-Office compatibility claim. A blocked_automation_permission result is an environment blocker, not a pass or a repair-dialog result.",
+  "check_count": 4,
+  "status_counts": {
+    "blocked_automation_permission": 4
+  },
+  "results": [
+    {
+      "file": "python-docx/playground/demo.docx",
+      "app": "Microsoft Word",
+      "ext": ".docx",
+      "status": "blocked_automation_permission",
+      "loaded": false,
+      "detail": "macOS Automation consent not granted (-10004); cannot drive Office"
+    },
+    {
+      "file": "python-docx/playground/demo_smartart_basic.docx",
+      "app": "Microsoft Word",
+      "ext": ".docx",
+      "status": "blocked_automation_permission",
+      "loaded": false,
+      "detail": "macOS Automation consent not granted (-10004); cannot drive Office"
+    },
+    {
+      "file": "python-pptx/playground/demo.pptx",
+      "app": "Microsoft PowerPoint",
+      "ext": ".pptx",
+      "status": "blocked_automation_permission",
+      "loaded": false,
+      "detail": "macOS Automation consent not granted (-10004); cannot drive Office"
+    },
+    {
+      "file": "python-xlsx/tests/fixtures/sample.xlsx",
+      "app": "Microsoft Excel",
+      "ext": ".xlsx",
+      "status": "blocked_automation_permission",
+      "loaded": false,
+      "detail": "macOS Automation consent not granted (-10004); cannot drive Office"
+    }
+  ]
+}
