@@ -3,10 +3,10 @@
   "ok": false,
   "env": {
     "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
-    "OOXML_DOCX_COMPAT_JSON": "/tmp/p95b/results_docx.json",
-    "OOXML_PPTX_COMPAT_JSON": "/tmp/p95/results_pptx.json",
-    "OOXML_DOCX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/docx",
-    "OOXML_PPTX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/pptx"
+    "OOXML_DOCX_COMPAT_JSON": "<tmp>/p95b/results_docx.json",
+    "OOXML_PPTX_COMPAT_JSON": "<tmp>/p95/results_pptx.json",
+    "OOXML_DOCX_SOURCE_DIR": "<home>/Downloads/test_docs/docx",
+    "OOXML_PPTX_SOURCE_DIR": "<home>/Downloads/test_docs/pptx"
   },
   "expected_metrics": {
     "docx": {
@@ -84,5 +84,5 @@
     }
   ],
   "next_gate": "P96 requires docx compliance_introduced == 0 with docx-casing-duplicate-rels-part resolved, the open-failure triage is now recorded.",
-  "notes": "Compliance counts only findings absent from the source package. The docx figures above are the post-fix re-run (/tmp/p95b); the first run at 103d288's parent read compliance_introduced 2. pptx was not re-run — its single change is in the shared OPC reader and its introduced count was already 0."
+  "notes": "Compliance counts only findings absent from the source package. The docx figures above are the post-fix re-run (<tmp>/p95b); the first run at 103d288's parent read compliance_introduced 2. pptx was not re-run — its single change is in the shared OPC reader and its introduced count was already 0."
 }

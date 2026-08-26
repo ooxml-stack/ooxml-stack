@@ -3,8 +3,8 @@
   "ok": true,
   "env": {
     "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
-    "OOXML_XLSX_COMPAT_JSON": "/tmp/p94/results_xlsx.json",
-    "OOXML_XLSX_SOURCE_DIR": "/Users/touchskyer/Downloads/test_docs/xlsx",
+    "OOXML_XLSX_COMPAT_JSON": "<tmp>/p94/results_xlsx.json",
+    "OOXML_XLSX_SOURCE_DIR": "<home>/Downloads/test_docs/xlsx",
     "OOXML_XLSX_RUNNER": "../ooxml-test-framework/tools/compat-test/run_xlsx.py"
   },
   "expected_metrics": {

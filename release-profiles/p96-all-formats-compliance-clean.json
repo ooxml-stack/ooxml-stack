@@ -3,9 +3,9 @@
   "ok": true,
   "env": {
     "OOXML_NATIVE_CORPUS_DIR": "../ooxml-native-corpus",
-    "OOXML_DOCX_COMPAT_JSON": "/tmp/p96/results_docx.json",
-    "OOXML_PPTX_COMPAT_JSON": "/tmp/p96/results_pptx.json",
-    "OOXML_XLSX_COMPAT_JSON": "/tmp/p94/results_xlsx.json"
+    "OOXML_DOCX_COMPAT_JSON": "<tmp>/p96/results_docx.json",
+    "OOXML_PPTX_COMPAT_JSON": "<tmp>/p96/results_pptx.json",
+    "OOXML_XLSX_COMPAT_JSON": "<tmp>/p94/results_xlsx.json"
   },
   "expected_metrics": {
     "docx": {
