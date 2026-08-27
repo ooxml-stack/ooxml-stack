@@ -1,9 +1,0 @@
-{
-  "claim_boundary": "100% compatibility under the P33 measured DOCX drawing active-editing v1 denominator.",
-  "forbidden_phrase_count": 7,
-  "public_claim_beyond_measured_cells": 0,
-  "raw_contextual_hits": 156,
-  "schema_version": "p33-public-claim-boundary-scan-v1",
-  "unqualified_forbidden_hits": 0,
-  "unqualified_hits": []
-}
