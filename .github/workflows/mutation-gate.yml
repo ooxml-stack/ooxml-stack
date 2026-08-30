@@ -1,0 +1,53 @@
+name: Mutation Gate
+
+on:
+  workflow_call:
+    inputs:
+      format:
+        description: ooxml format to gate (pptx | docx | xlsx)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  mutation-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install workflow Python
+        run: uv python install "${UV_PYTHON:-3.12}"
+
+      - name: Configure private dependency access
+        uses: ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@main
+        with:
+          stack-token: ${{ secrets.OOXML_STACK_TOKEN }}
+          core-deploy-key: ${{ secrets.OOXML_CORE_DEPLOY_KEY }}
+          spec-deploy-key: ${{ secrets.OOXML_SPEC_DEPLOY_KEY }}
+          test-framework-deploy-key: ${{ secrets.OOXML_TEST_FRAMEWORK_DEPLOY_KEY }}
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra mutation-gate
+
+      - name: Clone ooxml-stack
+        run: git clone --depth 1 https://github.com/ooxml-stack/ooxml-stack.git ../ooxml-stack
+
+      - name: Run mutation gate
+        run: uv run python ../ooxml-stack/scripts/ci_mutation_gate.py "${{ inputs.format }}"
+
+      - name: Mutation gate summary
+        if: always()
+        run: |
+          {
+            echo "## Mutation Gate"
+            echo ""
+            echo "| Format | Status |"
+            echo "|--------|--------|"
+            echo "| ${{ inputs.format }} | \`${{ job.status }}\` |"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"

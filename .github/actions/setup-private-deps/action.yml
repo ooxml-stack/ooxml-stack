@@ -1,0 +1,70 @@
+name: Configure private dependency access
+description: >-
+  Authenticates git against ooxml-stack private repositories. Prefers the
+  org token; falls back to per-repo deploy keys when no token is provided.
+inputs:
+  stack-token:
+    description: OOXML_STACK_TOKEN with read access to ooxml-stack repos
+    required: false
+    default: ''
+  core-deploy-key:
+    description: Deploy key for ooxml-stack/ooxml-core
+    required: false
+    default: ''
+  spec-deploy-key:
+    description: Deploy key for ooxml-stack/ooxml-spec
+    required: false
+    default: ''
+  test-framework-deploy-key:
+    description: Deploy key for ooxml-stack/ooxml-test-framework
+    required: false
+    default: ''
+runs:
+  using: composite
+  steps:
+    - name: Configure private dependency access
+      shell: bash
+      env:
+        OOXML_STACK_TOKEN: ${{ inputs.stack-token }}
+        OOXML_CORE_DEPLOY_KEY: ${{ inputs.core-deploy-key }}
+        OOXML_SPEC_DEPLOY_KEY: ${{ inputs.spec-deploy-key }}
+        OOXML_TEST_FRAMEWORK_DEPLOY_KEY: ${{ inputs.test-framework-deploy-key }}
+      run: |
+        if [ -n "$OOXML_STACK_TOKEN" ]; then
+          git config --local --unset-all http.https://github.com/.extraheader || :
+          git config --global --unset-all http.https://github.com/.extraheader || :
+          AUTH_HEADER="$(printf 'x-access-token:%s' "$OOXML_STACK_TOKEN" | base64 | tr -d '\n')"
+          git config --global http.https://github.com/.extraheader "AUTHORIZATION: basic $AUTH_HEADER"
+        elif [ -n "$OOXML_CORE_DEPLOY_KEY" ]; then
+          mkdir -p ~/.ssh
+          printf '%s\n' "$OOXML_CORE_DEPLOY_KEY" > ~/.ssh/ooxml_core
+          printf '%s\n' "$OOXML_SPEC_DEPLOY_KEY" > ~/.ssh/ooxml_spec
+          printf '%s\n' "$OOXML_TEST_FRAMEWORK_DEPLOY_KEY" > ~/.ssh/ooxml_test_framework
+          chmod 600 ~/.ssh/ooxml_core ~/.ssh/ooxml_spec ~/.ssh/ooxml_test_framework
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          cat >> ~/.ssh/config <<'EOF'
+        Host github-ooxml-core
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/ooxml_core
+          IdentitiesOnly yes
+
+        Host github-ooxml-spec
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/ooxml_spec
+          IdentitiesOnly yes
+
+        Host github-ooxml-test-framework
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/ooxml_test_framework
+          IdentitiesOnly yes
+        EOF
+          git config --global url."ssh://git@github-ooxml-core/ooxml-stack/ooxml-core".insteadOf "https://github.com/ooxml-stack/ooxml-core"
+          git config --global url."ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec".insteadOf "https://github.com/ooxml-stack/ooxml-spec"
+          git config --global url."ssh://git@github-ooxml-test-framework/ooxml-stack/ooxml-test-framework".insteadOf "https://github.com/ooxml-stack/ooxml-test-framework"
+        else
+          echo "no credentials provided: set OOXML_STACK_TOKEN or deploy keys" >&2
+          exit 1
+        fi
