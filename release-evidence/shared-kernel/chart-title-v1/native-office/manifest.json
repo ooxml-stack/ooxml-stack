@@ -1,0 +1,27 @@
+{
+  "schema_version": "shared-chart-title-native-office-v1",
+  "operation_id": "chart.title.set_text",
+  "gate_pass": true,
+  "artifacts": [
+    {
+      "path": "powerpoint-aggregate.json",
+      "sha256": "ba27aaa972bd2b83acf558f9d06f41b8a3a8fb705404d97928bbed1fbe07d8c2",
+      "size_bytes": 1222
+    },
+    {
+      "path": "powerpoint.jsonl",
+      "sha256": "76127103d233702cddccf80c152832d6e0ac74d1359459a242bd9653edb4299a",
+      "size_bytes": 1900
+    },
+    {
+      "path": "word-aggregate.json",
+      "sha256": "07347af46d2715156292e96c659b07a755cfa9c2f791982ca2d52b1e993e8188",
+      "size_bytes": 1204
+    },
+    {
+      "path": "word.jsonl",
+      "sha256": "d2e42986664bedb24b942fc8a9844fe7d86c1244238b6f92b17a126e4492434f",
+      "size_bytes": 915
+    }
+  ]
+}
