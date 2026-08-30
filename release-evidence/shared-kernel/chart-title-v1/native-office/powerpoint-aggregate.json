@@ -1,0 +1,42 @@
+{
+  "content_preservation": {
+    "missing_media_count": 0,
+    "missing_text_count": 0,
+    "status": "passed",
+    "unexplained_drift_count": 0
+  },
+  "finished_at": "2026-08-30T01:38:21Z",
+  "gate_pass": true,
+  "gate_size": "shared-chart-title-v1",
+  "inputs": [
+    {
+      "bytes": 36183,
+      "file_exists": true,
+      "path": "/Users/touchskyer/Library/Containers/com.microsoft.Powerpoint/Data/Documents/shared-chart-title-after.pptx",
+      "sha256": "16e8ef43d0b716e038348f5133dbca0496408bc26cb033e8ac7ed419d8d9b16a"
+    }
+  ],
+  "provider": "powerpoint",
+  "provider_version": "16.112.2",
+  "results": [
+    {
+      "file": "/Users/touchskyer/Library/Containers/com.microsoft.Powerpoint/Data/Documents/shared-chart-title-after.pptx",
+      "stage": "open_save_preserve",
+      "status": "passed"
+    }
+  ],
+  "runner_commit": "25edfa1b503c797c72a22ec4cbaa47f07fc38358",
+  "runner_version": "ooxml-native-office-harness/1",
+  "runtime_commit": "25edfa1b503c797c72a22ec4cbaa47f07fc38358",
+  "started_at": "2026-08-30T01:38:20Z",
+  "status": "passed",
+  "summary": {
+    "completed": 1,
+    "crashes": 0,
+    "excluded": 0,
+    "failed": 0,
+    "repair_dialogs": 0,
+    "supported_valid": 1,
+    "total": 1
+  }
+}
