@@ -1,0 +1,12 @@
+{
+  "schema_version": "p33-evidence-restore-v1",
+  "source_commit": "8a0b837e4b4f91c2b562d449160380b7614fb3e7",
+  "artifacts": [
+    {
+      "path": "release-evidence/p33/docx-drawing-active-edit-gate.json",
+      "role": "p33_active_edit_gate",
+      "sha256": "4af92a1717704fcd0df672679114d2dca23dd42905f9eb45219f39aa61c819ba",
+      "size_bytes": 156847
+    }
+  ]
+}
