@@ -1,0 +1,42 @@
+{
+  "content_preservation": {
+    "missing_media_count": 0,
+    "missing_text_count": 0,
+    "status": "passed",
+    "unexplained_drift_count": 0
+  },
+  "finished_at": "2026-08-30T01:38:12Z",
+  "gate_pass": true,
+  "gate_size": "shared-chart-title-v1",
+  "inputs": [
+    {
+      "bytes": 44466,
+      "file_exists": true,
+      "path": "/Users/touchskyer/Library/Containers/com.microsoft.Word/Data/Documents/shared-chart-title-after.docx",
+      "sha256": "987a8d9d845a15d7cad56a3697010e41e9f893e77cd4fa3718ae164deef44219"
+    }
+  ],
+  "provider": "word",
+  "provider_version": "16.112.2",
+  "results": [
+    {
+      "file": "/Users/touchskyer/Library/Containers/com.microsoft.Word/Data/Documents/shared-chart-title-after.docx",
+      "stage": "open_save_preserve",
+      "status": "passed"
+    }
+  ],
+  "runner_commit": "25edfa1b503c797c72a22ec4cbaa47f07fc38358",
+  "runner_version": "ooxml-native-office-harness/1",
+  "runtime_commit": "25edfa1b503c797c72a22ec4cbaa47f07fc38358",
+  "started_at": "2026-08-30T01:38:12Z",
+  "status": "passed",
+  "summary": {
+    "completed": 1,
+    "crashes": 0,
+    "excluded": 0,
+    "failed": 0,
+    "repair_dialogs": 0,
+    "supported_valid": 1,
+    "total": 1
+  }
+}
