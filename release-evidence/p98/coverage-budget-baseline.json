@@ -1,6 +1,6 @@
 {
   "schema_version": "p98-coverage-budget-v1",
-  "generated_at_utc": "2026-08-26T15:00:44.794004+00:00",
+  "generated_at_utc": "2026-09-13T15:08:17.607179+00:00",
   "description": "Tracked mutation-coverage budget. The P97 phase documented 76 uncovered rules (docx 31, pptx 29, xlsx 16). P98-A proved 12 new format-rule pairs. This baseline is recomputed against the live registry so follow-ups can run it; the counts below are registry-current, not a restatement of the P97 historical number.",
   "p97_historical_baseline": {
     "docx": 31,
@@ -29,15 +29,14 @@
       "workbook_slicer_cache_structure"
     ]
   },
-  "total_uncovered": 59,
+  "total_uncovered": 69,
   "by_format": {
     "docx": {
-      "tagged_rule_count": 38,
+      "tagged_rule_count": 40,
       "mutation_proven_count": 13,
-      "uncovered_count": 25,
+      "uncovered_count": 27,
       "uncovered_rules": [
         "anchor_extent_positive",
-        "avlst_required",
         "bodypr_required",
         "chartex_funnel_no_parentlabel",
         "chartex_strdim_order",
@@ -50,6 +49,7 @@
         "font_embed_charset",
         "font_table_integrity",
         "hyperlink_structure",
+        "mce_requires_prefix_in_scope",
         "omml_math_structure",
         "omml_mc_choice_a14_scope",
         "omml_nested_omath",
@@ -57,6 +57,8 @@
         "part_name_case_unique",
         "prsttxwarp_avlst",
         "prsttxwarp_valid",
+        "relationship_part_closure",
+        "relationship_target_uri",
         "sectpr_pgSz_required",
         "sppr_child_order",
         "style_basedon_valid",
@@ -77,19 +79,23 @@
       ]
     },
     "pptx": {
-      "tagged_rule_count": 36,
+      "tagged_rule_count": 42,
       "mutation_proven_count": 14,
-      "uncovered_count": 22,
+      "uncovered_count": 28,
       "uncovered_rules": [
         "animation_no_grpid",
-        "avlst_required",
         "background_fill_structure",
         "chartex_funnel_no_parentlabel",
         "chartex_waterfall_subtotals",
+        "cnvpr_id_positive",
         "defrpr_child_order",
+        "extprops_digsig_hlinks",
         "font_embed_charset",
         "hyperlink_structure",
         "master_layout_binding",
+        "mce_requires_prefix_in_scope",
+        "media_content_types",
+        "modify_verifier",
         "namespace_chartex",
         "notes_slide_structure",
         "omml_math_structure",
@@ -97,6 +103,8 @@
         "omml_nested_omath",
         "part_name_case_unique",
         "prsttxwarp_valid",
+        "relationship_part_closure",
+        "relationship_target_uri",
         "shape_id_overflow",
         "slidemaster_element_order",
         "slidemaster_rel_conflict",
@@ -116,19 +124,21 @@
       ]
     },
     "xlsx": {
-      "tagged_rule_count": 23,
+      "tagged_rule_count": 25,
       "mutation_proven_count": 11,
-      "uncovered_count": 12,
+      "uncovered_count": 14,
       "uncovered_rules": [
-        "avlst_required",
         "cell_style_index_in_range",
         "defrpr_child_order",
         "font_embed_charset",
         "hyperlink_structure",
+        "mce_requires_prefix_in_scope",
         "merge_cells_count_consistent",
         "numfmt_id_resolvable",
         "part_name_case_unique",
         "prsttxwarp_valid",
+        "relationship_part_closure",
+        "relationship_target_uri",
         "shared_string_index_in_range",
         "text_columns_range",
         "worksheet_rid_resolvable"

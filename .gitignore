@@ -1,6 +1,7 @@
 .DS_Store
 __pycache__/
 .pytest_cache/
+ci/reports/
 artifacts/
 *.pyc
 *.pyo
@@ -8,6 +9,7 @@ artifacts/
 build/
 dist/
 .venv/
+.venv-ecosystem-inventory/
 *.log
 release-evidence/p72/former-preserve-only-object-rows.jsonl
 release-evidence/p73/stable-handle-locate-rows.jsonl

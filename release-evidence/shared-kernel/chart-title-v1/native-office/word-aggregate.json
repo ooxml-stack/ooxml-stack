@@ -12,7 +12,7 @@
     {
       "bytes": 44466,
       "file_exists": true,
-      "path": "/Users/touchskyer/Library/Containers/com.microsoft.Word/Data/Documents/shared-chart-title-after.docx",
+      "path": "<local-path>.docx",
       "sha256": "987a8d9d845a15d7cad56a3697010e41e9f893e77cd4fa3718ae164deef44219"
     }
   ],
@@ -20,7 +20,7 @@
   "provider_version": "16.112.2",
   "results": [
     {
-      "file": "/Users/touchskyer/Library/Containers/com.microsoft.Word/Data/Documents/shared-chart-title-after.docx",
+      "file": "<local-path>.docx",
       "stage": "open_save_preserve",
       "status": "passed"
     }

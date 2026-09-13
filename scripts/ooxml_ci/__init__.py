@@ -1,0 +1,1 @@
+"""Ecosystem inventory tooling for the ooxml-stack coordination repo."""

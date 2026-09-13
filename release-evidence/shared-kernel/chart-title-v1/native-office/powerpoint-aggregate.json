@@ -12,7 +12,7 @@
     {
       "bytes": 36183,
       "file_exists": true,
-      "path": "/Users/touchskyer/Library/Containers/com.microsoft.Powerpoint/Data/Documents/shared-chart-title-after.pptx",
+      "path": "<local-path>.pptx",
       "sha256": "16e8ef43d0b716e038348f5133dbca0496408bc26cb033e8ac7ed419d8d9b16a"
     }
   ],
@@ -20,7 +20,7 @@
   "provider_version": "16.112.2",
   "results": [
     {
-      "file": "/Users/touchskyer/Library/Containers/com.microsoft.Powerpoint/Data/Documents/shared-chart-title-after.pptx",
+      "file": "<local-path>.pptx",
       "stage": "open_save_preserve",
       "status": "passed"
     }
