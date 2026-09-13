@@ -120,10 +120,11 @@ def _clone_refs(node, where: str, errors: list) -> list[dict[str, Any]]:
     base = yaml_nodes.line_of(node)
     literal = node.style == "|"
     shell = bashwords.commands(node.value)
+    run_where = f"{where} (line {base})"
     for problem in shell.problems:
-        errors.append(_error(where, problem))
+        errors.append(_error(run_where, problem))
     if shell.unreadable:
-        errors.append(_error(where, "the run body could not be read as shell without guessing"))
+        errors.append(_error(run_where, "the run body could not be read as shell without guessing"))
     out: list[dict[str, Any]] = []
     for offset, tokens in shell.commands:
         target = bashwords.clone_target(tokens)

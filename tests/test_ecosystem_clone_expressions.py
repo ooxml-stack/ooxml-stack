@@ -34,6 +34,7 @@ from ecosystem_workflows_expressions import (
     WORKFLOW_EXPR_UNREADABLE,
     WORKFLOW_EXPR_VAR_REPO,
     WORKFLOW_EXPR_VAR_REPO_THEN_STATIC,
+    docx_workflow,
 )
 from scripts.ooxml_ci import cli
 
@@ -197,6 +198,7 @@ def test_unreadable_shell_is_reported_instead_of_read_as_no_dependency(tmp_path,
     assert _clones(plan) == []
     assert len(_unsupported(plan)) == 1
     assert "could not be read as shell" in _unsupported(plan)[0]["detail"]
+    assert _unsupported(plan)[0]["where"] == f"{WORKFLOW_RELPATH}:jobs.ci step[0] (line 7)"
     assert cli.main(["--check", "--root", str(root)]) == 1
 
 
@@ -230,4 +232,40 @@ def test_a_placeholder_collision_does_not_break_a_real_expression(tmp_path, caps
     assert len(reported) == 1
     assert "${{ inputs.repo }}" in reported[0]["detail"]
     assert "ooxml_actions_expr" not in reported[0]["detail"]
+    assert cli.main(["--check", "--root", str(root)]) == 1
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        f"git clone $'{CORPUS}'",
+        f"git clone --branch $'main' {CORPUS}",
+        "git clone https://github.com/ooxml-stack/$'ooxml-native-corpus'.git",
+        rf"git clone --branch $'ma\x69n' {CORPUS}",
+    ],
+    ids=["target", "option", "concatenated-target", "escaped-option"],
+)
+def test_ansi_c_arguments_preserve_the_repository(tmp_path, capsys, monkeypatch, body):
+    root = _prepare(tmp_path, monkeypatch, docx_workflow(body))
+    _assert_one_corpus_edge(_written(root, capsys))
+    _assert_clean_strict(root, capsys)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        r"git clone $'https://github.com/ooxml-stack/ooxml-native-\x63orpus.git'",
+        r"git clone https://github.com/ooxml-stack/$'ooxml-native-\x63orpus'.git",
+    ],
+    ids=["target", "concatenated-target"],
+)
+def test_unreadable_ansi_c_targets_fail_without_guessing(tmp_path, capsys, monkeypatch, body):
+    root = _prepare(tmp_path, monkeypatch, docx_workflow(body))
+    plan = _written(root, capsys)
+    assert _clones(plan) == []
+    assert not [d for d in plan["diagnostics"] if d["code"] == "policy_node_mismatch"]
+    assert len(_unsupported(plan)) == 1
+    assert _unsupported(plan)[0]["level"] == "error"
+    assert "\\x63" in _unsupported(plan)[0]["detail"]
+    assert "(line 8)" in _unsupported(plan)[0]["where"]
     assert cli.main(["--check", "--root", str(root)]) == 1
