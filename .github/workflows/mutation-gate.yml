@@ -24,7 +24,7 @@ jobs:
         run: uv python install "${UV_PYTHON:-3.12}"
 
       - name: Configure private dependency access
-        uses: ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@main
+        uses: ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@566659e9b81e2c46196e0e8c38923896c2f363f5
         with:
           stack-token: ${{ secrets.OOXML_STACK_TOKEN }}
           core-deploy-key: ${{ secrets.OOXML_CORE_DEPLOY_KEY }}
