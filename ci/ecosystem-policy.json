@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "workspace": {
+    "root_hint": "..",
+    "checkout_pattern": "<root>/<key>"
+  },
+  "nodes": [
+    { "key": "ooxml-spec", "role": "release", "layer": "spec", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    { "key": "ooxml-test-framework", "role": "release", "layer": "test", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    { "key": "ooxml-core", "role": "release", "layer": "core", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    { "key": "ooxml-stubs", "role": "release", "layer": "stubs", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    { "key": "python-docx", "role": "release", "layer": "app", "cadence": "per-commit", "visibility": "public", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    { "key": "python-pptx", "role": "release", "layer": "app", "cadence": "per-commit", "visibility": "public", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    { "key": "python-xlsx", "role": "release", "layer": "app", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
+    {
+      "key": "ooxml-operation-engine",
+      "role": "release",
+      "layer": "engine",
+      "cadence": "per-commit",
+      "visibility": "private",
+      "release_participation": true,
+      "inputs": ["pyproject.toml", "uv.lock"]
+    },
+    {
+      "key": "ooxml-apps",
+      "role": "release",
+      "layer": "consumer",
+      "cadence": "per-commit",
+      "visibility": "private",
+      "release_participation": false,
+      "inputs": ["pyproject.toml", "uv.lock"],
+      "note": "Node and impact graph are mandatory; release participation is a policy choice, not a derive-from-list fact."
+    },
+    {
+      "key": "ooxml-native-corpus",
+      "role": "data",
+      "layer": "corpus",
+      "cadence": "release-only",
+      "visibility": "private",
+      "release_participation": false,
+      "inputs": [],
+      "note": "Data node: its declared release tag and the configured commit are recorded separately. Not a Python package, so it declares no pyproject/uv.lock."
+    },
+    {
+      "key": "ooxml-stack",
+      "role": "meta",
+      "layer": "release",
+      "cadence": "per-commit",
+      "visibility": "public",
+      "release_participation": false,
+      "inputs": [],
+      "note": "Host of the plan; excluded from its own inputs so the plan cannot reference its own HEAD. Not a Python package."
+    }
+  ],
+  "full_bindings": {
+    "ooxml-spec": { "workflow": ".github/workflows/ci.yml", "jobs": ["test"] },
+    "ooxml-test-framework": { "workflow": ".github/workflows/ci.yml", "jobs": ["test"] },
+    "ooxml-core": { "workflow": ".github/workflows/ci.yml", "jobs": ["test"] },
+    "ooxml-stubs": { "workflow": ".github/workflows/ci.yml", "jobs": ["test"] },
+    "python-pptx": { "workflow": ".github/workflows/ci.yml", "jobs": ["build"] },
+    "python-docx": { "workflow": ".github/workflows/ci.yml", "jobs": ["test"] },
+    "python-xlsx": { "workflow": ".github/workflows/ci.yml", "jobs": ["validate"] },
+    "ooxml-native-corpus": { "workflow": ".github/workflows/corpus-inspection.yml", "jobs": ["inspect"] },
+    "ooxml-stack": { "workflow": ".github/workflows/evidence-retention.yml", "jobs": ["evidence-retention"] },
+    "ooxml-operation-engine": { "workflow": ".github/workflows/ci.yml", "jobs": ["check"] },
+    "ooxml-apps": { "workflow": ".github/workflows/ci.yml", "jobs": ["backend", "frontend"] }
+  },
+  "edge_sources": [
+    {
+      "kind": "runtime",
+      "from": "pyproject",
+      "section": "project.dependencies",
+      "note": "Declared runtime git dependency plus its ref (tag/rev/SHA or none)."
+    },
+    {
+      "kind": "dev",
+      "from": "pyproject",
+      "section": "dependency-groups",
+      "note": "PEP 735 groups; the pinned version comes from [tool.uv.sources]."
+    },
+    {
+      "kind": "dev",
+      "from": "pyproject",
+      "section": "project.optional-dependencies",
+      "note": "Extras such as mutation-gate."
+    },
+    {
+      "kind": "codegen",
+      "from": "pyproject",
+      "section": "project.optional-dependencies",
+      "group": "codegen",
+      "note": "Only the codegen extra; used by the partial release-order graph."
+    },
+    {
+      "kind": "ci",
+      "from": "environment_json",
+      "file": "ooxml-operation-engine/ci/environment.json",
+      "field": "repositories",
+      "purpose": "engine_ci_snapshot",
+      "note": "SHA-pinned snapshot of the repositories the engine CI runs against."
+    },
+    {
+      "kind": "data",
+      "from": "environment_json",
+      "file": "ooxml-operation-engine/ci/environment.json",
+      "field": "corpus.release_tag",
+      "purpose": "native_corpus_snapshot",
+      "pinned_commit_field": "repositories.ooxml-native-corpus",
+      "note": "Declared data release tag and the configured commit are recorded separately and never compared for equality."
+    }
+  ],
+  "edge_kinds_without_source": [
+    {
+      "kind": "release",
+      "note": "Not derived in v1: no file declares release-order edges yet. The partial order graph uses runtime+codegen only."
+    }
+  ],
+  "expected_sha_sources": [
+    { "source": "uv.lock", "note": "git dependency fragments carry the expected commit: <url>?tag=...&lt;sha&gt;." },
+    { "source": "environment_json", "file": "ooxml-operation-engine/ci/environment.json", "field": "repositories" },
+    { "source": "policy.pins", "note": "Explicit pins declared here override nothing; they only add expectations." }
+  ],
+  "pins": [],
+  "require_uniform": [
+    {
+      "upstream": "ooxml-core",
+      "role": "runtime",
+      "reason": "Every consumer pins the core framework directly; skew here changes semantics per repository."
+    },
+    {
+      "upstream": "ooxml-spec",
+      "role": "runtime",
+      "reason": "Spec version defines the compatibility surface."
+    }
+  ],
+  "exceptions": [
+    {
+      "upstream": "ooxml-core",
+      "role": "runtime",
+      "repos": ["python-xlsx"],
+      "reason": "python-xlsx is still on the v0.3.x line; tracked as a deliberate exception until it migrates."
+    },
+    {
+      "upstream": "ooxml-test-framework",
+      "role": "dev",
+      "repos": ["ooxml-operation-engine"],
+      "reason": "The engine follows a branch pin for its in-flight table-grid campaign."
+    }
+  ],
+  "workflows": {
+    "scan_global_uses": true,
+    "uses_owner": "ooxml-stack"
+  },
+  "scan": {
+    "ref_timeout_seconds": 25,
+    "allow_fetch_sha": false
+  }
+}
