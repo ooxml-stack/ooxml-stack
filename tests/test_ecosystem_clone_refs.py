@@ -173,3 +173,12 @@ def test_a_real_separator_still_starts_a_new_command(body):
     assert [ref["url"] for ref in workflows.parse_clone_refs(_run(body))] == [
         "https://github.com/ooxml-stack/ooxml-core.git"
     ]
+
+
+@pytest.mark.parametrize("indicator", ["|-", ">-"])
+@pytest.mark.parametrize("body", ["if true; then\n  echo unfinished", "echo ${{ inputs.ref"])
+def test_unreadable_run_reports_its_yaml_node_line(indicator, body):
+    parsed = workflows.parse_workflow(_run(body).replace(b"run: |", f"run: {indicator}".encode()))
+    assert parsed["errors"]
+    assert all(error["code"] == "unsupported_workflow" for error in parsed["errors"])
+    assert all(error["where"] == "jobs.j step[0] (line 4)" for error in parsed["errors"])

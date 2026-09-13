@@ -34,7 +34,7 @@ _PARSER = Parser(Language(tree_sitter_bash.language()))
 # a leading ``VAR=value``, a redirection -- is not part of the command line.
 _ARGUMENT = frozenset(
     {
-        "word", "number", "raw_string", "string", "concatenation", "simple_expansion",
+        "word", "number", "raw_string", "ansi_c_string", "string", "concatenation", "simple_expansion",
         "expansion", "command_substitution", "arithmetic_expansion", "process_substitution",
     }
 )
@@ -210,7 +210,11 @@ def _word_text(node, source: bytes, marker: re.Pattern[str]) -> tuple[str, bool]
         parts = [_word_text(child, source, marker) for child in node.named_children]
         return "".join(text for text, _ in parts), any(dynamic for _, dynamic in parts)
     raw = source[node.start_byte : node.end_byte].decode("utf-8")
-    if node.type == "raw_string":
+    if node.type == "ansi_c_string":
+        text = raw[2:-1]
+        if "\\" in text:
+            return raw, True  # keep the argument without guessing Bash escape semantics
+    elif node.type == "raw_string":
         text = raw[1:-1]
     elif node.type == "string":
         text = _decode_double(raw[1:-1])
