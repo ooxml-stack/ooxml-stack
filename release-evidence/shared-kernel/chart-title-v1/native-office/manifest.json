@@ -5,23 +5,23 @@
   "artifacts": [
     {
       "path": "powerpoint-aggregate.json",
-      "sha256": "ba27aaa972bd2b83acf558f9d06f41b8a3a8fb705404d97928bbed1fbe07d8c2",
-      "size_bytes": 1222
+      "sha256": "5f44c8299d1f7220924444db64846dbf95b26fc7238deac5eea80e61e0467a06",
+      "size_bytes": 1044
     },
     {
       "path": "powerpoint.jsonl",
-      "sha256": "76127103d233702cddccf80c152832d6e0ac74d1359459a242bd9653edb4299a",
-      "size_bytes": 1900
+      "sha256": "013fe2e11c7a776e36f08fde5b2604dd357892998c986ed6e58b2d3b8351fb21",
+      "size_bytes": 1811
     },
     {
       "path": "word-aggregate.json",
-      "sha256": "07347af46d2715156292e96c659b07a755cfa9c2f791982ca2d52b1e993e8188",
-      "size_bytes": 1204
+      "sha256": "70fedfc3396afb878f98ef9625b4503cbb0e4793ee95e093b0184d1ea150926c",
+      "size_bytes": 1038
     },
     {
       "path": "word.jsonl",
-      "sha256": "d2e42986664bedb24b942fc8a9844fe7d86c1244238b6f92b17a126e4492434f",
-      "size_bytes": 915
+      "sha256": "8c24ee2fabe8ac55d973264a241c980342293280857fe4a224bb4579bc538052",
+      "size_bytes": 832
     }
   ]
 }
