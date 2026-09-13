@@ -1,0 +1,2993 @@
+{
+  "contract": "Deterministic function of the selected input file paths and their bytes, read from the working tree (uncommitted edits included). Contains no HEAD, worktree, clock, network or resolved-ref fact; those live in the scan report.",
+  "diagnostic_counts": {
+    "warning:version_skew": 2
+  },
+  "diagnostics": [
+    {
+      "code": "version_skew",
+      "detail": "ooxml-operation-engine=0.6.1; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
+      "exceptions_matched": [
+        "python-xlsx"
+      ],
+      "level": "warning",
+      "scope": "required",
+      "where": "ooxml-core (runtime)"
+    },
+    {
+      "code": "version_skew",
+      "detail": "ooxml-core=0.5.21; python-docx=0.5.37; python-pptx=0.5.37; python-xlsx=0.5.37",
+      "exceptions_matched": [],
+      "level": "warning",
+      "scope": "unscoped",
+      "where": "ooxml-test-framework (dev)"
+    }
+  ],
+  "edge_kinds_without_source": [
+    {
+      "kind": "release",
+      "note": "Not derived in v1: no file declares release-order edges yet. The partial order graph uses runtime+codegen only."
+    }
+  ],
+  "edge_sources": [
+    {
+      "from": "pyproject",
+      "kind": "runtime",
+      "note": "Declared runtime git dependency plus its ref (tag/rev/SHA or none).",
+      "section": "project.dependencies"
+    },
+    {
+      "from": "pyproject",
+      "kind": "dev",
+      "note": "PEP 735 groups; the pinned version comes from [tool.uv.sources].",
+      "section": "dependency-groups"
+    },
+    {
+      "from": "pyproject",
+      "kind": "dev",
+      "note": "Extras such as mutation-gate.",
+      "section": "project.optional-dependencies"
+    },
+    {
+      "from": "pyproject",
+      "group": "codegen",
+      "kind": "codegen",
+      "note": "Only the codegen extra; used by the partial release-order graph.",
+      "section": "project.optional-dependencies"
+    },
+    {
+      "field": "repositories",
+      "file": "ooxml-operation-engine/ci/environment.json",
+      "from": "environment_json",
+      "kind": "ci",
+      "note": "SHA-pinned snapshot of the repositories the engine CI runs against.",
+      "purpose": "engine_ci_snapshot"
+    },
+    {
+      "field": "corpus.release_tag",
+      "file": "ooxml-operation-engine/ci/environment.json",
+      "from": "environment_json",
+      "kind": "data",
+      "note": "Declared data release tag and the configured commit are recorded separately and never compared for equality.",
+      "pinned_commit_field": "repositories.ooxml-native-corpus",
+      "purpose": "native_corpus_snapshot"
+    }
+  ],
+  "edges": [
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+        "source": "ooxml-apps/uv.lock",
+        "version": "0.1.13"
+      },
+      "from": "ooxml-apps",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-apps/pyproject.toml",
+      "to": "ooxml-operation-engine"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-apps",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-apps/.github/workflows/ci.yml",
+          "line": 28
+        }
+      ],
+      "source_file": "ooxml-apps/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-native-corpus.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-core",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-core/.github/workflows/native-corpus-gate.yml",
+          "line": 93
+        }
+      ],
+      "source_file": "ooxml-core/.github/workflows/native-corpus-gate.yml",
+      "to": "ooxml-native-corpus"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-core",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-core/.github/workflows/ci.yml",
+          "line": 99
+        }
+      ],
+      "source_file": "ooxml-core/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.5.21",
+        "section": "project.optional-dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
+        "version_spec": ">=0.5.10,<1.0.0"
+      },
+      "expected": {
+        "commit": "4c304fd251c3f1b29041e054c1cf019a1511c720",
+        "source": "ooxml-core/uv.lock",
+        "version": "0.5.21"
+      },
+      "from": "ooxml-core",
+      "group": "dev",
+      "kind": "dev",
+      "purpose": "dependency",
+      "role": "dev",
+      "source_file": "ooxml-core/pyproject.toml",
+      "to": "ooxml-test-framework"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/python-docx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-core",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-core/.github/workflows/ci.yml",
+          "line": 101
+        }
+      ],
+      "source_file": "ooxml-core/.github/workflows/ci.yml",
+      "to": "python-docx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/python-pptx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-core",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-core/.github/workflows/ci.yml",
+          "line": 100
+        }
+      ],
+      "source_file": "ooxml-core/.github/workflows/ci.yml",
+      "to": "python-pptx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "04418512d060dd430598db3f6c3d093eabe35b20",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "04418512d060dd430598db3f6c3d093eabe35b20",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-apps"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "engine-chart-paths-20260913",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-core.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "2cebb055e036d9e0fc130827a6b96a882eb48da5",
+        "source": "ooxml-operation-engine/uv.lock",
+        "version": "0.6.1"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-operation-engine/pyproject.toml",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "3db3a18db7b830bdc204b1d0d094afce293af386",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "3db3a18db7b830bdc204b1d0d094afce293af386",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-native-corpus"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "release_tag",
+        "ref_raw": "native-corpus-2026-08-15.1",
+        "release_tag": "native-corpus-2026-08-15.1",
+        "section": "corpus.release_tag",
+        "tag_source": "ooxml-operation-engine/ci/environment.json:corpus.release_tag",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "3db3a18db7b830bdc204b1d0d094afce293af386",
+        "commit_field": "repositories.ooxml-native-corpus",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": "native-corpus-2026-08-15.1"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "data",
+      "purpose": "native_corpus_snapshot",
+      "role": "data",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-native-corpus"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "bb044b98335ca431d1510406e2ee9fa940de741e",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "bb044b98335ca431d1510406e2ee9fa940de741e",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-spec"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "v0.3.1",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-spec.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
+        "source": "ooxml-operation-engine/uv.lock",
+        "version": "0.3.1"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-operation-engine/pyproject.toml",
+      "to": "ooxml-spec"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "566659e9b81e2c46196e0e8c38923896c2f363f5",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "566659e9b81e2c46196e0e8c38923896c2f363f5",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-stubs"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-test-framework"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "engine-table-grid-avlst-20260912",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "683913c2a607834bada8a0203231346ce84e8604",
+        "source": "ooxml-operation-engine/uv.lock",
+        "version": "0.5.35.post1"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-operation-engine/pyproject.toml",
+      "to": "ooxml-test-framework"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "d7b5d753dc8e4389280f721116f28e471f933bef",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "d7b5d753dc8e4389280f721116f28e471f933bef",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "python-docx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "engine-chart-paths-20260913",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/python-docx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "8b5ef448d7230f5d2271f253796be6f29335369f",
+        "source": "ooxml-operation-engine/uv.lock",
+        "version": "1.2.15"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-operation-engine/pyproject.toml",
+      "to": "python-docx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "e4b48820be28ae4d5f4e5f2ea2050a987bf3c006",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "e4b48820be28ae4d5f4e5f2ea2050a987bf3c006",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "python-pptx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "engine-chart-paths-20260913",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/python-pptx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "823658e9c0262d986098dc774d034a46cf2957b8",
+        "source": "ooxml-operation-engine/uv.lock",
+        "version": "2.0.14"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-operation-engine/pyproject.toml",
+      "to": "python-pptx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "55aba7c6a003ac6a3f14aadc7c083893f7acf523",
+        "section": "repositories",
+        "url": null,
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "55aba7c6a003ac6a3f14aadc7c083893f7acf523",
+        "source": "ooxml-operation-engine/ci/environment.json",
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "engine_ci_snapshot",
+      "role": "ci",
+      "snapshot_owner": "ooxml-operation-engine",
+      "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "python-xlsx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "engine-chart-paths-20260913",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/python-xlsx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "f222cb3a31398e509970b02ca054c76d0dec1735",
+        "source": "ooxml-operation-engine/uv.lock",
+        "version": "0.3.0"
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-operation-engine/pyproject.toml",
+      "to": "python-xlsx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-stack",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-stack/.github/workflows/mutation-gate.yml",
+          "line": 38
+        }
+      ],
+      "source_file": "ooxml-stack/.github/workflows/mutation-gate.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "566659e9b81e2c46196e0e8c38923896c2f363f5",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-stack",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-stack/.github/workflows/mutation-gate.yml",
+          "line": 27
+        }
+      ],
+      "source_file": "ooxml-stack/.github/workflows/mutation-gate.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.6.0",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-core.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "source": "ooxml-stubs/uv.lock",
+        "version": "0.6.0"
+      },
+      "from": "ooxml-stubs",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-stubs/pyproject.toml",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.3.1",
+        "section": "project.optional-dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-spec.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
+        "source": "ooxml-stubs/uv.lock",
+        "version": "0.3.1"
+      },
+      "from": "ooxml-stubs",
+      "group": "codegen",
+      "kind": "codegen",
+      "purpose": "dependency",
+      "role": "codegen",
+      "source_file": "ooxml-stubs/pyproject.toml",
+      "to": "ooxml-spec"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "v0.3.1",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-spec.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
+        "source": "ooxml-test-framework/uv.lock",
+        "version": "0.3.1"
+      },
+      "from": "ooxml-test-framework",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "ooxml-test-framework/pyproject.toml",
+      "to": "ooxml-spec"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.6.0",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-core.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "source": "python-docx/uv.lock",
+        "version": "0.6.0"
+      },
+      "from": "python-docx",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "python-docx/pyproject.toml",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-native-corpus.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "python-docx",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 178
+        },
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 243
+        },
+        {
+          "file": "python-docx/.github/workflows/native-corpus-gate.yml",
+          "line": 128
+        },
+        {
+          "file": "python-docx/.github/workflows/native-corpus-gate.yml",
+          "line": 300
+        }
+      ],
+      "source_file": "python-docx/.github/workflows/ci.yml",
+      "to": "ooxml-native-corpus"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "python-docx",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 189
+        },
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 254
+        }
+      ],
+      "source_file": "python-docx/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "python-docx",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 163
+        },
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 229
+        },
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 266
+        },
+        {
+          "file": "python-docx/.github/workflows/ci.yml",
+          "line": 288
+        }
+      ],
+      "source_file": "python-docx/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.2.25",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "source": "python-docx/uv.lock",
+        "version": "0.2.25"
+      },
+      "from": "python-docx",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "python-docx/pyproject.toml",
+      "to": "ooxml-stubs"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "rev",
+        "ref_raw": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "section": "project.optional-dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
+        "version_spec": ">=0.5.10,<1.0.0"
+      },
+      "expected": {
+        "commit": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "source": "python-docx/uv.lock",
+        "version": "0.5.37"
+      },
+      "from": "python-docx",
+      "group": "mutation-gate",
+      "kind": "dev",
+      "purpose": "dependency",
+      "role": "dev",
+      "sites": [],
+      "source_file": "python-docx/pyproject.toml",
+      "to": "ooxml-test-framework"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.6.0",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-core.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "source": "python-pptx/uv.lock",
+        "version": "0.6.0"
+      },
+      "from": "python-pptx",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "python-pptx/pyproject.toml",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-native-corpus.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "python-pptx",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "python-pptx/.github/workflows/ci.yml",
+          "line": 182
+        },
+        {
+          "file": "python-pptx/.github/workflows/ci.yml",
+          "line": 235
+        },
+        {
+          "file": "python-pptx/.github/workflows/native-corpus-gate.yml",
+          "line": 128
+        },
+        {
+          "file": "python-pptx/.github/workflows/native-corpus-gate.yml",
+          "line": 306
+        }
+      ],
+      "source_file": "python-pptx/.github/workflows/ci.yml",
+      "to": "ooxml-native-corpus"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "python-pptx",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "python-pptx/.github/workflows/ci.yml",
+          "line": 167
+        },
+        {
+          "file": "python-pptx/.github/workflows/ci.yml",
+          "line": 223
+        },
+        {
+          "file": "python-pptx/.github/workflows/ci.yml",
+          "line": 257
+        },
+        {
+          "file": "python-pptx/.github/workflows/ci.yml",
+          "line": 280
+        }
+      ],
+      "source_file": "python-pptx/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.2.25",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "source": "python-pptx/uv.lock",
+        "version": "0.2.25"
+      },
+      "from": "python-pptx",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "python-pptx/pyproject.toml",
+      "to": "ooxml-stubs"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "rev",
+        "ref_raw": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "section": "project.optional-dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
+        "version_spec": ">=0.5.10,<1.0.0"
+      },
+      "expected": {
+        "commit": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "source": "python-pptx/uv.lock",
+        "version": "0.5.37"
+      },
+      "from": "python-pptx",
+      "group": "mutation-gate",
+      "kind": "dev",
+      "purpose": "dependency",
+      "role": "dev",
+      "sites": [],
+      "source_file": "python-pptx/pyproject.toml",
+      "to": "ooxml-test-framework"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "unknown",
+        "ref_raw": "v0.3.51",
+        "section": "project.dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-core.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": "7a785c30d7b99e95808c940874f0a88e1dff5692",
+        "source": "python-xlsx/uv.lock",
+        "version": "0.3.51"
+      },
+      "from": "python-xlsx",
+      "group": null,
+      "kind": "runtime",
+      "purpose": "dependency",
+      "role": "runtime",
+      "source_file": "python-xlsx/pyproject.toml",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "python-xlsx",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "python-xlsx/.github/workflows/ci.yml",
+          "line": 128
+        },
+        {
+          "file": "python-xlsx/.github/workflows/ci.yml",
+          "line": 164
+        },
+        {
+          "file": "python-xlsx/.github/workflows/ci.yml",
+          "line": 186
+        },
+        {
+          "file": "python-xlsx/.github/workflows/ci.yml",
+          "line": 209
+        }
+      ],
+      "source_file": "python-xlsx/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "rev",
+        "ref_raw": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "section": "project.optional-dependencies",
+        "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
+        "version_spec": ">=0.5.10,<1.0.0"
+      },
+      "expected": {
+        "commit": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "source": "python-xlsx/uv.lock",
+        "version": "0.5.37"
+      },
+      "from": "python-xlsx",
+      "group": "mutation-gate",
+      "kind": "dev",
+      "purpose": "dependency",
+      "role": "dev",
+      "sites": [],
+      "source_file": "python-xlsx/pyproject.toml",
+      "to": "ooxml-test-framework"
+    }
+  ],
+  "excluded_from_plan": [
+    {
+      "item": "git HEAD of every repository",
+      "where": "scan"
+    },
+    {
+      "item": "worktrees, common-dir, checkout paths",
+      "where": "scan"
+    },
+    {
+      "item": "resolved ref kinds and current commit of floating refs",
+      "where": "scan"
+    },
+    {
+      "item": "remote reachability, timings, clock",
+      "where": "scan"
+    },
+    {
+      "item": "expected commits recorded by locks/environment (file facts)",
+      "where": "plan"
+    }
+  ],
+  "full": {
+    "ooxml-apps": {
+      "jobs": [
+        {
+          "env": {
+            "UV_GIT_PREFER_CLI": "true"
+          },
+          "id": "backend",
+          "if": null,
+          "line": 17,
+          "matrix": {},
+          "name": "backend (pytest + contract)",
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 23,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 25,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 27,
+              "name": "Configure private dependency access",
+              "run": null,
+              "shell": null,
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 32,
+              "name": "Install dependencies",
+              "run": "make install",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 35,
+              "name": "Backend tests (contracts and required real-engine drawing edits)",
+              "run": "make test",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        },
+        {
+          "env": {},
+          "id": "frontend",
+          "if": null,
+          "line": 38,
+          "matrix": {},
+          "name": "frontend (vitest + contract + e2e)",
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 42,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 44,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "pnpm/action-setup@v4"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 48,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/setup-node@v4"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 54,
+              "name": "Install frontend dependencies",
+              "run": "cd frontend && pnpm install --frozen-lockfile",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 57,
+              "name": "Frontend unit tests",
+              "run": "make test-frontend",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 60,
+              "name": "Frontend REST contract (vitest half)",
+              "run": "cd frontend && pnpm exec vitest run src/contract.test.ts",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 63,
+              "name": "Install Playwright chromium",
+              "run": "cd frontend && pnpm exec playwright install --with-deps chromium",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 66,
+              "name": "Playwright route-state matrix",
+              "run": "make test-e2e",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "ooxml-core": {
+      "jobs": [
+        {
+          "env": {
+            "GIT_CONFIG_GLOBAL": "${{ github.workspace }}/../gitconfig-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.python-version }}",
+            "UV_GIT_PREFER_CLI": "true",
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "test",
+          "if": null,
+          "line": 13,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": null,
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 23,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 25,
+              "name": "Install uv",
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 28,
+              "name": "Install workflow Python",
+              "run": "uv python install \"${UV_PYTHON:-3.12}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 31,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/setup-dotnet@v5"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 35,
+              "name": "Install Open XML SDK validator runtime",
+              "run": "dotnet tool install -g dotnet-script\necho \"$HOME/.dotnet/tools\" >> \"$GITHUB_PATH\"\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {
+                "OOXML_SPEC_DEPLOY_KEY": "${{ secrets.OOXML_SPEC_DEPLOY_KEY }}",
+                "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}",
+                "OOXML_TEST_FRAMEWORK_DEPLOY_KEY": "${{ secrets.OOXML_TEST_FRAMEWORK_DEPLOY_KEY }}",
+                "PYTHON_DOCX_DEPLOY_KEY": "${{ secrets.PYTHON_DOCX_DEPLOY_KEY }}",
+                "PYTHON_PPTX_DEPLOY_KEY": "${{ secrets.PYTHON_PPTX_DEPLOY_KEY }}"
+              },
+              "if": null,
+              "line": 40,
+              "name": "Configure private dependency access",
+              "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  printf '%s\\n' \"$OOXML_TEST_FRAMEWORK_DEPLOY_KEY\" > ~/.ssh/ooxml_test_framework\n  printf '%s\\n' \"$PYTHON_PPTX_DEPLOY_KEY\" > ~/.ssh/python_pptx\n  printf '%s\\n' \"$PYTHON_DOCX_DEPLOY_KEY\" > ~/.ssh/python_docx\n  chmod 600 ~/.ssh/ooxml_spec ~/.ssh/ooxml_test_framework ~/.ssh/python_pptx ~/.ssh/python_docx\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\n\nHost github-ooxml-test-framework\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_test_framework\n  IdentitiesOnly yes\n\nHost github-python-pptx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_pptx\n  IdentitiesOnly yes\n\nHost github-python-docx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_docx\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-test-framework/ooxml-stack/ooxml-test-framework\".insteadOf \"https://github.com/ooxml-stack/ooxml-test-framework\"\n  git config --global url.\"ssh://git@github-python-pptx/ooxml-stack/python-pptx\".insteadOf \"https://github.com/ooxml-stack/python-pptx\"\n  git config --global url.\"ssh://git@github-python-docx/ooxml-stack/python-docx\".insteadOf \"https://github.com/ooxml-stack/python-docx\"\nfi\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 92,
+              "name": "Install dependencies",
+              "run": "uv sync --frozen --extra dev",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 95,
+              "name": "Checkout public claim evidence repos",
+              "run": "clone_evidence_repos() {\n  rm -rf ../ooxml-stack ../python-pptx ../python-docx\n  git clone --depth 1 https://github.com/ooxml-stack/ooxml-stack.git ../ooxml-stack\n  git clone --depth 1 https://github.com/ooxml-stack/python-pptx.git ../python-pptx\n  git clone --depth 1 https://github.com/ooxml-stack/python-docx.git ../python-docx\n}\nfor attempt in 1 2 3; do\n  clone_evidence_repos && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 109,
+              "name": "Run tests",
+              "run": "uv run --frozen pytest -q",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": "matrix.python-version == '3.12'",
+              "line": 112,
+              "name": "Run downstream compatibility gate",
+              "run": "uv run --frozen python scripts/check_downstream_compat.py",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "ooxml-native-corpus": {
+      "jobs": [
+        {
+          "env": {},
+          "id": "inspect",
+          "if": null,
+          "line": 19,
+          "matrix": {},
+          "name": null,
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 22,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {
+                "GH_TOKEN": "${{ secrets.OOXML_STACK_TOKEN != '' && secrets.OOXML_STACK_TOKEN || github.token }}"
+              },
+              "if": null,
+              "line": 26,
+              "name": "Verify release bundle metadata",
+              "run": "python3 scripts/corpus_bundle.py verify-release",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {
+                "GH_TOKEN": "${{ secrets.OOXML_STACK_TOKEN != '' && secrets.OOXML_STACK_TOKEN || github.token }}"
+              },
+              "if": null,
+              "line": 31,
+              "name": "Fetch corpus bundle",
+              "run": "python3 scripts/corpus_bundle.py fetch --tier \"${{ inputs.tier || 'all' }}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 36,
+              "name": "Inspect corpus",
+              "run": "python3 scripts/inspect_corpus.py --tier \"${{ inputs.tier || 'all' }}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": "always()",
+              "line": 39,
+              "name": "Write summary",
+              "run": "echo \"## Native Corpus\" >> \"$GITHUB_STEP_SUMMARY\"\ncat reports/corpus-inspection.md >> \"$GITHUB_STEP_SUMMARY\"\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": "always()",
+              "line": 45,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/upload-artifact@v7"
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/corpus-inspection.yml"
+    },
+    "ooxml-operation-engine": {
+      "jobs": [
+        {
+          "env": {},
+          "id": "check",
+          "if": null,
+          "line": 18,
+          "matrix": {},
+          "name": "full-check",
+          "needs": null,
+          "runs_on": "ubuntu-24.04",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 23,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
+            },
+            {
+              "cwd": null,
+              "env": {
+                "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
+              },
+              "if": null,
+              "line": 26,
+              "name": "Run the shared local and server gate",
+              "run": "make check CHECK_COMMIT=\"${{ github.sha }}\" CHECK_OUTPUT=\"${{ runner.temp }}/ci-reports\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": "always()",
+              "line": 30,
+              "name": "Preserve evidence even on failure",
+              "run": null,
+              "shell": null,
+              "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "ooxml-spec": {
+      "jobs": [
+        {
+          "env": {
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "test",
+          "if": null,
+          "line": 13,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": null,
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 21,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 23,
+              "name": "Install uv",
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 26,
+              "name": "Install workflow Python",
+              "run": "uv python install \"${UV_PYTHON:-3.12}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 29,
+              "name": "Install dependencies",
+              "run": "uv sync --frozen --extra dev",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 32,
+              "name": "Run tests",
+              "run": "uv run --frozen pytest tests/ -q",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "ooxml-stack": {
+      "jobs": [
+        {
+          "env": {},
+          "id": "evidence-retention",
+          "if": null,
+          "line": 8,
+          "matrix": {},
+          "name": null,
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 11,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v4"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 14,
+              "name": "Check release evidence retention",
+              "run": "if [ \"${{ github.event_name }}\" = \"pull_request\" ]; then\n  python scripts/check_evidence_retention.py --base-ref \"${{ github.event.pull_request.base.sha }}\"\nelse\n  python scripts/check_evidence_retention.py --base-ref \"${{ github.event.before }}\"\nfi\n",
+              "shell": "bash",
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/evidence-retention.yml"
+    },
+    "ooxml-stubs": {
+      "jobs": [
+        {
+          "env": {
+            "GIT_CONFIG_GLOBAL": "${{ github.workspace }}/../gitconfig-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.python-version }}",
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "test",
+          "if": null,
+          "line": 13,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": null,
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 22,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 26,
+              "name": "Install uv",
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 29,
+              "name": "Install workflow Python",
+              "run": "uv python install \"${UV_PYTHON:-3.12}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {
+                "OOXML_CORE_DEPLOY_KEY": "${{ secrets.OOXML_CORE_DEPLOY_KEY }}",
+                "OOXML_SPEC_DEPLOY_KEY": "${{ secrets.OOXML_SPEC_DEPLOY_KEY }}",
+                "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
+              },
+              "if": null,
+              "line": 32,
+              "name": "Configure private dependency access",
+              "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  if [ -z \"$OOXML_CORE_DEPLOY_KEY\" ] || [ -z \"$OOXML_SPEC_DEPLOY_KEY\" ]; then\n    echo \"OOXML_STACK_TOKEN or both OOXML_CORE_DEPLOY_KEY and OOXML_SPEC_DEPLOY_KEY are required\"\n    exit 1\n  fi\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_CORE_DEPLOY_KEY\" > ~/.ssh/ooxml_core\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  chmod 600 ~/.ssh/ooxml_core ~/.ssh/ooxml_spec\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-core\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_core\n  IdentitiesOnly yes\n\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-core/ooxml-stack/ooxml-core\".insteadOf \"https://github.com/ooxml-stack/ooxml-core\"\n  git config --global url.\"ssh://git@github-ooxml-core/ooxml-stack/ooxml-core.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-core.git\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec.git\"\nfi\ngit ls-remote https://github.com/ooxml-stack/ooxml-core.git HEAD >/dev/null\ngit ls-remote https://github.com/ooxml-stack/ooxml-spec.git HEAD >/dev/null\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 74,
+              "name": "Install dependencies",
+              "run": "uv sync --frozen --extra dev --extra codegen",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 77,
+              "name": "Run tests",
+              "run": "uv run --frozen pytest -q",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "ooxml-test-framework": {
+      "jobs": [
+        {
+          "env": {
+            "GIT_CONFIG_GLOBAL": "${{ github.workspace }}/../gitconfig-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.python-version }}",
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "test",
+          "if": null,
+          "line": 13,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": null,
+          "needs": null,
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 22,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 26,
+              "name": "Install uv",
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 29,
+              "name": "Install workflow Python",
+              "run": "uv python install \"${UV_PYTHON:-3.12}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {
+                "OOXML_SPEC_DEPLOY_KEY": "${{ secrets.OOXML_SPEC_DEPLOY_KEY }}",
+                "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
+              },
+              "if": null,
+              "line": 32,
+              "name": "Configure private dependency access",
+              "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  if [ -z \"$OOXML_SPEC_DEPLOY_KEY\" ]; then\n    echo \"OOXML_STACK_TOKEN or OOXML_SPEC_DEPLOY_KEY is required\"\n    exit 1\n  fi\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  chmod 600 ~/.ssh/ooxml_spec\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec.git\"\nfi\ngit ls-remote https://github.com/ooxml-stack/ooxml-spec.git HEAD >/dev/null\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 63,
+              "name": "Install dependencies",
+              "run": "uv sync --frozen --extra dev",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 66,
+              "name": "Run tests",
+              "run": "uv run --frozen pytest -q",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "python-docx": {
+      "jobs": [
+        {
+          "env": {
+            "GIT_CONFIG_GLOBAL": "${{ github.workspace }}/../gitconfig-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.python-version }}",
+            "UV_GIT_PREFER_CLI": "true",
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "test",
+          "if": "needs.router.outputs.run_full == 'true'",
+          "line": 199,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": "full gate (${{ matrix.python-version }})",
+          "needs": "router",
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 212,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 214,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 216,
+              "name": "Install workflow Python",
+              "run": "uv python install \"${UV_PYTHON:-3.12}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 219,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/setup-dotnet@v5"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 223,
+              "name": "Install Open XML SDK validator runtime",
+              "run": "dotnet tool install -g dotnet-script\necho \"$HOME/.dotnet/tools\" >> \"$GITHUB_PATH\"\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 228,
+              "name": "Configure private dependency access",
+              "run": null,
+              "shell": null,
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 236,
+              "name": "Install dependencies",
+              "run": "uv sync --frozen",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 239,
+              "name": "Checkout native corpus evidence repo",
+              "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 251,
+              "name": "Checkout public claim evidence repo",
+              "run": "rm -rf ../ooxml-stack\ngit clone --depth 1 https://github.com/ooxml-stack/ooxml-stack.git ../ooxml-stack\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 256,
+              "name": "Downstream compatibility gate",
+              "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 259,
+              "name": "Run portable release contract",
+              "run": "make validate",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "python-pptx": {
+      "jobs": [
+        {
+          "env": {
+            "GIT_CONFIG_GLOBAL": "${{ github.workspace }}/../gitconfig-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.python-version }}",
+            "UV_GIT_PREFER_CLI": "true",
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "build",
+          "if": "needs.router.outputs.run_full == 'true'",
+          "line": 198,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": "full gate (${{ matrix.python-version }})",
+          "needs": "router",
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 211,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 212,
+              "name": "Install uv",
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 215,
+              "name": "Install workflow Python",
+              "run": "uv python install \"${UV_PYTHON:-3.12}\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 218,
+              "name": "Display Python version",
+              "run": "PYTHON_BIN=\"$(uv python find \"$UV_PYTHON\")\"\n\"$PYTHON_BIN\" -c \"import sys; print(sys.version)\"\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 222,
+              "name": "Configure private dependency access",
+              "run": null,
+              "shell": null,
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 229,
+              "name": "Install test dependencies",
+              "run": "uv sync --frozen --extra dev",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 231,
+              "name": "Checkout native corpus evidence repo",
+              "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 242,
+              "name": "Set up .NET for schema validation",
+              "run": null,
+              "shell": null,
+              "uses": "actions/setup-dotnet@v5"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 246,
+              "name": "Install dotnet-script",
+              "run": "dotnet tool install -g dotnet-script",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 248,
+              "name": "Downstream compatibility gate",
+              "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 250,
+              "name": "Run portable release contract",
+              "run": "make validate",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    },
+    "python-xlsx": {
+      "jobs": [
+        {
+          "env": {
+            "UV_GIT_PREFER_CLI": "true",
+            "UV_PYTHON": "${{ matrix.python-version }}"
+          },
+          "id": "validate",
+          "if": "needs.router.outputs.run_full == 'true'",
+          "line": 143,
+          "matrix": {
+            "python-version": [
+              "3.10",
+              "3.11",
+              "3.12"
+            ]
+          },
+          "name": "full gate (${{ matrix.python-version }})",
+          "needs": "router",
+          "runs_on": "ubuntu-latest",
+          "steps": [
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 155,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@v6"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 156,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@v7"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 160,
+              "name": "Install workflow Python",
+              "run": "uv python install \"$UV_PYTHON\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 163,
+              "name": "Configure private dependency access",
+              "run": null,
+              "shell": null,
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 168,
+              "name": "Install test dependencies",
+              "run": "uv sync --frozen --extra dev",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 171,
+              "name": "Set up .NET for schema validation",
+              "run": null,
+              "shell": null,
+              "uses": "actions/setup-dotnet@v5"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 176,
+              "name": "Install dotnet-script",
+              "run": "dotnet tool install -g dotnet-script",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 179,
+              "name": "Run portable release contract",
+              "run": "make validate",
+              "shell": null,
+              "uses": null
+            }
+          ]
+        }
+      ],
+      "workflow": ".github/workflows/ci.yml"
+    }
+  },
+  "graphs": {
+    "impact": {
+      "ooxml-apps": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-operation-engine"
+        ],
+        "reverse": true,
+        "start": "ooxml-apps",
+        "view": "impact"
+      },
+      "ooxml-core": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-stubs",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "ooxml-core",
+        "view": "impact"
+      },
+      "ooxml-native-corpus": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-native-corpus",
+          "ooxml-operation-engine",
+          "ooxml-stubs",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "ooxml-native-corpus",
+        "view": "impact"
+      },
+      "ooxml-operation-engine": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-operation-engine"
+        ],
+        "reverse": true,
+        "start": "ooxml-operation-engine",
+        "view": "impact"
+      },
+      "ooxml-spec": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-spec",
+          "ooxml-stubs",
+          "ooxml-test-framework",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "ooxml-spec",
+        "view": "impact"
+      },
+      "ooxml-stack": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-stack",
+          "ooxml-stubs",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "ooxml-stack",
+        "view": "impact"
+      },
+      "ooxml-stubs": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-stubs",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "ooxml-stubs",
+        "view": "impact"
+      },
+      "ooxml-test-framework": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-stubs",
+          "ooxml-test-framework",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "ooxml-test-framework",
+        "view": "impact"
+      },
+      "python-docx": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-stubs",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "python-docx",
+        "view": "impact"
+      },
+      "python-pptx": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-core",
+          "ooxml-operation-engine",
+          "ooxml-stubs",
+          "python-docx",
+          "python-pptx",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "python-pptx",
+        "view": "impact"
+      },
+      "python-xlsx": {
+        "cycles_allowed": true,
+        "kinds": [
+          "runtime",
+          "dev",
+          "codegen",
+          "ci",
+          "data"
+        ],
+        "reaches": [
+          "ooxml-apps",
+          "ooxml-operation-engine",
+          "python-xlsx"
+        ],
+        "reverse": true,
+        "start": "python-xlsx",
+        "view": "impact"
+      }
+    },
+    "partial_release_order": {
+      "cycle": null,
+      "edges": [
+        {
+          "from": "ooxml-apps",
+          "kind": "runtime",
+          "to": "ooxml-operation-engine"
+        },
+        {
+          "from": "ooxml-operation-engine",
+          "kind": "runtime",
+          "to": "ooxml-core"
+        },
+        {
+          "from": "ooxml-operation-engine",
+          "kind": "runtime",
+          "to": "ooxml-spec"
+        },
+        {
+          "from": "ooxml-operation-engine",
+          "kind": "runtime",
+          "to": "ooxml-test-framework"
+        },
+        {
+          "from": "ooxml-operation-engine",
+          "kind": "runtime",
+          "to": "python-docx"
+        },
+        {
+          "from": "ooxml-operation-engine",
+          "kind": "runtime",
+          "to": "python-pptx"
+        },
+        {
+          "from": "ooxml-operation-engine",
+          "kind": "runtime",
+          "to": "python-xlsx"
+        },
+        {
+          "from": "ooxml-stubs",
+          "kind": "runtime",
+          "to": "ooxml-core"
+        },
+        {
+          "from": "ooxml-stubs",
+          "kind": "codegen",
+          "to": "ooxml-spec"
+        },
+        {
+          "from": "ooxml-test-framework",
+          "kind": "runtime",
+          "to": "ooxml-spec"
+        },
+        {
+          "from": "python-docx",
+          "kind": "runtime",
+          "to": "ooxml-core"
+        },
+        {
+          "from": "python-docx",
+          "kind": "runtime",
+          "to": "ooxml-stubs"
+        },
+        {
+          "from": "python-pptx",
+          "kind": "runtime",
+          "to": "ooxml-core"
+        },
+        {
+          "from": "python-pptx",
+          "kind": "runtime",
+          "to": "ooxml-stubs"
+        },
+        {
+          "from": "python-xlsx",
+          "kind": "runtime",
+          "to": "ooxml-core"
+        }
+      ],
+      "kinds": [
+        "runtime",
+        "codegen"
+      ],
+      "note": "Partial order over runtime and codegen dependencies only, not a full release sequence.",
+      "reverse": false,
+      "view": "partial_release_order"
+    }
+  },
+  "host": "ooxml-stack",
+  "inputs": [
+    "ooxml-apps/.github/workflows/ci.yml",
+    "ooxml-apps/pyproject.toml",
+    "ooxml-apps/uv.lock",
+    "ooxml-core/.github/workflows/ci.yml",
+    "ooxml-core/.github/workflows/native-corpus-gate.yml",
+    "ooxml-core/.github/workflows/release-wheel.yml",
+    "ooxml-core/.github/workflows/semantic-gate-report.yml",
+    "ooxml-core/pyproject.toml",
+    "ooxml-core/uv.lock",
+    "ooxml-native-corpus/.github/workflows/corpus-inspection.yml",
+    "ooxml-operation-engine/.github/workflows/ci.yml",
+    "ooxml-operation-engine/.github/workflows/release-readiness.yml",
+    "ooxml-operation-engine/ci/environment.json",
+    "ooxml-operation-engine/pyproject.toml",
+    "ooxml-operation-engine/uv.lock",
+    "ooxml-spec/.github/workflows/ci.yml",
+    "ooxml-spec/pyproject.toml",
+    "ooxml-spec/uv.lock",
+    "ooxml-stack/.github/workflows/evidence-retention.yml",
+    "ooxml-stack/.github/workflows/mutation-gate.yml",
+    "ooxml-stack/ci/ecosystem-inventory-requirements.txt",
+    "ooxml-stack/ci/ecosystem-policy.json",
+    "ooxml-stubs/.github/workflows/ci.yml",
+    "ooxml-stubs/pyproject.toml",
+    "ooxml-stubs/uv.lock",
+    "ooxml-test-framework/.github/workflows/ci.yml",
+    "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
+    "ooxml-test-framework/pyproject.toml",
+    "ooxml-test-framework/uv.lock",
+    "python-docx/.github/workflows/ci.yml",
+    "python-docx/.github/workflows/native-corpus-gate.yml",
+    "python-docx/.github/workflows/semantic-gate-report.yml",
+    "python-docx/pyproject.toml",
+    "python-docx/src/docx/__init__.py",
+    "python-docx/uv.lock",
+    "python-pptx/.github/workflows/ci.yml",
+    "python-pptx/.github/workflows/native-corpus-gate.yml",
+    "python-pptx/.github/workflows/semantic-gate-report.yml",
+    "python-pptx/.github/workflows/sync-to-gitee.yml",
+    "python-pptx/pyproject.toml",
+    "python-pptx/src/pptx/__init__.py",
+    "python-pptx/uv.lock",
+    "python-xlsx/.github/workflows/ci.yml",
+    "python-xlsx/.github/workflows/native-corpus-gate.yml",
+    "python-xlsx/pyproject.toml",
+    "python-xlsx/src/xlsx/__init__.py",
+    "python-xlsx/uv.lock"
+  ],
+  "inputs_digest": "4fa6dd330978af0d725573324f0575fadf1e195ec1761b791327b0961f48ddde",
+  "kind": "ecosystem-plan",
+  "nodes": [
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-spec",
+      "layer": "spec",
+      "release_participation": true,
+      "role": "release",
+      "version": "0.3.1",
+      "version_source": "pyproject.toml#project.version",
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-test-framework",
+      "layer": "test",
+      "release_participation": true,
+      "role": "release",
+      "version": "0.5.37",
+      "version_source": "pyproject.toml#project.version",
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-core",
+      "layer": "core",
+      "release_participation": true,
+      "role": "release",
+      "version": "0.6.1",
+      "version_source": "pyproject.toml#project.version",
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-stubs",
+      "layer": "stubs",
+      "release_participation": true,
+      "role": "release",
+      "version": "0.2.25",
+      "version_source": "pyproject.toml#project.version",
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "python-docx",
+      "layer": "app",
+      "release_participation": true,
+      "role": "release",
+      "version": "1.2.14",
+      "version_source": "src/docx/__init__.py#__version__",
+      "visibility": "public"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "python-pptx",
+      "layer": "app",
+      "release_participation": true,
+      "role": "release",
+      "version": "2.0.13",
+      "version_source": "src/pptx/__init__.py#__version__",
+      "visibility": "public"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "python-xlsx",
+      "layer": "app",
+      "release_participation": true,
+      "role": "release",
+      "version": "0.3.0",
+      "version_source": "src/xlsx/__init__.py#__version__",
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-operation-engine",
+      "layer": "engine",
+      "release_participation": true,
+      "role": "release",
+      "version": "0.1.23",
+      "version_source": "pyproject.toml#project.version",
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-apps",
+      "layer": "consumer",
+      "release_participation": false,
+      "role": "release",
+      "version": "0.1.0",
+      "version_source": "pyproject.toml#project.version",
+      "visibility": "private"
+    },
+    {
+      "cadence": "release-only",
+      "experimental": false,
+      "key": "ooxml-native-corpus",
+      "layer": "corpus",
+      "release_participation": false,
+      "role": "data",
+      "version": null,
+      "version_source": null,
+      "visibility": "private"
+    },
+    {
+      "cadence": "per-commit",
+      "experimental": false,
+      "key": "ooxml-stack",
+      "layer": "release",
+      "release_participation": false,
+      "role": "meta",
+      "version": null,
+      "version_source": null,
+      "visibility": "public"
+    }
+  ],
+  "policy_file": "ooxml-stack/ci/ecosystem-policy.json",
+  "schema_version": 1,
+  "unreferenced_nodes": [],
+  "version_groups": [
+    {
+      "exceptions_matched": [
+        "python-xlsx"
+      ],
+      "repos": [
+        {
+          "ref": "engine-chart-paths-20260913",
+          "repo": "ooxml-operation-engine",
+          "source_file": "ooxml-operation-engine/pyproject.toml",
+          "version": "0.6.1"
+        },
+        {
+          "ref": "v0.6.0",
+          "repo": "ooxml-stubs",
+          "source_file": "ooxml-stubs/pyproject.toml",
+          "version": "0.6.0"
+        },
+        {
+          "ref": "v0.6.0",
+          "repo": "python-docx",
+          "source_file": "python-docx/pyproject.toml",
+          "version": "0.6.0"
+        },
+        {
+          "ref": "v0.6.0",
+          "repo": "python-pptx",
+          "source_file": "python-pptx/pyproject.toml",
+          "version": "0.6.0"
+        },
+        {
+          "ref": "v0.3.51",
+          "repo": "python-xlsx",
+          "source_file": "python-xlsx/pyproject.toml",
+          "version": "0.3.51"
+        }
+      ],
+      "required_repos": [
+        "ooxml-operation-engine",
+        "ooxml-stubs",
+        "python-docx",
+        "python-pptx",
+        "python-xlsx"
+      ],
+      "role": "runtime",
+      "scope": "required",
+      "uniform": false,
+      "upstream": "ooxml-core",
+      "versions": [
+        "0.3.51",
+        "0.6.0",
+        "0.6.1"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+          "repo": "ooxml-apps",
+          "source_file": "ooxml-apps/pyproject.toml",
+          "version": "0.1.13"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "ooxml-operation-engine",
+      "versions": [
+        "0.1.13"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "v0.3.1",
+          "repo": "ooxml-stubs",
+          "source_file": "ooxml-stubs/pyproject.toml",
+          "version": "0.3.1"
+        }
+      ],
+      "role": "codegen",
+      "uniform": true,
+      "upstream": "ooxml-spec",
+      "versions": [
+        "0.3.1"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "v0.3.1",
+          "repo": "ooxml-operation-engine",
+          "source_file": "ooxml-operation-engine/pyproject.toml",
+          "version": "0.3.1"
+        },
+        {
+          "ref": "v0.3.1",
+          "repo": "ooxml-test-framework",
+          "source_file": "ooxml-test-framework/pyproject.toml",
+          "version": "0.3.1"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "ooxml-spec",
+      "versions": [
+        "0.3.1"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "v0.2.25",
+          "repo": "python-docx",
+          "source_file": "python-docx/pyproject.toml",
+          "version": "0.2.25"
+        },
+        {
+          "ref": "v0.2.25",
+          "repo": "python-pptx",
+          "source_file": "python-pptx/pyproject.toml",
+          "version": "0.2.25"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "ooxml-stubs",
+      "versions": [
+        "0.2.25"
+      ]
+    },
+    {
+      "exceptions_matched": [],
+      "repos": [
+        {
+          "ref": "v0.5.21",
+          "repo": "ooxml-core",
+          "source_file": "ooxml-core/pyproject.toml",
+          "version": "0.5.21"
+        },
+        {
+          "ref": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+          "repo": "python-docx",
+          "source_file": "python-docx/pyproject.toml",
+          "version": "0.5.37"
+        },
+        {
+          "ref": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+          "repo": "python-pptx",
+          "source_file": "python-pptx/pyproject.toml",
+          "version": "0.5.37"
+        },
+        {
+          "ref": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+          "repo": "python-xlsx",
+          "source_file": "python-xlsx/pyproject.toml",
+          "version": "0.5.37"
+        }
+      ],
+      "required_repos": [],
+      "role": "dev",
+      "scope": "unscoped",
+      "uniform": false,
+      "upstream": "ooxml-test-framework",
+      "versions": [
+        "0.5.21",
+        "0.5.37"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "engine-table-grid-avlst-20260912",
+          "repo": "ooxml-operation-engine",
+          "source_file": "ooxml-operation-engine/pyproject.toml",
+          "version": "0.5.35.post1"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "ooxml-test-framework",
+      "versions": [
+        "0.5.35.post1"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "engine-chart-paths-20260913",
+          "repo": "ooxml-operation-engine",
+          "source_file": "ooxml-operation-engine/pyproject.toml",
+          "version": "1.2.15"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "python-docx",
+      "versions": [
+        "1.2.15"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "engine-chart-paths-20260913",
+          "repo": "ooxml-operation-engine",
+          "source_file": "ooxml-operation-engine/pyproject.toml",
+          "version": "2.0.14"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "python-pptx",
+      "versions": [
+        "2.0.14"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "engine-chart-paths-20260913",
+          "repo": "ooxml-operation-engine",
+          "source_file": "ooxml-operation-engine/pyproject.toml",
+          "version": "0.3.0"
+        }
+      ],
+      "role": "runtime",
+      "uniform": true,
+      "upstream": "python-xlsx",
+      "versions": [
+        "0.3.0"
+      ]
+    }
+  ]
+}

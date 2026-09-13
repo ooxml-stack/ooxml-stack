@@ -1,0 +1,2 @@
+-r ecosystem-inventory-requirements.txt
+pytest==9.0.2
