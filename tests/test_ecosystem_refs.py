@@ -16,10 +16,76 @@ from scripts.ooxml_ci import gitfacts, urls
         ("git@github.com:ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
         ("https://github.com/ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
         ("https://github.com/ooxml-stack/ooxml-core", "github.com/ooxml-stack/ooxml-core"),
+        # A trailing slash must not leave ``.git`` glued to the repository name.
+        ("https://github.com/ooxml-stack/ooxml-core.git/", "github.com/ooxml-stack/ooxml-core"),
+        ("https://github.com/ooxml-stack/ooxml-core/", "github.com/ooxml-stack/ooxml-core"),
+        ("git://github.com/ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
+        ("ssh://git@github.com/ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
+        # The scp form takes any user name, not just ``git``.
+        ("deploy@code.example:ooxml-stack/ooxml-core.git", "code.example/ooxml-stack/ooxml-core"),
+        ("svc-bot@code.example:ooxml-stack/ooxml-core.git", "code.example/ooxml-stack/ooxml-core"),
     ],
 )
 def test_normalize_repo(url, expected):
     assert urls.normalize_repo(url) == expected
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://github.com/ooxml-stack/ooxml-core.git/",
+        "https://github.com/ooxml-stack/ooxml-core.git",
+        "git://github.com/ooxml-stack/ooxml-core.git",
+        "HTTPS://github.com/ooxml-stack/ooxml-core.git",
+        "ssh://git@github.com/ooxml-stack/ooxml-core.git",
+        "git@github.com:ooxml-stack/ooxml-core.git",
+        "deploy@code.example:ooxml-stack/ooxml-core.git",
+    ],
+)
+def test_a_remote_clone_url_resolves_to_its_policy_node(url):
+    """A trailing slash or a different scheme must not invent an undeclared node."""
+    assert urls.repo_name(url) == "ooxml-core"
+    assert urls.owner_of(url) == "ooxml-stack"
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://github.com/ooxml-stack/ooxml-core.git",
+        "https://github.com/ooxml-stack/ooxml-core",
+        "https://github.com/ooxml-stack/ooxml-core.git/",
+        "git://github.com/ooxml-stack/ooxml-core.git",
+        "HTTPS://github.com/ooxml-stack/ooxml-core.git",
+        "ssh://git@github.com/ooxml-stack/ooxml-core.git",
+        "git@github.com:ooxml-stack/ooxml-core.git",
+        "deploy@code.example:ooxml-stack/ooxml-core.git",
+    ],
+)
+def test_the_clone_gate_accepts_every_form_the_normalizer_resolves(url):
+    """The gate and the normalizer must not drift, or a real clone disappears."""
+    assert urls.is_remote_repo(url), url
+    assert urls.repo_name(url) == "ooxml-core", url
+
+
+@pytest.mark.parametrize("url", ["../local", "file:///tmp/x", "git+https://github.com/a/b.git"])
+def test_a_non_remote_argument_is_not_a_clone_target(url):
+    assert not urls.is_remote_repo(url)
+
+
+def test_every_remote_form_normalizes_to_one_slug():
+    """Cross-scheme equality is what keeps declaration/origin comparisons honest."""
+    forms = [
+        "https://github.com/ooxml-stack/ooxml-core.git",
+        "https://github.com/ooxml-stack/ooxml-core",
+        "https://github.com/ooxml-stack/ooxml-core.git/",
+        "git://github.com/ooxml-stack/ooxml-core.git",
+        "HTTPS://github.com/ooxml-stack/ooxml-core.git",
+        "ssh://git@github.com/ooxml-stack/ooxml-core.git",
+        "git@github.com:ooxml-stack/ooxml-core.git",
+    ]
+    assert {urls.normalize_repo(form) for form in forms} == {
+        "github.com/ooxml-stack/ooxml-core"
+    }
 
 
 def test_url_from_uses_derives_the_declared_repo_url():
