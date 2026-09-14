@@ -110,3 +110,41 @@ def test_a_malformed_policy_is_an_input_error_not_a_dependency_error(tmp_path, c
     err = capsys.readouterr().err
     assert "input error" in err
     assert "dependency error" not in err
+
+
+REMOTE_CLONE_FORMS = [
+    ("https", "https://github.com/ooxml-stack/ooxml-native-corpus.git"),
+    ("git-protocol", "git://github.com/ooxml-stack/ooxml-native-corpus.git"),
+    ("upper-case-scheme", "HTTPS://github.com/ooxml-stack/ooxml-native-corpus.git"),
+    ("ssh", "ssh://git@github.com/ooxml-stack/ooxml-native-corpus.git"),
+    ("scp", "git@github.com:ooxml-stack/ooxml-native-corpus.git"),
+    ("trailing-slash", "https://github.com/ooxml-stack/ooxml-native-corpus.git/"),
+]
+
+
+@pytest.mark.parametrize(
+    "url", [url for _, url in REMOTE_CLONE_FORMS], ids=[n for n, _ in REMOTE_CLONE_FORMS]
+)
+def test_every_remote_form_becomes_a_real_edge(tmp_path, capsys, monkeypatch, url):
+    """A resolvable remote URL must produce the edge, never a silent empty result."""
+    root = build_workspace(tmp_path)
+    heads = seal(root)
+    _no_skew(root, heads)
+    resolvable_for(monkeypatch, heads)
+    write(
+        root / "python-docx/.github/workflows/ci.yml",
+        f"name: ci\non: [push]\njobs:\n  ci:\n    runs-on: ubuntu-latest\n"
+        f"    steps:\n      - run: |-\n          git clone {url}\n",
+    )
+    assert cli.main(["--write", "--root", str(root)]) == 0
+    capsys.readouterr()
+    plan = json.loads((root / PLAN_RELPATH).read_text(encoding="utf-8"))
+    clones = [e for e in plan["edges"] if e.get("purpose") == "workflow_clone"]
+    assert [(e["from"], e["to"], e["kind"], e["declared"]["url"]) for e in clones] == [
+        ("python-docx", "ooxml-native-corpus", "ci", url)
+    ]
+    assert "python-docx" in plan["graphs"]["impact"]["ooxml-native-corpus"]["reaches"]
+    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert not [item for item in plan["diagnostics"] if item["code"] == "unsupported_workflow"]
+    assert cli.main(["--check", "--strict", "--root", str(root)]) == 0
+    assert "result        : ok" in capsys.readouterr().out

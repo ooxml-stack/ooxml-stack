@@ -4,8 +4,18 @@ from __future__ import annotations
 
 import re
 
-_SCHEME = re.compile(r"^(?:git\+)?(?:https?|ssh|git)://")
+_SCHEME = re.compile(r"^(?:git\+)?(?:https?|ssh|git)://", re.IGNORECASE)
 _SCP = re.compile(r"^[^@/]+@(?P<host>[^:/]+):(?P<path>.+)$")
+
+
+def _drop_userinfo(value: str) -> str:
+    """``git@github.com/ooxml-stack/x`` -> ``github.com/ooxml-stack/x``.
+
+    The same repository must compare equal whether it was written as
+    ``https://github.com/…``, ``ssh://git@github.com/…`` or ``git@github.com:…``.
+    """
+    head, sep, tail = value.partition("/")
+    return head.rsplit("@", 1)[-1] + sep + tail if "@" in head else value
 
 
 def normalize_repo(url: str) -> str:
@@ -15,11 +25,11 @@ def normalize_repo(url: str) -> str:
     if match:
         value = f"{match.group('host')}/{match.group('path')}"
     else:
-        value = _SCHEME.sub("", value)
-    value = value.split("?", 1)[0].split("#", 1)[0]
+        value = _drop_userinfo(_SCHEME.sub("", value))
+    value = value.split("?", 1)[0].split("#", 1)[0].strip("/")
     if value.endswith(".git"):
         value = value[:-4]
-    return value.strip("/")
+    return value
 
 
 def repo_name(url: str) -> str | None:
