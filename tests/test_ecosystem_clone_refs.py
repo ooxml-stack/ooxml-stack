@@ -192,6 +192,8 @@ REMOTE_FORMS = [
     ("upper-case-scheme", "HTTPS://github.com/ooxml-stack/ooxml-core.git"),
     ("ssh", "ssh://git@github.com/ooxml-stack/ooxml-core.git"),
     ("scp", "git@github.com:ooxml-stack/ooxml-core.git"),
+    ("scp-other-user", "deploy@code.example:ooxml-stack/ooxml-core.git"),
+    ("scp-dashed-user", "svc-bot@code.example:ooxml-stack/ooxml-core.git"),
     ("trailing-slash", "https://github.com/ooxml-stack/ooxml-core.git/"),
 ]
 

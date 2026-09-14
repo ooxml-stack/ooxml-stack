@@ -6,6 +6,20 @@ import re
 
 _SCHEME = re.compile(r"^(?:git\+)?(?:https?|ssh|git)://", re.IGNORECASE)
 _SCP = re.compile(r"^[^@/]+@(?P<host>[^:/]+):(?P<path>.+)$")
+# The scheme forms a ``git clone`` argument may take. ``git+https://`` is a
+# packaging VCS prefix, not a git transport, so it is deliberately absent.
+_REMOTE_SCHEME = re.compile(r"^(?:https?|ssh|git)://\S+$", re.IGNORECASE)
+
+
+def is_remote_repo(url: str) -> bool:
+    """Whether ``url`` names a remote repository the inventory can model.
+
+    The scp branch reuses ``_SCP``, the same rule ``normalize_repo`` extracts
+    with, so the clone gate and the normalizer cannot drift apart: every form
+    the normalizer understands is a form the gate lets through. A local path
+    (``../local``) or a non-remote URL (``file://``) is not remote.
+    """
+    return bool(_REMOTE_SCHEME.match(url) or _SCP.match(url))
 
 
 def _drop_userinfo(value: str) -> str:

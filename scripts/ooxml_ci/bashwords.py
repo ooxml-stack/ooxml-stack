@@ -16,11 +16,8 @@ from typing import NamedTuple
 import tree_sitter_bash
 from tree_sitter import Language, Parser
 
-# A repository argument, not any string that merely appears in a command. Every
-# remote form ``urls.normalize_repo`` understands must pass here, otherwise a
-# real clone would be dropped without even a diagnostic: ``git://`` and an
-# upper-case scheme are remote too.
-CLONE_URL = re.compile(r"^(?:(?:https?|ssh|git)://|git@)\S+$", re.IGNORECASE)
+from .urls import is_remote_repo
+
 # ``git clone`` options that consume the following token; everything else that
 # starts with ``-`` is a flag. Not a git parser: just enough to find the repo.
 CLONE_VALUE_OPTIONS = frozenset(
@@ -288,4 +285,4 @@ def clone_target(tokens: list[tuple[str, bool]]) -> tuple[str, str] | None:
     text, dynamic = tokens[index]
     if dynamic:
         return ("dynamic", text)
-    return ("url", text) if CLONE_URL.match(text) else None
+    return ("url", text) if is_remote_repo(text) else None
