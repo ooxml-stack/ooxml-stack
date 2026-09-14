@@ -1,4 +1,4 @@
-.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-inventory-test
+.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-inventory-test runner-test
 
 # The inventory tool runs only against its pinned interpreter. `--write` and
 # `--check` refuse to start when the versions do not match the declaration.
@@ -21,6 +21,12 @@ ecosystem-plan-check:
 
 ecosystem-inventory-test:
 	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ecosystem_*.py -q
+
+# The shared runner's own contract. These tests never start Docker; they cover
+# identity, plan binding, adapter loading, the stage protocol and report
+# verification, which is where a false pass would come from.
+runner-test:
+	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ooxml_runner_*.py -q
 
 repo-hygiene: evidence-hygiene
 	@python3 scripts/audit_repo_hygiene.py $(if $(STRICT_HISTORY),--strict-history,)

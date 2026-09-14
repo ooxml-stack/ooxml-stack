@@ -603,15 +603,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-chart-paths-20260913",
+        "ref_raw": "engine-totals-removal-20260914-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "f222cb3a31398e509970b02ca054c76d0dec1735",
+        "commit": "e3ce428e05dd49cfec6765ae17f861f8492bf8b4",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.0"
+        "version": "0.3.1"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -1535,6 +1535,7 @@
       "workflow": ".github/workflows/corpus-inspection.yml"
     },
     "ooxml-operation-engine": {
+      "adapter": "scripts.ci.adapter",
       "jobs": [
         {
           "env": {},
@@ -1557,12 +1558,33 @@
               "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
+              "cwd": "ooxml-operation-engine",
+              "env": {},
+              "if": null,
+              "line": 27,
+              "name": "Resolve the pinned shared runner",
+              "run": "python3 -c 'import json; print(\"commit=\" + json.load(open(\"ci/runner.json\"))[\"commit\"])' >> \"$GITHUB_OUTPUT\"\n",
+              "shell": null,
+              "uses": null
+            },
+            {
               "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 32,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
+            },
+            {
+              "cwd": "ooxml-operation-engine",
               "env": {
+                "OOXML_RUNNER_ROOT": "${{ github.workspace }}/ooxml-stack",
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 26,
+              "line": 39,
               "name": "Run the shared local and server gate",
               "run": "make check CHECK_COMMIT=\"${{ github.sha }}\" CHECK_OUTPUT=\"${{ runner.temp }}/ci-reports\"",
               "shell": null,
@@ -1572,7 +1594,7 @@
               "cwd": null,
               "env": {},
               "if": "always()",
-              "line": 30,
+              "line": 45,
               "name": "Preserve evidence even on failure",
               "run": null,
               "shell": null,
@@ -2629,7 +2651,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "3533a7da2e9d583088711275d71d0d903a55a0e24ee7c965dd73048a368a02e7",
+  "inputs_digest": "8d1d0f762075c66a06a89425bf2076e03afa25d771a76d58ef3299c767bfa978",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2716,7 +2738,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.26",
+      "version": "0.1.27",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2976,17 +2998,17 @@
     {
       "repos": [
         {
-          "ref": "engine-chart-paths-20260913",
+          "ref": "engine-totals-removal-20260914-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.0"
+          "version": "0.3.1"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.0"
+        "0.3.1"
       ]
     }
   ]
