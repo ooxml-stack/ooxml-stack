@@ -118,6 +118,7 @@ REMOTE_CLONE_FORMS = [
     ("upper-case-scheme", "HTTPS://github.com/ooxml-stack/ooxml-native-corpus.git"),
     ("ssh", "ssh://git@github.com/ooxml-stack/ooxml-native-corpus.git"),
     ("scp", "git@github.com:ooxml-stack/ooxml-native-corpus.git"),
+    ("scp-other-user", "deploy@code.example:ooxml-stack/ooxml-native-corpus.git"),
     ("trailing-slash", "https://github.com/ooxml-stack/ooxml-native-corpus.git/"),
 ]
 
