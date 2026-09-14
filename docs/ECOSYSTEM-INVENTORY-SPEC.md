@@ -53,6 +53,7 @@
 | 33 | shell 参数按 shell 语义解码后再识别仓库 URL：裸词的 `\x` 转义、双引号内 `$ \` " \\` 转义与行继续、单引号字面量都得到正确字面参数；`$VAR`/`${VAR}`/`$(…)`/算术展开等运行期求值仍是动态参数，**加双引号不改变这一点**（`"https://…/${REPO}.git"` 与不加引号同样动态），单引号才是字面量 | §5/§9 |
 | 34 | 已识别为 `git clone` 但仓库参数无法静态确定时，报 `unsupported_workflow`（error，带原文与来源位置），不猜测目标、不生成虚构边、不报 `policy_node_mismatch`；掩码后仍无法可靠读取的 Bash 区域同样报 `unsupported_workflow`，不以空结果表示"没有依赖"。该规则只针对 clone 的目标参数，不扩大为所有动态 shell 参数。选项按形状识别：`--opt=value`（含动态值）自包含，只占一个位置，不会把后面的静态 URL 当成选项值而漏掉 | §5/§9 |
 | 35 | ANSI-C 引用 `$'…'` 保留为一个参数：无反斜杠的字面内容可静态读取并参与 URL 拼接；含反斜杠转义的目标报 `unsupported_workflow`，不猜测 Bash 的解码结果。它作为选项值时仍只占一个位置，不吞掉后面的静态 URL。Bash 解析失败与未闭合 Actions 表达式的诊断均包含 `run` 节点行号 | §5/§9 |
+| 36 | 远程仓库 URL 的**接受集合**与归一化必须一致：`http(s)://`、`ssh://`、`git://`、scp 形式 `user@host:path` 都算远程（scheme 大小写不敏感）；归一化统一去掉 scheme、userinfo、末尾 `/`、`.git` 与查询/片段，使同一仓库在任意写法下得到同一 slug。凡是 `normalize_repo` 能解析的远程形式，`CLONE_URL` 必须放行——否则真 clone 会既无边也无诊断地消失。本地路径（`../local`）与非远程形式（`file://`）仍按"不建模"静默忽略 | §5/§9 |
 
 ---
 
@@ -397,6 +398,10 @@ dev pin 对应的上游 tag 先存在。因此第一步只称其为**部分顺�
     `git clone "https://…/ooxml-native-corpus.git"` 仍是静态边。
     `git clone --branch=${{ inputs.ref }} <url>` 与 `--depth=${{ … }}` 一样把 `--opt=value`
     读成自包含选项，仍产生 `<url>` 的 clone 边，`--check --strict` 退出 0。
+23. **远程 URL 形式**：`git clone` 的目标写成 `https://…`、`git://…`、`HTTPS://…`、
+    `ssh://git@…`、`git@host:…` 或带末尾 `/` 时，都产生同一个仓库的 clone 边，
+    无 `policy_node_mismatch`、无 `unsupported_workflow`，`--check --strict` 退出 0；
+    六种写法归一化到同一 slug。`git clone ../local` 仍不产生边也不产生诊断。
 
 ---
 

@@ -9,7 +9,7 @@ from ecosystem_workflows import (
     WORKFLOW_CLONE_LITERAL,
     WORKFLOW_CLONE_SINGLE,
 )
-from scripts.ooxml_ci import workflows
+from scripts.ooxml_ci import urls, workflows
 
 
 # ------------------------------------------------------------- clone commands
@@ -182,3 +182,36 @@ def test_unreadable_run_reports_its_yaml_node_line(indicator, body):
     assert parsed["errors"]
     assert all(error["code"] == "unsupported_workflow" for error in parsed["errors"])
     assert all(error["where"] == "jobs.j step[0] (line 4)" for error in parsed["errors"])
+
+
+# ------------------------------------------------- every remote form is remote
+
+REMOTE_FORMS = [
+    ("https", "https://github.com/ooxml-stack/ooxml-core.git"),
+    ("git-protocol", "git://github.com/ooxml-stack/ooxml-core.git"),
+    ("upper-case-scheme", "HTTPS://github.com/ooxml-stack/ooxml-core.git"),
+    ("ssh", "ssh://git@github.com/ooxml-stack/ooxml-core.git"),
+    ("scp", "git@github.com:ooxml-stack/ooxml-core.git"),
+    ("trailing-slash", "https://github.com/ooxml-stack/ooxml-core.git/"),
+]
+
+
+@pytest.mark.parametrize("url", [url for _, url in REMOTE_FORMS], ids=[n for n, _ in REMOTE_FORMS])
+def test_every_remote_form_is_read_not_dropped(url):
+    """A remote URL the plan can resolve must never become a silent empty result."""
+    parsed = workflows.parse_workflow(_run(f"git clone {url}"))
+    assert [ref["url"] for ref in parsed["clone_refs"]] == [url]
+    assert parsed["errors"] == []
+
+
+@pytest.mark.parametrize("url", [url for _, url in REMOTE_FORMS], ids=[n for n, _ in REMOTE_FORMS])
+def test_remote_forms_resolve_to_the_same_repository(url):
+    """Scheme, scp syntax and a trailing slash must all name the same node."""
+    assert urls.repo_name(url) == "ooxml-core"
+    assert urls.owner_of(url) == "ooxml-stack"
+
+
+def test_a_local_path_is_still_not_a_remote_clone():
+    parsed = workflows.parse_workflow(_run("git clone ../local"))
+    assert parsed["clone_refs"] == []
+    assert parsed["errors"] == []
