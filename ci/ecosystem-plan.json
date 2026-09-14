@@ -2629,7 +2629,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "4fa6dd330978af0d725573324f0575fadf1e195ec1761b791327b0961f48ddde",
+  "inputs_digest": "3533a7da2e9d583088711275d71d0d903a55a0e24ee7c965dd73048a368a02e7",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2716,7 +2716,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.23",
+      "version": "0.1.26",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
