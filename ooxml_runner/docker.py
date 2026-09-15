@@ -113,6 +113,25 @@ def _copy_log(stream, destination: Path, token: str) -> None:
             print(clean, end="", flush=True)
 
 
+def _hand_over_token(process: subprocess.Popen, token: str) -> None:
+    """Write the token to the child's stdin, tolerating a child that exits first.
+
+    A container that dies before it reads stdin - an unstartable image, a
+    missing mount, a stub in a test - closes the pipe. The child's exit status
+    is the result the caller needs, so a broken pipe here must not replace it
+    with a less specific error.
+    """
+    try:
+        process.stdin.write(token + "\n")
+    except OSError:
+        pass
+    finally:
+        try:
+            process.stdin.close()
+        except OSError:
+            pass
+
+
 def execute(argv: list[str], reports: Path, token: str, timeout: float, name: str) -> int:
     """Run the container, streaming its log live, and always clean the container up."""
     process = subprocess.Popen(
@@ -123,8 +142,7 @@ def execute(argv: list[str], reports: Path, token: str, timeout: float, name: st
     )
     reader.start()
     try:
-        process.stdin.write(token + "\n")
-        process.stdin.close()
+        _hand_over_token(process, token)
         return process.wait(timeout=timeout)
     except subprocess.TimeoutExpired:
         subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=30, check=False)

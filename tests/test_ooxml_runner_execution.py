@@ -13,6 +13,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from runner_fixtures import (
@@ -349,3 +350,31 @@ def test_the_runner_is_importable_without_the_engine_repository():
     result = subprocess.run([sys.executable, "-c", probe], capture_output=True, text=True,
                             cwd=str(Path(__file__).resolve().parents[1]), check=True)
     assert result.stdout.strip() == "ok"
+
+
+# --- container launch ---------------------------------------------------------
+
+def test_a_container_that_dies_before_reading_stdin_reports_its_own_exit_status(tmp_path):
+    """A child that never drains stdin closes the pipe; that must not mask its status."""
+    source = "import os, time; os.close(0); time.sleep(0.2); raise SystemExit(97)"
+    argv = [sys.executable, "-c", source]
+    assert docker.execute(argv, tmp_path, "fixture-token", 30, "fixture-container") == 97
+
+
+def test_a_broken_stdin_pipe_is_not_reported_as_the_container_result():
+    """The guard itself: a closed pipe on the token write is swallowed, not raised."""
+
+    class Closed:
+        def write(self, _data):
+            raise BrokenPipeError(32, "Broken pipe")
+
+        def close(self):
+            raise BrokenPipeError(32, "Broken pipe")
+
+    docker._hand_over_token(SimpleNamespace(stdin=Closed()), "fixture-token")
+
+
+def test_a_container_that_never_reads_stdin_still_leaves_a_log(tmp_path):
+    argv = [sys.executable, "-c", "print('early exit'); raise SystemExit(3)"]
+    assert docker.execute(argv, tmp_path, "fixture-token", 30, "fixture-container") == 3
+    assert "early exit" in (tmp_path / "run.log").read_text()
