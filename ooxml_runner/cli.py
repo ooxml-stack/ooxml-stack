@@ -28,22 +28,14 @@ from pathlib import Path
 from typing import Any
 
 from . import adapter as adapters
+from . import container as container_module
 from . import docker as docker_module
 from . import identity as identity_module
 from . import plan as plan_module
 from . import report as report_module
 from . import snapshot as snapshot_module
-from .execute import scrub
 
 _COMMANDS = ("describe", "run", "verify-report")
-
-
-class ContainerError(RuntimeError):
-    """The container did not finish the run it was asked to perform."""
-
-    def __init__(self, message: str, exit_code: int | None = None):
-        super().__init__(message)
-        self.exit_code = exit_code
 
 
 def _resolve(*, root, repo: str, commit: str, runner_commit: str, plan, repo_path=None) -> dict[str, Any]:
@@ -172,31 +164,8 @@ def _launch(request: dict[str, Any], workspace, reports, config, timeout) -> dic
     print(f"Checking {request['commit']}; reports: {reports}", flush=True)
     result = docker_module.execute(argv, reports, snapshot_module.credential(), timeout, name)
     if result:
-        raise ContainerError(f"CI failed with exit {result}; reports: {reports}", result)
+        raise container_module.ContainerError(f"CI failed with exit {result}; reports: {reports}", result)
     return report_module.load(reports)
-
-
-def _finalize_host_failure(reports: Path, skeleton: dict, exc: BaseException) -> None:
-    """Complete a report the container did not finish, then announce the failure.
-
-    The container's own terminal state is authoritative when it exists: a stage
-    failure it recorded keeps its error, stages and logs. The host only adds what
-    is missing, and replaces a pass its own verification refused. The report is
-    on disk before the event points at it.
-    """
-    try:
-        current = report_module.load(reports)
-    except report_module.ReportError:
-        current = dict(skeleton)
-    if current.get("status") == "fail" and current.get("finished_at"):
-        return
-    exit_code = getattr(exc, "exit_code", None)
-    current.update(status="fail", finished_at=report_module.utc_now(),
-                   exit_code=exit_code if exit_code is not None else 1,
-                   error=scrub(f"{type(exc).__name__}: {exc}"))
-    report_module.save(reports, current)
-    report_module.progress_event(reports, "gate_failed", error=current["error"],
-                                 report=str(reports / report_module.REPORT_NAME))
 
 
 def run_repository(
@@ -236,7 +205,7 @@ def run_repository(
             report_module.verify_generic(result, expected)
             adapter.verify_report(result, request["commit"], config, inputs)
         except BaseException as exc:
-            _finalize_host_failure(reports, skeleton, exc)
+            container_module.finalize_host_failure(reports, skeleton, exc)
             raise
         print(f"PASS {request['commit']}; report: {reports / 'report.json'}", flush=True)
         return {"repository": request["repo"], "commit": request["commit"],

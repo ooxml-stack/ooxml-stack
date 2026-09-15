@@ -25,6 +25,14 @@ class StageError(RuntimeError):
     """A stage failed, or the run did not leave its inputs as it found them."""
 
 
+class ContainerError(RuntimeError):
+    """The container did not finish the run it was asked to perform."""
+
+    def __init__(self, message: str, exit_code: int | None = None):
+        super().__init__(message)
+        self.exit_code = exit_code
+
+
 def stage_timeout(signum, frame):
     raise TimeoutError("gate stage exceeded the configured deadline")
 
@@ -134,3 +142,27 @@ def fail(reports: Path, report: dict, exc: BaseException) -> dict:
     )
     print(report["error"], flush=True)
     return report
+
+
+def finalize_host_failure(reports: Path, skeleton: dict, exc: BaseException) -> None:
+    """Complete a report the container did not finish, then announce the failure.
+
+    The container's own terminal state is authoritative when it exists: a stage
+    failure it recorded keeps its error, stages and logs. The host only adds what
+    is missing, and replaces a pass its own verification refused. The report is
+    on disk before the event points at it, so a consumer following the event
+    never reads a report that still says ``running``.
+    """
+    try:
+        current = reports_module.load(reports)
+    except reports_module.ReportError:
+        current = dict(skeleton)
+    if current.get("status") == "fail" and current.get("finished_at"):
+        return
+    exit_code = getattr(exc, "exit_code", None)
+    current.update(status="fail", finished_at=utc_now(),
+                   exit_code=exit_code if exit_code is not None else 1,
+                   error=scrub(f"{type(exc).__name__}: {exc}"))
+    reports_module.save(reports, current)
+    reports_module.progress_event(reports, "gate_failed", error=current["error"],
+                                  report=str(reports / reports_module.REPORT_NAME))
