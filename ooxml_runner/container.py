@@ -97,6 +97,19 @@ def run_stages(reports: Path, steps: dict, report: dict, timeout: int) -> dict:
     return report
 
 
+def _terminal(reports: Path, report: dict, status: str, exit_code: int, **fields) -> dict:
+    """Persist the terminal state before anything announces it.
+
+    A progress consumer reads the report named by the event, so the event must
+    never point at a report that still says ``running``. Saving first also means
+    a crash between the two leaves a consistent scene rather than a pass that
+    was never written down.
+    """
+    report.update(status=status, exit_code=exit_code, finished_at=utc_now(), **fields)
+    save_report(reports, report)
+    return report
+
+
 def finalize(root: Path, reports: Path, report: dict, *, input_hashes, is_dirty) -> dict:
     """Prove the run did not move its own inputs, then declare success.
 
@@ -107,15 +120,14 @@ def finalize(root: Path, reports: Path, report: dict, *, input_hashes, is_dirty)
         raise StageError("checks changed tracked inputs")
     if is_dirty(Path(root)):
         raise StageError("checks left the execution snapshot dirty")
-    report["status"] = "pass"
-    report["exit_code"] = 0
+    _terminal(Path(reports), report, "pass", 0)
     progress_event(Path(reports), "gate_passed")
     return report
 
 
 def fail(reports: Path, report: dict, exc: BaseException) -> dict:
-    """Record a failure in the report and the progress stream, then persist."""
-    report.update(status="fail", exit_code=1, error=scrub(f"{type(exc).__name__}: {exc}"))
+    """Persist the failure, then point the progress stream at the persisted report."""
+    _terminal(Path(reports), report, "fail", 1, error=scrub(f"{type(exc).__name__}: {exc}"))
     progress_event(
         Path(reports), "gate_failed", error=report["error"],
         report=str(Path(reports) / reports_module.REPORT_NAME),
