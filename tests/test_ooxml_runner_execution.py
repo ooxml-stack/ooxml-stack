@@ -8,6 +8,7 @@ pass.
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import time
@@ -24,7 +25,7 @@ from runner_fixtures import (
 )
 
 from ooxml_runner import adapter as adapters
-from ooxml_runner import cli, container, docker, execute, snapshot
+from ooxml_runner import cli, container, credentials, docker, execute, snapshot
 
 
 def _reports(tmp_path):
@@ -261,6 +262,46 @@ def test_the_container_trusts_its_bind_mounts_as_git_safe_directories(tmp_path):
     assert "GIT_CONFIG_COUNT=1" in argv
     assert "GIT_CONFIG_KEY_0=safe.directory" in argv
     assert "GIT_CONFIG_VALUE_0=/runner" in argv
+
+
+def test_configuring_credentials_keeps_the_git_config_the_container_injected(monkeypatch):
+    """The auth header must not evict the safe.directory entry it shares a protocol with."""
+    monkeypatch.setenv("GIT_CONFIG_COUNT", "1")
+    monkeypatch.setenv("GIT_CONFIG_KEY_0", "safe.directory")
+    monkeypatch.setenv("GIT_CONFIG_VALUE_0", "/runner")
+    monkeypatch.delenv(credentials.TOKEN_VAR, raising=False)
+
+    credentials.configure("token-value")
+
+    assert os.environ["GIT_CONFIG_COUNT"] == "2"
+    assert os.environ["GIT_CONFIG_KEY_0"] == "safe.directory"
+    assert os.environ["GIT_CONFIG_VALUE_0"] == "/runner"
+    assert os.environ["GIT_CONFIG_KEY_1"] == "http.https://github.com/.extraheader"
+    assert os.environ["GIT_CONFIG_VALUE_1"].startswith("AUTHORIZATION: basic ")
+    assert os.environ[credentials.TOKEN_VAR] == "token-value"
+
+
+def test_configuring_credentials_twice_does_not_duplicate_the_auth_header(monkeypatch):
+    monkeypatch.setenv("GIT_CONFIG_COUNT", "1")
+    monkeypatch.setenv("GIT_CONFIG_KEY_0", "safe.directory")
+    monkeypatch.setenv("GIT_CONFIG_VALUE_0", "/runner")
+
+    credentials.configure("token-value")
+    credentials.configure("token-value")
+
+    assert os.environ["GIT_CONFIG_COUNT"] == "2"
+    assert os.environ["GIT_CONFIG_KEY_1"] == "http.https://github.com/.extraheader"
+
+
+def test_configuring_credentials_tolerates_a_broken_injected_count(monkeypatch):
+    monkeypatch.setenv("GIT_CONFIG_COUNT", "not-a-number")
+    monkeypatch.setenv("GIT_CONFIG_KEY_0", "safe.directory")
+    monkeypatch.setenv("GIT_CONFIG_VALUE_0", "/runner")
+
+    credentials.configure("token-value")
+
+    assert os.environ["GIT_CONFIG_COUNT"] == "1"
+    assert os.environ["GIT_CONFIG_KEY_0"] == "http.https://github.com/.extraheader"
 
 
 def test_repository_keys_with_spaces_survive_as_single_arguments(tmp_path):
