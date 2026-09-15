@@ -474,15 +474,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-table-grid-avlst-20260912",
+        "ref_raw": "engine-integrity-20260915-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "683913c2a607834bada8a0203231346ce84e8604",
+        "commit": "8585e37d7c8c9b7b8477832daf1b9ef128c50f74",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.5.35.post1"
+        "version": "0.5.35.post3"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -603,15 +603,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-totals-removal-20260914-r2",
+        "ref_raw": "engine-integrity-20260915-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "e3ce428e05dd49cfec6765ae17f861f8492bf8b4",
+        "commit": "74167272669f3ef6bc17d493eb5178fc21be983e",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.1"
+        "version": "0.3.3"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -2651,7 +2651,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "8d1d0f762075c66a06a89425bf2076e03afa25d771a76d58ef3299c767bfa978",
+  "inputs_digest": "ac59ae54cf615609eda1bae2c5c618ce9443be3f9a2ac12ddac53b60bb1b2b9a",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2738,7 +2738,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.27",
+      "version": "0.1.28",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2950,17 +2950,17 @@
     {
       "repos": [
         {
-          "ref": "engine-table-grid-avlst-20260912",
+          "ref": "engine-integrity-20260915-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.5.35.post1"
+          "version": "0.5.35.post3"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-test-framework",
       "versions": [
-        "0.5.35.post1"
+        "0.5.35.post3"
       ]
     },
     {
@@ -2998,17 +2998,17 @@
     {
       "repos": [
         {
-          "ref": "engine-totals-removal-20260914-r2",
+          "ref": "engine-integrity-20260915-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.1"
+          "version": "0.3.3"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.1"
+        "0.3.3"
       ]
     }
   ]
