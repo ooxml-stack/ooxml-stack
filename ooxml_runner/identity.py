@@ -13,6 +13,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+from . import snapshot
+
 PACKAGE_DIR = Path(__file__).resolve().parent
 
 
@@ -22,7 +24,8 @@ class IdentityError(RuntimeError):
 
 def _git(root: Path, *args: str) -> str:
     result = subprocess.run(
-        ["git", "-C", str(root), *args], capture_output=True, text=True, check=False
+        ["git", "-C", str(root), *args], capture_output=True, text=True, check=False,
+        env=snapshot.git_environment(),
     )
     if result.returncode != 0:
         raise IdentityError(f"git {' '.join(args)} failed in {root}: {result.stderr.strip()}")
