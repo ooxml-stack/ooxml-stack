@@ -6,7 +6,7 @@
   "diagnostics": [
     {
       "code": "version_skew",
-      "detail": "ooxml-operation-engine=0.6.1; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
+      "detail": "ooxml-operation-engine=0.6.3; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
       "exceptions_matched": [
         "python-xlsx"
       ],
@@ -298,15 +298,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "engine-chart-paths-20260913",
+        "ref_raw": "engine-chart-create-20260915-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "2cebb055e036d9e0fc130827a6b96a882eb48da5",
+        "commit": "39c7a7d0c200ac26bac45dbd179b545b8182dd97",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.6.1"
+        "version": "0.6.3"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -517,15 +517,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-chart-paths-20260913",
+        "ref_raw": "engine-chart-create-20260915-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "8b5ef448d7230f5d2271f253796be6f29335369f",
+        "commit": "a1afa6f34bf60724a8924e9140cd1efd45db40ec",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "1.2.15"
+        "version": "1.2.16"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -560,15 +560,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-chart-paths-20260913",
+        "ref_raw": "engine-chart-create-20260915-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "823658e9c0262d986098dc774d034a46cf2957b8",
+        "commit": "202504225d917c3ee895cc9b2bb41fcde2d201e6",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "2.0.14"
+        "version": "2.0.15"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -603,15 +603,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-integrity-20260915-r2",
+        "ref_raw": "engine-chart-create-20260915-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "74167272669f3ef6bc17d493eb5178fc21be983e",
+        "commit": "85b6749aaa41a7a5eb8a288e17b1838c8acfe6c6",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.3"
+        "version": "0.3.5"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -2623,6 +2623,7 @@
     "ooxml-spec/uv.lock",
     "ooxml-stack/.github/workflows/evidence-retention.yml",
     "ooxml-stack/.github/workflows/mutation-gate.yml",
+    "ooxml-stack/.github/workflows/runner-tests.yml",
     "ooxml-stack/ci/ecosystem-inventory-requirements.txt",
     "ooxml-stack/ci/ecosystem-policy.json",
     "ooxml-stubs/.github/workflows/ci.yml",
@@ -2651,7 +2652,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "ac59ae54cf615609eda1bae2c5c618ce9443be3f9a2ac12ddac53b60bb1b2b9a",
+  "inputs_digest": "ca0884d2fba63b8338eb3dadc6af9c688095fc49271b40a0d7d22e6593f1c7db",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2738,7 +2739,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.28",
+      "version": "0.1.29",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2786,10 +2787,10 @@
       ],
       "repos": [
         {
-          "ref": "engine-chart-paths-20260913",
+          "ref": "engine-chart-create-20260915-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.6.1"
+          "version": "0.6.3"
         },
         {
           "ref": "v0.6.0",
@@ -2830,7 +2831,7 @@
       "versions": [
         "0.3.51",
         "0.6.0",
-        "0.6.1"
+        "0.6.3"
       ]
     },
     {
@@ -2966,49 +2967,49 @@
     {
       "repos": [
         {
-          "ref": "engine-chart-paths-20260913",
+          "ref": "engine-chart-create-20260915-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "1.2.15"
+          "version": "1.2.16"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-docx",
       "versions": [
-        "1.2.15"
+        "1.2.16"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-chart-paths-20260913",
+          "ref": "engine-chart-create-20260915-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "2.0.14"
+          "version": "2.0.15"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.14"
+        "2.0.15"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-integrity-20260915-r2",
+          "ref": "engine-chart-create-20260915-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.3"
+          "version": "0.3.5"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.3"
+        "0.3.5"
       ]
     }
   ]
