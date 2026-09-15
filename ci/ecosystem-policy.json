@@ -62,7 +62,11 @@
     "python-xlsx": { "workflow": ".github/workflows/ci.yml", "jobs": ["validate"] },
     "ooxml-native-corpus": { "workflow": ".github/workflows/corpus-inspection.yml", "jobs": ["inspect"] },
     "ooxml-stack": { "workflow": ".github/workflows/evidence-retention.yml", "jobs": ["evidence-retention"] },
-    "ooxml-operation-engine": { "workflow": ".github/workflows/ci.yml", "jobs": ["check"] },
+    "ooxml-operation-engine": {
+      "workflow": ".github/workflows/ci.yml",
+      "jobs": ["check"],
+      "adapter": "scripts.ci.adapter"
+    },
     "ooxml-apps": { "workflow": ".github/workflows/ci.yml", "jobs": ["backend", "frontend"] }
   },
   "edge_sources": [
