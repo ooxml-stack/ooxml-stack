@@ -7,6 +7,7 @@ accepts, which is where a false pass would come from.
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import pytest
 from runner_fixtures import (
@@ -44,6 +45,16 @@ def test_runner_refuses_a_short_pinned_commit(tmp_path):
     with pytest.raises(identity.IdentityError):
         cli.describe_repository(root=tmp_path, repo=REPO, commit="HEAD",
                                 runner_commit="abc123", plan=make_plan(tmp_path, repo))
+
+
+def test_identity_ignores_a_git_dir_inherited_from_a_git_hook(tmp_path, monkeypatch):
+    """A pre-push hook exports GIT_DIR; the runner must still read its own checkout."""
+    other = make_repo(tmp_path / "other")
+    snapshot.git(other, "commit", "--quiet", "--allow-empty", "-m", "a different repository")
+    monkeypatch.setenv("GIT_DIR", str(other / ".git"))
+    observed = identity.identity()
+    assert observed["commit"] == snapshot.git(Path(__file__).resolve().parents[1], "rev-parse", "HEAD")
+    assert observed["commit"] != snapshot.git(other, "rev-parse", "HEAD")
 
 
 def test_describe_starts_nothing(tmp_path, monkeypatch):

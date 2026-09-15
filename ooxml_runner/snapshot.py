@@ -29,10 +29,22 @@ class SnapshotError(RuntimeError):
     """A snapshot could not be prepared or did not match the request."""
 
 
-def git(repo: Path, *args: str, isolated: bool = False, binary: bool = False):
+def git_environment() -> dict[str, str]:
+    """A copy of the environment with Git's repository redirections removed.
+
+    Git resolves a repository through these variables before it looks at the
+    directory ``-C`` selected. A runner started from a Git hook inherits
+    ``GIT_DIR`` from that hook, so an unprefixed ``git -C <repo>`` would answer
+    for the caller's repository instead of ``<repo>``.
+    """
     env = dict(os.environ)
     for name in _GIT_ENV:
         env.pop(name, None)
+    return env
+
+
+def git(repo: Path, *args: str, isolated: bool = False, binary: bool = False):
+    env = git_environment()
     if isolated:
         env.update(GIT_CONFIG_GLOBAL="/dev/null", GIT_CONFIG_NOSYSTEM="1", GIT_ATTR_NOSYSTEM="1")
         env.pop("GIT_CONFIG_COUNT", None)
