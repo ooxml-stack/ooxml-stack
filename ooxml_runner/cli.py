@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Any
 
 from . import adapter as adapters
+from . import container as container_module
 from . import docker as docker_module
 from . import identity as identity_module
 from . import plan as plan_module
@@ -42,23 +43,29 @@ def _resolve(*, root, repo: str, commit: str, runner_commit: str, plan, repo_pat
 
     ``repo_path`` overrides the default ``root/repo`` layout so a linked worktree
     or any other checkout location can be verified without renaming it.
+
+    The runner identity kept here is the one derived from the pinned commit, not
+    the one the working tree happens to hash to, so a dirty checkout cannot
+    define its own expectation.
     """
     root = Path(root).resolve()
     repo_path = Path(repo_path).resolve() if repo_path else root / repo
     if not repo_path.is_dir():
         raise SystemExit(f"repository not found: {repo_path}")
     resolved = snapshot_module.resolve_commit(repo_path, commit)
-    running = identity_module.identity()
-    identity_module.require_expected(running, runner_commit)
+    trusted = identity_module.require_expected(identity_module.identity(), runner_commit)
     loaded = plan_module.load(Path(plan).resolve())
     return {
         "root": root, "repo_path": repo_path, "repo": repo, "commit": resolved,
-        "runner": running, "plan": loaded, "binding": plan_module.binding_for(loaded, repo),
+        "runner": trusted, "plan": loaded, "binding": plan_module.binding_for(loaded, repo),
     }
 
 
 def _view(request: dict[str, Any], repo_root: Path) -> dict[str, Any]:
-    adapter = adapters.load(repo_root, request["binding"]["adapter"])
+    """The snapshot's own adapter, evaluated in that snapshot's interpreter."""
+    adapter = adapters.SnapshotAdapter(
+        repo_root, request["binding"]["adapter"], Path(request["runner"]["root"])
+    )
     return {
         "adapter": adapter,
         "described": adapters.describe(adapter, repo_root),
@@ -70,8 +77,10 @@ def _expected(request: dict[str, Any], stages: list[str]) -> dict[str, Any]:
     return {
         "repository": request["repo"], "commit": request["commit"],
         "runner_commit": request["runner"]["commit"],
+        "runner_source_sha256": request["runner"]["source_sha256"],
         "plan_sha256": request["plan"]["sha256"],
         "inputs_digest": request["plan"]["inputs_digest"],
+        "binding": request["binding"],
         "stages": stages,
     }
 
@@ -137,7 +146,8 @@ def _cached_pass(directory: Path, expected: dict, adapter, config: dict, inputs:
             candidate = report_module.load(path)
             report_module.verify_generic(candidate, expected)
             adapter.verify_report(candidate, expected["commit"], config, inputs)
-        except (report_module.ReportError, OSError, ValueError, TypeError, KeyError):
+        except (report_module.ReportError, adapters.AdapterError, OSError,
+                ValueError, TypeError, KeyError):
             continue
         return path.parent
     return None
@@ -147,13 +157,14 @@ def _launch(request: dict[str, Any], workspace, reports, config, timeout) -> dic
     name = "ooxml-runner-" + uuid.uuid4().hex
     argv = docker_module.command(
         workspace=workspace, reports=reports, runner_root=Path(request["runner"]["root"]),
-        plan=Path(request["plan"]["path"]), config=config, commit=request["commit"], name=name,
+        plan=Path(request["plan"]["path"]), config=config, commit=request["commit"],
+        runner_commit=request["runner"]["commit"], name=name,
         cpus=docker_module.cpu_limit(), repository=request["repo"], adapter=request["binding"]["adapter"],
     )
     print(f"Checking {request['commit']}; reports: {reports}", flush=True)
     result = docker_module.execute(argv, reports, snapshot_module.credential(), timeout, name)
     if result:
-        raise RuntimeError(f"CI failed with exit {result}; reports: {reports}")
+        raise container_module.ContainerError(f"CI failed with exit {result}; reports: {reports}", result)
     return report_module.load(reports)
 
 
@@ -179,16 +190,23 @@ def run_repository(
                         "report": str(cached / "report.json"), "reused": True}
         reports = output_root / request["commit"] / ("ooxml-run-" + uuid.uuid4().hex)
         reports.mkdir(parents=True)
-        report_module.save(reports, report_module.new_report(
+        skeleton = report_module.new_report(
             repository=request["repo"], commit=request["commit"], runner=request["runner"],
             plan={"path": request["plan"]["path"], "sha256": request["plan"]["sha256"],
                   "inputs_digest": request["plan"]["inputs_digest"],
                   "inputs_reverified": inputs_reverified},
             binding=request["binding"], image=config["image"], inputs=inputs,
-        ))
-        result = _launch(request, snapshot.parent, reports, config, timeout or float(config["timeout_seconds"]))
-        report_module.verify_generic(result, expected)
-        adapter.verify_report(result, request["commit"], config, inputs)
+            stages=expected["stages"],
+        )
+        report_module.save(reports, skeleton)
+        try:
+            result = _launch(request, snapshot.parent, reports, config,
+                             timeout or float(config["timeout_seconds"]))
+            report_module.verify_generic(result, expected)
+            adapter.verify_report(result, request["commit"], config, inputs)
+        except BaseException as exc:
+            container_module.finalize_host_failure(reports, skeleton, exc)
+            raise
         print(f"PASS {request['commit']}; report: {reports / 'report.json'}", flush=True)
         return {"repository": request["repo"], "commit": request["commit"],
                 "report": str(reports / "report.json"), "result": "pass",

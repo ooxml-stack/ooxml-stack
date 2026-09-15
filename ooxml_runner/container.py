@@ -25,6 +25,14 @@ class StageError(RuntimeError):
     """A stage failed, or the run did not leave its inputs as it found them."""
 
 
+class ContainerError(RuntimeError):
+    """The container did not finish the run it was asked to perform."""
+
+    def __init__(self, message: str, exit_code: int | None = None):
+        super().__init__(message)
+        self.exit_code = exit_code
+
+
 def stage_timeout(signum, frame):
     raise TimeoutError("gate stage exceeded the configured deadline")
 
@@ -97,6 +105,19 @@ def run_stages(reports: Path, steps: dict, report: dict, timeout: int) -> dict:
     return report
 
 
+def _terminal(reports: Path, report: dict, status: str, exit_code: int, **fields) -> dict:
+    """Persist the terminal state before anything announces it.
+
+    A progress consumer reads the report named by the event, so the event must
+    never point at a report that still says ``running``. Saving first also means
+    a crash between the two leaves a consistent scene rather than a pass that
+    was never written down.
+    """
+    report.update(status=status, exit_code=exit_code, finished_at=utc_now(), **fields)
+    save_report(reports, report)
+    return report
+
+
 def finalize(root: Path, reports: Path, report: dict, *, input_hashes, is_dirty) -> dict:
     """Prove the run did not move its own inputs, then declare success.
 
@@ -107,18 +128,41 @@ def finalize(root: Path, reports: Path, report: dict, *, input_hashes, is_dirty)
         raise StageError("checks changed tracked inputs")
     if is_dirty(Path(root)):
         raise StageError("checks left the execution snapshot dirty")
-    report["status"] = "pass"
-    report["exit_code"] = 0
+    _terminal(Path(reports), report, "pass", 0)
     progress_event(Path(reports), "gate_passed")
     return report
 
 
 def fail(reports: Path, report: dict, exc: BaseException) -> dict:
-    """Record a failure in the report and the progress stream, then persist."""
-    report.update(status="fail", exit_code=1, error=scrub(f"{type(exc).__name__}: {exc}"))
+    """Persist the failure, then point the progress stream at the persisted report."""
+    _terminal(Path(reports), report, "fail", 1, error=scrub(f"{type(exc).__name__}: {exc}"))
     progress_event(
         Path(reports), "gate_failed", error=report["error"],
         report=str(Path(reports) / reports_module.REPORT_NAME),
     )
     print(report["error"], flush=True)
     return report
+
+
+def finalize_host_failure(reports: Path, skeleton: dict, exc: BaseException) -> None:
+    """Complete a report the container did not finish, then announce the failure.
+
+    The container's own terminal state is authoritative when it exists: a stage
+    failure it recorded keeps its error, stages and logs. The host only adds what
+    is missing, and replaces a pass its own verification refused. The report is
+    on disk before the event points at it, so a consumer following the event
+    never reads a report that still says ``running``.
+    """
+    try:
+        current = reports_module.load(reports)
+    except reports_module.ReportError:
+        current = dict(skeleton)
+    if current.get("status") == "fail" and current.get("finished_at"):
+        return
+    exit_code = getattr(exc, "exit_code", None)
+    current.update(status="fail", finished_at=utc_now(),
+                   exit_code=exit_code if exit_code is not None else 1,
+                   error=scrub(f"{type(exc).__name__}: {exc}"))
+    reports_module.save(reports, current)
+    reports_module.progress_event(reports, "gate_failed", error=current["error"],
+                                  report=str(reports / reports_module.REPORT_NAME))
