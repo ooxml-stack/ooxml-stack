@@ -38,8 +38,14 @@ def utc_now() -> str:
 
 
 def new_report(
-    *, repository: str, commit: str, runner: dict, plan: dict, binding: dict, image: str, inputs: dict
+    *, repository: str, commit: str, runner: dict, plan: dict, binding: dict, image: str, inputs: dict,
+    stages: list[str] = (),
 ) -> dict[str, Any]:
+    """The skeleton a run starts from.
+
+    Declared stages start as ``not_run`` so a run that dies before its first
+    stage still names what it did not execute, instead of reporting nothing.
+    """
     return {
         "schema_version": REPORT_SCHEMA_VERSION,
         "status": "running",
@@ -53,7 +59,7 @@ def new_report(
         "started_at": utc_now(),
         "finished_at": None,
         "exit_code": None,
-        "stages": [],
+        "stages": [{"name": name, "status": "not_run"} for name in stages],
     }
 
 
@@ -98,6 +104,42 @@ def _expected_stage_names(expected: dict[str, Any]) -> list[str]:
     return list(names)
 
 
+def _mapping(value: Any, field: str) -> dict[str, Any]:
+    if not isinstance(value, dict):
+        raise ReportError(f"report {field} must be an object")
+    return value
+
+
+def _sha256(value: Any, field: str) -> str:
+    if not isinstance(value, str) or len(value) != 64 or any(c not in "0123456789abcdef" for c in value):
+        raise ReportError(f"report {field} must be a 64-character lowercase hex digest")
+    return value
+
+
+def _verify_runner(report: dict[str, Any], expected: dict[str, Any]) -> None:
+    """The report must name the pinned runner commit and the source it contains."""
+    runner = _mapping(report.get("runner"), "runner")
+    if runner.get("commit") != expected.get("runner_commit"):
+        raise ReportError("report runner commit does not match the requested runner commit")
+    expected_source = expected.get("runner_source_sha256")
+    if not isinstance(expected_source, str) or not expected_source:
+        raise ReportError("verification requires the pinned runner source hash")
+    if _sha256(runner.get("source_sha256"), "runner source_sha256") != expected_source:
+        raise ReportError("report runner source_sha256 does not match the pinned runner commit")
+
+
+def _verify_binding(report: dict[str, Any], expected: dict[str, Any]) -> None:
+    """The report must name the workflow, jobs and adapter this plan resolved."""
+    binding = _mapping(report.get("binding"), "binding")
+    expected_binding = expected.get("binding")
+    if not isinstance(expected_binding, dict) or not expected_binding:
+        raise ReportError("verification requires the plan's full binding")
+    if binding != expected_binding:
+        raise ReportError(
+            f"report binding {binding!r} does not match the plan binding {expected_binding!r}"
+        )
+
+
 def verify_generic(report: dict[str, Any], expected: dict[str, Any]) -> None:
     """Check the report against caller-supplied expectations, not its own claims."""
     if report.get("schema_version") != REPORT_SCHEMA_VERSION:
@@ -107,13 +149,13 @@ def verify_generic(report: dict[str, Any], expected: dict[str, Any]) -> None:
             raise ReportError(
                 f"report {field} {report.get(field)!r} does not match requested {expected.get(field)!r}"
             )
-    if (report.get("runner") or {}).get("commit") != expected.get("runner_commit"):
-        raise ReportError("report runner commit does not match the requested runner commit")
+    _verify_runner(report, expected)
     plan = report.get("plan") or {}
     if plan.get("sha256") != expected.get("plan_sha256"):
         raise ReportError("report plan sha256 does not match the requested plan file")
     if plan.get("inputs_digest") != expected.get("inputs_digest"):
         raise ReportError("report inputs_digest does not match the requested plan")
+    _verify_binding(report, expected)
     if report.get("status") != "pass":
         raise ReportError(f"report is not a pass: {report.get('status')!r}")
     if report.get("exit_code") != 0:

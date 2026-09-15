@@ -221,22 +221,26 @@ def test_a_report_from_another_plan_is_rejected(tmp_path):
         report_module.verify_generic(payload, expected_for(repo, other))
 
 
-def test_verify_report_file_re_derives_inputs_instead_of_trusting_the_report(tmp_path, monkeypatch):
-    """A report must not be able to certify its own input digest."""
+def test_verify_report_file_re_derives_inputs_instead_of_trusting_the_report(tmp_path):
+    """A report must not be able to certify its own input digest.
+
+    The adapter compares the report's ``inputs`` against the ones the runner
+    re-derived from the snapshot, so a report that carries its own digest is
+    refused. Passing the report's own value back in would accept it.
+    """
     repo = make_repo(tmp_path)
     plan = make_plan(tmp_path, repo)
-    payload = passing_report(repo, plan)
-    payload["inputs"] = {"ci/environment.json": "0" * 64}
     report_path = tmp_path / "report.json"
-    report_path.write_text(json.dumps(payload))
-    seen = {}
-    module = adapters.load(repo, "scripts.ci.adapter")
-    monkeypatch.setattr(module, "verify_report",
-                        lambda report, commit, config, inputs: seen.update(inputs=inputs))
-    monkeypatch.setattr(adapters, "load", lambda root, name: module)
+    report_path.write_text(json.dumps(passing_report(repo, plan)))
     cli.verify_report_file(root=tmp_path, repo=REPO, commit="HEAD", runner_commit=RUNNER_COMMIT,
                            plan=plan, report=report_path)
-    assert seen["inputs"] == {}
+
+    payload = passing_report(repo, plan)
+    payload["inputs"] = {"ci/environment.json": "0" * 64}
+    report_path.write_text(json.dumps(payload))
+    with pytest.raises(adapters.AdapterError, match="input mismatch"):
+        cli.verify_report_file(root=tmp_path, repo=REPO, commit="HEAD",
+                               runner_commit=RUNNER_COMMIT, plan=plan, report=report_path)
 
 
 def test_json_round_trip_preserves_the_verdict(tmp_path):

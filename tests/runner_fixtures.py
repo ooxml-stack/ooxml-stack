@@ -28,7 +28,8 @@ def describe(root):
 
 
 def load_config(root):
-    return {{"image": "fixture@sha256:" + "0" * 64, "stage_timeout_seconds": 5}}
+    return {{"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64",
+            "timeout_seconds": 30, "stage_timeout_seconds": 5}}
 
 
 def input_hashes(root):
@@ -51,14 +52,7 @@ def verify_report(report, commit, config, inputs):
 '''
 
 
-def make_repo(tmp_path, name=REPO, stages=("alpha", "beta"), adapter=ADAPTER_SOURCE):
-    repo = tmp_path / name
-    (repo / "ci").mkdir(parents=True)
-    (repo / "scripts/ci").mkdir(parents=True)
-    (repo / "ci/environment.json").write_text(json.dumps({"schema_version": 1}))
-    (repo / "scripts/ci/__init__.py").write_text("")
-    if adapter is not None:
-        (repo / "scripts/ci/adapter.py").write_text(adapter.format(stages=list(stages)))
+def _init_repo(repo):
     snapshot.git(repo, "init", "--quiet")
     for key, value in (("user.email", "ci@example.invalid"), ("user.name", "CI fixture"),
                        ("commit.gpgsign", "false"), ("core.hooksPath", "/dev/null")):
@@ -68,35 +62,115 @@ def make_repo(tmp_path, name=REPO, stages=("alpha", "beta"), adapter=ADAPTER_SOU
     return repo
 
 
+def make_repo(tmp_path, name=REPO, stages=("alpha", "beta"), adapter=ADAPTER_SOURCE):
+    repo = tmp_path / name
+    (repo / "ci").mkdir(parents=True)
+    (repo / "scripts/ci").mkdir(parents=True)
+    (repo / "ci/environment.json").write_text(json.dumps({"schema_version": 1}))
+    (repo / "scripts/ci/__init__.py").write_text("")
+    if adapter is not None:
+        (repo / "scripts/ci/adapter.py").write_text(adapter.format(stages=list(stages)))
+    return _init_repo(repo)
+
+
+# An adapter whose behaviour comes from a sibling module in the same repository.
+# ``scripts.ci.helper`` is the module whose provenance the loader has to control:
+# the calling checkout has one of the same name.
+HELPER_ADAPTER_SOURCE = '''
+"""Fixture adapter that depends on a sibling module."""
+
+from scripts.ci import helper
+
+
+def describe(root):
+    return {"stages": list(helper.STAGES), "environment": {"image": "fixture@sha256:" + "0" * 64},
+            "implementation": helper.NAME, "static_commands": [], "runtime_steps": []}
+
+
+def load_config(root):
+    return {"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64",
+            "timeout_seconds": 30, "stage_timeout_seconds": 5, "helper": helper.NAME}
+
+
+def input_hashes(root):
+    return {}
+
+
+def is_dirty(root):
+    return False
+
+
+def operations(root, reports, config):
+    return {name: (lambda name=name: {"stage": name}) for name in helper.STAGES}
+
+
+def verify_report(report, commit, config, inputs):
+    if report.get("image") != config["image"]:
+        raise ValueError("image mismatch")
+    if report.get("helper") != helper.NAME:
+        raise ValueError("report was not produced by this helper")
+'''
+
+
+def helper_source(name, stages):
+    return f"NAME = {name!r}\nSTAGES = {list(stages)!r}\n"
+
+
+def make_helper_repo(tmp_path, name, stages, helper_name=None, adapter=HELPER_ADAPTER_SOURCE):
+    """A repository whose adapter behaviour is decided by ``scripts.ci.helper``."""
+    repo = tmp_path / name
+    (repo / "ci").mkdir(parents=True)
+    (repo / "scripts/ci").mkdir(parents=True)
+    (repo / "ci/environment.json").write_text(json.dumps({"schema_version": 1}))
+    (repo / "scripts/ci/__init__.py").write_text("")
+    (repo / "scripts/ci/helper.py").write_text(helper_source(helper_name or name, stages))
+    (repo / "scripts/ci/adapter.py").write_text(adapter)
+    return _init_repo(repo)
+
+
+def rewrite_helper(repo, name, stages):
+    (repo / "scripts/ci/helper.py").write_text(helper_source(name, stages))
+
+
+def commit_all(repo, message="fixture"):
+    snapshot.git(repo, "add", ".")
+    snapshot.git(repo, "commit", "--quiet", "-m", message)
+    return snapshot.git(repo, "rev-parse", "HEAD")
+
+
 def make_plan(tmp_path, repo, *, adapter="scripts.ci.adapter", nodes=None, diagnostics=(),
-              full=None, inputs=(), digest="a" * 64):
+              full=None, inputs=(), digest="a" * 64, key=REPO, name="plan.json"):
     payload = {
         "schema_version": 1, "inputs_digest": digest, "inputs": list(inputs),
         "diagnostics": list(diagnostics),
-        "nodes": nodes if nodes is not None else [{"key": REPO}],
-        "full": {REPO: {"workflow": ".github/workflows/ci.yml", "jobs": [{"id": "check"}],
-                        **({"adapter": adapter} if adapter else {})}} if full is None else full,
+        "nodes": nodes if nodes is not None else [{"key": key}],
+        "full": {key: {"workflow": ".github/workflows/ci.yml", "jobs": [{"id": "check"}],
+                       **({"adapter": adapter} if adapter else {})}} if full is None else full,
     }
-    path = tmp_path / "plan.json"
+    path = tmp_path / name
     path.write_text(json.dumps(payload))
     return path
 
 
-def expected_for(repo, plan, stages=("alpha", "beta")):
+def expected_for(repo, plan, stages=("alpha", "beta"), key=REPO, commit=None):
+    """The expectations a verifier re-derives from the request, never from a report."""
     loaded = plan_module.load(plan)
-    return {"repository": REPO, "commit": snapshot.resolve_commit(repo, "HEAD"),
-            "runner_commit": RUNNER_COMMIT, "plan_sha256": loaded["sha256"],
-            "inputs_digest": loaded["inputs_digest"], "stages": list(stages)}
+    return {"repository": key, "commit": commit or snapshot.resolve_commit(repo, "HEAD"),
+            "runner_commit": RUNNER_COMMIT,
+            "runner_source_sha256": identity.source_sha256_at(identity.PACKAGE_DIR.parent, RUNNER_COMMIT),
+            "plan_sha256": loaded["sha256"], "inputs_digest": loaded["inputs_digest"],
+            "binding": plan_module.binding_for(loaded, key), "stages": list(stages)}
 
 
 def passing_report(repo, plan, stages=("alpha", "beta"), **overrides):
     loaded = plan_module.load(plan)
     payload = {
-        "schema_version": 1, "status": "pass", "repository": REPO,
-        "commit": snapshot.resolve_commit(repo, "HEAD"),
+        "schema_version": 1, "status": "pass", "repository": overrides.pop("repository", REPO),
+        "commit": overrides.pop("commit", snapshot.resolve_commit(repo, "HEAD")),
         "runner": {"commit": RUNNER_COMMIT, "source_sha256": identity.identity()["source_sha256"]},
         "plan": {"path": loaded["path"], "sha256": loaded["sha256"],
                  "inputs_digest": loaded["inputs_digest"]},
+        "binding": overrides.pop("binding", plan_module.binding_for(loaded, REPO)),
         "image": "fixture@sha256:" + "0" * 64, "inputs": {}, "exit_code": 0,
         "stages": [{"name": name, "status": "pass"} for name in stages],
     }

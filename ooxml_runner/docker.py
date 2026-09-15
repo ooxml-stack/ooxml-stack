@@ -54,7 +54,7 @@ def _mounts(workspace: Path, reports: Path, runner_root: Path, plan: Path) -> li
     return argv
 
 
-def _env(config: dict, commit: str, name: str, cpus: int) -> list[str]:
+def _env(config: dict, commit: str, runner_commit: str, name: str, cpus: int) -> list[str]:
     values = {
         "PYTHONPATH": CONTAINER_RUNNER,
         # The adapter reaches the runner through its own repository's bridge, so
@@ -67,6 +67,9 @@ def _env(config: dict, commit: str, name: str, cpus: int) -> list[str]:
         "LANG": "C.UTF-8",
         "PYTHONHASHSEED": "0",
         "OOXML_CI_COMMIT": commit,
+        # The container re-derives the runner's own identity from the mount and
+        # refuses to run when it is not this commit's source.
+        "OOXML_CI_RUNNER_COMMIT": runner_commit,
         "OOXML_CI_IMAGE": config["image"],
         "OOXML_CI_RUN_ID": name,
         "OOXML_CI_REPORT_UID": str(os.getuid()),
@@ -86,7 +89,7 @@ def _env(config: dict, commit: str, name: str, cpus: int) -> list[str]:
 
 def command(
     *, workspace: Path, reports: Path, runner_root: Path, plan: Path, config: dict,
-    commit: str, name: str, cpus: int, repository: str, adapter: str,
+    commit: str, runner_commit: str, name: str, cpus: int, repository: str, adapter: str,
 ) -> list[str]:
     """Build the ``docker run`` argv for one execution."""
     argv = [
@@ -96,7 +99,7 @@ def command(
         "--interactive", "--cpus", str(cpus), "--memory", "8g",
         *_mounts(Path(workspace), Path(reports), Path(runner_root), Path(plan)),
         "--mount", f"type=volume,source={DOWNLOAD_CACHE_VOLUME},target=/cache",
-        *_env(config, commit, name, cpus),
+        *_env(config, commit, runner_commit, name, cpus),
         config["image"], "python", "-m", "ooxml_runner.bootstrap",
         "--repository", repository, "--adapter", adapter,
     ]
@@ -132,6 +135,18 @@ def _hand_over_token(process: subprocess.Popen, token: str) -> None:
             pass
 
 
+def _cleanup(name: str) -> None:
+    """Best-effort removal of this run's container.
+
+    Cleanup must never replace the result the run already produced: a missing
+    Docker CLI or a slow daemon is not the failure the caller needs to see.
+    """
+    try:
+        subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=30, check=False)
+    except (OSError, subprocess.SubprocessError):
+        pass
+
+
 def execute(argv: list[str], reports: Path, token: str, timeout: float, name: str) -> int:
     """Run the container, streaming its log live, and always clean the container up."""
     process = subprocess.Popen(
@@ -145,13 +160,13 @@ def execute(argv: list[str], reports: Path, token: str, timeout: float, name: st
         _hand_over_token(process, token)
         return process.wait(timeout=timeout)
     except subprocess.TimeoutExpired:
-        subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=30, check=False)
+        _cleanup(name)
         process.kill()
         process.wait()
         raise
     finally:
         if process.poll() is None:
-            subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=30, check=False)
+            _cleanup(name)
             process.kill()
             process.wait()
         reader.join(timeout=30)
