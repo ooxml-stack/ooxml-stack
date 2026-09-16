@@ -603,15 +603,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-followup-integrity-20260916-r2",
+        "ref_raw": "engine-table-integrity-20260916-r1",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "605e91ccf7c4e74598e4b2e96746a328a786d2ed",
+        "commit": "47bf0f894924dd811985bbb5ff13c29b9b092ee7",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.9"
+        "version": "0.3.10"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -2652,7 +2652,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "d83bb19fd2d1073a755433cedb4b4d31aea533a0c2d981c5e34b9fd7894a609f",
+  "inputs_digest": "e247ed0603e67fe8d1413a8245a11d3a496dec6d6f40881f724f460aa9994d98",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2739,7 +2739,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.32",
+      "version": "0.1.33",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2999,17 +2999,17 @@
     {
       "repos": [
         {
-          "ref": "engine-followup-integrity-20260916-r2",
+          "ref": "engine-table-integrity-20260916-r1",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.9"
+          "version": "0.3.10"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.9"
+        "0.3.10"
       ]
     }
   ]
