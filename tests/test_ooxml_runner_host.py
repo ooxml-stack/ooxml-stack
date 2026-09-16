@@ -21,7 +21,7 @@ import pytest
 from runner_fixtures import REPO, RUNNER_COMMIT, make_plan, make_repo, passing_report
 
 from ooxml_runner import adapter as adapters
-from ooxml_runner import cli, docker, snapshot
+from ooxml_runner import cli, container, docker, snapshot
 from ooxml_runner import report as report_module
 
 
@@ -160,6 +160,54 @@ def test_a_stage_failure_the_container_recorded_is_preserved(tmp_path, monkeypat
     assert payload["error"] == "ValueError: stage exploded"
     assert payload["stages"][0]["status"] == "fail"
     assert [event["event"] for event in _events(reports)].count("gate_failed") == 1
+
+
+def test_a_saved_failure_without_its_terminal_event_gets_one(tmp_path, monkeypatch):
+    """The reviewed case: the failure was saved, then the event append failed.
+
+    ``container.fail`` writes the report before it announces it, so a failed
+    announcement leaves a terminal report with no terminal event. The host used
+    to see ``fail`` + ``finished_at`` and return, so no subscriber ever learned
+    the run had ended.
+    """
+    repo, plan, output = _fixture(tmp_path)
+
+    def fail_without_event(reports):
+        payload = report_module.load(reports)
+        payload["stages"][0].update(status="fail", error="ZeroDivisionError: division by zero")
+        payload.update(status="fail", exit_code=1, error="ZeroDivisionError: division by zero",
+                       finished_at=report_module.utc_now())
+        report_module.save(reports, payload)
+        return 1
+
+    _stub_transport(monkeypatch, lambda real, reports, token, timeout, name: fail_without_event(reports))
+
+    with pytest.raises(RuntimeError, match="exit 1"):
+        _run(tmp_path, repo, plan, output)
+
+    payload, reports = _only_report(output)
+    assert payload["status"] == "fail"
+    assert payload["error"] == "ZeroDivisionError: division by zero"
+    assert [event["event"] for event in _events(reports)].count("gate_failed") == 1
+
+
+def test_completing_a_saved_failure_is_idempotent(tmp_path):
+    """A second finalization keeps the report and does not repeat the event."""
+    reports = tmp_path / "reports"
+    payload = report_module.new_report(repository=REPO, commit="0" * 40, runner={}, plan={},
+                                       binding={}, image="fixture", inputs={}, stages=["one"])
+    payload["stages"][0].update(status="fail", error="specific stage failure")
+    payload.update(status="fail", exit_code=1, finished_at=report_module.utc_now(),
+                   error="specific stage failure")
+    report_module.save(reports, payload)
+
+    for _ in range(2):
+        container.finalize_host_failure(reports, payload, container.ContainerError("exit 97", 97))
+
+    saved = report_module.load(reports)
+    assert saved["error"] == "specific stage failure"
+    assert saved["exit_code"] == 1
+    assert [event["event"] for event in _events(reports)] == ["gate_failed"]
 
 
 def test_a_zero_exit_with_an_unfinished_report_is_recorded_as_a_failure(tmp_path, monkeypatch):
