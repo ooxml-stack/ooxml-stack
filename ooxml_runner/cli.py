@@ -33,10 +33,10 @@ from . import docker as docker_module
 from . import identity as identity_module
 from . import plan as plan_module
 from . import report as report_module
+from . import signals as signals_module
 from . import snapshot as snapshot_module
 
 _COMMANDS = ("describe", "run", "verify-report")
-
 
 def _resolve(*, root, repo: str, commit: str, runner_commit: str, plan, repo_path=None) -> dict[str, Any]:
     """Resolve and validate everything the request names, without executing.
@@ -212,7 +212,8 @@ def run_repository(
                 "report": str(reports / "report.json"), "result": "pass",
                 "stages": len(result["stages"])}
 
-    return _with_snapshot(request, "ooxml-run-", execute)
+    with signals_module.termination_as_interrupt():
+        return _with_snapshot(request, "ooxml-run-", execute)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -260,6 +261,10 @@ def main(argv: list[str] | None = None) -> int:
         else:
             payload = run_repository(**shared, output=args.output,
                                      reuse_success=args.reuse_success, timeout=args.timeout)
+    except signals_module.TerminationRequested as exc:
+        # The report and the container were already finalized on the way out.
+        print(f"{args.command} stopped: {exc}", file=sys.stderr)
+        return 1
     except (SystemExit, KeyboardInterrupt):
         raise
     except Exception as exc:  # noqa: BLE001 - every failure must be a nonzero exit, not a traceback

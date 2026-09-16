@@ -97,6 +97,21 @@ def test_verification_rejects_a_missing_binding(tmp_path):
         _verify(tmp_path, repo, plan, payload)
 
 
+@pytest.mark.parametrize("value", [["wrong-type"], "wrong-type", 7, None])
+def test_verification_rejects_a_malformed_plan_block(tmp_path, value):
+    """A structurally wrong field is a report error, not a crash.
+
+    ``runner`` and ``binding`` were already type-checked; ``plan`` was not, so a
+    valid JSON report whose ``plan`` was a non-empty list raised AttributeError
+    out of the verifier instead of being classified.
+    """
+    repo, plan = _fixture(tmp_path)
+    payload = passing_report(repo, plan)
+    payload["plan"] = value
+    with pytest.raises(report_module.ReportError, match="plan"):
+        _verify(tmp_path, repo, plan, payload)
+
+
 def test_verification_never_rewrites_the_report_under_test(tmp_path):
     """A historical report keeps its own execution identity."""
     repo, plan = _fixture(tmp_path)
@@ -161,6 +176,54 @@ def test_a_broken_cache_entry_does_not_hide_a_valid_one(tmp_path):
     found = cli._cached_pass(broken.parent, expected_for(repo, plan), module,
                              module.load_config(repo), {})
     assert found == valid
+
+
+def _cache_dir(tmp_path, repo, plan, name, mutate):
+    commit = snapshot.resolve_commit(repo, "HEAD")
+    directory = tmp_path / "out" / commit / name
+    directory.mkdir(parents=True)
+    payload = passing_report(repo, plan)
+    mutate(payload)
+    (directory / "report.json").write_text(json.dumps(payload))
+    return directory
+
+
+def test_a_structurally_broken_cache_entry_does_not_hide_a_valid_one(tmp_path):
+    """The reviewed case: a valid JSON report whose ``plan`` is a list."""
+    repo, plan = _fixture(tmp_path)
+    broken = _cache_dir(tmp_path, repo, plan, "000-broken", lambda p: p.update(plan=["wrong-type"]))
+    valid = _cache_dir(tmp_path, repo, plan, "100-valid", lambda p: None)
+    module = adapters.load(repo, "scripts.ci.adapter")
+
+    found = cli._cached_pass(broken.parent, expected_for(repo, plan), module,
+                             module.load_config(repo), {})
+    assert found == valid
+
+
+def test_a_structurally_broken_cache_entry_alone_means_no_reuse(tmp_path):
+    """No valid entry: the caller must fall through to a fresh run, not crash."""
+    repo, plan = _fixture(tmp_path)
+    broken = _cache_dir(tmp_path, repo, plan, "000-broken", lambda p: p.update(plan=["wrong-type"]))
+    module = adapters.load(repo, "scripts.ci.adapter")
+
+    found = cli._cached_pass(broken.parent, expected_for(repo, plan), module,
+                             module.load_config(repo), {})
+    assert found is None
+
+
+def test_an_unexpected_cache_failure_is_not_swallowed(tmp_path, monkeypatch):
+    """Only classified report problems are skipped; a real bug must surface."""
+    repo, plan = _fixture(tmp_path)
+    broken = _cache_dir(tmp_path, repo, plan, "000-broken", lambda p: None)
+    module = adapters.load(repo, "scripts.ci.adapter")
+
+    def explode(candidate, expected):
+        raise AttributeError("programming error, not a bad report")
+
+    monkeypatch.setattr(report_module, "verify_generic", explode)
+    with pytest.raises(AttributeError, match="programming error"):
+        cli._cached_pass(broken.parent, expected_for(repo, plan), module,
+                         module.load_config(repo), {})
 
 
 # --- the real CLI -------------------------------------------------------------

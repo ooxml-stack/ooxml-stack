@@ -11,6 +11,7 @@ module must stay importable from inside the engine without a cycle.
 
 from __future__ import annotations
 
+import json
 import os
 import signal
 import time
@@ -144,25 +145,44 @@ def fail(reports: Path, report: dict, exc: BaseException) -> dict:
     return report
 
 
+def _emitted_events(reports: Path) -> list[str]:
+    """The events already durable in the progress stream, ignoring torn lines."""
+    path = Path(reports) / reports_module.PROGRESS_NAME
+    if not path.exists():
+        return []
+    events = []
+    for line in path.read_text().splitlines():
+        try:
+            events.append(json.loads(line).get("event"))
+        except json.JSONDecodeError:
+            continue
+    return events
+
+
 def finalize_host_failure(reports: Path, skeleton: dict, exc: BaseException) -> None:
     """Complete a report the container did not finish, then announce the failure.
 
     The container's own terminal state is authoritative when it exists: a stage
     failure it recorded keeps its error, stages and logs. The host only adds what
-    is missing, and replaces a pass its own verification refused. The report is
-    on disk before the event points at it, so a consumer following the event
-    never reads a report that still says ``running``.
+    is missing, and replaces a pass its own verification refused.
+
+    The report and the event are completed independently. ``container.fail``
+    saves before it announces, so a failed announcement leaves a terminal report
+    with no terminal event; returning early in that case would strand every
+    subscriber. The report is on disk before the event points at it, and an
+    event that is already there is never repeated.
     """
     try:
         current = reports_module.load(reports)
     except reports_module.ReportError:
         current = dict(skeleton)
-    if current.get("status") == "fail" and current.get("finished_at"):
+    if not (current.get("status") == "fail" and current.get("finished_at")):
+        exit_code = getattr(exc, "exit_code", None)
+        current.update(status="fail", finished_at=utc_now(),
+                       exit_code=exit_code if exit_code is not None else 1,
+                       error=scrub(f"{type(exc).__name__}: {exc}"))
+        reports_module.save(reports, current)
+    if "gate_failed" in _emitted_events(reports):
         return
-    exit_code = getattr(exc, "exit_code", None)
-    current.update(status="fail", finished_at=utc_now(),
-                   exit_code=exit_code if exit_code is not None else 1,
-                   error=scrub(f"{type(exc).__name__}: {exc}"))
-    reports_module.save(reports, current)
-    reports_module.progress_event(reports, "gate_failed", error=current["error"],
-                                  report=str(reports / reports_module.REPORT_NAME))
+    reports_module.progress_event(reports, "gate_failed", error=current.get("error", ""),
+                                  report=str(Path(reports) / reports_module.REPORT_NAME))
