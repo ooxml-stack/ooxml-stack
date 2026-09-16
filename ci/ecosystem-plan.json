@@ -6,7 +6,7 @@
   "diagnostics": [
     {
       "code": "version_skew",
-      "detail": "ooxml-operation-engine=0.6.4; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
+      "detail": "ooxml-operation-engine=0.6.5; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
       "exceptions_matched": [
         "python-xlsx"
       ],
@@ -298,15 +298,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "engine-capability-exposure-20260916-r1",
+        "ref_raw": "engine-flow-repairs-20260916-r1",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "91dbbcc5102aaf7f54b125d484f5845bee449b5a",
+        "commit": "a56250e4db64d994c58fea5efccc4482b42ab70a",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.6.4"
+        "version": "0.6.5"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -517,15 +517,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-capability-exposure-20260916-r1",
+        "ref_raw": "engine-flow-repairs-20260916-r1",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "dc1ced058a3980277af85fc1012e2479ec146a64",
+        "commit": "92a44bee0f8d72653c77009eaed141c679ac40a8",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "1.2.17"
+        "version": "1.2.18"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -560,15 +560,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-capability-exposure-20260916-r1",
+        "ref_raw": "engine-flow-repairs-20260916-r1",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "ee7955eac46dad750d4723dab934a8cb3998e02b",
+        "commit": "67b1a6f241d28028fe11ae4b69e2be503c82d4d1",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "2.0.16"
+        "version": "2.0.17"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -603,15 +603,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-capability-exposure-20260916-r1",
+        "ref_raw": "engine-flow-repairs-20260916-r1",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "d3c9ce62c77072a8a9a8f5e1842ac8a20cc1de1e",
+        "commit": "4d51688b412398fd897235cac249f3eebf03e07a",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.6"
+        "version": "0.3.7"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -2652,7 +2652,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "0f7db4062eeae4ebca7a646db3f0ed85ece9ac59370e0eb372081b5e8f87839f",
+  "inputs_digest": "cf6cc060978fde6e16561a5119bbf692475b6d12d3c0a68ef08113383fb065e5",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2739,7 +2739,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.30",
+      "version": "0.1.31",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2787,10 +2787,10 @@
       ],
       "repos": [
         {
-          "ref": "engine-capability-exposure-20260916-r1",
+          "ref": "engine-flow-repairs-20260916-r1",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.6.4"
+          "version": "0.6.5"
         },
         {
           "ref": "v0.6.0",
@@ -2831,7 +2831,7 @@
       "versions": [
         "0.3.51",
         "0.6.0",
-        "0.6.4"
+        "0.6.5"
       ]
     },
     {
@@ -2967,49 +2967,49 @@
     {
       "repos": [
         {
-          "ref": "engine-capability-exposure-20260916-r1",
+          "ref": "engine-flow-repairs-20260916-r1",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "1.2.17"
+          "version": "1.2.18"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-docx",
       "versions": [
-        "1.2.17"
+        "1.2.18"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-capability-exposure-20260916-r1",
+          "ref": "engine-flow-repairs-20260916-r1",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "2.0.16"
+          "version": "2.0.17"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.16"
+        "2.0.17"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-capability-exposure-20260916-r1",
+          "ref": "engine-flow-repairs-20260916-r1",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.6"
+          "version": "0.3.7"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.6"
+        "0.3.7"
       ]
     }
   ]
