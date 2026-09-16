@@ -150,7 +150,7 @@ def verify_generic(report: dict[str, Any], expected: dict[str, Any]) -> None:
                 f"report {field} {report.get(field)!r} does not match requested {expected.get(field)!r}"
             )
     _verify_runner(report, expected)
-    plan = report.get("plan") or {}
+    plan = _mapping(report.get("plan"), "plan")
     if plan.get("sha256") != expected.get("plan_sha256"):
         raise ReportError("report plan sha256 does not match the requested plan file")
     if plan.get("inputs_digest") != expected.get("inputs_digest"):
