@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -27,6 +28,7 @@ from .execute import scrub
 
 REPORT_NAME = "report.json"
 PROGRESS_NAME = "progress.jsonl"
+TORN_NAME = PROGRESS_NAME + ".torn"
 
 
 class ReportError(RuntimeError):
@@ -92,9 +94,58 @@ def progress_event(reports: Path, event: str, **fields: Any) -> None:
     row = {"schema_version": PROGRESS_SCHEMA_VERSION, "timestamp": utc_now(), "event": event, **fields}
     path = Path(reports) / PROGRESS_NAME
     path.parent.mkdir(parents=True, exist_ok=True)
+    _quarantine_torn_tail(path)
     with path.open("a", encoding="utf-8") as progress:
         progress.write(scrub(json.dumps(row)) + "\n")
         progress.flush()
+
+
+def _is_complete_record(tail: bytes) -> bool:
+    """Whether the unterminated trailing bytes are already one whole JSON row."""
+    try:
+        return isinstance(json.loads(tail.decode("utf-8")), dict)
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return False
+
+
+def _quarantine_torn_tail(path: Path) -> None:
+    """Move an unterminated trailing record aside so the next row starts clean.
+
+    A write interrupted before its newline leaves a partial record. Appending the
+    next event would concatenate the two into one unparseable line, which breaks
+    every reader of the stream - the diagnostics gate parses each line strictly -
+    and loses the new event with it.
+
+    The torn bytes are audit evidence, so they are copied verbatim into a sidecar
+    *before* the main file is touched. Only once that copy is durable is the main
+    file truncated back to its last complete record; if the copy fails, the main
+    file is left exactly as it was and the failure is raised.
+
+    A record that is complete and merely missing its final newline is not torn:
+    it stays where it is, and only gains the newline it lost.
+    """
+    if not path.exists():
+        return
+    raw = path.read_bytes()
+    if not raw or raw.endswith(b"\n"):
+        return
+    cut = raw.rfind(b"\n") + 1
+    tail = raw[cut:]
+    if _is_complete_record(tail):
+        with path.open("ab") as progress:
+            progress.write(b"\n")
+            progress.flush()
+        return
+    sidecar = path.with_name(TORN_NAME)
+    with sidecar.open("ab") as stream:
+        stream.write(tail)
+        stream.write(b"\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+    with path.open("wb") as progress:
+        progress.write(raw[:cut])
+        progress.flush()
+        os.fsync(progress.fileno())
 
 
 def _expected_stage_names(expected: dict[str, Any]) -> list[str]:

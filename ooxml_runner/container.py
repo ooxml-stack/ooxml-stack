@@ -48,11 +48,11 @@ def progress_event(reports: Path, event: str, **fields) -> None:
 
 
 def _artifacts(reports: Path, before: set[str]) -> list[str]:
+    """Files a stage produced. The runner's own bookkeeping is not an artifact."""
     if not reports.exists():
         return []
-    return sorted(
-        name for name in set(os.listdir(reports)) - before if name != reports_module.PROGRESS_NAME
-    )
+    bookkeeping = {reports_module.PROGRESS_NAME, reports_module.TORN_NAME}
+    return sorted(name for name in set(os.listdir(reports)) - before if name not in bookkeeping)
 
 
 def _finalize(stage: dict, started: float, before: set[str], reports: Path, report: dict) -> None:
