@@ -117,6 +117,10 @@
         {
           "file": "ooxml-apps/.github/workflows/ci.yml",
           "line": 28
+        },
+        {
+          "file": "ooxml-apps/.github/workflows/real-stack.yml",
+          "line": 33
         }
       ],
       "source_file": "ooxml-apps/.github/workflows/ci.yml",
@@ -1280,6 +1284,26 @@
               "env": {},
               "if": null,
               "line": 57,
+              "name": "TypeScript strict check",
+              "run": "make test-typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 60,
+              "name": "Production build",
+              "run": "make test-build",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 63,
               "name": "Frontend unit tests",
               "run": "make test-frontend",
               "shell": null,
@@ -1289,7 +1313,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 60,
+              "line": 66,
               "name": "Frontend REST contract (vitest half)",
               "run": "cd frontend && pnpm exec vitest run src/contract.test.ts",
               "shell": null,
@@ -1299,7 +1323,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 63,
+              "line": 69,
               "name": "Install Playwright chromium",
               "run": "cd frontend && pnpm exec playwright install --with-deps chromium",
               "shell": null,
@@ -1309,7 +1333,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 66,
+              "line": 72,
               "name": "Playwright route-state matrix",
               "run": "make test-e2e",
               "shell": null,
@@ -2604,6 +2628,7 @@
   "host": "ooxml-stack",
   "inputs": [
     "ooxml-apps/.github/workflows/ci.yml",
+    "ooxml-apps/.github/workflows/real-stack.yml",
     "ooxml-apps/pyproject.toml",
     "ooxml-apps/uv.lock",
     "ooxml-core/.github/workflows/ci.yml",
@@ -2652,7 +2677,7 @@
     "python-xlsx/src/xlsx/__init__.py",
     "python-xlsx/uv.lock"
   ],
-  "inputs_digest": "e247ed0603e67fe8d1413a8245a11d3a496dec6d6f40881f724f460aa9994d98",
+  "inputs_digest": "bc590d8f9b17db76684bc7fba20a12d117c66784a06f39dceb8ae22eaba2cd4b",
   "kind": "ecosystem-plan",
   "nodes": [
     {
