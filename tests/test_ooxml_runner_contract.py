@@ -100,7 +100,7 @@ def test_binding_without_an_adapter_is_refused(tmp_path):
 def test_plan_input_drift_is_refused(tmp_path):
     repo = make_repo(tmp_path)
     plan = make_plan(tmp_path, repo,
-                     inputs=[{"path": f"{REPO}/ci/environment.json", "sha256": "b" * 64}])
+                     inputs=[{"path": _other_repo(tmp_path), "sha256": "b" * 64}])
     with pytest.raises(plan_module.PlanError, match="does not match the workspace"):
         describe(tmp_path, repo, plan)
 
@@ -113,6 +113,13 @@ def test_plan_inputs_absent_from_the_workspace_are_recorded_not_guessed(tmp_path
     assert "not present" in payload["plan"]["inputs_reverified"]["reason"]
 
 
+def _other_repo(tmp_path, key="python-docx"):
+    directory = tmp_path / key
+    directory.mkdir(exist_ok=True)
+    (directory / "pyproject.toml").write_text("[project]\nname = 'fixture'\n")
+    return f"{key}/pyproject.toml"
+
+
 def test_a_present_input_that_differs_fails_even_when_others_are_missing(tmp_path):
     """The workspace's completeness must not decide the verdict.
 
@@ -123,7 +130,7 @@ def test_a_present_input_that_differs_fails_even_when_others_are_missing(tmp_pat
     """
     repo = make_repo(tmp_path)
     plan = make_plan(tmp_path, repo, inputs=[
-        {"path": f"{REPO}/ci/environment.json", "sha256": "b" * 64},
+        {"path": _other_repo(tmp_path), "sha256": "b" * 64},
         "nowhere/missing.json",
     ])
 
@@ -134,8 +141,7 @@ def test_a_present_input_that_differs_fails_even_when_others_are_missing(tmp_pat
 def test_a_partial_workspace_reports_the_scope_it_could_not_check(tmp_path):
     """A pass says what was proven, and names what was not."""
     repo = make_repo(tmp_path)
-    plan = make_plan(tmp_path, repo,
-                     inputs=[f"{REPO}/ci/environment.json", "nowhere/missing.json"])
+    plan = make_plan(tmp_path, repo, inputs=[_other_repo(tmp_path), "nowhere/missing.json"])
     payload = describe(tmp_path, repo, plan)["plan"]["inputs_reverified"]
 
     assert payload["verified"] is True
@@ -143,6 +149,25 @@ def test_a_partial_workspace_reports_the_scope_it_could_not_check(tmp_path):
     assert payload["unchecked"] == 1
     assert "1 of 2 plan inputs checked" in payload["reason"]
     assert "1 unchecked" in payload["reason"]
+
+
+def test_the_target_repository_inputs_are_not_decided_by_the_worktree(tmp_path):
+    """A caller's uncommitted edit must not change the verdict for a commit.
+
+    The target's own configuration is already bound by the commit being verified
+    and by the report's input hashes, so the plan's manifest for it is redundant.
+    Reading it from the working tree would let a dirty caller fail - or pass - a
+    historical commit, which is the defect the pin fix already closed once.
+    """
+    repo = make_repo(tmp_path)
+    plan = make_plan(tmp_path, repo,
+                     inputs=[{"path": f"{REPO}/ci/environment.json", "sha256": "b" * 64}])
+    (tmp_path / REPO / "ci/environment.json").write_text('{"dirty": true}')
+
+    payload = describe(tmp_path, repo, plan)["plan"]["inputs_reverified"]
+
+    assert payload["checked"] == 0
+    assert "not present" in payload["reason"]
 
 
 def test_a_plan_without_an_input_manifest_is_refused(tmp_path):
