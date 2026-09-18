@@ -9,6 +9,7 @@ artifacts/
 build/
 dist/
 .venv/
+.venv-ecosystem-inventory
 .venv-ecosystem-inventory/
 *.log
 release-evidence/p72/former-preserve-only-object-rows.jsonl
