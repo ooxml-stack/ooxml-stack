@@ -99,7 +99,8 @@ def test_binding_without_an_adapter_is_refused(tmp_path):
 
 def test_plan_input_drift_is_refused(tmp_path):
     repo = make_repo(tmp_path)
-    plan = make_plan(tmp_path, repo, inputs=[f"{REPO}/ci/environment.json"], digest="b" * 64)
+    plan = make_plan(tmp_path, repo,
+                     inputs=[{"path": f"{REPO}/ci/environment.json", "sha256": "b" * 64}])
     with pytest.raises(plan_module.PlanError, match="does not match the workspace"):
         describe(tmp_path, repo, plan)
 
@@ -110,6 +111,50 @@ def test_plan_inputs_absent_from_the_workspace_are_recorded_not_guessed(tmp_path
     payload = describe(tmp_path, repo, plan)
     assert payload["plan"]["inputs_reverified"]["verified"] is False
     assert "not present" in payload["plan"]["inputs_reverified"]["reason"]
+
+
+def test_a_present_input_that_differs_fails_even_when_others_are_missing(tmp_path):
+    """The workspace's completeness must not decide the verdict.
+
+    A partial checkout used to skip every input it could not read - including the
+    ones it *could* read and that no longer matched the plan - so the same target
+    passed in CI and failed locally. Any input the workspace can supply is now
+    checked, and a mismatch fails closed however many others are absent.
+    """
+    repo = make_repo(tmp_path)
+    plan = make_plan(tmp_path, repo, inputs=[
+        {"path": f"{REPO}/ci/environment.json", "sha256": "b" * 64},
+        "nowhere/missing.json",
+    ])
+
+    with pytest.raises(plan_module.PlanError, match="does not match the workspace"):
+        describe(tmp_path, repo, plan)
+
+
+def test_a_partial_workspace_reports_the_scope_it_could_not_check(tmp_path):
+    """A pass says what was proven, and names what was not."""
+    repo = make_repo(tmp_path)
+    plan = make_plan(tmp_path, repo,
+                     inputs=[f"{REPO}/ci/environment.json", "nowhere/missing.json"])
+    payload = describe(tmp_path, repo, plan)["plan"]["inputs_reverified"]
+
+    assert payload["verified"] is True
+    assert payload["checked"] == 1
+    assert payload["unchecked"] == 1
+    assert "1 of 2 plan inputs checked" in payload["reason"]
+    assert "1 unchecked" in payload["reason"]
+
+
+def test_a_plan_without_an_input_manifest_is_refused(tmp_path):
+    """A bare path list cannot be checked input by input, so it is not trusted."""
+    repo = make_repo(tmp_path)
+    plan = make_plan(tmp_path, repo, inputs=[])
+    payload = json.loads(Path(plan).read_text())
+    payload["inputs"] = [f"{REPO}/ci/environment.json"]
+    Path(plan).write_text(json.dumps(payload))
+
+    with pytest.raises(plan_module.PlanError, match="manifest entry is malformed"):
+        describe(tmp_path, repo, plan)
 
 
 # --- adapters -----------------------------------------------------------------

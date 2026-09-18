@@ -7,6 +7,7 @@ runner's own decision-making.
 
 from __future__ import annotations
 
+import hashlib
 import json
 
 from ooxml_runner import identity, snapshot
@@ -138,10 +139,23 @@ def commit_all(repo, message="fixture"):
     return snapshot.git(repo, "rev-parse", "HEAD")
 
 
+def _input_manifest(tmp_path, inputs):
+    """Path strings get their real digest; a mapping lets a test force drift."""
+    manifest = []
+    for item in inputs:
+        if isinstance(item, dict):
+            manifest.append({"path": item["path"], "sha256": item["sha256"]})
+            continue
+        path = tmp_path / item
+        digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else "0" * 64
+        manifest.append({"path": item, "sha256": digest})
+    return manifest
+
+
 def make_plan(tmp_path, repo, *, adapter="scripts.ci.adapter", nodes=None, diagnostics=(),
               full=None, inputs=(), digest="a" * 64, key=REPO, name="plan.json"):
     payload = {
-        "schema_version": 1, "inputs_digest": digest, "inputs": list(inputs),
+        "schema_version": 1, "inputs_digest": digest, "inputs": _input_manifest(tmp_path, inputs),
         "diagnostics": list(diagnostics),
         "nodes": nodes if nodes is not None else [{"key": key}],
         "full": {key: {"workflow": ".github/workflows/ci.yml", "jobs": [{"id": "check"}],
