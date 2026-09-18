@@ -16,7 +16,7 @@
     },
     {
       "code": "version_skew",
-      "detail": "ooxml-core=0.5.21; python-docx=0.5.37; python-pptx=0.5.37; python-xlsx=0.5.37",
+      "detail": "ooxml-core=0.5.21; python-docx=0.5.35; python-pptx=0.5.35; python-xlsx=0.5.29",
       "exceptions_matched": [],
       "level": "warning",
       "scope": "unscoped",
@@ -77,15 +77,15 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "8da6d69e67c0265fdc7f917522342766331272d7",
+        "ref_raw": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "8da6d69e67c0265fdc7f917522342766331272d7",
+        "commit": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
         "source": "ooxml-apps/uv.lock",
-        "version": "0.1.33"
+        "version": "0.1.13"
       },
       "from": "ooxml-apps",
       "group": null,
@@ -117,10 +117,6 @@
         {
           "file": "ooxml-apps/.github/workflows/ci.yml",
           "line": 28
-        },
-        {
-          "file": "ooxml-apps/.github/workflows/real-stack.yml",
-          "line": 33
         }
       ],
       "source_file": "ooxml-apps/.github/workflows/ci.yml",
@@ -1192,16 +1188,16 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "rev",
-        "ref_raw": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.5.35",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "commit": "f8af857a43a7dcf4de5d867dc726b3a32854bb74",
         "source": "python-docx/uv.lock",
-        "version": "0.5.37"
+        "version": "0.5.35"
       },
       "from": "python-docx",
       "group": "mutation-gate",
@@ -1258,7 +1254,7 @@
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 235
+          "line": 243
         },
         {
           "file": "python-pptx/.github/workflows/native-corpus-gate.yml",
@@ -1297,15 +1293,15 @@
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 223
+          "line": 231
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 257
+          "line": 265
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 280
+          "line": 288
         }
       ],
       "source_file": "python-pptx/.github/workflows/ci.yml",
@@ -1334,16 +1330,16 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "rev",
-        "ref_raw": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.5.35",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "commit": "f8af857a43a7dcf4de5d867dc726b3a32854bb74",
         "source": "python-pptx/uv.lock",
-        "version": "0.5.37"
+        "version": "0.5.35"
       },
       "from": "python-pptx",
       "group": "mutation-gate",
@@ -1400,15 +1396,15 @@
         },
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 164
+          "line": 172
         },
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 186
+          "line": 194
         },
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 209
+          "line": 217
         }
       ],
       "source_file": "python-xlsx/.github/workflows/ci.yml",
@@ -1416,16 +1412,16 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "rev",
-        "ref_raw": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "ref_declared_kind": "tag",
+        "ref_raw": "v0.5.29",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+        "commit": "a355168bb9c0440c2aef6843750b33cc47779a2f",
         "source": "python-xlsx/uv.lock",
-        "version": "0.5.37"
+        "version": "0.5.29"
       },
       "from": "python-xlsx",
       "group": "mutation-gate",
@@ -1581,26 +1577,6 @@
               "env": {},
               "if": null,
               "line": 57,
-              "name": "TypeScript strict check",
-              "run": "make test-typecheck",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 60,
-              "name": "Production build",
-              "run": "make test-build",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 63,
               "name": "Frontend unit tests",
               "run": "make test-frontend",
               "shell": null,
@@ -1610,7 +1586,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 66,
+              "line": 60,
               "name": "Frontend REST contract (vitest half)",
               "run": "cd frontend && pnpm exec vitest run src/contract.test.ts",
               "shell": null,
@@ -1620,7 +1596,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 69,
+              "line": 63,
               "name": "Install Playwright chromium",
               "run": "cd frontend && pnpm exec playwright install --with-deps chromium",
               "shell": null,
@@ -1630,7 +1606,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 72,
+              "line": 66,
               "name": "Playwright route-state matrix",
               "run": "make test-e2e",
               "shell": null,
@@ -2364,7 +2340,7 @@
           },
           "id": "build",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 198,
+          "line": 206,
           "matrix": {
             "python-version": [
               "3.10",
@@ -2380,7 +2356,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 211,
+              "line": 219,
               "name": null,
               "run": null,
               "shell": null,
@@ -2390,7 +2366,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 212,
+              "line": 220,
               "name": "Install uv",
               "run": null,
               "shell": null,
@@ -2400,7 +2376,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 215,
+              "line": 223,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -2410,7 +2386,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 218,
+              "line": 226,
               "name": "Display Python version",
               "run": "PYTHON_BIN=\"$(uv python find \"$UV_PYTHON\")\"\n\"$PYTHON_BIN\" -c \"import sys; print(sys.version)\"\n",
               "shell": null,
@@ -2420,7 +2396,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 222,
+              "line": 230,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2430,7 +2406,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 229,
+              "line": 237,
               "name": "Install test dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -2440,7 +2416,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 231,
+              "line": 239,
               "name": "Checkout native corpus evidence repo",
               "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
               "shell": null,
@@ -2450,7 +2426,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 242,
+              "line": 250,
               "name": "Set up .NET for schema validation",
               "run": null,
               "shell": null,
@@ -2460,7 +2436,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 246,
+              "line": 254,
               "name": "Install dotnet-script",
               "run": "dotnet tool install -g dotnet-script",
               "shell": null,
@@ -2470,7 +2446,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 248,
+              "line": 256,
               "name": "Downstream compatibility gate",
               "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
               "shell": null,
@@ -2480,7 +2456,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 250,
+              "line": 258,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2500,7 +2476,7 @@
           },
           "id": "validate",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 143,
+          "line": 151,
           "matrix": {
             "python-version": [
               "3.10",
@@ -2516,7 +2492,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 155,
+              "line": 163,
               "name": null,
               "run": null,
               "shell": null,
@@ -2526,7 +2502,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 156,
+              "line": 164,
               "name": null,
               "run": null,
               "shell": null,
@@ -2536,7 +2512,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 160,
+              "line": 168,
               "name": "Install workflow Python",
               "run": "uv python install \"$UV_PYTHON\"",
               "shell": null,
@@ -2546,7 +2522,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 163,
+              "line": 171,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2556,7 +2532,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 168,
+              "line": 176,
               "name": "Install test dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -2566,7 +2542,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 171,
+              "line": 179,
               "name": "Set up .NET for schema validation",
               "run": null,
               "shell": null,
@@ -2576,7 +2552,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 176,
+              "line": 184,
               "name": "Install dotnet-script",
               "run": "dotnet tool install -g dotnet-script",
               "shell": null,
@@ -2586,7 +2562,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 179,
+              "line": 187,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2926,19 +2902,15 @@
   "inputs": [
     {
       "path": "ooxml-apps/.github/workflows/ci.yml",
-      "sha256": "d9f71366a892ec25b9bb33829d85e6e7cc32e4a94913482118d0324e2472286b"
-    },
-    {
-      "path": "ooxml-apps/.github/workflows/real-stack.yml",
-      "sha256": "f0a2bfbf0f33c1874513294903e3f4aee6cf3c22e111116689b05c4f29d9492a"
+      "sha256": "5bec2d3cd9e65b84e8a88c745a27efcf7e83e85507bff2bf006f02be7579154a"
     },
     {
       "path": "ooxml-apps/pyproject.toml",
-      "sha256": "e3182aa3f262e7a9ea82721f6e244c2756a3bcb2ca5e2d695f6682ad2d8da778"
+      "sha256": "a98287d69b3d3b1a5dd1ea1add25dc07dab3c4292ca7016d2ff4c5629175b230"
     },
     {
       "path": "ooxml-apps/uv.lock",
-      "sha256": "efecd3590d8c7e44c95d0b719826a2ec6f5496b01b98b39542789a3e26fca24d"
+      "sha256": "b3e7760e7b1c860aa2b9a880b7014bb936efe9c3e6aa9fdb1b064aee3751c76a"
     },
     {
       "path": "ooxml-core/.github/workflows/ci.yml",
@@ -3058,7 +3030,7 @@
     },
     {
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "daf12edae22427abc1120346630143669f5a35a350202bc8bd0ddf4d0f9acdbf"
+      "sha256": "89648a5482b378c7b6afb8cd2e9fbbf298c3b72f2e166f51bd3cc3586187d972"
     },
     {
       "path": "python-docx/.github/workflows/semantic-gate-report.yml",
@@ -3066,7 +3038,7 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "46983f3ce090a08a72c86a683dc587cf1d21e51ee904626274a6d223e8336d75"
+      "sha256": "7d6450bb2eec36447ae450f28ccb574d32962cdfaee223a4983c29589e4c992e"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
@@ -3074,15 +3046,15 @@
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "bfeb46d25f4b248eb9344755cb1d30eabe38e738cf27b46cab405934eb480c83"
+      "sha256": "a5f4bbaa9e9a1bd4ed4e13335c37623c6c3f7420ad539955851a7e23a47b50eb"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
-      "sha256": "7737f9d2fcfd404168d2c8252d61bd15d80cf44dc4e185146fc7051bb344e4ea"
+      "sha256": "884653a726729504dd7aa3ee99e423b3393f30ce193337936b06af3f2f03fcaa"
     },
     {
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "72f742761f1da094808a537c49545bee5bcfc2ab2f462fedb1831b9e70bf2ace"
+      "sha256": "7005bf4d841082b27977f3bc47f3a125c88de2209f217f65c5e8be9ac536b68d"
     },
     {
       "path": "python-pptx/.github/workflows/semantic-gate-report.yml",
@@ -3094,7 +3066,7 @@
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "09d92f662ac00b2ae74dbbf30ddaeb32a44a5b5ba333845356131802be38152f"
+      "sha256": "e797ed0d1bd16988cf4f02886eb3f221e2b913fe29bdc1ebe54ef4312dcc7a2b"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
@@ -3102,11 +3074,11 @@
     },
     {
       "path": "python-pptx/uv.lock",
-      "sha256": "c574b8c4865c8c67481f632826ab72197bde3fd5f63183b901476d59647a7dda"
+      "sha256": "d0d41167a5db242dc711b0c4f17f19d8b48e8aba3c55b2aaa4d02dacfbe519e4"
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
-      "sha256": "3132e3cdc5e694e9d307feeddf797a77c6ef636b69b34526aabcdac4a8412db1"
+      "sha256": "9dd81c4b1811612d2fa12bfb33e07034d5188a905c8bb99734689a7b5cef241c"
     },
     {
       "path": "python-xlsx/.github/workflows/native-corpus-gate.yml",
@@ -3114,7 +3086,7 @@
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "6f5e9e8d4844a4ab21fe41e8097f48e6eab38da460ba79a93b72e86556564562"
+      "sha256": "f6b6f02bba2d86544fb8fcc612032ee5fbfb6322595c8c5509f99e141fdbfeb1"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
@@ -3122,10 +3094,10 @@
     },
     {
       "path": "python-xlsx/uv.lock",
-      "sha256": "95c81e51f7400ca407a847c2e75d8977a8e49f37b5620fff00c1da98fb2903ba"
+      "sha256": "277c5ed2c196dbce93654d20cc0ee809081c68542e2e014f2ee02fa905341be0"
     }
   ],
-  "inputs_digest": "cabe15da595337f768dc8510ea29b2242780954f4b96d31e3929734da8434ee8",
+  "inputs_digest": "eb0b1819293ff1d3eb167c35a628726baed9ff57be28f23fdfd30d14fca1ee8c",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3310,17 +3282,17 @@
     {
       "repos": [
         {
-          "ref": "8da6d69e67c0265fdc7f917522342766331272d7",
+          "ref": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
           "repo": "ooxml-apps",
           "source_file": "ooxml-apps/pyproject.toml",
-          "version": "0.1.33"
+          "version": "0.1.13"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-operation-engine",
       "versions": [
-        "0.1.33"
+        "0.1.13"
       ]
     },
     {
@@ -3393,22 +3365,22 @@
           "version": "0.5.21"
         },
         {
-          "ref": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+          "ref": "v0.5.35",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "0.5.37"
+          "version": "0.5.35"
         },
         {
-          "ref": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+          "ref": "v0.5.35",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
-          "version": "0.5.37"
+          "version": "0.5.35"
         },
         {
-          "ref": "347808e0b41cd88a8cb257e809276ec8c35acd0d",
+          "ref": "v0.5.29",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
-          "version": "0.5.37"
+          "version": "0.5.29"
         }
       ],
       "required_repos": [],
@@ -3418,7 +3390,8 @@
       "upstream": "ooxml-test-framework",
       "versions": [
         "0.5.21",
-        "0.5.37"
+        "0.5.29",
+        "0.5.35"
       ]
     },
     {
