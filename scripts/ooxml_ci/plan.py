@@ -97,6 +97,6 @@ def build_plan(facts: Facts) -> dict[str, Any]:
         ),
         "diagnostic_counts": counts(diagnostics),
         "inputs_digest": facts.digest,
-        "inputs": sorted(facts.inputs),
+        "inputs": facts.manifest,
         "excluded_from_plan": EXCLUDED_FROM_PLAN,
     }

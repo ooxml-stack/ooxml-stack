@@ -79,36 +79,69 @@ def binding_for(plan: dict[str, Any], repo: str) -> dict[str, Any]:
     return {"workflow": full["workflow"], "jobs": jobs, "adapter": adapter}
 
 
-def _digest_over(root: Path, relpaths: list[str]) -> str:
-    digest = hashlib.sha256()
-    for relpath in sorted(relpaths):
-        digest.update(relpath.encode("utf-8"))
-        digest.update(b"\0")
-        digest.update((root / relpath).read_bytes())
-        digest.update(b"\0")
-    return digest.hexdigest()
+def _manifest(plan: dict[str, Any]) -> list[dict[str, str]]:
+    """The declared input manifest, newest shape first.
+
+    Older plans carried a bare path list and a digest over the bytes. Reading
+    them here would reintroduce the defect this manifest exists to remove, so a
+    plan without per-input digests is refused rather than half-checked.
+    """
+    entries = plan["payload"].get("inputs")
+    if not isinstance(entries, list):
+        raise PlanError("plan declares no input manifest")
+    manifest: list[dict[str, str]] = []
+    for entry in entries:
+        if not isinstance(entry, dict) or not entry.get("path") or not entry.get("sha256"):
+            raise PlanError(f"plan input manifest entry is malformed: {entry!r}")
+        manifest.append({"path": str(entry["path"]), "sha256": str(entry["sha256"])})
+    return manifest
 
 
 def reverify_inputs(plan: dict[str, Any], root: Path) -> dict[str, Any]:
-    """Re-derive ``inputs_digest`` from the workspace when the inputs are present.
+    """Check every declared input the workspace can actually supply.
 
-    Returns ``{"verified": bool, "reason": str}``. When every declared input can
-    be read, a mismatch means the plan no longer describes the configuration it
-    claims to, and the caller must fail rather than trust the stored digest.
+    The verdict must not depend on how complete the workspace happens to be.
+    Each declared input is compared against its own recorded digest:
+
+    * present and matching - checked;
+    * present and different - the plan no longer describes this configuration,
+      so the caller must fail closed, however many other inputs are missing;
+    * absent - unchecked, and reported as such rather than counted as a pass.
+
+    ``verified`` therefore means "nothing the workspace could show contradicts
+    the plan", and ``unchecked`` names the scope that was not proven.
     """
-    relpaths = list(plan["payload"].get("inputs") or [])
-    if not relpaths:
-        return {"verified": False, "reason": "plan declares no input paths"}
-    missing = [relpath for relpath in relpaths if not (Path(root) / relpath).is_file()]
-    if missing:
+    manifest = _manifest(plan)
+    if not manifest:
+        return {"verified": False, "checked": 0, "unchecked": 0,
+                "reason": "plan declares no input paths"}
+    root = Path(root)
+    checked = 0
+    mismatched: list[str] = []
+    unchecked: list[str] = []
+    for entry in manifest:
+        path = root / entry["path"]
+        if not path.is_file():
+            unchecked.append(entry["path"])
+            continue
+        checked += 1
+        if hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
+            mismatched.append(entry["path"])
+    if mismatched:
+        raise PlanError(
+            "plan input digest does not match the workspace for "
+            + ", ".join(sorted(mismatched))
+            + ": the plan was modified or the configuration moved since it was written"
+        )
+    if not checked:
         return {
             "verified": False,
-            "reason": f"{len(missing)} of {len(relpaths)} plan inputs are not present in the workspace",
+            "checked": 0,
+            "unchecked": len(unchecked),
+            "reason": f"{len(manifest)} of {len(manifest)} plan inputs are not present in the workspace",
         }
-    derived = _digest_over(Path(root), relpaths)
-    if derived != plan["inputs_digest"]:
-        raise PlanError(
-            "plan inputs_digest does not match the workspace: the plan was modified "
-            "or the configuration moved since it was written"
-        )
-    return {"verified": True, "reason": "inputs_digest re-derived from the workspace"}
+    scope = f"{checked} of {len(manifest)} plan inputs checked"
+    if unchecked:
+        scope += f"; {len(unchecked)} unchecked because they are absent"
+    return {"verified": True, "checked": checked, "unchecked": len(unchecked),
+            "reason": f"{scope}; every present input matches the plan"}

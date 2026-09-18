@@ -53,7 +53,9 @@ def test_a_version_mismatch_is_reported(tmp_path):
 
 def test_the_declaration_is_a_plan_input(tmp_path):
     plan = build(build_workspace(tmp_path))
-    assert "ooxml-stack/ci/ecosystem-inventory-requirements.txt" in plan["inputs"]
+    assert "ooxml-stack/ci/ecosystem-inventory-requirements.txt" in [
+        entry["path"] for entry in plan["inputs"]
+    ]
 
 
 def test_changing_the_declaration_changes_the_digest(tmp_path):

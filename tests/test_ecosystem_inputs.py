@@ -105,7 +105,9 @@ def test_inputs_digest_excludes_the_plan_itself(tmp_path):
     before, _ = inputs.select_inputs(root, policy)
     write(root / "ooxml-stack/ci/ecosystem-plan.json", '{"stale": true}\n')
     after, _ = inputs.select_inputs(root, policy)
-    assert inputs.inputs_digest(before) == inputs.inputs_digest(after)
+    assert inputs.inputs_digest(inputs.input_manifest(before)) == inputs.inputs_digest(
+        inputs.input_manifest(after)
+    )
 
 
 # -------------------------------------------------------------------- parsers

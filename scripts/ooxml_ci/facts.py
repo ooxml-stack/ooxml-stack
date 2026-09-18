@@ -26,6 +26,7 @@ class Facts:
     policy: dict[str, Any]
     inputs: dict[str, bytes]
     digest: str
+    manifest: list[dict[str, str]] = field(default_factory=list)
     missing: list[dict[str, Any]] = field(default_factory=list)
     declarations: list[Declaration] = field(default_factory=list)
     uv_sources: dict[str, dict[str, Any]] = field(default_factory=dict)

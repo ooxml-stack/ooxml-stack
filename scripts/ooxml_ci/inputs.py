@@ -133,12 +133,27 @@ def select_inputs(
     return files, missing
 
 
-def inputs_digest(files: dict[str, bytes]) -> str:
+def input_manifest(files: dict[str, bytes]) -> list[dict[str, str]]:
+    """Name every declared input with its own digest.
+
+    The plan has to state its input identity, not just a digest over whatever
+    happened to be readable. A consumer holding only part of the workspace can
+    then check the inputs it does have against the plan instead of silently
+    skipping them, and can report the rest as unchecked rather than as a pass.
+    """
+    return [
+        {"path": relpath, "sha256": hashlib.sha256(files[relpath]).hexdigest()}
+        for relpath in sorted(files)
+    ]
+
+
+def inputs_digest(manifest: list[dict[str, str]]) -> str:
+    """Digest the manifest itself, so the identity is the manifest."""
     digest = hashlib.sha256()
-    for relpath in sorted(files):
-        digest.update(relpath.encode("utf-8"))
+    for entry in manifest:
+        digest.update(entry["path"].encode("utf-8"))
         digest.update(b"\0")
-        digest.update(files[relpath])
+        digest.update(entry["sha256"].encode("ascii"))
         digest.update(b"\0")
     return digest.hexdigest()
 
@@ -162,11 +177,13 @@ def gather_facts(
     files: dict[str, bytes],
     missing: list[dict[str, Any]] | None = None,
 ) -> Facts:
+    manifest = input_manifest(files)
     facts = Facts(
         root=root,
         policy=policy,
         inputs=files,
-        digest=inputs_digest(files),
+        digest=inputs_digest(manifest),
+        manifest=manifest,
         missing=list(missing or []),
     )
     for node in policy["nodes"]:
