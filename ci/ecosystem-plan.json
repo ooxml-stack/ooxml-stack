@@ -279,6 +279,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-apps.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 56
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "ooxml-apps"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "sha",
         "ref_raw": "cde719c0c6625da903a38c66752d2fe30995e5b7",
         "section": "repositories",
@@ -297,6 +324,33 @@
       "role": "ci",
       "snapshot_owner": "ooxml-operation-engine",
       "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-core"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-core.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 50
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
       "to": "ooxml-core"
     },
     {
@@ -344,6 +398,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-native-corpus.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 57
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "ooxml-native-corpus"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "release_tag",
         "ref_raw": "native-corpus-2026-08-15.1",
         "release_tag": "native-corpus-2026-08-15.1",
@@ -368,6 +449,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 55
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "ooxml-operation-engine"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "sha",
         "ref_raw": "bb044b98335ca431d1510406e2ee9fa940de741e",
         "section": "repositories",
@@ -386,6 +494,33 @@
       "role": "ci",
       "snapshot_owner": "ooxml-operation-engine",
       "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-spec"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-spec.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 48
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
       "to": "ooxml-spec"
     },
     {
@@ -433,6 +568,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 58
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "sha",
         "ref_raw": "2fa41d934984641160a1973e21da43d6eb8e50c1",
         "section": "repositories",
@@ -455,6 +617,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 51
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "ooxml-stubs"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "sha",
         "ref_raw": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
         "section": "repositories",
@@ -473,6 +662,33 @@
       "role": "ci",
       "snapshot_owner": "ooxml-operation-engine",
       "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "ooxml-test-framework"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 49
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
       "to": "ooxml-test-framework"
     },
     {
@@ -520,6 +736,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/python-docx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 52
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "python-docx"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "unknown",
         "ref_raw": "engine-followup-integrity-20260916-r1",
         "section": "project.dependencies",
@@ -563,6 +806,33 @@
     },
     {
       "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/python-pptx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 53
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "to": "python-pptx"
+    },
+    {
+      "declared": {
         "ref_declared_kind": "unknown",
         "ref_raw": "engine-followup-integrity-20260916-r1",
         "section": "project.dependencies",
@@ -602,6 +872,33 @@
       "role": "ci",
       "snapshot_owner": "ooxml-operation-engine",
       "source_file": "ooxml-operation-engine/ci/environment.json",
+      "to": "python-xlsx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "none",
+        "ref_raw": null,
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/python-xlsx.git",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_clone",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+          "line": 54
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
       "to": "python-xlsx"
     },
     {
@@ -2676,6 +2973,10 @@
       "sha256": "9c321b9a2a77df266948dd108ed0f7d96c79ad57eef7d3a2dc6de9682fe5f831"
     },
     {
+      "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
+      "sha256": "4660c07e5a6f2653f2ca57b0e184583dda5f27227af60a2b45720c68bba94dd1"
+    },
+    {
       "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
       "sha256": "4b76857912249e386248c0623bc43636012709c1fb96fd5adef2ef39cb29e8b9"
     },
@@ -2824,7 +3125,7 @@
       "sha256": "95c81e51f7400ca407a847c2e75d8977a8e49f37b5620fff00c1da98fb2903ba"
     }
   ],
-  "inputs_digest": "89538334d6172f555cd50c17b51d03fe58ef264b673fe8cb6998237734202c96",
+  "inputs_digest": "cabe15da595337f768dc8510ea29b2242780954f4b96d31e3929734da8434ee8",
   "kind": "ecosystem-plan",
   "nodes": [
     {
