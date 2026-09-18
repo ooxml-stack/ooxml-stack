@@ -77,15 +77,15 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+        "ref_raw": "8da6d69e67c0265fdc7f917522342766331272d7",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+        "commit": "8da6d69e67c0265fdc7f917522342766331272d7",
         "source": "ooxml-apps/uv.lock",
-        "version": "0.1.13"
+        "version": "0.1.33"
       },
       "from": "ooxml-apps",
       "group": null,
@@ -2627,57 +2627,204 @@
   },
   "host": "ooxml-stack",
   "inputs": [
-    "ooxml-apps/.github/workflows/ci.yml",
-    "ooxml-apps/.github/workflows/real-stack.yml",
-    "ooxml-apps/pyproject.toml",
-    "ooxml-apps/uv.lock",
-    "ooxml-core/.github/workflows/ci.yml",
-    "ooxml-core/.github/workflows/native-corpus-gate.yml",
-    "ooxml-core/.github/workflows/release-wheel.yml",
-    "ooxml-core/.github/workflows/semantic-gate-report.yml",
-    "ooxml-core/pyproject.toml",
-    "ooxml-core/uv.lock",
-    "ooxml-native-corpus/.github/workflows/corpus-inspection.yml",
-    "ooxml-operation-engine/.github/workflows/ci.yml",
-    "ooxml-operation-engine/.github/workflows/release-readiness.yml",
-    "ooxml-operation-engine/ci/environment.json",
-    "ooxml-operation-engine/pyproject.toml",
-    "ooxml-operation-engine/uv.lock",
-    "ooxml-spec/.github/workflows/ci.yml",
-    "ooxml-spec/pyproject.toml",
-    "ooxml-spec/uv.lock",
-    "ooxml-stack/.github/workflows/evidence-retention.yml",
-    "ooxml-stack/.github/workflows/mutation-gate.yml",
-    "ooxml-stack/.github/workflows/runner-tests.yml",
-    "ooxml-stack/ci/ecosystem-inventory-requirements.txt",
-    "ooxml-stack/ci/ecosystem-policy.json",
-    "ooxml-stubs/.github/workflows/ci.yml",
-    "ooxml-stubs/pyproject.toml",
-    "ooxml-stubs/uv.lock",
-    "ooxml-test-framework/.github/workflows/ci.yml",
-    "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
-    "ooxml-test-framework/pyproject.toml",
-    "ooxml-test-framework/uv.lock",
-    "python-docx/.github/workflows/ci.yml",
-    "python-docx/.github/workflows/native-corpus-gate.yml",
-    "python-docx/.github/workflows/semantic-gate-report.yml",
-    "python-docx/pyproject.toml",
-    "python-docx/src/docx/__init__.py",
-    "python-docx/uv.lock",
-    "python-pptx/.github/workflows/ci.yml",
-    "python-pptx/.github/workflows/native-corpus-gate.yml",
-    "python-pptx/.github/workflows/semantic-gate-report.yml",
-    "python-pptx/.github/workflows/sync-to-gitee.yml",
-    "python-pptx/pyproject.toml",
-    "python-pptx/src/pptx/__init__.py",
-    "python-pptx/uv.lock",
-    "python-xlsx/.github/workflows/ci.yml",
-    "python-xlsx/.github/workflows/native-corpus-gate.yml",
-    "python-xlsx/pyproject.toml",
-    "python-xlsx/src/xlsx/__init__.py",
-    "python-xlsx/uv.lock"
+    {
+      "path": "ooxml-apps/.github/workflows/ci.yml",
+      "sha256": "d9f71366a892ec25b9bb33829d85e6e7cc32e4a94913482118d0324e2472286b"
+    },
+    {
+      "path": "ooxml-apps/.github/workflows/real-stack.yml",
+      "sha256": "f0a2bfbf0f33c1874513294903e3f4aee6cf3c22e111116689b05c4f29d9492a"
+    },
+    {
+      "path": "ooxml-apps/pyproject.toml",
+      "sha256": "e3182aa3f262e7a9ea82721f6e244c2756a3bcb2ca5e2d695f6682ad2d8da778"
+    },
+    {
+      "path": "ooxml-apps/uv.lock",
+      "sha256": "efecd3590d8c7e44c95d0b719826a2ec6f5496b01b98b39542789a3e26fca24d"
+    },
+    {
+      "path": "ooxml-core/.github/workflows/ci.yml",
+      "sha256": "8fdfa8e90c6661d0adfbe44e17f001ac5f2a41da6a5eeb84a3d7be388eaa7147"
+    },
+    {
+      "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
+      "sha256": "8d4b4129073eb0f2fd7acd59df295519685cf3db3ea1ca56de9372f22d22d485"
+    },
+    {
+      "path": "ooxml-core/.github/workflows/release-wheel.yml",
+      "sha256": "d6fef2be4715ae5bf286f89e3dc15d899b44320683375de91a6e418680f87bb9"
+    },
+    {
+      "path": "ooxml-core/.github/workflows/semantic-gate-report.yml",
+      "sha256": "534235d1227fa0ccdaf98de3164f827aa52150465fc4aecc3e28bbfbcbd99f5f"
+    },
+    {
+      "path": "ooxml-core/pyproject.toml",
+      "sha256": "bec3bd53e1d4632f2d678311505cde188534b5c0ff039afc1b0609c4042f4663"
+    },
+    {
+      "path": "ooxml-core/uv.lock",
+      "sha256": "c6c343577214fd81d8cc44ef38e0744a91ed6b34cbc73d41bb1c7169b1fd3380"
+    },
+    {
+      "path": "ooxml-native-corpus/.github/workflows/corpus-inspection.yml",
+      "sha256": "0945bf83476db03fe651b6de9f91e70acfca55cb210f764c444e8cf94863c2bf"
+    },
+    {
+      "path": "ooxml-operation-engine/.github/workflows/ci.yml",
+      "sha256": "9c321b9a2a77df266948dd108ed0f7d96c79ad57eef7d3a2dc6de9682fe5f831"
+    },
+    {
+      "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
+      "sha256": "4b76857912249e386248c0623bc43636012709c1fb96fd5adef2ef39cb29e8b9"
+    },
+    {
+      "path": "ooxml-operation-engine/ci/environment.json",
+      "sha256": "f818f63745b79f34cdfca4164d393c013ddf5ce233ee41f1ca88f333e787a8ec"
+    },
+    {
+      "path": "ooxml-operation-engine/pyproject.toml",
+      "sha256": "7bcfeb0ee69d0b93e6d4b3acb11c92b887ae64cf16f7b94f0a5c9caff4526043"
+    },
+    {
+      "path": "ooxml-operation-engine/uv.lock",
+      "sha256": "6d082dab902064c37971eb405afcf3a3227c7e48d46733ee7a5c5fb6f0243a07"
+    },
+    {
+      "path": "ooxml-spec/.github/workflows/ci.yml",
+      "sha256": "9bfa28b2b584231f558cff1c882922134ee2b500ccdba234ce5b71dda281312b"
+    },
+    {
+      "path": "ooxml-spec/pyproject.toml",
+      "sha256": "f1e68c5aeee8aed066655a784f9d4d7a506806345f623f9cf2f352c508bb597b"
+    },
+    {
+      "path": "ooxml-spec/uv.lock",
+      "sha256": "96d12fa861266491f5515fbb294f39700aec9e707e5000a9544cabccdbf617f5"
+    },
+    {
+      "path": "ooxml-stack/.github/workflows/evidence-retention.yml",
+      "sha256": "7d13d28252b2dd6ed558405b407b83863096b25c510bf3cbfa79a0b54f110dc8"
+    },
+    {
+      "path": "ooxml-stack/.github/workflows/mutation-gate.yml",
+      "sha256": "bae5ef483f7e1fb9f13c1740e5363554fa66e45b3aa30a4f696511d4566d8b81"
+    },
+    {
+      "path": "ooxml-stack/.github/workflows/runner-tests.yml",
+      "sha256": "54440bfd2eeecd249ccba7dcfc8052365d22e6ff56c69af07bdd3dcb50bac90b"
+    },
+    {
+      "path": "ooxml-stack/ci/ecosystem-inventory-requirements.txt",
+      "sha256": "e93f86920ee8dd8f1f5b53aebe722abe2ba573c6e1fbe8cd3d0d10754216cb26"
+    },
+    {
+      "path": "ooxml-stack/ci/ecosystem-policy.json",
+      "sha256": "ec5ae43517b6cb1980cb2a0cfb85f8bbb3b7c338fc9cadff9e4c588dce2a3433"
+    },
+    {
+      "path": "ooxml-stubs/.github/workflows/ci.yml",
+      "sha256": "0291c5eb18df9772d4dde9e87d75e544b6b5c81d9fb3eb9320bdea3f9e87c507"
+    },
+    {
+      "path": "ooxml-stubs/pyproject.toml",
+      "sha256": "b4413f564683f12c72465225d187f253aba73fbf7ea8f003089f4d8b7338e3c2"
+    },
+    {
+      "path": "ooxml-stubs/uv.lock",
+      "sha256": "de03e05af5a46af96477f6569207380ababa2a26245ac392a8b88ae7a5b1b08b"
+    },
+    {
+      "path": "ooxml-test-framework/.github/workflows/ci.yml",
+      "sha256": "d6e1ef51d11c4aed98782b335a295be6204ed48ff79e06b5d0baf0bb923bc318"
+    },
+    {
+      "path": "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
+      "sha256": "17393dc5a6518a894ce2d603a18e1e93ec6f311e4912a9d24f4cc1a8f83ebb1a"
+    },
+    {
+      "path": "ooxml-test-framework/pyproject.toml",
+      "sha256": "fdf6e3fd6d5ceacff33367322a5faec80e1016289e6e6d1594197702fe6b3fe8"
+    },
+    {
+      "path": "ooxml-test-framework/uv.lock",
+      "sha256": "65a836afc865a594d269e88bc822294833acdaf630bf90c1db08f777e6044aa1"
+    },
+    {
+      "path": "python-docx/.github/workflows/ci.yml",
+      "sha256": "893864c9fb544fd0fb3159cc55b44243d89261d5c24d61f46391a83b4ea232d0"
+    },
+    {
+      "path": "python-docx/.github/workflows/native-corpus-gate.yml",
+      "sha256": "daf12edae22427abc1120346630143669f5a35a350202bc8bd0ddf4d0f9acdbf"
+    },
+    {
+      "path": "python-docx/.github/workflows/semantic-gate-report.yml",
+      "sha256": "d07d60339d6070efd61bc70a103449eef1ee2ef08dd95c5350ad73d440e39f6d"
+    },
+    {
+      "path": "python-docx/pyproject.toml",
+      "sha256": "46983f3ce090a08a72c86a683dc587cf1d21e51ee904626274a6d223e8336d75"
+    },
+    {
+      "path": "python-docx/src/docx/__init__.py",
+      "sha256": "0e039f79722bf34e01722a7011ef7cc2f818de8fb2e725e4484cac0689a9b97d"
+    },
+    {
+      "path": "python-docx/uv.lock",
+      "sha256": "bfeb46d25f4b248eb9344755cb1d30eabe38e738cf27b46cab405934eb480c83"
+    },
+    {
+      "path": "python-pptx/.github/workflows/ci.yml",
+      "sha256": "7737f9d2fcfd404168d2c8252d61bd15d80cf44dc4e185146fc7051bb344e4ea"
+    },
+    {
+      "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
+      "sha256": "72f742761f1da094808a537c49545bee5bcfc2ab2f462fedb1831b9e70bf2ace"
+    },
+    {
+      "path": "python-pptx/.github/workflows/semantic-gate-report.yml",
+      "sha256": "c1270216d38dfc4334ebab637bc0a5528ae3df0d335c9c037763d966a47b3566"
+    },
+    {
+      "path": "python-pptx/.github/workflows/sync-to-gitee.yml",
+      "sha256": "6720a775f45f7891c79949e0075a0ca49da7c421df6fac75edb5a27a14c26870"
+    },
+    {
+      "path": "python-pptx/pyproject.toml",
+      "sha256": "09d92f662ac00b2ae74dbbf30ddaeb32a44a5b5ba333845356131802be38152f"
+    },
+    {
+      "path": "python-pptx/src/pptx/__init__.py",
+      "sha256": "ea49239e8841f197fe13d50113ade16e96292c65aef5ccb2d814490fb2c40a87"
+    },
+    {
+      "path": "python-pptx/uv.lock",
+      "sha256": "c574b8c4865c8c67481f632826ab72197bde3fd5f63183b901476d59647a7dda"
+    },
+    {
+      "path": "python-xlsx/.github/workflows/ci.yml",
+      "sha256": "3132e3cdc5e694e9d307feeddf797a77c6ef636b69b34526aabcdac4a8412db1"
+    },
+    {
+      "path": "python-xlsx/.github/workflows/native-corpus-gate.yml",
+      "sha256": "1b8a63d9c72a4229caf5da91b365a77eeaa1c91c91e693a9639772dbe2c1ae64"
+    },
+    {
+      "path": "python-xlsx/pyproject.toml",
+      "sha256": "6f5e9e8d4844a4ab21fe41e8097f48e6eab38da460ba79a93b72e86556564562"
+    },
+    {
+      "path": "python-xlsx/src/xlsx/__init__.py",
+      "sha256": "3a20edbcd5c69048e576e004c461601f7c003c696cd76d16c0c4aec71b736946"
+    },
+    {
+      "path": "python-xlsx/uv.lock",
+      "sha256": "95c81e51f7400ca407a847c2e75d8977a8e49f37b5620fff00c1da98fb2903ba"
+    }
   ],
-  "inputs_digest": "bc590d8f9b17db76684bc7fba20a12d117c66784a06f39dceb8ae22eaba2cd4b",
+  "inputs_digest": "89538334d6172f555cd50c17b51d03fe58ef264b673fe8cb6998237734202c96",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2862,17 +3009,17 @@
     {
       "repos": [
         {
-          "ref": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+          "ref": "8da6d69e67c0265fdc7f917522342766331272d7",
           "repo": "ooxml-apps",
           "source_file": "ooxml-apps/pyproject.toml",
-          "version": "0.1.13"
+          "version": "0.1.33"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-operation-engine",
       "versions": [
-        "0.1.13"
+        "0.1.33"
       ]
     },
     {
