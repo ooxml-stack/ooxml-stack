@@ -97,7 +97,7 @@ def _manifest(plan: dict[str, Any]) -> list[dict[str, str]]:
     return manifest
 
 
-def reverify_inputs(plan: dict[str, Any], root: Path) -> dict[str, Any]:
+def reverify_inputs(plan: dict[str, Any], root: Path, repo: str | None = None) -> dict[str, Any]:
     """Check every declared input the workspace can actually supply.
 
     The verdict must not depend on how complete the workspace happens to be.
@@ -108,6 +108,12 @@ def reverify_inputs(plan: dict[str, Any], root: Path) -> dict[str, Any]:
       so the caller must fail closed, however many other inputs are missing;
     * absent - unchecked, and reported as such rather than counted as a pass.
 
+    ``repo`` names the repository under verification. Its own declared inputs are
+    skipped: they are already bound twice over, by the commit being verified and
+    by the report's own input hashes, and letting a caller's working tree decide
+    them would make an uncommitted edit change the verdict for an older commit.
+    The manifest is what binds the *rest* of the ecosystem.
+
     ``verified`` therefore means "nothing the workspace could show contradicts
     the plan", and ``unchecked`` names the scope that was not proven.
     """
@@ -116,10 +122,13 @@ def reverify_inputs(plan: dict[str, Any], root: Path) -> dict[str, Any]:
         return {"verified": False, "checked": 0, "unchecked": 0,
                 "reason": "plan declares no input paths"}
     root = Path(root)
+    prefix = f"{repo}/" if repo else None
     checked = 0
     mismatched: list[str] = []
     unchecked: list[str] = []
     for entry in manifest:
+        if prefix and entry["path"].startswith(prefix):
+            continue
         path = root / entry["path"]
         if not path.is_file():
             unchecked.append(entry["path"])
@@ -138,7 +147,7 @@ def reverify_inputs(plan: dict[str, Any], root: Path) -> dict[str, Any]:
             "verified": False,
             "checked": 0,
             "unchecked": len(unchecked),
-            "reason": f"{len(manifest)} of {len(manifest)} plan inputs are not present in the workspace",
+            "reason": f"{len(unchecked)} of {len(manifest)} plan inputs are not present in the workspace",
         }
     scope = f"{checked} of {len(manifest)} plan inputs checked"
     if unchecked:
