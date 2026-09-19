@@ -80,6 +80,9 @@ def _expected(request: dict[str, Any], stages: list[str]) -> dict[str, Any]:
         "runner_source_sha256": request["runner"]["source_sha256"],
         "plan_sha256": request["plan"]["sha256"],
         "inputs_digest": request["plan"]["inputs_digest"],
+        "inputs_reverified": plan_module.reverify_inputs(
+            request["plan"], request["root"], request["repo"], request["commit"]
+        ),
         "binding": request["binding"],
         "stages": stages,
     }
@@ -105,7 +108,8 @@ def describe_repository(*, root, repo, commit="HEAD", runner_commit, plan) -> di
                        "source_sha256": request["runner"]["source_sha256"]},
             "plan": {"path": request["plan"]["path"], "sha256": request["plan"]["sha256"],
                      "inputs_digest": request["plan"]["inputs_digest"],
-                     "inputs_reverified": plan_module.reverify_inputs(request["plan"], request["root"], request["repo"])},
+                     "inputs_reverified": plan_module.reverify_inputs(
+                         request["plan"], request["root"], request["repo"], request["commit"])},
             "binding": request["binding"],
             "stages": list(view["described"]["stages"]),
             "environment": view["described"].get("environment", {}),
@@ -175,7 +179,8 @@ def run_repository(
     """Run the full verification for one commit and return the verified report."""
     request = _resolve(root=root, repo=repo, commit=commit, runner_commit=runner_commit,
                        plan=plan, repo_path=repo_path)
-    inputs_reverified = plan_module.reverify_inputs(request["plan"], request["root"], request["repo"])
+    inputs_reverified = plan_module.reverify_inputs(
+        request["plan"], request["root"], request["repo"], request["commit"])
     output_root = Path(output).resolve()
 
     def execute(snapshot, view):

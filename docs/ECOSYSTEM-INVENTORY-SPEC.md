@@ -54,6 +54,7 @@
 | 34 | 已识别为 `git clone` 但仓库参数无法静态确定时，报 `unsupported_workflow`（error，带原文与来源位置），不猜测目标、不生成虚构边、不报 `policy_node_mismatch`；掩码后仍无法可靠读取的 Bash 区域同样报 `unsupported_workflow`，不以空结果表示"没有依赖"。该规则只针对 clone 的目标参数，不扩大为所有动态 shell 参数。选项按形状识别：`--opt=value`（含动态值）自包含，只占一个位置，不会把后面的静态 URL 当成选项值而漏掉 | §5/§9 |
 | 35 | ANSI-C 引用 `$'…'` 保留为一个参数：无反斜杠的字面内容可静态读取并参与 URL 拼接；含反斜杠转义的目标报 `unsupported_workflow`，不猜测 Bash 的解码结果。它作为选项值时仍只占一个位置，不吞掉后面的静态 URL。Bash 解析失败与未闭合 Actions 表达式的诊断均包含 `run` 节点行号 | §5/§9 |
 | 36 | 远程仓库 URL 的**接受集合**与归一化必须一致：`http(s)://`、`ssh://`、`git://`、scp 形式 `user@host:path` 都算远程（scheme 大小写不敏感，scp 的 **user 可以是任意用户名**，不限于 `git`）；归一化统一去掉 scheme、userinfo、末尾 `/`、`.git` 与查询/片段，使同一仓库在任意写法下得到同一 slug。clone 入口与归一化共用同一条 scp 识别规则（`urls.is_remote_repo` 复用 `urls._SCP`），凡是归一化能解析的远程形式入口必须放行——否则真 clone 会既无边也无诊断地消失。本地路径（`../local`）与非远程形式（`file://`、打包用的 `git+https://`）仍按"不建模"静默忽略 | §5/§9 |
+| 37 | **已发布 plan 的基准**：policy 各节点**远端默认分支**的检出内容。基准在准备工作区时确定，推导层仍只读字节、不查网络；`make ecosystem-plan-refresh` / `ecosystem-plan-check-basis` 按 policy 建隔离工作区（每节点一次普通 `git clone`，即各自的默认分支），漂移 workflow 复用同一入口 | §2.2/§11 |
 
 ---
 
@@ -132,6 +133,35 @@
   未提交内容，重新生成的 plan 就可能不同——这正是 `--check` 要报的漂移，不是缺陷。
 - 首次新增、尚未提交的 policy 可以参与生成（否则无法自举）。
 - plan 里仍不得出现任何 git/网络/本地状态（§1）：读工作区字节 ≠ 记录 git 状态。
+
+### 2.2 已发布 plan 的基准
+
+> **已提交的 `ci/ecosystem-plan.json` 描述的是 policy 各节点远端默认分支的检出内容。**
+
+§2.1 说的是**推导规则**（plan 是工作区字节的确定性函数），本节说的是**已发布产物的基准**
+（这份工作区应当是什么）。两者必须分开：推导层不查网络、不选分支，基准由准备工作区的那一步
+确定。把二者混为一谈，就会出现"本地工作区在 `main`、远端默认分支是 `master`"这种
+plan 描述了一个任何仓库都没有发布过的状态。
+
+| 用途 | 入口 | 工作区 |
+|---|---|---|
+| 扫描**指定**工作区（含未提交修改） | `make ecosystem-plan` / `make ecosystem-plan-check` | 调用者当前的工作区 |
+| 生成/核对**已发布** plan | `make ecosystem-plan-refresh` / `make ecosystem-plan-check-basis` | 按 policy 新建的隔离工作区 |
+
+刷新入口 `python3 -m scripts.ooxml_ci.refresh` 的做法：读 `ci/ecosystem-policy.json` 取节点集合
+（不在这里重复节点清单），对每个节点做一次普通 `git clone` 到临时目录——**普通 clone 检出的就是
+该仓库自己的默认分支**，所以不需要也不允许把 `main` 写死；随后用同一个生成器对该 root 跑
+`--write`（把结果 plan 拷回本仓库）或 `--check`（逐字节比较，不写任何东西）。
+
+**为什么不能把 `master` 换成 `main`**：`python-docx` 与 `python-pptx` 的默认分支是 `master`。
+按 `main` 检出会拿到另一条分支的内容，生成一份与默认分支不一致的 plan；`--check` 会报
+`plan bytes: DIFFERENT`，而真正的默认分支基准其实没有漂移。这类失败是**基准错误**，
+不是内容漂移。
+
+**失败时怎么区分**：`--check` 的三类结论分别看三行输出——`plan bytes` 是否为 `identical`
+（内容漂移）、`plan counts` 是否有 `error`（结构性诊断）、`scan counts` 是否有 `error` 或
+必需事实 `unverifiable`（测量失败）。只有第一类是本轮要修的漂移；后两类要去看对应的
+诊断，不能当成"plan 过期"处理。
 
 ---
 
@@ -477,6 +507,13 @@ cd ooxml-stack && make ecosystem-inventory-deps
 make ecosystem-plan          # .venv-ecosystem-inventory/bin/python -m scripts.ooxml_ci --write
 make ecosystem-plan-check    # .venv-ecosystem-inventory/bin/python -m scripts.ooxml_ci --check
 make ecosystem-inventory-test
+```
+
+刷新已发布 plan（基准见 §2.2；这两个目标自己准备隔离工作区，不需要先手工 clone）：
+
+```bash
+make ecosystem-plan-refresh      # 按 policy 建默认分支基准 → --write → 拷回 ci/ecosystem-plan.json
+make ecosystem-plan-check-basis  # 按 policy 建默认分支基准 → --check（不写任何东西）
 ```
 
 `ci/ecosystem-inventory-test-requirements.txt` 在运行依赖之上加 `pytest==9.0.2`。

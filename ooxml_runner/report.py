@@ -191,6 +191,38 @@ def _verify_binding(report: dict[str, Any], expected: dict[str, Any]) -> None:
         )
 
 
+def _verify_scope(plan: dict[str, Any], expected: dict[str, Any]) -> None:
+    """The report must not overstate how much of the plan it actually checked.
+
+    The scope is re-derived from the trusted plan and the workspace being verified
+    against, so a report cannot declare its own exclusions: naming an external
+    repository's inputs as "the target's" would otherwise skip comparing them.
+    """
+    claimed = _mapping(plan.get("inputs_reverified"), "plan inputs_reverified")
+    derived = expected.get("inputs_reverified")
+    if not isinstance(derived, dict) or not derived:
+        raise ReportError("verification requires the re-derived plan input scope")
+    for field in ("total", "checked", "unchecked"):
+        value = claimed.get(field)
+        if not isinstance(value, int) or isinstance(value, bool) or value != derived[field]:
+            raise ReportError(
+                f"report plan inputs_reverified.{field} is {value!r}, "
+                f"not the {derived[field]!r} this workspace re-derives"
+            )
+    if claimed.get("unchecked_paths") != derived["unchecked_paths"]:
+        raise ReportError("report plan inputs_reverified.unchecked_paths does not match the workspace")
+    if claimed.get("excluded") != derived["excluded"]:
+        raise ReportError(
+            "report plan inputs_reverified.excluded does not match the target repository's "
+            "declared inputs in the trusted plan"
+        )
+    if claimed.get("verified") is not derived["verified"]:
+        raise ReportError(
+            f"report plan inputs_reverified.verified is {claimed.get('verified')!r}, "
+            f"not the {derived['verified']!r} this workspace re-derives"
+        )
+
+
 def verify_generic(report: dict[str, Any], expected: dict[str, Any]) -> None:
     """Check the report against caller-supplied expectations, not its own claims."""
     if report.get("schema_version") != REPORT_SCHEMA_VERSION:
@@ -206,6 +238,7 @@ def verify_generic(report: dict[str, Any], expected: dict[str, Any]) -> None:
         raise ReportError("report plan sha256 does not match the requested plan file")
     if plan.get("inputs_digest") != expected.get("inputs_digest"):
         raise ReportError("report inputs_digest does not match the requested plan")
+    _verify_scope(plan, expected)
     _verify_binding(report, expected)
     if report.get("status") != "pass":
         raise ReportError(f"report is not a pass: {report.get('status')!r}")
