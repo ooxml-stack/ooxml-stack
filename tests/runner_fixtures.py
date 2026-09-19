@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from pathlib import Path
 
 from ooxml_runner import identity, snapshot
 from ooxml_runner import plan as plan_module
@@ -169,21 +170,27 @@ def make_plan(tmp_path, repo, *, adapter="scripts.ci.adapter", nodes=None, diagn
 def expected_for(repo, plan, stages=("alpha", "beta"), key=REPO, commit=None):
     """The expectations a verifier re-derives from the request, never from a report."""
     loaded = plan_module.load(plan)
-    return {"repository": key, "commit": commit or snapshot.resolve_commit(repo, "HEAD"),
+    resolved = commit or snapshot.resolve_commit(repo, "HEAD")
+    return {"repository": key, "commit": resolved,
             "runner_commit": RUNNER_COMMIT,
             "runner_source_sha256": identity.source_sha256_at(identity.PACKAGE_DIR.parent, RUNNER_COMMIT),
             "plan_sha256": loaded["sha256"], "inputs_digest": loaded["inputs_digest"],
+            "inputs_reverified": plan_module.reverify_inputs(
+                loaded, Path(plan).parent, key, resolved),
             "binding": plan_module.binding_for(loaded, key), "stages": list(stages)}
 
 
 def passing_report(repo, plan, stages=("alpha", "beta"), **overrides):
     loaded = plan_module.load(plan)
+    commit = overrides.pop("commit", snapshot.resolve_commit(repo, "HEAD"))
     payload = {
         "schema_version": 1, "status": "pass", "repository": overrides.pop("repository", REPO),
-        "commit": overrides.pop("commit", snapshot.resolve_commit(repo, "HEAD")),
+        "commit": commit,
         "runner": {"commit": RUNNER_COMMIT, "source_sha256": identity.identity()["source_sha256"]},
         "plan": {"path": loaded["path"], "sha256": loaded["sha256"],
-                 "inputs_digest": loaded["inputs_digest"]},
+                 "inputs_digest": loaded["inputs_digest"],
+                 "inputs_reverified": overrides.pop("inputs_reverified", plan_module.reverify_inputs(
+                     loaded, Path(plan).parent, REPO, commit))},
         "binding": overrides.pop("binding", plan_module.binding_for(loaded, REPO)),
         "image": "fixture@sha256:" + "0" * 64, "inputs": {}, "exit_code": 0,
         "stages": [{"name": name, "status": "pass"} for name in stages],

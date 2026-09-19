@@ -97,7 +97,38 @@ def _manifest(plan: dict[str, Any]) -> list[dict[str, str]]:
     return manifest
 
 
-def reverify_inputs(plan: dict[str, Any], root: Path, repo: str | None = None) -> dict[str, Any]:
+EXCLUDED_REASON = "target_repository"
+
+
+def _classify(manifest: list[dict[str, str]], root: Path, repo: str | None, commit: str | None):
+    """Split the manifest into checked, mismatched, unchecked and excluded.
+
+    Paths are de-duplicated first: the accounting has to add up, and a repeated
+    path must not be counted twice.
+    """
+    prefix = f"{repo}/" if repo else None
+    checked: set[str] = set()
+    mismatched: list[str] = []
+    unchecked: list[str] = []
+    excluded: list[dict[str, str]] = []
+    for entry in {item["path"]: item["sha256"] for item in manifest}.items():
+        path, expected = entry
+        if prefix and path.startswith(prefix):
+            excluded.append({"path": path, "reason": EXCLUDED_REASON, "bound_to": commit})
+            continue
+        candidate = root / path
+        if not candidate.is_file():
+            unchecked.append(path)
+            continue
+        checked.add(path)
+        if hashlib.sha256(candidate.read_bytes()).hexdigest() != expected:
+            mismatched.append(path)
+    return sorted(checked), sorted(mismatched), sorted(unchecked), excluded
+
+
+def reverify_inputs(
+    plan: dict[str, Any], root: Path, repo: str | None = None, commit: str | None = None
+) -> dict[str, Any]:
     """Check every declared input the workspace can actually supply.
 
     The verdict must not depend on how complete the workspace happens to be.
@@ -106,51 +137,46 @@ def reverify_inputs(plan: dict[str, Any], root: Path, repo: str | None = None) -
     * present and matching - checked;
     * present and different - the plan no longer describes this configuration,
       so the caller must fail closed, however many other inputs are missing;
-    * absent - unchecked, and reported as such rather than counted as a pass.
+    * absent - unchecked, named in ``unchecked_paths`` and never counted as a pass;
+    * the target repository's own - excluded, with the reason and the commit they
+      are bound to instead.
 
     ``repo`` names the repository under verification. Its own declared inputs are
-    skipped: they are already bound twice over, by the commit being verified and
+    excluded: they are already bound twice over, by the commit being verified and
     by the report's own input hashes, and letting a caller's working tree decide
     them would make an uncommitted edit change the verdict for an older commit.
-    The manifest is what binds the *rest* of the ecosystem.
+    The manifest is what binds the *rest* of the ecosystem. That exclusion is a
+    statement about the plan baseline, not a proof that the target commit's bytes
+    equal the recorded ones, so the entries say which commit they are bound to.
 
-    ``verified`` therefore means "nothing the workspace could show contradicts
-    the plan", and ``unchecked`` names the scope that was not proven.
+    ``verified`` means the applicable scope is *complete*: every declared input is
+    either checked and matching, or excluded with a reason. A workspace that
+    leaves inputs unchecked is partial evidence, and says so.
     """
     manifest = _manifest(plan)
     if not manifest:
-        return {"verified": False, "checked": 0, "unchecked": 0,
-                "reason": "plan declares no input paths"}
+        return {"verified": False, "total": 0, "checked": 0, "unchecked": 0,
+                "unchecked_paths": [], "excluded": [], "reason": "plan declares no input paths"}
     root = Path(root)
-    prefix = f"{repo}/" if repo else None
-    checked = 0
-    mismatched: list[str] = []
-    unchecked: list[str] = []
-    for entry in manifest:
-        if prefix and entry["path"].startswith(prefix):
-            continue
-        path = root / entry["path"]
-        if not path.is_file():
-            unchecked.append(entry["path"])
-            continue
-        checked += 1
-        if hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
-            mismatched.append(entry["path"])
+    checked, mismatched, unchecked, excluded = _classify(manifest, root, repo, commit)
     if mismatched:
         raise PlanError(
             "plan input digest does not match the workspace for "
-            + ", ".join(sorted(mismatched))
+            + ", ".join(mismatched)
             + ": the plan was modified or the configuration moved since it was written"
         )
-    if not checked:
-        return {
-            "verified": False,
-            "checked": 0,
-            "unchecked": len(unchecked),
-            "reason": f"{len(unchecked)} of {len(manifest)} plan inputs are not present in the workspace",
-        }
-    scope = f"{checked} of {len(manifest)} plan inputs checked"
+    total = len(checked) + len(unchecked) + len(excluded)
+    scope = f"{len(checked)} of {total} plan inputs checked"
+    if excluded:
+        scope += f"; {len(excluded)} excluded because they belong to {repo} and are bound to {commit}"
     if unchecked:
         scope += f"; {len(unchecked)} unchecked because they are absent"
-    return {"verified": True, "checked": checked, "unchecked": len(unchecked),
-            "reason": f"{scope}; every present input matches the plan"}
+    return {
+        "verified": not unchecked,
+        "total": total,
+        "checked": len(checked),
+        "unchecked": len(unchecked),
+        "unchecked_paths": unchecked,
+        "excluded": excluded,
+        "reason": scope + ("; every present input matches the plan" if checked else ""),
+    }

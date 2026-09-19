@@ -37,6 +37,13 @@ def _verify(tmp_path, repo, plan, payload):
     )
 
 
+def _other_repo(tmp_path, key="python-docx"):
+    directory = tmp_path / key
+    directory.mkdir(exist_ok=True)
+    (directory / "pyproject.toml").write_text("[project]\nname = 'fixture'\n")
+    return f"{key}/pyproject.toml"
+
+
 def _fixture(tmp_path):
     repo = make_repo(tmp_path)
     return repo, make_plan(tmp_path, repo)
