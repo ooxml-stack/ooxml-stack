@@ -51,6 +51,21 @@ def _publish(root: pathlib.Path, checkout: pathlib.Path) -> None:
     shutil.copyfile(produced, checkout / paths.PLAN_RELPATH)
 
 
+def _stage_for_check(root: pathlib.Path, checkout: pathlib.Path) -> None:
+    """Put the plan under test in the prepared root, so --check compares it.
+
+    ``--check`` compares against the plan in the workspace it is given. Left
+    alone, that is the clone's own default-branch plan, which makes a local check
+    fail immediately after a local ``--write`` - the refresh has not been pushed
+    yet. The question a caller is asking here is whether *their* plan matches the
+    basis, so that is the plan the prepared root gets.
+    """
+    source = checkout / paths.PLAN_RELPATH
+    if not source.is_file():
+        raise workspace.WorkspaceError(f"no plan to check at {source}")
+    shutil.copyfile(source, root / paths.HOST_KEY / paths.PLAN_RELPATH)
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     mode = "write" if args.write else "check"
@@ -64,6 +79,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         cloned = workspace.prepare(root, policy, args.owner)
         print(f"basis: {len(cloned)} nodes cloned at their default branches under {root}", flush=True)
+        if mode == "check":
+            _stage_for_check(root, checkout)
         code = _generate(root, mode)
         if code == 0 and mode == "write":
             _publish(root, checkout)
