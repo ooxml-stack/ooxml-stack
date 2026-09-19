@@ -6,7 +6,7 @@
   "diagnostics": [
     {
       "code": "version_skew",
-      "detail": "ooxml-operation-engine=0.6.6; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
+      "detail": "ooxml-operation-engine=0.6.7; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
       "exceptions_matched": [
         "python-xlsx"
       ],
@@ -352,15 +352,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "engine-followup-integrity-20260916-r1",
+        "ref_raw": "engine-style-integrity-20260916-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "e37fe8210cab2dd08c89c55b4d266d377a4b25c7",
+        "commit": "49a96f3ea8bf19cc2bf203f5c72bfaeb29114a9e",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.6.6"
+        "version": "0.6.7"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -760,15 +760,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-followup-integrity-20260916-r1",
+        "ref_raw": "engine-style-integrity-20260916-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "38173c1c54d3f866b7411d19499d3d6fb512c64e",
+        "commit": "8e4b983522bfddc6911bb62979dafba915e24793",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "1.2.19"
+        "version": "1.2.20"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -830,15 +830,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-followup-integrity-20260916-r1",
+        "ref_raw": "engine-style-integrity-20260916-r2",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "532a1fad09c5aa3fc1f3bc5d076b29ae7c587996",
+        "commit": "51e0be9cbd0c5caf20b3ff159996aa1cc54714d1",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "2.0.18"
+        "version": "2.0.19"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -900,15 +900,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-table-integrity-20260916-r1",
+        "ref_raw": "engine-structural-integrity-20260917",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "47bf0f894924dd811985bbb5ff13c29b9b092ee7",
+        "commit": "1c27857cc93d781ffec88da490a1a0bfbe6847bd",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.10"
+        "version": "0.3.14"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -2958,11 +2958,11 @@
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "7bcfeb0ee69d0b93e6d4b3acb11c92b887ae64cf16f7b94f0a5c9caff4526043"
+      "sha256": "7f7671cb0664737ee45e8434f399f9662b647b08d15d14c184541b7e102e2602"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "6d082dab902064c37971eb405afcf3a3227c7e48d46733ee7a5c5fb6f0243a07"
+      "sha256": "d24c6171b40129ad70278c02d17132252df6f4cc69c91d6a280dd673a2eb81c4"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -3097,7 +3097,7 @@
       "sha256": "277c5ed2c196dbce93654d20cc0ee809081c68542e2e014f2ee02fa905341be0"
     }
   ],
-  "inputs_digest": "eb0b1819293ff1d3eb167c35a628726baed9ff57be28f23fdfd30d14fca1ee8c",
+  "inputs_digest": "3a5117dac1420adaeb5f10959609d9edb1d2187044545c9baf8e1db0e8645cca",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3184,7 +3184,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.33",
+      "version": "0.1.37",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -3232,10 +3232,10 @@
       ],
       "repos": [
         {
-          "ref": "engine-followup-integrity-20260916-r1",
+          "ref": "engine-style-integrity-20260916-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.6.6"
+          "version": "0.6.7"
         },
         {
           "ref": "v0.6.0",
@@ -3276,7 +3276,7 @@
       "versions": [
         "0.3.51",
         "0.6.0",
-        "0.6.6"
+        "0.6.7"
       ]
     },
     {
@@ -3413,49 +3413,49 @@
     {
       "repos": [
         {
-          "ref": "engine-followup-integrity-20260916-r1",
+          "ref": "engine-style-integrity-20260916-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "1.2.19"
+          "version": "1.2.20"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-docx",
       "versions": [
-        "1.2.19"
+        "1.2.20"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-followup-integrity-20260916-r1",
+          "ref": "engine-style-integrity-20260916-r2",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "2.0.18"
+          "version": "2.0.19"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.18"
+        "2.0.19"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-table-integrity-20260916-r1",
+          "ref": "engine-structural-integrity-20260917",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.10"
+          "version": "0.3.14"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.10"
+        "0.3.14"
       ]
     }
   ]
