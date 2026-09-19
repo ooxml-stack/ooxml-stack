@@ -50,6 +50,35 @@ checks out only part of the ecosystem - the report records
 `inputs_reverified.verified = false` with the reason, rather than claiming a
 verification that did not happen.
 
+Every declared input is compared against its own recorded digest, and the report
+says what happened to each one:
+
+| Situation | Recorded as |
+| --- | --- |
+| present, digest matches | `checked` |
+| present, digest differs | the run fails closed, however many others are absent |
+| absent | `unchecked`, named in `unchecked_paths`, never counted as a pass |
+| the target repository's own | `excluded`, with the reason and the commit it is bound to |
+
+`inputs_reverified.verified` means the applicable scope is **complete**: every
+declared input is either checked and matching, or excluded with a reason. A
+repository's own CI checks out only part of the ecosystem, so it leaves inputs
+`unchecked` - that is honest partial evidence, and `verified` is `false` there.
+
+The target repository's own inputs are excluded because they are already bound
+twice over: by the commit being verified, and by the report's own `inputs` (the
+adapter's input hashes, re-derived from a clean snapshot of that commit). Reading
+them from the caller's working tree would let an uncommitted edit change the
+verdict for a historical commit. The exclusion is a statement about the plan
+baseline, **not** a proof that the target commit's bytes equal the recorded ones,
+so each excluded entry names the commit it is bound to. The plan's `full` binding
+is likewise derived from the baseline, not re-derived from the target commit.
+
+`verify-report` re-derives the scope from the trusted plan and the workspace it is
+verifying against, so a report cannot declare its own exclusions: naming an
+external repository's inputs as "the target's" would otherwise skip comparing
+them.
+
 ## Adapters
 
 An adapter is a Python module named by the plan's full binding. It must expose:
@@ -84,7 +113,12 @@ added; the historical stage contract is unchanged.
   "commit": "<40 hex>",
   "runner": {"commit": "<40 hex>", "source_sha256": "<64 hex>"},
   "plan": {"path": "...", "sha256": "<64 hex>", "inputs_digest": "<64 hex>",
-           "inputs_reverified": {"verified": true, "reason": "..."}},
+           "inputs_reverified": {
+             "verified": true, "total": 49, "checked": 43, "unchecked": 0,
+             "unchecked_paths": [],
+             "excluded": [{"path": "ooxml-operation-engine/pyproject.toml",
+                           "reason": "target_repository", "bound_to": "<40 hex>"}],
+             "reason": "43 of 49 plan inputs checked; 6 excluded ..."}},
   "binding": {"workflow": "...", "jobs": ["check"], "adapter": "scripts.ci.adapter"},
   "image": "<digest-pinned image>",
   "inputs": {"<path>": "<sha256>"},
@@ -112,6 +146,11 @@ python3 -m ooxml_runner verify-report \
 The expected repository, commit, runner commit, plan SHA-256, inputs digest and
 stage list all come from the caller and from the repository at the requested
 commit. A report never passes on its own `status` field alone.
+
+`plan.inputs_reverified` is re-derived the same way, so the scope claim is checked
+rather than believed: a report that claims completeness over a workspace with
+unchecked inputs, omits the block, miscounts, or widens the excluded set to cover
+another repository's inputs is refused. The report is never rewritten.
 
 ## Cache reuse
 
