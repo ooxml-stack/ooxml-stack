@@ -20,7 +20,9 @@ from __future__ import annotations
 
 import json
 import pathlib
+import shutil
 import subprocess
+import time
 
 from . import paths
 
@@ -47,6 +49,32 @@ def clone_url(key: str, owner: str = DEFAULT_OWNER) -> str:
     return f"https://github.com/{owner}/{key}.git"
 
 
+CLONE_ATTEMPTS = 3
+
+
+def _clone(key: str, target: pathlib.Path, owner: str) -> None:
+    """Clone one node, retrying a transient transport failure.
+
+    A dropped HTTP/2 stream or an early EOF is a temporary transport fault, not a
+    statement about the node, and a refresh that has already cloned ten nodes
+    must not be discarded because the eleventh hit one. A partially written
+    target is removed before the retry; a genuine failure still ends in
+    ``WorkspaceError`` after the bounded attempts.
+    """
+    last = ""
+    for attempt in range(1, CLONE_ATTEMPTS + 1):
+        if target.exists():
+            shutil.rmtree(target)
+        result = subprocess.run(["git", "clone", "--quiet", clone_url(key, owner), str(target)],
+                                capture_output=True, text=True)
+        if result.returncode == 0:
+            return
+        last = result.stderr.strip()
+        if attempt < CLONE_ATTEMPTS:
+            time.sleep(attempt * 2)
+    raise WorkspaceError(f"git clone failed for {key} after {CLONE_ATTEMPTS} attempts: {last}")
+
+
 def prepare(root: pathlib.Path, policy_path: pathlib.Path, owner: str = DEFAULT_OWNER) -> list[str]:
     """Clone every policy node into ``root`` at its own default branch."""
     root = pathlib.Path(root)
@@ -56,9 +84,6 @@ def prepare(root: pathlib.Path, policy_path: pathlib.Path, owner: str = DEFAULT_
         target = root / key
         if target.exists():
             raise WorkspaceError(f"{target} already exists; refusing to reuse a workspace")
-        result = subprocess.run(["git", "clone", "--quiet", clone_url(key, owner), str(target)],
-                                capture_output=True, text=True)
-        if result.returncode != 0:
-            raise WorkspaceError(f"git clone failed for {key}: {result.stderr.strip()}")
+        _clone(key, target, owner)
         cloned.append(key)
     return cloned
