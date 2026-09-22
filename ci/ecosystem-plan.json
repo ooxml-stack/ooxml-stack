@@ -587,15 +587,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-style-integrity-20260916-r2",
+        "ref_raw": "engine-smartart-font-20260919",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "51e0be9cbd0c5caf20b3ff159996aa1cc54714d1",
+        "commit": "7ccbde0f795386ae03f33ad2418b216653ae5459",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "2.0.19"
+        "version": "2.0.20"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -630,15 +630,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-structural-integrity-20260917",
+        "ref_raw": "engine-defined-names-20260920",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "1c27857cc93d781ffec88da490a1a0bfbe6847bd",
+        "commit": "bf435e4b85122ed8782d98718bc90f47c82278d3",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.14"
+        "version": "0.3.17"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -2688,11 +2688,11 @@
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "7f7671cb0664737ee45e8434f399f9662b647b08d15d14c184541b7e102e2602"
+      "sha256": "99938b51f94d7d116a14d6ef7f4512c006a163e901b053c61b9580fc37cc5d89"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "d24c6171b40129ad70278c02d17132252df6f4cc69c91d6a280dd673a2eb81c4"
+      "sha256": "3105922b78ea49039eb6c0debc61b2846ee6ca760a6c5ae1f439c2ac8b4ba63f"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -2827,7 +2827,7 @@
       "sha256": "277c5ed2c196dbce93654d20cc0ee809081c68542e2e014f2ee02fa905341be0"
     }
   ],
-  "inputs_digest": "01e992d88b2a8d200ec9b69bbc6abcccbe10b007639abcdf2f64daa00bb80faa",
+  "inputs_digest": "d26b59a870c164766c1239965535d257487ef485c38229d7fd632ae52a844640",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3159,33 +3159,33 @@
     {
       "repos": [
         {
-          "ref": "engine-style-integrity-20260916-r2",
+          "ref": "engine-smartart-font-20260919",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "2.0.19"
+          "version": "2.0.20"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.19"
+        "2.0.20"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-structural-integrity-20260917",
+          "ref": "engine-defined-names-20260920",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.14"
+          "version": "0.3.17"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.14"
+        "0.3.17"
       ]
     }
   ]

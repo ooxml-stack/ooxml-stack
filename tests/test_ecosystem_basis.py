@@ -80,3 +80,47 @@ def test_preparation_refuses_to_reuse_an_existing_workspace(tmp_path):
     (root / "alpha").mkdir(parents=True)
     with pytest.raises(workspace.WorkspaceError, match="already exists"):
         workspace.prepare(root, _policy(tmp_path, ["alpha"]))
+
+def test_a_transient_clone_failure_is_retried_instead_of_discarded(tmp_path, monkeypatch):
+    """A dropped stream on the last node must not throw away ten good clones."""
+    _remote(tmp_path, "alpha", "main", None, {"main": "alpha\n"})
+    monkeypatch.setattr(workspace, "clone_url",
+                        lambda key, owner=workspace.DEFAULT_OWNER: str(tmp_path / "remotes" / f"{key}.git"))
+    real = subprocess.run
+    calls = {"n": 0}
+
+    def flaky(argv, **kwargs):
+        if argv[:2] == ["git", "clone"]:
+            calls["n"] += 1
+            if calls["n"] == 1:
+                target = argv[-1]
+                import pathlib
+                pathlib.Path(target).mkdir(parents=True, exist_ok=True)  # partial checkout left behind
+                return subprocess.CompletedProcess(argv, 128, "", "stream 7 was not closed cleanly")
+        return real(argv, **kwargs)
+
+    monkeypatch.setattr(workspace.subprocess, "run", flaky)
+    monkeypatch.setattr(workspace.time, "sleep", lambda seconds: None)
+    cloned = workspace.prepare(tmp_path / "root", _policy(tmp_path, ["alpha"]))
+    assert cloned == ["alpha"]
+    assert (tmp_path / "root" / "alpha" / "marker.txt").read_text() == "alpha\n"
+    assert calls["n"] == 2
+
+
+def test_a_persistent_clone_failure_still_fails_after_the_bounded_attempts(tmp_path, monkeypatch):
+    _remote(tmp_path, "alpha", "main", None, {"main": "alpha\n"})
+    monkeypatch.setattr(workspace, "clone_url",
+                        lambda key, owner=workspace.DEFAULT_OWNER: str(tmp_path / "remotes" / f"{key}.git"))
+    calls = {"n": 0}
+
+    def always_fail(argv, **kwargs):
+        if argv[:2] == ["git", "clone"]:
+            calls["n"] += 1
+            return subprocess.CompletedProcess(argv, 128, "", "early EOF")
+        return subprocess.run(argv, **kwargs)
+
+    monkeypatch.setattr(workspace.subprocess, "run", always_fail)
+    monkeypatch.setattr(workspace.time, "sleep", lambda seconds: None)
+    with pytest.raises(workspace.WorkspaceError, match="after 3 attempts"):
+        workspace.prepare(tmp_path / "root", _policy(tmp_path, ["alpha"]))
+    assert calls["n"] == workspace.CLONE_ATTEMPTS
