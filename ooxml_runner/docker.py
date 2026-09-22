@@ -23,6 +23,12 @@ CONTAINER_PLAN = "/plan"
 DOWNLOAD_CACHE_VOLUME = "ooxml-ci-downloads-v1"
 MAX_CPUS = 4
 
+# The platform partition names the engine adapter understands. The runner only
+# decides whether to forward the selection; the adapter still refuses a bucket
+# that is not in that repository's own allocation, and a name the runner does
+# not know is refused on the host before a container starts.
+PLATFORM_BUCKETS = frozenset({"default", "macos", "dsh-runtime"})
+
 
 class DockerError(RuntimeError):
     """Docker could not be queried or the container could not be started."""
@@ -52,6 +58,21 @@ def _mounts(workspace: Path, reports: Path, runner_root: Path, plan: Path) -> li
     for source, target, mode in pairs:
         argv += ["--mount", f"type=bind,source={source},target={target}{mode}"]
     return argv
+
+
+def platform_bucket(environ=None):
+    """The partition this run owns, when the caller selected one.
+
+    The engine's adapter reads this in the container to select the node IDs one
+    platform owes. A whitelisted value is forwarded verbatim; an unknown value
+    fails here, before a container starts, rather than silently unpartitioned.
+    """
+    value = (os.environ if environ is None else environ).get("OOXML_PLATFORM_BUCKET")
+    if not value:
+        return None
+    if value not in PLATFORM_BUCKETS:
+        raise DockerError(f"unknown OOXML_PLATFORM_BUCKET {value!r}; expected one of {sorted(PLATFORM_BUCKETS)}")
+    return value
 
 
 def _env(config: dict, commit: str, runner_commit: str, name: str, cpus: int) -> list[str]:
@@ -84,6 +105,9 @@ def _env(config: dict, commit: str, runner_commit: str, name: str, cpus: int) ->
         "GIT_CONFIG_KEY_0": "safe.directory",
         "GIT_CONFIG_VALUE_0": CONTAINER_RUNNER,
     }
+    selected = platform_bucket()
+    if selected:
+        values["OOXML_PLATFORM_BUCKET"] = selected
     return [item for key, value in values.items() for item in ("--env", f"{key}={value}")]
 
 

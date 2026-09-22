@@ -201,3 +201,31 @@ def test_the_runner_is_importable_without_the_engine_repository():
     result = subprocess.run([sys.executable, "-c", probe], capture_output=True, text=True,
                             cwd=str(Path(__file__).resolve().parents[1]), check=True)
     assert result.stdout.strip() == "ok"
+
+def test_the_container_receives_the_selected_platform_partition(tmp_path, monkeypatch):
+    """The adapter needs the bucket inside the container, not on the host."""
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "macos")
+    argv = docker.command(
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
+    )
+    assert "OOXML_PLATFORM_BUCKET=macos" in argv
+
+
+def test_no_partition_selection_is_forwarded_when_unset(tmp_path, monkeypatch):
+    """An unpartitioned run stays unpartitioned inside the container."""
+    monkeypatch.delenv("OOXML_PLATFORM_BUCKET", raising=False)
+    assert docker.platform_bucket() is None
+    argv = docker.command(
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
+    )
+    assert not any(item.startswith("OOXML_PLATFORM_BUCKET=") for item in argv)
+
+
+def test_an_unknown_partition_is_refused_before_the_container_starts(monkeypatch):
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "windows")
+    with pytest.raises(docker.DockerError, match="unknown OOXML_PLATFORM_BUCKET"):
+        docker.platform_bucket()
