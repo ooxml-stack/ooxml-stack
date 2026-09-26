@@ -111,9 +111,9 @@ def pptx_chartex_style_id_case() -> dict[str, Any]:
 
 def pptx_chartex_strdim_order_case() -> dict[str, Any]:
     # strDim levels must be leaf-first (innermost category first); the mutant
-    # orders them root-first so lvl[0] is denser than lvl[-1].
-    leaf = f'<c:lvl><c:pt idx="0" val="Leaf1"/><c:pt idx="1" val="Leaf2"/></c:lvl>'
-    stem = f'<c:lvl><c:pt idx="0" val="Stem1"/><c:pt idx="1" val="Stem1"/></c:lvl>'
+    # orders them root-first. ChartEx string points store text, not a val attribute.
+    leaf = f'<c:lvl><c:pt idx="0">Leaf1</c:pt><c:pt idx="1">Leaf2</c:pt></c:lvl>'
+    stem = f'<c:lvl><c:pt idx="0">Stem1</c:pt><c:pt idx="1">Stem1</c:pt></c:lvl>'
     good = pptx_slide(
         f'<c:chartEx xmlns:c="{CX}"><c:strDim type="cat">{leaf}{stem}</c:strDim></c:chartEx>'
     )
