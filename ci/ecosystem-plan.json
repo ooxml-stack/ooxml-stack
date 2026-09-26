@@ -925,6 +925,27 @@
       "declared": {
         "ref_declared_kind": "tag",
         "ref_raw": "local-closure-20260926",
+        "section": "dependency-groups",
+        "url": "https://github.com/ooxml-stack/python-pptx.git",
+        "version_spec": ">=2.0.29"
+      },
+      "expected": {
+        "commit": "f53d84aa678094ec669cdbddd062b508a51371b4",
+        "source": "python-docx/uv.lock",
+        "version": "2.0.29"
+      },
+      "from": "python-docx",
+      "group": "dev",
+      "kind": "dev",
+      "purpose": "dependency",
+      "role": "dev",
+      "source_file": "python-docx/pyproject.toml",
+      "to": "python-pptx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
@@ -2786,7 +2807,7 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "21e02881298de8a7590a9b31a1f1374297955979171b306ce39bd03dbcc7ab86"
+      "sha256": "71f8d1f51f5fbfef90feebbed9f0ffd2189335d1246a11e6b05e76ac9fc77cea"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
@@ -2794,7 +2815,7 @@
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "9641e76e66dc42f338e1be8973c2160933dd9576155a20c145160350fb8e91d9"
+      "sha256": "d166f6b6e44456da60e9e257b859e2412f9b34c335544ef0d5a07fd618527967"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
@@ -2845,7 +2866,7 @@
       "sha256": "da9e671d9143cdb0db309543f9f3a4a146cf107b75d6b29345f848f65e783935"
     }
   ],
-  "inputs_digest": "136a40c64f7a5a486a54553434a63ead24c36be5efc00845be291d495fb3a6f5",
+  "inputs_digest": "5b903ee131ba7434363b46ba74e1e737853125c09cf95ffcb87b1bf75e965925",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3154,6 +3175,22 @@
       "upstream": "python-docx",
       "versions": [
         "1.2.40"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "local-closure-20260926",
+          "repo": "python-docx",
+          "source_file": "python-docx/pyproject.toml",
+          "version": "2.0.29"
+        }
+      ],
+      "role": "dev",
+      "uniform": true,
+      "upstream": "python-pptx",
+      "versions": [
+        "2.0.29"
       ]
     },
     {
