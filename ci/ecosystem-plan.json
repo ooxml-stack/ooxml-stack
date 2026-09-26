@@ -2666,7 +2666,7 @@
     },
     {
       "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-      "sha256": "8d4b4129073eb0f2fd7acd59df295519685cf3db3ea1ca56de9372f22d22d485"
+      "sha256": "c47b4ddab3e40da2d77d60eeadec83c64d99abf5a050c8d880b9aae78bb6c569"
     },
     {
       "path": "ooxml-core/.github/workflows/release-wheel.yml",
@@ -2778,7 +2778,7 @@
     },
     {
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "89648a5482b378c7b6afb8cd2e9fbbf298c3b72f2e166f51bd3cc3586187d972"
+      "sha256": "5c94aa1a8bba29b6109776916dd12f776afc32a4f8297dd95ee90c6bfa1331c1"
     },
     {
       "path": "python-docx/.github/workflows/semantic-gate-report.yml",
@@ -2802,11 +2802,11 @@
     },
     {
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "7005bf4d841082b27977f3bc47f3a125c88de2209f217f65c5e8be9ac536b68d"
+      "sha256": "184c49635d40165a694d90e722cd5570705e3b86926625f75a0048f0d55a4995"
     },
     {
       "path": "python-pptx/.github/workflows/semantic-gate-report.yml",
-      "sha256": "c1270216d38dfc4334ebab637bc0a5528ae3df0d335c9c037763d966a47b3566"
+      "sha256": "b91715904f6cc9cd06a746a4c4230db1ec7ef36f9ce6ed261db219a39164b6e0"
     },
     {
       "path": "python-pptx/.github/workflows/sync-to-gitee.yml",
@@ -2845,7 +2845,7 @@
       "sha256": "da9e671d9143cdb0db309543f9f3a4a146cf107b75d6b29345f848f65e783935"
     }
   ],
-  "inputs_digest": "4e91dbe5d91734fb05112bb579ee91ff029ecabcb702b63a5e7a1efc0f7900b8",
+  "inputs_digest": "136a40c64f7a5a486a54553434a63ead24c36be5efc00845be291d495fb3a6f5",
   "kind": "ecosystem-plan",
   "nodes": [
     {
