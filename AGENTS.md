@@ -1,5 +1,13 @@
 # ooxml-stack Agent Notes
 
+## Developer Worktrees
+
+- Create development checkouts with `python3 -m scripts.dev_worktree` or
+  `make worktree`; see `docs/DEVELOPER-WORKTREES.md` for arguments and closeout.
+- The entry confines checkouts to `.worktrees/<task>/<repository>` and records
+  ownership and retirement conditions. Preserve failed/interrupted records for
+  inspection; runtime snapshots retain their own existing lifecycle contracts.
+
 ## Capability Claims
 
 - Read `docs/OOXML-ELEMENT-CAPABILITY-LEDGER.md` before making OOXML

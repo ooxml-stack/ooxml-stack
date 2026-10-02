@@ -64,7 +64,7 @@
     "ooxml-stack": { "workflow": ".github/workflows/evidence-retention.yml", "jobs": ["evidence-retention"] },
     "ooxml-operation-engine": {
       "workflow": ".github/workflows/ci.yml",
-      "jobs": ["check"],
+      "jobs": ["default"],
       "adapter": "scripts.ci.adapter"
     },
     "ooxml-apps": { "workflow": ".github/workflows/ci.yml", "jobs": ["backend", "frontend"] }

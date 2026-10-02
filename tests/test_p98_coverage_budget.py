@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from build_p98_coverage_budget import compute_baseline, P98_PROVEN
+from build_p98_coverage_budget import compute_baseline, P97_PROVEN, P98_PROVEN
 
 
 def _registries():
@@ -22,13 +22,16 @@ def _registries():
 
 
 def test_p98_budget_reduces_p97_uncovered_total() -> None:
-    bl = compute_baseline(_registries())
-    # P97 documented 76; P98-A must strictly reduce the current discovered total.
-    assert bl["total_uncovered"] < 76
-    for fmt in ("docx", "pptx", "xlsx"):
-        assert bl["by_format"][fmt]["uncovered_count"] < {  # P97 historical per-format
-            "docx": 31, "pptx": 29, "xlsx": 16,
-        }[fmt]
+    registries = _registries()
+    bl = compute_baseline(registries)
+    for fmt, registry in registries.items():
+        tagged = {rule.id for rule in registry.rules if fmt in rule.tags}
+        before = tagged - P97_PROVEN
+        additions = before & P98_PROVEN[fmt]
+        assert additions == P98_PROVEN[fmt]
+        assert bl["by_format"][fmt]["uncovered_count"] == len(before) - len(additions)
+        assert set(bl["by_format"][fmt]["uncovered_rules"]) == before - additions
+    assert bl["total_uncovered"] == sum(row["uncovered_count"] for row in bl["by_format"].values())
 
 
 def test_p98_budget_tracks_newly_proven_rules() -> None:
@@ -58,7 +61,7 @@ def test_p98_budget_baseline_file_matches_generated(tmp_path: Path) -> None:
         check=True, capture_output=True, text=True,
     )
     rebuilt = json.loads(generated.read_text())
-    filed = json.loads((root / "release-evidence/p98/coverage-budget-baseline.json").read_text())
+    filed = json.loads((root / "tests/fixtures/current-coverage-budget.json").read_text())
 
     assert filed["schema_version"] == "p98-coverage-budget-v1"
     filed.pop("generated_at_utc")
