@@ -1,28 +1,7 @@
 {
   "contract": "Deterministic function of the selected input file paths and their bytes, read from the working tree (uncommitted edits included). Contains no HEAD, worktree, clock, network or resolved-ref fact; those live in the scan report.",
-  "diagnostic_counts": {
-    "warning:version_skew": 2
-  },
-  "diagnostics": [
-    {
-      "code": "version_skew",
-      "detail": "ooxml-operation-engine=0.6.7; ooxml-stubs=0.6.0; python-docx=0.6.0; python-pptx=0.6.0; python-xlsx=0.3.51",
-      "exceptions_matched": [
-        "python-xlsx"
-      ],
-      "level": "warning",
-      "scope": "required",
-      "where": "ooxml-core (runtime)"
-    },
-    {
-      "code": "version_skew",
-      "detail": "ooxml-core=0.5.21; python-docx=0.5.35; python-pptx=0.5.35; python-xlsx=0.5.29",
-      "exceptions_matched": [],
-      "level": "warning",
-      "scope": "unscoped",
-      "where": "ooxml-test-framework (dev)"
-    }
-  ],
+  "diagnostic_counts": {},
+  "diagnostics": [],
   "edge_kinds_without_source": [
     {
       "kind": "release",
@@ -76,16 +55,16 @@
   "edges": [
     {
       "declared": {
-        "ref_declared_kind": "sha",
-        "ref_raw": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+        "ref_declared_kind": "unknown",
+        "ref_raw": "local-closure-20260926-final",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+        "commit": "9fd214531c510cdecadc5ecdaa641d261b7c6cee",
         "source": "ooxml-apps/uv.lock",
-        "version": "0.1.13"
+        "version": "0.1.37"
       },
       "from": "ooxml-apps",
       "group": null,
@@ -117,6 +96,10 @@
         {
           "file": "ooxml-apps/.github/workflows/ci.yml",
           "line": 28
+        },
+        {
+          "file": "ooxml-apps/.github/workflows/real-stack.yml",
+          "line": 33
         }
       ],
       "source_file": "ooxml-apps/.github/workflows/ci.yml",
@@ -179,15 +162,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.5.21",
+        "ref_raw": "local-closure-20260926",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "4c304fd251c3f1b29041e054c1cf019a1511c720",
+        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
         "source": "ooxml-core/uv.lock",
-        "version": "0.5.21"
+        "version": "0.5.38"
       },
       "from": "ooxml-core",
       "group": "dev",
@@ -298,15 +281,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "engine-style-integrity-20260916-r2",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "49a96f3ea8bf19cc2bf203f5c72bfaeb29114a9e",
+        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.6.7"
+        "version": "0.6.18"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -387,13 +370,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "v0.3.1",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-spec.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
+        "commit": "75a16248fc26e796311f052da009a8aa31f3f451",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.3.1"
       },
@@ -501,15 +484,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-integrity-20260915-r2",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "8585e37d7c8c9b7b8477832daf1b9ef128c50f74",
+        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.5.35.post3"
+        "version": "0.5.38"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -544,15 +527,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-style-integrity-20260916-r2",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "8e4b983522bfddc6911bb62979dafba915e24793",
+        "commit": "10a89c37bba1a304bad4fc97a8c0b78b95dc749a",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "1.2.20"
+        "version": "1.2.40"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -587,15 +570,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-smartart-font-20260919",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7ccbde0f795386ae03f33ad2418b216653ae5459",
+        "commit": "f53d84aa678094ec669cdbddd062b508a51371b4",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "2.0.20"
+        "version": "2.0.29"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -630,15 +613,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "engine-defined-names-20260920",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "bf435e4b85122ed8782d98718bc90f47c82278d3",
+        "commit": "833598a3456cf0495f69326c70f6a480a83d6f11",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.17"
+        "version": "0.3.21"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -705,15 +688,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.6.0",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
         "source": "ooxml-stubs/uv.lock",
-        "version": "0.6.0"
+        "version": "0.6.18"
       },
       "from": "ooxml-stubs",
       "group": null,
@@ -726,13 +709,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.3.1",
+        "ref_raw": "local-closure-20260926",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-spec.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
+        "commit": "75a16248fc26e796311f052da009a8aa31f3f451",
         "source": "ooxml-stubs/uv.lock",
         "version": "0.3.1"
       },
@@ -747,13 +730,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "v0.3.1",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-spec.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
+        "commit": "75a16248fc26e796311f052da009a8aa31f3f451",
         "source": "ooxml-test-framework/uv.lock",
         "version": "0.3.1"
       },
@@ -768,15 +751,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.6.0",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
         "source": "python-docx/uv.lock",
-        "version": "0.6.0"
+        "version": "0.6.18"
       },
       "from": "python-docx",
       "group": null,
@@ -898,15 +881,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.2.25",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "commit": "7652f0d7b5d6e9c50760891841c1aec13bb41e06",
         "source": "python-docx/uv.lock",
-        "version": "0.2.25"
+        "version": "0.2.34"
       },
       "from": "python-docx",
       "group": null,
@@ -919,15 +902,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.5.35",
+        "ref_raw": "local-closure-20260926",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "f8af857a43a7dcf4de5d867dc726b3a32854bb74",
+        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
         "source": "python-docx/uv.lock",
-        "version": "0.5.35"
+        "version": "0.5.38"
       },
       "from": "python-docx",
       "group": "mutation-gate",
@@ -941,15 +924,36 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.6.0",
+        "ref_raw": "local-closure-20260926",
+        "section": "dependency-groups",
+        "url": "https://github.com/ooxml-stack/python-pptx.git",
+        "version_spec": ">=2.0.29"
+      },
+      "expected": {
+        "commit": "f53d84aa678094ec669cdbddd062b508a51371b4",
+        "source": "python-docx/uv.lock",
+        "version": "2.0.29"
+      },
+      "from": "python-docx",
+      "group": "dev",
+      "kind": "dev",
+      "purpose": "dependency",
+      "role": "dev",
+      "source_file": "python-docx/pyproject.toml",
+      "to": "python-pptx"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "tag",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
         "source": "python-pptx/uv.lock",
-        "version": "0.6.0"
+        "version": "0.6.18"
       },
       "from": "python-pptx",
       "group": null,
@@ -1040,15 +1044,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.2.25",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "commit": "7652f0d7b5d6e9c50760891841c1aec13bb41e06",
         "source": "python-pptx/uv.lock",
-        "version": "0.2.25"
+        "version": "0.2.34"
       },
       "from": "python-pptx",
       "group": null,
@@ -1061,15 +1065,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.5.35",
+        "ref_raw": "local-closure-20260926",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "f8af857a43a7dcf4de5d867dc726b3a32854bb74",
+        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
         "source": "python-pptx/uv.lock",
-        "version": "0.5.35"
+        "version": "0.5.38"
       },
       "from": "python-pptx",
       "group": "mutation-gate",
@@ -1082,16 +1086,16 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "v0.3.51",
+        "ref_declared_kind": "tag",
+        "ref_raw": "local-closure-20260926",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7a785c30d7b99e95808c940874f0a88e1dff5692",
+        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
         "source": "python-xlsx/uv.lock",
-        "version": "0.3.51"
+        "version": "0.6.18"
       },
       "from": "python-xlsx",
       "group": null,
@@ -1143,15 +1147,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "v0.5.29",
+        "ref_raw": "local-closure-20260926",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "a355168bb9c0440c2aef6843750b33cc47779a2f",
+        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
         "source": "python-xlsx/uv.lock",
-        "version": "0.5.29"
+        "version": "0.5.38"
       },
       "from": "python-xlsx",
       "group": "mutation-gate",
@@ -1307,6 +1311,26 @@
               "env": {},
               "if": null,
               "line": 57,
+              "name": "TypeScript strict check",
+              "run": "make test-typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 60,
+              "name": "Production build",
+              "run": "make test-build",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 63,
               "name": "Frontend unit tests",
               "run": "make test-frontend",
               "shell": null,
@@ -1316,7 +1340,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 60,
+              "line": 66,
               "name": "Frontend REST contract (vitest half)",
               "run": "cd frontend && pnpm exec vitest run src/contract.test.ts",
               "shell": null,
@@ -1326,7 +1350,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 63,
+              "line": 69,
               "name": "Install Playwright chromium",
               "run": "cd frontend && pnpm exec playwright install --with-deps chromium",
               "shell": null,
@@ -1336,7 +1360,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 66,
+              "line": 72,
               "name": "Playwright route-state matrix",
               "run": "make test-e2e",
               "shell": null,
@@ -1566,9 +1590,9 @@
       "jobs": [
         {
           "env": {},
-          "id": "check",
+          "id": "default",
           "if": null,
-          "line": 18,
+          "line": 23,
           "matrix": {},
           "name": "full-check",
           "needs": null,
@@ -1578,7 +1602,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 23,
+              "line": 28,
               "name": null,
               "run": null,
               "shell": null,
@@ -1588,7 +1612,7 @@
               "cwd": "ooxml-operation-engine",
               "env": {},
               "if": null,
-              "line": 27,
+              "line": 32,
               "name": "Resolve the pinned shared runner",
               "run": "python3 -c 'import json; print(\"commit=\" + json.load(open(\"ci/runner.json\"))[\"commit\"])' >> \"$GITHUB_OUTPUT\"\n",
               "shell": null,
@@ -1598,7 +1622,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 32,
+              "line": 37,
               "name": null,
               "run": null,
               "shell": null,
@@ -1607,13 +1631,24 @@
             {
               "cwd": "ooxml-operation-engine",
               "env": {
+                "OOXML_PLATFORM_BUCKET": "default",
                 "OOXML_RUNNER_ROOT": "${{ github.workspace }}/ooxml-stack",
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 39,
+              "line": 44,
               "name": "Run the shared local and server gate",
               "run": "make check CHECK_COMMIT=\"${{ github.sha }}\" CHECK_OUTPUT=\"${{ runner.temp }}/ci-reports\"",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": "ooxml-operation-engine",
+              "env": {},
+              "if": "always()",
+              "line": 51,
+              "name": "Record the default partition receipt",
+              "run": "report=$(find \"${{ runner.temp }}/ci-reports\" -name pytest.json | head -1)\npython3 -m scripts.ci.platform_summary write \\\n  --report \"$report\" --commit \"${{ github.sha }}\" --bucket default \\\n  --platform linux --runner ubuntu-24.04 \\\n  --output \"${{ runner.temp }}/platform-receipt-default.json\"\n",
               "shell": null,
               "uses": null
             },
@@ -1621,7 +1656,7 @@
               "cwd": null,
               "env": {},
               "if": "always()",
-              "line": 45,
+              "line": 60,
               "name": "Preserve evidence even on failure",
               "run": null,
               "shell": null,
@@ -2632,15 +2667,19 @@
   "inputs": [
     {
       "path": "ooxml-apps/.github/workflows/ci.yml",
-      "sha256": "5bec2d3cd9e65b84e8a88c745a27efcf7e83e85507bff2bf006f02be7579154a"
+      "sha256": "d9f71366a892ec25b9bb33829d85e6e7cc32e4a94913482118d0324e2472286b"
+    },
+    {
+      "path": "ooxml-apps/.github/workflows/real-stack.yml",
+      "sha256": "f0a2bfbf0f33c1874513294903e3f4aee6cf3c22e111116689b05c4f29d9492a"
     },
     {
       "path": "ooxml-apps/pyproject.toml",
-      "sha256": "a98287d69b3d3b1a5dd1ea1add25dc07dab3c4292ca7016d2ff4c5629175b230"
+      "sha256": "64a3cfc1b5a14000ea66b7b7967c2cfd791fb5893275571c319159a57e511839"
     },
     {
       "path": "ooxml-apps/uv.lock",
-      "sha256": "b3e7760e7b1c860aa2b9a880b7014bb936efe9c3e6aa9fdb1b064aee3751c76a"
+      "sha256": "7f55898b092bfd482b3cc772d7c74ed22668d8a0d0626fac5eb31ff9a8d2149c"
     },
     {
       "path": "ooxml-core/.github/workflows/ci.yml",
@@ -2648,7 +2687,7 @@
     },
     {
       "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-      "sha256": "8d4b4129073eb0f2fd7acd59df295519685cf3db3ea1ca56de9372f22d22d485"
+      "sha256": "c47b4ddab3e40da2d77d60eeadec83c64d99abf5a050c8d880b9aae78bb6c569"
     },
     {
       "path": "ooxml-core/.github/workflows/release-wheel.yml",
@@ -2660,11 +2699,11 @@
     },
     {
       "path": "ooxml-core/pyproject.toml",
-      "sha256": "bec3bd53e1d4632f2d678311505cde188534b5c0ff039afc1b0609c4042f4663"
+      "sha256": "6b1628043fd03c801513a2aa7ba3e383ca872c66f571631e82b74b099e68bfb7"
     },
     {
       "path": "ooxml-core/uv.lock",
-      "sha256": "c6c343577214fd81d8cc44ef38e0744a91ed6b34cbc73d41bb1c7169b1fd3380"
+      "sha256": "2f89fa94d3648b25756fb88c73b75e3d6edeaea0a5c6be424abc732edd336c0c"
     },
     {
       "path": "ooxml-native-corpus/.github/workflows/corpus-inspection.yml",
@@ -2672,7 +2711,7 @@
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ci.yml",
-      "sha256": "9c321b9a2a77df266948dd108ed0f7d96c79ad57eef7d3a2dc6de9682fe5f831"
+      "sha256": "d5e2b382812661c22664b526d63fa0cbcb0e7ab9002881fb986522785ae292e7"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
@@ -2688,11 +2727,11 @@
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "99938b51f94d7d116a14d6ef7f4512c006a163e901b053c61b9580fc37cc5d89"
+      "sha256": "e531ab3f7855c34bd24e06a9aaacfe8753c8ae4b772634c805e1fdc51b71f02b"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "3105922b78ea49039eb6c0debc61b2846ee6ca760a6c5ae1f439c2ac8b4ba63f"
+      "sha256": "b284fc188118ee3deb0ec2b92fad859ce0ead7b25834b02f9f7b7015c3e0fa3a"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -2724,7 +2763,7 @@
     },
     {
       "path": "ooxml-stack/ci/ecosystem-policy.json",
-      "sha256": "ec5ae43517b6cb1980cb2a0cfb85f8bbb3b7c338fc9cadff9e4c588dce2a3433"
+      "sha256": "541285817a966300676e185a9b144e57022e2d2a2631d9a60461380b024b2fd1"
     },
     {
       "path": "ooxml-stubs/.github/workflows/ci.yml",
@@ -2732,11 +2771,11 @@
     },
     {
       "path": "ooxml-stubs/pyproject.toml",
-      "sha256": "b4413f564683f12c72465225d187f253aba73fbf7ea8f003089f4d8b7338e3c2"
+      "sha256": "e9a8fddaf228f467104ac36754a04fdf9269d3b621b024e675696d2661f49ded"
     },
     {
       "path": "ooxml-stubs/uv.lock",
-      "sha256": "de03e05af5a46af96477f6569207380ababa2a26245ac392a8b88ae7a5b1b08b"
+      "sha256": "afe2d948a9924ffa723267efe7e4ffbedbe6d8b2b9d5aeb427d7d23352ad95ae"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
@@ -2748,11 +2787,11 @@
     },
     {
       "path": "ooxml-test-framework/pyproject.toml",
-      "sha256": "fdf6e3fd6d5ceacff33367322a5faec80e1016289e6e6d1594197702fe6b3fe8"
+      "sha256": "641e703b56369bfa484f730db8f349dad5c2a4d2a2f15eedebf171ce240accaf"
     },
     {
       "path": "ooxml-test-framework/uv.lock",
-      "sha256": "65a836afc865a594d269e88bc822294833acdaf630bf90c1db08f777e6044aa1"
+      "sha256": "6eee3cef390a1f57827fa11cacf949e005af0ccec5c8d019699cfc5d4720ce8c"
     },
     {
       "path": "python-docx/.github/workflows/ci.yml",
@@ -2760,7 +2799,7 @@
     },
     {
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "89648a5482b378c7b6afb8cd2e9fbbf298c3b72f2e166f51bd3cc3586187d972"
+      "sha256": "5c94aa1a8bba29b6109776916dd12f776afc32a4f8297dd95ee90c6bfa1331c1"
     },
     {
       "path": "python-docx/.github/workflows/semantic-gate-report.yml",
@@ -2768,15 +2807,15 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "7d6450bb2eec36447ae450f28ccb574d32962cdfaee223a4983c29589e4c992e"
+      "sha256": "71f8d1f51f5fbfef90feebbed9f0ffd2189335d1246a11e6b05e76ac9fc77cea"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
-      "sha256": "0e039f79722bf34e01722a7011ef7cc2f818de8fb2e725e4484cac0689a9b97d"
+      "sha256": "47b93394cb7d926ec6de4686ec7d395e3fa36926d8d0db856e7a8b3deb6fa22d"
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "a5f4bbaa9e9a1bd4ed4e13335c37623c6c3f7420ad539955851a7e23a47b50eb"
+      "sha256": "d166f6b6e44456da60e9e257b859e2412f9b34c335544ef0d5a07fd618527967"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
@@ -2784,11 +2823,11 @@
     },
     {
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "7005bf4d841082b27977f3bc47f3a125c88de2209f217f65c5e8be9ac536b68d"
+      "sha256": "184c49635d40165a694d90e722cd5570705e3b86926625f75a0048f0d55a4995"
     },
     {
       "path": "python-pptx/.github/workflows/semantic-gate-report.yml",
-      "sha256": "c1270216d38dfc4334ebab637bc0a5528ae3df0d335c9c037763d966a47b3566"
+      "sha256": "b91715904f6cc9cd06a746a4c4230db1ec7ef36f9ce6ed261db219a39164b6e0"
     },
     {
       "path": "python-pptx/.github/workflows/sync-to-gitee.yml",
@@ -2796,15 +2835,15 @@
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "e797ed0d1bd16988cf4f02886eb3f221e2b913fe29bdc1ebe54ef4312dcc7a2b"
+      "sha256": "16151a932a3e06fccd5a4bdfc5823d2a80de4646ef51db83011a369a460f6a9e"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
-      "sha256": "ea49239e8841f197fe13d50113ade16e96292c65aef5ccb2d814490fb2c40a87"
+      "sha256": "7eb2f632cbefe76f8da131d0567d7059af05b36c6bcb0a83758a33add2b66b5b"
     },
     {
       "path": "python-pptx/uv.lock",
-      "sha256": "d0d41167a5db242dc711b0c4f17f19d8b48e8aba3c55b2aaa4d02dacfbe519e4"
+      "sha256": "2fd4cd8708e11b6f30c7284dda4ab9602ba55e74c3cfbc2b587eb305274ca676"
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
@@ -2816,18 +2855,18 @@
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "f6b6f02bba2d86544fb8fcc612032ee5fbfb6322595c8c5509f99e141fdbfeb1"
+      "sha256": "4090fcbead28f29f36a6d416e27d0a579efbb909038eed25456ed101a6bceb8e"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
-      "sha256": "3a20edbcd5c69048e576e004c461601f7c003c696cd76d16c0c4aec71b736946"
+      "sha256": "2b48a1c40438506c651fee1564b4f0c19f1a7bd298ef261879489797fa753515"
     },
     {
       "path": "python-xlsx/uv.lock",
-      "sha256": "277c5ed2c196dbce93654d20cc0ee809081c68542e2e014f2ee02fa905341be0"
+      "sha256": "da9e671d9143cdb0db309543f9f3a4a146cf107b75d6b29345f848f65e783935"
     }
   ],
-  "inputs_digest": "d26b59a870c164766c1239965535d257487ef485c38229d7fd632ae52a844640",
+  "inputs_digest": "5b903ee131ba7434363b46ba74e1e737853125c09cf95ffcb87b1bf75e965925",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2848,7 +2887,7 @@
       "layer": "test",
       "release_participation": true,
       "role": "release",
-      "version": "0.5.37",
+      "version": "0.5.38",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2859,7 +2898,7 @@
       "layer": "core",
       "release_participation": true,
       "role": "release",
-      "version": "0.6.1",
+      "version": "0.6.18",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2870,7 +2909,7 @@
       "layer": "stubs",
       "release_participation": true,
       "role": "release",
-      "version": "0.2.25",
+      "version": "0.2.34",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2881,7 +2920,7 @@
       "layer": "app",
       "release_participation": true,
       "role": "release",
-      "version": "1.2.14",
+      "version": "1.2.40",
       "version_source": "src/docx/__init__.py#__version__",
       "visibility": "public"
     },
@@ -2892,7 +2931,7 @@
       "layer": "app",
       "release_participation": true,
       "role": "release",
-      "version": "2.0.13",
+      "version": "2.0.29",
       "version_source": "src/pptx/__init__.py#__version__",
       "visibility": "public"
     },
@@ -2903,7 +2942,7 @@
       "layer": "app",
       "release_participation": true,
       "role": "release",
-      "version": "0.3.0",
+      "version": "0.3.21",
       "version_source": "src/xlsx/__init__.py#__version__",
       "visibility": "private"
     },
@@ -2957,78 +2996,65 @@
   "unreferenced_nodes": [],
   "version_groups": [
     {
-      "exceptions_matched": [
-        "python-xlsx"
-      ],
       "repos": [
         {
-          "ref": "engine-style-integrity-20260916-r2",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.6.7"
+          "version": "0.6.18"
         },
         {
-          "ref": "v0.6.0",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-stubs",
           "source_file": "ooxml-stubs/pyproject.toml",
-          "version": "0.6.0"
+          "version": "0.6.18"
         },
         {
-          "ref": "v0.6.0",
+          "ref": "local-closure-20260926",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "0.6.0"
+          "version": "0.6.18"
         },
         {
-          "ref": "v0.6.0",
+          "ref": "local-closure-20260926",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
-          "version": "0.6.0"
+          "version": "0.6.18"
         },
         {
-          "ref": "v0.3.51",
+          "ref": "local-closure-20260926",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
-          "version": "0.3.51"
+          "version": "0.6.18"
         }
       ],
-      "required_repos": [
-        "ooxml-operation-engine",
-        "ooxml-stubs",
-        "python-docx",
-        "python-pptx",
-        "python-xlsx"
-      ],
       "role": "runtime",
-      "scope": "required",
-      "uniform": false,
+      "uniform": true,
       "upstream": "ooxml-core",
       "versions": [
-        "0.3.51",
-        "0.6.0",
-        "0.6.7"
+        "0.6.18"
       ]
     },
     {
       "repos": [
         {
-          "ref": "289eee5bac8fb38bc0e589f00a06ceb65293488b",
+          "ref": "local-closure-20260926-final",
           "repo": "ooxml-apps",
           "source_file": "ooxml-apps/pyproject.toml",
-          "version": "0.1.13"
+          "version": "0.1.37"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-operation-engine",
       "versions": [
-        "0.1.13"
+        "0.1.37"
       ]
     },
     {
       "repos": [
         {
-          "ref": "v0.3.1",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-stubs",
           "source_file": "ooxml-stubs/pyproject.toml",
           "version": "0.3.1"
@@ -3044,13 +3070,13 @@
     {
       "repos": [
         {
-          "ref": "v0.3.1",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.3.1"
         },
         {
-          "ref": "v0.3.1",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-test-framework",
           "source_file": "ooxml-test-framework/pyproject.toml",
           "version": "0.3.1"
@@ -3066,126 +3092,137 @@
     {
       "repos": [
         {
-          "ref": "v0.2.25",
+          "ref": "local-closure-20260926",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "0.2.25"
+          "version": "0.2.34"
         },
         {
-          "ref": "v0.2.25",
+          "ref": "local-closure-20260926",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
-          "version": "0.2.25"
+          "version": "0.2.34"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-stubs",
       "versions": [
-        "0.2.25"
+        "0.2.34"
       ]
     },
     {
-      "exceptions_matched": [],
       "repos": [
         {
-          "ref": "v0.5.21",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-core",
           "source_file": "ooxml-core/pyproject.toml",
-          "version": "0.5.21"
+          "version": "0.5.38"
         },
         {
-          "ref": "v0.5.35",
+          "ref": "local-closure-20260926",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "0.5.35"
+          "version": "0.5.38"
         },
         {
-          "ref": "v0.5.35",
+          "ref": "local-closure-20260926",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
-          "version": "0.5.35"
+          "version": "0.5.38"
         },
         {
-          "ref": "v0.5.29",
+          "ref": "local-closure-20260926",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
-          "version": "0.5.29"
+          "version": "0.5.38"
         }
       ],
-      "required_repos": [],
       "role": "dev",
-      "scope": "unscoped",
-      "uniform": false,
+      "uniform": true,
       "upstream": "ooxml-test-framework",
       "versions": [
-        "0.5.21",
-        "0.5.29",
-        "0.5.35"
+        "0.5.38"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-integrity-20260915-r2",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.5.35.post3"
+          "version": "0.5.38"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-test-framework",
       "versions": [
-        "0.5.35.post3"
+        "0.5.38"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-style-integrity-20260916-r2",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "1.2.20"
+          "version": "1.2.40"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-docx",
       "versions": [
-        "1.2.20"
+        "1.2.40"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-smartart-font-20260919",
+          "ref": "local-closure-20260926",
+          "repo": "python-docx",
+          "source_file": "python-docx/pyproject.toml",
+          "version": "2.0.29"
+        }
+      ],
+      "role": "dev",
+      "uniform": true,
+      "upstream": "python-pptx",
+      "versions": [
+        "2.0.29"
+      ]
+    },
+    {
+      "repos": [
+        {
+          "ref": "local-closure-20260926",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "2.0.20"
+          "version": "2.0.29"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.20"
+        "2.0.29"
       ]
     },
     {
       "repos": [
         {
-          "ref": "engine-defined-names-20260920",
+          "ref": "local-closure-20260926",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.17"
+          "version": "0.3.21"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.17"
+        "0.3.21"
       ]
     }
   ]
