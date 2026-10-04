@@ -13,7 +13,7 @@ worktree:
 	@python3 -m scripts.dev_worktree --workspace "$$WORKSPACE" --task "$$TASK" --repository "$$REPOSITORY" --owner "$$OWNER" --retire-when "$$RETIRE_WHEN" --revision "$${REVISION:-HEAD}"
 
 evidence-hygiene:
-	@python3 scripts/redact_release_evidence_paths.py
+	@python3 scripts/check_evidence_retention.py
 
 ecosystem-inventory-deps:
 	@python3 -m venv $(ECOSYSTEM_VENV)

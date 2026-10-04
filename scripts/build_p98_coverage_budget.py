@@ -17,6 +17,7 @@ import json
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
+from artifact_paths import artifact_dir
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -126,7 +127,7 @@ def compute_baseline(registries: dict[str, Any]) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path,
-                        default=ROOT / "release-evidence" / "p98" / "coverage-budget-baseline.json")
+                        default=artifact_dir() / "p98" / "coverage-budget-baseline.json")
     args = parser.parse_args()
 
     registries = {"docx": docx_registry(), "pptx": pptx_registry(), "xlsx": shared_registry()}

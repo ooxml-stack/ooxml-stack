@@ -105,7 +105,7 @@ def test_p98_writes_manifest_and_summary(tmp_path: Path) -> None:
 
 def test_p98_release_profile_matches_generated_summary() -> None:
     root = Path(__file__).resolve().parents[1]
-    summary = json.loads((root / "release-evidence/p98/rule-coverage-mutation-gate-summary.json").read_text())
+    summary = json.loads((root / "tests/fixtures/p98/rule-coverage-mutation-gate-summary.json").read_text())
     profile = json.loads((root / "release-profiles/p98-rule-coverage-mutation.json").read_text())
 
     assert profile["ok"] == summary["ok"]

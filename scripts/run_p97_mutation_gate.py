@@ -8,13 +8,14 @@ import tempfile
 import zipfile
 from datetime import UTC, datetime
 from pathlib import Path
+from artifact_paths import artifact_dir
 from typing import Any
 
 from p97_mutation_cases import cases
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = ROOT.parent
-EVIDENCE = ROOT / "release-evidence" / "p97"
+EVIDENCE = artifact_dir() / "p97"
 
 
 def add_path(path: Path) -> None:
