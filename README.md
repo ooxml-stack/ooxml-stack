@@ -25,6 +25,9 @@ are intentionally conservative and should not be treated as an API guarantee.
 - `README.md` - public overview.
 - `VISIBILITY.md` - public/private boundary policy.
 - `CONTRIBUTING.md` - contribution and disclosure rules.
+- `docs/DEVELOPER-WORKTREES.md` - shared agent-rule installation and recorded
+  developer worktrees.
+- `docs/WORKSPACE-AGENTS.md` - versioned rules installed at the workspace root.
 - `docs/COMPATIBILITY-CONTRACT.md` - public compatibility claim boundary.
 - `docs/OOXML-ELEMENT-CAPABILITY-LEDGER.md` - stable capability ledger for
   measured OOXML readability/editability claims.

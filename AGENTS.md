@@ -1,5 +1,11 @@
 # ooxml-stack Agent Notes
 
+## Workspace Instructions
+
+- Shared workspace rules live in `docs/WORKSPACE-AGENTS.md`. Install the root
+  entry with `make workspace-init WORKSPACE=/path/to/ooxml-projects`; see
+  `docs/DEVELOPER-WORKTREES.md`. Keep repository-specific rules in this file.
+
 ## Developer Worktrees
 
 - Create development checkouts with `python3 -m scripts.dev_worktree` or
