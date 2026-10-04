@@ -20,21 +20,9 @@
   compatibility, readability, editability, or full-write claims.
 - Use capability names and measured denominators in user-facing docs. Do not use
   internal phase IDs as public claim language.
-- Treat historical `release-evidence/p*/` directories as replayable audit
-  sources, not as the primary status surface.
-- Keep ad hoc run outputs, batch artifacts, and internal phase evidence out of
-  git unless they are deliberately promoted into a public release evidence
-  bundle with a manifest and locked profile.
-
-## Large Evidence Workflow
-
-- Do not push repeated intermediate rewrites of large generated ledgers such as
-  `release-evidence/**/promotion-rows.jsonl`.
-- Before pushing a long evidence campaign, squash local checkpoint commits or
-  regenerate mutable aggregate ledgers once in the final publish commit.
-- Keep per-chunk evidence files and Office gate results as replayable audit
-  inputs; treat aggregate ledgers as derived publish artifacts.
-- Office packages (docx/pptx/xlsx) added under `release-evidence/` must be
-  allowlisted in `release-evidence/RETAINED-ARTIFACTS.txt` in the same commit;
-  the Evidence Retention CI check fails otherwise. Only failure, release, or
-  pinned samples may be allowlisted.
+- Store all generated evidence outside source checkouts; see
+  `docs/ARTIFACT-STORAGE.md`. Historical paths are provenance references only.
+- Retain immutable regression inputs under `tests/fixtures/` only when consumed
+  by tests. Do not promote generated campaigns back into the source tree.
+- Preserve external evidence, original failure outcomes, manifests, hashes and
+  Git/LFS recovery data. Release bundles are delivered as external artifacts.

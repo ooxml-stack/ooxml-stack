@@ -10,7 +10,10 @@ Follow the parent and each repository's own AGENTS.md for coding and Git rules.
   see its `docs/DEVELOPER-WORKTREES.md`. Runtime temporary directories and retained
   TaskBench campaign snapshots follow their existing lifecycle contracts.
 - Write experiment outputs and delivery evidence under
-  `.delivery-evidence/<task>`.
+  `.delivery-evidence/<task>`. Shared artifact storage uses
+  `.delivery-evidence/artifacts/<repository>/`; set `OOXML_ARTIFACT_ROOT` to
+  override it. Generated evidence must not live inside any source checkout,
+  even in a Git-ignored directory. See `docs/ARTIFACT-STORAGE.md` in ooxml-stack.
 - Keep retired evidence, cleanup inventories, and recovery archives under
   `.archive-backups/`.
 - Reuse these containers instead of creating new task directories at the root.

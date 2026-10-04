@@ -247,7 +247,7 @@ def classify_paths(paths: list[str]) -> str:
 def lfs_policy(root: Path) -> dict[str, Any]:
     attrs = (root / ".gitattributes").read_text(encoding="utf-8") if (root / ".gitattributes").exists() else ""
     lfs = lfs_paths(root)
-    required = lfs_required_patterns()
+    required = lfs_required_patterns() if git(root, "ls-files", "release-evidence").strip() else ()
     should_lfs = []
     for p in git(root, "ls-files", "release-evidence").splitlines():
         path = root / p

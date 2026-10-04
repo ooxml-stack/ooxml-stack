@@ -1,4 +1,4 @@
-"""Redact local user paths from tracked release evidence."""
+"""Redact user paths in an explicitly supplied external evidence export."""
 
 from __future__ import annotations
 
@@ -29,23 +29,11 @@ def redact_user_paths(text: str, repo_root: Path | None = None) -> str:
 
 
 def tracked_evidence_files(root: Path) -> list[Path]:
-    patterns = ("release-evidence/**/*.json", "release-evidence/**/*.jsonl")
-    tracked = subprocess.run(
-        ["git", "ls-files", *patterns],
-        cwd=root,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    untracked = subprocess.run(
-        ["git", "ls-files", "--others", "--exclude-standard", *patterns],
-        cwd=root,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    lines = {*tracked.stdout.splitlines(), *untracked.stdout.splitlines()}
-    return [path for line in sorted(lines) if line.strip() and (path := root / line).is_file()]
+    evidence = root / "release-evidence"
+    if not evidence.is_dir():
+        raise FileNotFoundError(f"Evidence directory missing: {evidence}")
+    return sorted(path for path in evidence.rglob("*")
+                  if path.is_file() and path.suffix in {".json", ".jsonl"})
 
 
 def redact_files(root: Path, write: bool) -> list[Path]:
@@ -118,11 +106,15 @@ def sha256(path: Path) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, required=True,
+                        help="External export containing release-evidence and release-profiles")
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--refresh-locks", action="store_true")
     parser.add_argument("--refresh-path", action="append", default=[])
     args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1]
+    root = args.root.resolve()
+    if any((p / ".git").exists() for p in (root, *root.parents)):
+        parser.error("Use an external export, outside Git checkouts")
     changed = redact_files(root, args.write)
     if changed and not args.write:
         for path in changed:

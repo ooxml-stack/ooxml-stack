@@ -4,9 +4,9 @@ import argparse
 import json
 from collections import defaultdict
 from pathlib import Path
+from artifact_paths import artifact_dir
 from typing import Any
 
-from evidence_artifact_store import store_artifact
 
 
 OFFICE_EXTENSIONS = {".docx", ".docm", ".dotx", ".pptx", ".pptm", ".potx", ".ppsx", ".xlsx", ".xlsm"}
@@ -16,10 +16,12 @@ def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
     root = args.root.resolve()
     evidence = root / args.evidence_dir
-    records = collect_artifacts(evidence, root, args.include_blobs, args.hash_content)
+    if not evidence.is_dir():
+        raise FileNotFoundError(f"Evidence directory missing: {evidence}")
+    records = collect_artifacts(evidence, evidence, args.include_blobs, args.hash_content)
     summary = summarize(records)
     if args.apply_hardlinks:
-        summary["applied"] = apply_hardlinks(records, root, root / args.store_dir)
+        summary["applied"] = apply_hardlinks(records, evidence, root / args.store_dir)
     output = json.dumps(summary, indent=2, sort_keys=True) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -32,8 +34,8 @@ def main(argv: list[str] | None = None) -> int:
 def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    parser.add_argument("--evidence-dir", default="release-evidence")
-    parser.add_argument("--store-dir", default="release-evidence/artifact-blobs")
+    parser.add_argument("--evidence-dir", default=artifact_dir())
+    parser.add_argument("--store-dir", default=artifact_dir() / "artifact-blobs")
     parser.add_argument("--include-blobs", action="store_true")
     parser.add_argument("--hash-content", action="store_true")
     parser.add_argument("--apply-hardlinks", action="store_true")
@@ -83,6 +85,8 @@ def summarize(records: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def apply_hardlinks(records: list[dict[str, Any]], root: Path, store_dir: Path) -> dict[str, Any]:
+    from evidence_artifact_store import store_artifact
+
     applied = []
     for record in records:
         path = root / str(record["path"])
