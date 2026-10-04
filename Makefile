@@ -1,10 +1,13 @@
-.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree
+.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init
 
 # The inventory tool runs only against its pinned interpreter. `--write` and
 # `--check` refuse to start when the versions do not match the declaration.
 ECOSYSTEM_VENV ?= .venv-ecosystem-inventory
 ECOSYSTEM_PYTHON ?= $(ECOSYSTEM_VENV)/bin/python
 export WORKSPACE TASK REPOSITORY OWNER RETIRE_WHEN REVISION
+
+workspace-init:
+	@python3 -m scripts.workspace_agents --workspace "$$WORKSPACE"
 
 worktree:
 	@python3 -m scripts.dev_worktree --workspace "$$WORKSPACE" --task "$$TASK" --repository "$$REPOSITORY" --owner "$$OWNER" --retire-when "$$RETIRE_WHEN" --revision "$${REVISION:-HEAD}"
@@ -40,7 +43,7 @@ ecosystem-inventory-test:
 # identity, plan binding, adapter loading, the stage protocol and report
 # verification, which is where a false pass would come from.
 runner-test:
-	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ooxml_runner_*.py tests/test_dev_worktree.py -q
+	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ooxml_runner_*.py tests/test_dev_worktree.py tests/test_workspace_agents.py -q
 
 repo-hygiene: evidence-hygiene
 	@python3 scripts/audit_repo_hygiene.py $(if $(STRICT_HISTORY),--strict-history,)
