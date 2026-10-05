@@ -14,6 +14,9 @@ or granting access to it.
 
 ## Changes
 
+Write public documentation, issue templates and contributor-facing instructions
+in English. Preserve executable examples and identifiers when translating.
+
 - Keep one logical change per commit and preserve existing callers of shared
   runner, script and workflow entry points.
 - Follow [AGENTS.md](AGENTS.md) and the shared workspace rules for worktrees,
