@@ -1,5 +1,9 @@
 # P97 Phase Closeout And Next Steps
 
+> Historical record: results and commands describe the recorded revision.
+> Follow [current artifact storage](ARTIFACT-STORAGE.md) for external evidence
+> and the [documentation index](README.md) for current entry points.
+
 Date: 2026-08-06
 Branch: `compatibility-contract-p97-rule-coverage`
 Current head: `dcabcaf6`
