@@ -55,14 +55,14 @@
   "edges": [
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926-final",
+        "ref_declared_kind": "sha",
+        "ref_raw": "46a79abcc59f80e25da58d79a62af57db59c8e78",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "9fd214531c510cdecadc5ecdaa641d261b7c6cee",
+        "commit": "46a79abcc59f80e25da58d79a62af57db59c8e78",
         "source": "ooxml-apps/uv.lock",
         "version": "0.1.37"
       },
@@ -2711,15 +2711,15 @@
     },
     {
       "path": "ooxml-apps/.github/workflows/real-stack.yml",
-      "sha256": "f0a2bfbf0f33c1874513294903e3f4aee6cf3c22e111116689b05c4f29d9492a"
+      "sha256": "c0e7e5cc7e0a6b9241d9d637653674c28a65ae99a3dfebc204d94eb2f3b4ccc4"
     },
     {
       "path": "ooxml-apps/pyproject.toml",
-      "sha256": "64a3cfc1b5a14000ea66b7b7967c2cfd791fb5893275571c319159a57e511839"
+      "sha256": "161ffd1328ad153a78ce3ac91b4d026cd155a53726dbfb47958a28489e047eb4"
     },
     {
       "path": "ooxml-apps/uv.lock",
-      "sha256": "7f55898b092bfd482b3cc772d7c74ed22668d8a0d0626fac5eb31ff9a8d2149c"
+      "sha256": "427329288c42240e2b852de1c7d9d0868f83397607e8a8e13ae5c9a4ae7900e9"
     },
     {
       "path": "ooxml-core/.github/workflows/ci.yml",
@@ -2899,7 +2899,7 @@
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "da4a021bf699baadc9894a9652251f1788cb13055b7ed71410301a2bb192535b"
+      "sha256": "af2d181d714e27206c84c3325a7685f6f1ee3aa9fcc5525aae7728884287cbcd"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
@@ -2910,7 +2910,7 @@
       "sha256": "c4287e8fa9db77582be10e92dc064997be61fadcaf7d1fb1b3c5ba3ebf1dfd84"
     }
   ],
-  "inputs_digest": "7e556a7e279094a3f8a1fd1acd86acd31ccd3ad3d060193f16022eabebc2da72",
+  "inputs_digest": "5e88ef4cbb3b1418391be44e683ab3bb434c326e461033a65bc21c4e3284d996",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3008,7 +3008,7 @@
       "layer": "consumer",
       "release_participation": false,
       "role": "release",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -3082,7 +3082,7 @@
     {
       "repos": [
         {
-          "ref": "local-closure-20260926-final",
+          "ref": "46a79abcc59f80e25da58d79a62af57db59c8e78",
           "repo": "ooxml-apps",
           "source_file": "ooxml-apps/pyproject.toml",
           "version": "0.1.37"
