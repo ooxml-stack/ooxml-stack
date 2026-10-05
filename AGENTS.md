@@ -29,6 +29,8 @@
 
 ## Repository Scope
 
+- Write public-facing documentation and contributor instructions in English.
+
 - This public repository contains coordination documentation and shared engineering
   tooling. Use `docs/ARCHITECTURE.md` for ownership and `docs/README.md` for navigation.
 - Apply `VISIBILITY.md` to source and documentation changes. Public tooling and

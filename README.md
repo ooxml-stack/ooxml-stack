@@ -10,6 +10,23 @@ The Office runtime and the web application are maintained in separate
 repositories. Cloning this repository does not install an Office editor, an MCP
 server or a hosted service.
 
+## Why this repository is public
+
+Agent developers need to understand what an Office tool changes, what it
+preserves and what its checks actually prove. This repository exposes those
+contracts and the engineering methods behind them so readers can evaluate the
+claims, identify limitations and report reproducible problems.
+
+The practical material here is the capability/compatibility guidance, the
+repository architecture and the shared verification tools with their regression
+tests. Those tools help maintainers bind a result to a specific source and
+configuration. They are engineering references, not a downloadable Office runtime.
+
+Publishing this repository provides transparency and a place for technical
+feedback. It does not, by itself, make the runtime open source or provide an
+agent integration. Runtime access, client integrations and their licenses are
+separate product deliverables.
+
 ## Start here
 
 | You want to… | Read |
