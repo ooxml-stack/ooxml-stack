@@ -20,9 +20,10 @@ import subprocess
 import time
 from datetime import UTC, datetime
 from pathlib import Path
+from artifact_paths import artifact_dir
 
 ROOT = Path(__file__).resolve().parents[1]
-EVIDENCE = ROOT / "release-evidence" / "p98" / "office-verification"
+EVIDENCE = artifact_dir() / "p98" / "office-verification"
 
 DEFAULT_FILES = [
     ROOT.parent / "python-docx" / "playground" / "demo.docx",
