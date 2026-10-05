@@ -2710,6 +2710,10 @@
       "sha256": "d9f71366a892ec25b9bb33829d85e6e7cc32e4a94913482118d0324e2472286b"
     },
     {
+      "path": "ooxml-apps/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
+    },
+    {
       "path": "ooxml-apps/.github/workflows/real-stack.yml",
       "sha256": "c0e7e5cc7e0a6b9241d9d637653674c28a65ae99a3dfebc204d94eb2f3b4ccc4"
     },
@@ -2724,6 +2728,10 @@
     {
       "path": "ooxml-core/.github/workflows/ci.yml",
       "sha256": "8fdfa8e90c6661d0adfbe44e17f001ac5f2a41da6a5eeb84a3d7be388eaa7147"
+    },
+    {
+      "path": "ooxml-core/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
     },
     {
       "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
@@ -2758,6 +2766,10 @@
       "sha256": "c9eb00ba8accd395abf8a8441502f8044b29ceb8a44a4b9b9b339e6bf92bcc06"
     },
     {
+      "path": "ooxml-operation-engine/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
+    },
+    {
       "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
       "sha256": "5007083e6dbf6911670e91e2b69e51058df86cafd55f35d86a5fa9e9f3c1682e"
     },
@@ -2780,6 +2792,10 @@
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
       "sha256": "9bfa28b2b584231f558cff1c882922134ee2b500ccdba234ce5b71dda281312b"
+    },
+    {
+      "path": "ooxml-spec/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
     },
     {
       "path": "ooxml-spec/pyproject.toml",
@@ -2814,6 +2830,10 @@
       "sha256": "0291c5eb18df9772d4dde9e87d75e544b6b5c81d9fb3eb9320bdea3f9e87c507"
     },
     {
+      "path": "ooxml-stubs/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
+    },
+    {
       "path": "ooxml-stubs/pyproject.toml",
       "sha256": "43db221ab88f1c4e77fad16298d1911c00a63d2339a7abe804910de51fe07e9e"
     },
@@ -2824,6 +2844,10 @@
     {
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
       "sha256": "d6e1ef51d11c4aed98782b335a295be6204ed48ff79e06b5d0baf0bb923bc318"
+    },
+    {
+      "path": "ooxml-test-framework/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
@@ -2840,6 +2864,10 @@
     {
       "path": "python-docx/.github/workflows/ci.yml",
       "sha256": "26896f4084361026b7c1ffe5d05a82442daf0457d9d2873c0ab6a1acf38d2135"
+    },
+    {
+      "path": "python-docx/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
     },
     {
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
@@ -2864,6 +2892,10 @@
     {
       "path": "python-pptx/.github/workflows/ci.yml",
       "sha256": "642078ee50e497ffc90b0cab825fbaabb7805482eebd5b7013cab85fa92b1f54"
+    },
+    {
+      "path": "python-pptx/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
     },
     {
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
@@ -2894,6 +2926,10 @@
       "sha256": "9dd81c4b1811612d2fa12bfb33e07034d5188a905c8bb99734689a7b5cef241c"
     },
     {
+      "path": "python-xlsx/.github/workflows/dependency-audit.yml",
+      "sha256": "7010d5e54ec068012bf968000164f9dfc521eef35783215464e8a11175fe22c7"
+    },
+    {
       "path": "python-xlsx/.github/workflows/native-corpus-gate.yml",
       "sha256": "1b8a63d9c72a4229caf5da91b365a77eeaa1c91c91e693a9639772dbe2c1ae64"
     },
@@ -2910,7 +2946,7 @@
       "sha256": "c4287e8fa9db77582be10e92dc064997be61fadcaf7d1fb1b3c5ba3ebf1dfd84"
     }
   ],
-  "inputs_digest": "5e88ef4cbb3b1418391be44e683ab3bb434c326e461033a65bc21c4e3284d996",
+  "inputs_digest": "773df4d492bfc22ac1581b635cc260021d6cc86a8bd260d7fbdf879bfdce9df8",
   "kind": "ecosystem-plan",
   "nodes": [
     {
