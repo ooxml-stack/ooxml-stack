@@ -1,35 +1,38 @@
-# Evidence Artifact Store
+# Evidence blob storage
 
-OOXML release evidence must not grow by copying full Office packages for every
-API, CLI, MCP, batch, and public-path replay. The repository source of truth is:
+[Artifact storage](ARTIFACT-STORAGE.md) defines the current placement rule:
+generated evidence lives outside source checkouts, including ignored output.
+This page describes deduplication within that external store.
 
-- JSON/JSONL evidence rows with `output_file` and artifact metadata.
-- Hashes, validation summaries, gate reports, and release claims.
+## External layout
 
-The package-byte cache lives under
-`release-evidence/artifact-blobs/sha256/<aa>/<bb>/<sha>.<ext>`. It is ignored by
-git and should be treated as a local cache or CI artifact, not committed release
-evidence. `release-evidence/artifact-blobs/artifact-manifest.jsonl` is a local
-ledger for that cache; the committed JSON/JSONL rows carry the hash metadata
-needed to audit release claims.
+An evidence area can contain structured JSON/JSONL records, validation results
+and a content-addressed package store. For release evidence the layout is:
 
-Generated `.docx`, `.pptx`, and `.xlsx` evidence paths may still exist for
-compatibility with Office gates and existing reports, but they should be
-hardlinks to the content-addressed blob after all writers and native Office
-checks are finished.
+```text
+<artifact root>/<repository>/release-evidence/
+    <campaign>/...
+    artifact-blobs/sha256/<aa>/<bb>/<sha>.<ext>
+    artifact-blobs/artifact-manifest.jsonl
+```
 
-Retention policy:
+The record binds the artifact's hash, source identity and relevant result.
+Preserve input/output bytes required to reproduce failures, release gates and
+active verification. Hashes alone cannot recreate missing package bytes.
 
-- Keep blobs for failures, release gates, pinned samples, and the latest active
-  smoke/native gate runs.
-- For older successful runs, keep JSON/JSONL rows, hashes, validation summaries,
-  and claims; do not require per-path duplicate package bytes.
-- New `.docx`, `.pptx`, and `.xlsx` files under `release-evidence/` are blocked
-  by `scripts/check_evidence_retention.py` unless explicitly allowlisted in
-  `release-evidence/RETAINED-ARTIFACTS.txt`.
-- Use `scripts/plan_evidence_cleanup.py` to produce a dry-run cleanup report for
-  older successful generated outputs before deleting any historical artifacts.
-- Run `scripts/audit_evidence_artifacts.py --hash-content` before large evidence
-  commits to measure duplicate logical bytes.
-- Use `--apply-hardlinks` only after reviewing the dry-run summary. It preserves
-  paths and bytes but changes inode layout.
+Deduplication must preserve the original relative-path mapping, bytes and
+recovery instructions. Hardlinks are suitable only after all writers and native
+Office checks have finished; subsequent writes would affect every linked path.
+Logical sizes are not a measure of physical space reclaimed.
+
+## Historical paths and cleanup
+
+Older documents and profiles quote repository-local `release-evidence/` paths.
+Those are provenance references. Use the archive index and recovery procedure
+in [artifact storage](ARTIFACT-STORAGE.md) to locate or restore them externally.
+The former repository-local allowlist is not an exception to the current rule.
+
+`make evidence-hygiene` checks placement. It does not deduplicate files, verify
+an archive's recovery, or authorize deleting evidence. Before cleanup, inspect
+active dependencies and preserve unique files and required history under the
+shared workspace rules. Retain manifests and verify recovery before removal.
