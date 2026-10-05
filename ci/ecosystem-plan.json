@@ -281,15 +281,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
+        "commit": "754f417c41e66367fcaad01fd83e20ad351f46ed",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.6.18"
+        "version": "0.6.19"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -370,13 +370,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "local-b53-20260928",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-spec.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "75a16248fc26e796311f052da009a8aa31f3f451",
+        "commit": "151fdc8ede85194079b656dcb2baedfd1be7043a",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.3.1"
       },
@@ -484,13 +484,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b60-runtime-closure-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
+        "commit": "9177196ad3ebe7d563435d569165fa749d455cea",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.5.38"
       },
@@ -527,15 +527,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "10a89c37bba1a304bad4fc97a8c0b78b95dc749a",
+        "commit": "f4c5dffe7c4baf525edb43650989c386a00b9c25",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "1.2.40"
+        "version": "1.2.41"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -570,15 +570,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "f53d84aa678094ec669cdbddd062b508a51371b4",
+        "commit": "2fa11630d2d73ab790003ada655a8e0d91954b7f",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "2.0.29"
+        "version": "2.0.30"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -613,15 +613,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "833598a3456cf0495f69326c70f6a480a83d6f11",
+        "commit": "d2131dc3815b64c7b952442c10d28eb2066631e7",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.21"
+        "version": "0.3.29"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -688,15 +688,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
+        "commit": "754f417c41e66367fcaad01fd83e20ad351f46ed",
         "source": "ooxml-stubs/uv.lock",
-        "version": "0.6.18"
+        "version": "0.6.19"
       },
       "from": "ooxml-stubs",
       "group": null,
@@ -730,13 +730,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "local-b53-20260928",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-spec.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "75a16248fc26e796311f052da009a8aa31f3f451",
+        "commit": "151fdc8ede85194079b656dcb2baedfd1be7043a",
         "source": "ooxml-test-framework/uv.lock",
         "version": "0.3.1"
       },
@@ -751,15 +751,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
+        "commit": "754f417c41e66367fcaad01fd83e20ad351f46ed",
         "source": "python-docx/uv.lock",
-        "version": "0.6.18"
+        "version": "0.6.19"
       },
       "from": "python-docx",
       "group": null,
@@ -790,11 +790,11 @@
       "sites": [
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 178
+          "line": 186
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 243
+          "line": 259
         },
         {
           "file": "python-docx/.github/workflows/native-corpus-gate.yml",
@@ -829,11 +829,11 @@
       "sites": [
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 189
+          "line": 197
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 254
+          "line": 270
         }
       ],
       "source_file": "python-docx/.github/workflows/ci.yml",
@@ -864,15 +864,15 @@
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 229
+          "line": 237
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 266
+          "line": 282
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 288
+          "line": 304
         }
       ],
       "source_file": "python-docx/.github/workflows/ci.yml",
@@ -881,15 +881,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7652f0d7b5d6e9c50760891841c1aec13bb41e06",
+        "commit": "fc70cf078ff6093e1a7b4e3682c9270487f5043f",
         "source": "python-docx/uv.lock",
-        "version": "0.2.34"
+        "version": "0.2.35"
       },
       "from": "python-docx",
       "group": null,
@@ -902,13 +902,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "lan-deps-20261001",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
+        "commit": "2c3bc62ade7e1aeb4a21733d17073bc35d8ce50e",
         "source": "python-docx/uv.lock",
         "version": "0.5.38"
       },
@@ -924,15 +924,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "dependency-groups",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": ">=2.0.29"
       },
       "expected": {
-        "commit": "f53d84aa678094ec669cdbddd062b508a51371b4",
+        "commit": "2fa11630d2d73ab790003ada655a8e0d91954b7f",
         "source": "python-docx/uv.lock",
-        "version": "2.0.29"
+        "version": "2.0.30"
       },
       "from": "python-docx",
       "group": "dev",
@@ -945,15 +945,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
+        "commit": "754f417c41e66367fcaad01fd83e20ad351f46ed",
         "source": "python-pptx/uv.lock",
-        "version": "0.6.18"
+        "version": "0.6.19"
       },
       "from": "python-pptx",
       "group": null,
@@ -984,11 +984,11 @@
       "sites": [
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 182
+          "line": 190
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 243
+          "line": 257
         },
         {
           "file": "python-pptx/.github/workflows/native-corpus-gate.yml",
@@ -1027,15 +1027,15 @@
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 231
+          "line": 239
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 265
+          "line": 279
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 288
+          "line": 302
         }
       ],
       "source_file": "python-pptx/.github/workflows/ci.yml",
@@ -1044,15 +1044,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7652f0d7b5d6e9c50760891841c1aec13bb41e06",
+        "commit": "fc70cf078ff6093e1a7b4e3682c9270487f5043f",
         "source": "python-pptx/uv.lock",
-        "version": "0.2.34"
+        "version": "0.2.35"
       },
       "from": "python-pptx",
       "group": null,
@@ -1065,13 +1065,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "lan-deps-20261001",
         "section": "project.optional-dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": ">=0.5.10,<1.0.0"
       },
       "expected": {
-        "commit": "23f9c22bc7cc99f959f30b474c4aed0e5564658d",
+        "commit": "2c3bc62ade7e1aeb4a21733d17073bc35d8ce50e",
         "source": "python-pptx/uv.lock",
         "version": "0.5.38"
       },
@@ -1087,15 +1087,15 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "local-closure-20260926",
+        "ref_raw": "b61-native-preservation-v2-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "fb2c06dc28f6d2fcad1f0941eec1c3b45c07706c",
+        "commit": "754f417c41e66367fcaad01fd83e20ad351f46ed",
         "source": "python-xlsx/uv.lock",
-        "version": "0.6.18"
+        "version": "0.6.19"
       },
       "from": "python-xlsx",
       "group": null,
@@ -1592,7 +1592,7 @@
           "env": {},
           "id": "default",
           "if": null,
-          "line": 23,
+          "line": 24,
           "matrix": {},
           "name": "full-check",
           "needs": null,
@@ -1602,7 +1602,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 28,
+              "line": 29,
               "name": null,
               "run": null,
               "shell": null,
@@ -1612,7 +1612,7 @@
               "cwd": "ooxml-operation-engine",
               "env": {},
               "if": null,
-              "line": 32,
+              "line": 33,
               "name": "Resolve the pinned shared runner",
               "run": "python3 -c 'import json; print(\"commit=\" + json.load(open(\"ci/runner.json\"))[\"commit\"])' >> \"$GITHUB_OUTPUT\"\n",
               "shell": null,
@@ -1622,7 +1622,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 37,
+              "line": 38,
               "name": null,
               "run": null,
               "shell": null,
@@ -1636,7 +1636,7 @@
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 44,
+              "line": 45,
               "name": "Run the shared local and server gate",
               "run": "make check CHECK_COMMIT=\"${{ github.sha }}\" CHECK_OUTPUT=\"${{ runner.temp }}/ci-reports\"",
               "shell": null,
@@ -1646,7 +1646,7 @@
               "cwd": "ooxml-operation-engine",
               "env": {},
               "if": "always()",
-              "line": 51,
+              "line": 52,
               "name": "Record the default partition receipt",
               "run": "report=$(find \"${{ runner.temp }}/ci-reports\" -name pytest.json | head -1)\npython3 -m scripts.ci.platform_summary write \\\n  --report \"$report\" --commit \"${{ github.sha }}\" --bucket default \\\n  --platform linux --runner ubuntu-24.04 \\\n  --output \"${{ runner.temp }}/platform-receipt-default.json\"\n",
               "shell": null,
@@ -1656,7 +1656,7 @@
               "cwd": null,
               "env": {},
               "if": "always()",
-              "line": 60,
+              "line": 61,
               "name": "Preserve evidence even on failure",
               "run": null,
               "shell": null,
@@ -1770,7 +1770,7 @@
               "if": null,
               "line": 14,
               "name": "Check release evidence retention",
-              "run": "if [ \"${{ github.event_name }}\" = \"pull_request\" ]; then\n  python scripts/check_evidence_retention.py --base-ref \"${{ github.event.pull_request.base.sha }}\"\nelse\n  python scripts/check_evidence_retention.py --base-ref \"${{ github.event.before }}\"\nfi\n",
+              "run": "python scripts/check_evidence_retention.py",
               "shell": "bash",
               "uses": null
             }
@@ -1968,7 +1968,7 @@
           },
           "id": "test",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 199,
+          "line": 207,
           "matrix": {
             "python-version": [
               "3.10",
@@ -1984,7 +1984,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 212,
+              "line": 220,
               "name": null,
               "run": null,
               "shell": null,
@@ -1994,7 +1994,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 214,
+              "line": 222,
               "name": null,
               "run": null,
               "shell": null,
@@ -2004,7 +2004,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 216,
+              "line": 224,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -2014,7 +2014,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 219,
+              "line": 227,
               "name": null,
               "run": null,
               "shell": null,
@@ -2024,7 +2024,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 223,
+              "line": 231,
               "name": "Install Open XML SDK validator runtime",
               "run": "dotnet tool install -g dotnet-script\necho \"$HOME/.dotnet/tools\" >> \"$GITHUB_PATH\"\n",
               "shell": null,
@@ -2034,7 +2034,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 228,
+              "line": 236,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2044,7 +2044,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 236,
+              "line": 244,
               "name": "Install dependencies",
               "run": "uv sync --frozen",
               "shell": null,
@@ -2054,7 +2054,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 239,
+              "line": 247,
+              "name": "Install quality tools",
+              "run": "uv tool install ruff==0.16.5\nuv tool install pyright==1.1.411\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 252,
+              "name": "Run static quality gates",
+              "run": "make lint && make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 255,
               "name": "Checkout native corpus evidence repo",
               "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
               "shell": null,
@@ -2064,7 +2084,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 251,
+              "line": 267,
               "name": "Checkout public claim evidence repo",
               "run": "rm -rf ../ooxml-stack\ngit clone --depth 1 https://github.com/ooxml-stack/ooxml-stack.git ../ooxml-stack\n",
               "shell": null,
@@ -2074,7 +2094,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 256,
+              "line": 272,
               "name": "Downstream compatibility gate",
               "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
               "shell": null,
@@ -2084,7 +2104,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 259,
+              "line": 275,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2105,7 +2125,7 @@
           },
           "id": "build",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 206,
+          "line": 214,
           "matrix": {
             "python-version": [
               "3.10",
@@ -2121,7 +2141,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 219,
+              "line": 227,
               "name": null,
               "run": null,
               "shell": null,
@@ -2131,7 +2151,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 220,
+              "line": 228,
               "name": "Install uv",
               "run": null,
               "shell": null,
@@ -2141,7 +2161,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 223,
+              "line": 231,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -2151,7 +2171,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 226,
+              "line": 234,
               "name": "Display Python version",
               "run": "PYTHON_BIN=\"$(uv python find \"$UV_PYTHON\")\"\n\"$PYTHON_BIN\" -c \"import sys; print(sys.version)\"\n",
               "shell": null,
@@ -2161,7 +2181,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 230,
+              "line": 238,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2171,7 +2191,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 237,
+              "line": 245,
               "name": "Install test dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -2181,7 +2201,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 239,
+              "line": 247,
+              "name": "Install quality tools",
+              "run": "uv tool install ruff==0.16.5\nuv tool install pyright==1.1.411\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 251,
+              "name": "Run static quality gates",
+              "run": "make lint && make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 253,
               "name": "Checkout native corpus evidence repo",
               "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
               "shell": null,
@@ -2191,7 +2231,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 250,
+              "line": 264,
               "name": "Set up .NET for schema validation",
               "run": null,
               "shell": null,
@@ -2201,7 +2241,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 254,
+              "line": 268,
               "name": "Install dotnet-script",
               "run": "dotnet tool install -g dotnet-script",
               "shell": null,
@@ -2211,7 +2251,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 256,
+              "line": 270,
               "name": "Downstream compatibility gate",
               "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
               "shell": null,
@@ -2221,7 +2261,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 258,
+              "line": 272,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2699,11 +2739,11 @@
     },
     {
       "path": "ooxml-core/pyproject.toml",
-      "sha256": "6b1628043fd03c801513a2aa7ba3e383ca872c66f571631e82b74b099e68bfb7"
+      "sha256": "a4cd01c8b2fa0517f7c4cfe709a9425687c3e0808cc9edb89bf8fe9c7e661951"
     },
     {
       "path": "ooxml-core/uv.lock",
-      "sha256": "2f89fa94d3648b25756fb88c73b75e3d6edeaea0a5c6be424abc732edd336c0c"
+      "sha256": "28c08214e7a4e69ca0abd50a35fcdad90b0679be0a8ed0f3e2f6c0c7b5b54e73"
     },
     {
       "path": "ooxml-native-corpus/.github/workflows/corpus-inspection.yml",
@@ -2711,7 +2751,11 @@
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ci.yml",
-      "sha256": "d5e2b382812661c22664b526d63fa0cbcb0e7ab9002881fb986522785ae292e7"
+      "sha256": "b6a5e48b76661bb5e8b421bc0ee5546eb2a4d4a1aa6061334292822e37b42012"
+    },
+    {
+      "path": "ooxml-operation-engine/.github/workflows/commit-delta.yml",
+      "sha256": "c9eb00ba8accd395abf8a8441502f8044b29ceb8a44a4b9b9b339e6bf92bcc06"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
@@ -2719,19 +2763,19 @@
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
-      "sha256": "4b76857912249e386248c0623bc43636012709c1fb96fd5adef2ef39cb29e8b9"
+      "sha256": "1d4c9ce476c20ae6437cd480b0fb7f7d71696446dc4d4b14b989d6f86c7b2ba7"
     },
     {
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "f818f63745b79f34cdfca4164d393c013ddf5ce233ee41f1ca88f333e787a8ec"
+      "sha256": "96a981b9881da6eb02ea9150aa698dd0f8622a1a9ab0ad83c007b9f2d00f51e4"
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "e531ab3f7855c34bd24e06a9aaacfe8753c8ae4b772634c805e1fdc51b71f02b"
+      "sha256": "9d60ddceebdf4b8e69c2a6d9abd4b9b6ae9116f993fe492e4efef4577ab1660a"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "b284fc188118ee3deb0ec2b92fad859ce0ead7b25834b02f9f7b7015c3e0fa3a"
+      "sha256": "32528f5a0b40bc6012cd16670d66d5fc54b62742ee05658982a196de12c1d8f7"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -2747,7 +2791,7 @@
     },
     {
       "path": "ooxml-stack/.github/workflows/evidence-retention.yml",
-      "sha256": "7d13d28252b2dd6ed558405b407b83863096b25c510bf3cbfa79a0b54f110dc8"
+      "sha256": "7a4e813328505fa593e77c236fd569c885450557f0d45cda959f8147ea631f8f"
     },
     {
       "path": "ooxml-stack/.github/workflows/mutation-gate.yml",
@@ -2771,11 +2815,11 @@
     },
     {
       "path": "ooxml-stubs/pyproject.toml",
-      "sha256": "e9a8fddaf228f467104ac36754a04fdf9269d3b621b024e675696d2661f49ded"
+      "sha256": "43db221ab88f1c4e77fad16298d1911c00a63d2339a7abe804910de51fe07e9e"
     },
     {
       "path": "ooxml-stubs/uv.lock",
-      "sha256": "afe2d948a9924ffa723267efe7e4ffbedbe6d8b2b9d5aeb427d7d23352ad95ae"
+      "sha256": "5090e2fd7281ce45595f8f30ca74cf3a334085622f15d819cb7118d206e19f47"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
@@ -2787,15 +2831,15 @@
     },
     {
       "path": "ooxml-test-framework/pyproject.toml",
-      "sha256": "641e703b56369bfa484f730db8f349dad5c2a4d2a2f15eedebf171ce240accaf"
+      "sha256": "2f5e345be7662a484ff1fef03684af61dbe5ac798af32a20049d6cb307d25280"
     },
     {
       "path": "ooxml-test-framework/uv.lock",
-      "sha256": "6eee3cef390a1f57827fa11cacf949e005af0ccec5c8d019699cfc5d4720ce8c"
+      "sha256": "b14b5eef020c64f6de9dd2acc4e289f032a58ae060832865e937268dd0ce095c"
     },
     {
       "path": "python-docx/.github/workflows/ci.yml",
-      "sha256": "893864c9fb544fd0fb3159cc55b44243d89261d5c24d61f46391a83b4ea232d0"
+      "sha256": "26896f4084361026b7c1ffe5d05a82442daf0457d9d2873c0ab6a1acf38d2135"
     },
     {
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
@@ -2807,19 +2851,19 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "71f8d1f51f5fbfef90feebbed9f0ffd2189335d1246a11e6b05e76ac9fc77cea"
+      "sha256": "b7f1b266c9f88d87344768244c1a67da8756f77b1886213ae5de4b383d25a194"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
-      "sha256": "47b93394cb7d926ec6de4686ec7d395e3fa36926d8d0db856e7a8b3deb6fa22d"
+      "sha256": "dc5f0dc0c7faf42aaac56352286793ceb83abe388988f024431991119e985619"
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "d166f6b6e44456da60e9e257b859e2412f9b34c335544ef0d5a07fd618527967"
+      "sha256": "9b93fbf12eafde71abf469ec504deae1d2be424f7253f761e99efc28df6dc75d"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
-      "sha256": "884653a726729504dd7aa3ee99e423b3393f30ce193337936b06af3f2f03fcaa"
+      "sha256": "642078ee50e497ffc90b0cab825fbaabb7805482eebd5b7013cab85fa92b1f54"
     },
     {
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
@@ -2835,15 +2879,15 @@
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "16151a932a3e06fccd5a4bdfc5823d2a80de4646ef51db83011a369a460f6a9e"
+      "sha256": "12c2494d4eda3214ab9cff7608fb301bf1aff2b76ccbf826f20d12fa8cc16834"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
-      "sha256": "7eb2f632cbefe76f8da131d0567d7059af05b36c6bcb0a83758a33add2b66b5b"
+      "sha256": "9b10b197ab18809a6f5c702f25dfd9489f18c0407b9203b8d2ca67e7f2343abb"
     },
     {
       "path": "python-pptx/uv.lock",
-      "sha256": "2fd4cd8708e11b6f30c7284dda4ab9602ba55e74c3cfbc2b587eb305274ca676"
+      "sha256": "854d17954fe520c9baefbd4d61aaccdadd567c78cd4e798edad20e3770a3d1a8"
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
@@ -2855,18 +2899,18 @@
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "4090fcbead28f29f36a6d416e27d0a579efbb909038eed25456ed101a6bceb8e"
+      "sha256": "da4a021bf699baadc9894a9652251f1788cb13055b7ed71410301a2bb192535b"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
-      "sha256": "2b48a1c40438506c651fee1564b4f0c19f1a7bd298ef261879489797fa753515"
+      "sha256": "9861cc7b78a595f7aee966b06fec1378a1bb97eaa8f7368f6c21ef364695ff7e"
     },
     {
       "path": "python-xlsx/uv.lock",
-      "sha256": "da9e671d9143cdb0db309543f9f3a4a146cf107b75d6b29345f848f65e783935"
+      "sha256": "c4287e8fa9db77582be10e92dc064997be61fadcaf7d1fb1b3c5ba3ebf1dfd84"
     }
   ],
-  "inputs_digest": "5b903ee131ba7434363b46ba74e1e737853125c09cf95ffcb87b1bf75e965925",
+  "inputs_digest": "7e556a7e279094a3f8a1fd1acd86acd31ccd3ad3d060193f16022eabebc2da72",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -2898,7 +2942,7 @@
       "layer": "core",
       "release_participation": true,
       "role": "release",
-      "version": "0.6.18",
+      "version": "0.6.19",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2909,7 +2953,7 @@
       "layer": "stubs",
       "release_participation": true,
       "role": "release",
-      "version": "0.2.34",
+      "version": "0.2.35",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -2920,7 +2964,7 @@
       "layer": "app",
       "release_participation": true,
       "role": "release",
-      "version": "1.2.40",
+      "version": "1.2.41",
       "version_source": "src/docx/__init__.py#__version__",
       "visibility": "public"
     },
@@ -2931,7 +2975,7 @@
       "layer": "app",
       "release_participation": true,
       "role": "release",
-      "version": "2.0.29",
+      "version": "2.0.30",
       "version_source": "src/pptx/__init__.py#__version__",
       "visibility": "public"
     },
@@ -2942,7 +2986,7 @@
       "layer": "app",
       "release_participation": true,
       "role": "release",
-      "version": "0.3.21",
+      "version": "0.3.29",
       "version_source": "src/xlsx/__init__.py#__version__",
       "visibility": "private"
     },
@@ -2998,41 +3042,41 @@
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.6.18"
+          "version": "0.6.19"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "ooxml-stubs",
           "source_file": "ooxml-stubs/pyproject.toml",
-          "version": "0.6.18"
+          "version": "0.6.19"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "0.6.18"
+          "version": "0.6.19"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
-          "version": "0.6.18"
+          "version": "0.6.19"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
-          "version": "0.6.18"
+          "version": "0.6.19"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-core",
       "versions": [
-        "0.6.18"
+        "0.6.19"
       ]
     },
     {
@@ -3070,13 +3114,13 @@
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "local-b53-20260928",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.3.1"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "local-b53-20260928",
           "repo": "ooxml-test-framework",
           "source_file": "ooxml-test-framework/pyproject.toml",
           "version": "0.3.1"
@@ -3092,23 +3136,23 @@
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "0.2.34"
+          "version": "0.2.35"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
-          "version": "0.2.34"
+          "version": "0.2.35"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-stubs",
       "versions": [
-        "0.2.34"
+        "0.2.35"
       ]
     },
     {
@@ -3120,13 +3164,13 @@
           "version": "0.5.38"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "lan-deps-20261001",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.5.38"
         },
         {
-          "ref": "local-closure-20260926",
+          "ref": "lan-deps-20261001",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.5.38"
@@ -3148,7 +3192,7 @@
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b60-runtime-closure-20261005",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.5.38"
@@ -3164,65 +3208,65 @@
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "1.2.40"
+          "version": "1.2.41"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-docx",
       "versions": [
-        "1.2.40"
+        "1.2.41"
       ]
     },
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
-          "version": "2.0.29"
+          "version": "2.0.30"
         }
       ],
       "role": "dev",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.29"
+        "2.0.30"
       ]
     },
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "2.0.29"
+          "version": "2.0.30"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-pptx",
       "versions": [
-        "2.0.29"
+        "2.0.30"
       ]
     },
     {
       "repos": [
         {
-          "ref": "local-closure-20260926",
+          "ref": "b61-native-preservation-v2-20261005",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.21"
+          "version": "0.3.29"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.21"
+        "0.3.29"
       ]
     }
   ]
