@@ -1,5 +1,12 @@
 # P99 — Public Release Hygiene (phase closeout)
 
+> Historical review and export proposal, not current publication clearance.
+> The repository is already public; these recorded findings do not establish
+> current-tree or full-history safety today. The export procedure below is
+> superseded by [the public content policy](../VISIBILITY.md): tracking or LFS
+> status alone cannot authorize publication. Use an explicitly reviewed file
+> selection and [external artifact storage](ARTIFACT-STORAGE.md).
+
 This document records the P99 public-release-hygiene slice of the
 compatibility contract, following the P97/P98 evidence phases. It states what
 was audited, what changed, the public-safety boundary, and the release vehicle

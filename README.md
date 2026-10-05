@@ -1,36 +1,52 @@
 # OOXML Stack
 
-OOXML Stack is an umbrella for high-fidelity Office Open XML tooling.
+Office document tools for agents: read and analyze document structure, apply
+controlled edits, and audit the resulting changes across DOCX, PPTX and XLSX.
+This is the project's direction; supported operations and compatibility claims
+must be tied to a specific runtime release and its measured scope.
 
-This public repository is intentionally limited to non-sensitive project-level
-information. It does not contain runtime source code, validation internals,
-private datasets, release operations, CI infrastructure, or access setup.
+This public repository holds project documentation and shared engineering tools.
+The Office runtime and the web application are maintained in separate
+repositories. Cloning this repository does not install an Office editor, an MCP
+server or a hosted service.
 
-## Scope
+## Start here
 
-- Public positioning for the OOXML Stack project.
-- High-level visibility policy for what may appear in public repositories.
-- Contribution rules for this public coordination surface.
+| You want to… | Read |
+| --- | --- |
+| Understand the product and repository boundaries | [Architecture](docs/ARCHITECTURE.md) |
+| Assess a reading, editing or audit claim | [Capability claims](docs/CAPABILITY-CLAIMS.md) |
+| Understand file-preservation guarantees | [Compatibility contract](docs/COMPATIBILITY-CONTRACT.md) |
+| Work on the shared tools | [Maintainer guide](docs/MAINTAINING.md) |
+| Find current specifications or historical records | [Documentation index](docs/README.md) |
+| Report a problem or propose a change | [Contributing](CONTRIBUTING.md) |
 
-Implementation details, test corpora, operational runbooks, release gates, and
-team installation instructions live outside this public repository.
+## Product boundaries
 
-## Status
+- **Operation Engine** owns document operations, structured results, validation
+  and the CLI/MCP execution surface. Other interfaces reuse its contracts.
+- **Apps** provides the HTTP gateway, document revisions, candidate review and
+  the human-facing workbench.
+- **Stack** coordinates repositories, dependency plans and verification. Its
+  shared runner executes engineering checks, not agent Office tasks.
 
-The stack is under active private development. Public claims in this repository
-are intentionally conservative and should not be treated as an API guarantee.
+Runtime access and installation are governed by the runtime's own distribution
+and license. This repository does not provide a public runtime download or grant
+access to private packages. Public visibility alone is not an open-source
+license for this repository or the rest of the ecosystem.
 
-## Repository Contents
+## What is in this repository
 
-- `README.md` - public overview.
-- `VISIBILITY.md` - public/private boundary policy.
-- `CONTRIBUTING.md` - contribution and disclosure rules.
-- `docs/DEVELOPER-WORKTREES.md` - shared agent-rule installation and recorded
-  developer worktrees.
-- `docs/WORKSPACE-AGENTS.md` - versioned rules installed at the workspace root.
-- `docs/COMPATIBILITY-CONTRACT.md` - public compatibility claim boundary.
-- `docs/OOXML-ELEMENT-CAPABILITY-LEDGER.md` - stable capability ledger for
-  measured OOXML readability/editability claims.
+| Path | Responsibility |
+| --- | --- |
+| `docs/` | Architecture, contracts, maintainer specifications and historical records |
+| `ooxml_runner/` | Shared verification runner and report identity checks |
+| `scripts/` | Dependency inventory, worktree setup, evidence and mutation tools |
+| `ci/` | Inventory policy, generated dependency plan and pinned tool dependencies |
+| `.github/` | Shared actions and workflows |
+| `tests/` | Tool regressions and small immutable fixtures |
+| `release-profiles/` | Historical verification inputs; not a current support matrix |
 
-No generated Office files, private datasets, CI artifacts, secrets, or local
-machine paths should be committed here.
+Generated evidence lives outside source checkouts. See [artifact
+storage](docs/ARTIFACT-STORAGE.md) for retention and recovery, and
+[visibility policy](VISIBILITY.md) for what belongs in a public contribution.

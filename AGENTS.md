@@ -16,7 +16,7 @@
 
 ## Capability Claims
 
-- Read `docs/OOXML-ELEMENT-CAPABILITY-LEDGER.md` before making OOXML
+- Read `docs/CAPABILITY-CLAIMS.md` before making OOXML
   compatibility, readability, editability, or full-write claims.
 - Use capability names and measured denominators in user-facing docs. Do not use
   internal phase IDs as public claim language.
@@ -26,3 +26,13 @@
   by tests. Do not promote generated campaigns back into the source tree.
 - Preserve external evidence, original failure outcomes, manifests, hashes and
   Git/LFS recovery data. Release bundles are delivered as external artifacts.
+
+## Repository Scope
+
+- This public repository contains coordination documentation and shared engineering
+  tooling. Use `docs/ARCHITECTURE.md` for ownership and `docs/README.md` for navigation.
+- Apply `VISIBILITY.md` to source and documentation changes. Public tooling and
+  pinned dependency identities do not authorize publishing private runtime code
+  or evidence. Preserve existing caller paths when organizing documentation.
+- Keep historical results attached to their original identities. Follow the
+  current artifact-storage policy when interpreting historical file paths.
