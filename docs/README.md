@@ -4,6 +4,8 @@
 
 - [Architecture](ARCHITECTURE.md): product surfaces, repository owners and
   dependency boundaries.
+- [Public clients and runtime distribution](PUBLIC-CLIENT-BOUNDARY.md): intended
+  open-source boundary, source exposure and delivery sequence.
 - [Capability claims](CAPABILITY-CLAIMS.md): how to describe reading, editing,
   preservation and audit evidence.
 - [Compatibility contract](COMPATIBILITY-CONTRACT.md): the existing DOCX/PPTX

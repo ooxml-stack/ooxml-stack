@@ -73,3 +73,7 @@ Rendering and native Office checks retain their declared provider requirements.
 This repository publishes coordination documentation and shared tooling. Its
 public status does not open another repository, provide runtime installation
 rights, or select a commercial or open-source license for the product.
+
+The [client distribution plan](PUBLIC-CLIENT-BOUNDARY.md) separates the proposed
+public SDK/CLI from private execution and describes the release sequence. It is
+a planned boundary, not an announcement of client or service availability.
