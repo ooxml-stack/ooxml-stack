@@ -34,13 +34,16 @@ separate product deliverables.
 | Understand the product and repository boundaries | [Architecture](docs/ARCHITECTURE.md) |
 | Assess a reading, editing or audit claim | [Capability claims](docs/CAPABILITY-CLAIMS.md) |
 | Understand file-preservation guarantees | [Compatibility contract](docs/COMPATIBILITY-CONTRACT.md) |
-| Understand the planned client/runtime split | [Client distribution](docs/PUBLIC-CLIENT-BOUNDARY.md) |
+| Connect an agent or Python application to an installed runtime | [OOXML Client](https://github.com/ooxml-stack/ooxml-client) |
+| Understand the client/runtime split | [Client distribution](docs/PUBLIC-CLIENT-BOUNDARY.md) |
 | Work on the shared tools | [Maintainer guide](docs/MAINTAINING.md) |
 | Find current specifications or historical records | [Documentation index](docs/README.md) |
 | Report a problem or propose a change | [Contributing](CONTRIBUTING.md) |
 
 ## Product boundaries
 
+- **Client** provides the MIT-licensed Python SDK, CLI and MCP launcher. It
+  connects to a separately installed local Engine and contains no Office execution.
 - **Operation Engine** owns document operations, structured results, validation
   and the CLI/MCP execution surface. Other interfaces reuse its contracts.
 - **Apps** provides the HTTP gateway, document revisions, candidate review and
