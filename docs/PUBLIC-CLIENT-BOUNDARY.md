@@ -1,16 +1,35 @@
 # Public clients and runtime distribution
 
-This document records the intended publication boundary and implementation
-sequence. It does not announce an available client package, hosted endpoint,
-commercial runtime release or new license. The Engine remains the owner of
-Office execution; clients adapt its supported external contracts.
+This document records the selected local distribution model and implementation
+sequence. The public [OOXML Client](https://github.com/ooxml-stack/ooxml-client)
+contains a Python SDK, CLI and MCP launcher. It does not include an Engine or
+announce a commercial runtime release. The Engine remains the owner of Office
+execution; clients adapt its supported external contracts.
+
+## Selected delivery model
+
+Publish the CLI and SDK as an independent open-source client. Supply the Engine
+as a separately installed runtime under the applicable commercial distribution
+terms. Office processing runs on the user's machine or server; a hosted OOXML
+service is not required. Agents and external providers retain their own data
+flows, which must be described separately.
+
+The client and runtime are separate packages and separate license scopes.
+Existing upstream rights and previously granted licenses remain intact. The
+commercial release requires a completed component and distribution review; this
+decision does not retroactively relicense existing code.
+
+A customer receives executable runtime code for local use. This model relies on
+a clear license and supported distribution, not a promise that the delivered
+program cannot be inspected or copied. Cloud-only execution is not the default
+product architecture.
 
 ## Publication boundary
 
 | Component | Intended scope |
 | --- | --- |
 | Stack | Public documentation, capability contracts and shared engineering tools |
-| One client repository | Open-source SDK, lightweight CLI, agent integrations, public schemas and examples |
+| `ooxml-client` | MIT-licensed Python SDK, lightweight CLI, MCP launcher and examples |
 | Engine | Private execution implementation, with separately defined distribution terms |
 | Apps | Private full application and service; reusable client examples belong with the clients |
 | Format libraries and Core | Keep the enhanced implementation private; review general fixes for upstream contribution |
@@ -28,11 +47,12 @@ changing repository visibility does not revoke previously granted rights.
 
 The current Engine CLI and Python SDK execute Engine code in-process. The
 Engine wheel includes that implementation and references private dependencies.
-They are not yet an independently installable public client.
+Publishing them would publish runtime implementation. The independent
+`ooxml-client` package instead uses the public MCP SDK to connect to a separately
+installed runtime; its package dependencies do not include private Office code.
 
-A public client should contain argument handling, transport, user credential
-handling, contract types, result presentation and narrowly scoped evidence
-checks. Office parsing, mutation, preservation and runtime validation remain in
+The public client contains argument handling, MCP transport, result presentation
+and examples. Office parsing, mutation, preservation and runtime validation remain in
 the Engine. Installing the client must not install private Engine source or
 require access to the organization's private Git repositories.
 
@@ -71,8 +91,8 @@ client code alone neither provides these controls nor proves them effective.
    artifact, its owner, dependencies and existing rights. Keep the license audit
    and operational history outside public source. This document records the
    boundary; the distribution and license review remains release work.
-2. **Establish a usable runtime connection.** Select and verify the first
-   supported hosted or local distribution path. Version the external requests,
+2. **Establish a usable runtime connection.** Verify the selected local
+   distribution path with client and Engine installed separately. Version the external requests,
    results, capability discovery and error behavior against a runtime release.
    A clean consumer environment must not need a private source checkout.
 3. **Ship one independent client repository.** Keep SDK, CLI and agent examples
@@ -82,7 +102,8 @@ client code alone neither provides these controls nor proves them effective.
 4. **Verify real user workflows.** Exercise supported DOCX, PPTX and XLSX cases
    through the client and real runtime. Record input/output identities, intended
    changes, errors and unavailable checks. Test credential boundaries and failure
-   paths. Public examples must have their own redistribution rights.
+   paths. Local execution must not require an OOXML cloud connection. Public
+   examples must have their own redistribution rights.
 5. **Publish the verified release and complete migration.** Provide installation,
    version compatibility, licenses, support boundaries and release evidence.
    Finish English documentation and the scoped history cleanup after protecting
