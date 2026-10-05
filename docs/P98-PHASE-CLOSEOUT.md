@@ -1,5 +1,9 @@
 # P98 Phase Closeout
 
+> Historical record: results and commands describe the recorded revision.
+> Follow [current artifact storage](ARTIFACT-STORAGE.md) for external evidence
+> and the [documentation index](README.md) for current entry points.
+
 Date: 2026-08-26
 Branch: `main` (P98 compatibility-contract evidence slice)
 

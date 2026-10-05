@@ -17,13 +17,14 @@ import tempfile
 import zipfile
 from datetime import UTC, datetime
 from pathlib import Path
+from artifact_paths import artifact_dir
 from typing import Any
 
 from p98_mutation_cases import cases
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = ROOT.parent
-EVIDENCE = ROOT / "release-evidence" / "p98"
+EVIDENCE = artifact_dir() / "p98"
 PROFILE = ROOT / "release-profiles" / "p98-rule-coverage-mutation.json"
 
 # Rule ids already proven by P97; P98 rows only add NEW uncovered rules.

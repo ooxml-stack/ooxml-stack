@@ -1,0 +1,91 @@
+{
+  "source_commit": "ad35db10d9820f1088746d0c2ba583b4c2724255",
+  "artifact_root_variable": "OOXML_ARTIFACT_ROOT",
+  "repository": "ooxml-stack",
+  "files": [
+    {
+      "original_path": "release-evidence/RETAINED-ARTIFACTS.txt",
+      "sha256": "a1ee51200e21f0e96a7b8c9cfd6bfc34f27d344d90905c7c5f67f3358ba95845",
+      "bytes": 556,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p33/docx-drawing-active-edit-gate.json",
+      "sha256": "4af92a1717704fcd0df672679114d2dca23dd42905f9eb45219f39aa61c819ba",
+      "bytes": 156847,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p33/manifest.json",
+      "sha256": "fe4b61ff5ae7d3cbcedd242940c9f6dbb092a18de5a3a226ec11a16a11f9c1c2",
+      "bytes": 369,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p97/manifest.json",
+      "sha256": "cd97b7191cfb24afcdd0a2eba78ee3e5d826e65a1c53cc9c54efceb386d2e6ea",
+      "bytes": 328,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p97/rule-coverage-mutation-gate-summary.json",
+      "sha256": "0fa85207ab4f936a6c6062484ba1e5ab1d1e5db784bf28d3d98fb15aa97d504e",
+      "bytes": 25417,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p98/coverage-budget-baseline.json",
+      "sha256": "b14771091314bad804cd00bcb468d25891eae6378d940adc0ea768de5808bbc2",
+      "bytes": 4827,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p98/manifest.json",
+      "sha256": "fdc2264eb1252fcfb5187ff8dcf1d61cf200fd02f4e5061a5126996348c76bf6",
+      "bytes": 328,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p98/office-verification/office-verification-results.json",
+      "sha256": "bf6a117357941e7159fc126f6308a6fac1a22f7d9845a8c7c7b0cad66c8140d9",
+      "bytes": 1639,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/p98/rule-coverage-mutation-gate-summary.json",
+      "sha256": "f2752901b06ffd1a8a1033c8e474bd661a0100843b216cb657ae6f0c9330646e",
+      "bytes": 22735,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/shared-kernel/chart-title-v1/native-office/manifest.json",
+      "sha256": "643015bd6cb853d88ee7782305937d0457e10acb38a287e1c30960767bd0675c",
+      "bytes": 775,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/shared-kernel/chart-title-v1/native-office/powerpoint-aggregate.json",
+      "sha256": "5f44c8299d1f7220924444db64846dbf95b26fc7238deac5eea80e61e0467a06",
+      "bytes": 1044,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/shared-kernel/chart-title-v1/native-office/powerpoint.jsonl",
+      "sha256": "013fe2e11c7a776e36f08fde5b2604dd357892998c986ed6e58b2d3b8351fb21",
+      "bytes": 1811,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/shared-kernel/chart-title-v1/native-office/word-aggregate.json",
+      "sha256": "70fedfc3396afb878f98ef9625b4503cbb0e4793ee95e093b0184d1ea150926c",
+      "bytes": 1038,
+      "mode": 420
+    },
+    {
+      "original_path": "release-evidence/shared-kernel/chart-title-v1/native-office/word.jsonl",
+      "sha256": "8c24ee2fabe8ac55d973264a241c980342293280857fe4a224bb4579bc538052",
+      "bytes": 832,
+      "mode": 420
+    }
+  ]
+}
