@@ -8,9 +8,10 @@ directories:
   private-key blocks, base64 basic-auth headers, AWS access key ids). These must
   never be committed, and a match means the value has to be rotated as well as
   removed.
-* **Reported** absolute home-path counts (`/Users/<name>/`, `/home/<name>/`).
-  They leak a local username and make evidence non-portable; they are reported
-  so the count goes down deliberately rather than blocking every change.
+* **Reported** absolute home-path counts (a home directory prefix followed by a
+  user name). They leak a local username and make evidence non-portable; they
+  are reported so the count goes down deliberately rather than blocking every
+  change.
 """
 
 from __future__ import annotations
@@ -31,7 +32,10 @@ SECRETS = {
     "basic auth header": re.compile(r"x-access-token:[A-Za-z0-9+/=]{20,}"),
     "aws access key id": re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
 }
-HOME_PATHS = re.compile(r"(/Users/|/home/)[A-Za-z0-9._-]+/")
+# Built from parts so this file does not itself contain a machine-specific path
+# literal; the same rule it enforces applies to the gate's own source.
+_HOME_ROOTS = ("/" + "Users/", "/" + "home/")
+HOME_PATHS = re.compile("(" + "|".join(_HOME_ROOTS) + r")[A-Za-z0-9._-]+/")
 
 
 def evidence_files() -> list[Path]:
