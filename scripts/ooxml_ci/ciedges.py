@@ -15,7 +15,13 @@ def _error(code: str, where: str, detail: str) -> dict[str, Any]:
 
 
 def _ci_edge(
-    repo: str, target: str, purpose: str, ref: str | None, relpath: str, line: int, url: str | None
+    repo: str,
+    target: str,
+    purpose: str,
+    ref: str | None,
+    relpath: str,
+    line: int,
+    url: str | None,
 ) -> dict[str, Any]:
     return {
         "from": repo,
@@ -41,7 +47,9 @@ def _undeclared(relpath: str, line: int, detail: str) -> dict[str, Any]:
     return _error("policy_node_mismatch", f"{relpath}:{line}", detail)
 
 
-def _uses_edges(facts: Facts, nodes: dict, owner: str, scan_global: bool, diagnostics: list) -> list:
+def _uses_edges(
+    facts: Facts, nodes: dict, owner: str, scan_global: bool, diagnostics: list
+) -> list:
     edges: list[dict[str, Any]] = []
     for relpath, entries in sorted(facts.workflow_uses.items()):
         repo = relpath.split("/", 1)[0]
@@ -80,7 +88,15 @@ def _clone_edges(facts: Facts, nodes: dict, owner: str, diagnostics: list) -> li
             target = urls.repo_name(entry["url"])
             if target in nodes:
                 edges.append(
-                    _ci_edge(repo, target, "workflow_clone", None, relpath, entry["line"], entry["url"])
+                    _ci_edge(
+                        repo,
+                        target,
+                        "workflow_clone",
+                        None,
+                        relpath,
+                        entry["line"],
+                        entry["url"],
+                    )
                 )
             elif urls.owner_of(entry["url"]) == owner:
                 diagnostics.append(
@@ -108,7 +124,9 @@ def workflow_edges(facts: Facts, diagnostics: list) -> list[dict[str, Any]]:
     )
 
 
-def _snapshot_edges(facts: Facts, source, owner: str, file_ref: str, diagnostics: list) -> list:
+def _snapshot_edges(
+    facts: Facts, source, owner: str, file_ref: str, diagnostics: list
+) -> list:
     nodes = node_index(facts.policy)
     edges = []
     for name, commit in (facts.environment.get("repositories") or {}).items():
@@ -151,7 +169,9 @@ def _pinned_commit(facts: Facts, field: str | None) -> Any:
     return pinned
 
 
-def _corpus_edge(facts: Facts, source, owner: str, file_ref: str, diagnostics: list) -> list:
+def _corpus_edge(
+    facts: Facts, source, owner: str, file_ref: str, diagnostics: list
+) -> list:
     nodes = node_index(facts.policy)
     target = "ooxml-native-corpus"
     if target not in nodes:

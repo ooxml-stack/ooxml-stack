@@ -46,7 +46,9 @@ def _no_skew(root, heads):
     [WORKFLOW_MATRIX_DUPLICATE_KEY, WORKFLOW_MATRIX_CUSTOM_TAG],
     ids=["repeated-key", "custom-tag"],
 )
-def test_an_unreadable_matrix_is_written_then_fails_check(tmp_path, capsys, monkeypatch, workflow):
+def test_an_unreadable_matrix_is_written_then_fails_check(
+    tmp_path, capsys, monkeypatch, workflow
+):
     """``--write`` keeps the diagnostic; both ``--check`` modes must then fail."""
     root = build_workspace(tmp_path)
     resolvable_for(monkeypatch, seal(root))
@@ -67,7 +69,9 @@ def test_an_unreadable_matrix_is_written_then_fails_check(tmp_path, capsys, monk
     [WORKFLOW_CLONE_SINGLE, WORKFLOW_CLONE_LITERAL, WORKFLOW_CLONE_FOLDED],
     ids=["single-line", "literal-block", "folded-block"],
 )
-def test_a_clone_only_workflow_passes_check_strict(tmp_path, capsys, monkeypatch, workflow):
+def test_a_clone_only_workflow_passes_check_strict(
+    tmp_path, capsys, monkeypatch, workflow
+):
     """A no-drift fixture must pass ``--check --strict`` however the clone is written."""
     root = build_workspace(tmp_path)
     heads = seal(root)
@@ -85,7 +89,9 @@ def test_a_clone_only_workflow_passes_check_strict(tmp_path, capsys, monkeypatch
     [WORKFLOW_CLONE_QUOTED_MIXED, WORKFLOW_CLONE_MULTILINE_QUOTED_MIXED],
     ids=["quoted-semicolon", "multiline-quote"],
 )
-def test_a_quoted_clone_does_not_disturb_a_no_drift_check(tmp_path, capsys, monkeypatch, workflow):
+def test_a_quoted_clone_does_not_disturb_a_no_drift_check(
+    tmp_path, capsys, monkeypatch, workflow
+):
     """A quoted clone must leave ``--check --strict`` clean and add no fake edge."""
     root = build_workspace(tmp_path)
     heads = seal(root)
@@ -96,8 +102,12 @@ def test_a_quoted_clone_does_not_disturb_a_no_drift_check(tmp_path, capsys, monk
     capsys.readouterr()
     plan = json.loads((root / PLAN_RELPATH).read_text(encoding="utf-8"))
     clones = [e for e in plan["edges"] if e.get("purpose") == "workflow_clone"]
-    assert [(e["from"], e["to"]) for e in clones] == [("python-docx", "ooxml-native-corpus")]
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert [(e["from"], e["to"]) for e in clones] == [
+        ("python-docx", "ooxml-native-corpus")
+    ]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
     assert cli.main(["--check", "--strict", "--root", str(root)]) == 0
     assert "result        : ok" in capsys.readouterr().out
 
@@ -124,7 +134,9 @@ REMOTE_CLONE_FORMS = [
 
 
 @pytest.mark.parametrize(
-    "url", [url for _, url in REMOTE_CLONE_FORMS], ids=[n for n, _ in REMOTE_CLONE_FORMS]
+    "url",
+    [url for _, url in REMOTE_CLONE_FORMS],
+    ids=[n for n, _ in REMOTE_CLONE_FORMS],
 )
 def test_every_remote_form_becomes_a_real_edge(tmp_path, capsys, monkeypatch, url):
     """A resolvable remote URL must produce the edge, never a silent empty result."""
@@ -145,7 +157,11 @@ def test_every_remote_form_becomes_a_real_edge(tmp_path, capsys, monkeypatch, ur
         ("python-docx", "ooxml-native-corpus", "ci", url)
     ]
     assert "python-docx" in plan["graphs"]["impact"]["ooxml-native-corpus"]["reaches"]
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
-    assert not [item for item in plan["diagnostics"] if item["code"] == "unsupported_workflow"]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "unsupported_workflow"
+    ]
     assert cli.main(["--check", "--strict", "--root", str(root)]) == 0
     assert "result        : ok" in capsys.readouterr().out

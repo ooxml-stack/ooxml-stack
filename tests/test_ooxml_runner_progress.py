@@ -31,10 +31,10 @@ ROOT = Path(__file__).resolve().parents[1]
 TORN = b'{"event":"gate_failed"'
 FAILING_ADAPTER = ADAPTER_SOURCE.replace(
     'return {{name: (lambda name=name: {{"stage": name}}) for name in STAGES}}',
-    'return {{name: (lambda: 1 / 0) for name in STAGES}}',
+    "return {{name: (lambda: 1 / 0) for name in STAGES}}",
 )
 
-CONTAINER = '''
+CONTAINER = """
 import os, pathlib, sys
 if sys.argv[1] == "info":
     print(1)
@@ -66,14 +66,24 @@ raise SystemExit(entry.main(["--repository", "ooxml-operation-engine",
                              "--adapter", "scripts.ci.adapter",
                              "--root", str(pathlib.Path(mounts["/input"]) / "ooxml-operation-engine"),
                              "--reports", mounts["/reports"]]))
-'''
+"""
 
 
 def _failed_report(reports, error="ZeroDivisionError: division by zero"):
-    payload = report_module.new_report(repository=REPO, commit="0" * 40, runner={}, plan={},
-                                       binding={}, image="fixture", inputs={}, stages=["one"])
+    payload = report_module.new_report(
+        repository=REPO,
+        commit="0" * 40,
+        runner={},
+        plan={},
+        binding={},
+        image="fixture",
+        inputs={},
+        stages=["one"],
+    )
     payload["stages"][0].update(status="fail", error=error)
-    payload.update(status="fail", exit_code=1, finished_at=report_module.utc_now(), error=error)
+    payload.update(
+        status="fail", exit_code=1, finished_at=report_module.utc_now(), error=error
+    )
     report_module.save(reports, payload)
     return payload
 
@@ -96,7 +106,9 @@ def _torn_stream(reports, payload, *, lead=()):
 
 def _recover(reports, payload, times=1):
     for _ in range(times):
-        container.finalize_host_failure(reports, payload, container.ContainerError("exit 1", 1))
+        container.finalize_host_failure(
+            reports, payload, container.ContainerError("exit 1", 1)
+        )
 
 
 def _only_report(output):
@@ -105,6 +117,7 @@ def _only_report(output):
 
 
 # --- the recovery contract ----------------------------------------------------
+
 
 def test_a_saved_failure_without_its_terminal_event_gets_one(tmp_path):
     reports = tmp_path / "reports"
@@ -124,7 +137,10 @@ def test_a_torn_terminal_event_is_quarantined_before_the_recovery_event(tmp_path
     _recover(reports, payload)
 
     # Strict: no line is skipped, and the terminal event is its own record.
-    assert [event["event"] for event in _strict_events(reports)] == ["gate_started", "gate_failed"]
+    assert [event["event"] for event in _strict_events(reports)] == [
+        "gate_started",
+        "gate_failed",
+    ]
     assert (reports / report_module.TORN_NAME).read_bytes() == TORN + b"\n"
     assert report_module.load(reports)["error"] == "ZeroDivisionError: division by zero"
 
@@ -135,7 +151,10 @@ def test_repeated_recovery_keeps_exactly_one_terminal_event(tmp_path):
 
     _recover(reports, payload, times=3)
 
-    assert [event["event"] for event in _strict_events(reports)] == ["gate_started", "gate_failed"]
+    assert [event["event"] for event in _strict_events(reports)] == [
+        "gate_started",
+        "gate_failed",
+    ]
     assert (reports / report_module.TORN_NAME).read_bytes() == TORN + b"\n"
 
 
@@ -143,8 +162,13 @@ def test_a_complete_event_without_a_trailing_newline_is_not_quarantined(tmp_path
     """A whole record that lost only its newline is already durable."""
     reports = tmp_path / "reports"
     payload = _failed_report(reports)
-    complete = json.dumps({"schema_version": 1, "event": "gate_failed",
-                           "error": "ZeroDivisionError: division by zero"}).encode()
+    complete = json.dumps(
+        {
+            "schema_version": 1,
+            "event": "gate_failed",
+            "error": "ZeroDivisionError: division by zero",
+        }
+    ).encode()
     (reports / report_module.PROGRESS_NAME).write_bytes(complete)
 
     _recover(reports, payload, times=2)
@@ -170,6 +194,7 @@ def test_a_failed_sidecar_write_leaves_the_stream_untouched(tmp_path):
 
 # --- the same guarantee through the real entry --------------------------------
 
+
 def _transport(tmp_path):
     directory = tmp_path / "bin"
     directory.mkdir()
@@ -184,20 +209,48 @@ def test_a_partial_terminal_write_through_the_real_entry_is_recovered(tmp_path):
     repo = make_repo(tmp_path, adapter=FAILING_ADAPTER)
     plan = make_plan(tmp_path, repo)
     output = tmp_path / "out"
-    env = {**os.environ, "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
-           "PYTHONPATH": str(ROOT), "OOXML_STACK_TOKEN": "fixture-token"}
-    argv = [sys.executable, "-m", "ooxml_runner", "run", "--root", str(tmp_path), "--repo", REPO,
-            "--commit", "HEAD", "--runner-commit", RUNNER_COMMIT, "--plan", str(plan),
-            "--output", str(output)]
+    env = {
+        **os.environ,
+        "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
+        "PYTHONPATH": str(ROOT),
+        "OOXML_STACK_TOKEN": "fixture-token",
+    }
+    argv = [
+        sys.executable,
+        "-m",
+        "ooxml_runner",
+        "run",
+        "--root",
+        str(tmp_path),
+        "--repo",
+        REPO,
+        "--commit",
+        "HEAD",
+        "--runner-commit",
+        RUNNER_COMMIT,
+        "--plan",
+        str(plan),
+        "--output",
+        str(output),
+    ]
 
-    process = subprocess.run(argv, cwd=ROOT, env=env, capture_output=True, text=True,
-                   timeout=180, check=False)
+    process = subprocess.run(
+        argv,
+        cwd=ROOT,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=180,
+        check=False,
+    )
 
     assert process.returncode != 0
     payload, reports = _only_report(output)
     assert payload["status"] == "fail"
     assert "ZeroDivisionError" in payload["error"]
-    events = [event["event"] for event in _strict_events(reports)]  # strict, no skipping
+    events = [
+        event["event"] for event in _strict_events(reports)
+    ]  # strict, no skipping
     assert events.count("gate_failed") == 1
     assert (reports / report_module.TORN_NAME).read_bytes() == TORN + b"\n"
 

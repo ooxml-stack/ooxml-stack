@@ -34,11 +34,17 @@ def _unverifiable(where: str, detail: str, required: bool = True) -> dict[str, A
     }
 
 
-def _remote_for(edge: dict[str, Any], target: dict[str, Any], diagnostics: list) -> str | None:
+def _remote_for(
+    edge: dict[str, Any], target: dict[str, Any], diagnostics: list
+) -> str | None:
     """Query the declared URL, and report when it is not the checkout's origin."""
     declared_url = edge["declared"].get("url")
     origin = target.get("remote_url")
-    if declared_url and origin and normalize_repo(declared_url) != normalize_repo(origin):
+    if (
+        declared_url
+        and origin
+        and normalize_repo(declared_url) != normalize_repo(origin)
+    ):
         diagnostics.append(
             _error(
                 "policy_repo_mismatch",
@@ -66,11 +72,18 @@ def _classify(
     listing = gitfacts.remote_refs(remote_url, root, timeout, cache)
     directory = checkout_dir(root, edge["to"])
     return gitfacts.classify_remote_ref(
-        raw, edge["declared"].get("ref_declared_kind", "unknown"), listing, directory, timeout, allow_fetch
+        raw,
+        edge["declared"].get("ref_declared_kind", "unknown"),
+        listing,
+        directory,
+        timeout,
+        allow_fetch,
     )
 
 
-def _ref_diagnostics(edge: dict[str, Any], raw: str, resolved: dict, remote_url: str | None) -> list:
+def _ref_diagnostics(
+    edge: dict[str, Any], raw: str, resolved: dict, remote_url: str | None
+) -> list:
     where = f"{edge['from']} -> {edge['to']}"
     kind = resolved.get("kind")
     if kind == "unverifiable":
@@ -117,7 +130,11 @@ def _ref_entry(
 
 
 def _edge_refs(
-    root: pathlib.Path, policy: dict[str, Any], plan: dict[str, Any], facts: dict[str, Any], offline: bool
+    root: pathlib.Path,
+    policy: dict[str, Any],
+    plan: dict[str, Any],
+    facts: dict[str, Any],
+    offline: bool,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     timeout = int((policy.get("scan") or {}).get("ref_timeout_seconds", 25))
     allow_fetch = bool((policy.get("scan") or {}).get("allow_fetch_sha"))
@@ -133,7 +150,9 @@ def _edge_refs(
             continue  # CI refs are judged by _ci_refs
         target = facts["checkouts"].get(edge["to"], {})
         remote_url = _remote_for(edge, target, diagnostics)
-        resolved = _classify(edge, raw, remote_url, root, offline, timeout, cache, allow_fetch)
+        resolved = _classify(
+            edge, raw, remote_url, root, offline, timeout, cache, allow_fetch
+        )
         entries.append(_ref_entry(edge, raw, remote_url, resolved, target))
         diagnostics.extend(_ref_diagnostics(edge, raw, resolved, remote_url))
         if declared.get("ref_declared_kind") != "release_tag":
@@ -142,7 +161,11 @@ def _edge_refs(
 
 
 def _ci_refs(
-    root: pathlib.Path, policy: dict[str, Any], plan: dict[str, Any], facts: dict[str, Any], offline: bool
+    root: pathlib.Path,
+    policy: dict[str, Any],
+    plan: dict[str, Any],
+    facts: dict[str, Any],
+    offline: bool,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Workflow ``uses:`` refs get the same query, classification and recording as pins."""
     config = policy.get("scan") or {}
@@ -160,7 +183,9 @@ def _ci_refs(
         site = (edge.get("sites") or [{}])[0]
         where = f"{site.get('file', '?')}:{site.get('line', '?')}"
         if offline or not remote_url:
-            why = "offline" if offline else "no remote configured for the declared target"
+            why = (
+                "offline" if offline else "no remote configured for the declared target"
+            )
             resolved: dict[str, Any] = {"kind": "unverifiable", "reason": why}
         else:
             listing = gitfacts.remote_refs(remote_url, root, timeout, cache)
@@ -174,9 +199,13 @@ def _ci_refs(
             )
         entries.append(_ref_entry(edge, raw, remote_url, resolved, target))
         if resolved["kind"] == "branch":
-            diagnostics.append(_error("floating_ci_ref", where, f"uses {edge['to']}@{raw}"))
+            diagnostics.append(
+                _error("floating_ci_ref", where, f"uses {edge['to']}@{raw}")
+            )
         elif resolved["kind"] == "missing":
-            diagnostics.append(_error("missing_ref", where, f"{raw} not found on {remote_url}"))
+            diagnostics.append(
+                _error("missing_ref", where, f"{raw} not found on {remote_url}")
+            )
         elif resolved["kind"] == "unverifiable":
             diagnostics.append(_unverifiable(where, resolved.get("reason", "unknown")))
     return entries, diagnostics

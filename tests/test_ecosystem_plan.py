@@ -27,7 +27,9 @@ from scripts.ooxml_ci import inputs
 def test_workflow_uses_creates_a_ci_edge(tmp_path):
     plan = build(build_workspace(tmp_path))
     edge = next(
-        e for e in plan["edges"] if e["from"] == "python-docx" and e.get("purpose") == "workflow_uses"
+        e
+        for e in plan["edges"]
+        if e["from"] == "python-docx" and e.get("purpose") == "workflow_uses"
     )
     assert edge["to"] == "ooxml-stack"
     assert edge["kind"] == "ci"
@@ -50,13 +52,17 @@ def test_third_party_actions_are_not_policy_nodes(tmp_path):
     root = build_workspace(tmp_path)
     write(root / "python-docx/.github/workflows/ci.yml", WORKFLOW_DOCX_THIRD_PARTY)
     plan = build(root)
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
 
 
 def test_workflow_clone_creates_a_ci_edge(tmp_path):
     plan = build(build_workspace(tmp_path))
     edge = next(
-        e for e in plan["edges"] if e["from"] == "python-docx" and e.get("purpose") == "workflow_clone"
+        e
+        for e in plan["edges"]
+        if e["from"] == "python-docx" and e.get("purpose") == "workflow_clone"
     )
     assert edge["to"] == "ooxml-native-corpus"
 
@@ -77,7 +83,9 @@ def test_a_folded_clone_creates_the_ci_edge(tmp_path):
         "ooxml-native-corpus",
         "ci",
     )
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
 
 
 def test_the_three_clone_writings_produce_the_same_edge_semantics(tmp_path):
@@ -109,7 +117,9 @@ def test_a_mentioned_clone_produces_no_edge_and_no_mismatch(tmp_path):
     write(root / "python-docx/.github/workflows/ci.yml", WORKFLOW_MENTIONS_CLONE)
     plan, edges = _clone_edges(root)
     assert edges == []
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
 
 
 @pytest.mark.parametrize(
@@ -125,7 +135,9 @@ def test_a_quoted_clone_is_neither_an_edge_nor_a_mismatch(tmp_path, workflow):
     assert [(e["from"], e["to"], e["kind"]) for e in edges] == [
         ("python-docx", "ooxml-native-corpus", "ci")
     ]
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
     reaches = set(plan["graphs"]["impact"]["ooxml-native-corpus"]["reaches"])
     assert "python-docx" in reaches
 
@@ -139,7 +151,9 @@ def test_a_quoted_clone_of_a_declared_node_adds_no_edge(tmp_path):
         ("python-docx", "ooxml-native-corpus", "ci")
     ]
     assert not [e for e in edges if e["to"] == "ooxml-core"]
-    assert not [item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"]
+    assert not [
+        item for item in plan["diagnostics"] if item["code"] == "policy_node_mismatch"
+    ]
 
 
 def test_impact_graph_reaches_workflow_consumers(tmp_path):
@@ -197,10 +211,14 @@ def test_full_binding_records_source_lines(tmp_path):
 
 def test_full_binding_reports_a_missing_job(tmp_path):
     policy = make_policy(
-        full_bindings={"ooxml-core": {"workflow": ".github/workflows/full.yml", "jobs": ["ghost"]}}
+        full_bindings={
+            "ooxml-core": {"workflow": ".github/workflows/full.yml", "jobs": ["ghost"]}
+        }
     )
     plan = build(build_workspace(tmp_path, policy))
-    assert any(item["code"] == "command_source_mismatch" for item in plan["diagnostics"])
+    assert any(
+        item["code"] == "command_source_mismatch" for item in plan["diagnostics"]
+    )
 
 
 def test_an_unsupported_workflow_structure_is_a_structural_error(tmp_path):
@@ -214,10 +232,14 @@ def test_an_unsupported_workflow_structure_is_a_structural_error(tmp_path):
 
 def test_full_binding_reports_a_missing_workflow(tmp_path):
     policy = make_policy(
-        full_bindings={"ooxml-core": {"workflow": ".github/workflows/absent.yml", "jobs": ["full"]}}
+        full_bindings={
+            "ooxml-core": {"workflow": ".github/workflows/absent.yml", "jobs": ["full"]}
+        }
     )
     plan = build(build_workspace(tmp_path, policy))
-    assert any(item["code"] == "command_source_mismatch" for item in plan["diagnostics"])
+    assert any(
+        item["code"] == "command_source_mismatch" for item in plan["diagnostics"]
+    )
 
 
 # ----------------------------------------------------------------------- plan
@@ -231,12 +253,22 @@ def test_plan_is_byte_identical_across_workspace_roots(tmp_path):
 
 def test_plan_excludes_git_and_local_state(tmp_path):
     text = inputs.canonical_json(build(build_workspace(tmp_path)))
-    for forbidden in ('"common_dir"', '"scanned_at"', '"worktrees"', '"remote":', '"head":'):
+    for forbidden in (
+        '"common_dir"',
+        '"scanned_at"',
+        '"worktrees"',
+        '"remote":',
+        '"head":',
+    ):
         assert forbidden not in text
 
 
 def test_plan_records_policy_summary(tmp_path):
     plan = build(build_workspace(tmp_path))
     node = next(item for item in plan["nodes"] if item["key"] == "python-docx")
-    assert (node["layer"], node["cadence"], node["visibility"]) == ("app", "per-commit", "public")
+    assert (node["layer"], node["cadence"], node["visibility"]) == (
+        "app",
+        "per-commit",
+        "public",
+    )
     assert node["version"] == "1.2.0"

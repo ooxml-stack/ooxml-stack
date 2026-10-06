@@ -28,4 +28,6 @@ def find_root(start: pathlib.Path) -> pathlib.Path:
     for candidate in [start, *start.parents]:
         if (candidate / HOST_KEY).is_dir() and (candidate / CORE_KEY).is_dir():
             return candidate
-    raise InputError(f"no workspace root above {start} (need {HOST_KEY}/ and {CORE_KEY}/)")
+    raise InputError(
+        f"no workspace root above {start} (need {HOST_KEY}/ and {CORE_KEY}/)"
+    )

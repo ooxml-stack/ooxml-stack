@@ -69,7 +69,9 @@ def mapping(node: Node | None, where: str) -> list[tuple[str, Node, Node]]:
     seen: set[str] = set()
     for key, value in node.value:
         if key.value == "<<":
-            raise NodeError(f"{where} uses a YAML merge key ('<<'), which Actions does not support")
+            raise NodeError(
+                f"{where} uses a YAML merge key ('<<'), which Actions does not support"
+            )
         if key.value in seen:
             raise NodeError(f"{where} repeats the key {key.value!r}")
         seen.add(key.value)
@@ -113,5 +115,11 @@ def _plain(node: Node | None, where: str, seen: frozenset[int]) -> Any:
         raise NodeError(f"{where} contains a recursive alias")
     nested = seen | {id(node)}
     if isinstance(node, SequenceNode):
-        return [_plain(item, f"{where}[{index}]", nested) for index, item in enumerate(node.value)]
-    return {name: _plain(value, f"{where}.{name}", nested) for name, value, _ in mapping(node, where)}
+        return [
+            _plain(item, f"{where}[{index}]", nested)
+            for index, item in enumerate(node.value)
+        ]
+    return {
+        name: _plain(value, f"{where}.{name}", nested)
+        for name, value, _ in mapping(node, where)
+    }

@@ -27,7 +27,11 @@ def _text(node, where: str, errors: list) -> str | None:
         return None
     value = yaml_nodes.scalar(node)
     if value is None:
-        errors.append(_error(where, f"expected a plain YAML scalar, got {yaml_nodes.describe(node)}"))
+        errors.append(
+            _error(
+                where, f"expected a plain YAML scalar, got {yaml_nodes.describe(node)}"
+            )
+        )
     return value
 
 
@@ -40,7 +44,12 @@ def _env(node, where: str, errors: list) -> dict[str, str]:
     out: dict[str, str] = {}
     for name, value, _ in items:
         if not yaml_nodes.is_standard_scalar(value):
-            errors.append(_error(where, f"env {name!r} is not a string value; got {yaml_nodes.describe(value)}"))
+            errors.append(
+                _error(
+                    where,
+                    f"env {name!r} is not a string value; got {yaml_nodes.describe(value)}",
+                )
+            )
             continue
         out[name] = value.value
     return out
@@ -79,7 +88,9 @@ def _step(raw: dict[str, Any], where: str, line: int, errors: list) -> dict[str,
     }
 
 
-def _read_steps(node, where: str, errors: list) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+def _read_steps(
+    node, where: str, errors: list
+) -> list[tuple[dict[str, Any], dict[str, Any]]]:
     """Parsed steps paired with their raw mappings, so callers can reach ``uses``/``run``."""
     try:
         items = yaml_nodes.sequence(node, f"{where} steps")
@@ -103,7 +114,14 @@ def _record_uses(node, where: str, uses: list, errors: list) -> None:
     if not raw or "/" not in raw:
         return
     name, _, ref = raw.partition("@")
-    uses.append({"uses": raw, "name": name, "ref": ref or None, "line": yaml_nodes.line_of(node)})
+    uses.append(
+        {
+            "uses": raw,
+            "name": name,
+            "ref": ref or None,
+            "line": yaml_nodes.line_of(node),
+        }
+    )
 
 
 def _clone_refs(node, where: str, errors: list) -> list[dict[str, Any]]:
@@ -124,7 +142,11 @@ def _clone_refs(node, where: str, errors: list) -> list[dict[str, Any]]:
     for problem in shell.problems:
         errors.append(_error(run_where, problem))
     if shell.unreadable:
-        errors.append(_error(run_where, "the run body could not be read as shell without guessing"))
+        errors.append(
+            _error(
+                run_where, "the run body could not be read as shell without guessing"
+            )
+        )
     out: list[dict[str, Any]] = []
     for offset, tokens in shell.commands:
         target = bashwords.clone_target(tokens)
@@ -145,7 +167,9 @@ def _clone_refs(node, where: str, errors: list) -> list[dict[str, Any]]:
     return out
 
 
-def _job(raw: dict[str, Any], where: str, line: int, steps: list, errors: list) -> dict[str, Any]:
+def _job(
+    raw: dict[str, Any], where: str, line: int, steps: list, errors: list
+) -> dict[str, Any]:
     return {
         "line": line,
         "name": _text(raw.get("name"), where, errors),

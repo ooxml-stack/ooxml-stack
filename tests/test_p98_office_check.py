@@ -8,7 +8,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import run_p98_office_check as office
 
 
-def test_office_check_blocks_without_automation_permission(tmp_path, monkeypatch) -> None:
+def test_office_check_blocks_without_automation_permission(
+    tmp_path, monkeypatch
+) -> None:
     # The host lacks macOS Automation consent, so check_open must record a
     # blocker instead of a fake pass.
     p = tmp_path / "sample.docx"

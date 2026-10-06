@@ -43,7 +43,8 @@ def _cycle_diagnostic(order: dict[str, Any]) -> dict[str, Any]:
         "code": "release_order_cycle",
         "level": "error",
         "where": "partial release order",
-        "detail": "cycle in runtime/codegen order graph: " + " -> ".join(order["cycle"]),
+        "detail": "cycle in runtime/codegen order graph: "
+        + " -> ".join(order["cycle"]),
     }
 
 
@@ -52,7 +53,10 @@ EXCLUDED_FROM_PLAN = [
     {"item": "worktrees, common-dir, checkout paths", "where": "scan"},
     {"item": "resolved ref kinds and current commit of floating refs", "where": "scan"},
     {"item": "remote reachability, timings, clock", "where": "scan"},
-    {"item": "expected commits recorded by locks/environment (file facts)", "where": "plan"},
+    {
+        "item": "expected commits recorded by locks/environment (file facts)",
+        "where": "plan",
+    },
 ]
 
 
@@ -68,7 +72,9 @@ def build_plan(facts: Facts) -> dict[str, Any]:
     if order["cycle"]:
         diagnostics.append(_cycle_diagnostic(order))
 
-    used = sorted({edge["to"] for edge in edge_list} | {edge["from"] for edge in edge_list})
+    used = sorted(
+        {edge["to"] for edge in edge_list} | {edge["from"] for edge in edge_list}
+    )
     declared = sorted(node["key"] for node in facts.policy["nodes"])
     impact_roots = sorted(set(declared) | set(used))
     return {
@@ -89,7 +95,9 @@ def build_plan(facts: Facts) -> dict[str, Any]:
         "full": bindings,
         "version_groups": groups,
         "graphs": {
-            "impact": {root: graphs.impact_graph(edge_list, root) for root in impact_roots},
+            "impact": {
+                root: graphs.impact_graph(edge_list, root) for root in impact_roots
+            },
             "partial_release_order": order,
         },
         "diagnostics": sorted(

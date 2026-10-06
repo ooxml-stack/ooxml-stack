@@ -239,7 +239,7 @@ jobs:
 """
 
 # A newline inside quotes does not end the command, so the example stays echo text.
-WORKFLOW_CLONE_MULTILINE_QUOTED_MIXED = '''\
+WORKFLOW_CLONE_MULTILINE_QUOTED_MIXED = """\
 name: ci
 on: [push]
 jobs:
@@ -250,7 +250,7 @@ jobs:
           git clone https://github.com/ooxml-stack/never-existed.git
           "
           git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../corpus
-'''
+"""
 
 # The fake target is a real policy node, so only the grammar keeps it out.
 WORKFLOW_CLONE_QUOTED_DECLARED = """\

@@ -25,7 +25,9 @@ SCAN_RELPATH = "ooxml-stack/ci/reports/scan.json"
 def bare_python(tmp_path_factory) -> pathlib.Path:
     """An interpreter that really cannot import ``yaml`` or ``packaging``."""
     venv = tmp_path_factory.mktemp("bare") / "venv"
-    subprocess.run([sys.executable, "-m", "venv", str(venv)], check=True, capture_output=True)
+    subprocess.run(
+        [sys.executable, "-m", "venv", str(venv)], check=True, capture_output=True
+    )
     python = venv / "bin/python"
     probe = subprocess.run(
         [
@@ -37,7 +39,9 @@ def bare_python(tmp_path_factory) -> pathlib.Path:
         capture_output=True,
         text=True,
     )
-    assert probe.stdout.split() == ["None", "None"], f"interpreter is not clean: {probe.stdout}"
+    assert probe.stdout.split() == ["None", "None"], (
+        f"interpreter is not clean: {probe.stdout}"
+    )
     return python
 
 
@@ -103,7 +107,9 @@ def test_the_precheck_reads_only_the_declaration(bare_python, tmp_path):
     """A malformed declaration is reported before any ecosystem input is touched."""
     root = build_workspace(tmp_path)
     write(root / "ooxml-stack/ci/ecosystem-inventory-requirements.txt", "# empty\n")
-    (root / "ooxml-core/pyproject.toml").write_text("this is not toml {{{\n", encoding="utf-8")
+    (root / "ooxml-core/pyproject.toml").write_text(
+        "this is not toml {{{\n", encoding="utf-8"
+    )
     result = _run(bare_python, "--write", "--root", str(root))
     assert result.returncode == 2
     assert "dependency error" in result.stderr
