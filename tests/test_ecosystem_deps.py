@@ -63,7 +63,9 @@ def test_changing_the_declaration_changes_the_digest(tmp_path):
     first = build_workspace(tmp_path / "one")
     second = build_workspace(tmp_path / "two")
     before = build(first)["inputs_digest"]
-    write(second / "ooxml-stack/ci/ecosystem-inventory-requirements.txt", WRONG_PACKAGING)
+    write(
+        second / "ooxml-stack/ci/ecosystem-inventory-requirements.txt", WRONG_PACKAGING
+    )
     assert build(second)["inputs_digest"] != before
 
 
@@ -77,7 +79,9 @@ def test_cli_refuses_to_run_without_the_pinned_environment(tmp_path, capsys):
     assert not (root / "ooxml-stack/ci/ecosystem-plan.json").exists()
 
 
-def test_cli_does_not_overwrite_an_existing_plan_when_dependencies_are_wrong(tmp_path, capsys):
+def test_cli_does_not_overwrite_an_existing_plan_when_dependencies_are_wrong(
+    tmp_path, capsys
+):
     root = build_workspace(tmp_path)
     plan = root / "ooxml-stack/ci/ecosystem-plan.json"
     write(plan, '{"sentinel": true}\n')
@@ -115,7 +119,9 @@ def test_the_scan_is_not_byte_stable_but_the_plan_is(tmp_path, monkeypatch):
     second = build(root)
     assert inputs.canonical_json(first) == inputs.canonical_json(second)
     report = scan_mod.scan(root, policy, first, offline=False)
-    assert json.dumps(report["environment"], sort_keys=True) != inputs.canonical_json(first)
+    assert json.dumps(report["environment"], sort_keys=True) != inputs.canonical_json(
+        first
+    )
 
 
 # ------------------------------------------------- declaration completeness
@@ -136,7 +142,9 @@ INCOMPLETE_DECLARATIONS = [
 ]
 
 
-@pytest.mark.parametrize("text", INCOMPLETE_DECLARATIONS, ids=range(len(INCOMPLETE_DECLARATIONS)))
+@pytest.mark.parametrize(
+    "text", INCOMPLETE_DECLARATIONS, ids=range(len(INCOMPLETE_DECLARATIONS))
+)
 def test_an_incomplete_declaration_is_never_read_as_no_problems(tmp_path, text):
     root = build_workspace(tmp_path)
     write(root / "ooxml-stack/ci/ecosystem-inventory-requirements.txt", text)
@@ -147,7 +155,9 @@ def test_an_incomplete_declaration_is_never_read_as_no_problems(tmp_path, text):
 
 def test_a_missing_required_package_names_what_is_missing():
     with pytest.raises(deps.DependencyError, match="incomplete.*packaging"):
-        deps.parse_requirements("PyYAML==6.0.3\ntree-sitter==0.26.0\ntree-sitter-bash==0.25.1\n")
+        deps.parse_requirements(
+            "PyYAML==6.0.3\ntree-sitter==0.26.0\ntree-sitter-bash==0.25.1\n"
+        )
 
 
 def test_an_alias_duplicate_is_rejected_not_merged():
@@ -197,7 +207,9 @@ def _artifacts(root):
     }
 
 
-@pytest.mark.parametrize("text", ["", "PyYAML==6.0.3\n"], ids=["empty", "missing-packaging"])
+@pytest.mark.parametrize(
+    "text", ["", "PyYAML==6.0.3\n"], ids=["empty", "missing-packaging"]
+)
 def test_cli_blocks_an_incomplete_declaration_and_leaves_both_artifacts_alone(
     committed, capsys, text
 ):

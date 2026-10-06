@@ -32,8 +32,12 @@ def make_runner_checkout(tmp_path, name="runner"):
     (root / "docs").mkdir()
     (root / "docs/notes.md").write_text("unrelated documentation\n")
     snapshot.git(root, "init", "--quiet")
-    for key, value in (("user.email", "ci@example.invalid"), ("user.name", "CI fixture"),
-                       ("commit.gpgsign", "false"), ("core.hooksPath", "/dev/null")):
+    for key, value in (
+        ("user.email", "ci@example.invalid"),
+        ("user.name", "CI fixture"),
+        ("commit.gpgsign", "false"),
+        ("core.hooksPath", "/dev/null"),
+    ):
         snapshot.git(root, "config", key, value)
     snapshot.git(root, "add", ".")
     snapshot.git(root, "commit", "--quiet", "-m", "runner fixture")
@@ -50,7 +54,9 @@ def test_a_clean_checkout_matches_the_commit_it_is_pinned_to(tmp_path):
     trusted = identity.require_expected(observed, observed["commit"])
     assert trusted["commit"] == observed["commit"]
     assert trusted["source_sha256"] == observed["source_sha256"]
-    assert trusted["source_sha256"] == identity.source_sha256_at(root, observed["commit"])
+    assert trusted["source_sha256"] == identity.source_sha256_at(
+        root, observed["commit"]
+    )
 
 
 def test_editing_the_running_source_is_refused_even_though_head_is_unchanged(tmp_path):

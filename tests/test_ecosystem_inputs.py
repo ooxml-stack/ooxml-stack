@@ -64,7 +64,9 @@ def test_missing_snapshot_file_does_not_silently_drop_edges(tmp_path):
     root = build_workspace(tmp_path)
     (root / "ooxml-core/ci/environment.json").unlink()
     plan = build(root)
-    assert not [edge for edge in plan["edges"] if edge.get("purpose") == "engine_ci_snapshot"]
+    assert not [
+        edge for edge in plan["edges"] if edge.get("purpose") == "engine_ci_snapshot"
+    ]
     assert any(item["code"] == "missing_input" for item in plan["diagnostics"])
 
 
@@ -122,7 +124,9 @@ def test_project_version_reads_static_version(tmp_path):
 
 def test_project_version_follows_dynamic_attr():
     pyproject = b'[project]\nname = "x"\n[tool.setuptools.dynamic]\nversion = {attr = "xlsx.__version__"}\n'
-    assert parsers.parse_project_version(pyproject, "python-xlsx", b'__version__ = "0.3.51"\n') == (
+    assert parsers.parse_project_version(
+        pyproject, "python-xlsx", b'__version__ = "0.3.51"\n'
+    ) == (
         "0.3.51",
         "src/xlsx/__init__.py#__version__",
     )
@@ -134,7 +138,6 @@ def test_parse_uv_lock_records_git_packages(tmp_path):
     assert lock["ooxml-core"]["version"] == "0.6.0"
     assert lock["ooxml-core"]["ref"] == "v0.6.0"
     assert lock["ooxml-core"]["expected_commit"] == CORE_SHA
-
 
 
 def test_policy_json_round_trips_through_canonical_json(tmp_path):

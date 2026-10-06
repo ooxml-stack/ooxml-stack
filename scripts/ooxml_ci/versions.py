@@ -41,7 +41,9 @@ def version_groups(edges: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not edge["expected"]["version"]:
             continue
         key = (edge["to"], edge["role"])
-        group = groups.setdefault(key, {"upstream": edge["to"], "role": edge["role"], "repos": []})
+        group = groups.setdefault(
+            key, {"upstream": edge["to"], "role": edge["role"], "repos": []}
+        )
         group["repos"].append(
             {
                 "repo": edge["from"],
@@ -58,7 +60,9 @@ def version_groups(edges: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [groups[key] for key in sorted(groups)]
 
 
-def uniform_requirement(policy: dict[str, Any], upstream: str, role: str, repo: str) -> dict | None:
+def uniform_requirement(
+    policy: dict[str, Any], upstream: str, role: str, repo: str
+) -> dict | None:
     """A ``require_uniform`` entry covering this repo; ``repos`` scoping is honoured."""
     for requirement in policy.get("require_uniform", []):
         if requirement.get("upstream") != upstream or requirement.get("role") != role:
@@ -70,7 +74,9 @@ def uniform_requirement(policy: dict[str, Any], upstream: str, role: str, repo: 
     return None
 
 
-def exception_for(policy: dict[str, Any], upstream: str, role: str, repo: str) -> dict | None:
+def exception_for(
+    policy: dict[str, Any], upstream: str, role: str, repo: str
+) -> dict | None:
     for exception in policy.get("exceptions", []):
         if exception.get("upstream") != upstream or exception.get("role") != role:
             continue
@@ -85,7 +91,9 @@ def _scope(facts: Facts, group: dict[str, Any]) -> tuple[str, list[str], list[st
     required = [
         item["repo"]
         for item in group["repos"]
-        if uniform_requirement(facts.policy, group["upstream"], group["role"], item["repo"])
+        if uniform_requirement(
+            facts.policy, group["upstream"], group["role"], item["repo"]
+        )
     ]
     excepted = [
         item["repo"]
@@ -95,7 +103,9 @@ def _scope(facts: Facts, group: dict[str, Any]) -> tuple[str, list[str], list[st
     return ("required" if required else "unscoped"), required, excepted
 
 
-def skew_diagnostics(facts: Facts, groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def skew_diagnostics(
+    facts: Facts, groups: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
     diagnostics: list[dict[str, Any]] = []
     for group in groups:
         if group["uniform"]:
@@ -109,7 +119,9 @@ def skew_diagnostics(facts: Facts, groups: list[dict[str, Any]]) -> list[dict[st
                 "code": "version_skew",
                 "level": "warning",
                 "where": f"{group['upstream']} ({group['role']})",
-                "detail": "; ".join(f"{item['repo']}={item['version']}" for item in group["repos"]),
+                "detail": "; ".join(
+                    f"{item['repo']}={item['version']}" for item in group["repos"]
+                ),
                 "scope": scope,
                 "exceptions_matched": excepted,
             }

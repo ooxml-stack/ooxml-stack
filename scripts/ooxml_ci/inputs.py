@@ -90,7 +90,9 @@ def _read(path: pathlib.Path) -> bytes | None:
     return path.read_bytes() if path.is_file() else None
 
 
-def _dynamic_version_paths(root: pathlib.Path, policy: dict[str, Any], files: dict[str, bytes]) -> list[str]:
+def _dynamic_version_paths(
+    root: pathlib.Path, policy: dict[str, Any], files: dict[str, bytes]
+) -> list[str]:
     """Version source files referenced by setuptools' dynamic attr."""
     extra: list[str] = []
     for node in policy["nodes"]:
@@ -168,7 +170,9 @@ def canonical_json(payload: Any) -> str:
 
 def _workflow_files(files: dict[str, bytes], key: str) -> list[tuple[str, bytes]]:
     prefix = f"{key}/.github/workflows/"
-    return [(rel, blob) for rel, blob in sorted(files.items()) if rel.startswith(prefix)]
+    return [
+        (rel, blob) for rel, blob in sorted(files.items()) if rel.startswith(prefix)
+    ]
 
 
 def gather_facts(
@@ -204,7 +208,8 @@ def gather_facts(
             facts.workflow_jobs[relpath] = parsed["jobs"]
             facts.clone_refs[relpath] = parsed["clone_refs"]
             facts.workflow_errors.extend(
-                {**item, "where": f"{relpath}:{item['where']}"} for item in parsed["errors"]
+                {**item, "where": f"{relpath}:{item['where']}"}
+                for item in parsed["errors"]
             )
     for source in policy.get("edge_sources", []):
         if source.get("from") == "environment_json" and source.get("file"):

@@ -16,7 +16,11 @@ SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 def git(args: list[str], cwd: pathlib.Path, timeout: int) -> tuple[int, str, str]:
     try:
         completed = subprocess.run(
-            ["git", *args], cwd=str(cwd), capture_output=True, text=True, timeout=timeout
+            ["git", *args],
+            cwd=str(cwd),
+            capture_output=True,
+            text=True,
+            timeout=timeout,
         )
     except FileNotFoundError:
         return 127, "", "git not found"
@@ -55,7 +59,10 @@ def _worktree_list(directory: pathlib.Path, timeout: int) -> list[dict[str, Any]
 
 def _checkout_entry(root: pathlib.Path, key: str, timeout: int) -> dict[str, Any]:
     directory = checkout_dir(root, key)
-    entry: dict[str, Any] = {"path": str(directory.relative_to(root)), "exists": directory.is_dir()}
+    entry: dict[str, Any] = {
+        "path": str(directory.relative_to(root)),
+        "exists": directory.is_dir(),
+    }
     if not directory.is_dir():
         return entry
     code, head, _ = git(["rev-parse", "HEAD"], directory, timeout)
@@ -68,7 +75,9 @@ def _checkout_entry(root: pathlib.Path, key: str, timeout: int) -> dict[str, Any
     return entry
 
 
-def _checkout_diagnostics(key: str, node: dict[str, Any], entry: dict[str, Any]) -> list[dict[str, Any]]:
+def _checkout_diagnostics(
+    key: str, node: dict[str, Any], entry: dict[str, Any]
+) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     expected = node.get("remote")
     if not entry["exists"]:
@@ -94,7 +103,12 @@ def _checkout_diagnostics(key: str, node: dict[str, Any], entry: dict[str, Any])
     for worktree in entry.get("worktrees", []):
         if not worktree["main"]:
             out.append(
-                {"code": "alternate_worktree", "level": "info", "where": key, "detail": worktree["path"]}
+                {
+                    "code": "alternate_worktree",
+                    "level": "info",
+                    "where": key,
+                    "detail": worktree["path"],
+                }
             )
     return out
 
@@ -120,9 +134,16 @@ def _duplicate_diagnostics(checkouts: dict[str, Any]) -> tuple[list, list]:
 
 
 def _undeclared_diagnostics(
-    root: pathlib.Path, declared: dict[str, Any], checkouts: dict[str, Any], timeout: int
+    root: pathlib.Path,
+    declared: dict[str, Any],
+    checkouts: dict[str, Any],
+    timeout: int,
 ) -> list[dict[str, Any]]:
-    known = {entry.get("common_dir") for entry in checkouts.values() if entry.get("common_dir")}
+    known = {
+        entry.get("common_dir")
+        for entry in checkouts.values()
+        if entry.get("common_dir")
+    }
     out = []
     for child in sorted(path for path in root.iterdir() if (path / ".git").exists()):
         if child.name in declared or common_dir(child, timeout) in known:
@@ -139,7 +160,9 @@ def _undeclared_diagnostics(
     return out
 
 
-def local_facts(root: pathlib.Path, policy: dict[str, Any], timeout: int) -> dict[str, Any]:
+def local_facts(
+    root: pathlib.Path, policy: dict[str, Any], timeout: int
+) -> dict[str, Any]:
     declared = {node["key"]: node for node in policy["nodes"]}
     checkouts = {key: _checkout_entry(root, key, timeout) for key in declared}
     diagnostics: list[dict[str, Any]] = []
@@ -148,15 +171,28 @@ def local_facts(root: pathlib.Path, policy: dict[str, Any], timeout: int) -> dic
     duplicates, duplicate_diagnostics = _duplicate_diagnostics(checkouts)
     diagnostics.extend(duplicate_diagnostics)
     diagnostics.extend(_undeclared_diagnostics(root, declared, checkouts, timeout))
-    return {"checkouts": checkouts, "duplicates": duplicates, "diagnostics": diagnostics}
+    return {
+        "checkouts": checkouts,
+        "duplicates": duplicates,
+        "diagnostics": diagnostics,
+    }
 
 
-def remote_refs(remote_url: str, cwd: pathlib.Path, timeout: int, cache: dict[str, Any]) -> dict[str, Any]:
+def remote_refs(
+    remote_url: str, cwd: pathlib.Path, timeout: int, cache: dict[str, Any]
+) -> dict[str, Any]:
     if remote_url in cache:
         return cache[remote_url]
-    code, listing, error = git(["ls-remote", "--tags", "--heads", remote_url], cwd, timeout)
+    code, listing, error = git(
+        ["ls-remote", "--tags", "--heads", remote_url], cwd, timeout
+    )
     if code != 0:
-        result: dict[str, Any] = {"ok": False, "error": error or f"exit {code}", "tags": {}, "heads": {}}
+        result: dict[str, Any] = {
+            "ok": False,
+            "error": error or f"exit {code}",
+            "tags": {},
+            "heads": {},
+        }
     else:
         tags: dict[str, str] = {}
         peeled: dict[str, str] = {}
@@ -179,7 +215,9 @@ def remote_refs(remote_url: str, cwd: pathlib.Path, timeout: int, cache: dict[st
     return result
 
 
-def _verify_sha(raw: str, directory: pathlib.Path | None, timeout: int, allow_fetch: bool) -> dict[str, Any]:
+def _verify_sha(
+    raw: str, directory: pathlib.Path | None, timeout: int, allow_fetch: bool
+) -> dict[str, Any]:
     """A full SHA can only be confirmed by a local object or an explicit fetch."""
     if directory is not None:
         code, _, _ = git(["cat-file", "-e", f"{raw}^{{commit}}"], directory, timeout)
@@ -189,7 +227,10 @@ def _verify_sha(raw: str, directory: pathlib.Path | None, timeout: int, allow_fe
             code, _, _ = git(["fetch", "--quiet", "origin", raw], directory, timeout)
             if code == 0:
                 return {"kind": "full_commit", "commit": raw}
-    return {"kind": "unverifiable", "reason": "SHA existence cannot be proven locally or by fetch"}
+    return {
+        "kind": "unverifiable",
+        "reason": "SHA existence cannot be proven locally or by fetch",
+    }
 
 
 def _tag_result(raw: str, listing: dict[str, Any]) -> dict[str, Any] | None:
@@ -217,7 +258,11 @@ def classify_remote_ref(
     if not listing.get("ok"):
         return {"kind": "unverifiable", "reason": listing.get("error", "query failed")}
     tag = _tag_result(raw, listing)
-    branch = {"kind": "branch", "commit": listing["heads"][raw]} if raw in listing.get("heads", {}) else None
+    branch = (
+        {"kind": "branch", "commit": listing["heads"][raw]}
+        if raw in listing.get("heads", {})
+        else None
+    )
     missing = {"kind": "missing", "reason": "ref confirmed absent on the remote"}
     if declared_kind in ("tag", "release_tag"):
         return tag or missing

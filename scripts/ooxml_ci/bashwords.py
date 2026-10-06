@@ -22,9 +22,24 @@ from .urls import is_remote_repo
 # starts with ``-`` is a flag. Not a git parser: just enough to find the repo.
 CLONE_VALUE_OPTIONS = frozenset(
     {
-        "-b", "--branch", "-o", "--origin", "-u", "--upload-pack", "-c", "--config",
-        "-j", "--jobs", "--depth", "--shallow-since", "--shallow-exclude", "--filter",
-        "--reference", "--reference-if-able", "--separate-git-dir", "--template",
+        "-b",
+        "--branch",
+        "-o",
+        "--origin",
+        "-u",
+        "--upload-pack",
+        "-c",
+        "--config",
+        "-j",
+        "--jobs",
+        "--depth",
+        "--shallow-since",
+        "--shallow-exclude",
+        "--filter",
+        "--reference",
+        "--reference-if-able",
+        "--separate-git-dir",
+        "--template",
     }
 )
 ASSIGNMENT = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*=")
@@ -34,14 +49,26 @@ _PARSER = Parser(Language(tree_sitter_bash.language()))
 # a leading ``VAR=value``, a redirection -- is not part of the command line.
 _ARGUMENT = frozenset(
     {
-        "word", "number", "raw_string", "ansi_c_string", "string", "concatenation", "simple_expansion",
-        "expansion", "command_substitution", "arithmetic_expansion", "process_substitution",
+        "word",
+        "number",
+        "raw_string",
+        "ansi_c_string",
+        "string",
+        "concatenation",
+        "simple_expansion",
+        "expansion",
+        "command_substitution",
+        "arithmetic_expansion",
+        "process_substitution",
     }
 )
 # Nodes whose value the shell computes at run time; kept verbatim, never guessed.
 _DYNAMIC = frozenset(
     {
-        "simple_expansion", "expansion", "command_substitution", "arithmetic_expansion",
+        "simple_expansion",
+        "expansion",
+        "command_substitution",
+        "arithmetic_expansion",
         "process_substitution",
     }
 )
@@ -127,7 +154,9 @@ def mask_expressions(
         adapted += start - index
         end = _expression_end(raw, start + len(_EXPR_START))
         if end < 0:
-            problems.append(f"unterminated Actions expression {raw[start:].decode('utf-8')!r}")
+            problems.append(
+                f"unterminated Actions expression {raw[start:].decode('utf-8')!r}"
+            )
             end = len(raw)
         expressions.append(raw[start:end].decode("utf-8"))
         marker = f"{prefix}_{len(expressions) - 1}__".encode("ascii")
@@ -222,7 +251,9 @@ def _word_text(node, source: bytes, marker: re.Pattern[str]) -> tuple[str, bool]
         text = _decode_unquoted(raw)
     else:
         text = raw
-    dynamic = node.type in _DYNAMIC or any(child.type in _DYNAMIC for child in node.named_children)
+    dynamic = node.type in _DYNAMIC or any(
+        child.type in _DYNAMIC for child in node.named_children
+    )
     return text, dynamic or bool(marker.search(text))
 
 

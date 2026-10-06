@@ -29,10 +29,18 @@ def _parser() -> argparse.ArgumentParser:
         description="Derive the plan from each node's default branch, in an isolated workspace",
     )
     mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true", help="regenerate and copy the plan back")
-    mode.add_argument("--check", action="store_true", help="compare the committed plan with the basis")
-    parser.add_argument("--owner", default=workspace.DEFAULT_OWNER, help="GitHub owner of the nodes")
-    parser.add_argument("--keep", default=None, help="prepare the workspace here instead of a temp dir")
+    mode.add_argument(
+        "--write", action="store_true", help="regenerate and copy the plan back"
+    )
+    mode.add_argument(
+        "--check", action="store_true", help="compare the committed plan with the basis"
+    )
+    parser.add_argument(
+        "--owner", default=workspace.DEFAULT_OWNER, help="GitHub owner of the nodes"
+    )
+    parser.add_argument(
+        "--keep", default=None, help="prepare the workspace here instead of a temp dir"
+    )
     return parser
 
 
@@ -78,13 +86,18 @@ def main(argv: list[str] | None = None) -> int:
     root = pathlib.Path(args.keep or temporary)
     try:
         cloned = workspace.prepare(root, policy, args.owner)
-        print(f"basis: {len(cloned)} nodes cloned at their default branches under {root}", flush=True)
+        print(
+            f"basis: {len(cloned)} nodes cloned at their default branches under {root}",
+            flush=True,
+        )
         if mode == "check":
             _stage_for_check(root, checkout)
         code = _generate(root, mode)
         if code == 0 and mode == "write":
             _publish(root, checkout)
-            print(f"wrote {paths.PLAN_RELPATH} from the default-branch basis", flush=True)
+            print(
+                f"wrote {paths.PLAN_RELPATH} from the default-branch basis", flush=True
+            )
         return code
     except workspace.WorkspaceError as exc:
         print(f"refresh failed: {exc}", file=sys.stderr)

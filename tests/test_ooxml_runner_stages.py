@@ -63,12 +63,19 @@ def _reports(tmp_path):
 
 
 def _report(stages=("alpha",)):
-    return {"status": "running", "commit": "a" * 40, "inputs": {},
-            "stages": [{"name": name, "status": "not_run"} for name in stages]}
+    return {
+        "status": "running",
+        "commit": "a" * 40,
+        "inputs": {},
+        "stages": [{"name": name, "status": "not_run"} for name in stages],
+    }
 
 
 def _events(reports):
-    return [json.loads(line) for line in (reports / "progress.jsonl").read_text().splitlines()]
+    return [
+        json.loads(line)
+        for line in (reports / "progress.jsonl").read_text().splitlines()
+    ]
 
 
 def _observe_terminal(monkeypatch, seen):
@@ -85,6 +92,7 @@ def _observe_terminal(monkeypatch, seen):
 
 # --- stage protocol -----------------------------------------------------------
 
+
 def test_failing_stage_keeps_later_stages_unrun_and_writes_durable_events(tmp_path):
     reports = _reports(tmp_path)
     report = _report(("alpha", "beta"))
@@ -96,8 +104,15 @@ def test_failing_stage_keeps_later_stages_unrun_and_writes_durable_events(tmp_pa
         container.run_stages(reports, {"alpha": boom, "beta": lambda: None}, report, 5)
     assert [stage["status"] for stage in report["stages"]] == ["fail", "not_run"]
     events = _events(reports)
-    assert [event["event"] for event in events] == ["gate_started", "stage_started", "stage_failed"]
-    assert json.loads(Path(events[-1]["report"]).read_text())["stages"][0]["status"] == "fail"
+    assert [event["event"] for event in events] == [
+        "gate_started",
+        "stage_started",
+        "stage_failed",
+    ]
+    assert (
+        json.loads(Path(events[-1]["report"]).read_text())["stages"][0]["status"]
+        == "fail"
+    )
     assert "gate_passed" not in {event["event"] for event in events}
 
 
@@ -130,6 +145,7 @@ def test_failure_scrubs_secrets_from_the_report(tmp_path, monkeypatch):
 
 # --- terminal report before terminal event ------------------------------------
 
+
 def test_gate_passed_is_written_only_after_the_pass_is_on_disk(tmp_path, monkeypatch):
     reports = _reports(tmp_path)
     report = _report()
@@ -137,8 +153,13 @@ def test_gate_passed_is_written_only_after_the_pass_is_on_disk(tmp_path, monkeyp
     _observe_terminal(monkeypatch, seen)
 
     container.run_stages(reports, {"alpha": lambda: None}, report, 5)
-    container.finalize(tmp_path, reports, report, input_hashes=lambda root: {},
-                       is_dirty=lambda root: False)
+    container.finalize(
+        tmp_path,
+        reports,
+        report,
+        input_hashes=lambda root: {},
+        is_dirty=lambda root: False,
+    )
 
     assert len(seen) == 1
     event, on_disk = seen[0]
@@ -148,7 +169,9 @@ def test_gate_passed_is_written_only_after_the_pass_is_on_disk(tmp_path, monkeyp
     assert on_disk["finished_at"]
 
 
-def test_gate_failed_is_written_only_after_the_failure_is_on_disk(tmp_path, monkeypatch):
+def test_gate_failed_is_written_only_after_the_failure_is_on_disk(
+    tmp_path, monkeypatch
+):
     reports = _reports(tmp_path)
     report = _report()
     seen = []
@@ -169,16 +192,24 @@ def test_a_failed_terminal_save_never_announces_a_pass(tmp_path, monkeypatch):
     reports = _reports(tmp_path)
     report = _report()
     written = []
-    monkeypatch.setattr(container, "progress_event",
-                        lambda reports, event, **fields: written.append(event))
+    monkeypatch.setattr(
+        container,
+        "progress_event",
+        lambda reports, event, **fields: written.append(event),
+    )
 
     def refuse(reports, report):
         raise OSError("disk is full")
 
     monkeypatch.setattr(container, "save_report", refuse)
     with pytest.raises(OSError):
-        container.finalize(tmp_path, reports, report, input_hashes=lambda root: {},
-                           is_dirty=lambda root: False)
+        container.finalize(
+            tmp_path,
+            reports,
+            report,
+            input_hashes=lambda root: {},
+            is_dirty=lambda root: False,
+        )
     assert "gate_passed" not in written
 
 
@@ -188,8 +219,13 @@ def test_input_drift_after_the_stages_never_announces_a_pass(tmp_path):
     report["inputs"] = {"f": "A"}
     container.run_stages(reports, {"alpha": lambda: None}, report, 5)
     with pytest.raises(container.StageError, match="changed tracked inputs"):
-        container.finalize(tmp_path, reports, report, input_hashes=lambda root: {"f": "B"},
-                           is_dirty=lambda root: False)
+        container.finalize(
+            tmp_path,
+            reports,
+            report,
+            input_hashes=lambda root: {"f": "B"},
+            is_dirty=lambda root: False,
+        )
     assert report["status"] == "running"
     assert "gate_passed" not in {event["event"] for event in _events(reports)}
 
@@ -199,49 +235,81 @@ def test_a_dirty_snapshot_after_the_stages_never_announces_a_pass(tmp_path):
     report = _report()
     container.run_stages(reports, {"alpha": lambda: None}, report, 5)
     with pytest.raises(container.StageError, match="dirty"):
-        container.finalize(tmp_path, reports, report, input_hashes=lambda root: {},
-                           is_dirty=lambda root: True)
+        container.finalize(
+            tmp_path,
+            reports,
+            report,
+            input_hashes=lambda root: {},
+            is_dirty=lambda root: True,
+        )
     assert "gate_passed" not in {event["event"] for event in _events(reports)}
 
 
 # --- the container entry ------------------------------------------------------
+
 
 def _run_entry(tmp_path, monkeypatch, adapter, seen, name="fixture_adapter"):
     subject = tmp_path / "subject"
     subject.mkdir(exist_ok=True)
     (subject / f"{name}.py").write_text(adapter)
     reports = tmp_path / "reports"
-    report_module.save(reports, report_module.new_report(
-        repository="fixture", commit="a" * 40,
-        runner={"commit": RUNNER_COMMIT, "source_sha256": "b" * 64},
-        plan={}, binding={}, image="fixture", inputs={},
-    ))
+    report_module.save(
+        reports,
+        report_module.new_report(
+            repository="fixture",
+            commit="a" * 40,
+            runner={"commit": RUNNER_COMMIT, "source_sha256": "b" * 64},
+            plan={},
+            binding={},
+            image="fixture",
+            inputs={},
+        ),
+    )
     monkeypatch.setenv("OOXML_CI_RUNNER_COMMIT", RUNNER_COMMIT)
     _observe_terminal(monkeypatch, seen)
-    return entry.main(["--repository", "fixture", "--adapter", name,
-                       "--root", str(subject), "--reports", str(reports)]), reports
+    return entry.main(
+        [
+            "--repository",
+            "fixture",
+            "--adapter",
+            name,
+            "--root",
+            str(subject),
+            "--reports",
+            str(reports),
+        ]
+    ), reports
 
 
-def test_entry_main_writes_the_terminal_report_before_the_pass_event(tmp_path, monkeypatch):
+def test_entry_main_writes_the_terminal_report_before_the_pass_event(
+    tmp_path, monkeypatch
+):
     seen = []
     code, reports = _run_entry(tmp_path, monkeypatch, FIXTURE_ADAPTER, seen)
 
     assert code == 0
-    assert [(event, disk["status"], disk["exit_code"]) for event, disk in seen] == \
-        [("gate_passed", "pass", 0)]
+    assert [(event, disk["status"], disk["exit_code"]) for event, disk in seen] == [
+        ("gate_passed", "pass", 0)
+    ]
     assert report_module.load(reports)["finished_at"]
 
 
-def test_entry_main_writes_the_terminal_report_before_the_failure_event(tmp_path, monkeypatch):
+def test_entry_main_writes_the_terminal_report_before_the_failure_event(
+    tmp_path, monkeypatch
+):
     seen = []
     code, reports = _run_entry(tmp_path, monkeypatch, FAILING_ADAPTER, seen)
 
     assert code == 1
-    assert [(event, disk["status"]) for event, disk in seen] == [("gate_failed", "fail")]
+    assert [(event, disk["status"]) for event, disk in seen] == [
+        ("gate_failed", "fail")
+    ]
     assert "fixture failure" in report_module.load(reports)["error"]
 
 
-def test_entry_main_refuses_a_runner_that_is_not_the_pinned_commit(tmp_path, monkeypatch):
+def test_entry_main_refuses_a_runner_that_is_not_the_pinned_commit(
+    tmp_path, monkeypatch
+):
     """The container proves which runner it actually executed."""
     seen = []
     monkeypatch.setenv("OOXML_CI_RUNNER_COMMIT", "0" * 40)
@@ -249,13 +317,31 @@ def test_entry_main_refuses_a_runner_that_is_not_the_pinned_commit(tmp_path, mon
     subject.mkdir()
     (subject / "fixture_adapter.py").write_text(FIXTURE_ADAPTER)
     reports = tmp_path / "reports"
-    report_module.save(reports, report_module.new_report(
-        repository="fixture", commit="a" * 40, runner={}, plan={}, binding={},
-        image="fixture", inputs={},
-    ))
+    report_module.save(
+        reports,
+        report_module.new_report(
+            repository="fixture",
+            commit="a" * 40,
+            runner={},
+            plan={},
+            binding={},
+            image="fixture",
+            inputs={},
+        ),
+    )
     _observe_terminal(monkeypatch, seen)
 
-    code = entry.main(["--repository", "fixture", "--adapter", "fixture_adapter",
-                       "--root", str(subject), "--reports", str(reports)])
+    code = entry.main(
+        [
+            "--repository",
+            "fixture",
+            "--adapter",
+            "fixture_adapter",
+            "--root",
+            str(subject),
+            "--reports",
+            str(reports),
+        ]
+    )
     assert code == 1
     assert [event for event, _ in seen] == ["gate_failed"]

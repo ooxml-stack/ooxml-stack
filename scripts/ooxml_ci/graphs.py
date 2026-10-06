@@ -8,7 +8,9 @@ IMPACT_KINDS = ("runtime", "dev", "codegen", "ci", "data")
 ORDER_KINDS = ("runtime", "codegen")
 
 
-def traverse(edges: list[dict[str, Any]], start: str, kinds: tuple[str, ...], reverse: bool) -> set[str]:
+def traverse(
+    edges: list[dict[str, Any]], start: str, kinds: tuple[str, ...], reverse: bool
+) -> set[str]:
     seen = {start}
     frontier = [start]
     while frontier:

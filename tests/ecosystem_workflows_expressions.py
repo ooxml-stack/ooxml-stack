@@ -26,17 +26,21 @@ def docx_workflow(body: str, indicator: str = "|-") -> str:
 
 
 WORKFLOW_EXPR_STATIC = docx_workflow(f"git clone {CORPUS}")
-WORKFLOW_EXPR_DYNAMIC_BRANCH = docx_workflow(f"git clone --branch ${{{{ inputs.ref }}}} {CORPUS}")
+WORKFLOW_EXPR_DYNAMIC_BRANCH = docx_workflow(
+    f"git clone --branch ${{{{ inputs.ref }}}} {CORPUS}"
+)
 WORKFLOW_EXPR_FORMAT_STRIP = docx_workflow(
-    "echo \"${{ format('{0}', github.ref) }}\"\n" f"git clone {CORPUS}", "|-"
+    f"echo \"${{{{ format('{{0}}', github.ref) }}}}\"\ngit clone {CORPUS}", "|-"
 )
 WORKFLOW_EXPR_FORMAT_KEEP = docx_workflow(
-    "echo \"${{ format('{0}', github.ref) }}\"\n" f"git clone {CORPUS}", "|"
+    f"echo \"${{{{ format('{{0}}', github.ref) }}}}\"\ngit clone {CORPUS}", "|"
 )
 WORKFLOW_EXPR_ESCAPED = docx_workflow(
     "git clone https://github.com/ooxml-stack/ooxml\\-native-corpus.git"
 )
-WORKFLOW_EXPR_VAR_REPO = docx_workflow("git clone https://github.com/ooxml-stack/${REPO}.git")
+WORKFLOW_EXPR_VAR_REPO = docx_workflow(
+    "git clone https://github.com/ooxml-stack/${REPO}.git"
+)
 WORKFLOW_EXPR_ACTIONS_REPO = docx_workflow(
     "git clone https://github.com/ooxml-stack/${{ inputs.repo }}.git"
 )
@@ -45,7 +49,9 @@ WORKFLOW_EXPR_VAR_REPO_THEN_STATIC = docx_workflow(
 )
 WORKFLOW_EXPR_UNREADABLE = docx_workflow("if [ -f x ]; then\n  echo hi")
 WORKFLOW_EXPR_QUOTED_STATIC = docx_workflow(f'git clone "{CORPUS}"')
-WORKFLOW_EXPR_QUOTED_VAR_REPO = docx_workflow('git clone "https://github.com/ooxml-stack/${REPO}.git"')
+WORKFLOW_EXPR_QUOTED_VAR_REPO = docx_workflow(
+    'git clone "https://github.com/ooxml-stack/${REPO}.git"'
+)
 WORKFLOW_EXPR_QUOTED_ACTIONS_REPO = docx_workflow(
     'git clone "https://github.com/ooxml-stack/${{ inputs.repo }}.git"'
 )

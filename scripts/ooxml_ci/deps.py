@@ -26,7 +26,9 @@ from .paths import HOST_KEY, REQUIREMENTS_RELPATH
 # them would silently weaken the gate.
 REQUIRED = ("packaging", "PyYAML", "tree-sitter", "tree-sitter-bash")
 DEFAULT_VENV = ".venv-ecosystem-inventory"
-REQUIREMENT = re.compile(r"^(?P<name>[A-Za-z0-9_.-]+)==(?P<version>[0-9][0-9A-Za-z.!+_-]*)$")
+REQUIREMENT = re.compile(
+    r"^(?P<name>[A-Za-z0-9_.-]+)==(?P<version>[0-9][0-9A-Za-z.!+_-]*)$"
+)
 
 
 class DependencyError(RuntimeError):
@@ -69,7 +71,9 @@ def parse_requirements(text: str) -> dict[str, str]:
             continue
         match = REQUIREMENT.match(line)
         if match is None:
-            raise DependencyError(f"dependency must be pinned as name==version: {line!r}")
+            raise DependencyError(
+                f"dependency must be pinned as name==version: {line!r}"
+            )
         canonical = _CANONICAL.get(normalize(match.group("name")))
         if canonical is None:
             raise DependencyError(
@@ -81,7 +85,9 @@ def parse_requirements(text: str) -> dict[str, str]:
         pinned[canonical] = match.group("version")
     missing = [name for name in REQUIRED if name not in pinned]
     if missing:
-        raise DependencyError("declaration is incomplete; missing " + ", ".join(missing))
+        raise DependencyError(
+            "declaration is incomplete; missing " + ", ".join(missing)
+        )
     return pinned
 
 
@@ -119,7 +125,9 @@ def check(root: pathlib.Path) -> dict[str, Any]:
         "problems": [],
     }
     if not path.is_file():
-        report["problems"].append(f"dependency declaration is absent: {report['requirements']}")
+        report["problems"].append(
+            f"dependency declaration is absent: {report['requirements']}"
+        )
         return report
     try:
         report["pinned"] = parse_requirements(path.read_text(encoding="utf-8"))
@@ -132,5 +140,7 @@ def check(root: pathlib.Path) -> dict[str, Any]:
         if found is None:
             report["problems"].append(f"{name}=={wanted} is declared but not installed")
         elif found != wanted:
-            report["problems"].append(f"{name}=={found} is installed but {wanted} is declared")
+            report["problems"].append(
+                f"{name}=={found} is installed but {wanted} is declared"
+            )
     return report

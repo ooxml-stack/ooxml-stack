@@ -41,11 +41,17 @@ def _adapter(binding: dict, key: str, diagnostics: list) -> str | None:
     return adapter
 
 
-def _resolve_job(relpath: str, job_id: str, jobs: dict[str, Any], diagnostics: list) -> dict | None:
+def _resolve_job(
+    relpath: str, job_id: str, jobs: dict[str, Any], diagnostics: list
+) -> dict | None:
     job = jobs.get(job_id)
     if job is None:
         diagnostics.append(
-            _error("command_source_mismatch", f"{relpath}#{job_id}", f"full job {job_id!r} is absent")
+            _error(
+                "command_source_mismatch",
+                f"{relpath}#{job_id}",
+                f"full job {job_id!r} is absent",
+            )
         )
         return None
     return {
@@ -68,7 +74,11 @@ def full_bindings(facts: Facts) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     for key, binding in sorted((facts.policy.get("full_bindings") or {}).items()):
         if key not in nodes:
             diagnostics.append(
-                _error("policy_node_mismatch", f"full_bindings[{key}]", f"unknown node {key!r}")
+                _error(
+                    "policy_node_mismatch",
+                    f"full_bindings[{key}]",
+                    f"unknown node {key!r}",
+                )
             )
             continue
         relpath = f"{key}/{binding['workflow']}"
@@ -84,7 +94,10 @@ def full_bindings(facts: Facts) -> tuple[dict[str, Any], list[dict[str, Any]]]:
             continue
         resolved = [
             job
-            for job in (_resolve_job(relpath, job_id, jobs, diagnostics) for job_id in binding["jobs"])
+            for job in (
+                _resolve_job(relpath, job_id, jobs, diagnostics)
+                for job_id in binding["jobs"]
+            )
             if job is not None
         ]
         adapter = _adapter(binding, key, diagnostics)

@@ -1,4 +1,4 @@
-.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck
+.PHONY: coverage evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck
 
 # The inventory tool runs only against its pinned interpreter. `--write` and
 # `--check` refuse to start when the versions do not match the declaration.
@@ -45,9 +45,17 @@ ecosystem-inventory-test:
 runner-test:
 	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ooxml_runner_*.py tests/test_dev_worktree.py tests/test_workspace_agents.py -q
 
+coverage:
+	@$(ECOSYSTEM_PYTHON) -m coverage run --source=ooxml_runner -m pytest tests/test_ooxml_runner_*.py -q
+	@$(ECOSYSTEM_PYTHON) -m coverage report
+
 lint:
 	python3 scripts/quality_gate.py ruff
 	@python3 scripts/format_gate.py
+	python3 scripts/check_action_pins.py
+	python3 scripts/check_dependency_notices.py
+	python3 scripts/size_report.py --check
+	python3 scripts/check_evidence_redaction.py
 
 typecheck:
 	@python3 scripts/quality_gate.py pyright

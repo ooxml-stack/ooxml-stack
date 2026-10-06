@@ -17,7 +17,9 @@ if str(REPO_ROOT) not in sys.path:
 
 # The fixtures must declare the same pinned tool environment the real workspace
 # does, otherwise the dependency gate refuses to run them.
-REQUIREMENTS_TEXT = (REPO_ROOT / "ci/ecosystem-inventory-requirements.txt").read_text(encoding="utf-8")
+REQUIREMENTS_TEXT = (REPO_ROOT / "ci/ecosystem-inventory-requirements.txt").read_text(
+    encoding="utf-8"
+)
 
 from scripts.ooxml_ci import inputs, plan as plan_mod  # noqa: E402
 from ecosystem_workflows import WORKFLOW_DOCX, WORKFLOW_FULL  # noqa: E402
@@ -46,12 +48,26 @@ def node(key, role, layer, **extra):
 
 
 NODES = [
-    node("ooxml-stack", "meta", "release", inputs=[], visibility="public", release_participation=False),
+    node(
+        "ooxml-stack",
+        "meta",
+        "release",
+        inputs=[],
+        visibility="public",
+        release_participation=False,
+    ),
     node("ooxml-core", "release", "core"),
     node("python-docx", "release", "app", visibility="public"),
     node("python-pptx", "release", "app", visibility="public"),
     node("ooxml-test-framework", "release", "test"),
-    node("ooxml-native-corpus", "data", "corpus", inputs=[], cadence="release-only", release_participation=False),
+    node(
+        "ooxml-native-corpus",
+        "data",
+        "corpus",
+        inputs=[],
+        cadence="release-only",
+        release_participation=False,
+    ),
 ]
 
 
@@ -80,7 +96,11 @@ def make_policy(**overrides):
             },
         ],
         "require_uniform": [
-            {"upstream": "ooxml-core", "role": "runtime", "reason": "runtime pins move together"}
+            {
+                "upstream": "ooxml-core",
+                "role": "runtime",
+                "reason": "runtime pins move together",
+            }
         ],
         "exceptions": [],
         "workflows": {"scan_global_uses": True, "uses_owner": "ooxml-stack"},
@@ -138,16 +158,27 @@ def _pptx_lock(core_sha=CORE_SHA):
 
 def build_workspace(tmp_path: pathlib.Path, policy: dict | None = None) -> pathlib.Path:
     root = tmp_path
-    write(root / "ooxml-stack/ci/ecosystem-policy.json", json.dumps(policy or make_policy(), indent=2))
-    write(root / "ooxml-stack/ci/ecosystem-inventory-requirements.txt", REQUIREMENTS_TEXT)
-    write(root / "ooxml-core/pyproject.toml", '[project]\nname = "ooxml-core"\nversion = "0.6.0"\n')
+    write(
+        root / "ooxml-stack/ci/ecosystem-policy.json",
+        json.dumps(policy or make_policy(), indent=2),
+    )
+    write(
+        root / "ooxml-stack/ci/ecosystem-inventory-requirements.txt", REQUIREMENTS_TEXT
+    )
+    write(
+        root / "ooxml-core/pyproject.toml",
+        '[project]\nname = "ooxml-core"\nversion = "0.6.0"\n',
+    )
     write(root / "ooxml-core/uv.lock", "")
     write(root / "ooxml-core/.github/workflows/full.yml", WORKFLOW_FULL)
     write(
         root / "ooxml-core/ci/environment.json",
         json.dumps(
             {
-                "repositories": {"python-docx": DOCX_SHA, "ooxml-native-corpus": CORPUS_SHA},
+                "repositories": {
+                    "python-docx": DOCX_SHA,
+                    "ooxml-native-corpus": CORPUS_SHA,
+                },
                 "corpus": {"release_tag": "native-corpus-2026-08-15.1"},
             }
         ),
@@ -201,7 +232,10 @@ def git(args: list[str], cwd: pathlib.Path) -> None:
 def init_repo(path: pathlib.Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
     git(["init", "-q", "-b", "main"], path)
-    git(["remote", "add", "origin", f"https://github.com/ooxml-stack/{path.name}.git"], path)
+    git(
+        ["remote", "add", "origin", f"https://github.com/ooxml-stack/{path.name}.git"],
+        path,
+    )
     (path / "README.md").write_text("x\n", encoding="utf-8")
     git(["add", "."], path)
     git(["commit", "-qm", "init"], path)
@@ -290,7 +324,9 @@ def align_pptx(root: pathlib.Path, heads: dict[str, str]) -> None:
     )
 
 
-def sealed_workspace(tmp_path: pathlib.Path, policy: dict | None = None) -> pathlib.Path:
+def sealed_workspace(
+    tmp_path: pathlib.Path, policy: dict | None = None
+) -> pathlib.Path:
     root = build_workspace(tmp_path, policy)
     seal(root)
     return root

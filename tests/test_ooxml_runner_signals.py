@@ -28,7 +28,7 @@ from ooxml_runner import report as report_module
 
 ROOT = Path(__file__).resolve().parents[1]
 
-TRANSPORT = '''
+TRANSPORT = """
 import os, pathlib, sys, time
 base = pathlib.Path(__file__).resolve().parents[1]
 if sys.argv[1] == "info":
@@ -39,7 +39,7 @@ elif sys.argv[1] == "run":
     sys.stdin.readline()
     (base / "ready").write_text("ready")
     time.sleep(30)
-'''
+"""
 
 
 def _transport(tmp_path):
@@ -52,13 +52,39 @@ def _transport(tmp_path):
 
 
 def _start(tmp_path, repo, plan, output):
-    env = {**os.environ, "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
-           "PYTHONPATH": str(ROOT), "OOXML_STACK_TOKEN": "fixture-token"}
-    argv = [sys.executable, "-m", "ooxml_runner", "run", "--root", str(tmp_path), "--repo", REPO,
-            "--commit", "HEAD", "--runner-commit", RUNNER_COMMIT, "--plan", str(plan),
-            "--output", str(output)]
-    return subprocess.Popen(argv, cwd=ROOT, env=env, stdout=subprocess.PIPE,
-                            stderr=subprocess.STDOUT, text=True, start_new_session=True)
+    env = {
+        **os.environ,
+        "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
+        "PYTHONPATH": str(ROOT),
+        "OOXML_STACK_TOKEN": "fixture-token",
+    }
+    argv = [
+        sys.executable,
+        "-m",
+        "ooxml_runner",
+        "run",
+        "--root",
+        str(tmp_path),
+        "--repo",
+        REPO,
+        "--commit",
+        "HEAD",
+        "--runner-commit",
+        RUNNER_COMMIT,
+        "--plan",
+        str(plan),
+        "--output",
+        str(output),
+    ]
+    return subprocess.Popen(
+        argv,
+        cwd=ROOT,
+        env=env,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        start_new_session=True,
+    )
 
 
 def _interrupt(tmp_path, repo, plan, output, signum):
@@ -81,8 +107,11 @@ def _interrupt(tmp_path, repo, plan, output, signum):
     events = path.parent / "progress.jsonl"
     return {
         "report": report_module.load(path),
-        "events": ([json.loads(line)["event"] for line in events.read_text().splitlines()]
-                   if events.exists() else []),
+        "events": (
+            [json.loads(line)["event"] for line in events.read_text().splitlines()]
+            if events.exists()
+            else []
+        ),
         "cleanup_called": (tmp_path / "cleanup.called").exists(),
     }
 

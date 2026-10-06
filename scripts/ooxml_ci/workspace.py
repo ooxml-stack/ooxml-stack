@@ -64,17 +64,24 @@ def _clone(key: str, target: pathlib.Path, owner: str) -> None:
     for attempt in range(1, CLONE_ATTEMPTS + 1):
         if target.exists():
             shutil.rmtree(target)
-        result = subprocess.run(["git", "clone", "--quiet", clone_url(key, owner), str(target)],
-                                capture_output=True, text=True)
+        result = subprocess.run(
+            ["git", "clone", "--quiet", clone_url(key, owner), str(target)],
+            capture_output=True,
+            text=True,
+        )
         if result.returncode == 0:
             return
         last = result.stderr.strip()
         if attempt < CLONE_ATTEMPTS:
             time.sleep(attempt * 2)
-    raise WorkspaceError(f"git clone failed for {key} after {CLONE_ATTEMPTS} attempts: {last}")
+    raise WorkspaceError(
+        f"git clone failed for {key} after {CLONE_ATTEMPTS} attempts: {last}"
+    )
 
 
-def prepare(root: pathlib.Path, policy_path: pathlib.Path, owner: str = DEFAULT_OWNER) -> list[str]:
+def prepare(
+    root: pathlib.Path, policy_path: pathlib.Path, owner: str = DEFAULT_OWNER
+) -> list[str]:
     """Clone every policy node into ``root`` at its own default branch."""
     root = pathlib.Path(root)
     root.mkdir(parents=True, exist_ok=True)
@@ -82,7 +89,9 @@ def prepare(root: pathlib.Path, policy_path: pathlib.Path, owner: str = DEFAULT_
     for key in node_keys(policy_path):
         target = root / key
         if target.exists():
-            raise WorkspaceError(f"{target} already exists; refusing to reuse a workspace")
+            raise WorkspaceError(
+                f"{target} already exists; refusing to reuse a workspace"
+            )
         _clone(key, target, owner)
         cloned.append(key)
     return cloned
