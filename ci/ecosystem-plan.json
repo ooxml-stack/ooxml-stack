@@ -95,11 +95,11 @@
       "sites": [
         {
           "file": "ooxml-apps/.github/workflows/ci.yml",
-          "line": 28
+          "line": 29
         },
         {
           "file": "ooxml-apps/.github/workflows/real-stack.yml",
-          "line": 33
+          "line": 34
         }
       ],
       "source_file": "ooxml-apps/.github/workflows/ci.yml",
@@ -126,7 +126,7 @@
       "sites": [
         {
           "file": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-          "line": 93
+          "line": 94
         }
       ],
       "source_file": "ooxml-core/.github/workflows/native-corpus-gate.yml",
@@ -153,7 +153,7 @@
       "sites": [
         {
           "file": "ooxml-core/.github/workflows/ci.yml",
-          "line": 99
+          "line": 109
         }
       ],
       "source_file": "ooxml-core/.github/workflows/ci.yml",
@@ -201,7 +201,7 @@
       "sites": [
         {
           "file": "ooxml-core/.github/workflows/ci.yml",
-          "line": 101
+          "line": 111
         }
       ],
       "source_file": "ooxml-core/.github/workflows/ci.yml",
@@ -228,7 +228,7 @@
       "sites": [
         {
           "file": "ooxml-core/.github/workflows/ci.yml",
-          "line": 100
+          "line": 110
         }
       ],
       "source_file": "ooxml-core/.github/workflows/ci.yml",
@@ -440,6 +440,37 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
+        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-operation-engine",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-operation-engine/.github/workflows/ci.yml",
+          "line": 47
+        },
+        {
+          "file": "ooxml-operation-engine/.github/workflows/python-matrix.yml",
+          "line": 45
+        }
+      ],
+      "source_file": "ooxml-operation-engine/.github/workflows/ci.yml",
+      "to": "ooxml-stack"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
         "ref_raw": "2fa41d934984641160a1973e21da43d6eb8e50c1",
         "section": "repositories",
         "url": null,
@@ -484,13 +515,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "b60-runtime-closure-20261005",
+        "ref_raw": "eng-runtime-provider-20261005",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "9177196ad3ebe7d563435d569165fa749d455cea",
+        "commit": "4cc1327ce71c4372c1990befa8cc75bae52bfee0",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.5.38"
       },
@@ -652,7 +683,7 @@
       "sites": [
         {
           "file": "ooxml-stack/.github/workflows/mutation-gate.yml",
-          "line": 38
+          "line": 39
         }
       ],
       "source_file": "ooxml-stack/.github/workflows/mutation-gate.yml",
@@ -679,7 +710,7 @@
       "sites": [
         {
           "file": "ooxml-stack/.github/workflows/mutation-gate.yml",
-          "line": 27
+          "line": 28
         }
       ],
       "source_file": "ooxml-stack/.github/workflows/mutation-gate.yml",
@@ -726,6 +757,33 @@
       "role": "codegen",
       "source_file": "ooxml-stubs/pyproject.toml",
       "to": "ooxml-spec"
+    },
+    {
+      "declared": {
+        "ref_declared_kind": "sha",
+        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "section": "workflow",
+        "url": "https://github.com/ooxml-stack/ooxml-stack",
+        "version_spec": null
+      },
+      "expected": {
+        "commit": null,
+        "source": null,
+        "version": null
+      },
+      "from": "ooxml-stubs",
+      "group": null,
+      "kind": "ci",
+      "purpose": "workflow_uses",
+      "role": "ci",
+      "sites": [
+        {
+          "file": "ooxml-stubs/.github/workflows/release.yml",
+          "line": 22
+        }
+      ],
+      "source_file": "ooxml-stubs/.github/workflows/release.yml",
+      "to": "ooxml-stack"
     },
     {
       "declared": {
@@ -790,11 +848,11 @@
       "sites": [
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 186
+          "line": 189
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 259
+          "line": 267
         },
         {
           "file": "python-docx/.github/workflows/native-corpus-gate.yml",
@@ -829,11 +887,11 @@
       "sites": [
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 197
+          "line": 200
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 270
+          "line": 278
         }
       ],
       "source_file": "python-docx/.github/workflows/ci.yml",
@@ -860,19 +918,19 @@
       "sites": [
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 163
+          "line": 166
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 237
+          "line": 245
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 282
+          "line": 290
         },
         {
           "file": "python-docx/.github/workflows/ci.yml",
-          "line": 304
+          "line": 313
         }
       ],
       "source_file": "python-docx/.github/workflows/ci.yml",
@@ -984,11 +1042,11 @@
       "sites": [
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 190
+          "line": 193
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 257
+          "line": 265
         },
         {
           "file": "python-pptx/.github/workflows/native-corpus-gate.yml",
@@ -1023,19 +1081,19 @@
       "sites": [
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 167
+          "line": 170
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 239
+          "line": 247
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 279
+          "line": 287
         },
         {
           "file": "python-pptx/.github/workflows/ci.yml",
-          "line": 302
+          "line": 311
         }
       ],
       "source_file": "python-pptx/.github/workflows/ci.yml",
@@ -1126,19 +1184,23 @@
       "sites": [
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 128
+          "line": 130
         },
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 172
+          "line": 188
         },
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 194
+          "line": 219
         },
         {
           "file": "python-xlsx/.github/workflows/ci.yml",
-          "line": 217
+          "line": 243
+        },
+        {
+          "file": "python-xlsx/.github/workflows/release.yml",
+          "line": 31
         }
       ],
       "source_file": "python-xlsx/.github/workflows/ci.yml",
@@ -1208,27 +1270,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 23,
+              "line": 24,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 25,
+              "line": 26,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 27,
+              "line": 28,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -1238,7 +1300,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 32,
+              "line": 33,
               "name": "Install dependencies",
               "run": "make install",
               "shell": null,
@@ -1248,9 +1310,49 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 35,
+              "line": 36,
+              "name": "Run lint",
+              "run": "make lint",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 39,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 42,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 45,
               "name": "Backend tests (contracts and required real-engine drawing edits)",
               "run": "make test",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 48,
+              "name": "Run coverage gate",
+              "run": "make coverage",
               "shell": null,
               "uses": null
             }
@@ -1260,7 +1362,7 @@
           "env": {},
           "id": "frontend",
           "if": null,
-          "line": 38,
+          "line": 51,
           "matrix": {},
           "name": "frontend (vitest + contract + e2e)",
           "needs": null,
@@ -1270,37 +1372,37 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 42,
+              "line": 56,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 44,
+              "line": 58,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "pnpm/action-setup@v4"
+              "uses": "pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 48,
+              "line": 62,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/setup-node@v4"
+              "uses": "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 54,
+              "line": 68,
               "name": "Install frontend dependencies",
               "run": "cd frontend && pnpm install --frozen-lockfile",
               "shell": null,
@@ -1310,7 +1412,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 57,
+              "line": 71,
               "name": "TypeScript strict check",
               "run": "make test-typecheck",
               "shell": null,
@@ -1320,7 +1422,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 60,
+              "line": 74,
               "name": "Production build",
               "run": "make test-build",
               "shell": null,
@@ -1330,7 +1432,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 63,
+              "line": 77,
               "name": "Frontend unit tests",
               "run": "make test-frontend",
               "shell": null,
@@ -1340,7 +1442,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 66,
+              "line": 80,
               "name": "Frontend REST contract (vitest half)",
               "run": "cd frontend && pnpm exec vitest run src/contract.test.ts",
               "shell": null,
@@ -1350,7 +1452,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 69,
+              "line": 83,
               "name": "Install Playwright chromium",
               "run": "cd frontend && pnpm exec playwright install --with-deps chromium",
               "shell": null,
@@ -1360,7 +1462,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 72,
+              "line": 86,
               "name": "Playwright route-state matrix",
               "run": "make test-e2e",
               "shell": null,
@@ -1386,7 +1488,8 @@
             "python-version": [
               "3.10",
               "3.11",
-              "3.12"
+              "3.12",
+              "3.13"
             ]
           },
           "name": null,
@@ -1397,27 +1500,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 23,
+              "line": 24,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 25,
+              "line": 26,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 28,
+              "line": 29,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -1427,17 +1530,17 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 31,
+              "line": 32,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/setup-dotnet@v5"
+              "uses": "actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 35,
+              "line": 36,
               "name": "Install Open XML SDK validator runtime",
               "run": "dotnet tool install -g dotnet-script\necho \"$HOME/.dotnet/tools\" >> \"$GITHUB_PATH\"\n",
               "shell": null,
@@ -1453,7 +1556,7 @@
                 "PYTHON_PPTX_DEPLOY_KEY": "${{ secrets.PYTHON_PPTX_DEPLOY_KEY }}"
               },
               "if": null,
-              "line": 40,
+              "line": 41,
               "name": "Configure private dependency access",
               "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  printf '%s\\n' \"$OOXML_TEST_FRAMEWORK_DEPLOY_KEY\" > ~/.ssh/ooxml_test_framework\n  printf '%s\\n' \"$PYTHON_PPTX_DEPLOY_KEY\" > ~/.ssh/python_pptx\n  printf '%s\\n' \"$PYTHON_DOCX_DEPLOY_KEY\" > ~/.ssh/python_docx\n  chmod 600 ~/.ssh/ooxml_spec ~/.ssh/ooxml_test_framework ~/.ssh/python_pptx ~/.ssh/python_docx\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\n\nHost github-ooxml-test-framework\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_test_framework\n  IdentitiesOnly yes\n\nHost github-python-pptx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_pptx\n  IdentitiesOnly yes\n\nHost github-python-docx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_docx\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-test-framework/ooxml-stack/ooxml-test-framework\".insteadOf \"https://github.com/ooxml-stack/ooxml-test-framework\"\n  git config --global url.\"ssh://git@github-python-pptx/ooxml-stack/python-pptx\".insteadOf \"https://github.com/ooxml-stack/python-pptx\"\n  git config --global url.\"ssh://git@github-python-docx/ooxml-stack/python-docx\".insteadOf \"https://github.com/ooxml-stack/python-docx\"\nfi\n",
               "shell": null,
@@ -1463,7 +1566,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 92,
+              "line": 93,
               "name": "Install dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -1473,7 +1576,37 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 95,
+              "line": 96,
+              "name": "Run lint",
+              "run": "make lint",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 99,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 102,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 105,
               "name": "Checkout public claim evidence repos",
               "run": "clone_evidence_repos() {\n  rm -rf ../ooxml-stack ../python-pptx ../python-docx\n  git clone --depth 1 https://github.com/ooxml-stack/ooxml-stack.git ../ooxml-stack\n  git clone --depth 1 https://github.com/ooxml-stack/python-pptx.git ../python-pptx\n  git clone --depth 1 https://github.com/ooxml-stack/python-docx.git ../python-docx\n}\nfor attempt in 1 2 3; do\n  clone_evidence_repos && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
               "shell": null,
@@ -1483,7 +1616,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 109,
+              "line": 119,
               "name": "Run tests",
               "run": "uv run --frozen pytest -q",
               "shell": null,
@@ -1492,8 +1625,18 @@
             {
               "cwd": null,
               "env": {},
+              "if": null,
+              "line": 122,
+              "name": "Run coverage gate",
+              "run": "uv run --frozen --with coverage coverage run --source=src/ooxml_core -m pytest -q\nuv run --frozen --with coverage coverage report\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
               "if": "matrix.python-version == '3.12'",
-              "line": 112,
+              "line": 127,
               "name": "Run downstream compatibility gate",
               "run": "uv run --frozen python scripts/check_downstream_compat.py",
               "shell": null,
@@ -1520,11 +1663,11 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 22,
+              "line": 23,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
@@ -1532,7 +1675,7 @@
                 "GH_TOKEN": "${{ secrets.OOXML_STACK_TOKEN != '' && secrets.OOXML_STACK_TOKEN || github.token }}"
               },
               "if": null,
-              "line": 26,
+              "line": 27,
               "name": "Verify release bundle metadata",
               "run": "python3 scripts/corpus_bundle.py verify-release",
               "shell": null,
@@ -1544,7 +1687,7 @@
                 "GH_TOKEN": "${{ secrets.OOXML_STACK_TOKEN != '' && secrets.OOXML_STACK_TOKEN || github.token }}"
               },
               "if": null,
-              "line": 31,
+              "line": 32,
               "name": "Fetch corpus bundle",
               "run": "python3 scripts/corpus_bundle.py fetch --tier \"${{ inputs.tier || 'all' }}\"",
               "shell": null,
@@ -1554,7 +1697,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 36,
+              "line": 37,
               "name": "Inspect corpus",
               "run": "python3 scripts/inspect_corpus.py --tier \"${{ inputs.tier || 'all' }}\"",
               "shell": null,
@@ -1564,7 +1707,7 @@
               "cwd": null,
               "env": {},
               "if": "always()",
-              "line": 39,
+              "line": 40,
               "name": "Write summary",
               "run": "echo \"## Native Corpus\" >> \"$GITHUB_STEP_SUMMARY\"\ncat reports/corpus-inspection.md >> \"$GITHUB_STEP_SUMMARY\"\n",
               "shell": null,
@@ -1574,11 +1717,11 @@
               "cwd": null,
               "env": {},
               "if": "always()",
-              "line": 45,
+              "line": 46,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/upload-artifact@v7"
+              "uses": "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
             }
           ]
         }
@@ -1629,6 +1772,68 @@
               "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 45,
+              "name": null,
+              "run": null,
+              "shell": null,
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 46,
+              "name": "Configure private dependency access",
+              "run": null,
+              "shell": null,
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+            },
+            {
+              "cwd": "ooxml-operation-engine",
+              "env": {},
+              "if": null,
+              "line": 50,
+              "name": "Install locked Python dependencies",
+              "run": "uv sync --locked --all-extras",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 53,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": "ooxml-operation-engine",
+              "env": {},
+              "if": null,
+              "line": 55,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": "ooxml-operation-engine",
+              "env": {
+                "FORMAT_BASE": "${{ github.event.pull_request.base.sha || github.event.before }}"
+              },
+              "if": null,
+              "line": 58,
+              "name": "Run changed-files formatter gate",
+              "run": "python3 scripts/format_gate.py",
+              "shell": null,
+              "uses": null
+            },
+            {
               "cwd": "ooxml-operation-engine",
               "env": {
                 "OOXML_PLATFORM_BUCKET": "default",
@@ -1636,7 +1841,7 @@
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 45,
+              "line": 63,
               "name": "Run the shared local and server gate",
               "run": "make check CHECK_COMMIT=\"${{ github.sha }}\" CHECK_OUTPUT=\"${{ runner.temp }}/ci-reports\"",
               "shell": null,
@@ -1646,9 +1851,19 @@
               "cwd": "ooxml-operation-engine",
               "env": {},
               "if": "always()",
-              "line": 52,
+              "line": 70,
               "name": "Record the default partition receipt",
               "run": "report=$(find \"${{ runner.temp }}/ci-reports\" -name pytest.json | head -1)\npython3 -m scripts.ci.platform_summary write \\\n  --report \"$report\" --commit \"${{ github.sha }}\" --bucket default \\\n  --platform linux --runner ubuntu-24.04 \\\n  --output \"${{ runner.temp }}/platform-receipt-default.json\"\n",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": "ooxml-operation-engine",
+              "env": {},
+              "if": "always()",
+              "line": 79,
+              "name": "Record hosted failure diagnostics",
+              "run": "mapfile -t reports < <(find \"${{ runner.temp }}/ci-reports\" -name report.json)\nargs=(--root . --output \"${{ runner.temp }}/hosted-diagnostics.json\")\nif [ \"${#reports[@]}\" -eq 1 ]; then\n  run_dir=$(dirname \"${reports[0]}\")\n  args+=(--report \"${reports[0]}\" --pytest-report \"$run_dir/pytest.json\" --events \"$run_dir/pytest-events.jsonl\" --collected \"$run_dir/pytest-collected.json\" --attempt \"$run_dir/pytest-attempt.json\")\nelse\n  args+=(--reports \"${{ runner.temp }}/ci-reports\")\nfi\npython3 -m scripts.ci.hosted_diagnostics \"${args[@]}\"\n",
               "shell": null,
               "uses": null
             },
@@ -1656,7 +1871,7 @@
               "cwd": null,
               "env": {},
               "if": "always()",
-              "line": 61,
+              "line": 92,
               "name": "Preserve evidence even on failure",
               "run": null,
               "shell": null,
@@ -1691,27 +1906,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 21,
+              "line": 22,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 23,
+              "line": 24,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 26,
+              "line": 27,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -1721,7 +1936,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 29,
+              "line": 30,
               "name": "Install dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -1731,9 +1946,49 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 32,
+              "line": 33,
+              "name": "Run lint",
+              "run": "make lint",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 36,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 39,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 42,
               "name": "Run tests",
               "run": "uv run --frozen pytest tests/ -q",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 45,
+              "name": "Run coverage gate",
+              "run": "make coverage",
               "shell": null,
               "uses": null
             }
@@ -1758,17 +2013,17 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 11,
+              "line": 12,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v4"
+              "uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 14,
+              "line": 15,
               "name": "Check release evidence retention",
               "run": "python scripts/check_evidence_retention.py",
               "shell": "bash",
@@ -1804,27 +2059,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 22,
+              "line": 23,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 26,
+              "line": 27,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 29,
+              "line": 30,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -1838,7 +2093,7 @@
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 32,
+              "line": 33,
               "name": "Configure private dependency access",
               "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  if [ -z \"$OOXML_CORE_DEPLOY_KEY\" ] || [ -z \"$OOXML_SPEC_DEPLOY_KEY\" ]; then\n    echo \"OOXML_STACK_TOKEN or both OOXML_CORE_DEPLOY_KEY and OOXML_SPEC_DEPLOY_KEY are required\"\n    exit 1\n  fi\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_CORE_DEPLOY_KEY\" > ~/.ssh/ooxml_core\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  chmod 600 ~/.ssh/ooxml_core ~/.ssh/ooxml_spec\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-core\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_core\n  IdentitiesOnly yes\n\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-core/ooxml-stack/ooxml-core\".insteadOf \"https://github.com/ooxml-stack/ooxml-core\"\n  git config --global url.\"ssh://git@github-ooxml-core/ooxml-stack/ooxml-core.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-core.git\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec.git\"\nfi\ngit ls-remote https://github.com/ooxml-stack/ooxml-core.git HEAD >/dev/null\ngit ls-remote https://github.com/ooxml-stack/ooxml-spec.git HEAD >/dev/null\n",
               "shell": null,
@@ -1848,7 +2103,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 74,
+              "line": 75,
               "name": "Install dependencies",
               "run": "uv sync --frozen --extra dev --extra codegen",
               "shell": null,
@@ -1858,9 +2113,49 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 77,
+              "line": 78,
+              "name": "Run lint",
+              "run": "make lint",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 81,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 84,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 87,
               "name": "Run tests",
               "run": "uv run --frozen pytest -q",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 90,
+              "name": "Run coverage gate",
+              "run": "make coverage",
               "shell": null,
               "uses": null
             }
@@ -1883,7 +2178,8 @@
             "python-version": [
               "3.10",
               "3.11",
-              "3.12"
+              "3.12",
+              "3.13"
             ]
           },
           "name": null,
@@ -1894,27 +2190,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 22,
+              "line": 23,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 26,
+              "line": 27,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 29,
+              "line": 30,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -1927,7 +2223,7 @@
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 32,
+              "line": 33,
               "name": "Configure private dependency access",
               "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  if [ -z \"$OOXML_SPEC_DEPLOY_KEY\" ]; then\n    echo \"OOXML_STACK_TOKEN or OOXML_SPEC_DEPLOY_KEY is required\"\n    exit 1\n  fi\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  chmod 600 ~/.ssh/ooxml_spec\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec.git\"\nfi\ngit ls-remote https://github.com/ooxml-stack/ooxml-spec.git HEAD >/dev/null\n",
               "shell": null,
@@ -1937,7 +2233,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 63,
+              "line": 64,
               "name": "Install dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -1947,9 +2243,49 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 66,
+              "line": 67,
+              "name": "Run lint",
+              "run": "make lint",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 70,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 73,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 76,
               "name": "Run tests",
               "run": "uv run --frozen pytest -q",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 79,
+              "name": "Run coverage gate",
+              "run": "make coverage",
               "shell": null,
               "uses": null
             }
@@ -1968,12 +2304,13 @@
           },
           "id": "test",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 207,
+          "line": 214,
           "matrix": {
             "python-version": [
               "3.10",
               "3.11",
-              "3.12"
+              "3.12",
+              "3.13"
             ]
           },
           "name": "full gate (${{ matrix.python-version }})",
@@ -1984,27 +2321,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 220,
+              "line": 228,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 222,
+              "line": 230,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 224,
+              "line": 232,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -2014,17 +2351,17 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 227,
+              "line": 235,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/setup-dotnet@v5"
+              "uses": "actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 231,
+              "line": 239,
               "name": "Install Open XML SDK validator runtime",
               "run": "dotnet tool install -g dotnet-script\necho \"$HOME/.dotnet/tools\" >> \"$GITHUB_PATH\"\n",
               "shell": null,
@@ -2034,7 +2371,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 236,
+              "line": 244,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2044,7 +2381,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 244,
+              "line": 252,
               "name": "Install dependencies",
               "run": "uv sync --frozen",
               "shell": null,
@@ -2054,7 +2391,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 247,
+              "line": 255,
               "name": "Install quality tools",
               "run": "uv tool install ruff==0.16.5\nuv tool install pyright==1.1.411\n",
               "shell": null,
@@ -2064,9 +2401,9 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 252,
+              "line": 260,
               "name": "Run static quality gates",
-              "run": "make lint && make typecheck",
+              "run": "make lint && make typecheck && make typecheck-strict",
               "shell": null,
               "uses": null
             },
@@ -2074,7 +2411,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 255,
+              "line": 263,
               "name": "Checkout native corpus evidence repo",
               "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
               "shell": null,
@@ -2084,7 +2421,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 267,
+              "line": 275,
               "name": "Checkout public claim evidence repo",
               "run": "rm -rf ../ooxml-stack\ngit clone --depth 1 https://github.com/ooxml-stack/ooxml-stack.git ../ooxml-stack\n",
               "shell": null,
@@ -2094,7 +2431,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 272,
+              "line": 280,
               "name": "Downstream compatibility gate",
               "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
               "shell": null,
@@ -2104,7 +2441,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 275,
+              "line": 283,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2125,12 +2462,13 @@
           },
           "id": "build",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 214,
+          "line": 221,
           "matrix": {
             "python-version": [
               "3.10",
               "3.11",
-              "3.12"
+              "3.12",
+              "3.13"
             ]
           },
           "name": "full gate (${{ matrix.python-version }})",
@@ -2141,27 +2479,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 227,
+              "line": 235,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 228,
+              "line": 236,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 231,
+              "line": 239,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -2171,7 +2509,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 234,
+              "line": 242,
               "name": "Display Python version",
               "run": "PYTHON_BIN=\"$(uv python find \"$UV_PYTHON\")\"\n\"$PYTHON_BIN\" -c \"import sys; print(sys.version)\"\n",
               "shell": null,
@@ -2181,7 +2519,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 238,
+              "line": 246,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2191,7 +2529,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 245,
+              "line": 253,
               "name": "Install test dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -2201,7 +2539,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 247,
+              "line": 255,
               "name": "Install quality tools",
               "run": "uv tool install ruff==0.16.5\nuv tool install pyright==1.1.411\n",
               "shell": null,
@@ -2211,9 +2549,9 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 251,
+              "line": 259,
               "name": "Run static quality gates",
-              "run": "make lint && make typecheck",
+              "run": "make lint && make typecheck && make typecheck-strict",
               "shell": null,
               "uses": null
             },
@@ -2221,7 +2559,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 253,
+              "line": 261,
               "name": "Checkout native corpus evidence repo",
               "run": "clone_native_corpus() {\n  rm -rf ../ooxml-native-corpus\n  GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/ooxml-stack/ooxml-native-corpus.git ../ooxml-native-corpus\n}\nfor attempt in 1 2 3; do\n  clone_native_corpus && break\n  if [ \"$attempt\" = 3 ]; then exit 1; fi\n  sleep $((attempt * 5))\ndone\n",
               "shell": null,
@@ -2231,17 +2569,17 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 264,
+              "line": 272,
               "name": "Set up .NET for schema validation",
               "run": null,
               "shell": null,
-              "uses": "actions/setup-dotnet@v5"
+              "uses": "actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 268,
+              "line": 276,
               "name": "Install dotnet-script",
               "run": "dotnet tool install -g dotnet-script",
               "shell": null,
@@ -2251,7 +2589,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 270,
+              "line": 278,
               "name": "Downstream compatibility gate",
               "run": "uv run --frozen pytest tests/test_downstream_compatibility.py -q",
               "shell": null,
@@ -2261,7 +2599,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 272,
+              "line": 280,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2281,12 +2619,13 @@
           },
           "id": "validate",
           "if": "needs.router.outputs.run_full == 'true'",
-          "line": 151,
+          "line": 166,
           "matrix": {
             "python-version": [
               "3.10",
               "3.11",
-              "3.12"
+              "3.12",
+              "3.13"
             ]
           },
           "name": "full gate (${{ matrix.python-version }})",
@@ -2297,27 +2636,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 163,
+              "line": 179,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@v6"
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 164,
+              "line": 180,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@v7"
+              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 168,
+              "line": 184,
               "name": "Install workflow Python",
               "run": "uv python install \"$UV_PYTHON\"",
               "shell": null,
@@ -2327,7 +2666,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 171,
+              "line": 187,
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
@@ -2337,7 +2676,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 176,
+              "line": 192,
               "name": "Install test dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -2347,17 +2686,47 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 179,
-              "name": "Set up .NET for schema validation",
-              "run": null,
+              "line": 195,
+              "name": "Run lint",
+              "run": "make lint",
               "shell": null,
-              "uses": "actions/setup-dotnet@v5"
+              "uses": null
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 184,
+              "line": 198,
+              "name": "Install pyright",
+              "run": "uv tool install pyright==1.1.411",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 201,
+              "name": "Run Python type gate",
+              "run": "make typecheck",
+              "shell": null,
+              "uses": null
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 204,
+              "name": "Set up .NET for schema validation",
+              "run": null,
+              "shell": null,
+              "uses": "actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1"
+            },
+            {
+              "cwd": null,
+              "env": {},
+              "if": null,
+              "line": 209,
               "name": "Install dotnet-script",
               "run": "dotnet tool install -g dotnet-script",
               "shell": null,
@@ -2367,7 +2736,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 187,
+              "line": 212,
               "name": "Run portable release contract",
               "run": "make validate",
               "shell": null,
@@ -2707,19 +3076,19 @@
   "inputs": [
     {
       "path": "ooxml-apps/.github/workflows/ci.yml",
-      "sha256": "d9f71366a892ec25b9bb33829d85e6e7cc32e4a94913482118d0324e2472286b"
+      "sha256": "e5edd79e8b34f9b8841b1bd93ebcc0037864c4ba22512db72bb74fc0e2581190"
     },
     {
       "path": "ooxml-apps/.github/workflows/dependency-audit.yml",
-      "sha256": "661d16c0a2ac217bfc2c11de6f299149550d6ec1d69f633b52a624ea63166319"
+      "sha256": "c8e356ff891a4e4e551e86ba9a24a7807d15534fddd33496f86b4b162260a796"
     },
     {
       "path": "ooxml-apps/.github/workflows/real-stack.yml",
-      "sha256": "c0e7e5cc7e0a6b9241d9d637653674c28a65ae99a3dfebc204d94eb2f3b4ccc4"
+      "sha256": "dacb8ae74f80b22dd39a782979b1b14a5e62d66cd0d8e7227bf11a440310556d"
     },
     {
       "path": "ooxml-apps/pyproject.toml",
-      "sha256": "3e6498aa497b61d337dcdc971d90eae01e5d6e971f8c32a681366dfdc7129665"
+      "sha256": "1bdd9fda5488bebb6fb666c4df18e56cdcc6dd0e6a9803fbba99ddede04b2920"
     },
     {
       "path": "ooxml-apps/uv.lock",
@@ -2727,51 +3096,59 @@
     },
     {
       "path": "ooxml-core/.github/workflows/ci.yml",
-      "sha256": "8fdfa8e90c6661d0adfbe44e17f001ac5f2a41da6a5eeb84a3d7be388eaa7147"
+      "sha256": "021458e5a10639967e34ef2371876011edb75de6d5e6666af40840bb2ca8caa1"
     },
     {
       "path": "ooxml-core/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
     },
     {
       "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-      "sha256": "c47b4ddab3e40da2d77d60eeadec83c64d99abf5a050c8d880b9aae78bb6c569"
+      "sha256": "87cca40801123549eb8e12c67109d392e9cd5f29cc6271f925b898c6980ac9c2"
     },
     {
       "path": "ooxml-core/.github/workflows/release-wheel.yml",
-      "sha256": "d6fef2be4715ae5bf286f89e3dc15d899b44320683375de91a6e418680f87bb9"
+      "sha256": "de67c40afcf5bc636f8957ec4e1f56e5605de1e334ac6134b2f1503a9cbdb720"
     },
     {
       "path": "ooxml-core/.github/workflows/semantic-gate-report.yml",
-      "sha256": "534235d1227fa0ccdaf98de3164f827aa52150465fc4aecc3e28bbfbcbd99f5f"
+      "sha256": "cb00693c941f735f6a46ae31ab88c8fbffa2d00f731b4085223b2fb49b66784e"
     },
     {
       "path": "ooxml-core/pyproject.toml",
-      "sha256": "dfb959b5b35298af1258b864fa2d5fe489e75bdc2a6c565b8d1c40f64bb34c47"
+      "sha256": "a4d60de8fdd1c02c4330fde66834f528eb4c178e2a0f25af85f1596ce0607a54"
     },
     {
       "path": "ooxml-core/uv.lock",
       "sha256": "d07c651eb72104812b5b2d21bbf0518d627797e17352ce4393b473d37d3b7253"
     },
     {
+      "path": "ooxml-native-corpus/.github/workflows/ci.yml",
+      "sha256": "d6581f08996721779d0d1f51bb02bbbdb8167271cd80e1accb89d20c48bc8627"
+    },
+    {
       "path": "ooxml-native-corpus/.github/workflows/corpus-inspection.yml",
-      "sha256": "0945bf83476db03fe651b6de9f91e70acfca55cb210f764c444e8cf94863c2bf"
+      "sha256": "ad31a6cf54f77af3323c6f95962e819dc5a4145727e8056e739da11cdeb1cb52"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ci.yml",
-      "sha256": "b6a5e48b76661bb5e8b421bc0ee5546eb2a4d4a1aa6061334292822e37b42012"
+      "sha256": "1154fa25016fdbe6600537e65a9831f02945d713e49f3740a6d1d745bb6bcff1"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/commit-delta.yml",
-      "sha256": "c9eb00ba8accd395abf8a8441502f8044b29ceb8a44a4b9b9b339e6bf92bcc06"
+      "sha256": "62badef8ee5a98467356f5fb73a90dd9eda564c9888a584511e8532ead33b174"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/dependency-audit.yml",
-      "sha256": "d5bb7871cae6e7ab06176b55a5ab331bab86216c887f6ee1a7ef336f85db470c"
+      "sha256": "0dff29a59aa6e401be6c0dc6fe2b8cf0e3fddd0077f051916c31c9b4c74c6aad"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
       "sha256": "5007083e6dbf6911670e91e2b69e51058df86cafd55f35d86a5fa9e9f3c1682e"
+    },
+    {
+      "path": "ooxml-operation-engine/.github/workflows/python-matrix.yml",
+      "sha256": "7e585395f48e313afa2a2c4cf5c8a22a83a1ab2493bcb62b7602d7a6ce70a5d5"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
@@ -2783,23 +3160,27 @@
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "d2b32d1f8cbd24bacb22536c1b093848fa43ed6857cd7d58e791db7a55fe1df2"
+      "sha256": "ae970efde44f2ce6ff576d083351abf6aa23ae1cea5f1d184b0681d4e611d6df"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "b4c6d996a1b2d2f4a39313918b505b17ce1e77aa823d7628e7d9e473919a6ab3"
+      "sha256": "a5de12c12feabbb8930f68c050c78237ecbe9cde1a71a2a9e5bf51fc87406007"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
-      "sha256": "9bfa28b2b584231f558cff1c882922134ee2b500ccdba234ce5b71dda281312b"
+      "sha256": "2c6cf746639d753e3a17d96fcdb2aef3b8f54460492d8aef5b7b01a30ad122a0"
     },
     {
       "path": "ooxml-spec/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+    },
+    {
+      "path": "ooxml-spec/.github/workflows/release.yml",
+      "sha256": "6b7e59cae131e7b6105a099e5b2f69026e0b6c8639674ed1919f6521348d896c"
     },
     {
       "path": "ooxml-spec/pyproject.toml",
-      "sha256": "f1e68c5aeee8aed066655a784f9d4d7a506806345f623f9cf2f352c508bb597b"
+      "sha256": "075830ecf4c1f989af7e257a57e2fa5f3e84a628722fa57f6dc1e93463640282"
     },
     {
       "path": "ooxml-spec/uv.lock",
@@ -2807,15 +3188,15 @@
     },
     {
       "path": "ooxml-stack/.github/workflows/evidence-retention.yml",
-      "sha256": "7a4e813328505fa593e77c236fd569c885450557f0d45cda959f8147ea631f8f"
+      "sha256": "c09569aabc6144d8114bdc78286cb81f99a82bf305176aeb2111571265aec019"
     },
     {
       "path": "ooxml-stack/.github/workflows/mutation-gate.yml",
-      "sha256": "bae5ef483f7e1fb9f13c1740e5363554fa66e45b3aa30a4f696511d4566d8b81"
+      "sha256": "238dc79275b73731e225a994eea8bd3f17217542f32ce9e8a77e20219e351c68"
     },
     {
       "path": "ooxml-stack/.github/workflows/runner-tests.yml",
-      "sha256": "54440bfd2eeecd249ccba7dcfc8052365d22e6ff56c69af07bdd3dcb50bac90b"
+      "sha256": "b7a8bce14771392f6cb95f68246a8ef5dccd03df5d954275f73060febbd38d12"
     },
     {
       "path": "ooxml-stack/ci/ecosystem-inventory-requirements.txt",
@@ -2827,35 +3208,43 @@
     },
     {
       "path": "ooxml-stubs/.github/workflows/ci.yml",
-      "sha256": "0291c5eb18df9772d4dde9e87d75e544b6b5c81d9fb3eb9320bdea3f9e87c507"
+      "sha256": "55bf71085c4ecd8dd63f4bb367971b092990466221f9c70d0668aeb0f5d66586"
     },
     {
       "path": "ooxml-stubs/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+    },
+    {
+      "path": "ooxml-stubs/.github/workflows/release.yml",
+      "sha256": "7bc6e95e932e24b2060431428bfb12e6ab7358ce4479a6ccff8bf920f90f2367"
     },
     {
       "path": "ooxml-stubs/pyproject.toml",
-      "sha256": "853001162085c7c32d9616cc752cedaa5deb55e29202646efcae40e64c28f8c1"
+      "sha256": "1ff3186762af2f0cbbd7fe4d65b69dc90d3b1f2f9c3c0f86b67a2de69571536e"
     },
     {
       "path": "ooxml-stubs/uv.lock",
-      "sha256": "36e2f67c2dc7c1edb86b68b51b2975dc9b68d1735881ea5ccde62f855e3d393d"
+      "sha256": "617c85c49311e7092d02b66b6fea056a00f4dc8d569ef59773b1b403c0bacc17"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
-      "sha256": "d6e1ef51d11c4aed98782b335a295be6204ed48ff79e06b5d0baf0bb923bc318"
+      "sha256": "8f50f8f6e0ec4af846a157db8bf725416a5d3924d11008fb5bef0a6969c06a1a"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+    },
+    {
+      "path": "ooxml-test-framework/.github/workflows/release.yml",
+      "sha256": "4b48091af22fb8c692527d4a64cea3fe9176e65671b36ab837b1280b194b507d"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
-      "sha256": "17393dc5a6518a894ce2d603a18e1e93ec6f311e4912a9d24f4cc1a8f83ebb1a"
+      "sha256": "b696e9eee787801ce6b86c2f0d9f175c87db438e2267fc266e4ff312ebfc40f8"
     },
     {
       "path": "ooxml-test-framework/pyproject.toml",
-      "sha256": "2f5e345be7662a484ff1fef03684af61dbe5ac798af32a20049d6cb307d25280"
+      "sha256": "7349d3b12ba235c4f65846456747c887436ba460ca19290605fff2d06ef2e9cf"
     },
     {
       "path": "ooxml-test-framework/uv.lock",
@@ -2863,23 +3252,23 @@
     },
     {
       "path": "python-docx/.github/workflows/ci.yml",
-      "sha256": "26896f4084361026b7c1ffe5d05a82442daf0457d9d2873c0ab6a1acf38d2135"
+      "sha256": "5276ba477749a9bd0d9dc4156c3f56194505d986aa3e34d6fb8e520788e6682e"
     },
     {
       "path": "python-docx/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
     },
     {
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "5c94aa1a8bba29b6109776916dd12f776afc32a4f8297dd95ee90c6bfa1331c1"
+      "sha256": "ac77e568c27fae7edcd087343ee74e416560e88dce8ea6113aea2e66fa902869"
     },
     {
       "path": "python-docx/.github/workflows/semantic-gate-report.yml",
-      "sha256": "d07d60339d6070efd61bc70a103449eef1ee2ef08dd95c5350ad73d440e39f6d"
+      "sha256": "6d8f8d79d8b6a58e8e156259beeeb79edaf6ef3790e832eecd1c91f31871839d"
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "1c053dec6101beec8e3a510a3f7579dc8b7fae4bb5e8914ab4f8d184fb98e403"
+      "sha256": "f8a3d70537a2f72e8871ce68c06989f7d3bfe50c1b945ff7ac365d44607a982e"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
@@ -2891,27 +3280,27 @@
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
-      "sha256": "642078ee50e497ffc90b0cab825fbaabb7805482eebd5b7013cab85fa92b1f54"
+      "sha256": "fcd1def6c80809d8e6f89a9b5873ae03a6353a0e1fb2630987bece1b595975cb"
     },
     {
       "path": "python-pptx/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
     },
     {
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "184c49635d40165a694d90e722cd5570705e3b86926625f75a0048f0d55a4995"
+      "sha256": "add37445d286639dcb5959509955af2ea52e9d65caaa77411469a0f984d53e87"
     },
     {
       "path": "python-pptx/.github/workflows/semantic-gate-report.yml",
-      "sha256": "b91715904f6cc9cd06a746a4c4230db1ec7ef36f9ce6ed261db219a39164b6e0"
+      "sha256": "53cf5150a7ef2c3063b8e6dac4eacebc251f5618bfda7f6fb889abc8468000dd"
     },
     {
       "path": "python-pptx/.github/workflows/sync-to-gitee.yml",
-      "sha256": "6720a775f45f7891c79949e0075a0ca49da7c421df6fac75edb5a27a14c26870"
+      "sha256": "7deae70b1622af4ea8999977bf74414800c99891e129b4d369e884869b5b8e91"
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "4a3d8e42c71b110f46d2299b10f340800100fa19bf3215fae170c3ded4d81807"
+      "sha256": "f25b68625f7760f0072ece66ede2d3053155abbad042fbef16a718ae37d2b999"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
@@ -2923,19 +3312,23 @@
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
-      "sha256": "9dd81c4b1811612d2fa12bfb33e07034d5188a905c8bb99734689a7b5cef241c"
+      "sha256": "1df0817ba54a3de3ac092c5cc28b4015a5c0a4656b968f29032493c9fe585e37"
     },
     {
       "path": "python-xlsx/.github/workflows/dependency-audit.yml",
-      "sha256": "af08e77f6be2d9a6f20d0f1daea7dd30982247571dfacd1007e2b3396dd34072"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
     },
     {
       "path": "python-xlsx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "1b8a63d9c72a4229caf5da91b365a77eeaa1c91c91e693a9639772dbe2c1ae64"
+      "sha256": "dcb09d7954603ea25aae4817f44932aa5f4d9bc6eb341fa6ba2b4edbed68ac8c"
+    },
+    {
+      "path": "python-xlsx/.github/workflows/release.yml",
+      "sha256": "f32d110060bf0c5e86e185360002168ffdd8c5f231cddb58cc2fe5d85659ac6a"
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "10f815eef601a278620caaac8910a17cdbccfb1c2ce71dcbe84d412a690d082b"
+      "sha256": "33491fe837211e263cb21a3a9f6aedc09d59caf12b27d9b345865d9945425170"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
@@ -2946,7 +3339,7 @@
       "sha256": "493151009531e2664a95d32a31dfc5f820d5941112f417b4a4e87a2c29a08822"
     }
   ],
-  "inputs_digest": "e7649d7ec372d12111135d8e479734dc06a44dfd92c2e93f080c19c5170b81c1",
+  "inputs_digest": "e0bd6125641b4f0f529a751cf8fb31ef7dc72d3b6d4622766afc4183dfba778e",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3228,7 +3621,7 @@
     {
       "repos": [
         {
-          "ref": "b60-runtime-closure-20261005",
+          "ref": "eng-runtime-provider-20261005",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.5.38"
