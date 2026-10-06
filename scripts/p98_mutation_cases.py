@@ -112,8 +112,8 @@ def pptx_chartex_style_id_case() -> dict[str, Any]:
 def pptx_chartex_strdim_order_case() -> dict[str, Any]:
     # strDim levels must be leaf-first (innermost category first); the mutant
     # orders them root-first. ChartEx string points store text, not a val attribute.
-    leaf = f'<c:lvl><c:pt idx="0">Leaf1</c:pt><c:pt idx="1">Leaf2</c:pt></c:lvl>'
-    stem = f'<c:lvl><c:pt idx="0">Stem1</c:pt><c:pt idx="1">Stem1</c:pt></c:lvl>'
+    leaf = '<c:lvl><c:pt idx="0">Leaf1</c:pt><c:pt idx="1">Leaf2</c:pt></c:lvl>'
+    stem = '<c:lvl><c:pt idx="0">Stem1</c:pt><c:pt idx="1">Stem1</c:pt></c:lvl>'
     good = pptx_slide(
         f'<c:chartEx xmlns:c="{CX}"><c:strDim type="cat">{leaf}{stem}</c:strDim></c:chartEx>'
     )
@@ -132,8 +132,8 @@ def pptx_smartart_drawing_part_case() -> dict[str, Any]:
     # Every diagramData relationship must be matched by a diagramDrawing relationship.
     data_rel = f'<Relationship Id="rId1" Type="{OFFICE_REL}/diagramData" Target="../diagrams/data1.xml"/>'
     drawing_rel = (
-        f'<Relationship Id="rId2" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" '
-        f'Target="../diagrams/drawing1.xml"/>'
+        '<Relationship Id="rId2" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" '
+        'Target="../diagrams/drawing1.xml"/>'
     )
     slide = pptx_slide('<a:graphicData/>')
     good = {"ppt/slides/slide1.xml": slide,
@@ -153,7 +153,7 @@ def pptx_smartart_drawing_part_case() -> dict[str, Any]:
 
 def pptx_media_rel_integrity_case() -> dict[str, Any]:
     # a:videoFile/a:audioFile r:link must resolve to an existing media part.
-    slide = pptx_slide(f'<a:videoFile r:link="rId10"/>')
+    slide = pptx_slide('<a:videoFile r:link="rId10"/>')
     media_rel = f'<Relationship Id="rId10" Type="{OFFICE_REL}/video" Target="../media/movie.mp4"/>'
     good = {"ppt/slides/slide1.xml": slide,
             "ppt/slides/_rels/slide1.xml.rels": rels_xml(media_rel),

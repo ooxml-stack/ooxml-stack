@@ -20,6 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE_PATH = ROOT / "quality-baselines.json"
 RUFF_SELECT = "E9,F63,F7,F82"
+RUFF_PIN = "ruff==0.16.5"
 
 
 def tool_path(name: str) -> str:
@@ -32,6 +33,17 @@ def tool_path(name: str) -> str:
     raise SystemExit(f"{name} not found on PATH or next to {sys.executable}")
 
 
+def ruff_command() -> list[str]:
+    """Return the pinned ruff command, falling back to `uvx` like format_gate.py."""
+    found = shutil.which("ruff")
+    if found:
+        return [found]
+    uvx = shutil.which("uvx")
+    if uvx:
+        return [uvx, RUFF_PIN]
+    raise SystemExit(f"neither ruff nor uvx is available to run {RUFF_PIN}")
+
+
 def load_baseline() -> dict[str, Any]:
     if not BASELINE_PATH.exists():
         return {}
@@ -42,29 +54,57 @@ def write_baseline(data: dict[str, Any]) -> None:
     BASELINE_PATH.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def lint_paths() -> list[str]:
+    """Return the source roots that exist, so a repo without `src/` still lints.
+
+    Repositories differ (`src`, `scripts`, `backend`, `mcp`, `codegen`); passing
+    a missing directory to ruff is an E902 error rather than a skipped tree.
+    """
+    candidates = ("src", "tests", "scripts", "examples", "backend", "mcp", "codegen", "tools")
+    return [name for name in candidates if (ROOT / name).is_dir()]
+
+
 def run_ruff(update: bool) -> int:
-    cmd = [
-        tool_path("ruff"),
-        "check",
-        "--select",
-        RUFF_SELECT,
-        "--output-format=json",
-        "src",
-    ]
-    result = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False)
-    findings = json.loads(result.stdout or "[]")
-    count = len(findings)
-    print(f"ruff critical findings: {count}")
-    for finding in findings:
-        print(
-            f"{finding.get('filename')}:{finding.get('location', {}).get('row')}: "
-            f"{finding.get('code')} {finding.get('message')}"
+    """Run the critical rule subset and the full configured rule set.
+
+    The critical subset (E9/F63/F7/F82) must stay at zero everywhere. The
+    configured set from `[tool.ruff.lint]` covers the whole repository and is
+    also held at zero; `quality-baselines.json` records both counts so a
+    regression is visible even if a future change relaxes the configuration.
+    """
+    failures = 0
+    for label, extra in (
+        ("ruff critical findings", ["--select", RUFF_SELECT]),
+        ("ruff configured findings", []),
+    ):
+        cmd = [
+            *ruff_command(),
+            "check",
+            *extra,
+            "--output-format=json",
+            *lint_paths(),
+        ]
+        result = subprocess.run(
+            cmd, cwd=ROOT, text=True, capture_output=True, check=False
         )
-    if update:
-        baseline = load_baseline()
-        baseline["ruff_critical_findings"] = count
-        write_baseline(baseline)
-    return 1 if count else 0
+        findings = json.loads(result.stdout or "[]")
+        count = len(findings)
+        print(f"{label}: {count}")
+        for finding in findings[:40]:
+            print(
+                f"{finding.get('filename')}:{finding.get('location', {}).get('row')}: "
+                f"{finding.get('code')} {finding.get('message')}"
+            )
+        if len(findings) > 40:
+            print(f"... {len(findings) - 40} more")
+        if update:
+            baseline = load_baseline()
+            key = "ruff_critical_findings" if extra else "ruff_findings"
+            baseline[key] = count
+            write_baseline(baseline)
+        if count:
+            failures += 1
+    return 1 if failures else 0
 
 
 def run_pyright(update: bool, strict: bool) -> int:
