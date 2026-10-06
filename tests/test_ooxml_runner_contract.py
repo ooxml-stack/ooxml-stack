@@ -27,33 +27,54 @@ from ooxml_runner import report as report_module
 
 
 def describe(tmp_path, repo, plan, **kwargs):
-    return cli.describe_repository(root=tmp_path, repo=REPO, commit="HEAD",
-                                   runner_commit=RUNNER_COMMIT, plan=plan, **kwargs)
+    return cli.describe_repository(
+        root=tmp_path,
+        repo=REPO,
+        commit="HEAD",
+        runner_commit=RUNNER_COMMIT,
+        plan=plan,
+        **kwargs,
+    )
 
 
 # --- identity -----------------------------------------------------------------
 
+
 def test_runner_refuses_a_commit_it_is_not_running_as(tmp_path):
     repo = make_repo(tmp_path)
     with pytest.raises(identity.IdentityError):
-        cli.describe_repository(root=tmp_path, repo=REPO, commit="HEAD",
-                                runner_commit="0" * 40, plan=make_plan(tmp_path, repo))
+        cli.describe_repository(
+            root=tmp_path,
+            repo=REPO,
+            commit="HEAD",
+            runner_commit="0" * 40,
+            plan=make_plan(tmp_path, repo),
+        )
 
 
 def test_runner_refuses_a_short_pinned_commit(tmp_path):
     repo = make_repo(tmp_path)
     with pytest.raises(identity.IdentityError):
-        cli.describe_repository(root=tmp_path, repo=REPO, commit="HEAD",
-                                runner_commit="abc123", plan=make_plan(tmp_path, repo))
+        cli.describe_repository(
+            root=tmp_path,
+            repo=REPO,
+            commit="HEAD",
+            runner_commit="abc123",
+            plan=make_plan(tmp_path, repo),
+        )
 
 
 def test_identity_ignores_a_git_dir_inherited_from_a_git_hook(tmp_path, monkeypatch):
     """A pre-push hook exports GIT_DIR; the runner must still read its own checkout."""
     other = make_repo(tmp_path / "other")
-    snapshot.git(other, "commit", "--quiet", "--allow-empty", "-m", "a different repository")
+    snapshot.git(
+        other, "commit", "--quiet", "--allow-empty", "-m", "a different repository"
+    )
     monkeypatch.setenv("GIT_DIR", str(other / ".git"))
     observed = identity.identity()
-    assert observed["commit"] == snapshot.git(Path(__file__).resolve().parents[1], "rev-parse", "HEAD")
+    assert observed["commit"] == snapshot.git(
+        Path(__file__).resolve().parents[1], "rev-parse", "HEAD"
+    )
     assert observed["commit"] != snapshot.git(other, "rev-parse", "HEAD")
 
 
@@ -69,9 +90,12 @@ def test_describe_starts_nothing(tmp_path, monkeypatch):
 
 # --- plan binding -------------------------------------------------------------
 
+
 def test_plan_with_error_diagnostics_is_refused(tmp_path):
     repo = make_repo(tmp_path)
-    plan = make_plan(tmp_path, repo, diagnostics=[{"level": "error", "code": "x", "where": "y"}])
+    plan = make_plan(
+        tmp_path, repo, diagnostics=[{"level": "error", "code": "x", "where": "y"}]
+    )
     with pytest.raises(plan_module.PlanError, match="blocking diagnostics"):
         describe(tmp_path, repo, plan)
 
@@ -99,6 +123,7 @@ def test_binding_without_an_adapter_is_refused(tmp_path):
 
 # --- adapters -----------------------------------------------------------------
 
+
 def test_unknown_adapter_module_is_refused(tmp_path):
     repo = make_repo(tmp_path)
     plan = make_plan(tmp_path, repo, adapter="scripts.ci.nope")
@@ -119,33 +144,62 @@ def test_adapter_with_no_stages_is_refused(tmp_path):
 
 
 def test_adapter_with_duplicate_stages_is_refused(tmp_path):
-    repo = make_repo(tmp_path, adapter=ADAPTER_SOURCE.replace("{stages!r}", "['a', 'a']"))
+    repo = make_repo(
+        tmp_path, adapter=ADAPTER_SOURCE.replace("{stages!r}", "['a', 'a']")
+    )
     with pytest.raises(adapters.AdapterError, match="duplicate stage"):
         describe(tmp_path, repo, make_plan(tmp_path, repo))
 
 
 def test_a_second_repository_does_not_reuse_the_first_adapter(tmp_path):
     """Loading by dotted name would hand back whichever adapter imported first."""
-    first = make_repo(tmp_path / "a", adapter=ADAPTER_SOURCE.replace("{stages!r}", "['alpha']"))
-    second = make_repo(tmp_path / "b", adapter=ADAPTER_SOURCE.replace("{stages!r}", "['beta']"))
-    assert adapters.describe(adapters.load(first, "scripts.ci.adapter"), first)["stages"] == ["alpha"]
-    assert adapters.describe(adapters.load(second, "scripts.ci.adapter"), second)["stages"] == ["beta"]
+    first = make_repo(
+        tmp_path / "a", adapter=ADAPTER_SOURCE.replace("{stages!r}", "['alpha']")
+    )
+    second = make_repo(
+        tmp_path / "b", adapter=ADAPTER_SOURCE.replace("{stages!r}", "['beta']")
+    )
+    assert adapters.describe(adapters.load(first, "scripts.ci.adapter"), first)[
+        "stages"
+    ] == ["alpha"]
+    assert adapters.describe(adapters.load(second, "scripts.ci.adapter"), second)[
+        "stages"
+    ] == ["beta"]
 
 
 def test_implemented_stages_must_match_the_declared_order(tmp_path):
     repo = make_repo(tmp_path)
     module = adapters.load(repo, "scripts.ci.adapter")
     module.describe = lambda root: {"stages": ["alpha", "beta"]}
-    module.operations = lambda root, reports, config: {"beta": lambda: None, "alpha": lambda: None}
-    with pytest.raises(adapters.AdapterError, match="differ from the declared stage contract"):
+    module.operations = lambda root, reports, config: {
+        "beta": lambda: None,
+        "alpha": lambda: None,
+    }
+    with pytest.raises(
+        adapters.AdapterError, match="differ from the declared stage contract"
+    ):
         adapters.operations(module, repo, tmp_path, {})
 
 
 # --- report verification ------------------------------------------------------
 
-@pytest.mark.parametrize("fault", ["commit", "runner", "plan", "status", "exit-code",
-                                   "missing-stage", "duplicate-stage", "none-stage",
-                                   "failed-stage", "not-run-stage", "null-stages"])
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "commit",
+        "runner",
+        "plan",
+        "status",
+        "exit-code",
+        "missing-stage",
+        "duplicate-stage",
+        "none-stage",
+        "failed-stage",
+        "not-run-stage",
+        "null-stages",
+    ],
+)
 def test_report_is_rejected_unless_every_identity_and_stage_matches(tmp_path, fault):
     repo = make_repo(tmp_path)
     plan = make_plan(tmp_path, repo)
@@ -217,15 +271,27 @@ def test_verify_report_file_re_derives_inputs_instead_of_trusting_the_report(tmp
     plan = make_plan(tmp_path, repo)
     report_path = tmp_path / "report.json"
     report_path.write_text(json.dumps(passing_report(repo, plan)))
-    cli.verify_report_file(root=tmp_path, repo=REPO, commit="HEAD", runner_commit=RUNNER_COMMIT,
-                           plan=plan, report=report_path)
+    cli.verify_report_file(
+        root=tmp_path,
+        repo=REPO,
+        commit="HEAD",
+        runner_commit=RUNNER_COMMIT,
+        plan=plan,
+        report=report_path,
+    )
 
     payload = passing_report(repo, plan)
     payload["inputs"] = {"ci/environment.json": "0" * 64}
     report_path.write_text(json.dumps(payload))
     with pytest.raises(adapters.AdapterError, match="input mismatch"):
-        cli.verify_report_file(root=tmp_path, repo=REPO, commit="HEAD",
-                               runner_commit=RUNNER_COMMIT, plan=plan, report=report_path)
+        cli.verify_report_file(
+            root=tmp_path,
+            repo=REPO,
+            commit="HEAD",
+            runner_commit=RUNNER_COMMIT,
+            plan=plan,
+            report=report_path,
+        )
 
 
 def test_json_round_trip_preserves_the_verdict(tmp_path):

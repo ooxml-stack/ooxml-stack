@@ -32,8 +32,12 @@ def _verify(tmp_path, repo, plan, payload):
     path = tmp_path / "report.json"
     path.write_text(json.dumps(payload))
     return cli.verify_report_file(
-        root=tmp_path, repo=REPO, commit=snapshot.resolve_commit(repo, "HEAD"),
-        runner_commit=RUNNER_COMMIT, plan=plan, report=path,
+        root=tmp_path,
+        repo=REPO,
+        commit=snapshot.resolve_commit(repo, "HEAD"),
+        runner_commit=RUNNER_COMMIT,
+        plan=plan,
+        report=path,
     )
 
 
@@ -127,12 +131,19 @@ def test_verification_never_rewrites_the_report_under_test(tmp_path):
     path.write_text(json.dumps(payload, indent=2))
     before = path.read_text()
 
-    cli.verify_report_file(root=tmp_path, repo=REPO, commit=snapshot.resolve_commit(repo, "HEAD"),
-                           runner_commit=RUNNER_COMMIT, plan=plan, report=path)
+    cli.verify_report_file(
+        root=tmp_path,
+        repo=REPO,
+        commit=snapshot.resolve_commit(repo, "HEAD"),
+        runner_commit=RUNNER_COMMIT,
+        plan=plan,
+        report=path,
+    )
     assert path.read_text() == before
 
 
 # --- cache reuse --------------------------------------------------------------
+
 
 def _cache(tmp_path, repo, plan, mutate=None):
     commit = snapshot.resolve_commit(repo, "HEAD")
@@ -143,8 +154,9 @@ def _cache(tmp_path, repo, plan, mutate=None):
         mutate(payload)
     (directory / "report.json").write_text(json.dumps(payload))
     module = adapters.load(repo, "scripts.ci.adapter")
-    found = cli._cached_pass(directory.parent, expected_for(repo, plan), module,
-                             module.load_config(repo), {})
+    found = cli._cached_pass(
+        directory.parent, expected_for(repo, plan), module, module.load_config(repo), {}
+    )
     return found, directory
 
 
@@ -154,13 +166,21 @@ def test_a_cache_entry_with_the_right_identity_is_reused(tmp_path):
     assert found == directory
 
 
-@pytest.mark.parametrize("mutate", [
-    lambda payload: payload["runner"].update(source_sha256="0" * 64),
-    lambda payload: payload["runner"].pop("source_sha256"),
-    lambda payload: payload.update(binding={"workflow": "missing.yml", "jobs": ["wrong"],
-                                            "adapter": "scripts.ci.other"}),
-    lambda payload: payload.pop("binding"),
-])
+@pytest.mark.parametrize(
+    "mutate",
+    [
+        lambda payload: payload["runner"].update(source_sha256="0" * 64),
+        lambda payload: payload["runner"].pop("source_sha256"),
+        lambda payload: payload.update(
+            binding={
+                "workflow": "missing.yml",
+                "jobs": ["wrong"],
+                "adapter": "scripts.ci.other",
+            }
+        ),
+        lambda payload: payload.pop("binding"),
+    ],
+)
 def test_a_cache_entry_with_the_wrong_identity_is_not_reused(tmp_path, mutate):
     repo, plan = _fixture(tmp_path)
     found, _ = _cache(tmp_path, repo, plan, mutate=mutate)
@@ -172,16 +192,27 @@ def test_a_broken_cache_entry_does_not_hide_a_valid_one(tmp_path):
     commit = snapshot.resolve_commit(repo, "HEAD")
     broken = tmp_path / "out" / commit / "000-broken"
     broken.mkdir(parents=True)
-    (broken / "report.json").write_text(json.dumps(
-        passing_report(repo, plan, binding={"workflow": "missing.yml", "jobs": ["wrong"],
-                                                  "adapter": "scripts.ci.other"})))
+    (broken / "report.json").write_text(
+        json.dumps(
+            passing_report(
+                repo,
+                plan,
+                binding={
+                    "workflow": "missing.yml",
+                    "jobs": ["wrong"],
+                    "adapter": "scripts.ci.other",
+                },
+            )
+        )
+    )
     valid = tmp_path / "out" / commit / "valid"
     valid.mkdir(parents=True)
     (valid / "report.json").write_text(json.dumps(passing_report(repo, plan)))
     module = adapters.load(repo, "scripts.ci.adapter")
 
-    found = cli._cached_pass(broken.parent, expected_for(repo, plan), module,
-                             module.load_config(repo), {})
+    found = cli._cached_pass(
+        broken.parent, expected_for(repo, plan), module, module.load_config(repo), {}
+    )
     assert found == valid
 
 
@@ -198,23 +229,29 @@ def _cache_dir(tmp_path, repo, plan, name, mutate):
 def test_a_structurally_broken_cache_entry_does_not_hide_a_valid_one(tmp_path):
     """The reviewed case: a valid JSON report whose ``plan`` is a list."""
     repo, plan = _fixture(tmp_path)
-    broken = _cache_dir(tmp_path, repo, plan, "000-broken", lambda p: p.update(plan=["wrong-type"]))
+    broken = _cache_dir(
+        tmp_path, repo, plan, "000-broken", lambda p: p.update(plan=["wrong-type"])
+    )
     valid = _cache_dir(tmp_path, repo, plan, "100-valid", lambda p: None)
     module = adapters.load(repo, "scripts.ci.adapter")
 
-    found = cli._cached_pass(broken.parent, expected_for(repo, plan), module,
-                             module.load_config(repo), {})
+    found = cli._cached_pass(
+        broken.parent, expected_for(repo, plan), module, module.load_config(repo), {}
+    )
     assert found == valid
 
 
 def test_a_structurally_broken_cache_entry_alone_means_no_reuse(tmp_path):
     """No valid entry: the caller must fall through to a fresh run, not crash."""
     repo, plan = _fixture(tmp_path)
-    broken = _cache_dir(tmp_path, repo, plan, "000-broken", lambda p: p.update(plan=["wrong-type"]))
+    broken = _cache_dir(
+        tmp_path, repo, plan, "000-broken", lambda p: p.update(plan=["wrong-type"])
+    )
     module = adapters.load(repo, "scripts.ci.adapter")
 
-    found = cli._cached_pass(broken.parent, expected_for(repo, plan), module,
-                             module.load_config(repo), {})
+    found = cli._cached_pass(
+        broken.parent, expected_for(repo, plan), module, module.load_config(repo), {}
+    )
     assert found is None
 
 
@@ -229,20 +266,38 @@ def test_an_unexpected_cache_failure_is_not_swallowed(tmp_path, monkeypatch):
 
     monkeypatch.setattr(report_module, "verify_generic", explode)
     with pytest.raises(AttributeError, match="programming error"):
-        cli._cached_pass(broken.parent, expected_for(repo, plan), module,
-                         module.load_config(repo), {})
+        cli._cached_pass(
+            broken.parent,
+            expected_for(repo, plan),
+            module,
+            module.load_config(repo),
+            {},
+        )
 
 
 # --- the real CLI -------------------------------------------------------------
 
+
 def _cli(tmp_path, repo, plan, payload):
     path = tmp_path / "cli-report.json"
     path.write_text(json.dumps(payload))
-    return cli.main([
-        "verify-report", "--root", str(tmp_path), "--repo", REPO,
-        "--commit", snapshot.resolve_commit(repo, "HEAD"), "--runner-commit", RUNNER_COMMIT,
-        "--plan", str(plan), "--report", str(path),
-    ])
+    return cli.main(
+        [
+            "verify-report",
+            "--root",
+            str(tmp_path),
+            "--repo",
+            REPO,
+            "--commit",
+            snapshot.resolve_commit(repo, "HEAD"),
+            "--runner-commit",
+            RUNNER_COMMIT,
+            "--plan",
+            str(plan),
+            "--report",
+            str(path),
+        ]
+    )
 
 
 def test_the_verify_cli_accepts_a_valid_report_and_refuses_the_variants(tmp_path):

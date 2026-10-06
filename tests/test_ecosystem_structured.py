@@ -32,14 +32,16 @@ def test_a_custom_tag_inside_the_matrix_is_reported():
 
 @pytest.mark.parametrize("field", ["needs", "runs-on"])
 def test_a_custom_tag_in_a_structured_job_field_is_reported(field):
-    data = f'jobs:\n  j:\n    {field}: !Ref x\n    steps:\n      - run: y\n'.encode()
+    data = f"jobs:\n  j:\n    {field}: !Ref x\n    steps:\n      - run: y\n".encode()
     parsed = workflows.parse_workflow(data)
     assert [item["code"] for item in parsed["errors"]] == ["unsupported_workflow"]
     assert "!Ref" in parsed["errors"][0]["detail"]
 
 
 def test_a_legal_matrix_with_include_and_exclude_is_preserved():
-    matrix = workflows.parse_workflow_jobs(WORKFLOW_LEGAL_MATRIX.encode("utf-8"))["full"]["matrix"]
+    matrix = workflows.parse_workflow_jobs(WORKFLOW_LEGAL_MATRIX.encode("utf-8"))[
+        "full"
+    ]["matrix"]
     assert matrix["python"] == ["3.10", "3.12"]
     assert matrix["os"] == ["ubuntu-latest"]
     assert matrix["include"] == [{"python": "3.12", "os": "ubuntu-latest"}]

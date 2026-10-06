@@ -35,7 +35,9 @@ def test_write_then_check_is_stable(tmp_path, capsys, monkeypatch):
     assert "result        : ok" in capsys.readouterr().out
 
 
-def test_commented_and_block_env_values_survive_write_and_check(tmp_path, capsys, monkeypatch):
+def test_commented_and_block_env_values_survive_write_and_check(
+    tmp_path, capsys, monkeypatch
+):
     """End-to-end: YAML comments, escapes and block chomping reach the committed plan."""
     root = build_workspace(tmp_path)
     resolvable_for(monkeypatch, seal(root))
@@ -57,7 +59,9 @@ def test_commented_and_block_env_values_survive_write_and_check(tmp_path, capsys
     assert cli.main(["--check", "--root", str(root)]) == 0
 
 
-def test_check_fails_on_an_unsupported_workflow_structure(tmp_path, capsys, monkeypatch):
+def test_check_fails_on_an_unsupported_workflow_structure(
+    tmp_path, capsys, monkeypatch
+):
     root = build_workspace(tmp_path)
     resolvable_for(monkeypatch, seal(root))
     write(root / "ooxml-core/.github/workflows/full.yml", WORKFLOW_ENV_NESTED)
@@ -84,7 +88,9 @@ def test_check_detects_an_uncommitted_pin_change(tmp_path, capsys, monkeypatch):
     assert "differs" in capsys.readouterr().out
 
 
-def test_write_refuses_when_a_full_sha_cannot_be_verified(tmp_path, capsys, monkeypatch):
+def test_write_refuses_when_a_full_sha_cannot_be_verified(
+    tmp_path, capsys, monkeypatch
+):
     """A full SHA is a required fact: ls-remote cannot prove it, so it must be fetched or local."""
     root = build_workspace(tmp_path)
     heads = seal(root)
@@ -114,7 +120,11 @@ def test_write_accepts_a_sha_that_exists_locally(tmp_path, capsys, monkeypatch):
     )
     write(
         root / "python-docx/uv.lock",
-        _docx_lock(heads["ooxml-core"], heads["ooxml-test-framework"], core_ref=heads["ooxml-core"]),
+        _docx_lock(
+            heads["ooxml-core"],
+            heads["ooxml-test-framework"],
+            core_ref=heads["ooxml-core"],
+        ),
     )
     resolvable_for(monkeypatch, heads)
     assert cli.main(["--write", "--root", str(root)]) == 0
@@ -123,18 +133,24 @@ def test_write_accepts_a_sha_that_exists_locally(tmp_path, capsys, monkeypatch):
 def test_write_refuses_when_the_remote_is_unreachable(tmp_path, capsys, monkeypatch):
     root = build_workspace(tmp_path)
     seal(root)
-    monkeypatch.setattr(gitfacts, "remote_refs", lambda *a, **k: {"ok": False, "error": "unreachable"})
+    monkeypatch.setattr(
+        gitfacts, "remote_refs", lambda *a, **k: {"ok": False, "error": "unreachable"}
+    )
     assert cli.main(["--write", "--root", str(root)]) == 1
     assert "unverifiable" in capsys.readouterr().out
 
 
-def test_write_does_not_overwrite_an_existing_plan_on_measurement_failure(tmp_path, capsys, monkeypatch):
+def test_write_does_not_overwrite_an_existing_plan_on_measurement_failure(
+    tmp_path, capsys, monkeypatch
+):
     root = build_workspace(tmp_path)
     resolvable_for(monkeypatch, seal(root))
     assert cli.main(["--write", "--root", str(root)]) == 0
     committed = (root / PLAN_RELPATH).read_text(encoding="utf-8")
     capsys.readouterr()
-    monkeypatch.setattr(gitfacts, "remote_refs", lambda *a, **k: {"ok": False, "error": "unreachable"})
+    monkeypatch.setattr(
+        gitfacts, "remote_refs", lambda *a, **k: {"ok": False, "error": "unreachable"}
+    )
     assert cli.main(["--write", "--root", str(root)]) == 1
     assert (root / PLAN_RELPATH).read_text(encoding="utf-8") == committed
 
@@ -159,7 +175,9 @@ def test_check_persists_the_current_scan_and_reason(tmp_path, capsys, monkeypatc
     healthy = json.loads(scan_path.read_text(encoding="utf-8"))
     assert "check" not in healthy
     capsys.readouterr()
-    monkeypatch.setattr(gitfacts, "remote_refs", lambda *a, **k: {"ok": False, "error": "network down"})
+    monkeypatch.setattr(
+        gitfacts, "remote_refs", lambda *a, **k: {"ok": False, "error": "network down"}
+    )
     assert cli.main(["--check", "--root", str(root)]) == 1
     refreshed = json.loads(scan_path.read_text(encoding="utf-8"))
     assert refreshed["check"]["result"] == "failed"
@@ -181,7 +199,9 @@ def test_check_offline_still_reports_a_ci_ref(tmp_path, capsys, monkeypatch):
     assert "ci.yml" in out
 
 
-def test_check_strict_rejects_a_local_version_violating_a_public_constraint(tmp_path, capsys, monkeypatch):
+def test_check_strict_rejects_a_local_version_violating_a_public_constraint(
+    tmp_path, capsys, monkeypatch
+):
     """``1.0+local`` must not satisfy ``!=1.0``; the violating lock must fail."""
     root = build_workspace(tmp_path)
     heads = seal(root)
@@ -206,7 +226,9 @@ def test_check_strict_rejects_a_local_version_violating_a_public_constraint(tmp_
     assert "constraint_violation" in capsys.readouterr().out
 
 
-def test_check_strict_is_order_independent_for_two_same_named_repos(tmp_path, capsys, monkeypatch):
+def test_check_strict_is_order_independent_for_two_same_named_repos(
+    tmp_path, capsys, monkeypatch
+):
     """The verdict must not depend on which of two same-named declarations comes first."""
     codes = []
     for index, workflow in enumerate((WORKFLOW_TWO_ORGS, WORKFLOW_TWO_ORGS_REVERSED)):
@@ -217,7 +239,12 @@ def test_check_strict_is_order_independent_for_two_same_named_repos(tmp_path, ca
         def fake(remote_url, cwd, timeout, cache, _heads=heads):
             if "other-org" in remote_url:
                 return {"ok": True, "tags": {}, "peeled": {}, "heads": {}}
-            return {"ok": True, "tags": {"v1.0.0": _heads["ooxml-stack"]}, "peeled": {}, "heads": {}}
+            return {
+                "ok": True,
+                "tags": {"v1.0.0": _heads["ooxml-stack"]},
+                "peeled": {},
+                "heads": {},
+            }
 
         monkeypatch.setattr(gitfacts, "remote_refs", fake)
         assert cli.main(["--write", "--root", str(root)]) == 0

@@ -51,20 +51,39 @@ def test_p98_cases_are_newly_proven_rules(tmp_path: Path) -> None:
     # Every P98 target rule was left uncovered_in_p97, so P98 adds net new
     # mutation coverage rather than re-deriving P97.
     p97_proven = {
-        "content_types_integrity", "image_rel_integrity", "color_no_hash",
-        "table_grid_consistency", "wml_table_grid_consistency",
-        "numbering_ref_valid", "body_required", "slide_rel_completeness",
-        "blip_fill_integrity", "element_order", "animation_target_ref",
-        "sheet_rid_resolvable", "rel_id_unique", "styles_rgb_argb_width",
-        "sst_count_consistent", "cell_ref_matches_row",
+        "content_types_integrity",
+        "image_rel_integrity",
+        "color_no_hash",
+        "table_grid_consistency",
+        "wml_table_grid_consistency",
+        "numbering_ref_valid",
+        "body_required",
+        "slide_rel_completeness",
+        "blip_fill_integrity",
+        "element_order",
+        "animation_target_ref",
+        "sheet_rid_resolvable",
+        "rel_id_unique",
+        "styles_rgb_argb_width",
+        "sst_count_consistent",
+        "cell_ref_matches_row",
     }
     summary = run_gate(tmp_path)
-    p98_proven = {row["rule_id"] for row in summary["cases"] if row["status"] == "passed"}
+    p98_proven = {
+        row["rule_id"] for row in summary["cases"] if row["status"] == "passed"
+    }
     assert p98_proven == {
-        "chartex_mc_wrapper", "chartex_style_id", "chartex_strdim_order",
-        "smartart_drawing_part", "chart_embedded_xlsx", "media_rel_integrity",
-        "hyperlink_rel_valid", "header_footer_rel_valid", "document_rels_required",
-        "workbook_slicer_cache_structure", "slicer_part_contract",
+        "chartex_mc_wrapper",
+        "chartex_style_id",
+        "chartex_strdim_order",
+        "smartart_drawing_part",
+        "chart_embedded_xlsx",
+        "media_rel_integrity",
+        "hyperlink_rel_valid",
+        "header_footer_rel_valid",
+        "document_rels_required",
+        "workbook_slicer_cache_structure",
+        "slicer_part_contract",
         "slicer_cache_definition_consistency",
     }
     assert p98_proven.isdisjoint(p97_proven)
@@ -95,24 +114,49 @@ def test_p98_source_state_avoids_self_commit_pointer(tmp_path: Path) -> None:
 def test_p98_writes_manifest_and_summary(tmp_path: Path) -> None:
     run_gate(tmp_path)
 
-    summary = json.loads((tmp_path / "rule-coverage-mutation-gate-summary.json").read_text())
+    summary = json.loads(
+        (tmp_path / "rule-coverage-mutation-gate-summary.json").read_text()
+    )
     manifest = json.loads((tmp_path / "manifest.json").read_text())
 
     assert summary["schema_version"] == "p98-rule-coverage-mutation-gate-v1"
     assert manifest["schema_version"] == "p98-evidence-manifest-v1"
-    assert manifest["files"][0]["path"].endswith("rule-coverage-mutation-gate-summary.json")
+    assert manifest["files"][0]["path"].endswith(
+        "rule-coverage-mutation-gate-summary.json"
+    )
 
 
 def test_p98_release_profile_matches_generated_summary() -> None:
     root = Path(__file__).resolve().parents[1]
-    summary = json.loads((root / "tests/fixtures/p98/rule-coverage-mutation-gate-summary.json").read_text())
-    profile = json.loads((root / "release-profiles/p98-rule-coverage-mutation.json").read_text())
+    summary = json.loads(
+        (
+            root / "tests/fixtures/p98/rule-coverage-mutation-gate-summary.json"
+        ).read_text()
+    )
+    profile = json.loads(
+        (root / "release-profiles/p98-rule-coverage-mutation.json").read_text()
+    )
 
     assert profile["ok"] == summary["ok"]
-    assert profile["expected_metrics"]["mutation_case_count"] == summary["mutation_case_count"]
-    assert profile["expected_metrics"]["mutation_case_pass_count"] == summary["mutation_case_pass_count"]
-    assert profile["expected_metrics"]["mutation_case_fail_count"] == summary["mutation_case_fail_count"]
-    assert profile["expected_metrics"]["mutation_proven_format_rule_count"] == summary["mutation_proven_format_rule_count"]
-    assert profile["expected_metrics"]["mutation_proven_unique_rule_count"] == summary["mutation_proven_unique_rule_count"]
+    assert (
+        profile["expected_metrics"]["mutation_case_count"]
+        == summary["mutation_case_count"]
+    )
+    assert (
+        profile["expected_metrics"]["mutation_case_pass_count"]
+        == summary["mutation_case_pass_count"]
+    )
+    assert (
+        profile["expected_metrics"]["mutation_case_fail_count"]
+        == summary["mutation_case_fail_count"]
+    )
+    assert (
+        profile["expected_metrics"]["mutation_proven_format_rule_count"]
+        == summary["mutation_proven_format_rule_count"]
+    )
+    assert (
+        profile["expected_metrics"]["mutation_proven_unique_rule_count"]
+        == summary["mutation_proven_unique_rule_count"]
+    )
     assert profile["expected_metrics"]["formats"] == summary["formats"]
     assert profile["coverage_counts"] == summary["coverage_map"]["counts"]

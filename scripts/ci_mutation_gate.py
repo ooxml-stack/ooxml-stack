@@ -28,15 +28,18 @@ def registry_for(fmt: str) -> Any:
     # pptx/docx: import format-specific rules from the sibling repo's tests/
     if fmt == "pptx":
         from tests.framework.ooxml_rules.pptx_rules import get_combined_registry
+
         return get_combined_registry()
     if fmt == "docx":
         from tests.compliance.docx_rules import get_combined_registry
+
         return get_combined_registry()
     raise ValueError(f"unsupported format: {fmt}")
 
 
 def write_zip(path: Path, files: dict[str, str | bytes]) -> None:
     import zipfile
+
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as zf:
         for name, content in files.items():
             zf.writestr(name, content)
@@ -45,12 +48,14 @@ def write_zip(path: Path, files: dict[str, str | bytes]) -> None:
 def run_registry(registry: Any, path: Path) -> list[dict[str, Any]]:
     rows = []
     for finding in registry.run(path):
-        rows.append({
-            "rule_id": finding.rule_id,
-            "severity": finding.severity.value,
-            "message": finding.message,
-            "file_path": finding.file_path,
-        })
+        rows.append(
+            {
+                "rule_id": finding.rule_id,
+                "severity": finding.severity.value,
+                "message": finding.message,
+                "file_path": finding.file_path,
+            }
+        )
     return rows
 
 
@@ -77,7 +82,9 @@ def case_result(case: dict[str, Any], temp: Path, registry: Any) -> dict[str, An
 
 def main() -> None:
     if len(sys.argv) < 2:
-        print("usage: python3 scripts/ci_mutation_gate.py pptx|docx|xlsx", file=sys.stderr)
+        print(
+            "usage: python3 scripts/ci_mutation_gate.py pptx|docx|xlsx", file=sys.stderr
+        )
         sys.exit(2)
 
     fmt = sys.argv[1]
@@ -104,9 +111,11 @@ def main() -> None:
                 passed += 1
             else:
                 failed += 1
-                print(f"FAIL: {result['id']} ({result['rule_id']}): "
-                      f"mutant_hit={result['mutant_expected_rule_hit']} "
-                      f"control_hit={result['control_expected_rule_hit']}")
+                print(
+                    f"FAIL: {result['id']} ({result['rule_id']}): "
+                    f"mutant_hit={result['mutant_expected_rule_hit']} "
+                    f"control_hit={result['control_expected_rule_hit']}"
+                )
 
     print(f"\n{fmt}: {passed}/{passed + failed} mutation cases passed")
     if failed:

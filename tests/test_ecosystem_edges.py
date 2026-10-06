@@ -67,7 +67,9 @@ def test_local_version_violating_a_public_constraint_is_an_error(tmp_path):
 
 def test_require_uniform_repos_scope_is_honoured(tmp_path):
     policy = make_policy(
-        require_uniform=[{"upstream": "ooxml-core", "role": "runtime", "repos": ["python-pptx"]}]
+        require_uniform=[
+            {"upstream": "ooxml-core", "role": "runtime", "repos": ["python-pptx"]}
+        ]
     )
     plan = build(build_workspace(tmp_path, policy))
     skew = next(item for item in plan["diagnostics"] if item["code"] == "version_skew")
@@ -96,9 +98,15 @@ def test_uv_sources_ref_wins_over_the_direct_spec(tmp_path):
         'ooxml-core = { git = "https://github.com/ooxml-stack/ooxml-core.git", tag = "v9.9.9" }\n',
     )
     plan = build(root)
-    edge = next(e for e in plan["edges"] if e["to"] == "ooxml-core" and e["from"] == "python-docx")
+    edge = next(
+        e
+        for e in plan["edges"]
+        if e["to"] == "ooxml-core" and e["from"] == "python-docx"
+    )
     assert edge["declared"]["ref_raw"] == "v9.9.9"
-    assert any(item["code"] == "source_override_conflict" for item in plan["diagnostics"])
+    assert any(
+        item["code"] == "source_override_conflict" for item in plan["diagnostics"]
+    )
 
 
 def test_uv_sources_url_conflict_is_reported(tmp_path):
@@ -111,7 +119,9 @@ def test_uv_sources_url_conflict_is_reported(tmp_path):
         'ooxml-core = { git = "https://github.com/other-org/ooxml-core.git", tag = "v0.6.0" }\n',
     )
     plan = build(root)
-    assert any(item["code"] == "source_override_conflict" for item in plan["diagnostics"])
+    assert any(
+        item["code"] == "source_override_conflict" for item in plan["diagnostics"]
+    )
 
 
 def test_uv_sources_branch_selector_is_preserved(tmp_path):
@@ -125,7 +135,11 @@ def test_uv_sources_branch_selector_is_preserved(tmp_path):
         'ooxml-core = { git = "https://github.com/ooxml-stack/ooxml-core.git", branch = "stable" }\n',
     )
     plan = build(root)
-    edge = next(e for e in plan["edges"] if e["from"] == "python-docx" and e["to"] == "ooxml-core")
+    edge = next(
+        e
+        for e in plan["edges"]
+        if e["from"] == "python-docx" and e["to"] == "ooxml-core"
+    )
     assert edge["declared"]["ref_raw"] == "stable"
     assert edge["declared"]["ref_declared_kind"] == "branch"
 
@@ -140,7 +154,9 @@ def test_lock_url_disagreeing_with_the_declaration_is_reported(tmp_path):
         f'source = {{ git = "https://github.com/other-org/ooxml-core.git?tag=v0.6.0#{CORE_SHA}" }}\n',
     )
     plan = build(root)
-    assert any(item["code"] == "source_override_conflict" for item in plan["diagnostics"])
+    assert any(
+        item["code"] == "source_override_conflict" for item in plan["diagnostics"]
+    )
 
 
 def test_git_dependency_without_a_ref_is_an_error(tmp_path):
@@ -186,7 +202,9 @@ def test_snapshot_edge_to_an_unknown_node_is_an_error(tmp_path):
     root = build_workspace(tmp_path)
     write(
         root / "ooxml-core/ci/environment.json",
-        '{"repositories": {"ooxml-ghost": "' + DOCX_SHA + '"}, "corpus": {"release_tag": "x"}}',
+        '{"repositories": {"ooxml-ghost": "'
+        + DOCX_SHA
+        + '"}, "corpus": {"release_tag": "x"}}',
     )
     plan = build(root)
     assert any(item["code"] == "policy_node_mismatch" for item in plan["diagnostics"])

@@ -33,10 +33,16 @@ DEFAULT_FILES = [
 ]
 
 APP_BY_EXT = {
-    ".docx": "Microsoft Word", ".docm": "Microsoft Word", ".dotx": "Microsoft Word",
-    ".pptx": "Microsoft PowerPoint", ".pptm": "Microsoft PowerPoint",
-    ".potx": "Microsoft PowerPoint", ".ppsx": "Microsoft PowerPoint", ".ppt": "Microsoft PowerPoint",
-    ".xlsx": "Microsoft Excel", ".xlsm": "Microsoft Excel",
+    ".docx": "Microsoft Word",
+    ".docm": "Microsoft Word",
+    ".dotx": "Microsoft Word",
+    ".pptx": "Microsoft PowerPoint",
+    ".pptm": "Microsoft PowerPoint",
+    ".potx": "Microsoft PowerPoint",
+    ".ppsx": "Microsoft PowerPoint",
+    ".ppt": "Microsoft PowerPoint",
+    ".xlsx": "Microsoft Excel",
+    ".xlsm": "Microsoft Excel",
 }
 
 COUNT_QUERY = {
@@ -48,8 +54,9 @@ COUNT_QUERY = {
 
 def _run(script: str, timeout: int = 20) -> str:
     try:
-        r = subprocess.run(["osascript", "-e", script], capture_output=True,
-                           text=True, timeout=timeout)
+        r = subprocess.run(
+            ["osascript", "-e", script], capture_output=True, text=True, timeout=timeout
+        )
         return (r.stdout + r.stderr).strip()
     except subprocess.TimeoutExpired:
         return ""
@@ -83,18 +90,18 @@ def _repair_status(app: str) -> str:
     probe = (
         'tell application "System Events" to tell process "' + app + '"\n'
         '  set found to ""\n'
-        '  repeat with w in windows\n'
+        "  repeat with w in windows\n"
         '    if (subrole of w) is "AXDialog" then\n'
-        '      set b to name of every button of w\n'
+        "      set b to name of every button of w\n"
         '      if b contains "Repair" or b contains "Recover" then\n'
         '        set found to "repair"\n'
-        '      else if (count of b) is 1 then\n'
+        "      else if (count of b) is 1 then\n"
         '        set found to "error"\n'
-        '      end if\n'
-        '    end if\n'
-        '  end repeat\n'
-        '  return found\n'
-        'end tell'
+        "      end if\n"
+        "    end if\n"
+        "  end repeat\n"
+        "  return found\n"
+        "end tell"
     )
     out = _run(probe, timeout=10)
     return out if out in {"repair", "error"} else ""
@@ -114,8 +121,13 @@ def check_open(path: Path, poll_seconds: int = 90) -> dict[str, object]:
     ext = path.suffix.lower()
     app = APP_BY_EXT.get(ext)
     if app is None:
-        return {"file": _portable(path), "app": None, "ext": ext,
-                "status": "unsupported_extension", "loaded": False}
+        return {
+            "file": _portable(path),
+            "app": None,
+            "ext": ext,
+            "status": "unsupported_extension",
+            "loaded": False,
+        }
     # Clean slate.
     subprocess.run(["killall", "-9", app], capture_output=True, timeout=10)
     time.sleep(2)
@@ -125,13 +137,17 @@ def check_open(path: Path, poll_seconds: int = 90) -> dict[str, object]:
     if not automation_permission_ok(app):
         _run('try\ntell application "%s" to quit\nend try' % app, timeout=8)
         return {
-            "file": _portable(path), "app": app, "ext": ext,
-            "status": "blocked_automation_permission", "loaded": False,
+            "file": _portable(path),
+            "app": app,
+            "ext": ext,
+            "status": "blocked_automation_permission",
+            "loaded": False,
             "detail": "macOS Automation consent not granted (-10004); cannot drive Office",
         }
 
     _run(
-        'ignoring application responses\ntell application "%s" to open POSIX file "%s"' % (app, path),
+        'ignoring application responses\ntell application "%s" to open POSIX file "%s"'
+        % (app, path),
         timeout=12,
     )
 
@@ -152,8 +168,11 @@ def check_open(path: Path, poll_seconds: int = 90) -> dict[str, object]:
     _run('try\ntell application "%s" to quit\nend try' % app, timeout=8)
     subprocess.run(["killall", "-9", app], capture_output=True, timeout=10)
     return {
-        "file": _portable(path), "app": app, "ext": ext,
-        "status": status, "loaded": loaded,
+        "file": _portable(path),
+        "app": app,
+        "ext": ext,
+        "status": status,
+        "loaded": loaded,
         "seconds": round(time.time() - t0, 1),
     }
 
@@ -161,8 +180,13 @@ def check_open(path: Path, poll_seconds: int = 90) -> dict[str, object]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, default=EVIDENCE)
-    parser.add_argument("--file", action="append", type=Path, default=None,
-                        help="explicit file paths to verify (repeatable)")
+    parser.add_argument(
+        "--file",
+        action="append",
+        type=Path,
+        default=None,
+        help="explicit file paths to verify (repeatable)",
+    )
     args = parser.parse_args()
 
     files = list(args.file) if args.file else list(DEFAULT_FILES)
@@ -193,8 +217,11 @@ def main() -> int:
     }
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "office-verification-results.json").write_text(
-        json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps({"check_count": len(results), "status_counts": statuses}, indent=2))
+        json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(
+        json.dumps({"check_count": len(results), "status_counts": statuses}, indent=2)
+    )
     return 0
 
 

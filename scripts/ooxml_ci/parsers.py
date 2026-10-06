@@ -20,8 +20,12 @@ PLAIN_SPEC = re.compile(
     r"^\s*(?P<name>[A-Za-z0-9._-]+)(?:\[(?P<extras>[^\]]*)\])?(?P<spec>[^\s;].*?)?\s*(?:;.*)?$"
 )
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
-LOCK_GIT = re.compile(r"(?P<url>[^?#]+)(?:\?(?P<query>[^#]*))?(?:#(?P<fragment>[0-9a-f]{40}))?$")
-DYNAMIC_ATTR = re.compile(r"^\s*version\s*=\s*\{\s*attr\s*=\s*[\"'](?P<attr>[^\"']+)[\"']")
+LOCK_GIT = re.compile(
+    r"(?P<url>[^?#]+)(?:\?(?P<query>[^#]*))?(?:#(?P<fragment>[0-9a-f]{40}))?$"
+)
+DYNAMIC_ATTR = re.compile(
+    r"^\s*version\s*=\s*\{\s*attr\s*=\s*[\"'](?P<attr>[^\"']+)[\"']"
+)
 
 
 @dataclass(frozen=True)
@@ -54,7 +58,9 @@ def split_git_spec(spec: str) -> tuple[str, str | None, str | None]:
     return match.group("name"), match.group("url"), match.group("ref")
 
 
-def _declaration(repo: str, section: str, kind: str, spec: str, group: str | None) -> Declaration:
+def _declaration(
+    repo: str, section: str, kind: str, spec: str, group: str | None
+) -> Declaration:
     name, url, ref = split_git_spec(spec)
     version_spec = ""
     if url is None:
@@ -84,7 +90,9 @@ def parse_pyproject(data: bytes, repo: str) -> list[Declaration]:
     for extra, specs in (project.get("optional-dependencies") or {}).items():
         kind = "codegen" if extra == "codegen" else "dev"
         for spec in specs or []:
-            out.append(_declaration(repo, "project.optional-dependencies", kind, spec, extra))
+            out.append(
+                _declaration(repo, "project.optional-dependencies", kind, spec, extra)
+            )
     for group, specs in (document.get("dependency-groups") or {}).items():
         for spec in specs or []:
             if isinstance(spec, str):
@@ -95,7 +103,9 @@ def parse_pyproject(data: bytes, repo: str) -> list[Declaration]:
 def dynamic_version_attr(data: bytes) -> str | None:
     """The ``attr = "pkg.__version__"`` target of a dynamic project version."""
     document = tomllib.loads(data.decode("utf-8"))
-    dynamic = (document.get("tool", {}).get("setuptools", {}).get("dynamic", {}) or {}).get("version")
+    dynamic = (
+        document.get("tool", {}).get("setuptools", {}).get("dynamic", {}) or {}
+    ).get("version")
     if isinstance(dynamic, dict) and isinstance(dynamic.get("attr"), str):
         return dynamic["attr"]
     for line in data.decode("utf-8").splitlines():

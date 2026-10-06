@@ -76,7 +76,10 @@ def _caller_package_loaded(caller, expected_name="caller"):
 def test_a_clean_checkout_reports_the_committed_adapter(tmp_path):
     repo = make_helper_repo(tmp_path, REPO, ("alpha", "beta"), helper_name="committed")
     plan = make_plan(tmp_path, repo)
-    assert _behaviour(_describe(tmp_path, REPO, plan)) == (["alpha", "beta"], "committed")
+    assert _behaviour(_describe(tmp_path, REPO, plan)) == (
+        ["alpha", "beta"],
+        "committed",
+    )
 
 
 def test_an_uncommitted_caller_edit_does_not_change_the_verified_commit(tmp_path):
@@ -90,7 +93,10 @@ def test_an_uncommitted_caller_edit_does_not_change_the_verified_commit(tmp_path
 
     rewrite_helper(repo, "dirty", ("wrong-environment",))
     with _caller_package_loaded(repo, expected_name="dirty"):
-        assert _behaviour(_describe(tmp_path, REPO, plan)) == (["alpha", "beta"], "committed")
+        assert _behaviour(_describe(tmp_path, REPO, plan)) == (
+            ["alpha", "beta"],
+            "committed",
+        )
 
 
 def test_a_preloaded_caller_package_does_not_win_over_the_snapshot(tmp_path):
@@ -120,18 +126,29 @@ def test_two_commits_of_one_repository_keep_their_own_helper(tmp_path):
     rewrite_helper(repo, "second", ("beta",))
     second = commit_all(repo, "second helper")
 
-    assert _behaviour(_describe(tmp_path, REPO, plan, commit=first)) == (["alpha"], "first")
-    assert _behaviour(_describe(tmp_path, REPO, plan, commit=second)) == (["beta"], "second")
+    assert _behaviour(_describe(tmp_path, REPO, plan, commit=first)) == (
+        ["alpha"],
+        "first",
+    )
+    assert _behaviour(_describe(tmp_path, REPO, plan, commit=second)) == (
+        ["beta"],
+        "second",
+    )
 
 
 def test_a_missing_adapter_fails_closed_instead_of_using_the_caller(tmp_path):
     """The caller has ``scripts.ci.missing``; the verified commit does not."""
     caller = make_helper_repo(tmp_path, "caller", ("wrong",), helper_name="caller")
-    (caller / "scripts/ci/missing.py").write_text("def describe(root): return {'stages': ['wrong']}\n")
+    (caller / "scripts/ci/missing.py").write_text(
+        "def describe(root): return {'stages': ['wrong']}\n"
+    )
     repo = make_helper_repo(tmp_path, REPO, ("alpha",), helper_name="committed")
     plan = make_plan(tmp_path, repo, adapter="scripts.ci.missing")
 
-    with _caller_package_loaded(caller), pytest.raises(adapters.AdapterError, match="missing"):
+    with (
+        _caller_package_loaded(caller),
+        pytest.raises(adapters.AdapterError, match="missing"),
+    ):
         _describe(tmp_path, REPO, plan)
 
 
@@ -145,5 +162,7 @@ def test_an_adapter_that_cannot_import_fails_closed(tmp_path):
 def test_the_adapter_worker_is_importable_and_declares_its_operations():
     """The worker is a real module with a clear protocol, not a shell string."""
     probe = "import ooxml_runner.adapter_worker as w; print(sorted(w.OPERATIONS))"
-    result = subprocess.run([sys.executable, "-c", probe], capture_output=True, text=True, check=True)
+    result = subprocess.run(
+        [sys.executable, "-c", probe], capture_output=True, text=True, check=True
+    )
     assert "'describe'" in result.stdout and "'verify_report'" in result.stdout

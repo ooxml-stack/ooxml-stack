@@ -51,7 +51,9 @@ def load_baseline() -> dict[str, Any]:
 
 
 def write_baseline(data: dict[str, Any]) -> None:
-    BASELINE_PATH.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    BASELINE_PATH.write_text(
+        json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def lint_paths() -> list[str]:
@@ -60,7 +62,16 @@ def lint_paths() -> list[str]:
     Repositories differ (`src`, `scripts`, `backend`, `mcp`, `codegen`); passing
     a missing directory to ruff is an E902 error rather than a skipped tree.
     """
-    candidates = ("src", "tests", "scripts", "examples", "backend", "mcp", "codegen", "tools")
+    candidates = (
+        "src",
+        "tests",
+        "scripts",
+        "examples",
+        "backend",
+        "mcp",
+        "codegen",
+        "tools",
+    )
     return [name for name in candidates if (ROOT / name).is_dir()]
 
 

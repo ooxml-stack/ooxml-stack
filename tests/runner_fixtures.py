@@ -56,8 +56,12 @@ def verify_report(report, commit, config, inputs):
 
 def _init_repo(repo):
     snapshot.git(repo, "init", "--quiet")
-    for key, value in (("user.email", "ci@example.invalid"), ("user.name", "CI fixture"),
-                       ("commit.gpgsign", "false"), ("core.hooksPath", "/dev/null")):
+    for key, value in (
+        ("user.email", "ci@example.invalid"),
+        ("user.name", "CI fixture"),
+        ("commit.gpgsign", "false"),
+        ("core.hooksPath", "/dev/null"),
+    ):
         snapshot.git(repo, "config", key, value)
     snapshot.git(repo, "add", ".")
     snapshot.git(repo, "commit", "--quiet", "-m", "fixture")
@@ -118,14 +122,18 @@ def helper_source(name, stages):
     return f"NAME = {name!r}\nSTAGES = {list(stages)!r}\n"
 
 
-def make_helper_repo(tmp_path, name, stages, helper_name=None, adapter=HELPER_ADAPTER_SOURCE):
+def make_helper_repo(
+    tmp_path, name, stages, helper_name=None, adapter=HELPER_ADAPTER_SOURCE
+):
     """A repository whose adapter behaviour is decided by ``scripts.ci.helper``."""
     repo = tmp_path / name
     (repo / "ci").mkdir(parents=True)
     (repo / "scripts/ci").mkdir(parents=True)
     (repo / "ci/environment.json").write_text(json.dumps({"schema_version": 1}))
     (repo / "scripts/ci/__init__.py").write_text("")
-    (repo / "scripts/ci/helper.py").write_text(helper_source(helper_name or name, stages))
+    (repo / "scripts/ci/helper.py").write_text(
+        helper_source(helper_name or name, stages)
+    )
     (repo / "scripts/ci/adapter.py").write_text(adapter)
     return _init_repo(repo)
 
@@ -148,19 +156,43 @@ def _input_manifest(tmp_path, inputs):
             manifest.append({"path": item["path"], "sha256": item["sha256"]})
             continue
         path = tmp_path / item
-        digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else "0" * 64
+        digest = (
+            hashlib.sha256(path.read_bytes()).hexdigest()
+            if path.is_file()
+            else "0" * 64
+        )
         manifest.append({"path": item, "sha256": digest})
     return manifest
 
 
-def make_plan(tmp_path, repo, *, adapter="scripts.ci.adapter", nodes=None, diagnostics=(),
-              full=None, inputs=(), digest="a" * 64, key=REPO, name="plan.json"):
+def make_plan(
+    tmp_path,
+    repo,
+    *,
+    adapter="scripts.ci.adapter",
+    nodes=None,
+    diagnostics=(),
+    full=None,
+    inputs=(),
+    digest="a" * 64,
+    key=REPO,
+    name="plan.json",
+):
     payload = {
-        "schema_version": 1, "inputs_digest": digest, "inputs": _input_manifest(tmp_path, inputs),
+        "schema_version": 1,
+        "inputs_digest": digest,
+        "inputs": _input_manifest(tmp_path, inputs),
         "diagnostics": list(diagnostics),
         "nodes": nodes if nodes is not None else [{"key": key}],
-        "full": {key: {"workflow": ".github/workflows/ci.yml", "jobs": [{"id": "check"}],
-                       **({"adapter": adapter} if adapter else {})}} if full is None else full,
+        "full": {
+            key: {
+                "workflow": ".github/workflows/ci.yml",
+                "jobs": [{"id": "check"}],
+                **({"adapter": adapter} if adapter else {}),
+            }
+        }
+        if full is None
+        else full,
     }
     path = tmp_path / name
     path.write_text(json.dumps(payload))
@@ -171,28 +203,48 @@ def expected_for(repo, plan, stages=("alpha", "beta"), key=REPO, commit=None):
     """The expectations a verifier re-derives from the request, never from a report."""
     loaded = plan_module.load(plan)
     resolved = commit or snapshot.resolve_commit(repo, "HEAD")
-    return {"repository": key, "commit": resolved,
-            "runner_commit": RUNNER_COMMIT,
-            "runner_source_sha256": identity.source_sha256_at(identity.PACKAGE_DIR.parent, RUNNER_COMMIT),
-            "plan_sha256": loaded["sha256"], "inputs_digest": loaded["inputs_digest"],
-            "inputs_reverified": plan_module.reverify_inputs(
-                loaded, Path(plan).parent, key, resolved),
-            "binding": plan_module.binding_for(loaded, key), "stages": list(stages)}
+    return {
+        "repository": key,
+        "commit": resolved,
+        "runner_commit": RUNNER_COMMIT,
+        "runner_source_sha256": identity.source_sha256_at(
+            identity.PACKAGE_DIR.parent, RUNNER_COMMIT
+        ),
+        "plan_sha256": loaded["sha256"],
+        "inputs_digest": loaded["inputs_digest"],
+        "inputs_reverified": plan_module.reverify_inputs(
+            loaded, Path(plan).parent, key, resolved
+        ),
+        "binding": plan_module.binding_for(loaded, key),
+        "stages": list(stages),
+    }
 
 
 def passing_report(repo, plan, stages=("alpha", "beta"), **overrides):
     loaded = plan_module.load(plan)
     commit = overrides.pop("commit", snapshot.resolve_commit(repo, "HEAD"))
     payload = {
-        "schema_version": 1, "status": "pass", "repository": overrides.pop("repository", REPO),
+        "schema_version": 1,
+        "status": "pass",
+        "repository": overrides.pop("repository", REPO),
         "commit": commit,
-        "runner": {"commit": RUNNER_COMMIT, "source_sha256": identity.identity()["source_sha256"]},
-        "plan": {"path": loaded["path"], "sha256": loaded["sha256"],
-                 "inputs_digest": loaded["inputs_digest"],
-                 "inputs_reverified": overrides.pop("inputs_reverified", plan_module.reverify_inputs(
-                     loaded, Path(plan).parent, REPO, commit))},
+        "runner": {
+            "commit": RUNNER_COMMIT,
+            "source_sha256": identity.identity()["source_sha256"],
+        },
+        "plan": {
+            "path": loaded["path"],
+            "sha256": loaded["sha256"],
+            "inputs_digest": loaded["inputs_digest"],
+            "inputs_reverified": overrides.pop(
+                "inputs_reverified",
+                plan_module.reverify_inputs(loaded, Path(plan).parent, REPO, commit),
+            ),
+        },
         "binding": overrides.pop("binding", plan_module.binding_for(loaded, REPO)),
-        "image": "fixture@sha256:" + "0" * 64, "inputs": {}, "exit_code": 0,
+        "image": "fixture@sha256:" + "0" * 64,
+        "inputs": {},
+        "exit_code": 0,
         "stages": [{"name": name, "status": "pass"} for name in stages],
     }
     payload.update(overrides)

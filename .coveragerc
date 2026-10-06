@@ -1,0 +1,18 @@
+[run]
+source = ooxml_runner
+omit =
+    tests/*
+
+[report]
+# Measured 79% line coverage at 76885396 for the shared runner package, which is
+# the component whose false pass would invalidate a whole workspace gate
+# (tests/test_ooxml_runner_*.py, 137 tests). The scripts/ tree is exercised by
+# the other Makefile targets (evidence-hygiene, ecosystem-plan-check, mutation
+# gates) and is deliberately out of this scope. The gate is a floor: raise it
+# deliberately when coverage improves, never lower it silently.
+fail_under = 75
+show_missing = true
+exclude_also =
+    if TYPE_CHECKING:
+    raise NotImplementedError
+    \.\.\.

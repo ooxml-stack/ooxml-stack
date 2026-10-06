@@ -29,7 +29,9 @@ def structural_verdict(plan: dict[str, Any], strict: bool) -> list[str]:
     problems = []
     for item in plan["diagnostics"]:
         if item["level"] == "error" or (strict and item["level"] == "warning"):
-            problems.append(f"{item['level']}:{item['code']} {item['where']} — {item['detail']}")
+            problems.append(
+                f"{item['level']}:{item['code']} {item['where']} — {item['detail']}"
+            )
     return problems
 
 
@@ -43,7 +45,9 @@ def scan_verdict(scan_report: dict[str, Any], strict: bool) -> list[str]:
             or (strict and level in ("warning", "unverifiable"))
         )
         if blocking:
-            problems.append(f"{level}:{item['code']} {item['where']} — {item['detail']}")
+            problems.append(
+                f"{level}:{item['code']} {item['where']} — {item['detail']}"
+            )
     return problems
 
 
@@ -64,7 +68,9 @@ def _load(root: pathlib.Path):
     return policy, facts
 
 
-def _base_verdict(mode: str, root: pathlib.Path, plan: dict, scan_report: dict) -> dict[str, Any]:
+def _base_verdict(
+    mode: str, root: pathlib.Path, plan: dict, scan_report: dict
+) -> dict[str, Any]:
     return {
         "mode": mode,
         "root": str(root),
@@ -86,7 +92,9 @@ def _run_write(root: pathlib.Path, plan: dict, scan_report: dict, as_json: bool)
         scan_path.write_text(_canonical_json(scan_report), encoding="utf-8")
         verdict["result"] = "failed"
         verdict["reason"] = "required facts unverifiable; existing plan left untouched"
-        verdict["problems"] = [f"{item['code']} {item['where']} — {item['detail']}" for item in blocked]
+        verdict["problems"] = [
+            f"{item['code']} {item['where']} — {item['detail']}" for item in blocked
+        ]
         _report(verdict, as_json)
         return 1
     plan_bytes = _canonical_json(plan)
@@ -99,7 +107,9 @@ def _run_write(root: pathlib.Path, plan: dict, scan_report: dict, as_json: bool)
     return 0
 
 
-def _persist_scan(scan_path: pathlib.Path, scan_report: dict, verdict: dict[str, Any]) -> None:
+def _persist_scan(
+    scan_path: pathlib.Path, scan_report: dict, verdict: dict[str, Any]
+) -> None:
     """The scan is a time-point observation: every check refreshes it, pass or fail."""
     payload = dict(scan_report)
     payload["check"] = {
@@ -125,7 +135,9 @@ def _run_check(
     else:
         byte_identical = committed == _canonical_json(plan)
         if not byte_identical:
-            problems.append("regenerated plan differs from the committed plan (byte comparison)")
+            problems.append(
+                "regenerated plan differs from the committed plan (byte comparison)"
+            )
     problems.extend(structural_verdict(plan, strict))
     problems.extend(scan_verdict(scan_report, strict))
     verdict["byte_identical"] = byte_identical
@@ -137,14 +149,26 @@ def _run_check(
 
 
 def _parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="ooxml_ci", description="Ecosystem inventory for the ooxml repos")
+    parser = argparse.ArgumentParser(
+        prog="ooxml_ci", description="Ecosystem inventory for the ooxml repos"
+    )
     mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true", help="regenerate the plan (and scan)")
-    mode.add_argument("--check", action="store_true", help="verify the plan and the scan")
-    parser.add_argument("--strict", action="store_true", help="treat warnings as failures")
+    mode.add_argument(
+        "--write", action="store_true", help="regenerate the plan (and scan)"
+    )
+    mode.add_argument(
+        "--check", action="store_true", help="verify the plan and the scan"
+    )
+    parser.add_argument(
+        "--strict", action="store_true", help="treat warnings as failures"
+    )
     parser.add_argument("--offline", action="store_true", help="skip remote probes")
-    parser.add_argument("--root", default=None, help="workspace root (default: discover)")
-    parser.add_argument("--json", action="store_true", help="print machine-readable verdict")
+    parser.add_argument(
+        "--root", default=None, help="workspace root (default: discover)"
+    )
+    parser.add_argument(
+        "--json", action="store_true", help="print machine-readable verdict"
+    )
     return parser
 
 
@@ -157,7 +181,10 @@ def _dependency_gate(root: pathlib.Path) -> int | None:
     report = deps.check(root)
     if not report["problems"]:
         return None
-    print("dependency error: the pinned inventory environment is not active", file=sys.stderr)
+    print(
+        "dependency error: the pinned inventory environment is not active",
+        file=sys.stderr,
+    )
     for problem in report["problems"]:
         print(f"  - {problem}", file=sys.stderr)
     print("prepare it with:", file=sys.stderr)
@@ -167,7 +194,9 @@ def _dependency_gate(root: pathlib.Path) -> int | None:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
-    start = pathlib.Path(args.root).resolve() if args.root else pathlib.Path.cwd().resolve()
+    start = (
+        pathlib.Path(args.root).resolve() if args.root else pathlib.Path.cwd().resolve()
+    )
     try:
         root = find_root(start)
     except InputError as error:
@@ -204,7 +233,9 @@ def _report(verdict: dict[str, Any], as_json: bool) -> None:
     print(f"plan counts   : {verdict['counts']}")
     print(f"scan counts   : {verdict['scan_counts']}")
     if "byte_identical" in verdict:
-        print(f"plan bytes    : {'identical' if verdict['byte_identical'] else 'DIFFERENT'}")
+        print(
+            f"plan bytes    : {'identical' if verdict['byte_identical'] else 'DIFFERENT'}"
+        )
     print(f"result        : {verdict['result']}")
     for problem in verdict.get("problems", [])[:40]:
         print(f"  - {problem}")

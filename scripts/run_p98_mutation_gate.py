@@ -28,14 +28,26 @@ EVIDENCE = artifact_dir() / "p98"
 PROFILE = ROOT / "release-profiles" / "p98-rule-coverage-mutation.json"
 
 # Rule ids already proven by P97; P98 rows only add NEW uncovered rules.
-P97_PROVEN_RULES = frozenset({
-    "content_types_integrity", "image_rel_integrity", "color_no_hash",
-    "table_grid_consistency", "wml_table_grid_consistency", "numbering_ref_valid",
-    "body_required", "slide_rel_completeness", "blip_fill_integrity",
-    "element_order", "animation_target_ref", "sheet_rid_resolvable",
-    "rel_id_unique", "styles_rgb_argb_width", "sst_count_consistent",
-    "cell_ref_matches_row",
-})
+P97_PROVEN_RULES = frozenset(
+    {
+        "content_types_integrity",
+        "image_rel_integrity",
+        "color_no_hash",
+        "table_grid_consistency",
+        "wml_table_grid_consistency",
+        "numbering_ref_valid",
+        "body_required",
+        "slide_rel_completeness",
+        "blip_fill_integrity",
+        "element_order",
+        "animation_target_ref",
+        "sheet_rid_resolvable",
+        "rel_id_unique",
+        "styles_rgb_argb_width",
+        "sst_count_consistent",
+        "cell_ref_matches_row",
+    }
+)
 
 
 def add_path(path: Path) -> None:
@@ -88,16 +100,20 @@ def write_zip(path: Path, files: dict[str, str | bytes]) -> None:
 def run_registry(registry: Any, path: Path) -> list[dict[str, Any]]:
     rows = []
     for finding in registry.run(path):
-        rows.append({
-            "rule_id": finding.rule_id,
-            "severity": finding.severity.value,
-            "message": finding.message,
-            "file_path": finding.file_path,
-        })
+        rows.append(
+            {
+                "rule_id": finding.rule_id,
+                "severity": finding.severity.value,
+                "message": finding.message,
+                "file_path": finding.file_path,
+            }
+        )
     return rows
 
 
-def case_result(case: dict[str, Any], temp: Path, registry_map: dict[str, Any]) -> dict[str, Any]:
+def case_result(
+    case: dict[str, Any], temp: Path, registry_map: dict[str, Any]
+) -> dict[str, Any]:
     registry = registry_map[case["format"]]
     control = temp / f"{case['id']}-control.{case['format']}"
     mutant = temp / f"{case['id']}-mutant.{case['format']}"
@@ -122,8 +138,12 @@ def case_result(case: dict[str, Any], temp: Path, registry_map: dict[str, Any]) 
     }
 
 
-def rule_matrix(registries: dict[str, Any], proven: set[tuple[str, str]]) -> dict[str, Any]:
-    all_rules = sorted({rule.id for registry in registries.values() for rule in registry.rules})
+def rule_matrix(
+    registries: dict[str, Any], proven: set[tuple[str, str]]
+) -> dict[str, Any]:
+    all_rules = sorted(
+        {rule.id for registry in registries.values() for rule in registry.rules}
+    )
     by_format = {}
     counts = {fmt: {} for fmt in registries}
     for fmt, registry in registries.items():
@@ -136,7 +156,9 @@ def rule_matrix(registries: dict[str, Any], proven: set[tuple[str, str]]) -> dic
     return {"rules": all_rules, "by_format": by_format, "counts": counts}
 
 
-def coverage_status(fmt: str, rule_id: str, tagged: set[str], proven: set[tuple[str, str]]) -> str:
+def coverage_status(
+    fmt: str, rule_id: str, tagged: set[str], proven: set[tuple[str, str]]
+) -> str:
     if rule_id not in tagged:
         return "not_applicable_to_format"
     if (fmt, rule_id) in proven:
@@ -162,8 +184,12 @@ def source_heads() -> dict[str, str]:
     return {repo: git_head(PROJECTS / repo) for repo in repos}
 
 
-def build_summary(results: list[dict[str, Any]], registries: dict[str, Any]) -> dict[str, Any]:
-    proven = {(row["format"], row["rule_id"]) for row in results if row["status"] == "passed"}
+def build_summary(
+    results: list[dict[str, Any]], registries: dict[str, Any]
+) -> dict[str, Any]:
+    proven = {
+        (row["format"], row["rule_id"]) for row in results if row["status"] == "passed"
+    }
     unique_rules = {rule_id for _, rule_id in proven}
     matrix = rule_matrix(registries, proven)
     failed = [row for row in results if row["status"] != "passed"]
@@ -206,7 +232,9 @@ def generator_source_files() -> list[dict[str, Any]]:
 def format_counts(results: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
     counts: dict[str, dict[str, int]] = {}
     for row in results:
-        bucket = counts.setdefault(row["format"], {"total": 0, "passed": 0, "failed": 0})
+        bucket = counts.setdefault(
+            row["format"], {"total": 0, "passed": 0, "failed": 0}
+        )
         bucket["total"] += 1
         bucket["passed" if row["status"] == "passed" else "failed"] += 1
     return counts
@@ -235,13 +263,17 @@ def manifest_file(path: Path) -> dict[str, Any]:
 def write_outputs(summary: dict[str, Any], out_dir: Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     summary_path = out_dir / "rule-coverage-mutation-gate-summary.json"
-    summary_path.write_text(json.dumps(summary, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    summary_path.write_text(
+        json.dumps(summary, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     manifest = {
         "schema_version": "p98-evidence-manifest-v1",
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "files": [manifest_file(summary_path)],
     }
-    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    (out_dir / "manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def run_gate(out_dir: Path = EVIDENCE) -> dict[str, Any]:
@@ -258,14 +290,23 @@ def main() -> int:
     parser.add_argument("--out-dir", type=Path, default=EVIDENCE)
     args = parser.parse_args()
     summary = run_gate(args.out_dir)
-    print(json.dumps({
-        "ok": summary["ok"],
-        "mutation_case_count": summary["mutation_case_count"],
-        "mutation_case_pass_count": summary["mutation_case_pass_count"],
-        "mutation_proven_format_rule_count": summary["mutation_proven_format_rule_count"],
-        "mutation_proven_unique_rule_count": summary["mutation_proven_unique_rule_count"],
-        "formats": summary["formats"],
-    }, indent=2))
+    print(
+        json.dumps(
+            {
+                "ok": summary["ok"],
+                "mutation_case_count": summary["mutation_case_count"],
+                "mutation_case_pass_count": summary["mutation_case_pass_count"],
+                "mutation_proven_format_rule_count": summary[
+                    "mutation_proven_format_rule_count"
+                ],
+                "mutation_proven_unique_rule_count": summary[
+                    "mutation_proven_unique_rule_count"
+                ],
+                "formats": summary["formats"],
+            },
+            indent=2,
+        )
+    )
     return 0 if summary["ok"] else 1
 
 

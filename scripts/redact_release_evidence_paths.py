@@ -9,7 +9,9 @@ import re
 from pathlib import Path
 
 USER_PREFIX = "/" + "Users/"
-USER_FILE_RE = re.compile(re.escape(USER_PREFIX) + r".*?(\.(?:docx|pptx|xlsx|json|jsonl|csv|txt))")
+USER_FILE_RE = re.compile(
+    re.escape(USER_PREFIX) + r".*?(\.(?:docx|pptx|xlsx|json|jsonl|csv|txt))"
+)
 USER_PATH_RE = re.compile(re.escape(USER_PREFIX) + r"[^ \"'\n\r\t]+")
 
 
@@ -31,8 +33,11 @@ def tracked_evidence_files(root: Path) -> list[Path]:
     evidence = root / "release-evidence"
     if not evidence.is_dir():
         raise FileNotFoundError(f"Evidence directory missing: {evidence}")
-    return sorted(path for path in evidence.rglob("*")
-                  if path.is_file() and path.suffix in {".json", ".jsonl"})
+    return sorted(
+        path
+        for path in evidence.rglob("*")
+        if path.is_file() and path.suffix in {".json", ".jsonl"}
+    )
 
 
 def redact_files(root: Path, write: bool) -> list[Path]:
@@ -53,7 +58,9 @@ def refresh_locks(root: Path, changed: set[Path]) -> list[Path]:
     for path in lock_files(root):
         data = json.loads(path.read_text(encoding="utf-8"))
         if refresh_node(data, root, path.parent, changed):
-            path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            path.write_text(
+                json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+            )
             refreshed.append(path)
     return refreshed
 
@@ -105,8 +112,12 @@ def sha256(path: Path) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--root", type=Path, required=True,
-                        help="External export containing release-evidence and release-profiles")
+    parser.add_argument(
+        "--root",
+        type=Path,
+        required=True,
+        help="External export containing release-evidence and release-profiles",
+    )
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--refresh-locks", action="store_true")
     parser.add_argument("--refresh-path", action="append", default=[])
@@ -119,9 +130,13 @@ def main() -> int:
         for path in changed:
             print(path.relative_to(root))
         return 1
-    refresh_paths = {path for raw in args.refresh_path if (path := (root / raw).resolve()).exists()}
+    refresh_paths = {
+        path for raw in args.refresh_path if (path := (root / raw).resolve()).exists()
+    }
     changed_set = set(changed) | refresh_paths
-    refreshed = refresh_locks(root, changed_set) if args.write and args.refresh_locks else []
+    refreshed = (
+        refresh_locks(root, changed_set) if args.write and args.refresh_locks else []
+    )
     for path in [*changed, *refreshed]:
         print(path.relative_to(root))
     return 0

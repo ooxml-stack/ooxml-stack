@@ -28,7 +28,9 @@ def _error(code: str, where: str, detail: str) -> dict[str, Any]:
 
 
 def missing_input_diagnostics(facts: Facts) -> list[dict[str, Any]]:
-    return [_error("missing_input", item["path"], item["why"]) for item in facts.missing]
+    return [
+        _error("missing_input", item["path"], item["why"]) for item in facts.missing
+    ]
 
 
 def _source_selector(source: dict[str, Any]) -> tuple[str | None, str]:
@@ -71,20 +73,35 @@ def effective_source(
         )
     if source_ref:
         return source_url or declaration.url, source_ref, source_kind, diags
-    return source_url or declaration.url, declaration.ref_raw, declaration.ref_declared_kind, diags
+    return (
+        source_url or declaration.url,
+        declaration.ref_raw,
+        declaration.ref_declared_kind,
+        diags,
+    )
 
 
-def dependency_diagnostics(declaration, url, ref, locked: dict[str, Any]) -> list[dict[str, Any]]:
+def dependency_diagnostics(
+    declaration, url, ref, locked: dict[str, Any]
+) -> list[dict[str, Any]]:
     where = _where(declaration)
     name = declaration.name
     diags: list[dict[str, Any]] = []
     if declaration.kind in PIP_KINDS and url and not ref:
         diags.append(
-            _error("unpinned_dependency", where, f"{name} is a git dependency without tag/rev")
+            _error(
+                "unpinned_dependency",
+                where,
+                f"{name} is a git dependency without tag/rev",
+            )
         )
     if url and not locked:
         diags.append(
-            _error("lock_missing", f"{declaration.repo}/uv.lock", f"{name} is declared but absent from the lock")
+            _error(
+                "lock_missing",
+                f"{declaration.repo}/uv.lock",
+                f"{name} is declared but absent from the lock",
+            )
         )
     if url and locked and not locked.get("expected_commit"):
         diags.append(
@@ -94,7 +111,11 @@ def dependency_diagnostics(declaration, url, ref, locked: dict[str, Any]) -> lis
                 f"{name} is locked from git without a full commit SHA",
             )
         )
-    if url and locked.get("url") and urls.normalize_repo(url) != urls.normalize_repo(locked["url"]):
+    if (
+        url
+        and locked.get("url")
+        and urls.normalize_repo(url) != urls.normalize_repo(locked["url"])
+    ):
         diags.append(
             _error(
                 "source_override_conflict",
@@ -124,7 +145,9 @@ def dependency_diagnostics(declaration, url, ref, locked: dict[str, Any]) -> lis
     return diags
 
 
-def dependency_edge(facts: Facts, declaration) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+def dependency_edge(
+    facts: Facts, declaration
+) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
     nodes = node_index(facts.policy)
     name = declaration.name
     source = facts.uv_sources.get(declaration.repo, {}).get(name)
@@ -133,7 +156,11 @@ def dependency_edge(facts: Facts, declaration) -> tuple[dict[str, Any] | None, l
         return None, diags  # an ordinary PyPI dependency, not an ecosystem edge
     if name not in nodes:
         diags.append(
-            _error("policy_node_mismatch", _where(declaration), f"dependency {name!r} is not a policy node")
+            _error(
+                "policy_node_mismatch",
+                _where(declaration),
+                f"dependency {name!r} is not a policy node",
+            )
         )
         return None, diags
     locked = facts.locks.get(declaration.repo, {}).get(name, {})

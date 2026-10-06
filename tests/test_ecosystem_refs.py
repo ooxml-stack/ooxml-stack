@@ -13,17 +13,44 @@ from scripts.ooxml_ci import gitfacts, urls
 @pytest.mark.parametrize(
     ("url", "expected"),
     [
-        ("git@github.com:ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
-        ("https://github.com/ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
-        ("https://github.com/ooxml-stack/ooxml-core", "github.com/ooxml-stack/ooxml-core"),
+        (
+            "git@github.com:ooxml-stack/ooxml-core.git",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
+        (
+            "https://github.com/ooxml-stack/ooxml-core.git",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
+        (
+            "https://github.com/ooxml-stack/ooxml-core",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
         # A trailing slash must not leave ``.git`` glued to the repository name.
-        ("https://github.com/ooxml-stack/ooxml-core.git/", "github.com/ooxml-stack/ooxml-core"),
-        ("https://github.com/ooxml-stack/ooxml-core/", "github.com/ooxml-stack/ooxml-core"),
-        ("git://github.com/ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
-        ("ssh://git@github.com/ooxml-stack/ooxml-core.git", "github.com/ooxml-stack/ooxml-core"),
+        (
+            "https://github.com/ooxml-stack/ooxml-core.git/",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
+        (
+            "https://github.com/ooxml-stack/ooxml-core/",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
+        (
+            "git://github.com/ooxml-stack/ooxml-core.git",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
+        (
+            "ssh://git@github.com/ooxml-stack/ooxml-core.git",
+            "github.com/ooxml-stack/ooxml-core",
+        ),
         # The scp form takes any user name, not just ``git``.
-        ("deploy@code.example:ooxml-stack/ooxml-core.git", "code.example/ooxml-stack/ooxml-core"),
-        ("svc-bot@code.example:ooxml-stack/ooxml-core.git", "code.example/ooxml-stack/ooxml-core"),
+        (
+            "deploy@code.example:ooxml-stack/ooxml-core.git",
+            "code.example/ooxml-stack/ooxml-core",
+        ),
+        (
+            "svc-bot@code.example:ooxml-stack/ooxml-core.git",
+            "code.example/ooxml-stack/ooxml-core",
+        ),
     ],
 )
 def test_normalize_repo(url, expected):
@@ -67,7 +94,9 @@ def test_the_clone_gate_accepts_every_form_the_normalizer_resolves(url):
     assert urls.repo_name(url) == "ooxml-core", url
 
 
-@pytest.mark.parametrize("url", ["../local", "file:///tmp/x", "git+https://github.com/a/b.git"])
+@pytest.mark.parametrize(
+    "url", ["../local", "file:///tmp/x", "git+https://github.com/a/b.git"]
+)
 def test_a_non_remote_argument_is_not_a_clone_target(url):
     assert not urls.is_remote_repo(url)
 
@@ -103,13 +132,22 @@ def test_classify_remote_ref_distinguishes_tag_shapes():
         "peeled": {"v0.6.1": "3" * 40},
         "heads": {"main": "4" * 40},
     }
-    assert gitfacts.classify_remote_ref("v0.6.0", "tag", listing, None, 5)["kind"] == "lightweight_tag"
+    assert (
+        gitfacts.classify_remote_ref("v0.6.0", "tag", listing, None, 5)["kind"]
+        == "lightweight_tag"
+    )
     assert gitfacts.classify_remote_ref("v0.6.1", "tag", listing, None, 5) == {
         "kind": "annotated_tag",
         "commit": "3" * 40,
     }
-    assert gitfacts.classify_remote_ref("main", "branch", listing, None, 5)["kind"] == "branch"
-    assert gitfacts.classify_remote_ref("v9.9.9", "tag", listing, None, 5)["kind"] == "missing"
+    assert (
+        gitfacts.classify_remote_ref("main", "branch", listing, None, 5)["kind"]
+        == "branch"
+    )
+    assert (
+        gitfacts.classify_remote_ref("v9.9.9", "tag", listing, None, 5)["kind"]
+        == "missing"
+    )
 
 
 def test_classify_remote_ref_honours_a_declared_branch_selector():
@@ -124,7 +162,10 @@ def test_classify_remote_ref_honours_a_declared_branch_selector():
         "kind": "branch",
         "commit": "2" * 40,
     }
-    assert gitfacts.classify_remote_ref("stable", "tag", listing, None, 5)["kind"] == "lightweight_tag"
+    assert (
+        gitfacts.classify_remote_ref("stable", "tag", listing, None, 5)["kind"]
+        == "lightweight_tag"
+    )
 
 
 def test_classify_remote_ref_cannot_confirm_an_absent_sha(tmp_path):
@@ -136,13 +177,20 @@ def test_classify_remote_ref_cannot_confirm_an_absent_sha(tmp_path):
 def test_classify_remote_ref_confirms_a_local_sha(tmp_path):
     init_repo(tmp_path / "repo")
     head = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=tmp_path / "repo", capture_output=True, text=True
+        ["git", "rev-parse", "HEAD"],
+        cwd=tmp_path / "repo",
+        capture_output=True,
+        text=True,
     ).stdout.strip()
     listing = {"ok": True, "tags": {}, "peeled": {}, "heads": {}}
-    result = gitfacts.classify_remote_ref(head, "sha", listing, tmp_path / "repo", 5, False)
+    result = gitfacts.classify_remote_ref(
+        head, "sha", listing, tmp_path / "repo", 5, False
+    )
     assert result == {"kind": "full_commit", "commit": head}
 
 
 def test_classify_remote_ref_reports_an_unreachable_remote():
-    result = gitfacts.classify_remote_ref("v0.6.0", "tag", {"ok": False, "error": "boom"}, None, 5)
+    result = gitfacts.classify_remote_ref(
+        "v0.6.0", "tag", {"ok": False, "error": "boom"}, None, 5
+    )
     assert result == {"kind": "unverifiable", "reason": "boom"}
