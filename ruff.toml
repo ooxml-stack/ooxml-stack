@@ -1,0 +1,19 @@
+target-version = "py310"
+line-length = 88
+src = ["scripts", "ooxml_runner", "tests"]
+extend-exclude = ["typings", ".venv", "build", "dist", "artifacts"]
+
+[lint]
+# E501 stays out of the lint gate: the formatter owns line width and historical
+# lines predate the changed-files formatter gate.
+select = ["E4", "E7", "E9", "F", "W"]
+ignore = ["E501"]
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/**" = ["F401", "F841"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
