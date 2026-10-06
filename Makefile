@@ -46,7 +46,7 @@ runner-test:
 	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ooxml_runner_*.py tests/test_dev_worktree.py tests/test_workspace_agents.py -q
 
 lint:
-	@uvx ruff==0.16.5 check --select E9,F63,F7,F82 scripts ooxml_runner tests
+	python3 scripts/quality_gate.py ruff
 	@python3 scripts/format_gate.py
 
 typecheck:

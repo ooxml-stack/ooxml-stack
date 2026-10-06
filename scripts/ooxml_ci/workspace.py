@@ -24,7 +24,6 @@ import shutil
 import subprocess
 import time
 
-from . import paths
 
 DEFAULT_OWNER = "ooxml-stack"
 
