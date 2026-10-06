@@ -26,5 +26,11 @@ jobs:
           python-version: "3.12"
       - name: Install the pinned runner test dependencies
         run: make ecosystem-inventory-deps
+      - name: Run lint
+        run: make lint
+      - name: Install pyright
+        run: uv tool install pyright==1.1.411
+      - name: Run Python type gate
+        run: make typecheck
       - name: Run the shared runner regressions
         run: make runner-test

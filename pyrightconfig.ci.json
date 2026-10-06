@@ -1,0 +1,25 @@
+{
+  "exclude": [
+    "**/__pycache__",
+    "**/.*"
+  ],
+  "include": [
+    "scripts",
+    "ooxml_runner",
+    "tests"
+  ],
+  "pythonPlatform": "All",
+  "pythonVersion": "3.10",
+  "reportArgumentType": "none",
+  "reportAssignmentType": "none",
+  "reportAttributeAccessIssue": "none",
+  "reportCallIssue": "none",
+  "reportImportCycles": false,
+  "reportOptionalCall": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportPrivateImportUsage": "none",
+  "reportReturnType": "none",
+  "stubPath": "./typings",
+  "typeCheckingMode": "basic",
+  "verboseOutput": true
+}

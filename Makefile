@@ -1,4 +1,4 @@
-.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init
+.PHONY: evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck
 
 # The inventory tool runs only against its pinned interpreter. `--write` and
 # `--check` refuse to start when the versions do not match the declaration.
@@ -44,6 +44,13 @@ ecosystem-inventory-test:
 # verification, which is where a false pass would come from.
 runner-test:
 	@$(ECOSYSTEM_PYTHON) -m pytest tests/test_ooxml_runner_*.py tests/test_dev_worktree.py tests/test_workspace_agents.py -q
+
+lint:
+	@uvx ruff==0.16.5 check --select E9,F63,F7,F82 scripts ooxml_runner tests
+	@python3 scripts/format_gate.py
+
+typecheck:
+	@python3 scripts/quality_gate.py pyright
 
 repo-hygiene: evidence-hygiene
 	@python3 scripts/audit_repo_hygiene.py $(if $(STRICT_HISTORY),--strict-history,)

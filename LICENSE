@@ -1,0 +1,10 @@
+# License
+
+Copyright (c) 2024-2026 ooxml-stack contributors. All rights reserved.
+
+This repository is a public coordination and visibility surface for the OOXML
+Stack. No open-source license is granted by this repository. See `VISIBILITY.md`
+for the public/private boundary and `CONTRIBUTING.md` for contribution terms.
+
+Implementation repositories, runtime distributions, document corpora, and
+third-party components retain their own licenses and are not relicensed here.
