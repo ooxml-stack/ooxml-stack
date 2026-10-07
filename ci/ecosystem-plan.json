@@ -391,13 +391,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "566659e9b81e2c46196e0e8c38923896c2f363f5",
+        "ref_raw": "38cb991cf4b612814cd092836cf59c81a44fb397",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "566659e9b81e2c46196e0e8c38923896c2f363f5",
+        "commit": "38cb991cf4b612814cd092836cf59c81a44fb397",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -440,7 +440,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "ref_raw": "83b9292b74cddd6ecba1755d408a17f2e67ed6d7",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -644,13 +644,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-hyperlink-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "e53f7f1c6528620fba91f519211d9655a792b2e9",
+        "commit": "b2fe95e169c4b1f0627fbfca5296b30502d02624",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.3.29"
       },
@@ -1789,7 +1789,7 @@
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
-              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@83b9292b74cddd6ecba1755d408a17f2e67ed6d7"
             },
             {
               "cwd": "ooxml-operation-engine",
@@ -3132,7 +3132,7 @@
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/ci.yml",
-      "sha256": "1154fa25016fdbe6600537e65a9831f02945d713e49f3740a6d1d745bb6bcff1"
+      "sha256": "82fefdfdb3d2bfa5ad4118474a1ca04c118dfd1e8153a25e26e1fb29246c8452"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/commit-delta.yml",
@@ -3148,7 +3148,7 @@
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/python-matrix.yml",
-      "sha256": "7e585395f48e313afa2a2c4cf5c8a22a83a1ab2493bcb62b7602d7a6ce70a5d5"
+      "sha256": "548a0d25814b8ca9a50b89072086a0e5edd66ca139025082d41e6aed6a1c966e"
     },
     {
       "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
@@ -3156,15 +3156,15 @@
     },
     {
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "78c45fd1de0af77579cfc002e180b725c8ea18f7b9e6f727a157e0cff48b9e5d"
+      "sha256": "a327c5995bf74c7ac7eaa4056ae92c42325bf721dff02fd526827b37fcb45cf9"
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "ae970efde44f2ce6ff576d083351abf6aa23ae1cea5f1d184b0681d4e611d6df"
+      "sha256": "4f6d0a3c1f512bf2fb4b1ae1245f9efeab8791560e1e600f23ada3f9a502bf41"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "a5de12c12feabbb8930f68c050c78237ecbe9cde1a71a2a9e5bf51fc87406007"
+      "sha256": "0ffcfd47df8692e42ff460ad59c3c566d7e979e67334494ada05a057055ef0e3"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -3339,7 +3339,7 @@
       "sha256": "493151009531e2664a95d32a31dfc5f820d5941112f417b4a4e87a2c29a08822"
     }
   ],
-  "inputs_digest": "ec7a6c5ac8931a4a1b49a7f93d369d069bd981cb57d8633cf61579089cbf20ab",
+  "inputs_digest": "ef90afac95f5df4d9fdecb087c76a235198f9df5c9a4c6aebee65aded08be063",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3685,7 +3685,7 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-hyperlink-preservation-20261007",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.3.29"
