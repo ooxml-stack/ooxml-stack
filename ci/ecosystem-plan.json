@@ -77,7 +77,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "ref_raw": "83b9292b74cddd6ecba1755d408a17f2e67ed6d7",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -692,7 +692,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "566659e9b81e2c46196e0e8c38923896c2f363f5",
+        "ref_raw": "38cb991cf4b612814cd092836cf59c81a44fb397",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -761,7 +761,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "ref_raw": "83b9292b74cddd6ecba1755d408a17f2e67ed6d7",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -900,7 +900,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "ref_raw": "83b9292b74cddd6ecba1755d408a17f2e67ed6d7",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -1063,7 +1063,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "ref_raw": "83b9292b74cddd6ecba1755d408a17f2e67ed6d7",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -1166,7 +1166,7 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "bd3e805786f926fb6ac5fb1eddbc819617968059",
+        "ref_raw": "83b9292b74cddd6ecba1755d408a17f2e67ed6d7",
         "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack",
         "version_spec": null
@@ -1294,7 +1294,7 @@
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
-              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@83b9292b74cddd6ecba1755d408a17f2e67ed6d7"
             },
             {
               "cwd": null,
@@ -2375,7 +2375,7 @@
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
-              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@83b9292b74cddd6ecba1755d408a17f2e67ed6d7"
             },
             {
               "cwd": null,
@@ -2523,7 +2523,7 @@
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
-              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@83b9292b74cddd6ecba1755d408a17f2e67ed6d7"
             },
             {
               "cwd": null,
@@ -2670,7 +2670,7 @@
               "name": "Configure private dependency access",
               "run": null,
               "shell": null,
-              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@bd3e805786f926fb6ac5fb1eddbc819617968059"
+              "uses": "ooxml-stack/ooxml-stack/.github/actions/setup-private-deps@83b9292b74cddd6ecba1755d408a17f2e67ed6d7"
             },
             {
               "cwd": null,
@@ -3076,7 +3076,7 @@
   "inputs": [
     {
       "path": "ooxml-apps/.github/workflows/ci.yml",
-      "sha256": "e5edd79e8b34f9b8841b1bd93ebcc0037864c4ba22512db72bb74fc0e2581190"
+      "sha256": "b4d9d363fb3c086813a023dd6fd833ec959d09d9faacadfd7e05b64a49764e70"
     },
     {
       "path": "ooxml-apps/.github/workflows/dependency-audit.yml",
@@ -3084,7 +3084,7 @@
     },
     {
       "path": "ooxml-apps/.github/workflows/real-stack.yml",
-      "sha256": "dacb8ae74f80b22dd39a782979b1b14a5e62d66cd0d8e7227bf11a440310556d"
+      "sha256": "c39e03537fee9e429ea3edeeb5d90cd939fda72db6b9f8aeb312115bb04fb68c"
     },
     {
       "path": "ooxml-apps/pyproject.toml",
@@ -3156,7 +3156,7 @@
     },
     {
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "96a981b9881da6eb02ea9150aa698dd0f8622a1a9ab0ad83c007b9f2d00f51e4"
+      "sha256": "78c45fd1de0af77579cfc002e180b725c8ea18f7b9e6f727a157e0cff48b9e5d"
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
@@ -3192,7 +3192,7 @@
     },
     {
       "path": "ooxml-stack/.github/workflows/mutation-gate.yml",
-      "sha256": "238dc79275b73731e225a994eea8bd3f17217542f32ce9e8a77e20219e351c68"
+      "sha256": "0c6304771fe1a26feba4e73c1adec57de267ac32ed8a0a47f318a7df7f9e344e"
     },
     {
       "path": "ooxml-stack/.github/workflows/runner-tests.yml",
@@ -3216,7 +3216,7 @@
     },
     {
       "path": "ooxml-stubs/.github/workflows/release.yml",
-      "sha256": "7bc6e95e932e24b2060431428bfb12e6ab7358ce4479a6ccff8bf920f90f2367"
+      "sha256": "db802f0de796cfade8d3044027e886a31bac6e5afb5e317bb5415ddd38db119a"
     },
     {
       "path": "ooxml-stubs/pyproject.toml",
@@ -3252,7 +3252,7 @@
     },
     {
       "path": "python-docx/.github/workflows/ci.yml",
-      "sha256": "5276ba477749a9bd0d9dc4156c3f56194505d986aa3e34d6fb8e520788e6682e"
+      "sha256": "5ef2174ddd487828a9be23c0cf2fe9a3d5d22487e3e17f9ead2573345564328e"
     },
     {
       "path": "python-docx/.github/workflows/dependency-audit.yml",
@@ -3280,7 +3280,7 @@
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
-      "sha256": "fcd1def6c80809d8e6f89a9b5873ae03a6353a0e1fb2630987bece1b595975cb"
+      "sha256": "361b80b2837026d50e9eee1e66fc93ebd88c1577920463ea642e9d5480184015"
     },
     {
       "path": "python-pptx/.github/workflows/dependency-audit.yml",
@@ -3312,7 +3312,7 @@
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
-      "sha256": "1df0817ba54a3de3ac092c5cc28b4015a5c0a4656b968f29032493c9fe585e37"
+      "sha256": "5e95e36f775f7ce272e4c86a5fffbd78fffaba49de8af5eee1dff9b968d8120d"
     },
     {
       "path": "python-xlsx/.github/workflows/dependency-audit.yml",
@@ -3324,7 +3324,7 @@
     },
     {
       "path": "python-xlsx/.github/workflows/release.yml",
-      "sha256": "f32d110060bf0c5e86e185360002168ffdd8c5f231cddb58cc2fe5d85659ac6a"
+      "sha256": "056885358428270abcbb1b03a6e5a3ae284dae94f6eb7960be7b6394744d8f07"
     },
     {
       "path": "python-xlsx/pyproject.toml",
@@ -3339,7 +3339,7 @@
       "sha256": "493151009531e2664a95d32a31dfc5f820d5941112f417b4a4e87a2c29a08822"
     }
   ],
-  "inputs_digest": "e0bd6125641b4f0f529a751cf8fb31ef7dc72d3b6d4622766afc4183dfba778e",
+  "inputs_digest": "ec7a6c5ac8931a4a1b49a7f93d369d069bd981cb57d8633cf61579089cbf20ab",
   "kind": "ecosystem-plan",
   "nodes": [
     {
