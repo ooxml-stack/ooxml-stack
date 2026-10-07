@@ -281,13 +281,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "93532b75f8513e62693502d7a5072dacae062f75",
+        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.6.19"
       },
@@ -558,13 +558,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "26d68615f459f464820a6f52c505f41b19881853",
+        "commit": "b4405caf4151924062e871b25cd49277e35f3e35",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "1.2.41"
       },
@@ -601,13 +601,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "ae52dc5c2a9f0036584650103cf90c1f8d5d9187",
+        "commit": "7b4099f3873392ba5502b527e630f72870bf737a",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "2.0.30"
       },
@@ -644,13 +644,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "native-hyperlink-preservation-20261007",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "b2fe95e169c4b1f0627fbfca5296b30502d02624",
+        "commit": "d88a9ea007dce9ff78129594c6e7a3b3e351bc0e",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.3.29"
       },
@@ -719,13 +719,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "93532b75f8513e62693502d7a5072dacae062f75",
+        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
         "source": "ooxml-stubs/uv.lock",
         "version": "0.6.19"
       },
@@ -809,13 +809,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "93532b75f8513e62693502d7a5072dacae062f75",
+        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
         "source": "python-docx/uv.lock",
         "version": "0.6.19"
       },
@@ -939,13 +939,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "6fa8f14251492b85f5130ba707fe0d6eef38272f",
+        "commit": "db1558d01656bbdd66d01bfdf150bf5827670f27",
         "source": "python-docx/uv.lock",
         "version": "0.2.35"
       },
@@ -982,13 +982,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "dependency-groups",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": ">=2.0.29"
       },
       "expected": {
-        "commit": "ae52dc5c2a9f0036584650103cf90c1f8d5d9187",
+        "commit": "7b4099f3873392ba5502b527e630f72870bf737a",
         "source": "python-docx/uv.lock",
         "version": "2.0.30"
       },
@@ -1003,13 +1003,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "93532b75f8513e62693502d7a5072dacae062f75",
+        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
         "source": "python-pptx/uv.lock",
         "version": "0.6.19"
       },
@@ -1102,13 +1102,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "6fa8f14251492b85f5130ba707fe0d6eef38272f",
+        "commit": "db1558d01656bbdd66d01bfdf150bf5827670f27",
         "source": "python-pptx/uv.lock",
         "version": "0.2.35"
       },
@@ -1145,13 +1145,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_raw": "native-relationship-preservation-20261007",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "93532b75f8513e62693502d7a5072dacae062f75",
+        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
         "source": "python-xlsx/uv.lock",
         "version": "0.6.19"
       },
@@ -3160,11 +3160,11 @@
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "4f6d0a3c1f512bf2fb4b1ae1245f9efeab8791560e1e600f23ada3f9a502bf41"
+      "sha256": "b074e634967f9e7c135d39caff269a1c7d11f602779fbb4ae357bae6dcfdf663"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "0ffcfd47df8692e42ff460ad59c3c566d7e979e67334494ada05a057055ef0e3"
+      "sha256": "0df5d6ddaaac9fc86374af995bdca2ae72461f8d77e0658d89d78b32f309c916"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -3220,11 +3220,11 @@
     },
     {
       "path": "ooxml-stubs/pyproject.toml",
-      "sha256": "1ff3186762af2f0cbbd7fe4d65b69dc90d3b1f2f9c3c0f86b67a2de69571536e"
+      "sha256": "cec7e9757841530d967187142dcd2e657e25458a8e4eb068576c4bab5ef457c8"
     },
     {
       "path": "ooxml-stubs/uv.lock",
-      "sha256": "617c85c49311e7092d02b66b6fea056a00f4dc8d569ef59773b1b403c0bacc17"
+      "sha256": "05a0345f617cb181c9bc5276c567230df6f034a3f34f726881b4af6f94e30633"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
@@ -3268,7 +3268,7 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "f8a3d70537a2f72e8871ce68c06989f7d3bfe50c1b945ff7ac365d44607a982e"
+      "sha256": "64b575276df89e539a769c73350f97e86d1f12d31b0d1b97e86fe6c20d0f88ed"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
@@ -3276,7 +3276,7 @@
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "04b8aad9d69a47968ef417e2cec02891373add41c9fb3841330438f130f28846"
+      "sha256": "74dd2d4950e1bc31399abcab4bea59831ce970a9a499869b5e55d6a3e098411f"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
@@ -3300,7 +3300,7 @@
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "f25b68625f7760f0072ece66ede2d3053155abbad042fbef16a718ae37d2b999"
+      "sha256": "2f99a81bac4af53e8e0f773af4b9591bc85fd8b12ea8e8ac9b703739d9bb8b2d"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
@@ -3308,7 +3308,7 @@
     },
     {
       "path": "python-pptx/uv.lock",
-      "sha256": "17ac4175776931f6579693cee3312773c796d703076cd7311ca8675f4b207079"
+      "sha256": "f99a178f93cdca1b02d56975042de7b282b98372776e3148afd0b8e5ed033b99"
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
@@ -3328,7 +3328,7 @@
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "33491fe837211e263cb21a3a9f6aedc09d59caf12b27d9b345865d9945425170"
+      "sha256": "cbb311d4b22c5bf4f1d6e5cd6d0aff6fc3c21b694f78d28c08e6e62851df1975"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
@@ -3336,10 +3336,10 @@
     },
     {
       "path": "python-xlsx/uv.lock",
-      "sha256": "493151009531e2664a95d32a31dfc5f820d5941112f417b4a4e87a2c29a08822"
+      "sha256": "568c860da7879807ad96e8c305a0572cc8cd9bf30b62e5519357759f17f7945f"
     }
   ],
-  "inputs_digest": "ef90afac95f5df4d9fdecb087c76a235198f9df5c9a4c6aebee65aded08be063",
+  "inputs_digest": "08216a5b1904cea1372301213e0df8a88d14ab0d3d1b7fca03c750a8c094d037",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3471,31 +3471,31 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "ooxml-stubs",
           "source_file": "ooxml-stubs/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
           "version": "0.6.19"
@@ -3565,13 +3565,13 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.2.35"
         },
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.2.35"
@@ -3637,7 +3637,7 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "1.2.41"
@@ -3653,7 +3653,7 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "2.0.30"
@@ -3669,7 +3669,7 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "2.0.30"
@@ -3685,7 +3685,7 @@
     {
       "repos": [
         {
-          "ref": "native-hyperlink-preservation-20261007",
+          "ref": "native-relationship-preservation-20261007",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.3.29"
