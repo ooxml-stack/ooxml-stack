@@ -60,3 +60,10 @@
   with a personal email or an implicit default. Resolve the hosted identity, or
   use an explicitly authorized local merge with verified anonymous metadata and
   the repository's required checks; preserve branch protection.
+- GitHub can synthesize `refs/pull/*/merge` using the account email, independently
+  of local Git identity and `gh pr merge --author-email`. Before opening or
+  updating the owner's public PRs, confirm **Keep my email addresses private**
+  is enabled at <https://github.com/settings/emails>, then inspect the generated
+  merge metadata. If privacy is unverified or the address still appears, report
+  the account-level blocker and avoid creating more such commits. Use only an
+  already authorized publishing route that retains the required checks.
