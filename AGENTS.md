@@ -52,3 +52,7 @@
 - After a privacy history rewrite, use the rewritten history. Do not merge or
   force-push old refs back into public branches or tags. Keep recovery bundles
   private and migrate live commit pins using the recorded identity mapping.
+- GitHub merge and squash commits also need an explicit private author email:
+  pass `--author-email 14212314+iamtouchskyer@users.noreply.github.com` to
+  `gh pr merge`, then inspect the resulting author and committer. Repository-local
+  Git configuration does not control commits created by GitHub.
