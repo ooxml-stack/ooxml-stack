@@ -38,3 +38,17 @@
   or evidence. Preserve existing caller paths when organizing documentation.
 - Keep historical results attached to their original identities. Follow the
   current artifact-storage policy when interpreting historical file paths.
+
+## Public commit identity
+
+- Use the GitHub privacy identity `iamtouchskyer
+  <14212314+iamtouchskyer@users.noreply.github.com>` for the repository owner's
+  author and committer fields. Never use a personal email address.
+- Before committing or pushing, verify author, committer and tagger identities,
+  commit-message trailers, and newly added content. Use noreply addresses for
+  attribution; do not replace other contributors' identities without permission.
+- Set this identity in repository-local Git configuration. Do not rely on a
+  global configuration that may expose a personal address.
+- After a privacy history rewrite, use the rewritten history. Do not merge or
+  force-push old refs back into public branches or tags. Keep recovery bundles
+  private and migrate live commit pins using the recorded identity mapping.
