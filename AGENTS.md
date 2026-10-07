@@ -56,3 +56,7 @@
   pass `--author-email 14212314+iamtouchskyer@users.noreply.github.com` to
   `gh pr merge`, then inspect the resulting author and committer. Repository-local
   Git configuration does not control commits created by GitHub.
+- If GitHub rejects the noreply address, stop that merge attempt. Never retry
+  with a personal email or an implicit default. Resolve the hosted identity, or
+  use an explicitly authorized local merge with verified anonymous metadata and
+  the repository's required checks; preserve branch protection.
