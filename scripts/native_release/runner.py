@@ -5,16 +5,21 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import shlex
 import subprocess
 import sys
 from pathlib import Path
 from typing import Any
 
 from .artifacts import attach_notarization, create_artifacts
-from .candidate import resolve_candidate
+from .builder import BuildError, build_stage
+from .candidate import resolve_candidate, write_latest_dev
 from .config import ConfigError, load_config
-from .license_gate import LicenseGateError, validate_release_license
+from .functional import FunctionalError, run_functional
+from .license_gate import (
+    LicenseGateError,
+    validate_internal_license,
+    validate_release_license,
+)
 from .manifest import ManifestError, build_manifest
 from .publish import run_external_transaction
 from .reproducibility import AttestationError, collect_attestation
@@ -26,6 +31,7 @@ from .signing import (
     release_credentials,
     sign_disk_image,
     sign_payload,
+    strip_payload,
     verify_gatekeeper,
     verify_payload_signatures,
 )
@@ -39,6 +45,7 @@ def main(argv=None) -> int:
     parser.add_argument("--config", default="release/native-macos-arm64.yaml")
     parser.add_argument("--candidate")
     parser.add_argument("--stage-dir")
+    parser.add_argument("--internal-license", action="store_true")
     args = parser.parse_args(argv)
     try:
         config = load_config(args.config)
@@ -49,6 +56,8 @@ def main(argv=None) -> int:
         ManifestError,
         ScanError,
         SigningError,
+        BuildError,
+        FunctionalError,
         AttestationError,
         ValueError,
     ) as exc:
@@ -69,30 +78,33 @@ def _dispatch(args, config: dict[str, Any]) -> dict[str, Any]:
             "transaction": config["publish"]["transaction"],
         }
     if args.command == "license-check":
-        return _license_check(config)
+        return _license_check(config, args.internal_license)
     if args.command == "dev":
         return _dev(config, args.stage_dir)
     if args.command == "test":
-        return _test(config, args.candidate)
+        return _test(config, args.candidate, args.internal_license)
     return _release(config, args.stage_dir)
 
 
-def _license_check(config: dict[str, Any]) -> dict[str, Any]:
+def _license_check(config: dict[str, Any], internal: bool = False) -> dict[str, Any]:
     value = os.environ.get(config["entitlement"]["e2e_license_env"], "")
     if not value:
         raise LicenseGateError(
             f"{config['entitlement']['e2e_license_env']} is required"
         )
-    return {"status": "ok", "license": validate_release_license(value, config)}
+    validator = validate_internal_license if internal else validate_release_license
+    return {"status": "ok", "license": validator(value, config)}
 
 
 def _dev(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]:
     stage = _stage_target(config, "dev", stage_dir)
-    _run_adapter(config, "dev", stage)
+    build_stage(config, stage, "dev")
     _require_stage(stage)
+    strip_payload(stage)
     signed = ad_hoc_sign_payload(stage)
     output = _run_dir(config, "dev") / "artifacts"
     artifacts = create_artifacts(stage, output, config)
+    write_latest_dev(_artifact_root(config), artifacts["zip"]["path"])
     return {
         "status": "ok",
         "mode": "dev",
@@ -102,12 +114,14 @@ def _dev(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]:
     }
 
 
-def _test(config: dict[str, Any], candidate: str | None) -> dict[str, Any]:
+def _test(
+    config: dict[str, Any], candidate: str | None, internal: bool = False
+) -> dict[str, Any]:
     artifact_root = _artifact_root(config)
     path = resolve_candidate(
         candidate, artifact_root, allow_latest_dev=not bool(os.environ.get("CI"))
     )
-    _license_check(config)
+    license_summary = _license_check(config, internal)["license"]
     if path.suffix == ".dmg":
         scan = scan_dmg(path, config)
     elif path.suffix == ".zip":
@@ -116,11 +130,19 @@ def _test(config: dict[str, Any], candidate: str | None) -> dict[str, Any]:
         raise ConfigError("candidate must be a .dmg or .zip artifact")
     if not scan["pass"]:
         raise ScanError(f"candidate scan failed: {path}")
+    functional = run_functional(
+        path,
+        config,
+        _run_dir(config, "test") / path.stem,
+        internal,
+    )
     return {
         "status": "ok",
-        "mode": "test",
+        "mode": "DEV_ONLY" if internal else "PUBLIC",
         "candidate": str(path),
+        "license": license_summary,
         "scan": _scan_summary(scan),
+        "functional_pass": functional["pass"],
     }
 
 
@@ -129,8 +151,9 @@ def _release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]:
     license_summary = _license_check(config)["license"]
     _require_clean_sources(config)
     stage = _stage_target(config, "release", stage_dir)
-    _run_adapter(config, "release", stage)
+    build_stage(config, stage, "release")
     _require_stage(stage)
+    strip_payload(stage)
     sign_payload(stage, creds.identity)
     team_id = verify_payload_signatures(stage, require_team=True)
     artifacts = create_artifacts(
@@ -187,31 +210,6 @@ def _stage_target(config: dict[str, Any], mode: str, value: str | None) -> Path:
 def _require_stage(path: Path) -> None:
     if not path.is_dir() or not any(path.iterdir()):
         raise ConfigError(f"native build adapter produced no stage: {path}")
-
-
-def _run_adapter(config: dict[str, Any], mode: str, stage: Path) -> None:
-    command = os.environ.get("OOXML_NATIVE_BUILD_COMMAND")
-    if not command:
-        raise ConfigError(
-            "OOXML_NATIVE_BUILD_COMMAND is required for the current build adapter"
-        )
-    env = {
-        **os.environ,
-        "NATIVE_CONFIG": config["_config_path"],
-        "NATIVE_MODE": mode,
-        "NATIVE_STAGE_DIR": str(stage),
-        "NATIVE_RUN_DIR": str(_run_dir(config, mode)),
-    }
-    result = subprocess.run(
-        shlex.split(command),
-        env=env,
-        cwd=config["_repo_root"],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    if result.returncode != 0:
-        raise ConfigError(f"native build adapter failed: {result.stderr.strip()}")
 
 
 def _require_clean_sources(config: dict[str, Any]) -> None:

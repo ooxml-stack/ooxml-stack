@@ -9,14 +9,17 @@ from pathlib import Path
 import pytest
 from cryptography.hazmat.primitives.asymmetric import ed25519
 
+from scripts.native_release import builder
 from scripts.native_release.candidate import (
     CandidateError,
     resolve_candidate,
     write_latest_dev,
 )
 from scripts.native_release.config import ConfigError, load_config
+from scripts.native_release.functional import _passed
 from scripts.native_release.license_gate import (
     LicenseGateError,
+    validate_internal_license,
     validate_release_license,
 )
 from scripts.native_release.manifest import (
@@ -128,15 +131,78 @@ def test_license_gate_rejects_staging_and_accepts_signed_release_test(tmp_path):
     path.write_text(json.dumps(payload), encoding="utf-8")
     with pytest.raises(LicenseGateError):
         validate_release_license(path, loaded, today=date(2026, 10, 20))
+    internal = validate_internal_license(path, loaded, today=date(2026, 10, 20))
+    assert internal["mode"] == "DEV_ONLY"
+
+
+def test_functional_pass_requires_all_surfaces():
+    loaded = config()
+    steps = {
+        "unlicensed_status": {"json": {"serving": "inactive"}},
+        "status": {"json": {"serving": "active"}},
+        "word": {
+            "apply": {"json": {"success": True}},
+            "validate": {"json": {"passed": True}},
+        },
+        "excel": {
+            "apply": {"json": {"success": True}},
+            "validate": {"json": {"passed": True}},
+        },
+        "pptx": {"expected_refusal": True},
+        "mcp_core": {"json": {"tool_count": 8}},
+        "mcp_workflow": {"json": {"tool_count": 10}},
+        "restore_status": {"json": {"serving": "active"}},
+    }
+    assert _passed(steps, loaded) is True
+    steps["mcp_workflow"]["json"]["tool_count"] = 9
+    assert _passed(steps, loaded) is False
 
 
 def test_release_fails_closed_without_developer_id(monkeypatch, capsys):
-    for name in ("DEVELOPER_ID_APPLICATION", "NOTARY_PROFILE", "OOXML_E2E_LICENSE"):
+    for name in (
+        "OOXML_NATIVE_DEVELOPER_ID_APPLICATION",
+        "OOXML_NATIVE_NOTARY_PROFILE",
+        "OOXML_NATIVE_E2E_LICENSE",
+    ):
         monkeypatch.delenv(name, raising=False)
     code = native_main(["release", "--config", str(CONFIG)])
     captured = capsys.readouterr()
     assert code == 1
     assert "Developer ID Application identity" in captured.err
+
+
+def test_builder_assembles_stage_from_dist_outputs(tmp_path, monkeypatch):
+    loaded = config()
+    stage = tmp_path / "dev/stage"
+    client = tmp_path / "client.dist"
+    engine = tmp_path / "engine.dist"
+    client.mkdir()
+    engine.mkdir()
+    (client / "ooxml").write_text("client", encoding="utf-8")
+    (engine / "ooxml-engine").write_text("engine", encoding="utf-8")
+    monkeypatch.setattr(builder, "_wheelhouse", lambda *_args: tmp_path)
+    monkeypatch.setattr(builder, "_build_env", lambda *_args: (tmp_path / "env", False))
+    monkeypatch.setattr(builder, "_build_client", lambda *_args: client)
+    monkeypatch.setattr(builder, "_build_engine", lambda *_args: engine)
+    monkeypatch.setattr(builder, "_copy_public_metadata", lambda *_args: None)
+    result = builder.build_stage(loaded, stage, "dev", env={})
+    assert result == stage
+    assert (stage / "bin/ooxml").is_symlink()
+    assert (stage / "lib/ooxml-engine/ooxml-engine").is_file()
+
+
+def test_release_builder_refuses_reused_environment(tmp_path):
+    loaded = config()
+    build_env = tmp_path / "env"
+    (build_env / "bin").mkdir(parents=True)
+    (build_env / "bin/python").write_text("", encoding="utf-8")
+    with pytest.raises(builder.BuildError):
+        builder._build_env(
+            loaded,
+            tmp_path,
+            {loaded["build"]["build_env_env"]: str(build_env)},
+            "release",
+        )
 
 
 def test_candidate_requires_explicit_selection(tmp_path):

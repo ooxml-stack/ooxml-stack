@@ -22,6 +22,35 @@ build:
   python: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3
   python_version: "3.12.0"
   wheelhouse_env: OOXML_NATIVE_WHEELHOUSE
+  build_env_env: OOXML_NATIVE_BUILD_ENV
+  requirements: release/native-runtime-requirements.txt
+  first_party_distributions:
+    - ooxml-operation-engine==0.1.50
+    - ooxml-client==0.1.53
+    - ooxml-core==0.6.19
+    - ooxml-spec==0.3.1
+    - ooxml-stubs==0.2.35
+    - ooxml-test-framework==0.5.38
+    - python-docx==1.2.41
+    - python-pptx==2.0.30
+    - python-xlsx==0.3.45
+  include_packages:
+    - ooxml_operation_engine
+    - ooxml_client
+    - docx
+    - pptx
+    - xlsx
+    - ooxml_core
+    - ooxml_spec
+    - mcp
+  docs_dir: release/public
+  package_data:
+    - ooxml_client
+    - docx
+    - pptx
+    - xlsx
+    - ooxml_spec
+    - ooxml_testing
   nuitka: "2.8.10"
   deployment: true
   disable_ccache: true
@@ -35,7 +64,7 @@ build:
 
 runtime:
   artifact_id: ooxml-operation-engine-b1181f42-macosx_14_0-arm64-b2
-  client_version: "0.1.52"
+  client_version: "0.1.53"
   engine_version: "0.1.50"
   classification: embedded-python
   fully_native: false
@@ -43,7 +72,7 @@ runtime:
   pdf_readability: unavailable
 
 signing:
-  identity_env: DEVELOPER_ID_APPLICATION
+  identity_env: OOXML_NATIVE_DEVELOPER_ID_APPLICATION
   identity_prefix: "Developer ID Application:"
   hardened_runtime: true
   timestamp: true
@@ -51,7 +80,7 @@ signing:
   verify_spctl: true
 
 notarization:
-  keychain_profile_env: NOTARY_PROFILE
+  keychain_profile_env: OOXML_NATIVE_NOTARY_PROFILE
   dmg:
     staple: true
   zip:
@@ -74,7 +103,7 @@ entitlement:
   publication_mode: external-entitlement-channel
   license_required: true
   entitlement_url: https://super-ooxml.vercel.app/activate
-  e2e_license_env: OOXML_E2E_LICENSE
+  e2e_license_env: OOXML_NATIVE_E2E_LICENSE
   activation_public_key_hex: 664af26335fa9f7669f7373c22c58dc29bf28a56b81f5b1579b48e5aa653a8e6
   allowed_license_types:
     - public-trial

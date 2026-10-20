@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import shutil
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -19,8 +20,13 @@ def create_artifacts(
     output.mkdir(parents=True, exist_ok=True)
     dmg = output / config["artifacts"]["dmg"]["filename"]
     zip_path = output / config["artifacts"]["zip"]["filename"]
-    _create_zip(payload, zip_path)
-    _create_dmg(payload, dmg)
+    container = output / "container"
+    shutil.rmtree(container, ignore_errors=True)
+    container.mkdir()
+    packaged = container / "OOXML"
+    shutil.copytree(payload, packaged, symlinks=True)
+    _create_zip(packaged, zip_path)
+    _create_dmg(container, dmg)
     return {
         "dmg": {
             "path": str(dmg),
@@ -61,6 +67,9 @@ def _create_zip(payload: Path, path: Path) -> None:
             "ditto",
             "-c",
             "-k",
+            "--norsrc",
+            "--noextattr",
+            "--noqtn",
             "--keepParent",
             "--zlibCompressionLevel",
             "9",
@@ -75,7 +84,7 @@ def _create_zip(payload: Path, path: Path) -> None:
         raise ArtifactError(f"ditto create failed: {result.stderr.strip()}")
 
 
-def _create_dmg(payload: Path, path: Path) -> None:
+def _create_dmg(content_root: Path, path: Path) -> None:
     result = subprocess.run(
         [
             "hdiutil",
@@ -83,7 +92,7 @@ def _create_dmg(payload: Path, path: Path) -> None:
             "-volname",
             "OOXML",
             "-srcfolder",
-            str(payload),
+            str(content_root),
             "-ov",
             "-format",
             "UDZO",

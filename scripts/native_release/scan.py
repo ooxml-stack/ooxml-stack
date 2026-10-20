@@ -111,6 +111,8 @@ def _scan_entry(
     if (
         path.suffix.lower() in scan["forbidden_suffixes"]
         or path.name in scan["forbidden_names"]
+        or path.name.startswith("._")
+        or "__MACOSX" in path.parts
     ):
         result["forbidden_entries"].append(relative)
 

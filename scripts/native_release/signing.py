@@ -51,6 +51,13 @@ def macho_files(root: str | Path) -> list[Path]:
     return sorted(paths, key=lambda item: len(item.parts), reverse=True)
 
 
+def strip_payload(root: str | Path) -> list[Path]:
+    stripped = macho_files(root)
+    for path in stripped:
+        _run(["strip", "-x", str(path)])
+    return stripped
+
+
 def sign_payload(root: str | Path, identity: str) -> list[Path]:
     signed = macho_files(root)
     for path in signed:

@@ -6,6 +6,7 @@ The native release pipeline is fail-closed. A public release is not a developmen
 
 ```bash
 make native-dev
+make native-test CANDIDATE=/absolute/path/to/OOXML-macos-arm64.dmg INTERNAL_LICENSE=1
 make native-test CANDIDATE=/absolute/path/to/OOXML-macos-arm64.dmg
 make native-release
 ```
@@ -14,10 +15,12 @@ make native-release
 
 ## Required environment
 
-- `DEVELOPER_ID_APPLICATION`: full Developer ID Application identity.
-- `NOTARY_PROFILE`: notarytool keychain profile.
-- `OOXML_E2E_LICENSE`: external test entitlement; its body is never copied into evidence.
-- `OOXML_NATIVE_BUILD_COMMAND`: build adapter used until the Nuitka builder is migrated into this repository.
+- `OOXML_NATIVE_DEVELOPER_ID_APPLICATION`: full Developer ID Application identity.
+- `OOXML_NATIVE_NOTARY_PROFILE`: notarytool keychain profile.
+- `OOXML_NATIVE_E2E_LICENSE`: external test entitlement; its body is never copied into evidence.
+- `OOXML_NATIVE_E2E_WORD`, `OOXML_NATIVE_E2E_EXCEL`, `OOXML_NATIVE_E2E_PPTX`: external acceptance fixtures.
+- `OOXML_NATIVE_WHEELHOUSE`: frozen wheel directory. Release requires the exact pinned Nuitka and runtime wheels.
+- `OOXML_NATIVE_BUILD_ENV`: optional reusable build environment for local development only; release rejects it.
 - `OOXML_NATIVE_PUBLISH_STEP_COMMAND`: executes one approved publish transaction step at a time.
 
 ## Contract
@@ -52,6 +55,6 @@ The product page never consumes `latest` for displayed hash or size. This avoids
 
 ## Current implementation boundary
 
-This change establishes the configuration and control-plane gates. It intentionally does not fall back to ad-hoc signing or the current staging license. The Nuitka build and Fly publication remain external adapters until their source-specific migration is complete.
+The Nuitka source-to-stage builder is now in this repository. `native-dev` permits a reusable build environment and ad-hoc signing, but its output is DEV_ONLY. Internal candidate tests can explicitly accept the staging license with `INTERNAL_LICENSE=1`; public release validation rejects it. Fly publication and product-page mutation remain behind the step adapter until the delivery service is migrated to versioned storage/routes.
 
 The current machine has no Developer ID Application identity, so `make native-release` must fail before signing. That is the intended behavior, not a release failure workaround.

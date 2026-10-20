@@ -79,7 +79,7 @@ native-dev:
 
 native-test:
 	@test -n "$(CANDIDATE)" || (echo "CANDIDATE is required; use CANDIDATE=/absolute/path or CANDIDATE=latest-dev" >&2; exit 2)
-	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release test --config $(NATIVE_RELEASE_CONFIG) --candidate "$(CANDIDATE)"
+	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release test --config $(NATIVE_RELEASE_CONFIG) --candidate "$(CANDIDATE)" $(if $(INTERNAL_LICENSE),--internal-license,)
 
 native-release:
 	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release release --config $(NATIVE_RELEASE_CONFIG)

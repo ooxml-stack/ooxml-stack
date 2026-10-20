@@ -34,6 +34,18 @@ class LicenseGateError(ValueError):
 def validate_release_license(
     path: str | Path, config: dict[str, Any], today=None
 ) -> dict[str, Any]:
+    return _validate_license(path, config, today, strict=True)
+
+
+def validate_internal_license(
+    path: str | Path, config: dict[str, Any], today=None
+) -> dict[str, Any]:
+    summary = _validate_license(path, config, today, strict=False)
+    summary["mode"] = "DEV_ONLY"
+    return summary
+
+
+def _validate_license(path, config, today, strict):
     source = Path(path).expanduser()
     try:
         payload = json.loads(source.read_text(encoding="utf-8"))
@@ -41,7 +53,7 @@ def validate_release_license(
         raise LicenseGateError(f"cannot read release-test license: {exc}") from exc
     entitlement = config["entitlement"]
     runtime = config["runtime"]
-    _validate_fields(payload, entitlement, runtime)
+    _validate_fields(payload, entitlement, runtime, strict)
     _validate_dates(payload, today or date.today())
     _verify_signature(payload, entitlement["activation_public_key_hex"])
     return {
@@ -55,7 +67,10 @@ def validate_release_license(
 
 
 def _validate_fields(
-    payload: dict[str, Any], entitlement: dict[str, Any], runtime: dict[str, Any]
+    payload: dict[str, Any],
+    entitlement: dict[str, Any],
+    runtime: dict[str, Any],
+    strict,
 ) -> None:
     missing = sorted(REQUIRED_FIELDS - set(payload))
     if missing:
@@ -66,6 +81,11 @@ def _validate_fields(
         raise LicenseGateError("license artifact_id does not match release artifact")
     if payload["product_id"] != "ooxml-operation-engine":
         raise LicenseGateError("license product_id is invalid")
+    if strict:
+        _validate_release_entitlement(payload, entitlement)
+
+
+def _validate_release_entitlement(payload, entitlement) -> None:
     if payload["license_type"] not in entitlement["allowed_license_types"]:
         raise LicenseGateError("license_type is not allowed for release testing")
     if payload["license_id"] in entitlement["forbidden_license_ids"]:
