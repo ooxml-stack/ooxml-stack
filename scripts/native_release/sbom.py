@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from packaging.utils import parse_wheel_filename
+    from packaging.utils import parse_wheel_filename  # pyright: ignore[reportMissingImports]
 except ImportError as exc:  # pragma: no cover
     raise RuntimeError("packaging is required to generate the native SBOM") from exc
 

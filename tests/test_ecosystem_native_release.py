@@ -6,8 +6,8 @@ import json
 from datetime import date
 from pathlib import Path
 
-import pytest
-from cryptography.hazmat.primitives.asymmetric import ed25519
+import pytest  # pyright: ignore[reportMissingImports]
+from cryptography.hazmat.primitives.asymmetric import ed25519  # pyright: ignore[reportMissingImports]
 
 from scripts.native_release import builder
 from scripts.native_release.candidate import (

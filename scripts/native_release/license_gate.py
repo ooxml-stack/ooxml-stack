@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from cryptography.exceptions import InvalidSignature
-    from cryptography.hazmat.primitives.asymmetric import ed25519
+    from cryptography.exceptions import InvalidSignature  # pyright: ignore[reportMissingImports]
+    from cryptography.hazmat.primitives.asymmetric import ed25519  # pyright: ignore[reportMissingImports]
 except ImportError:  # pragma: no cover - fail at use, not import time
     InvalidSignature = None
     ed25519 = None

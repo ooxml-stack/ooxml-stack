@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
-import pytest
+import pytest  # pyright: ignore[reportMissingImports]
 
 from scripts.native_release import live_verify
 from scripts.native_release import publish as publish_control
