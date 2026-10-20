@@ -116,6 +116,9 @@ def notarize_artifacts(
     if config["notarization"]["dmg"]["staple"]:
         _run(["xcrun", "stapler", "staple", str(dmg)])
         _run(["xcrun", "stapler", "validate", str(dmg)])
+    for row in results.values():
+        row["provider_status"] = row["status"]
+        row["status"] = "notarized"
     results["dmg"]["stapled"] = True
     results["zip"]["stapled"] = False
     results["zip"]["mode"] = config["notarization"]["zip"]["mode"]

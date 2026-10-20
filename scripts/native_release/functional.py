@@ -11,6 +11,9 @@ import uuid
 from pathlib import Path
 from typing import Any
 
+from .artifact_io import extract_candidate
+from .artifact_only import run_artifact_only
+
 
 class FunctionalError(ValueError):
     """A packaged artifact failed functional acceptance."""
@@ -19,17 +22,19 @@ class FunctionalError(ValueError):
 def run_functional(
     candidate: Path, config: dict[str, Any], evidence_root: Path, internal: bool
 ) -> dict[str, Any]:
+    artifact_only = run_artifact_only(candidate, evidence_root)
     license_path = _license_path(config)
     samples = _samples()
     run_root = evidence_root / "functional" / uuid.uuid4().hex
     run_root.mkdir(parents=True)
     with tempfile.TemporaryDirectory(dir=run_root) as folder:
-        payload = _extract(candidate, Path(folder))
+        payload = extract_candidate(candidate, Path(folder))
         home = Path(folder) / "home"
         install = home / ".local/ooxml"
         install.parent.mkdir(parents=True)
         shutil.copytree(payload, install, symlinks=True)
         result = _execute(install, home, license_path, samples, config, candidate)
+    result["artifact_only_pass"] = artifact_only["pass"]
     result.update(
         {"candidate": str(candidate), "mode": "DEV_ONLY" if internal else "PUBLIC"}
     )
@@ -75,16 +80,15 @@ def _initial_steps(client, home, license_path, env):
             [str(client), "activate", "--license", str(license_path)], env
         ),
         "status": _step([str(client), "status"], env),
-        "skill": _step(
-            [
-                str(client),
-                "install-skill",
-                "--target",
-                str(home / "skills/ooxml/SKILL.md"),
-            ],
-            env,
-        ),
+        "skill": _skill_step(client, home, env),
     }
+
+
+def _skill_step(client, home, env):
+    skill_path = home / "skills/ooxml/SKILL.md"
+    result = _step([str(client), "install-skill", "--target", str(skill_path)], env)
+    result["installed"] = skill_path.is_file()
+    return result
 
 
 def _document_steps(client, env, documents):
@@ -110,6 +114,7 @@ def _document_steps(client, env, documents):
         "pptx": _apply_expected_refusal(
             client, env, documents / "ppt-task.pptx", documents / "ppt-out.pptx"
         ),
+        "pdf": _step([str(client), "probe", "--profile", "pdf"], env),
         "mcp_core": _step([str(client), "probe", "--profile", "core"], env),
         "mcp_workflow": _step(
             [
@@ -184,8 +189,12 @@ def _apply_expected_refusal(client, env, source, output):
 def _uninstall_restore(install, home, license_path, candidate, steps):
     shutil.rmtree(install)
     (home / ".ooxml/license.json").unlink(missing_ok=True)
-    steps["uninstalled"] = {"exit_code": 0 if not install.exists() else 1}
-    restored = _extract(candidate, home / "restore")
+    steps["uninstalled"] = {
+        "exit_code": 0 if not install.exists() else 1,
+        "install_absent": not install.exists(),
+        "license_absent": not (home / ".ooxml/license.json").exists(),
+    }
+    restored = extract_candidate(candidate, home / "restore")
     shutil.copytree(restored, install, symlinks=True)
     env = {"HOME": str(home), "PATH": f"{install / 'bin'}:/usr/bin:/bin"}
     client = install / "bin/ooxml"
@@ -217,56 +226,31 @@ def _passed(steps, config):
     status = steps["status"]["json"] or {}
     core = steps["mcp_core"]["json"] or {}
     workflow = steps["mcp_workflow"]["json"] or {}
+    pdf = steps["pdf"]["json"] or {}
     unlicensed = steps["unlicensed_status"]["json"] or {}
     return (
-        unlicensed.get("serving") != "active"
+        steps["version"]["exit_code"] == 0
+        and unlicensed.get("serving") == "inactive"
+        and unlicensed.get("reason") == "license_missing"
+        and steps["activate"]["exit_code"] == 0
         and status.get("serving") == "active"
+        and steps["skill"]["exit_code"] == 0
+        and steps["skill"].get("installed") is True
         and steps["word"]["apply"]["json"]["success"] is True
         and steps["word"]["validate"]["json"]["passed"] is True
         and steps["excel"]["apply"]["json"]["success"] is True
         and steps["excel"]["validate"]["json"]["passed"] is True
         and steps["pptx"]["expected_refusal"] is True
+        and pdf.get("available") is False
+        and (pdf.get("error") or {}).get("code") == "pdf_readability_unavailable"
         and core.get("tool_count") == config["e2e"]["entitled"]["mcp_core_tool_count"]
         and workflow.get("tool_count")
         == config["e2e"]["entitled"]["mcp_workflow_tool_count"]
+        and steps["uninstalled"].get("install_absent") is True
+        and steps["uninstalled"].get("license_absent") is True
+        and steps["restore_activate"]["exit_code"] == 0
         and (steps["restore_status"]["json"] or {}).get("serving") == "active"
     )
-
-
-def _extract(candidate: Path, destination: Path):
-    destination.mkdir(parents=True, exist_ok=True)
-    if candidate.suffix == ".zip":
-        subprocess.run(
-            ["ditto", "-x", "-k", str(candidate), str(destination)], check=True
-        )
-    elif candidate.suffix == ".dmg":
-        mount = destination / "mnt"
-        mount.mkdir()
-        subprocess.run(
-            [
-                "hdiutil",
-                "attach",
-                str(candidate),
-                "-nobrowse",
-                "-readonly",
-                "-mountpoint",
-                str(mount),
-            ],
-            check=True,
-            capture_output=True,
-        )
-        try:
-            tree = next(mount.iterdir())
-            shutil.copytree(tree, destination / "payload", symlinks=True)
-        finally:
-            subprocess.run(["hdiutil", "detach", str(mount), "-quiet"], check=False)
-        return destination / "payload"
-    else:
-        raise FunctionalError("candidate must be .dmg or .zip")
-    roots = [p.parent.parent for p in destination.rglob("bin/ooxml") if p.is_file()]
-    if len(roots) != 1:
-        raise FunctionalError("cannot identify packaged OOXML root")
-    return roots[0]
 
 
 def _license_path(config):

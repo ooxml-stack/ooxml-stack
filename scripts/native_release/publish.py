@@ -57,11 +57,9 @@ def run_transaction(
         except Exception as exc:
             raise ConfigError(f"publish transaction stopped at {step}: {exc}") from exc
         completed.append(step)
-    base = config["publish"]["base_url"].rstrip("/")
-    version = config["runtime"]["client_version"]
-    digest = manifest["artifacts"]["dmg"]["sha256"]
+    dmg_url = manifest["artifacts"]["dmg"]["url"]
     return PublishResult(
-        versioned_manifest_url=f"{base}/{version}/{digest}/manifest.json",
+        versioned_manifest_url=dmg_url.rsplit("/", 1)[0] + "/manifest.json",
         latest_manifest_url=config["publish"]["latest_manifest_url"],
         steps=completed,
     )
@@ -76,7 +74,7 @@ def run_external_transaction(
     command = os.environ.get("OOXML_NATIVE_PUBLISH_STEP_COMMAND")
     if not command:
         raise ConfigError(
-            "OOXML_NATIVE_PUBLISH_STEP_COMMAND is required; no local publish fallback exists"
+            "OOXML_NATIVE_PUBLISH_STEP_COMMAND must select an approved publisher"
         )
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     callbacks = {

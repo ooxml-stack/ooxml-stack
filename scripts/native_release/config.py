@@ -132,7 +132,7 @@ def _validate_artifacts(config: dict[str, Any]) -> None:
     if notary.get("zip", {}).get("staple") is not False:
         raise ConfigError("ZIP cannot be stapled")
     signing = config.get("signing", {})
-    for key in ("identity_env", "identity_prefix"):
+    for key in ("identity_env", "identity_prefix", "expected_team_id"):
         if not signing.get(key):
             raise ConfigError(f"signing.{key} is required")
     if (
@@ -163,6 +163,9 @@ def _validate_publish(config: dict[str, Any]) -> None:
     publish = config.get("publish", {})
     if publish.get("transaction") != EXPECTED_TRANSACTION:
         raise ConfigError("publish transaction order is not the approved order")
+    for key in ("github_repository", "github_tag_template"):
+        if not publish.get(key):
+            raise ConfigError(f"publish.{key} is required")
     if not str(publish.get("base_url", "")).startswith("https://"):
         raise ConfigError("publish.base_url must use HTTPS")
     if not str(publish.get("product_page_url", "")).startswith("https://"):
@@ -187,6 +190,13 @@ def _validate_scan(config: dict[str, Any]) -> None:
 
 def _validate_reproducibility(config: dict[str, Any]) -> None:
     reproduc = config.get("reproducibility", {})
+    sources = config.get("sources", {})
+    pins = reproduc.get("source_commits", {})
+    if set(pins) != set(sources):
+        raise ConfigError("source_commits must pin every configured source")
+    lock = Path(reproduc.get("wheelhouse_lock", ""))
+    if not (repo_root() / lock).is_file():
+        raise ConfigError(f"wheelhouse lock does not exist: {lock}")
     fields = set(reproduc.get("required_attestation_fields", []))
     missing = sorted(REQUIRED_ATTESTATION - fields)
     if missing:

@@ -132,8 +132,10 @@ def _validate_artifact(name: str, row: dict[str, Any], config: dict[str, Any]) -
 def _versioned_url(
     publish: dict[str, Any], version: str, digest: str, filename: str
 ) -> str:
-    base = publish["base_url"].rstrip("/")
-    return f"{base}/{version}/{digest}/{filename}"
+    template = publish["github_tag_template"]
+    tag = template.format(version=version, sha256=digest, short_sha=digest[:12])
+    repo = publish["github_repository"]
+    return f"https://github.com/{repo}/releases/download/{tag}/{filename}"
 
 
 def _digest(value: Any, kind: str) -> str:

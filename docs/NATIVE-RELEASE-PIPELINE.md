@@ -21,7 +21,9 @@ make native-release
 - `OOXML_NATIVE_E2E_WORD`, `OOXML_NATIVE_E2E_EXCEL`, `OOXML_NATIVE_E2E_PPTX`: external acceptance fixtures.
 - `OOXML_NATIVE_WHEELHOUSE`: frozen wheel directory. Release requires the exact pinned Nuitka and runtime wheels.
 - `OOXML_NATIVE_BUILD_ENV`: optional reusable build environment for local development only; release rejects it.
-- `OOXML_NATIVE_PUBLISH_STEP_COMMAND`: executes one approved publish transaction step at a time.
+- `OOXML_NATIVE_PUBLISH_STEP_COMMAND`: executes one approved publish transaction step at a time. The implemented adapter is `python -m scripts.native_release.publish_github_release`.
+- `OOXML_NATIVE_RELEASE_TAG`: optional explicit immutable GitHub release tag; otherwise derived from the versioned artifact URL.
+- `OOXML_NATIVE_GITHUB_REPO`: optional repository override, defaulting to `ooxml-stack/ooxml-stack`.
 
 ## Contract
 

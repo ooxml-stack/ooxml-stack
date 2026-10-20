@@ -26,7 +26,7 @@ build:
   requirements: release/native-runtime-requirements.txt
   first_party_distributions:
     - ooxml-operation-engine==0.1.50
-    - ooxml-client==0.1.53
+    - ooxml-client==0.1.54
     - ooxml-core==0.6.19
     - ooxml-spec==0.3.1
     - ooxml-stubs==0.2.35
@@ -64,7 +64,7 @@ build:
 
 runtime:
   artifact_id: ooxml-operation-engine-b1181f42-macosx_14_0-arm64-b2
-  client_version: "0.1.53"
+  client_version: "0.1.54"
   engine_version: "0.1.50"
   classification: embedded-python
   fully_native: false
@@ -74,6 +74,7 @@ runtime:
 signing:
   identity_env: OOXML_NATIVE_DEVELOPER_ID_APPLICATION
   identity_prefix: "Developer ID Application:"
+  expected_team_id: WLY8MDDXQT
   hardened_runtime: true
   timestamp: true
   ad_hoc_allowed_in_dev: true
@@ -117,11 +118,13 @@ entitlement:
 
 publish:
   service_app: super-ooxml-delivery
-  base_url: https://super-ooxml-delivery.fly.dev/v1/downloads/macos-arm64
+  github_repository: ooxml-stack/ooxml-stack
+  github_tag_template: native-v{version}-{short_sha}
+  base_url: https://github.com/ooxml-stack/ooxml-stack/releases/download
   product_page_url: https://super-ooxml.vercel.app
-  versioned_root_template: /v1/downloads/macos-arm64/{client_version}/{sha256}/
-  latest_manifest_url: /v1/downloads/macos-arm64/latest/manifest.json
-  latest_artifact_url_template: /v1/downloads/macos-arm64/latest/{filename}
+  versioned_root_template: /{tag}/
+  latest_manifest_url: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/manifest.json
+  latest_artifact_url_template: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/{filename}
   latest_cache: "no-store"
   transaction:
     - artifact:dmg
@@ -149,6 +152,17 @@ scan:
   require_valid_team_id: true
 
 reproducibility:
+  wheelhouse_lock: release/native-wheelhouse-lock.json
+  source_commits:
+    client: e15028415a799c4328ce2a6206327cd0a0c385dd
+    engine: b1181f4212873a543a98b758bcbfd38005613a43
+    core: 1585613c9ad53eed51aa5cc26a34f1af4c327c95
+    spec: 34919621c3c06d1548956581e920812f9927bb7c
+    stubs: db1558d01656bbdd66d01bfdf150bf5827670f27
+    test_framework: 23d2e6d098d2e1e435381fc7908d05cdb853fc5e
+    docx: b4405caf4151924062e871b25cd49277e35f3e35
+    pptx: 7b4099f3873392ba5502b527e630f72870bf737a
+    xlsx: 958aa516a28e81701adfa1465f6ff94a83cbf929
   normalized_payload_exclusions:
     - code_signature
     - macho_uuid

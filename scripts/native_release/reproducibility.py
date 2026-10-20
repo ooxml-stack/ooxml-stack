@@ -55,7 +55,12 @@ def normalized_payload_sha256(root: str | Path, normalize_macho: bool = True) ->
 
 
 def collect_attestation(
-    config: dict[str, Any], source_tree: Path, wheelhouse: Path, payload: Path
+    config: dict[str, Any],
+    source_tree: Path,
+    wheelhouse: Path,
+    payload: Path,
+    pre_sign_payload_sha256: str | None = None,
+    container_hashes: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     runtime = config["runtime"]
     result = {
@@ -78,17 +83,45 @@ def collect_attestation(
         "compiler_flags": config["build"].get("compiler_flags", []),
         "strip_flags": ["-x"],
         "codesign_flags": ["--options", "runtime", "--timestamp"],
-        "pre_sign_payload_sha256": normalized_payload_sha256(
-            payload, normalize_macho=False
-        ),
+        "pre_sign_payload_sha256": pre_sign_payload_sha256
+        or normalized_payload_sha256(payload, normalize_macho=False),
         "post_sign_payload_sha256": normalized_payload_sha256(
             payload, normalize_macho=True
         ),
+        "container_hashes": container_hashes or {},
+        "symbols": symbol_summary(payload),
     }
     missing = sorted(REQUIRED_ATTESTATION - set(result))
     if missing:
         raise AttestationError(f"attestation missing fields: {', '.join(missing)}")
     return result
+
+
+def symbol_summary(root: Path) -> dict[str, Any]:
+    rows = []
+    for path in sorted(root.rglob("*")):
+        if (
+            not path.is_file()
+            or path.is_symlink()
+            or b"Mach-O"
+            not in subprocess.run(
+                ["file", "-b", str(path)], capture_output=True, check=False
+            ).stdout
+        ):
+            continue
+        output = subprocess.run(
+            ["nm", "-gU", str(path)], capture_output=True, text=True, check=False
+        ).stdout
+        rows.append(
+            {
+                "path": path.relative_to(root).as_posix(),
+                "line_count": len(output.splitlines()),
+                "undefined_count": sum(
+                    1 for line in output.splitlines() if " U " in line
+                ),
+            }
+        )
+    return {"macho_count": len(rows), "files": rows}
 
 
 def _included(path: Path) -> bool:

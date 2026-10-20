@@ -138,7 +138,11 @@ def test_license_gate_rejects_staging_and_accepts_signed_release_test(tmp_path):
 def test_functional_pass_requires_all_surfaces():
     loaded = config()
     steps = {
-        "unlicensed_status": {"json": {"serving": "inactive"}},
+        "version": {"exit_code": 0},
+        "unlicensed_status": {
+            "json": {"serving": "inactive", "reason": "license_missing"}
+        },
+        "activate": {"exit_code": 0},
         "status": {"json": {"serving": "active"}},
         "word": {
             "apply": {"json": {"success": True}},
@@ -149,8 +153,17 @@ def test_functional_pass_requires_all_surfaces():
             "validate": {"json": {"passed": True}},
         },
         "pptx": {"expected_refusal": True},
+        "pdf": {
+            "json": {
+                "available": False,
+                "error": {"code": "pdf_readability_unavailable"},
+            }
+        },
+        "skill": {"exit_code": 0, "installed": True},
         "mcp_core": {"json": {"tool_count": 8}},
         "mcp_workflow": {"json": {"tool_count": 10}},
+        "uninstalled": {"install_absent": True, "license_absent": True},
+        "restore_activate": {"exit_code": 0},
         "restore_status": {"json": {"serving": "active"}},
     }
     assert _passed(steps, loaded) is True
