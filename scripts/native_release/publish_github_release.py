@@ -90,12 +90,10 @@ def _page_update(tag: str, manifest: dict) -> None:
 
 
 def _verify_assets(tag: str, manifest: dict) -> None:
-    assets = _asset_map(tag)
-    for kind, row in manifest["artifacts"].items():
-        _verify_http_asset(assets[row["filename"]], row["sha256"], row["size"])
-        _verify_http_asset(assets[f"{row['filename']}.sha256"], "", 0)
-    manifest_url = _versioned_manifest_url(manifest)
-    _verify_http(manifest_url, "", 0)
+    for row in manifest["artifacts"].values():
+        _verify_http(_browser_url(tag, row["filename"]), row["sha256"], row["size"])
+        _verify_http(_browser_url(tag, f"{row['filename']}.sha256"), "", 0)
+    _verify_http(_versioned_manifest_url(manifest), "", 0)
 
 
 def _verify_latest(tag: str) -> None:
@@ -148,10 +146,6 @@ def _asset_map(tag: str) -> dict:
     return {row["name"]: row for row in json.loads(raw.stdout).get("assets", [])}
 
 
-def _verify_http_asset(asset: dict, digest: str, size: int) -> None:
-    _verify_http(asset["url"], digest, size)
-
-
 def _verify_http(url: str, digest: str, size: int) -> None:
     request = urllib.request.Request(
         url, headers={"User-Agent": "ooxml-native-release"}
@@ -175,6 +169,10 @@ def _tag(manifest: dict) -> str:
     if not match:
         raise ValueError("cannot derive GitHub release tag from manifest")
     return match.group(1)
+
+
+def _browser_url(tag: str, filename: str) -> str:
+    return f"https://github.com/{REPO}/releases/download/{tag}/{filename}"
 
 
 def _versioned_manifest_url(manifest: dict) -> str:
