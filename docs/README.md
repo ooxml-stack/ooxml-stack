@@ -19,6 +19,7 @@
   recorded task checkouts.
 - [Shared workspace rules](WORKSPACE-AGENTS.md): rules installed at workspace root.
 - [Shared runner](ECOSYSTEM-RUNNER-SPEC.md): request identity, adapters and receipts.
+- [Native release pipeline](NATIVE-RELEASE-PIPELINE.md): fail-closed signing, notarization, artifact, publishing and license gates.
 - [Dependency inventory](ECOSYSTEM-INVENTORY-SPEC.md): policy, plan derivation and
   source identity checks.
 - [Artifact storage](ARTIFACT-STORAGE.md): current placement and recovery rules.

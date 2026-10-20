@@ -15,3 +15,4 @@ dependency is missing from this table.
 | `tree-sitter-bash` | MIT | https://pypi.org/project/tree-sitter-bash/ |
 | `pytest` | MIT | https://pypi.org/project/pytest/ |
 | `coverage` | Apache-2.0 | https://github.com/coveragepy/coveragepy |
+| `cryptography` | Apache-2.0 OR BSD-3-Clause | https://pypi.org/project/cryptography/ |
