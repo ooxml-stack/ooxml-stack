@@ -22,6 +22,7 @@ from .license_gate import (
     validate_internal_license,
     validate_release_license,
 )
+from .live_verify import LiveVerifyError, verify_live
 from .manifest import ManifestError
 from .release import run_release
 from .reproducibility import AttestationError
@@ -32,7 +33,8 @@ from .signing import SigningError, ad_hoc_sign_payload, strip_payload
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="native-release")
     parser.add_argument(
-        "command", choices=["dev", "test", "release", "plan", "license-check"]
+        "command",
+        choices=["dev", "test", "release", "plan", "license-check", "verify-live"],
     )
     parser.add_argument("--config", default="release/native-macos-arm64.yaml")
     parser.add_argument("--candidate")
@@ -51,6 +53,7 @@ def main(argv=None) -> int:
         BuildError,
         FunctionalError,
         InputLockError,
+        LiveVerifyError,
         AttestationError,
         ValueError,
     ) as exc:
@@ -72,6 +75,8 @@ def _dispatch(args, config: dict[str, Any]) -> dict[str, Any]:
         }
     if args.command == "license-check":
         return _license_check(config, args.internal_license)
+    if args.command == "verify-live":
+        return {"status": "ok", "live": verify_live(config)}
     if args.command == "dev":
         return _dev(config, args.stage_dir)
     if args.command == "test":
