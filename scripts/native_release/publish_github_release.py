@@ -90,10 +90,16 @@ def _page_update(tag: str, manifest: dict) -> None:
 
 
 def _verify_assets(tag: str, manifest: dict) -> None:
+    evidence = []
     for row in manifest["artifacts"].values():
-        _verify_http(_browser_url(tag, row["filename"]), row["sha256"], row["size"])
-        _verify_http(_browser_url(tag, f"{row['filename']}.sha256"), "", 0)
-    _verify_http(_versioned_manifest_url(manifest), "", 0)
+        evidence.append(
+            _verify_http(_browser_url(tag, row["filename"]), row["sha256"], row["size"])
+        )
+        evidence.append(
+            _verify_http(_browser_url(tag, f"{row['filename']}.sha256"), "", 0)
+        )
+    evidence.append(_verify_http(_versioned_manifest_url(manifest), "", 0))
+    _write_download_evidence({"tag": tag, "assets": evidence})
 
 
 def _verify_latest(tag: str) -> None:
@@ -146,18 +152,31 @@ def _asset_map(tag: str) -> dict:
     return {row["name"]: row for row in json.loads(raw.stdout).get("assets", [])}
 
 
-def _verify_http(url: str, digest: str, size: int) -> None:
+def _verify_http(url: str, digest: str, size: int) -> dict:
     request = urllib.request.Request(
         url, headers={"User-Agent": "ooxml-native-release"}
     )
     with urllib.request.urlopen(request, timeout=60) as response:
         payload = response.read()
-        if response.status != 200:
-            raise ValueError(f"HTTP {response.status}: {url}")
+        status = response.status
+    if status != 200:
+        raise ValueError(f"HTTP {status}: {url}")
+    actual = hashlib.sha256(payload).hexdigest()
     if size and len(payload) != size:
         raise ValueError(f"HTTP size mismatch: {url}")
-    if digest and hashlib.sha256(payload).hexdigest() != digest:
+    if digest and actual != digest:
         raise ValueError(f"HTTP sha256 mismatch: {url}")
+    return {"url": url, "status": status, "size": len(payload), "sha256": actual}
+
+
+def _write_download_evidence(payload: dict) -> None:
+    root = os.environ.get("NATIVE_EVIDENCE_DIR")
+    if root:
+        path = Path(root) / "http-download-evidence.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
 
 
 def _tag(manifest: dict) -> str:
