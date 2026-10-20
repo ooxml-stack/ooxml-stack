@@ -145,10 +145,8 @@ def check_open(path: Path, poll_seconds: int = 90) -> dict[str, object]:
             "detail": "macOS Automation consent not granted (-10004); cannot drive Office",
         }
 
-    _run(
-        'ignoring application responses\ntell application "%s" to open POSIX file "%s"'
-        % (app, path),
-        timeout=12,
+    subprocess.run(
+        ["open", "-a", app, str(path)], capture_output=True, timeout=20, check=False
     )
 
     status = "timeout"

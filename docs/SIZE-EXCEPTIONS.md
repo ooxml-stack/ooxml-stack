@@ -21,7 +21,7 @@ Source files scanned: 83.
 | Function | Line | Length |
 | --- | ---: | ---: |
 | `scripts/ooxml_ci/edges.py:84` | 84 | 62 |
-| `scripts/run_p98_office_check.py:120` | 120 | 58 |
+| `scripts/run_p98_office_check.py:120` | 120 | 56 |
 | `scripts/p98_mutation_cases.py:427` | 427 | 55 |
 | `ooxml_runner/plan.py:129` | 129 | 54 |
 | `scripts/p98_mutation_cases.py:484` | 484 | 53 |
