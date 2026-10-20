@@ -163,13 +163,25 @@ def _validate_publish(config: dict[str, Any]) -> None:
     publish = config.get("publish", {})
     if publish.get("transaction") != EXPECTED_TRANSACTION:
         raise ConfigError("publish transaction order is not the approved order")
-    for key in ("github_repository", "github_tag_template"):
+    for key in (
+        "github_repository",
+        "github_tag_template",
+        "release_commit_env",
+        "latest_manifest_url",
+        "latest_artifact_url_template",
+    ):
         if not publish.get(key):
             raise ConfigError(f"publish.{key} is required")
     if not str(publish.get("base_url", "")).startswith("https://"):
         raise ConfigError("publish.base_url must use HTTPS")
     if not str(publish.get("product_page_url", "")).startswith("https://"):
         raise ConfigError("publish.product_page_url must use HTTPS")
+    if not str(publish["latest_manifest_url"]).endswith(
+        "/releases/latest/download/manifest.json"
+    ):
+        raise ConfigError(
+            "publish.latest_manifest_url must use GitHub latest downloads"
+        )
     if publish.get("latest_cache") not in {"no-store", "public, max-age=60"}:
         raise ConfigError("latest cache must be no-store or at most 60 seconds")
 

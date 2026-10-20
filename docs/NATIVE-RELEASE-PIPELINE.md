@@ -23,6 +23,7 @@ make native-release
 - `OOXML_NATIVE_WHEELHOUSE`: frozen wheel directory. Release requires the exact pinned Nuitka and runtime wheels.
 - `OOXML_NATIVE_BUILD_ENV`: optional reusable build environment for local development only; release rejects it.
 - `OOXML_NATIVE_PUBLISH_STEP_COMMAND`: executes one approved publish transaction step at a time. The implemented adapter is `python -m scripts.native_release.publish_github_release`.
+- `OOXML_NATIVE_RELEASE_COMMIT`: required full SHA of the pushed release commit. The publisher verifies it is contained by a remote branch and pins it with `gh release create --target`.
 - `OOXML_NATIVE_RELEASE_TAG`: optional explicit immutable GitHub release tag; otherwise derived from the versioned artifact URL.
 - `OOXML_NATIVE_GITHUB_REPO`: optional repository override, defaulting to `ooxml-stack/ooxml-stack`.
 
@@ -55,6 +56,10 @@ verify:latest
 ```
 
 The product page never consumes `latest` for displayed hash or size. This avoids a window where the page advertises a new hash while the alias still resolves to the previous artifact.
+
+`page:update` uploads `page-metadata.json` but does not claim to mutate the static Vercel page. Live verification requires the deployed page to declare mode `manifest-v1` in `<meta name="ooxml-native-release-mode" content="manifest-v1">` and to reference the configured latest manifest URL. Missing declarations fail the transaction with an explicit page blocker before `latest` changes.
+
+Release evidence is sealed before external publication. After publication, a separate post-publish receipt records the completed transaction steps without resealing the directory.
 
 ## Current implementation boundary
 

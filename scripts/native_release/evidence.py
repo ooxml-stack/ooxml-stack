@@ -23,9 +23,20 @@ class EvidenceSeal:
 
     def finalize(self, result: dict[str, Any]) -> dict[str, Any]:
         self.write("release-evidence.json", result)
+        return self.seal()
+
+    def finalize_prepublish(self, result: dict[str, Any]) -> dict[str, Any]:
+        self.write("prepublish-evidence.json", result)
+        return self.seal(seal_name="prepublish-seal.json")
+
+    def seal(self, *, seal_name: str = "seal.json") -> dict[str, Any]:
         rows = []
         for path in sorted(self.root.rglob("*")):
-            if path.is_file() and path.name != "seal.json":
+            if (
+                path.is_file()
+                and not path.name.endswith("-seal.json")
+                and path.name != "seal.json"
+            ):
                 data = path.read_bytes()
                 rows.append(
                     {
@@ -35,5 +46,9 @@ class EvidenceSeal:
                     }
                 )
         seal = {"schema_version": 1, "files": rows}
-        self.write("seal.json", seal)
-        return {"root": str(self.root), "files": rows}
+        self.write(seal_name, seal)
+        return {
+            "root": str(self.root),
+            "seal": str(self.root / seal_name),
+            "files": rows,
+        }

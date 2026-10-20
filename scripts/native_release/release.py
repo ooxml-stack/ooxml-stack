@@ -88,11 +88,8 @@ def _finish_release(
     scan, zip_scan = _scan_artifacts(config, artifacts, evidence)
     functional = _run_all_functional(config, artifacts, evidence)
     attestation = _attest(config, stage, wheelhouse, pre_sign_hash, artifacts, evidence)
-    publish_result = run_external_transaction(
-        config, manifest, artifacts, _run_dir(config) / "public-manifest.json"
-    )
-    result = {
-        "status": "ok",
+    prepublish = {
+        "status": "ready_to_publish",
         "mode": "release",
         "license": license_summary,
         "team_id": team_id,
@@ -100,12 +97,34 @@ def _finish_release(
         "scan": scan,
         "zip_scan": zip_scan,
         "attestation": attestation,
-        "publish": publish_result,
         "functional": functional,
         "inputs": inputs,
     }
-    result["evidence"] = evidence.finalize(result)
+    prepublish_seal = evidence.finalize_prepublish(prepublish)
+    publish_result = run_external_transaction(
+        config, manifest, artifacts, _run_dir(config) / "public-manifest.json"
+    )
+    result = {**prepublish, "status": "ok", "publish": publish_result}
+    receipt = _write_postpublish_receipt(evidence, publish_result, prepublish_seal)
+    result["evidence"] = {
+        "prepublish": prepublish_seal,
+        "postpublish_receipt": receipt,
+    }
     return result
+
+
+def _write_postpublish_receipt(evidence, publish_result, prepublish_seal):
+    payload = {
+        "schema_version": 1,
+        "status": "published",
+        "publish": publish_result,
+        "prepublish_seal": prepublish_seal,
+    }
+    try:
+        path = evidence.write("postpublish-receipt.json", payload)
+    except OSError as exc:
+        return {"status": "failed", "error": str(exc)}
+    return {"status": "recorded", "path": str(path)}
 
 
 def _notarize(config, artifacts, creds, team_id, evidence):

@@ -124,6 +124,7 @@ publish:
   product_page_url: https://super-ooxml.vercel.app
   versioned_root_template: /{tag}/
   latest_manifest_url: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/manifest.json
+  release_commit_env: OOXML_NATIVE_RELEASE_COMMIT
   latest_artifact_url_template: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/{filename}
   latest_cache: "no-store"
   transaction:
