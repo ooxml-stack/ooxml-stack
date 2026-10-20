@@ -127,7 +127,16 @@ def _document_steps(client, env, documents):
             ],
             env,
         ),
+        "offline_status": _offline_step([str(client), "status"], env),
+        "offline_mcp_core": _offline_step(
+            [str(client), "probe", "--profile", "core"], env
+        ),
     }
+
+
+def _offline_step(command, env):
+    profile = "(version 1)(allow default)(deny network*)"
+    return _step(["sandbox-exec", "-p", profile, *command], env)
 
 
 def _apply_validate(client, env, source, output, operation, target, params):
@@ -226,6 +235,7 @@ def _passed(steps, config):
     status = steps["status"]["json"] or {}
     core = steps["mcp_core"]["json"] or {}
     workflow = steps["mcp_workflow"]["json"] or {}
+    offline_core = steps["offline_mcp_core"]["json"] or {}
     pdf = steps["pdf"]["json"] or {}
     unlicensed = steps["unlicensed_status"]["json"] or {}
     return (
@@ -246,6 +256,9 @@ def _passed(steps, config):
         and core.get("tool_count") == config["e2e"]["entitled"]["mcp_core_tool_count"]
         and workflow.get("tool_count")
         == config["e2e"]["entitled"]["mcp_workflow_tool_count"]
+        and (steps["offline_status"]["json"] or {}).get("serving") == "active"
+        and offline_core.get("tool_count")
+        == config["e2e"]["entitled"]["mcp_core_tool_count"]
         and steps["uninstalled"].get("install_absent") is True
         and steps["uninstalled"].get("license_absent") is True
         and steps["restore_activate"]["exit_code"] == 0

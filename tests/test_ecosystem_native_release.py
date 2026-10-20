@@ -162,6 +162,8 @@ def test_functional_pass_requires_all_surfaces():
         "skill": {"exit_code": 0, "installed": True},
         "mcp_core": {"json": {"tool_count": 8}},
         "mcp_workflow": {"json": {"tool_count": 10}},
+        "offline_status": {"json": {"serving": "active"}},
+        "offline_mcp_core": {"json": {"tool_count": 8}},
         "uninstalled": {"install_absent": True, "license_absent": True},
         "restore_activate": {"exit_code": 0},
         "restore_status": {"json": {"serving": "active"}},
