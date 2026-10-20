@@ -1,9 +1,11 @@
-.PHONY: coverage evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck
+.PHONY: coverage evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck native-dev native-test native-release
 
 # The inventory tool runs only against its pinned interpreter. `--write` and
 # `--check` refuse to start when the versions do not match the declaration.
 ECOSYSTEM_VENV ?= .venv-ecosystem-inventory
 ECOSYSTEM_PYTHON ?= $(ECOSYSTEM_VENV)/bin/python
+NATIVE_RELEASE_CONFIG ?= release/native-macos-arm64.yaml
+NATIVE_RELEASE_PYTHON ?= $(ECOSYSTEM_PYTHON)
 export WORKSPACE TASK REPOSITORY OWNER RETIRE_WHEN REVISION
 
 workspace-init:
@@ -71,3 +73,13 @@ p98-mutation-gate:
 
 p98-coverage-budget:
 	@python3 scripts/build_p98_coverage_budget.py
+
+native-dev:
+	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release dev --config $(NATIVE_RELEASE_CONFIG)
+
+native-test:
+	@test -n "$(CANDIDATE)" || (echo "CANDIDATE is required; use CANDIDATE=/absolute/path or CANDIDATE=latest-dev" >&2; exit 2)
+	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release test --config $(NATIVE_RELEASE_CONFIG) --candidate "$(CANDIDATE)" $(if $(INTERNAL_LICENSE),--internal-license,)
+
+native-release:
+	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release release --config $(NATIVE_RELEASE_CONFIG)

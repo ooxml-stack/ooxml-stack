@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "value": "/Users/sysadmin/build/v3.12.0",
+      "kind": "toolchain-build-path",
+      "component": "CPython",
+      "reviewer": "native-release-owner",
+      "reason": "CPython sysconfig build-path constant"
+    },
+    {
+      "value": "/private/tmp/_py",
+      "kind": "toolchain-build-path",
+      "component": "CPython",
+      "reviewer": "native-release-owner",
+      "reason": "CPython build configuration constant"
+    },
+    {
+      "value": "BEGIN OPENSSH PRIVATE KEY",
+      "kind": "parser-string",
+      "component": "cryptography/PyNaCl-compatible parser",
+      "reviewer": "native-release-owner",
+      "reason": "Parser recognition string without key material"
+    },
+    {
+      "value": "Authorization: Bearer",
+      "kind": "parser-string",
+      "component": "HTTP/MCP client",
+      "reviewer": "native-release-owner",
+      "reason": "Protocol implementation string; not a credential"
+    }
+  ]
+}

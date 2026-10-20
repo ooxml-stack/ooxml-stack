@@ -1,0 +1,202 @@
+schema_version: 1
+profile: native-macos-arm64
+
+target:
+  os: macos
+  architecture: arm64
+  minimum_version: "14.0"
+  deployment_target: "14.0"
+
+sources:
+  client: ../ooxml-client
+  engine: ../ooxml-operation-engine
+  core: ../ooxml-core
+  spec: ../ooxml-spec
+  stubs: ../ooxml-stubs
+  test_framework: ../ooxml-test-framework
+  docx: ../python-docx
+  pptx: ../python-pptx
+  xlsx: ../python-xlsx
+
+build:
+  python: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+  python_version: "3.12.0"
+  wheelhouse_env: OOXML_NATIVE_WHEELHOUSE
+  build_env_env: OOXML_NATIVE_BUILD_ENV
+  requirements: release/native-runtime-requirements.txt
+  first_party_distributions:
+    - ooxml-operation-engine==0.1.50
+    - ooxml-client==0.1.54
+    - ooxml-core==0.6.19
+    - ooxml-spec==0.3.1
+    - ooxml-stubs==0.2.35
+    - ooxml-test-framework==0.5.38
+    - python-docx==1.2.41
+    - python-pptx==2.0.30
+    - python-xlsx==0.3.45
+  include_packages:
+    - ooxml_operation_engine
+    - ooxml_client
+    - docx
+    - pptx
+    - xlsx
+    - ooxml_core
+    - ooxml_spec
+    - mcp
+  docs_dir: release/public
+  package_data:
+    - ooxml_client
+    - docx
+    - pptx
+    - xlsx
+    - ooxml_spec
+    - ooxml_testing
+  nuitka: "2.8.10"
+  deployment: true
+  disable_ccache: true
+  client_entry: native_client_entry.py
+  engine_entry: native_engine_importlib_entry.py
+  exclude_imports:
+    - pymupdf
+    - fitz
+  distribution: standalone-directory
+  embedded_python_runtime: "CPython 3.12.0"
+
+runtime:
+  artifact_id: ooxml-operation-engine-b1181f42-macosx_14_0-arm64-b2
+  client_version: "0.1.54"
+  engine_version: "0.1.50"
+  classification: embedded-python
+  fully_native: false
+  external_python_required: false
+  pdf_readability: unavailable
+
+signing:
+  identity_env: OOXML_NATIVE_DEVELOPER_ID_APPLICATION
+  identity_prefix: "Developer ID Application:"
+  expected_team_id: WLY8MDDXQT
+  hardened_runtime: true
+  timestamp: true
+  ad_hoc_allowed_in_dev: true
+  verify_spctl: true
+
+notarization:
+  keychain_profile_env: OOXML_NATIVE_NOTARY_PROFILE
+  dmg:
+    staple: true
+  zip:
+    staple: false
+    mode: online-notarized-automation-artifact
+
+artifacts:
+  dmg:
+    filename: OOXML-macos-arm64.dmg
+    public: true
+    page_visible: true
+    immutable_cache: "public, max-age=31536000, immutable"
+  zip:
+    filename: OOXML-macos-arm64.zip
+    public: true
+    page_visible: false
+    immutable_cache: "public, max-age=31536000, immutable"
+
+entitlement:
+  publication_mode: external-entitlement-channel
+  license_required: true
+  entitlement_url: https://super-ooxml.vercel.app/activate
+  e2e_license_env: OOXML_NATIVE_E2E_LICENSE
+  activation_public_key_hex: 664af26335fa9f7669f7373c22c58dc29bf28a56b81f5b1579b48e5aa653a8e6
+  allowed_license_types:
+    - public-trial
+    - release-test
+    - paid
+  forbidden_license_ids:
+    - online-staging-acceptance
+  forbidden_licensee_markers:
+    - internal-only
+    - online staging delivery
+
+publish:
+  service_app: super-ooxml-delivery
+  github_repository: ooxml-stack/ooxml-stack
+  github_tag_template: native-v{version}-{short_sha}
+  base_url: https://github.com/ooxml-stack/ooxml-stack/releases/download
+  product_page_url: https://super-ooxml.vercel.app
+  versioned_root_template: /{tag}/
+  latest_manifest_url: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/manifest.json
+  release_commit_env: OOXML_NATIVE_RELEASE_COMMIT
+  latest_artifact_url_template: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/{filename}
+  latest_cache: "no-store"
+  transaction:
+    - artifact:dmg
+    - checksum:dmg
+    - artifact:zip
+    - checksum:zip
+    - manifest:versioned
+    - page:update
+    - verify:versioned
+    - latest:update
+    - verify:latest
+
+scan:
+  forbidden_suffixes: [.py, .pyc, .pyo, .whl, .egg, .map]
+  forbidden_names: [license.json, PKG-INFO, SOURCES.txt, pyvenv.cfg]
+  business_source_markers:
+    - /Users/touchskyer/Code/ooxml-projects
+    - /stamped-engine-src/
+    - /ooxml-operation-engine/src/
+  allowed_toolchain_markers_file: release/native-scan-allowlist.json
+  reject_pem_private_key_blocks: true
+  reject_known_token_values: true
+  reject_bare_bearer_parser_string: false
+  require_zero_dwarf: true
+  require_valid_team_id: true
+
+reproducibility:
+  wheelhouse_lock: release/native-wheelhouse-lock.json
+  source_commits:
+    client: e15028415a799c4328ce2a6206327cd0a0c385dd
+    engine: b1181f4212873a543a98b758bcbfd38005613a43
+    core: 1585613c9ad53eed51aa5cc26a34f1af4c327c95
+    spec: 34919621c3c06d1548956581e920812f9927bb7c
+    stubs: db1558d01656bbdd66d01bfdf150bf5827670f27
+    test_framework: 23d2e6d098d2e1e435381fc7908d05cdb853fc5e
+    docx: b4405caf4151924062e871b25cd49277e35f3e35
+    pptx: 7b4099f3873392ba5502b527e630f72870bf737a
+    xlsx: 958aa516a28e81701adfa1465f6ff94a83cbf929
+  normalized_payload_exclusions:
+    - code_signature
+    - macho_uuid
+    - macho_timestamps
+    - xattrs
+    - filesystem_metadata
+  required_attestation_fields:
+    - source_commits
+    - source_dirty
+    - python_executable_sha256
+    - python_version
+    - nuitka_version
+    - xcode_version
+    - clang_version
+    - sdk_version
+    - wheelhouse_sha256
+    - source_tree_sha256
+    - compiler_flags
+    - strip_flags
+    - codesign_flags
+    - pre_sign_payload_sha256
+    - post_sign_payload_sha256
+
+e2e:
+  artifact_only:
+    license_missing_must_fail: true
+    launch_version: true
+  entitled:
+    word_edit_and_validate: true
+    excel_edit_and_validate: true
+    pptx_broken_refusal: true
+    mcp_core_tool_count: 8
+    mcp_workflow_tool_count: 10
+    skill_install: true
+    pdf_readability_error: pdf_readability_unavailable
+    uninstall_restore: true
