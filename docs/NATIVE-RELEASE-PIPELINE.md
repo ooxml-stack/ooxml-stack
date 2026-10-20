@@ -9,6 +9,7 @@ make native-dev
 make native-test CANDIDATE=/absolute/path/to/OOXML-macos-arm64.dmg INTERNAL_LICENSE=1
 make native-test CANDIDATE=/absolute/path/to/OOXML-macos-arm64.dmg
 make native-release
+.venv-ecosystem-inventory/bin/python -m scripts.native_release verify-live
 ```
 
 `native-dev` permits ad-hoc signing and is never publishable. `native-test` requires an explicit candidate; `CANDIDATE=latest-dev` is a local-only shortcut. `native-release` requires clean repositories, Developer ID signing, notarization, a valid external release-test license, and the configured publish adapter.
