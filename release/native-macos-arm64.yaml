@@ -91,11 +91,13 @@ notarization:
 artifacts:
   dmg:
     filename: OOXML-macos-arm64.dmg
+    package_mode: installer-container
     public: true
     page_visible: true
     immutable_cache: "public, max-age=31536000, immutable"
   zip:
     filename: OOXML-macos-arm64.zip
+    package_mode: standalone-directory
     public: true
     page_visible: false
     immutable_cache: "public, max-age=31536000, immutable"

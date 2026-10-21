@@ -138,7 +138,18 @@ def verify_gatekeeper(dmg: Path, client: Path, engine: Path) -> None:
                 str(quarantined),
             ]
         )
-        _run(["spctl", "-a", "-vv", "-t", "open", str(quarantined)])
+        _run(
+            [
+                "spctl",
+                "--assess",
+                "--type",
+                "open",
+                "--context",
+                "context:primary-signature",
+                "-vv",
+                str(quarantined),
+            ]
+        )
     _run(["spctl", "-a", "-vv", "-t", "exec", str(client)])
     _run(["spctl", "-a", "-vv", "-t", "exec", str(engine)])
 

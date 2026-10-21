@@ -69,6 +69,8 @@ def test_manifest_contains_both_artifacts_and_immutable_page_url():
     manifest = build_manifest(loaded, artifacts(), "TEAMID1234")
     assert set(manifest["artifacts"]) == {"dmg", "zip"}
     assert "/latest/" not in manifest["artifacts"]["dmg"]["url"]
+    assert manifest["artifacts"]["dmg"]["package_mode"] == "installer-container"
+    assert manifest["artifacts"]["zip"]["package_mode"] == "standalone-directory"
     assert manifest["artifacts"]["dmg"]["checksum_url"].endswith(
         "OOXML-macos-arm64.dmg.sha256"
     )

@@ -26,7 +26,12 @@ def create_artifacts(
     packaged = container / "OOXML"
     shutil.copytree(payload, packaged, symlinks=True)
     _create_zip(packaged, zip_path)
-    _create_dmg(container, dmg)
+    installer = output / "dmg-installer"
+    shutil.rmtree(installer, ignore_errors=True)
+    installer.mkdir()
+    shutil.copy2(zip_path, installer / zip_path.name)
+    _write_installer(installer, zip_path.name, sha256_file(zip_path))
+    _create_dmg(installer, dmg)
     return {
         "dmg": {
             "path": str(dmg),
@@ -84,6 +89,38 @@ def _create_zip(payload: Path, path: Path) -> None:
         raise ArtifactError(f"ditto create failed: {result.stderr.strip()}")
 
 
+def _write_installer(root: Path, zip_name: str, digest: str) -> None:
+    script = root / "Install.command"
+    script.write_text(
+        f"""#!/bin/sh
+set -eu
+HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+ZIP="$HERE/{zip_name}"
+EXPECTED="{digest}"
+ACTUAL=$(shasum -a 256 "$ZIP" | awk '{{print $1}}')
+if [ "$ACTUAL" != "$EXPECTED" ]; then
+  echo "ZIP checksum mismatch" >&2
+  exit 1
+fi
+DEST="${{OOXML_INSTALL_DIR:-$HOME/.local/ooxml}}"
+PARENT=$(dirname "$DEST")
+mkdir -p "$PARENT"
+TMP=$(mktemp -d "$PARENT/ooxml-install.XXXXXX")
+trap 'rm -rf "$TMP"' EXIT
+ditto -x -k --norsrc --noextattr --noqtn "$ZIP" "$TMP"
+rm -rf "$DEST"
+mv "$TMP/OOXML" "$DEST"
+echo "Installed OOXML to $DEST"
+""",
+        encoding="utf-8",
+    )
+    script.chmod(0o755)
+    (root / "INSTALL.md").write_text(
+        "# OOXML macOS installation\n\nRun `Install.command`. It verifies the embedded ZIP SHA-256 before expanding the complete OOXML runtime to `~/.local/ooxml` by default. Set `OOXML_INSTALL_DIR` to choose another destination. Keep the installed directory together.\n",
+        encoding="utf-8",
+    )
+
+
 def _create_dmg(content_root: Path, path: Path) -> None:
     result = subprocess.run(
         [
@@ -96,6 +133,8 @@ def _create_dmg(content_root: Path, path: Path) -> None:
             "-ov",
             "-format",
             "UDZO",
+            "-fs",
+            "HFS+",
             str(path),
         ],
         capture_output=True,
