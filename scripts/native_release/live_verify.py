@@ -58,6 +58,42 @@ def verify_page_contract_url(url: str, manifest: dict[str, Any]) -> dict[str, st
     return verify_page_contract(_text(url), manifest)
 
 
+def verify_page_manifest_api(url: str, manifest: dict[str, Any]) -> dict[str, Any]:
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "ooxml-native-release", "Accept": "application/json"},
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        status = response.status
+        payload = response.read()
+        content_type = response.headers.get("Content-Type", "")
+        cache_control = response.headers.get("Cache-Control", "")
+    if status != 200:
+        raise LiveVerifyError(f"page manifest API HTTP {status}: {url}")
+    if "application/json" not in content_type.lower():
+        raise LiveVerifyError(f"page manifest API content-type mismatch: {url}")
+    if "no-store" not in cache_control.lower():
+        raise LiveVerifyError(
+            f"page manifest API cache-control must include no-store: {url}"
+        )
+    try:
+        actual = json.loads(payload)
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise LiveVerifyError(f"page manifest API JSON is invalid: {url}") from exc
+    if actual != manifest:
+        raise LiveVerifyError(
+            f"page manifest API does not match latest manifest: {url}"
+        )
+    return {
+        "url": url,
+        "status": status,
+        "content_type": content_type,
+        "cache_control": cache_control,
+        "size": len(payload),
+        "sha256": hashlib.sha256(payload).hexdigest(),
+    }
+
+
 def verify_artifact_url(
     url: str, digest: str, size: int, *, kind: str
 ) -> dict[str, Any]:
@@ -131,9 +167,13 @@ def verify_live(config: dict[str, Any]) -> dict[str, Any]:
         )
         artifacts.append(_verify_checksum(f"{kind}-latest", latest_checksum_url, row))
     page = verify_page_contract_url(config["publish"]["product_page_url"], versioned)
+    page_api = verify_page_manifest_api(
+        config["publish"]["page_manifest_api_url"], versioned
+    )
     return {
         "page": config["publish"]["product_page_url"],
         "page_contract": page,
+        "page_manifest_api": page_api,
         "latest": versioned,
         "artifacts": artifacts,
     }

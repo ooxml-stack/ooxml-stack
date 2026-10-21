@@ -149,6 +149,7 @@ def _run_publish_step(command, config, step, manifest, artifacts, target) -> Non
         "NATIVE_ZIP": artifacts["zip"]["path"],
         "NATIVE_RELEASE_COMMIT": target,
         "NATIVE_PRODUCT_PAGE_URL": config["publish"]["product_page_url"],
+        "NATIVE_PAGE_MANIFEST_API_URL": config["publish"]["page_manifest_api_url"],
     }
     result = subprocess.run(
         shlex.split(command),

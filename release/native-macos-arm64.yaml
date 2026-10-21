@@ -122,6 +122,7 @@ publish:
   github_tag_template: native-v{version}-{short_sha}
   base_url: https://github.com/ooxml-stack/ooxml-stack/releases/download
   product_page_url: https://super-ooxml.vercel.app
+  page_manifest_api_url: https://super-ooxml.vercel.app/api/release-manifest
   versioned_root_template: /{tag}/
   latest_manifest_url: https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/manifest.json
   release_commit_env: OOXML_NATIVE_RELEASE_COMMIT
@@ -188,6 +189,10 @@ reproducibility:
     - post_sign_payload_sha256
 
 e2e:
+  fixtures:
+    word: ../python-docx/playground/demo.docx
+    excel: ../python-xlsx/tests/fixtures/sample.xlsx
+    pptx: ../python-pptx/playground/samples/04_tables/basic_tables.pptx
   artifact_only:
     license_missing_must_fail: true
     launch_version: true
