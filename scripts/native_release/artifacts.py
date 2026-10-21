@@ -105,11 +105,29 @@ fi
 DEST="${{OOXML_INSTALL_DIR:-$HOME/.local/ooxml}}"
 PARENT=$(dirname "$DEST")
 mkdir -p "$PARENT"
+if [ -e "$DEST" ] && [ "${{OOXML_REPLACE_INSTALL:-0}}" != "1" ]; then
+  echo "Install destination already exists: $DEST" >&2
+  echo "Set OOXML_REPLACE_INSTALL=1 to preserve it as a backup and replace it." >&2
+  exit 2
+fi
 TMP=$(mktemp -d "$PARENT/ooxml-install.XXXXXX")
 trap 'rm -rf "$TMP"' EXIT
 ditto -x -k --norsrc --noextattr --noqtn "$ZIP" "$TMP"
-rm -rf "$DEST"
-mv "$TMP/OOXML" "$DEST"
+BACKUP=""
+if [ -e "$DEST" ]; then
+  BACKUP="$DEST.backup.$(date +%Y%m%d%H%M%S).$$"
+  mv "$DEST" "$BACKUP"
+fi
+if ! mv "$TMP/OOXML" "$DEST"; then
+  if [ -n "$BACKUP" ] && [ -e "$BACKUP" ]; then
+    mv "$BACKUP" "$DEST"
+  fi
+  echo "Install failed; previous installation restored when present." >&2
+  exit 3
+fi
+if [ -n "$BACKUP" ]; then
+  echo "Previous installation preserved at $BACKUP"
+fi
 echo "Installed OOXML to $DEST"
 """,
         encoding="utf-8",

@@ -15,8 +15,8 @@ from .functional import run_functional
 from .input_lock import verify_inputs
 from .license_gate import validate_release_license
 from .manifest import build_manifest
-from .publish import run_external_transaction
-from .reproducibility import collect_attestation, normalized_payload_sha256
+from .publish import release_target, run_external_transaction
+from .reproducibility import collect_attestation, normalized_payload_sha256, sha256_file
 from .scan import ScanError, scan_dmg, scan_zip
 from .signing import (
     notarize_artifacts,
@@ -37,6 +37,7 @@ def run_release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]
     _require_clean_sources(config)
     wheelhouse = _wheelhouse(config)
     inputs = verify_inputs(config, wheelhouse)
+    target_commit = release_target(config)
     evidence = EvidenceSeal(_run_dir(config) / "evidence")
     stage = _stage(stage_dir, _run_dir(config))
     build_stage(config, stage, "release")
@@ -65,6 +66,7 @@ def run_release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]
         inputs,
         evidence,
         wheelhouse,
+        target_commit,
     )
 
 
@@ -79,6 +81,7 @@ def _finish_release(
     inputs,
     evidence,
     wheelhouse,
+    target_commit,
 ):
     artifacts = _notarize(config, artifacts, creds, team_id, evidence)
     verify_gatekeeper(
@@ -99,6 +102,7 @@ def _finish_release(
         "attestation": attestation,
         "functional": functional,
         "inputs": inputs,
+        "release_commit": target_commit,
     }
     prepublish_seal = evidence.finalize_prepublish(prepublish)
     publish_result = run_external_transaction(
@@ -136,6 +140,10 @@ def _notarize(config, artifacts, creds, team_id, evidence):
         config,
     )
     artifacts = attach_notarization(artifacts, notary)
+    for row in artifacts.values():
+        path = Path(row["path"])
+        row["sha256"] = sha256_file(path)
+        row["size"] = path.stat().st_size
     _write_candidate_metadata(artifacts, team_id)
     evidence.write(
         "signing-notarization.json",

@@ -258,3 +258,65 @@ def test_page_manifest_api_rejects_missing_no_store(monkeypatch):
     )
     with pytest.raises(live_verify.LiveVerifyError, match="cache-control"):
         live_verify.verify_page_manifest_api("https://example.test/api", manifest)
+
+
+def test_page_manifest_api_rejects_substring_content_type(monkeypatch):
+    manifest, _payloads = _manifest()
+
+    class Response:
+        status = 200
+        headers = {
+            "Content-Type": "text/plain; note=application/json",
+            "Cache-Control": "no-store",
+        }
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return json.dumps(manifest).encode("utf-8")
+
+    monkeypatch.setattr(
+        live_verify.urllib.request, "urlopen", lambda *_a, **_k: Response()
+    )
+    with pytest.raises(live_verify.LiveVerifyError, match="content-type"):
+        live_verify.verify_page_manifest_api("https://example.test/api", manifest)
+
+
+def test_page_manifest_api_rejects_substring_no_store(monkeypatch):
+    manifest, _payloads = _manifest()
+
+    class Response:
+        status = 200
+        headers = {
+            "Content-Type": "application/json",
+            "Cache-Control": "x-no-store-wrong",
+        }
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return json.dumps(manifest).encode("utf-8")
+
+    monkeypatch.setattr(
+        live_verify.urllib.request, "urlopen", lambda *_a, **_k: Response()
+    )
+    with pytest.raises(live_verify.LiveVerifyError, match="exact no-store"):
+        live_verify.verify_page_manifest_api("https://example.test/api", manifest)
+
+
+def test_page_contract_rejects_url_only_in_body(monkeypatch):
+    manifest, _payloads = _manifest()
+    page = (
+        '<html><head><meta name="ooxml-native-release-mode" content="manifest-v1">'
+        "</head><body>https://github.com/ooxml-stack/ooxml-stack/releases/latest/download/manifest.json</body></html>"
+    )
+    with pytest.raises(live_verify.LiveVerifyError, match="does not declare"):
+        live_verify.verify_page_contract(page, manifest)

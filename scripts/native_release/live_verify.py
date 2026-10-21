@@ -13,6 +13,7 @@ from .manifest import validate_manifest
 
 PAGE_MANIFEST_MODE = "manifest-v1"
 PAGE_MODE_META = "ooxml-native-release-mode"
+PAGE_MANIFEST_META = "ooxml-native-release-manifest"
 
 
 class LiveVerifyError(ValueError):
@@ -46,9 +47,9 @@ def verify_page_contract(page: str, manifest: dict[str, Any]) -> dict[str, str]:
             f'{PAGE_MODE_META}="{PAGE_MANIFEST_MODE}"'
         )
     manifest_url = manifest["latest"]["manifest_url"]
-    if manifest_url not in "\n".join(parser.tokens):
+    if parser.meta.get(PAGE_MANIFEST_META) != manifest_url:
         raise LiveVerifyError(
-            "page blocker: product page does not consume the expected latest "
+            "page blocker: product page does not declare the expected latest "
             f"manifest URL: {manifest_url}"
         )
     return {"mode": PAGE_MANIFEST_MODE, "manifest_url": manifest_url}
@@ -70,11 +71,13 @@ def verify_page_manifest_api(url: str, manifest: dict[str, Any]) -> dict[str, An
         cache_control = response.headers.get("Cache-Control", "")
     if status != 200:
         raise LiveVerifyError(f"page manifest API HTTP {status}: {url}")
-    if "application/json" not in content_type.lower():
+    media_type = content_type.split(";", 1)[0].strip().lower()
+    if media_type != "application/json":
         raise LiveVerifyError(f"page manifest API content-type mismatch: {url}")
-    if "no-store" not in cache_control.lower():
+    directives = {item.strip().lower() for item in cache_control.split(",")}
+    if "no-store" not in directives:
         raise LiveVerifyError(
-            f"page manifest API cache-control must include no-store: {url}"
+            f"page manifest API cache-control must include exact no-store: {url}"
         )
     try:
         actual = json.loads(payload)
