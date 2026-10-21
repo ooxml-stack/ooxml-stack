@@ -157,7 +157,10 @@ def _verify_latest(tag: str, manifest: dict) -> None:
             latest_manifest_url,
             manifest,
             kind="latest-manifest",
-        )
+        ),
+        live_verify.verify_page_manifest_api(
+            _required("NATIVE_PAGE_MANIFEST_API_URL"), manifest
+        ),
     ]
     latest_root = latest_manifest_url.rsplit("/", 1)[0]
     for kind, row in manifest["artifacts"].items():

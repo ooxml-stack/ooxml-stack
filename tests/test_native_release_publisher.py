@@ -180,3 +180,81 @@ def test_static_page_without_manifest_contract_is_explicit_blocker():
         live_verify.verify_page_contract(
             "<html><body>release notes</body></html>", manifest
         )
+
+
+def test_page_manifest_api_requires_exact_manifest_and_no_store(monkeypatch):
+    manifest, _payloads = _manifest()
+    payload = json.dumps(manifest).encode("utf-8")
+
+    class Response:
+        status = 200
+        headers = {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+        }
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return payload
+
+    monkeypatch.setattr(
+        live_verify.urllib.request, "urlopen", lambda *_a, **_k: Response()
+    )
+    result = live_verify.verify_page_manifest_api("https://example.test/api", manifest)
+    assert result["status"] == 200
+    assert result["sha256"] == hashlib.sha256(payload).hexdigest()
+
+
+def test_page_manifest_api_rejects_mismatched_manifest(monkeypatch):
+    manifest, _payloads = _manifest()
+    changed = dict(manifest)
+    changed["client_version"] = "9.9.9"
+
+    class Response:
+        status = 200
+        headers = {"Content-Type": "application/json", "Cache-Control": "no-store"}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return json.dumps(changed).encode("utf-8")
+
+    monkeypatch.setattr(
+        live_verify.urllib.request, "urlopen", lambda *_a, **_k: Response()
+    )
+    with pytest.raises(
+        live_verify.LiveVerifyError, match="does not match latest manifest"
+    ):
+        live_verify.verify_page_manifest_api("https://example.test/api", manifest)
+
+
+def test_page_manifest_api_rejects_missing_no_store(monkeypatch):
+    manifest, _payloads = _manifest()
+
+    class Response:
+        status = 200
+        headers = {"Content-Type": "application/json", "Cache-Control": "max-age=60"}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return json.dumps(manifest).encode("utf-8")
+
+    monkeypatch.setattr(
+        live_verify.urllib.request, "urlopen", lambda *_a, **_k: Response()
+    )
+    with pytest.raises(live_verify.LiveVerifyError, match="cache-control"):
+        live_verify.verify_page_manifest_api("https://example.test/api", manifest)

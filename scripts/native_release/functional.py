@@ -24,7 +24,7 @@ def run_functional(
 ) -> dict[str, Any]:
     artifact_only = run_artifact_only(candidate, evidence_root)
     license_path = _license_path(config)
-    samples = _samples()
+    samples = _samples(config)
     run_root = evidence_root / "functional" / uuid.uuid4().hex
     run_root.mkdir(parents=True)
     with tempfile.TemporaryDirectory(dir=run_root) as folder:
@@ -273,16 +273,22 @@ def _license_path(config):
     return Path(value).expanduser().resolve()
 
 
-def _samples():
+def _samples(config):
     names = {
-        "word-task.docx": "OOXML_NATIVE_E2E_WORD",
-        "excel-task.xlsx": "OOXML_NATIVE_E2E_EXCEL",
-        "ppt-task.pptx": "OOXML_NATIVE_E2E_PPTX",
+        "word-task.docx": ("OOXML_NATIVE_E2E_WORD", config["e2e"]["fixtures"]["word"]),
+        "excel-task.xlsx": (
+            "OOXML_NATIVE_E2E_EXCEL",
+            config["e2e"]["fixtures"]["excel"],
+        ),
+        "ppt-task.pptx": ("OOXML_NATIVE_E2E_PPTX", config["e2e"]["fixtures"]["pptx"]),
     }
     result = {}
-    for name, key in names.items():
+    for name, (key, fallback) in names.items():
         value = os.environ.get(key, "")
-        if not value:
-            raise FunctionalError(f"{key} is required")
-        result[name] = Path(value).expanduser().resolve()
+        path = (
+            Path(value).expanduser() if value else Path(config["_repo_root"]) / fallback
+        )
+        if not path.is_file():
+            raise FunctionalError(f"fixture does not exist for {key}: {path}")
+        result[name] = path.resolve()
     return result

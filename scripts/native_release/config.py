@@ -166,6 +166,7 @@ def _validate_publish(config: dict[str, Any]) -> None:
     for key in (
         "github_repository",
         "github_tag_template",
+        "page_manifest_api_url",
         "release_commit_env",
         "latest_manifest_url",
         "latest_artifact_url_template",
