@@ -17,10 +17,17 @@ def build_manifest(
 ) -> dict[str, Any]:
     runtime = config["runtime"]
     publish = config["publish"]
+    dmg_digest = _digest(artifacts.get("dmg", {}).get("sha256"), "dmg")
+    release_tag = _release_tag(publish, runtime["client_version"], dmg_digest)
     rendered = {}
     for kind, artifact_config in config["artifacts"].items():
         rendered[kind] = _artifact_manifest(
-            kind, artifacts, artifact_config, publish, runtime["client_version"]
+            kind,
+            artifacts,
+            artifact_config,
+            publish,
+            runtime["client_version"],
+            release_tag,
         )
     manifest = {
         "schema_version": 1,
@@ -50,12 +57,12 @@ def build_manifest(
     return manifest
 
 
-def _artifact_manifest(kind, artifacts, artifact_config, publish, version):
+def _artifact_manifest(kind, artifacts, artifact_config, publish, version, release_tag):
     row = artifacts.get(kind)
     if row is None:
         raise ManifestError(f"missing artifact result for {kind}")
     digest = _digest(row.get("sha256"), kind)
-    url = _versioned_url(publish, version, digest, artifact_config["filename"])
+    url = _versioned_url(publish, release_tag, artifact_config["filename"])
     return {
         "url": url,
         "checksum_url": f"{url}.sha256",
@@ -137,11 +144,12 @@ def _validate_artifact(name: str, row: dict[str, Any], config: dict[str, Any]) -
         raise ManifestError(f"artifact {name} is not notarized")
 
 
-def _versioned_url(
-    publish: dict[str, Any], version: str, digest: str, filename: str
-) -> str:
+def _release_tag(publish, version, digest):
     template = publish["github_tag_template"]
-    tag = template.format(version=version, sha256=digest, short_sha=digest[:12])
+    return template.format(version=version, sha256=digest, short_sha=digest[:12])
+
+
+def _versioned_url(publish, tag, filename):
     repo = publish["github_repository"]
     return f"https://github.com/{repo}/releases/download/{tag}/{filename}"
 
