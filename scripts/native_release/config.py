@@ -126,6 +126,10 @@ def _validate_artifacts(config: dict[str, Any]) -> None:
         raise ConfigError("DMG must be the page-visible artifact")
     if artifacts["zip"].get("page_visible") is not False:
         raise ConfigError("ZIP must not be the page-visible artifact")
+    if artifacts["dmg"].get("package_mode") != "installer-container":
+        raise ConfigError("DMG package_mode must be installer-container")
+    if artifacts["zip"].get("package_mode") != "standalone-directory":
+        raise ConfigError("ZIP package_mode must be standalone-directory")
     notary = config.get("notarization", {})
     if notary.get("dmg", {}).get("staple") is not True:
         raise ConfigError("DMG notarization ticket must be stapled")

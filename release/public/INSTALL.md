@@ -2,7 +2,7 @@
 
 This is a mixed native package with an embedded CPython runtime. It does not require a separately installed Python runtime.
 
-Verify the DMG or ZIP with the checksum sidecar before installation. Open the DMG, move the complete OOXML directory to a user-owned location, and add its bin directory to PATH. Keep bin, lib, and docs together; copying only the two launchers is unsupported.
+Verify the DMG or ZIP with the checksum sidecar before installation. The DMG is a signed and notarized installer container: open it and run Install.command. The script verifies the embedded ZIP SHA-256 and expands the complete OOXML runtime to ~/.local/ooxml by default. The standalone ZIP contains the same runtime with its top-level OOXML directory. Keep bin, lib, and docs together; copying only the two launchers is unsupported.
 
 Activation requires an entitlement supplied through the public activation channel. The archive contains only the public verification key. A missing or invalid license fails closed.
 

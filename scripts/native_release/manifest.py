@@ -19,23 +19,9 @@ def build_manifest(
     publish = config["publish"]
     rendered = {}
     for kind, artifact_config in config["artifacts"].items():
-        row = artifacts.get(kind)
-        if row is None:
-            raise ManifestError(f"missing artifact result for {kind}")
-        digest = _digest(row.get("sha256"), kind)
-        url = _versioned_url(
-            publish, runtime["client_version"], digest, artifact_config["filename"]
+        rendered[kind] = _artifact_manifest(
+            kind, artifacts, artifact_config, publish, runtime["client_version"]
         )
-        rendered[kind] = {
-            "url": url,
-            "checksum_url": f"{url}.sha256",
-            "filename": artifact_config["filename"],
-            "sha256": digest,
-            "size": _size(row.get("size"), kind),
-            "cache": artifact_config["immutable_cache"],
-            "notarization": dict(row["notarization"]),
-            "page_visible": bool(artifact_config["page_visible"]),
-        }
     manifest = {
         "schema_version": 1,
         "product": "ooxml",
@@ -62,6 +48,25 @@ def build_manifest(
     }
     validate_manifest(manifest, config)
     return manifest
+
+
+def _artifact_manifest(kind, artifacts, artifact_config, publish, version):
+    row = artifacts.get(kind)
+    if row is None:
+        raise ManifestError(f"missing artifact result for {kind}")
+    digest = _digest(row.get("sha256"), kind)
+    url = _versioned_url(publish, version, digest, artifact_config["filename"])
+    return {
+        "url": url,
+        "checksum_url": f"{url}.sha256",
+        "filename": artifact_config["filename"],
+        "sha256": digest,
+        "size": _size(row.get("size"), kind),
+        "cache": artifact_config["immutable_cache"],
+        "notarization": dict(row["notarization"]),
+        "page_visible": bool(artifact_config["page_visible"]),
+        "package_mode": artifact_config["package_mode"],
+    }
 
 
 def validate_manifest(manifest: dict[str, Any], config: dict[str, Any]) -> None:
@@ -111,6 +116,7 @@ def _validate_artifact(name: str, row: dict[str, Any], config: dict[str, Any]) -
         "size",
         "cache",
         "notarization",
+        "package_mode",
     ):
         if field not in row:
             raise ManifestError(f"artifact {name} missing {field}")
@@ -125,6 +131,8 @@ def _validate_artifact(name: str, row: dict[str, Any], config: dict[str, Any]) -
     expected = config["artifacts"][name]
     if row["filename"] != expected["filename"]:
         raise ManifestError(f"artifact {name} filename mismatch")
+    if row["package_mode"] != expected["package_mode"]:
+        raise ManifestError(f"artifact {name} package_mode mismatch")
     if row["notarization"].get("status") != "notarized":
         raise ManifestError(f"artifact {name} is not notarized")
 
