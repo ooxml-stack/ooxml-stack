@@ -263,3 +263,83 @@ def test_scan_rejects_real_private_key_block(tmp_path):
 def canonical(payload):
     unsigned = {key: value for key, value in payload.items() if key != "signature"}
     return json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode("utf-8")
+
+
+def test_build_wheelhouse_requires_destination(monkeypatch, capsys):
+    for name in (
+        "OOXML_NATIVE_DEVELOPER_ID_APPLICATION",
+        "OOXML_NATIVE_NOTARY_PROFILE",
+        "OOXML_NATIVE_E2E_LICENSE",
+    ):
+        monkeypatch.delenv(name, raising=False)
+    code = native_main(["build-wheelhouse", "--config", str(CONFIG)])
+    captured = capsys.readouterr()
+    assert code == 1
+    assert "--wheelhouse is required" in captured.err
+
+
+def test_wheelhouse_rejects_dirty_source(tmp_path, monkeypatch):
+    from scripts.native_release import wheelhouse
+
+    loaded = config()
+    loaded["_repo_root"] = str(tmp_path)
+    for name in loaded["sources"]:
+        repo = tmp_path / loaded["sources"][name]
+        repo.mkdir(parents=True)
+        monkeypatch.setattr(
+            wheelhouse,
+            "_git",
+            lambda repo, *args: "HEAD" if args == ("rev-parse", "HEAD") else " M dirty",
+        )
+    with pytest.raises(wheelhouse.WheelhouseError, match="dirty"):
+        wheelhouse.build_wheelhouse(
+            loaded, tmp_path / "wheelhouse", tmp_path / "lock.json", env={}
+        )
+
+
+def test_release_local_skips_publish(monkeypatch, tmp_path):
+    from scripts.native_release import release
+
+    sentinel = {"status": "ready"}
+    calls = {"publish": 0, "notarize": 0}
+
+    monkeypatch.setattr(
+        release,
+        "release_credentials",
+        lambda _config: type("C", (), {"identity": "Developer ID Application: Test"})(),
+    )
+    monkeypatch.setattr(release, "_required_env", lambda _name: "/tmp/license.json")
+    monkeypatch.setattr(release, "validate_release_license", lambda *_args: {})
+    monkeypatch.setattr(release, "_require_clean_sources", lambda _config: None)
+    monkeypatch.setattr(release, "_wheelhouse", lambda _config: tmp_path)
+    monkeypatch.setattr(release, "verify_inputs", lambda *_args: {})
+    monkeypatch.setattr(release, "release_target", lambda _config: "a" * 40)
+    monkeypatch.setattr(
+        release,
+        "EvidenceSeal",
+        lambda _path: type(
+            "E",
+            (),
+            {
+                "root": tmp_path,
+                "write": lambda self, *_args: None,
+                "finalize_prepublish": lambda self, payload: {"seal": payload["mode"]},
+            },
+        )(),
+    )
+    monkeypatch.setattr(release, "_stage", lambda *_args: tmp_path / "stage")
+    monkeypatch.setattr(release, "build_stage", lambda *_args: None)
+    monkeypatch.setattr(release, "_require_stage", lambda _path: None)
+    monkeypatch.setattr(release, "strip_payload", lambda _path: None)
+    monkeypatch.setattr(
+        release, "normalized_payload_sha256", lambda *_args, **_kwargs: "hash"
+    )
+    monkeypatch.setattr(release, "sign_payload", lambda *_args: [])
+    monkeypatch.setattr(
+        release, "verify_payload_signatures", lambda *_args, **_kwargs: "TEAM"
+    )
+    monkeypatch.setattr(release, "create_artifacts", lambda *_args: {})
+    monkeypatch.setattr(release, "_finish_release", lambda *args: sentinel)
+
+    result = release.run_release(config(), None, publish=False)
+    assert result is sentinel

@@ -1,4 +1,4 @@
-.PHONY: coverage evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck native-dev native-test native-release
+.PHONY: coverage evidence-hygiene repo-hygiene p97-mutation-gate p98-mutation-gate p98-coverage-budget ecosystem-inventory-deps ecosystem-plan ecosystem-plan-check ecosystem-plan-refresh ecosystem-plan-check-basis ecosystem-inventory-test runner-test worktree workspace-init lint typecheck native-dev native-test native-release native-release-local native-wheelhouse
 
 # The inventory tool runs only against its pinned interpreter. `--write` and
 # `--check` refuse to start when the versions do not match the declaration.
@@ -6,6 +6,7 @@ ECOSYSTEM_VENV ?= .venv-ecosystem-inventory
 ECOSYSTEM_PYTHON ?= $(ECOSYSTEM_VENV)/bin/python
 NATIVE_RELEASE_CONFIG ?= release/native-macos-arm64.yaml
 NATIVE_RELEASE_PYTHON ?= $(ECOSYSTEM_PYTHON)
+NATIVE_WHEELHOUSE ?= $(CURDIR)/../.delivery-evidence/artifacts/native/wheelhouse
 export WORKSPACE TASK REPOSITORY OWNER RETIRE_WHEN REVISION
 
 workspace-init:
@@ -83,3 +84,10 @@ native-test:
 
 native-release:
 	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release release --config $(NATIVE_RELEASE_CONFIG)
+
+native-wheelhouse:
+	@test -n "$(NATIVE_WHEELHOUSE)" || (echo "NATIVE_WHEELHOUSE is required" >&2; exit 2)
+	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release build-wheelhouse --config $(NATIVE_RELEASE_CONFIG) --wheelhouse "$(NATIVE_WHEELHOUSE)"
+
+native-release-local:
+	@$(NATIVE_RELEASE_PYTHON) -m scripts.native_release release-local --config $(NATIVE_RELEASE_CONFIG)
