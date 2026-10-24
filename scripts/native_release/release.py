@@ -16,6 +16,7 @@ from .input_lock import verify_inputs
 from .license_gate import validate_release_license
 from .manifest import build_manifest
 from .publish import release_target, run_external_transaction
+from .release_payloads import local_result, prepublish_payload
 from .reproducibility import collect_attestation, normalized_payload_sha256, sha256_file
 from .scan import ScanError, scan_dmg, scan_zip
 from .signing import (
@@ -29,7 +30,9 @@ from .signing import (
 )
 
 
-def run_release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]:
+def run_release(
+    config: dict[str, Any], stage_dir: str | None, publish: bool = True
+) -> dict[str, Any]:
     creds = release_credentials(config)
     license_summary = validate_release_license(
         _required_env(config["entitlement"]["e2e_license_env"]), config
@@ -37,7 +40,9 @@ def run_release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]
     _require_clean_sources(config)
     wheelhouse = _wheelhouse(config)
     inputs = verify_inputs(config, wheelhouse)
-    target_commit = release_target(config)
+    target_commit = (
+        release_target(config) if publish else _current_release_commit(config)
+    )
     evidence = EvidenceSeal(_run_dir(config) / "evidence")
     stage = _stage(stage_dir, _run_dir(config))
     build_stage(config, stage, "release")
@@ -67,6 +72,7 @@ def run_release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]
         evidence,
         wheelhouse,
         target_commit,
+        publish,
     )
 
 
@@ -82,6 +88,7 @@ def _finish_release(
     evidence,
     wheelhouse,
     target_commit,
+    publish,
 ):
     artifacts = _notarize(config, artifacts, creds, team_id, evidence)
     verify_gatekeeper(
@@ -91,30 +98,47 @@ def _finish_release(
     scan, zip_scan = _scan_artifacts(config, artifacts, evidence)
     functional = _run_all_functional(config, artifacts, evidence)
     attestation = _attest(config, stage, wheelhouse, pre_sign_hash, artifacts, evidence)
-    prepublish = {
-        "status": "ready_to_publish",
-        "mode": "release",
-        "license": license_summary,
-        "team_id": team_id,
-        "manifest": manifest,
-        "scan": scan,
-        "zip_scan": zip_scan,
-        "attestation": attestation,
-        "functional": functional,
-        "inputs": inputs,
-        "release_commit": target_commit,
-    }
-    prepublish_seal = evidence.finalize_prepublish(prepublish)
-    publish_result = run_external_transaction(
+    prepublish = prepublish_payload(
+        license_summary,
+        team_id,
+        manifest,
+        scan,
+        zip_scan,
+        attestation,
+        functional,
+        inputs,
+        target_commit,
+    )
+    seal = evidence.finalize_prepublish(prepublish)
+    if not publish:
+        return local_result(prepublish, seal)
+    return _published_result(config, manifest, artifacts, evidence, prepublish, seal)
+
+
+def _published_result(config, manifest, artifacts, evidence, prepublish, seal):
+    result = run_external_transaction(
         config, manifest, artifacts, _run_dir(config) / "public-manifest.json"
     )
-    result = {**prepublish, "status": "ok", "publish": publish_result}
-    receipt = _write_postpublish_receipt(evidence, publish_result, prepublish_seal)
-    result["evidence"] = {
-        "prepublish": prepublish_seal,
-        "postpublish_receipt": receipt,
+    receipt = _write_postpublish_receipt(evidence, result, seal)
+    return {
+        **prepublish,
+        "status": "ok",
+        "publish": result,
+        "evidence": {"prepublish": seal, "postpublish_receipt": receipt},
     }
-    return result
+
+
+def _current_release_commit(config):
+    result = subprocess.run(
+        ["git", "-C", config["_repo_root"], "rev-parse", "HEAD"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    value = result.stdout.strip().lower()
+    if result.returncode != 0 or len(value) != 40:
+        raise ConfigError("cannot resolve the clean local release commit")
+    return value
 
 
 def _write_postpublish_receipt(evidence, publish_result, prepublish_seal):

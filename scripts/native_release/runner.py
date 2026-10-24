@@ -25,6 +25,7 @@ from .license_gate import (
 from .live_verify import LiveVerifyError, verify_live
 from .manifest import ManifestError
 from .release import run_release
+from .wheelhouse import WheelhouseError, build_wheelhouse
 from .reproducibility import AttestationError
 from .scan import ScanError, scan_dmg, scan_zip
 from .signing import SigningError, ad_hoc_sign_payload, strip_payload
@@ -34,12 +35,23 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="native-release")
     parser.add_argument(
         "command",
-        choices=["dev", "test", "release", "plan", "license-check", "verify-live"],
+        choices=[
+            "dev",
+            "test",
+            "release",
+            "release-local",
+            "build-wheelhouse",
+            "plan",
+            "license-check",
+            "verify-live",
+        ],
     )
     parser.add_argument("--config", default="release/native-macos-arm64.yaml")
     parser.add_argument("--candidate")
     parser.add_argument("--stage-dir")
     parser.add_argument("--internal-license", action="store_true")
+    parser.add_argument("--wheelhouse")
+    parser.add_argument("--wheelhouse-lock")
     args = parser.parse_args(argv)
     try:
         config = load_config(args.config)
@@ -55,6 +67,7 @@ def main(argv=None) -> int:
         InputLockError,
         LiveVerifyError,
         AttestationError,
+        WheelhouseError,
         ValueError,
     ) as exc:
         print(
@@ -81,6 +94,10 @@ def _dispatch(args, config: dict[str, Any]) -> dict[str, Any]:
         return _dev(config, args.stage_dir)
     if args.command == "test":
         return _test(config, args.candidate, args.internal_license)
+    if args.command == "build-wheelhouse":
+        return _build_wheelhouse(config, args.wheelhouse, args.wheelhouse_lock)
+    if args.command == "release-local":
+        return run_release(config, args.stage_dir, publish=False)
     return _release(config, args.stage_dir)
 
 
@@ -151,7 +168,14 @@ def _test(
 
 
 def _release(config: dict[str, Any], stage_dir: str | None) -> dict[str, Any]:
-    return run_release(config, stage_dir)
+    return run_release(config, stage_dir, publish=True)
+
+
+def _build_wheelhouse(config, output: str | None, lock_path: str | None):
+    if not output:
+        raise ConfigError("--wheelhouse is required for build-wheelhouse")
+    lock = lock_path or config["reproducibility"]["wheelhouse_lock"]
+    return build_wheelhouse(config, Path(output), Path(lock))
 
 
 def _stage_target(config: dict[str, Any], mode: str, value: str | None) -> Path:
