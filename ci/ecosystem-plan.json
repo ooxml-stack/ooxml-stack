@@ -622,13 +622,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "55aba7c6a003ac6a3f14aadc7c083893f7acf523",
+        "ref_raw": "e08564808211e310e7a5d8cf65d7468608c442ed",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "55aba7c6a003ac6a3f14aadc7c083893f7acf523",
+        "commit": "e08564808211e310e7a5d8cf65d7468608c442ed",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -644,15 +644,15 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "native-cf-order-preservation-20261010",
+        "ref_raw": "native-save-preservation-20261019",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "9d43bbcf3ee67c3532b63ae6356f47f69a1384ea",
+        "commit": "e08564808211e310e7a5d8cf65d7468608c442ed",
         "source": "ooxml-operation-engine/uv.lock",
-        "version": "0.3.44"
+        "version": "0.3.45"
       },
       "from": "ooxml-operation-engine",
       "group": null,
@@ -3156,15 +3156,15 @@
     },
     {
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "a327c5995bf74c7ac7eaa4056ae92c42325bf721dff02fd526827b37fcb45cf9"
+      "sha256": "08582e953c9d829f386a8849f0f3139683d0681a5d802710327c23abf3d6da3c"
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "e31a6b86eb85ce85d9c869bf6554a5146e7b74c8a0aac976b10c0f41bada6263"
+      "sha256": "79beaa6aa910644e7a83dd80e022c6c9db939c6074ca793a70ec6db89e954d04"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "83a51f1265d71d8f794bc04bd54719e9497a88c5615cc2eb088ecb528a79c677"
+      "sha256": "1f618596c97d80d684b3e4cba1d249ae589f05a1ea01257a8b02125870b42960"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -3268,7 +3268,7 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "64b575276df89e539a769c73350f97e86d1f12d31b0d1b97e86fe6c20d0f88ed"
+      "sha256": "91beb61c6cfe71ac3a520e8dff669a68a4f75b946131ac1ce5cf602d4f81c3fe"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
@@ -3276,7 +3276,7 @@
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "74dd2d4950e1bc31399abcab4bea59831ce970a9a499869b5e55d6a3e098411f"
+      "sha256": "ce561143177f4611ec02dbd4146c2f801b4419e52cd949ece048003206b1eb88"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
@@ -3300,7 +3300,7 @@
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "2f99a81bac4af53e8e0f773af4b9591bc85fd8b12ea8e8ac9b703739d9bb8b2d"
+      "sha256": "877169de4c011890cae6a7365e0c52a7962d7004398952f6555ad0827665282d"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
@@ -3308,7 +3308,7 @@
     },
     {
       "path": "python-pptx/uv.lock",
-      "sha256": "f99a178f93cdca1b02d56975042de7b282b98372776e3148afd0b8e5ed033b99"
+      "sha256": "456eb7816f6f75036d3cd97710ccc1348b31073b8617a9947b3a9ef7f5ec0152"
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
@@ -3324,11 +3324,11 @@
     },
     {
       "path": "python-xlsx/.github/workflows/release.yml",
-      "sha256": "056885358428270abcbb1b03a6e5a3ae284dae94f6eb7960be7b6394744d8f07"
+      "sha256": "b817c9287413ce14eabbeb8e38343b8ba789eaa392f5abc84920458395e16850"
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "cbb311d4b22c5bf4f1d6e5cd6d0aff6fc3c21b694f78d28c08e6e62851df1975"
+      "sha256": "fb59a7fe988a824146913ba853cd2a47ae560a35d6adaf38df3bedac888cbb59"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
@@ -3336,10 +3336,10 @@
     },
     {
       "path": "python-xlsx/uv.lock",
-      "sha256": "568c860da7879807ad96e8c305a0572cc8cd9bf30b62e5519357759f17f7945f"
+      "sha256": "8a971ac80702cb3521bac1b2db0cde6aecf2a430aa05418f4d095903131338e4"
     }
   ],
-  "inputs_digest": "35503bbbfe212628508a122f57a81f49c940f2e91e2140be98b576845338885a",
+  "inputs_digest": "e45d433a393909e71a4fc71ffc04342adbe40e2215740ad4bd1c2fd3e95414d0",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3685,17 +3685,17 @@
     {
       "repos": [
         {
-          "ref": "native-cf-order-preservation-20261010",
+          "ref": "native-save-preservation-20261019",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
-          "version": "0.3.44"
+          "version": "0.3.45"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "python-xlsx",
       "versions": [
-        "0.3.44"
+        "0.3.45"
       ]
     }
   ]
