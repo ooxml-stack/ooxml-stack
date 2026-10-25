@@ -3156,15 +3156,15 @@
     },
     {
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "08582e953c9d829f386a8849f0f3139683d0681a5d802710327c23abf3d6da3c"
+      "sha256": "b6c589d132ff65b4adbc8b1d69240fa2ff3cd95ed09f3fd57bd45f451c8769ce"
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "79beaa6aa910644e7a83dd80e022c6c9db939c6074ca793a70ec6db89e954d04"
+      "sha256": "ab631220f967e5d54f615ec4b9bd03ae1ad5d4dbd507c068ca801240cb0067ff"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "1f618596c97d80d684b3e4cba1d249ae589f05a1ea01257a8b02125870b42960"
+      "sha256": "ac89f8f70ae79ea8a5b12b8f3e483c5f2194ead78e37ea0463806a911f3cb659"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -3339,7 +3339,7 @@
       "sha256": "8a971ac80702cb3521bac1b2db0cde6aecf2a430aa05418f4d095903131338e4"
     }
   ],
-  "inputs_digest": "e45d433a393909e71a4fc71ffc04342adbe40e2215740ad4bd1c2fd3e95414d0",
+  "inputs_digest": "2cc4a6257c445e20f5df8c31d9248e4893c0b8c0d6d2a30b6eb77f3531681012",
   "kind": "ecosystem-plan",
   "nodes": [
     {
