@@ -55,16 +55,16 @@
   "edges": [
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "b62-security-baseline-20261005",
+        "ref_declared_kind": "sha",
+        "ref_raw": "411aa08fed58ca88602e165673f2f6849eab5d58",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-operation-engine.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "9c8a535bb17798a0b8d303a4961644056eb3c7e9",
+        "commit": "411aa08fed58ca88602e165673f2f6849eab5d58",
         "source": "ooxml-apps/uv.lock",
-        "version": "0.1.37"
+        "version": "0.1.50"
       },
       "from": "ooxml-apps",
       "group": null,
@@ -281,13 +281,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
+        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.6.19"
       },
@@ -557,14 +557,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_declared_kind": "tag",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "b4405caf4151924062e871b25cd49277e35f3e35",
+        "commit": "2c7ca0bdf64bb7af385efa504de144d0987959d6",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "1.2.41"
       },
@@ -600,14 +600,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_declared_kind": "tag",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7b4099f3873392ba5502b527e630f72870bf737a",
+        "commit": "f5f9ea57d11e86f0db1c926a6a604e0b0e663922",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "2.0.30"
       },
@@ -643,14 +643,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "native-save-preservation-20261019",
+        "ref_declared_kind": "tag",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "e08564808211e310e7a5d8cf65d7468608c442ed",
+        "commit": "e9045c2e46f3f7575aaad8fea38fd4f0b45b8250",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.3.45"
       },
@@ -719,13 +719,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
+        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
         "source": "ooxml-stubs/uv.lock",
         "version": "0.6.19"
       },
@@ -809,13 +809,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
+        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
         "source": "python-docx/uv.lock",
         "version": "0.6.19"
       },
@@ -939,13 +939,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "db1558d01656bbdd66d01bfdf150bf5827670f27",
+        "commit": "7d9903571aa8a20362598cd89d95bfd43abc7b05",
         "source": "python-docx/uv.lock",
         "version": "0.2.35"
       },
@@ -982,13 +982,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "dependency-groups",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": ">=2.0.29"
       },
       "expected": {
-        "commit": "7b4099f3873392ba5502b527e630f72870bf737a",
+        "commit": "f5f9ea57d11e86f0db1c926a6a604e0b0e663922",
         "source": "python-docx/uv.lock",
         "version": "2.0.30"
       },
@@ -1003,13 +1003,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
+        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
         "source": "python-pptx/uv.lock",
         "version": "0.6.19"
       },
@@ -1102,13 +1102,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "db1558d01656bbdd66d01bfdf150bf5827670f27",
+        "commit": "7d9903571aa8a20362598cd89d95bfd43abc7b05",
         "source": "python-pptx/uv.lock",
         "version": "0.2.35"
       },
@@ -1145,13 +1145,13 @@
     {
       "declared": {
         "ref_declared_kind": "tag",
-        "ref_raw": "native-relationship-preservation-20261007",
+        "ref_raw": "chart-text-capability-20261025",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "1585613c9ad53eed51aa5cc26a34f1af4c327c95",
+        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
         "source": "python-xlsx/uv.lock",
         "version": "0.6.19"
       },
@@ -3088,11 +3088,11 @@
     },
     {
       "path": "ooxml-apps/pyproject.toml",
-      "sha256": "1bdd9fda5488bebb6fb666c4df18e56cdcc6dd0e6a9803fbba99ddede04b2920"
+      "sha256": "841a0023a40b573963d89cd606816cddfca3217e3f9f7a8297f72dee070e8755"
     },
     {
       "path": "ooxml-apps/uv.lock",
-      "sha256": "ffc4bb9910a3793b961fa6e75473ccb980d2b870217fb69594eae4d66127ac9c"
+      "sha256": "3549e30dbc27c2370766648000546e355d6ac0cc3825c81817c478234ba36663"
     },
     {
       "path": "ooxml-core/.github/workflows/ci.yml",
@@ -3160,11 +3160,11 @@
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "ab631220f967e5d54f615ec4b9bd03ae1ad5d4dbd507c068ca801240cb0067ff"
+      "sha256": "a60043bcaeb128ef44c495c55c9b3dfb517c98cc8fed498354091926ce85aff1"
     },
     {
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "ac89f8f70ae79ea8a5b12b8f3e483c5f2194ead78e37ea0463806a911f3cb659"
+      "sha256": "7d2ebac50c1745e8f44018659d3656349e57f3fd5121d40210ca8ed0487fab7f"
     },
     {
       "path": "ooxml-spec/.github/workflows/ci.yml",
@@ -3220,11 +3220,11 @@
     },
     {
       "path": "ooxml-stubs/pyproject.toml",
-      "sha256": "cec7e9757841530d967187142dcd2e657e25458a8e4eb068576c4bab5ef457c8"
+      "sha256": "b7d9df5c098c6dfe15988cfad21449dcad71b7b707be2241bf6224ba1aabc1c6"
     },
     {
       "path": "ooxml-stubs/uv.lock",
-      "sha256": "05a0345f617cb181c9bc5276c567230df6f034a3f34f726881b4af6f94e30633"
+      "sha256": "9d6a96bc0ce8cde3c3862e9f0564fcfa8b0c330a384b66f72f92bc1369362648"
     },
     {
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
@@ -3268,7 +3268,7 @@
     },
     {
       "path": "python-docx/pyproject.toml",
-      "sha256": "91beb61c6cfe71ac3a520e8dff669a68a4f75b946131ac1ce5cf602d4f81c3fe"
+      "sha256": "536bde5249ff37ce3555297c46f403f014cb348e27476efd3ea01a9813b1a58f"
     },
     {
       "path": "python-docx/src/docx/__init__.py",
@@ -3276,7 +3276,7 @@
     },
     {
       "path": "python-docx/uv.lock",
-      "sha256": "ce561143177f4611ec02dbd4146c2f801b4419e52cd949ece048003206b1eb88"
+      "sha256": "421afc3fd98304b610cf7fe0c2407db0f7b7c116125a005e9aeeff6cf31c2b75"
     },
     {
       "path": "python-pptx/.github/workflows/ci.yml",
@@ -3300,7 +3300,7 @@
     },
     {
       "path": "python-pptx/pyproject.toml",
-      "sha256": "877169de4c011890cae6a7365e0c52a7962d7004398952f6555ad0827665282d"
+      "sha256": "45827a0d64bdd72c424b26ec307c083ab29b20bef845e2badd67c488adb8ad17"
     },
     {
       "path": "python-pptx/src/pptx/__init__.py",
@@ -3308,7 +3308,7 @@
     },
     {
       "path": "python-pptx/uv.lock",
-      "sha256": "456eb7816f6f75036d3cd97710ccc1348b31073b8617a9947b3a9ef7f5ec0152"
+      "sha256": "f1279d882bb5da046e3485220ebfb9e2108b6e58f242da3e72ded44404f70fa8"
     },
     {
       "path": "python-xlsx/.github/workflows/ci.yml",
@@ -3328,7 +3328,7 @@
     },
     {
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "fb59a7fe988a824146913ba853cd2a47ae560a35d6adaf38df3bedac888cbb59"
+      "sha256": "69f59bd74c698640a29f695fd44656b98e4e8bf2d2750da82dd0b0ccafe9289e"
     },
     {
       "path": "python-xlsx/src/xlsx/__init__.py",
@@ -3336,10 +3336,10 @@
     },
     {
       "path": "python-xlsx/uv.lock",
-      "sha256": "8a971ac80702cb3521bac1b2db0cde6aecf2a430aa05418f4d095903131338e4"
+      "sha256": "936a14b97ec93f2d490861928798b5470b3c1ca86ea8040180833a661317b3fa"
     }
   ],
-  "inputs_digest": "2cc4a6257c445e20f5df8c31d9248e4893c0b8c0d6d2a30b6eb77f3531681012",
+  "inputs_digest": "aa8b29bf75faf6a51616b52677b4e393b5c6c903708a1c81a5a085998b8d264e",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3471,31 +3471,31 @@
     {
       "repos": [
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "ooxml-stubs",
           "source_file": "ooxml-stubs/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
           "version": "0.6.19"
@@ -3511,17 +3511,17 @@
     {
       "repos": [
         {
-          "ref": "b62-security-baseline-20261005",
+          "ref": "411aa08fed58ca88602e165673f2f6849eab5d58",
           "repo": "ooxml-apps",
           "source_file": "ooxml-apps/pyproject.toml",
-          "version": "0.1.37"
+          "version": "0.1.50"
         }
       ],
       "role": "runtime",
       "uniform": true,
       "upstream": "ooxml-operation-engine",
       "versions": [
-        "0.1.37"
+        "0.1.50"
       ]
     },
     {
@@ -3565,13 +3565,13 @@
     {
       "repos": [
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.2.35"
         },
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.2.35"
@@ -3637,7 +3637,7 @@
     {
       "repos": [
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "1.2.41"
@@ -3653,7 +3653,7 @@
     {
       "repos": [
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "2.0.30"
@@ -3669,7 +3669,7 @@
     {
       "repos": [
         {
-          "ref": "native-relationship-preservation-20261007",
+          "ref": "chart-text-capability-20261025",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "2.0.30"
@@ -3685,7 +3685,7 @@
     {
       "repos": [
         {
-          "ref": "native-save-preservation-20261019",
+          "ref": "chart-text-capability-20261025",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.3.45"
