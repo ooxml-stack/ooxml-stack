@@ -8,11 +8,13 @@ The native release pipeline is fail-closed. A public release is not a developmen
 make native-dev
 make native-test CANDIDATE=/absolute/path/to/OOXML-macos-arm64.dmg INTERNAL_LICENSE=1
 make native-test CANDIDATE=/absolute/path/to/OOXML-macos-arm64.dmg
+make native-wheelhouse NATIVE_WHEELHOUSE=/absolute/path/to/empty-wheelhouse
+make native-release-local
 make native-release
 .venv-ecosystem-inventory/bin/python -m scripts.native_release verify-live
 ```
 
-`native-dev` permits ad-hoc signing and is never publishable. `native-test` requires an explicit candidate; `CANDIDATE=latest-dev` is a local-only shortcut. `native-release` requires clean repositories, Developer ID signing, notarization, a valid external release-test license, and the configured publish adapter.
+`native-dev` permits ad-hoc signing and is never publishable. `native-test` requires an explicit candidate; `CANDIDATE=latest-dev` is a local-only shortcut. `native-wheelhouse` refuses dirty source trees, builds third-party and first-party wheels, and writes the committed wheelhouse lock. `native-release-local` requires clean repositories, Developer ID signing, notarization, and a valid external release-test license, but skips the external publish transaction. `native-release` adds the configured publish adapter and requires `OOXML_NATIVE_RELEASE_COMMIT`.
 
 ## Required environment
 
@@ -23,7 +25,7 @@ make native-release
 - `OOXML_NATIVE_WHEELHOUSE`: frozen wheel directory. Release requires the exact pinned Nuitka and runtime wheels.
 - `OOXML_NATIVE_BUILD_ENV`: optional reusable build environment for local development only; release rejects it.
 - `OOXML_NATIVE_PUBLISH_STEP_COMMAND`: executes one approved publish transaction step at a time. The implemented adapter is `python -m scripts.native_release.publish_github_release`.
-- `OOXML_NATIVE_RELEASE_COMMIT`: required full SHA of the pushed release commit. The publisher verifies it is contained by a remote branch and pins it with `gh release create --target`.
+- `OOXML_NATIVE_RELEASE_COMMIT`: required full SHA of the pushed release commit for public publication. Local-only release derives its commit from the clean stack checkout instead.
 - `OOXML_NATIVE_RELEASE_TAG`: optional explicit immutable GitHub release tag; otherwise derived from the versioned artifact URL.
 - `OOXML_NATIVE_GITHUB_REPO`: optional repository override, defaulting to `ooxml-stack/ooxml-stack`.
 
