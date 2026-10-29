@@ -12,3 +12,4 @@ dist/
 .venv-ecosystem-inventory
 .venv-ecosystem-inventory/
 *.log
+.worktrees/
