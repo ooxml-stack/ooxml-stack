@@ -65,7 +65,15 @@ def main() -> int:
 
 
 def _release_target() -> str:
-    target = _required("NATIVE_RELEASE_COMMIT").strip().lower()
+    target = (
+        (
+            os.environ.get("NATIVE_RELEASE_COMMIT")
+            or os.environ.get("OOXML_NATIVE_RELEASE_COMMIT")
+            or ""
+        )
+        .strip()
+        .lower()
+    )
     if not COMMIT_SHA.fullmatch(target):
         raise ValueError("NATIVE_RELEASE_COMMIT must be a full 40-character SHA")
     return target
@@ -142,12 +150,8 @@ def _verify_assets(tag: str, manifest: dict) -> None:
 
 
 def _verify_latest(tag: str, manifest: dict) -> None:
-    view = json.loads(
-        _run(
-            ["gh", "release", "view", tag, "--repo", REPO, "--json", "isLatest"]
-        ).stdout
-    )
-    if view.get("isLatest") is not True:
+    latest = json.loads(_run(["gh", "api", f"repos/{REPO}/releases/latest"]).stdout)
+    if latest.get("tag_name") != tag:
         raise ValueError("tag is not the latest GitHub release")
     latest_manifest_url = manifest["latest"]["manifest_url"]
     if not latest_manifest_url.endswith("/releases/latest/download/manifest.json"):
