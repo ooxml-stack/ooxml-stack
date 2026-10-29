@@ -25,8 +25,8 @@ build:
   build_env_env: OOXML_NATIVE_BUILD_ENV
   requirements: release/native-runtime-requirements.txt
   first_party_distributions:
-    - ooxml-operation-engine==0.1.50
-    - ooxml-client==0.1.54
+    - ooxml-operation-engine==0.1.54
+    - ooxml-client==0.1.58
     - ooxml-core==0.6.19
     - ooxml-spec==0.3.1
     - ooxml-stubs==0.2.35
@@ -64,8 +64,8 @@ build:
 
 runtime:
   artifact_id: ooxml-operation-engine-b1181f42-macosx_14_0-arm64-b2
-  client_version: "0.1.54"
-  engine_version: "0.1.50"
+  client_version: "0.1.58"
+  engine_version: "0.1.54"
   classification: embedded-python
   fully_native: false
   external_python_required: false
