@@ -164,7 +164,7 @@ def test_latest_manifest_mismatch_fails(monkeypatch):
     monkeypatch.setattr(
         publisher,
         "_run",
-        lambda _command: SimpleNamespace(stdout='{"isLatest": true}'),
+        lambda _command: SimpleNamespace(stdout='{"tag_name": "native-v1-test"}'),
     )
     monkeypatch.setattr(live_verify, "fetch_url", lambda url: (200, payloads[url]))
     with pytest.raises(ValueError, match="HTTP JSON mismatch"):
@@ -320,3 +320,45 @@ def test_page_contract_rejects_url_only_in_body(monkeypatch):
     )
     with pytest.raises(live_verify.LiveVerifyError, match="does not declare"):
         live_verify.verify_page_contract(page, manifest)
+
+
+def test_release_target_accepts_pipeline_commit_alias(monkeypatch):
+    import scripts.native_release.publish_github_release as publisher
+
+    monkeypatch.delenv("NATIVE_RELEASE_COMMIT", raising=False)
+    monkeypatch.setenv("OOXML_NATIVE_RELEASE_COMMIT", "a" * 40)
+    assert publisher._release_target() == "a" * 40
+
+
+def test_verify_latest_uses_rest_api_tag(monkeypatch):
+    import scripts.native_release.publish_github_release as publisher
+
+    manifest = {
+        "latest": {
+            "manifest_url": "https://example.test/releases/latest/download/manifest.json"
+        },
+        "artifacts": {},
+    }
+    calls = []
+
+    def fake_run(command):
+        calls.append(command)
+        return type("R", (), {"stdout": '{"tag_name":"native-v1"}'})()
+
+    monkeypatch.setattr(publisher, "_run", fake_run)
+    monkeypatch.setattr(publisher, "_write_download_evidence", lambda *_args: None)
+    monkeypatch.setattr(
+        publisher.live_verify, "verify_json_url", lambda *_args, **_kwargs: {"ok": True}
+    )
+    monkeypatch.setattr(
+        publisher.live_verify, "verify_page_manifest_api", lambda *_args: {"ok": True}
+    )
+    monkeypatch.setenv(
+        "NATIVE_PAGE_MANIFEST_API_URL", "https://example.test/api/release-manifest"
+    )
+    publisher._verify_latest("native-v1", manifest)
+    assert calls[0][:3] == [
+        "gh",
+        "api",
+        "repos/ooxml-stack/ooxml-stack/releases/latest",
+    ]
