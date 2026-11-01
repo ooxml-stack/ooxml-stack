@@ -145,7 +145,7 @@ scan:
   forbidden_suffixes: [.py, .pyc, .pyo, .whl, .egg, .map]
   forbidden_names: [license.json, PKG-INFO, SOURCES.txt, pyvenv.cfg]
   business_source_markers:
-    - /Users/touchskyer/Code/ooxml-projects
+    - /ooxml-projects/
     - /stamped-engine-src/
     - /ooxml-operation-engine/src/
   allowed_toolchain_markers_file: release/native-scan-allowlist.json
