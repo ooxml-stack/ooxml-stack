@@ -63,7 +63,7 @@ build:
   embedded_python_runtime: "CPython 3.12.0"
 
 runtime:
-  artifact_id: ooxml-operation-engine-b1181f42-macosx_14_0-arm64-b2
+  artifact_id: ooxml-operation-engine-282075d2-macosx_14_0-arm64-b3
   client_version: "0.1.58"
   engine_version: "0.1.54"
   classification: embedded-python
@@ -158,15 +158,15 @@ scan:
 reproducibility:
   wheelhouse_lock: release/native-wheelhouse-lock.json
   source_commits:
-    client: e15028415a799c4328ce2a6206327cd0a0c385dd
-    engine: b1181f4212873a543a98b758bcbfd38005613a43
-    core: 1585613c9ad53eed51aa5cc26a34f1af4c327c95
+    client: 29d95c87474d05d0d561dbe46ec89e67500f8e34
+    engine: 282075d27421f2c84b2fbf5567ad72a6a270faa5
+    core: a658d5e23f7dbbfd6552941617bf17e1587e4d78
     spec: 34919621c3c06d1548956581e920812f9927bb7c
-    stubs: db1558d01656bbdd66d01bfdf150bf5827670f27
-    test_framework: 23d2e6d098d2e1e435381fc7908d05cdb853fc5e
-    docx: b4405caf4151924062e871b25cd49277e35f3e35
-    pptx: 7b4099f3873392ba5502b527e630f72870bf737a
-    xlsx: 958aa516a28e81701adfa1465f6ff94a83cbf929
+    stubs: 7d9903571aa8a20362598cd89d95bfd43abc7b05
+    test_framework: e0ae238008f9101da0e11f96b51276aa4385952f
+    docx: 2c7ca0bdf64bb7af385efa504de144d0987959d6
+    pptx: b61a1c4472938684ceba9958d3fb284733a07244
+    xlsx: 4fda39849656893f2d34b230445052ab97633bea
   normalized_payload_exclusions:
     - code_signature
     - macho_uuid
