@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import os
 import shutil
 import subprocess
@@ -23,6 +24,7 @@ def build_stage(config: dict[str, Any], stage: Path, mode: str, env=None) -> Pat
     build_env, fresh = _build_env(config, run_dir, values, mode)
     if fresh:
         _install_dependencies(config, build_env, wheelhouse)
+    _write_native_build_stamp(config, build_env)
     wrappers = _write_wrappers(run_dir, config)
     client_dist = _build_client(config, build_env, wrappers["client"], run_dir)
     engine_dist = _build_engine(config, build_env, wrappers["engine"], run_dir)
@@ -211,3 +213,26 @@ def _copy_public_metadata(
 
 def _run(command: list[str]):
     return subprocess.run(command, capture_output=True, text=True, check=False)
+
+def _write_native_build_stamp(config, env: Path) -> None:
+    package = env / "lib/python3.12/site-packages/ooxml_operation_engine"
+    if not package.is_dir():
+        raise BuildError(f"engine package is missing from build env: {package}")
+    digest = hashlib.sha256()
+    for path in sorted(package.rglob("*")):
+        if (not path.is_file() or "__pycache__" in path.parts
+                or path.suffix in {".pyc", ".pyo"} or path.name == ".DS_Store"):
+            continue
+        data = path.read_bytes()
+        digest.update(path.relative_to(package).as_posix().encode() + b"\0" +
+                     str(len(data)).encode() + b"\0" + data)
+    build_id = "sha256:" + digest.hexdigest()
+    version = subprocess.run(
+        [str(env / "bin/python"), "-c", "import ooxml_operation_engine.protocol as p; print(p.RUNTIME_VERSION)"],
+        capture_output=True, text=True, check=False,
+    ).stdout.strip()
+    if not version:
+        raise BuildError("could not determine engine runtime version")
+    (package / "_native_build.py").write_text(
+        f'BUILD_ID = "{build_id}"\nRUNTIME_VERSION = "{version}"\n', encoding="utf-8"
+    )
