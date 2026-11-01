@@ -82,7 +82,6 @@ def _third_party_wheels(config: dict[str, Any], python: Path, output: Path) -> N
             "-m",
             "pip",
             "wheel",
-            "--only-binary=:all:",
             "--wheel-dir",
             str(output),
             f"Nuitka=={config['build']['nuitka']}",

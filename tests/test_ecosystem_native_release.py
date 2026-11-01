@@ -297,6 +297,21 @@ def test_wheelhouse_rejects_dirty_source(tmp_path, monkeypatch):
         )
 
 
+def test_wheelhouse_allows_nuitka_sdist_build(monkeypatch, tmp_path):
+    from scripts.native_release import wheelhouse
+
+    commands = []
+    monkeypatch.setattr(wheelhouse, "_python", lambda *_args: Path("/python"))
+    monkeypatch.setattr(wheelhouse, "_run", lambda command: commands.append(command))
+    loaded = config()
+    wheelhouse._third_party_wheels(loaded, Path("/python"), tmp_path)
+
+    nuitka = next(command for command in commands if "Nuitka==" in command[-1])
+    assert "--only-binary=:all:" not in nuitka
+    runtime = next(command for command in commands if "-r" in command)
+    assert "--only-binary=:all:" in runtime
+
+
 def test_release_local_skips_publish(monkeypatch, tmp_path):
     from scripts.native_release import release
 
