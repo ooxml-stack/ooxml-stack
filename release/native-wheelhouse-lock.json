@@ -107,12 +107,12 @@
     },
     {
       "filename": "ooxml_operation_engine-0.1.54-py3-none-any.whl",
-      "sha256": "469b2a5f6dffd132f2066b61e44c06109416442319332b953b66278ce0c26eb2",
-      "size": 3250670
+      "sha256": "cf1a2de42868148850edb0e4d81ca594f4f0d7040878dfd81aad025b62c79294",
+      "size": 3250696
     },
     {
       "filename": "ooxml_spec-0.3.1-py3-none-any.whl",
-      "sha256": "9b11a73645e8bc694ab4a01f8f4b90cea347f8a84eca29f71da80367b2632e9b",
+      "sha256": "f3f0611b4675e77961e67c5513515667ae5cf4e4cada51d09b1a41770e7a470c",
       "size": 264487
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "filename": "python_docx-1.2.41-py3-none-any.whl",
-      "sha256": "4df17c2ad5a90bd67a48e7118a6fac21dd7224b36f4c24d16892fc314956eabd",
+      "sha256": "d13b4d56f3ce14801f624f3870d6eb82ab437ee34b4a83c3e6ad042208389794",
       "size": 350133
     },
     {
@@ -192,12 +192,12 @@
     },
     {
       "filename": "python_pptx-2.0.30-py3-none-any.whl",
-      "sha256": "af02547d31b8e52ac08f447c4c3d7d43f25f1a49d1ea4df3939efb3eafb9c95c",
+      "sha256": "b38a13d129cfb11071f261c8e474a11e5faed7af85d3fb216289d9575b7d86dc",
       "size": 698455
     },
     {
       "filename": "python_xlsx-0.3.45-py3-none-any.whl",
-      "sha256": "ce09fa5da022c7b6614eb30aea3c163c6688e05d1b91da7c26aa09b868dc1ab4",
+      "sha256": "c1cb79a54c9f001818e0ea8a28407d1de541e8e730d868b793b3aeb3556ba1fc",
       "size": 300174
     },
     {
@@ -252,5 +252,5 @@
     }
   ],
   "schema_version": 1,
-  "sha256": "8741ef58acaae7494a01bb8926557698eded87f8eb2161289c41ca8fcf700230"
+  "sha256": "ecace49e3c39e275cef19621f6a91d50b3f852a98781a406a7843705e9557aad"
 }
