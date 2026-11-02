@@ -188,7 +188,7 @@ def test_release_fails_closed_without_developer_id(monkeypatch, capsys):
     assert "Developer ID Application identity" in captured.err
 
 
-def test_builder_assembles_stage_from_dist_outputs(tmp_path, monkeypatch):
+def test_builder_stamps_every_build_before_compilation(tmp_path, monkeypatch):
     loaded = config()
     stage = tmp_path / "dev/stage"
     client = tmp_path / "client.dist"
@@ -197,13 +197,27 @@ def test_builder_assembles_stage_from_dist_outputs(tmp_path, monkeypatch):
     engine.mkdir()
     (client / "ooxml").write_text("client", encoding="utf-8")
     (engine / "ooxml-engine").write_text("engine", encoding="utf-8")
+    calls = []
     monkeypatch.setattr(builder, "_wheelhouse", lambda *_args: tmp_path)
     monkeypatch.setattr(builder, "_build_env", lambda *_args: (tmp_path / "env", False))
-    monkeypatch.setattr(builder, "_build_client", lambda *_args: client)
-    monkeypatch.setattr(builder, "_build_engine", lambda *_args: engine)
+    monkeypatch.setattr(
+        builder, "_write_native_build_stamp", lambda *_args: calls.append("stamp")
+    )
+
+    def build_client(*_args):
+        calls.append("client")
+        return client
+
+    def build_engine(*_args):
+        calls.append("engine")
+        return engine
+
+    monkeypatch.setattr(builder, "_build_client", build_client)
+    monkeypatch.setattr(builder, "_build_engine", build_engine)
     monkeypatch.setattr(builder, "_copy_public_metadata", lambda *_args: None)
     result = builder.build_stage(loaded, stage, "dev", env={})
     assert result == stage
+    assert calls == ["stamp", "client", "engine"]
     assert (stage / "bin/ooxml").is_symlink()
     assert (stage / "lib/ooxml-engine/ooxml-engine").is_file()
 

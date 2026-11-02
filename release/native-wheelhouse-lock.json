@@ -107,12 +107,12 @@
     },
     {
       "filename": "ooxml_operation_engine-0.1.54-py3-none-any.whl",
-      "sha256": "b62f9955b14fe51347ed01a01c7ee76fbdbd6e41789b8d285d17f95b2c2ba13d",
-      "size": 3249799
+      "sha256": "1c3f95d05df62784cd7d30a406838b1230f6942f64cbe88023859ee0d1365369",
+      "size": 3250720
     },
     {
       "filename": "ooxml_spec-0.3.1-py3-none-any.whl",
-      "sha256": "05ff27c228bf7f43ecce1f195bcf5b38d33e5cee26e41f1ded586c5931772d24",
+      "sha256": "a2f646481cb78f0d2d216595a25c7fd96837f6c4fb56a89142fbaf0a8757db80",
       "size": 264487
     },
     {
@@ -122,8 +122,8 @@
     },
     {
       "filename": "ooxml_test_framework-0.5.38-py3-none-any.whl",
-      "sha256": "66a8e6b917917e0b5b7e1dc7d112b795d39e9bfe8d290988248131121d888d0a",
-      "size": 230436
+      "sha256": "2f57cf0a6a6cbff533b46cdfabcb58b310aec38b33c1367c51ac93d79e347cec",
+      "size": 230198
     },
     {
       "filename": "openpyxl-3.1.5-py2.py3-none-any.whl",
@@ -177,7 +177,7 @@
     },
     {
       "filename": "python_docx-1.2.41-py3-none-any.whl",
-      "sha256": "a91e8f1bd37aae5fc76963f1967258ee9c2cc11ce69383f8ac630acb7dbb25e8",
+      "sha256": "534b657ecd1b420ff5ed2b2eb7d87cd3dc3551fbbe791e56df72efd3d5367a9a",
       "size": 350133
     },
     {
@@ -192,13 +192,13 @@
     },
     {
       "filename": "python_pptx-2.0.30-py3-none-any.whl",
-      "sha256": "64dacc77c9c2d26fe51d6aaa336866994765d1860859b396676340fba9c98f62",
+      "sha256": "03c0d1cb2fa15e514584ec66aeed3bce0c0930da0368753642d21c79ffb0bc28",
       "size": 698455
     },
     {
       "filename": "python_xlsx-0.3.45-py3-none-any.whl",
-      "sha256": "abd95c866e66d938b83514101ad28e86d5b07922049abbe0a982068ae93106ac",
-      "size": 300190
+      "sha256": "43b02dd2b70c8410443f69add1576cd34ba51b6b0fd12684a8b0b172283014af",
+      "size": 300174
     },
     {
       "filename": "pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
@@ -252,5 +252,5 @@
     }
   ],
   "schema_version": 1,
-  "sha256": "23ea92cb0d885bbe05bdfc6311d744caf63115c40baeb48e16890b17284e6f85"
+  "sha256": "e54be5011f57591bb42483afbd58905c7a625a4d1794d639eba5c534c7c91733"
 }
