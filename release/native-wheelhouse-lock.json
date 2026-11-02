@@ -102,17 +102,17 @@
     },
     {
       "filename": "ooxml_core-0.6.19-py3-none-any.whl",
-      "sha256": "a1d6cc1b170ddc9dc053eeafc9d57658d0d49a1f12715658e4d55244f7a888c9",
-      "size": 391798
+      "sha256": "36f79439382d758adf4166ab9e67376274902e798996e45ea4119be1b8e9a0ed",
+      "size": 392548
     },
     {
       "filename": "ooxml_operation_engine-0.1.54-py3-none-any.whl",
-      "sha256": "fbc3cc3a2f32715b4bdbf10b20879d88e39ec18ddfb0038c70321eb48f296c3f",
-      "size": 3253344
+      "sha256": "7388f8cab364865baac450ef121f5818ef6c0495a8a2e1e6c3cc25db52626617",
+      "size": 3254204
     },
     {
       "filename": "ooxml_spec-0.3.1-py3-none-any.whl",
-      "sha256": "9be40707450e2fbdfceed7bc7aabec0d988ebd047fc2fa71ec01073fa25ac5d3",
+      "sha256": "65dd81f791305685eda7ecdae28f7a7969e5dcc46481c78ed9763c1c63b769be",
       "size": 264487
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "filename": "python_docx-1.2.41-py3-none-any.whl",
-      "sha256": "4aafabac940826a0c7033760da6b2f326af8f1de65eff51e15579f4f7d64d1cc",
+      "sha256": "285b5801bddb3d670391e81e92d7a5404aa870d48385bbfb84328b70e358a042",
       "size": 350133
     },
     {
@@ -192,13 +192,13 @@
     },
     {
       "filename": "python_pptx-2.0.30-py3-none-any.whl",
-      "sha256": "361c475c7ff98d7cb3d4685d60b7cd67904d3c338e4e910785b92ee85269af53",
+      "sha256": "2c273770952faa5361c3cadbd4bf252000c46a6e0c72e85bc990f7f434ddcdb4",
       "size": 698455
     },
     {
       "filename": "python_xlsx-0.3.45-py3-none-any.whl",
-      "sha256": "7d599a264d7dc58451f7135975ee102bb2e70158f5286e5178b4ebb0440fd838",
-      "size": 300244
+      "sha256": "c89044e28d85140dd0cf986f5aebcecff3e80c328ea0d51b6a33aa19c6b1a002",
+      "size": 300331
     },
     {
       "filename": "pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
@@ -252,5 +252,5 @@
     }
   ],
   "schema_version": 1,
-  "sha256": "7733349207157e47bac4a693b00cd848ce97645213a80223fd843d7f6236f9e6"
+  "sha256": "753fb4897c3700e6f1c4b3d04991fb01c8f429ae8471ab996ffdd4c507c74393"
 }
