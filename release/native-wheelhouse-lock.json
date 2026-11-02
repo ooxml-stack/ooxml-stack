@@ -97,8 +97,8 @@
     },
     {
       "filename": "ooxml_client-0.1.58-py3-none-any.whl",
-      "sha256": "431c0e3ec7db3226df6460e94fe813b079b146ff4515f946f77e01e77327603b",
-      "size": 19785
+      "sha256": "68162babf149e5f1e0de3ca892cc4da81a44bef3ac7217f2bdaf3c9588fa84a5",
+      "size": 19943
     },
     {
       "filename": "ooxml_core-0.6.19-py3-none-any.whl",
@@ -107,12 +107,12 @@
     },
     {
       "filename": "ooxml_operation_engine-0.1.54-py3-none-any.whl",
-      "sha256": "1c3f95d05df62784cd7d30a406838b1230f6942f64cbe88023859ee0d1365369",
-      "size": 3250720
+      "sha256": "fbc3cc3a2f32715b4bdbf10b20879d88e39ec18ddfb0038c70321eb48f296c3f",
+      "size": 3253344
     },
     {
       "filename": "ooxml_spec-0.3.1-py3-none-any.whl",
-      "sha256": "a2f646481cb78f0d2d216595a25c7fd96837f6c4fb56a89142fbaf0a8757db80",
+      "sha256": "9be40707450e2fbdfceed7bc7aabec0d988ebd047fc2fa71ec01073fa25ac5d3",
       "size": 264487
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "filename": "python_docx-1.2.41-py3-none-any.whl",
-      "sha256": "534b657ecd1b420ff5ed2b2eb7d87cd3dc3551fbbe791e56df72efd3d5367a9a",
+      "sha256": "4aafabac940826a0c7033760da6b2f326af8f1de65eff51e15579f4f7d64d1cc",
       "size": 350133
     },
     {
@@ -192,13 +192,13 @@
     },
     {
       "filename": "python_pptx-2.0.30-py3-none-any.whl",
-      "sha256": "03c0d1cb2fa15e514584ec66aeed3bce0c0930da0368753642d21c79ffb0bc28",
+      "sha256": "361c475c7ff98d7cb3d4685d60b7cd67904d3c338e4e910785b92ee85269af53",
       "size": 698455
     },
     {
       "filename": "python_xlsx-0.3.45-py3-none-any.whl",
-      "sha256": "43b02dd2b70c8410443f69add1576cd34ba51b6b0fd12684a8b0b172283014af",
-      "size": 300174
+      "sha256": "7d599a264d7dc58451f7135975ee102bb2e70158f5286e5178b4ebb0440fd838",
+      "size": 300244
     },
     {
       "filename": "pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl",
@@ -252,5 +252,5 @@
     }
   ],
   "schema_version": 1,
-  "sha256": "e54be5011f57591bb42483afbd58905c7a625a4d1794d639eba5c534c7c91733"
+  "sha256": "7733349207157e47bac4a693b00cd848ce97645213a80223fd843d7f6236f9e6"
 }
