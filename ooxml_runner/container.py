@@ -64,6 +64,10 @@ def _finalize(stage: dict, started: float, before: set[str], reports: Path, repo
 
 
 def _run_stage(reports: Path, report: dict, steps: dict, stage: dict, timeout: int) -> None:
+    if stage.get("status") == "pass" and stage.get("reused") is True:
+        progress_event(reports, "stage_reused", stage=stage["name"], source=stage.get("reused_from"))
+        print(f"REUSE {stage['name']}", flush=True)
+        return
     started = time.monotonic()
     before = set(os.listdir(reports)) if reports.exists() else set()
     stage.update(status="running", started_at=utc_now())
@@ -100,7 +104,12 @@ def run_stages(reports: Path, steps: dict, report: dict, timeout: int) -> dict:
     signal.signal(signal.SIGALRM, stage_timeout)
     if not report.get("stages"):
         report["stages"] = [{"name": name, "status": "not_run"} for name in steps]
-    progress_event(reports, "gate_started", commit=report.get("commit"), stages=list(steps))
+    progress_event(
+        reports, "gate_started", commit=report.get("commit"), stages=list(steps),
+        reused_stages=[stage["name"] for stage in report["stages"]
+                       if stage.get("status") == "pass" and stage.get("reused") is True],
+        resume=report.get("resume"),
+    )
     for stage in report["stages"]:
         _run_stage(Path(reports), report, steps, stage, timeout)
     return report

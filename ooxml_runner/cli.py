@@ -33,6 +33,7 @@ from . import docker as docker_module
 from . import identity as identity_module
 from . import plan as plan_module
 from . import report as report_module
+from . import resume as resume_module
 from . import signals as signals_module
 from . import snapshot as snapshot_module
 
@@ -173,8 +174,8 @@ def _launch(request: dict[str, Any], workspace, reports, config, timeout, bucket
 
 
 def run_repository(
-    *, root, repo, commit="HEAD", runner_commit, plan, output, reuse_success=False, timeout=None,
-    repo_path=None,
+    *, root, repo, commit="HEAD", runner_commit, plan, output, reuse_success=False,
+    resume_from=None, timeout=None, repo_path=None,
 ) -> dict[str, Any]:
     """Run the full verification for one commit and return the verified report."""
     bucket = docker_module.platform_bucket()
@@ -208,7 +209,12 @@ def run_repository(
             binding=request["binding"], image=config["image"], inputs=inputs,
             stages=expected["stages"],
         )
-        report_module.save(reports, skeleton)
+        if resume_from is not None:
+            source_report = Path(resume_from)
+            previous = report_module.load(source_report)
+            resume_module.prepare(previous, skeleton, source_report, reports)
+        else:
+            report_module.save(reports, skeleton)
         try:
             result = _launch(request, snapshot.parent, reports, config,
                              timeout or float(config["timeout_seconds"]), bucket)
@@ -240,6 +246,7 @@ def _parser() -> argparse.ArgumentParser:
         if name == "run":
             child.add_argument("--output", required=True, help="root directory for run reports")
             child.add_argument("--reuse-success", action="store_true", help="reuse a matching cached pass")
+            child.add_argument("--resume-from", type=Path, help="verified failed report to resume")
             child.add_argument("--timeout", type=float, default=None, help="override the wall-clock timeout")
         if name == "verify-report":
             child.add_argument("--report", required=True, help="report.json to verify")
@@ -269,8 +276,10 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "verify-report":
             payload = verify_report_file(**shared, report=args.report)
         else:
-            payload = run_repository(**shared, output=args.output,
-                                     reuse_success=args.reuse_success, timeout=args.timeout)
+            payload = run_repository(
+                **shared, output=args.output, reuse_success=args.reuse_success,
+                resume_from=args.resume_from, timeout=args.timeout,
+            )
     except signals_module.TerminationRequested as exc:
         # The report and the container were already finalized on the way out.
         print(f"{args.command} stopped: {exc}", file=sys.stderr)
