@@ -92,6 +92,7 @@ def _env(config: dict, commit: str, runner_commit: str, name: str, cpus: int) ->
         # refuses to run when it is not this commit's source.
         "OOXML_CI_RUNNER_COMMIT": runner_commit,
         "OOXML_CI_IMAGE": config["image"],
+        "OOXML_CI_PLATFORM": config["platform"],
         "OOXML_CI_RUN_ID": name,
         "OOXML_CI_REPORT_UID": str(os.getuid()),
         "OOXML_CI_REPORT_GID": str(os.getgid()),
@@ -117,7 +118,7 @@ def command(
 ) -> list[str]:
     """Build the ``docker run`` argv for one execution."""
     argv = [
-        "docker", "run", "--rm", "--init", "--name", name,
+        "docker", "run", "--rm", "--init", "--pull=never", "--name", name,
         "--platform", config["platform"],
         "--workdir", f"{CONTAINER_WORKSPACE}/{repository}",
         "--interactive", "--cpus", str(cpus), "--memory", "8g",
@@ -171,8 +172,42 @@ def _cleanup(name: str) -> None:
         pass
 
 
+def _pinned_image(argv: list[str]) -> tuple[str, str]:
+    image = platform = ""
+    for index, item in enumerate(argv[:-1]):
+        if item != "--env":
+            continue
+        value = argv[index + 1]
+        if value.startswith("OOXML_CI_IMAGE="):
+            image = value.split("=", 1)[1]
+        elif value.startswith("OOXML_CI_PLATFORM="):
+            platform = value.split("=", 1)[1]
+    if not image or not platform:
+        raise DockerError("docker run is missing pinned image/platform metadata")
+    return image, platform
+
+
+def require_local_image(argv: list[str]) -> None:
+    """Fail before launch unless the digest-pinned image is already local."""
+    image, platform = _pinned_image(argv)
+    result = subprocess.run(
+        ["docker", "image", "inspect", image, "--format", "{{.Os}}/{{.Architecture}}"],
+        capture_output=True, text=True, timeout=30, check=False,
+    )
+    if result.returncode:
+        raise DockerError(f"pinned CI image is not available locally: {image}")
+    expected = platform.replace("/", "/")
+    observed = result.stdout.strip()
+    if observed != "linux/amd64" or expected != "linux/amd64":
+        raise DockerError(
+            f"pinned CI image platform mismatch: expected {expected}, observed {observed}"
+        )
+
+
 def execute(argv: list[str], reports: Path, token: str, timeout: float, name: str) -> int:
     """Run the container, streaming its log live, and always clean the container up."""
+    if argv[:2] == ["docker", "run"]:
+        require_local_image(argv)
     process = subprocess.Popen(
         argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
     )

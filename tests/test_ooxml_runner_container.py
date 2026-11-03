@@ -27,6 +27,7 @@ def test_the_container_command_never_uses_a_shell(tmp_path):
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
     assert argv[:2] == ["docker", "run"]
+    assert "--pull=never" in argv
     assert "sh" not in argv and "-c" not in argv
     assert argv[-4:] == ["--repository", REPO, "--adapter", "scripts.ci.adapter"]
     assert argv[-7:-4] == ["python", "-m", "ooxml_runner.bootstrap"]
@@ -229,3 +230,19 @@ def test_an_unknown_partition_is_refused_before_the_container_starts(monkeypatch
     monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "windows")
     with pytest.raises(docker.DockerError, match="unknown OOXML_PLATFORM_BUCKET"):
         docker.platform_bucket()
+
+def test_execute_refuses_a_missing_or_wrong_platform_image_before_run(tmp_path, monkeypatch):
+    argv = [
+        "docker", "run", "--env", "OOXML_CI_IMAGE=pinned@sha256:" + "0" * 64,
+        "--env", "OOXML_CI_PLATFORM=linux/amd64", "pinned@sha256:" + "0" * 64,
+    ]
+    calls = []
+
+    def inspect(*args, **kwargs):
+        calls.append(args)
+        return subprocess.CompletedProcess(args, 1, "", "missing")
+
+    monkeypatch.setattr(docker.subprocess, "run", inspect)
+    with pytest.raises(docker.DockerError, match="not available locally"):
+        docker.execute(argv, tmp_path, "token", 1, "fixture")
+    assert calls and calls[0][0][:3] == ["docker", "image", "inspect"]
