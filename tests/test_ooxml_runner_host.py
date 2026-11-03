@@ -24,13 +24,18 @@ from ooxml_runner import adapter as adapters
 from ooxml_runner import cli, docker, snapshot
 from ooxml_runner import report as report_module
 
+CACHE = {"schema_version": 1, "generation_id": "sha256:" + "c" * 64,
+         "ready": True, "components": []}
+
 
 @pytest.fixture(autouse=True)
 def _explicit_platform(monkeypatch):
     monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "default")
     monkeypatch.setattr(docker.platform, "system", lambda: "Linux")
-    observed = {"commit": RUNNER_COMMIT, "source_sha256": "e" * 64,
-                "root": str(Path(__file__).resolve().parents[1])}
+    root = Path(__file__).resolve().parents[1]
+    observed = {"commit": RUNNER_COMMIT,
+                "source_sha256": cli.identity_module.source_sha256_at(root, RUNNER_COMMIT),
+                "root": str(root)}
     monkeypatch.setattr(cli.identity_module, "identity", lambda: dict(observed))
     def require_expected(observed, expected):
         if observed.get("commit") != expected:
@@ -38,10 +43,7 @@ def _explicit_platform(monkeypatch):
         return {**observed, "commit": expected}
 
     monkeypatch.setattr(cli.identity_module, "require_expected", require_expected)
-    monkeypatch.setattr(cli.cache_module, "ensure", lambda *args, **kwargs: {
-        "schema_version": 1, "generation_id": "sha256:" + "c" * 64,
-        "ready": True, "components": [],
-    })
+    monkeypatch.setattr(cli.cache_module, "ensure", lambda *args, **kwargs: dict(CACHE))
     monkeypatch.setattr(
         cli.plan_module,
         "reverify_inputs",
@@ -253,7 +255,7 @@ def test_a_zero_exit_with_a_refused_report_is_recorded_as_a_failure(tmp_path, mo
     repo, plan, output = _fixture(tmp_path)
 
     def pass_but_wrong(reports):
-        payload = passing_report(repo, plan)
+        payload = passing_report(repo, plan, cache=dict(CACHE))
         payload["image"] = "other@sha256:" + "0" * 64
         report_module.save(reports, payload)
         return 0
@@ -273,7 +275,7 @@ def test_a_normal_run_still_reports_success(tmp_path, monkeypatch):
     repo, plan, output = _fixture(tmp_path)
 
     def pass_through(reports):
-        report_module.save(reports, passing_report(repo, plan))
+        report_module.save(reports, passing_report(repo, plan, cache=dict(CACHE)))
         return 0
 
     _stub_transport(monkeypatch, lambda real, reports, token, timeout, name: pass_through(reports))
