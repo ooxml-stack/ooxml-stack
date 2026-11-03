@@ -54,8 +54,8 @@ EXCLUDED_FROM_PLAN = [
     {"item": "resolved ref kinds and current commit of floating refs", "where": "scan"},
     {"item": "remote reachability, timings, clock", "where": "scan"},
     {
-        "item": "expected commits recorded by locks/environment (file facts)",
-        "where": "plan",
+        "item": "source commit IDs bound to selected input paths",
+        "where": "plan inputs",
     },
 ]
 
@@ -83,9 +83,10 @@ def build_plan(facts: Facts) -> dict[str, Any]:
         "host": HOST_KEY,
         "policy_file": f"{HOST_KEY}/{POLICY_RELPATH}",
         "contract": (
-            "Deterministic function of the selected input file paths and their bytes, "
-            "read from the working tree (uncommitted edits included). Contains no HEAD, "
-            "worktree, clock, network or resolved-ref fact; those live in the scan report."
+            "Deterministic function of selected input paths, their bytes and declared "
+            "source identity. Policy-bound node inputs come from immutable Git commits; "
+            "only host/exempt inputs may use the working tree. Contains no HEAD, worktree, "
+            "clock, network or resolved-ref fact; those live in the scan report."
         ),
         "nodes": _nodes(facts),
         "unreferenced_nodes": [key for key in declared if key not in used],

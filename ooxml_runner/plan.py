@@ -1,6 +1,8 @@
 """Consume the ecosystem plan as an execution input.
 
-The plan is a *static* description. It is used here for three things only:
+The plan is a *static* description. Its declared inputs are re-read from the
+commit bound in the manifest, never from mutable sibling worktrees. It is used
+here for three things only:
 
 1. proving the target repository is a declared full-verification node and that
    its declared workflow/job binding still exists,
@@ -17,6 +19,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -50,6 +54,7 @@ def load(path: Path) -> dict[str, Any]:
             "plan carries blocking diagnostics: "
             + "; ".join(f"{item.get('code')} {item.get('where')}" for item in errors[:5])
         )
+    _manifest({"payload": payload})
     return {
         "path": str(path),
         "sha256": hashlib.sha256(raw).hexdigest(),
@@ -93,8 +98,33 @@ def _manifest(plan: dict[str, Any]) -> list[dict[str, str]]:
     for entry in entries:
         if not isinstance(entry, dict) or not entry.get("path") or not entry.get("sha256"):
             raise PlanError(f"plan input manifest entry is malformed: {entry!r}")
-        manifest.append({"path": str(entry["path"]), "sha256": str(entry["sha256"])})
+        row = {"path": str(entry["path"]), "sha256": str(entry["sha256"])}
+        if entry.get("source") or entry.get("commit"):
+            if entry.get("source") != "git":
+                raise PlanError(f"unsupported input source: {entry.get('source')!r}")
+            if not re.fullmatch(r"[0-9a-f]{40}", str(entry.get("commit", ""))):
+                raise PlanError(f"git-bound input lacks a full commit: {entry!r}")
+            row["source"] = "git"
+            row["commit"] = str(entry["commit"])
+        manifest.append(row)
     return manifest
+
+
+def _git_blob(root: Path, path: str, commit: str) -> bytes | None:
+    key, relpath = path.split("/", 1)
+    exists = subprocess.run(
+        ["git", "cat-file", "-e", f"{commit}^{{commit}}"], cwd=str(root / key),
+        capture_output=True, check=False,
+    )
+    if exists.returncode != 0:
+        raise PlanError(f"git-bound input commit is unresolvable: {path}@{commit}")
+    result = subprocess.run(
+        ["git", "show", f"{commit}:{relpath}"], cwd=str(root / key),
+        capture_output=True, check=False,
+    )
+    if result.returncode != 0:
+        raise PlanError(f"git commit {commit} does not contain declared path: {path}")
+    return result.stdout
 
 
 EXCLUDED_REASON = "target_repository"
@@ -111,17 +141,21 @@ def _classify(manifest: list[dict[str, str]], root: Path, repo: str | None, comm
     mismatched: list[str] = []
     unchecked: list[str] = []
     excluded: list[dict[str, str]] = []
-    for entry in {item["path"]: item["sha256"] for item in manifest}.items():
-        path, expected = entry
+    for entry in {item["path"]: item for item in manifest}.values():
+        path, expected = entry["path"], entry["sha256"]
         if prefix and path.startswith(prefix):
             excluded.append({"path": path, "reason": EXCLUDED_REASON, "bound_to": commit})
             continue
-        candidate = root / path
-        if not candidate.is_file():
+        if entry.get("source") == "git" and entry.get("commit"):
+            payload = _git_blob(root, path, entry["commit"])
+        else:
+            candidate = root / path
+            payload = candidate.read_bytes() if candidate.is_file() else None
+        if payload is None:
             unchecked.append(path)
             continue
         checked.add(path)
-        if hashlib.sha256(candidate.read_bytes()).hexdigest() != expected:
+        if hashlib.sha256(payload).hexdigest() != expected:
             mismatched.append(path)
     return sorted(checked), sorted(mismatched), sorted(unchecked), excluded
 

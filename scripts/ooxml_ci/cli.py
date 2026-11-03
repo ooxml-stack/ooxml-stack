@@ -63,8 +63,9 @@ def _load(root: pathlib.Path):
     from . import inputs as read_layer
 
     policy = read_layer.load_policy(root)
-    files, missing = read_layer.select_inputs(root, policy)
-    facts = read_layer.gather_facts(root, policy, files, missing)
+    binding = read_layer.bound_commits(root, policy)
+    files, missing = read_layer.select_inputs(root, policy, binding)
+    facts = read_layer.gather_facts(root, policy, files, missing, binding)
     return policy, facts
 
 

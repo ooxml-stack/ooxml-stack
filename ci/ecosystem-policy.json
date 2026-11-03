@@ -4,6 +4,14 @@
     "root_hint": "..",
     "checkout_pattern": "<root>/<key>"
   },
+  "input_binding": {
+    "kind": "git_commit",
+    "exempt_nodes": ["ooxml-stack", "ooxml-operation-engine"],
+    "commit_source": {
+      "file": "ooxml-operation-engine/ci/environment.json",
+      "field": "repositories"
+    }
+  },
   "nodes": [
     { "key": "ooxml-spec", "role": "release", "layer": "spec", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },
     { "key": "ooxml-test-framework", "role": "release", "layer": "test", "cadence": "per-commit", "visibility": "private", "release_participation": true, "inputs": ["pyproject.toml", "uv.lock"] },

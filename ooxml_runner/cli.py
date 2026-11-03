@@ -157,11 +157,11 @@ def _cached_pass(directory: Path, expected: dict, adapter, config: dict, inputs:
     return None
 
 
-def _launch(request: dict[str, Any], workspace, reports, config, timeout) -> dict:
+def _launch(request: dict[str, Any], workspace, reports, config, timeout, bucket: str) -> dict:
     name = "ooxml-runner-" + uuid.uuid4().hex
     argv = docker_module.command(
         workspace=workspace, reports=reports, runner_root=Path(request["runner"]["root"]),
-        plan=Path(request["plan"]["path"]), config=config, commit=request["commit"],
+        plan=Path(request["plan"]["path"]), config=config, bucket=bucket, commit=request["commit"],
         runner_commit=request["runner"]["commit"], name=name,
         cpus=docker_module.cpu_limit(), repository=request["repo"], adapter=request["binding"]["adapter"],
     )
@@ -177,10 +177,15 @@ def run_repository(
     repo_path=None,
 ) -> dict[str, Any]:
     """Run the full verification for one commit and return the verified report."""
+    bucket = docker_module.platform_bucket()
     request = _resolve(root=root, repo=repo, commit=commit, runner_commit=runner_commit,
                        plan=plan, repo_path=repo_path)
     inputs_reverified = plan_module.reverify_inputs(
         request["plan"], request["root"], request["repo"], request["commit"])
+    if not inputs_reverified["verified"]:
+        raise plan_module.PlanError(
+            "plan inputs are not fully verified: " + inputs_reverified["reason"]
+        )
     output_root = Path(output).resolve()
 
     def execute(snapshot, view):
@@ -206,7 +211,7 @@ def run_repository(
         report_module.save(reports, skeleton)
         try:
             result = _launch(request, snapshot.parent, reports, config,
-                             timeout or float(config["timeout_seconds"]))
+                             timeout or float(config["timeout_seconds"]), bucket)
             report_module.verify_generic(result, expected)
             adapter.verify_report(result, request["commit"], config, inputs)
         except BaseException as exc:

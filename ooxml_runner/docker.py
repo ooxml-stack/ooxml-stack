@@ -10,7 +10,9 @@ interpreted by a shell.
 from __future__ import annotations
 
 import base64
+import json
 import os
+import platform
 import subprocess
 import threading
 from pathlib import Path
@@ -28,6 +30,10 @@ MAX_CPUS = 4
 # that is not in that repository's own allocation, and a name the runner does
 # not know is refused on the host before a container starts.
 PLATFORM_BUCKETS = frozenset({"default", "macos", "dsh-runtime"})
+# AppleScript is a separate macOS workflow contract and deliberately does not
+# cross this Linux container transport.
+APPLESCRIPT_BUCKET = "applescript-runtime"
+PLATFORM_BUCKET_ENV = "OOXML_PLATFORM_BUCKET"
 
 
 class DockerError(RuntimeError):
@@ -60,22 +66,58 @@ def _mounts(workspace: Path, reports: Path, runner_root: Path, plan: Path) -> li
     return argv
 
 
-def platform_bucket(environ=None):
-    """The partition this run owns, when the caller selected one.
+def _platform_family(system=None):
+    value = system if system is not None else platform.system()
+    normalized = value.strip().lower()
+    if normalized == "darwin":
+        return "macos"
+    if normalized == "linux":
+        return "linux"
+    return normalized
+
+
+def _bucket_platform(bucket):
+    return "linux" if bucket == "default" else "macos"
+
+
+def platform_bucket(environ=None, *, system=None):
+    """The partition this run owns, required and compatible with the host.
 
     The engine's adapter reads this in the container to select the node IDs one
     platform owes. A whitelisted value is forwarded verbatim; an unknown value
     fails here, before a container starts, rather than silently unpartitioned.
+    ``default`` is the Linux partition and the macOS buckets must not run on a
+    Linux host; both directions fail before Docker is queried.
     """
-    value = (os.environ if environ is None else environ).get("OOXML_PLATFORM_BUCKET")
+    value = (os.environ if environ is None else environ).get(PLATFORM_BUCKET_ENV)
     if not value:
-        return None
+        raise DockerError(
+            "OOXML_PLATFORM_BUCKET is required; default Linux runs must select 'default' explicitly"
+        )
+    if value == APPLESCRIPT_BUCKET:
+        raise DockerError(
+            "OOXML_PLATFORM_BUCKET 'applescript-runtime' is executed by the "
+            "native macOS workflow, not the shared container transport"
+        )
     if value not in PLATFORM_BUCKETS:
         raise DockerError(f"unknown OOXML_PLATFORM_BUCKET {value!r}; expected one of {sorted(PLATFORM_BUCKETS)}")
+    observed = _platform_family(system)
+    expected = _bucket_platform(value)
+    if observed != expected:
+        raise DockerError(
+            f"OOXML_PLATFORM_BUCKET {value!r} requires {expected}, host is {observed}"
+        )
     return value
 
 
-def _env(config: dict, commit: str, runner_commit: str, name: str, cpus: int) -> list[str]:
+def _env(
+    config: dict,
+    commit: str,
+    runner_commit: str,
+    name: str,
+    cpus: int,
+    bucket: str,
+) -> list[str]:
     values = {
         "PYTHONPATH": CONTAINER_RUNNER,
         # The adapter reaches the runner through its own repository's bridge, so
@@ -106,17 +148,18 @@ def _env(config: dict, commit: str, runner_commit: str, name: str, cpus: int) ->
         "GIT_CONFIG_KEY_0": "safe.directory",
         "GIT_CONFIG_VALUE_0": CONTAINER_RUNNER,
     }
-    selected = platform_bucket()
-    if selected:
-        values["OOXML_PLATFORM_BUCKET"] = selected
+    values["OOXML_PLATFORM_BUCKET"] = bucket
     return [item for key, value in values.items() for item in ("--env", f"{key}={value}")]
 
 
 def command(
     *, workspace: Path, reports: Path, runner_root: Path, plan: Path, config: dict,
-    commit: str, runner_commit: str, name: str, cpus: int, repository: str, adapter: str,
+    bucket: str, commit: str, runner_commit: str, name: str, cpus: int,
+    repository: str, adapter: str,
 ) -> list[str]:
-    """Build the ``docker run`` argv for one execution."""
+    """Build the ``docker run`` argv for one execution with a validated bucket."""
+    if bucket not in PLATFORM_BUCKETS:
+        raise DockerError(f"unknown OOXML_PLATFORM_BUCKET {bucket!r}; expected one of {sorted(PLATFORM_BUCKETS)}")
     argv = [
         "docker", "run", "--rm", "--init", "--pull=never", "--name", name,
         "--platform", config["platform"],
@@ -124,7 +167,7 @@ def command(
         "--interactive", "--cpus", str(cpus), "--memory", "8g",
         *_mounts(Path(workspace), Path(reports), Path(runner_root), Path(plan)),
         "--mount", f"type=volume,source={DOWNLOAD_CACHE_VOLUME},target=/cache",
-        *_env(config, commit, runner_commit, name, cpus),
+        *_env(config, commit, runner_commit, name, cpus, bucket),
         config["image"], "python", "-m", "ooxml_runner.bootstrap",
         "--repository", repository, "--adapter", adapter,
     ]
@@ -187,20 +230,55 @@ def _pinned_image(argv: list[str]) -> tuple[str, str]:
     return image, platform
 
 
-def require_local_image(argv: list[str]) -> None:
-    """Fail before launch unless the digest-pinned image is already local."""
-    image, platform = _pinned_image(argv)
+def _expected_digest(image: str) -> str:
+    """Return the exact sha256 digest from a digest-pinned image reference."""
+    prefix, separator, digest = image.rpartition("@sha256:")
+    if not separator or not prefix or len(digest) != 64 or any(
+        character not in "0123456789abcdef" for character in digest
+    ):
+        raise DockerError(f"CI image is not pinned by an exact sha256 digest: {image}")
+    return "sha256:" + digest
+
+
+def _local_image_facts(image: str) -> tuple[str, list[str]]:
+    """Inspect the local image without allowing Docker to resolve or pull it."""
     result = subprocess.run(
-        ["docker", "image", "inspect", image, "--format", "{{.Os}}/{{.Architecture}}"],
+        ["docker", "image", "inspect", image, "--format",
+         "{{.Os}}/{{.Architecture}}|{{json .RepoDigests}}"],
         capture_output=True, text=True, timeout=30, check=False,
     )
     if result.returncode:
         raise DockerError(f"pinned CI image is not available locally: {image}")
-    expected = platform.replace("/", "/")
-    observed = result.stdout.strip()
-    if observed != "linux/amd64" or expected != "linux/amd64":
+    observed_platform, separator, digests = result.stdout.strip().partition("|")
+    if not separator:
+        raise DockerError("docker image inspect returned unreadable image identity")
+    try:
+        repo_digests = json.loads(digests)
+    except json.JSONDecodeError as exc:
+        raise DockerError("docker image inspect returned invalid RepoDigests") from exc
+    if not isinstance(repo_digests, list) or not all(
+        isinstance(value, str) for value in repo_digests
+    ):
+        raise DockerError("docker image inspect returned invalid RepoDigests")
+    return observed_platform, repo_digests
+
+
+def require_local_image(argv: list[str]) -> None:
+    """Fail unless the exact digest-pinned image and platform are already local."""
+    image, platform = _pinned_image(argv)
+    expected_digest = _expected_digest(image)
+    observed_platform, repo_digests = _local_image_facts(image)
+    if platform != "linux/amd64" or observed_platform != platform:
         raise DockerError(
-            f"pinned CI image platform mismatch: expected {expected}, observed {observed}"
+            f"pinned CI image platform mismatch: expected {platform}, observed {observed_platform}"
+        )
+    observed_digests = {
+        value.rpartition("@")[2] for value in repo_digests if "@sha256:" in value
+    }
+    if expected_digest not in observed_digests:
+        observed = ", ".join(sorted(observed_digests)) or "<none>"
+        raise DockerError(
+            f"pinned CI image digest mismatch: expected {expected_digest}, observed {observed}"
         )
 
 

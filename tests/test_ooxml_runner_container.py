@@ -20,10 +20,16 @@ from runner_fixtures import REPO, make_repo
 from ooxml_runner import credentials, docker, execute, snapshot
 
 
+@pytest.fixture(autouse=True)
+def _default_linux_bucket(monkeypatch):
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "default")
+    monkeypatch.setattr(docker.platform, "system", lambda: "Linux")
+
+
 def test_the_container_command_never_uses_a_shell(tmp_path):
     argv = docker.command(
         workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
     assert argv[:2] == ["docker", "run"]
@@ -37,7 +43,7 @@ def test_the_container_names_the_runner_mount_for_the_adapter_bridge(tmp_path):
     """The adapter finds the runner through its own repository's bridge."""
     argv = docker.command(
         workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
     assert "OOXML_RUNNER_ROOT=/runner" in argv
@@ -48,7 +54,7 @@ def test_the_container_is_told_which_runner_commit_to_execute(tmp_path):
     """The container proves the mounted runner is the pinned one."""
     argv = docker.command(
         workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
     assert "OOXML_CI_RUNNER_COMMIT=" + "b" * 40 in argv
@@ -58,7 +64,7 @@ def test_the_container_trusts_its_bind_mounts_as_git_safe_directories(tmp_path):
     """A Linux host owns the runner mount as another uid; Git refuses it otherwise."""
     argv = docker.command(
         workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
     assert "GIT_CONFIG_COUNT=1" in argv
@@ -70,7 +76,7 @@ def test_repository_keys_with_spaces_survive_as_single_arguments(tmp_path):
     argv = docker.command(
         workspace=tmp_path / "a b", reports=tmp_path / "reports", runner_root=tmp_path,
         plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository="ooxml operation engine",
         adapter="scripts.ci.adapter",
     )
@@ -205,44 +211,76 @@ def test_the_runner_is_importable_without_the_engine_repository():
 
 def test_the_container_receives_the_selected_platform_partition(tmp_path, monkeypatch):
     """The adapter needs the bucket inside the container, not on the host."""
-    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "macos")
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "default")
     argv = docker.command(
         workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
-    assert "OOXML_PLATFORM_BUCKET=macos" in argv
+    assert "OOXML_PLATFORM_BUCKET=default" in argv
 
 
-def test_no_partition_selection_is_forwarded_when_unset(tmp_path, monkeypatch):
-    """An unpartitioned run stays unpartitioned inside the container."""
+def test_missing_partition_is_refused_before_the_container_starts(monkeypatch):
     monkeypatch.delenv("OOXML_PLATFORM_BUCKET", raising=False)
-    assert docker.platform_bucket() is None
-    argv = docker.command(
-        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
-        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"},
-        commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
-    )
-    assert not any(item.startswith("OOXML_PLATFORM_BUCKET=") for item in argv)
+    with pytest.raises(docker.DockerError, match="OOXML_PLATFORM_BUCKET is required"):
+        docker.platform_bucket()
+
+
+@pytest.mark.parametrize("bucket,system", [
+    ("default", "Darwin"), ("macos", "Linux"), ("dsh-runtime", "Linux"),
+])
+def test_partition_must_match_the_host_platform(monkeypatch, bucket, system):
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", bucket)
+    with pytest.raises(docker.DockerError, match="requires .* host is"):
+        docker.platform_bucket(system=system)
+
+
+def test_explicit_macos_partition_is_valid_on_macos(monkeypatch):
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "macos")
+    assert docker.platform_bucket(system="Darwin") == "macos"
+
+
+def test_applescript_partition_is_explicitly_outside_the_container_transport(monkeypatch):
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "applescript-runtime")
+    with pytest.raises(docker.DockerError, match="native macOS workflow, not the shared container"):
+        docker.platform_bucket(system="Darwin")
 
 
 def test_an_unknown_partition_is_refused_before_the_container_starts(monkeypatch):
     monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "windows")
     with pytest.raises(docker.DockerError, match="unknown OOXML_PLATFORM_BUCKET"):
-        docker.platform_bucket()
+        docker.platform_bucket(system="Linux")
 
-def test_execute_refuses_a_missing_or_wrong_platform_image_before_run(tmp_path, monkeypatch):
-    argv = [
-        "docker", "run", "--env", "OOXML_CI_IMAGE=pinned@sha256:" + "0" * 64,
-        "--env", "OOXML_CI_PLATFORM=linux/amd64", "pinned@sha256:" + "0" * 64,
+def _image_argv(image="pinned@sha256:" + "0" * 64, platform="linux/amd64"):
+    return [
+        "docker", "run", "--env", f"OOXML_CI_IMAGE={image}",
+        "--env", f"OOXML_CI_PLATFORM={platform}", image,
     ]
+
+
+@pytest.mark.parametrize(
+    "inspect_result, match",
+    [
+        (subprocess.CompletedProcess([], 1, "", "missing"), "not available locally"),
+        (subprocess.CompletedProcess([], 0, 'linux/amd64|["pinned@sha256:' + "1" * 64 + '"]', ""),
+         "digest mismatch"),
+        (subprocess.CompletedProcess([], 0, 'linux/arm64|["pinned@sha256:' + "0" * 64 + '"]', ""),
+         "platform mismatch"),
+    ],
+)
+def test_execute_refuses_unusable_local_image_before_start(tmp_path, monkeypatch, inspect_result, match):
+    """A normal run never reaches Popen unless the exact local image is ready."""
     calls = []
-
-    def inspect(*args, **kwargs):
-        calls.append(args)
-        return subprocess.CompletedProcess(args, 1, "", "missing")
-
-    monkeypatch.setattr(docker.subprocess, "run", inspect)
-    with pytest.raises(docker.DockerError, match="not available locally"):
-        docker.execute(argv, tmp_path, "token", 1, "fixture")
+    monkeypatch.setattr(docker.subprocess, "run", lambda *args, **kwargs: (calls.append(args), inspect_result)[1])
+    monkeypatch.setattr(docker.subprocess, "Popen",
+                        lambda *args, **kwargs: pytest.fail("container started after failed preflight"))
+    with pytest.raises(docker.DockerError, match=match):
+        docker.execute(_image_argv(), tmp_path, "token", 1, "fixture")
     assert calls and calls[0][0][:3] == ["docker", "image", "inspect"]
+    assert "--pull=never" in docker.command(
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
+        plan=tmp_path / "plan.json",
+        config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
+        commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2,
+        repository=REPO, adapter="scripts.ci.adapter",
+    )

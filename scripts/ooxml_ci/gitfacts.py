@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import fnmatch
 import pathlib
 import re
 import subprocess
@@ -31,6 +32,36 @@ def git(args: list[str], cwd: pathlib.Path, timeout: int) -> tuple[int, str, str
 
 def normalize_remote(url: str) -> str:
     return normalize_repo(url)
+
+
+def commit_blob(root: pathlib.Path, key: str, commit: str, relpath: str, timeout: int = 25) -> bytes | None:
+    """Read one repository file from an immutable commit, never from its worktree."""
+    if not SHA_RE.match(commit):
+        raise ValueError(f"commit must be a full 40-character SHA: {commit!r}")
+    code, _, _ = git(["cat-file", "-e", f"{commit}^{{commit}}"], root / key, timeout)
+    if code != 0:
+        return None
+    result = subprocess.run(
+        ["git", "show", f"{commit}:{relpath}"],
+        cwd=str(root / key), capture_output=True, timeout=timeout, check=False,
+    )
+    if result.returncode != 0:
+        return None
+    return result.stdout
+
+
+def commit_paths(root: pathlib.Path, key: str, commit: str, pattern: str, timeout: int = 25) -> list[str]:
+    """List paths matching one tree glob at a commit, without consulting the worktree."""
+    if not SHA_RE.match(commit):
+        raise ValueError(f"commit must be a full 40-character SHA: {commit!r}")
+    directory = pattern.rsplit("/", 1)[0] if "/" in pattern else "."
+    code, listing, _ = git(
+        ["ls-tree", "-r", "--name-only", commit, "--", directory],
+        root / key, timeout,
+    )
+    if code != 0:
+        return []
+    return [name for name in listing.splitlines() if fnmatch.fnmatch(name, pattern)]
 
 
 def common_dir(directory: pathlib.Path, timeout: int) -> str | None:

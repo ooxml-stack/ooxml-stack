@@ -153,7 +153,11 @@ def _input_manifest(tmp_path, inputs):
     manifest = []
     for item in inputs:
         if isinstance(item, dict):
-            manifest.append({"path": item["path"], "sha256": item["sha256"]})
+            row = {"path": item["path"], "sha256": item["sha256"]}
+            for key in ("source", "commit"):
+                if item.get(key):
+                    row[key] = item[key]
+            manifest.append(row)
             continue
         path = tmp_path / item
         digest = (
