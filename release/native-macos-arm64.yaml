@@ -159,14 +159,14 @@ reproducibility:
   wheelhouse_lock: release/native-wheelhouse-lock.json
   source_commits:
     client: 09c1762b6e3eb5231288cbb0703acf81de6c3dee
-    engine: 31b6f934
-    core: 80c35ac63f339412759c2943ec715e75fb96eefd
+    engine: 2c94f33e
+    core: 269edf47215400525a6bea4fe9c3bf7a9f4fc9bb
     spec: 34919621c3c06d1548956581e920812f9927bb7c
-    stubs: 7d9903571aa8a20362598cd89d95bfd43abc7b05
+    stubs: 304dd744425c63c67b66d39583c13d5aa526395c
     test_framework: fac79ec
-    docx: 2c7ca0bdf64bb7af385efa504de144d0987959d6
-    pptx: b61a1c4472938684ceba9958d3fb284733a07244
-    xlsx: 2b9b6539bc0a377a14d501a0b61cd01c9bb8c3bc
+    docx: a160ab3075c0bee8d55c3749f96e2c3d3b97752a
+    pptx: 5151361729a8ade654c0f9124ba9635a7b45ce8c
+    xlsx: 6e9aed4a0131398b02a2a4bc3ad25612769e3b70
   normalized_payload_exclusions:
     - code_signature
     - macho_uuid
