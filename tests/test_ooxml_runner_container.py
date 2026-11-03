@@ -28,7 +28,8 @@ def _default_linux_bucket(monkeypatch):
 
 def test_the_container_command_never_uses_a_shell(tmp_path):
     argv = docker.command(
-        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
@@ -42,7 +43,8 @@ def test_the_container_command_never_uses_a_shell(tmp_path):
 def test_the_container_names_the_runner_mount_for_the_adapter_bridge(tmp_path):
     """The adapter finds the runner through its own repository's bridge."""
     argv = docker.command(
-        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
@@ -53,7 +55,8 @@ def test_the_container_names_the_runner_mount_for_the_adapter_bridge(tmp_path):
 def test_the_container_is_told_which_runner_commit_to_execute(tmp_path):
     """The container proves the mounted runner is the pinned one."""
     argv = docker.command(
-        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
@@ -63,7 +66,8 @@ def test_the_container_is_told_which_runner_commit_to_execute(tmp_path):
 def test_the_container_trusts_its_bind_mounts_as_git_safe_directories(tmp_path):
     """A Linux host owns the runner mount as another uid; Git refuses it otherwise."""
     argv = docker.command(
-        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
@@ -75,7 +79,7 @@ def test_the_container_trusts_its_bind_mounts_as_git_safe_directories(tmp_path):
 def test_repository_keys_with_spaces_survive_as_single_arguments(tmp_path):
     argv = docker.command(
         workspace=tmp_path / "a b", reports=tmp_path / "reports", runner_root=tmp_path,
-        plan=tmp_path / "plan.json",
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository="ooxml operation engine",
         adapter="scripts.ci.adapter",
@@ -213,7 +217,8 @@ def test_the_container_receives_the_selected_platform_partition(tmp_path, monkey
     """The adapter needs the bucket inside the container, not on the host."""
     monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "default")
     argv = docker.command(
-        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path, plan=tmp_path / "plan.json",
+        workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2, repository=REPO, adapter="scripts.ci.adapter",
     )
@@ -279,7 +284,7 @@ def test_execute_refuses_unusable_local_image_before_start(tmp_path, monkeypatch
     assert calls and calls[0][0][:3] == ["docker", "image", "inspect"]
     assert "--pull=never" in docker.command(
         workspace=tmp_path, reports=tmp_path / "reports", runner_root=tmp_path,
-        plan=tmp_path / "plan.json",
+        plan=tmp_path / "plan.json", cache_root=tmp_path / "cache",
         config={"image": "fixture@sha256:" + "0" * 64, "platform": "linux/amd64"}, bucket="default",
         commit="a" * 40, runner_commit="b" * 40, name="fixture", cpus=2,
         repository=REPO, adapter="scripts.ci.adapter",

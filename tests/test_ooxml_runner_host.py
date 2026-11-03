@@ -38,6 +38,10 @@ def _explicit_platform(monkeypatch):
         return {**observed, "commit": expected}
 
     monkeypatch.setattr(cli.identity_module, "require_expected", require_expected)
+    monkeypatch.setattr(cli.cache_module, "ensure", lambda *args, **kwargs: {
+        "schema_version": 1, "generation_id": "sha256:" + "c" * 64,
+        "ready": True, "components": [],
+    })
     monkeypatch.setattr(
         cli.plan_module,
         "reverify_inputs",

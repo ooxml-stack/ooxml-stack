@@ -22,7 +22,7 @@ CONTAINER_INPUT = "/input"
 CONTAINER_REPORTS = "/reports"
 CONTAINER_RUNNER = "/runner"
 CONTAINER_PLAN = "/plan"
-DOWNLOAD_CACHE_VOLUME = "ooxml-ci-downloads-v1"
+CONTAINER_CACHE = "/cache"
 MAX_CPUS = 4
 
 # The platform partition names the engine adapter understands. The runner only
@@ -53,12 +53,15 @@ def cpu_limit() -> int:
     return min(MAX_CPUS, available)
 
 
-def _mounts(workspace: Path, reports: Path, runner_root: Path, plan: Path) -> list[str]:
+def _mounts(
+    workspace: Path, reports: Path, runner_root: Path, plan: Path, cache_root: Path
+) -> list[str]:
     pairs = (
         (workspace, CONTAINER_INPUT, ",readonly"),
         (reports, CONTAINER_REPORTS, ""),
         (runner_root, CONTAINER_RUNNER, ",readonly"),
         (plan, CONTAINER_PLAN, ",readonly"),
+        (cache_root, CONTAINER_CACHE, ""),
     )
     argv: list[str] = []
     for source, target, mode in pairs:
@@ -153,8 +156,8 @@ def _env(
 
 
 def command(
-    *, workspace: Path, reports: Path, runner_root: Path, plan: Path, config: dict,
-    bucket: str, commit: str, runner_commit: str, name: str, cpus: int,
+    *, workspace: Path, reports: Path, runner_root: Path, plan: Path, cache_root: Path,
+    config: dict, bucket: str, commit: str, runner_commit: str, name: str, cpus: int,
     repository: str, adapter: str,
 ) -> list[str]:
     """Build the ``docker run`` argv for one execution with a validated bucket."""
@@ -165,8 +168,8 @@ def command(
         "--platform", config["platform"],
         "--workdir", f"{CONTAINER_WORKSPACE}/{repository}",
         "--interactive", "--cpus", str(cpus), "--memory", "8g",
-        *_mounts(Path(workspace), Path(reports), Path(runner_root), Path(plan)),
-        "--mount", f"type=volume,source={DOWNLOAD_CACHE_VOLUME},target=/cache",
+        *_mounts(Path(workspace), Path(reports), Path(runner_root), Path(plan),
+                  Path(cache_root)),
         *_env(config, commit, runner_commit, name, cpus, bucket),
         config["image"], "python", "-m", "ooxml_runner.bootstrap",
         "--repository", repository, "--adapter", adapter,

@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Any
 
 from . import adapter as adapters
+from . import cache as cache_module
 from . import container as container_module
 from . import docker as docker_module
 from . import identity as identity_module
@@ -74,7 +75,9 @@ def _view(request: dict[str, Any], repo_root: Path) -> dict[str, Any]:
     }
 
 
-def _expected(request: dict[str, Any], stages: list[str]) -> dict[str, Any]:
+def _expected(
+    request: dict[str, Any], stages: list[str], cache: dict[str, Any]
+) -> dict[str, Any]:
     return {
         "repository": request["repo"], "commit": request["commit"],
         "runner_commit": request["runner"]["commit"],
@@ -85,6 +88,7 @@ def _expected(request: dict[str, Any], stages: list[str]) -> dict[str, Any]:
             request["plan"], request["root"], request["repo"], request["commit"]
         ),
         "binding": request["binding"],
+        "cache": cache,
         "stages": stages,
     }
 
@@ -127,9 +131,10 @@ def verify_report_file(*, root, repo, commit, runner_commit, plan, report) -> di
     """Verify an existing report against the request, not against its own claims."""
     request = _resolve(root=root, repo=repo, commit=commit, runner_commit=runner_commit, plan=plan)
     payload = report_module.load(Path(report))
+    recorded_cache = payload.get("cache")
 
     def check(snapshot, view):
-        expected = _expected(request, list(view["described"]["stages"]))
+        expected = _expected(request, list(view["described"]["stages"]), recorded_cache)
         report_module.verify_generic(payload, expected)
         # The inputs are re-derived from the requested commit. Passing the
         # report's own ``inputs`` back in would compare it against itself and
@@ -158,11 +163,14 @@ def _cached_pass(directory: Path, expected: dict, adapter, config: dict, inputs:
     return None
 
 
-def _launch(request: dict[str, Any], workspace, reports, config, timeout, bucket: str) -> dict:
+def _launch(
+    request: dict[str, Any], workspace, reports, cache_root, config, timeout, bucket: str
+) -> dict:
     name = "ooxml-runner-" + uuid.uuid4().hex
     argv = docker_module.command(
         workspace=workspace, reports=reports, runner_root=Path(request["runner"]["root"]),
-        plan=Path(request["plan"]["path"]), config=config, bucket=bucket, commit=request["commit"],
+        plan=Path(request["plan"]["path"]), cache_root=Path(cache_root), config=config,
+        bucket=bucket, commit=request["commit"],
         runner_commit=request["runner"]["commit"], name=name,
         cpus=docker_module.cpu_limit(), repository=request["repo"], adapter=request["binding"]["adapter"],
     )
@@ -175,12 +183,16 @@ def _launch(request: dict[str, Any], workspace, reports, config, timeout, bucket
 
 def run_repository(
     *, root, repo, commit="HEAD", runner_commit, plan, output, reuse_success=False,
-    resume_from=None, timeout=None, repo_path=None,
+    resume_from=None, timeout=None, repo_path=None, cache_root=None, repair_cache=False,
 ) -> dict[str, Any]:
     """Run the full verification for one commit and return the verified report."""
     bucket = docker_module.platform_bucket()
     request = _resolve(root=root, repo=repo, commit=commit, runner_commit=runner_commit,
                        plan=plan, repo_path=repo_path)
+    selected_cache_root = cache_module.cache_root(cache_root)
+    validated_cache = cache_module.ensure(
+        selected_cache_root, repair_cache=repair_cache
+    )
     inputs_reverified = plan_module.reverify_inputs(
         request["plan"], request["root"], request["repo"], request["commit"])
     if not inputs_reverified["verified"]:
@@ -192,7 +204,9 @@ def run_repository(
     def execute(snapshot, view):
         config, adapter = view["config"], view["adapter"]
         inputs = adapter.input_hashes(snapshot)
-        expected = _expected(request, list(view["described"]["stages"]))
+        expected = _expected(
+            request, list(view["described"]["stages"]), validated_cache
+        )
         if reuse_success:
             cached = _cached_pass(output_root / request["commit"], expected, adapter, config, inputs)
             if cached is not None:
@@ -206,8 +220,8 @@ def run_repository(
             plan={"path": request["plan"]["path"], "sha256": request["plan"]["sha256"],
                   "inputs_digest": request["plan"]["inputs_digest"],
                   "inputs_reverified": inputs_reverified},
-            binding=request["binding"], image=config["image"], inputs=inputs,
-            stages=expected["stages"],
+            binding=request["binding"], image=config["image"], cache=validated_cache,
+            inputs=inputs, stages=expected["stages"],
         )
         if resume_from is not None:
             source_report = Path(resume_from)
@@ -216,8 +230,8 @@ def run_repository(
         else:
             report_module.save(reports, skeleton)
         try:
-            result = _launch(request, snapshot.parent, reports, config,
-                             timeout or float(config["timeout_seconds"]), bucket)
+            result = _launch(request, snapshot.parent, reports, selected_cache_root,
+                             config, timeout or float(config["timeout_seconds"]), bucket)
             report_module.verify_generic(result, expected)
             adapter.verify_report(result, request["commit"], config, inputs)
         except BaseException as exc:
@@ -248,6 +262,14 @@ def _parser() -> argparse.ArgumentParser:
             child.add_argument("--reuse-success", action="store_true", help="reuse a matching cached pass")
             child.add_argument("--resume-from", type=Path, help="verified failed report to resume")
             child.add_argument("--timeout", type=float, default=None, help="override the wall-clock timeout")
+            child.add_argument(
+                "--cache-root", type=Path, default=None,
+                help="host cache generation root mounted at /cache",
+            )
+            child.add_argument(
+                "--repair-cache", action="store_true",
+                help="explicitly refresh READY.json after validating cache components",
+            )
         if name == "verify-report":
             child.add_argument("--report", required=True, help="report.json to verify")
     return parser
@@ -279,6 +301,7 @@ def main(argv: list[str] | None = None) -> int:
             payload = run_repository(
                 **shared, output=args.output, reuse_success=args.reuse_success,
                 resume_from=args.resume_from, timeout=args.timeout,
+                cache_root=args.cache_root, repair_cache=args.repair_cache,
             )
     except signals_module.TerminationRequested as exc:
         # The report and the container were already finalized on the way out.

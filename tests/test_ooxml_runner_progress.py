@@ -24,6 +24,7 @@ from pathlib import Path
 import pytest
 from runner_fixtures import ADAPTER_SOURCE, REPO, RUNNER_COMMIT, make_plan, make_repo
 
+from ooxml_runner import cache as cache_module
 from ooxml_runner import container
 from ooxml_runner import report as report_module
 
@@ -77,6 +78,7 @@ def _failed_report(reports, error="ZeroDivisionError: division by zero"):
         plan={},
         binding={},
         image="fixture",
+        cache={},
         inputs={},
         stages=["one"],
     )
@@ -209,11 +211,19 @@ def test_a_partial_terminal_write_through_the_real_entry_is_recovered(tmp_path):
     repo = make_repo(tmp_path, adapter=FAILING_ADAPTER)
     plan = make_plan(tmp_path, repo)
     output = tmp_path / "out"
+    cache_root = tmp_path / "cache"
+    for name in ("repositories", "corpus", "dotnet"):
+        component = cache_root / name
+        component.mkdir(parents=True)
+        (component / "marker").write_text(name)
+    cache_module.repair(cache_root)
     env = {
         **os.environ,
         "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
         "PYTHONPATH": str(ROOT),
         "OOXML_STACK_TOKEN": "fixture-token",
+        "OOXML_CI_CACHE_ROOT": str(cache_root),
+        "OOXML_PLATFORM_BUCKET": "macos",
     }
     argv = [
         sys.executable,
@@ -232,6 +242,8 @@ def test_a_partial_terminal_write_through_the_real_entry_is_recovered(tmp_path):
         str(plan),
         "--output",
         str(output),
+        "--cache-root",
+        str(cache_root),
     ]
 
     process = subprocess.run(
