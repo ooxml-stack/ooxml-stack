@@ -1,4 +1,6 @@
-"""Verified stage resume and focused pytest evidence tests."""
+"""
+
+# pyright: reportMissingImports=falseVerified stage resume and focused pytest evidence tests."""
 
 from __future__ import annotations
 
