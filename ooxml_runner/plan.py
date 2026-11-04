@@ -112,14 +112,17 @@ def _manifest(plan: dict[str, Any]) -> list[dict[str, str]]:
 
 def _git_blob(root: Path, path: str, commit: str) -> bytes | None:
     key, relpath = path.split("/", 1)
+    checkout = root / key
+    if not checkout.is_dir():
+        return None
     exists = subprocess.run(
-        ["git", "cat-file", "-e", f"{commit}^{{commit}}"], cwd=str(root / key),
+        ["git", "cat-file", "-e", f"{commit}^{{commit}}"], cwd=str(checkout),
         capture_output=True, check=False,
     )
     if exists.returncode != 0:
         raise PlanError(f"git-bound input commit is unresolvable: {path}@{commit}")
     result = subprocess.run(
-        ["git", "show", f"{commit}:{relpath}"], cwd=str(root / key),
+        ["git", "show", f"{commit}:{relpath}"], cwd=str(checkout),
         capture_output=True, check=False,
     )
     if result.returncode != 0:
