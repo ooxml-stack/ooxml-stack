@@ -16,8 +16,8 @@ Source files scanned: 93.
 | `scripts/ooxml_ci/bashwords.py` | 320 |
 | `scripts/run_p98_mutation_gate.py` | 319 |
 | `ooxml_runner/cli.py` | 316 |
+| `scripts/ooxml_ci/gitfacts.py` | 315 |
 | `ooxml_runner/docker.py` | 312 |
-| `scripts/ooxml_ci/gitfacts.py` | 309 |
 
 ## Functions over 50 lines
 
