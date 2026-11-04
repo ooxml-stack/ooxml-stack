@@ -164,6 +164,20 @@ def test_a_git_bound_input_is_checked_at_its_commit_not_the_dirty_worktree(tmp_p
     assert mismatched == unchecked == excluded == []
 
 
+def test_a_missing_git_sibling_checkout_is_unchecked_not_a_crash(tmp_path):
+    manifest = [{
+        "path": "python-docx/pyproject.toml", "sha256": "0" * 64,
+        "source": "git", "commit": "f" * 40,
+    }]
+
+    checked, mismatched, unchecked, excluded = plan_module._classify(
+        manifest, tmp_path, REPO, None
+    )
+
+    assert checked == mismatched == excluded == []
+    assert unchecked == ["python-docx/pyproject.toml"]
+
+
 def test_an_unresolvable_git_commit_is_refused(tmp_path):
     manifest = [{
         "path": "python-docx/pyproject.toml", "sha256": "0" * 64,
