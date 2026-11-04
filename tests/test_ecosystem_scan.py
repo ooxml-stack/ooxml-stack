@@ -282,6 +282,20 @@ def test_scan_ignores_worktrees_of_declared_nodes(tmp_path):
     assert undeclared == []
 
 
+def test_scan_ignores_explicit_workspace_checkouts(tmp_path):
+    root = sealed_workspace(tmp_path)
+    init_repo(root / "ooxml-agent-skill")
+    policy = inputs.load_policy(root)
+    policy.setdefault("workspace", {})["ignored_checkouts"] = ["ooxml-agent-skill"]
+    report = scan_mod.scan(root, policy, build(root), offline=True)
+    undeclared = [
+        item for item in report["diagnostics"]
+        if item["code"] == "policy_repo_mismatch"
+        and item["direction"] == "undeclared_local"
+    ]
+    assert undeclared == []
+
+
 def test_scan_flags_a_genuinely_undeclared_checkout(tmp_path):
     root = sealed_workspace(tmp_path)
     init_repo(root / "ooxml-rogue")

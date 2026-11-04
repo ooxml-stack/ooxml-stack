@@ -237,13 +237,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "04418512d060dd430598db3f6c3d093eabe35b20",
+        "ref_raw": "aebee1b674ceff446f44ebc965e5d2255489de5b",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "04418512d060dd430598db3f6c3d093eabe35b20",
+        "commit": "aebee1b674ceff446f44ebc965e5d2255489de5b",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -259,13 +259,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "ref_raw": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "cde719c0c6625da903a38c66752d2fe30995e5b7",
+        "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -471,13 +471,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "ref_raw": "304dd744425c63c67b66d39583c13d5aa526395c",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "2fa41d934984641160a1973e21da43d6eb8e50c1",
+        "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -536,13 +536,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "d7b5d753dc8e4389280f721116f28e471f933bef",
+        "ref_raw": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "d7b5d753dc8e4389280f721116f28e471f933bef",
+        "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -579,13 +579,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "e4b48820be28ae4d5f4e5f2ea2050a987bf3c006",
+        "ref_raw": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "e4b48820be28ae4d5f4e5f2ea2050a987bf3c006",
+        "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -622,13 +622,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "651612eb5bee618947faf5cc79d335e5cf22a6c1",
+        "ref_raw": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "651612eb5bee618947faf5cc79d335e5cf22a6c1",
+        "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -788,13 +788,13 @@
     {
       "declared": {
         "ref_declared_kind": "unknown",
-        "ref_raw": "local-b53-20260928",
+        "ref_raw": "v0.3.1",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-spec.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "151fdc8ede85194079b656dcb2baedfd1be7043a",
+        "commit": "18bb41dcf3e7aabe337707d64f28abf11574884c",
         "source": "ooxml-test-framework/uv.lock",
         "version": "0.3.1"
       },
@@ -1906,27 +1906,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 22,
+              "line": 21,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
+              "uses": "actions/checkout@v6"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 24,
+              "line": 23,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
+              "uses": "astral-sh/setup-uv@v7"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 27,
+              "line": 26,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -1936,7 +1936,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 30,
+              "line": 29,
               "name": "Install dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -1946,49 +1946,9 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 33,
-              "name": "Run lint",
-              "run": "make lint",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 36,
-              "name": "Install pyright",
-              "run": "uv tool install pyright==1.1.411",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 39,
-              "name": "Run Python type gate",
-              "run": "make typecheck",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 42,
+              "line": 32,
               "name": "Run tests",
               "run": "uv run --frozen pytest tests/ -q",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 45,
-              "name": "Run coverage gate",
-              "run": "make coverage",
               "shell": null,
               "uses": null
             }
@@ -2178,8 +2138,7 @@
             "python-version": [
               "3.10",
               "3.11",
-              "3.12",
-              "3.13"
+              "3.12"
             ]
           },
           "name": null,
@@ -2190,27 +2149,27 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 23,
+              "line": 22,
               "name": null,
               "run": null,
               "shell": null,
-              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
+              "uses": "actions/checkout@v6"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 27,
+              "line": 26,
               "name": "Install uv",
               "run": null,
               "shell": null,
-              "uses": "astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78"
+              "uses": "astral-sh/setup-uv@v7"
             },
             {
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 30,
+              "line": 29,
               "name": "Install workflow Python",
               "run": "uv python install \"${UV_PYTHON:-3.12}\"",
               "shell": null,
@@ -2223,7 +2182,7 @@
                 "OOXML_STACK_TOKEN": "${{ secrets.OOXML_STACK_TOKEN }}"
               },
               "if": null,
-              "line": 33,
+              "line": 32,
               "name": "Configure private dependency access",
               "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  if [ -z \"$OOXML_SPEC_DEPLOY_KEY\" ]; then\n    echo \"OOXML_STACK_TOKEN or OOXML_SPEC_DEPLOY_KEY is required\"\n    exit 1\n  fi\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  chmod 600 ~/.ssh/ooxml_spec\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec.git\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec.git\"\nfi\ngit ls-remote https://github.com/ooxml-stack/ooxml-spec.git HEAD >/dev/null\n",
               "shell": null,
@@ -2233,7 +2192,7 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 64,
+              "line": 63,
               "name": "Install dependencies",
               "run": "uv sync --frozen --extra dev",
               "shell": null,
@@ -2243,49 +2202,9 @@
               "cwd": null,
               "env": {},
               "if": null,
-              "line": 67,
-              "name": "Run lint",
-              "run": "make lint",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 70,
-              "name": "Install pyright",
-              "run": "uv tool install pyright==1.1.411",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 73,
-              "name": "Run Python type gate",
-              "run": "make typecheck",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 76,
+              "line": 66,
               "name": "Run tests",
               "run": "uv run --frozen pytest -q",
-              "shell": null,
-              "uses": null
-            },
-            {
-              "cwd": null,
-              "env": {},
-              "if": null,
-              "line": 79,
-              "name": "Run coverage gate",
-              "run": "make coverage",
               "shell": null,
               "uses": null
             }
@@ -3155,85 +3074,55 @@
       "sha256": "ad31a6cf54f77af3323c6f95962e819dc5a4145727e8056e739da11cdeb1cb52"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/ci.yml",
-      "sha256": "82fefdfdb3d2bfa5ad4118474a1ca04c118dfd1e8153a25e26e1fb29246c8452",
-      "source": "git"
+      "sha256": "82fefdfdb3d2bfa5ad4118474a1ca04c118dfd1e8153a25e26e1fb29246c8452"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/commit-delta.yml",
-      "sha256": "62badef8ee5a98467356f5fb73a90dd9eda564c9888a584511e8532ead33b174",
-      "source": "git"
+      "sha256": "62badef8ee5a98467356f5fb73a90dd9eda564c9888a584511e8532ead33b174"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/dependency-audit.yml",
-      "sha256": "0dff29a59aa6e401be6c0dc6fe2b8cf0e3fddd0077f051916c31c9b4c74c6aad",
-      "source": "git"
+      "sha256": "0dff29a59aa6e401be6c0dc6fe2b8cf0e3fddd0077f051916c31c9b4c74c6aad"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
-      "sha256": "5007083e6dbf6911670e91e2b69e51058df86cafd55f35d86a5fa9e9f3c1682e",
-      "source": "git"
+      "sha256": "5007083e6dbf6911670e91e2b69e51058df86cafd55f35d86a5fa9e9f3c1682e"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/python-matrix.yml",
-      "sha256": "fb2f46be2fa0a04783115fd154830f9968ce55356bf2a8efeb4e462c1c6d3367",
-      "source": "git"
+      "sha256": "fb2f46be2fa0a04783115fd154830f9968ce55356bf2a8efeb4e462c1c6d3367"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
-      "sha256": "1d4c9ce476c20ae6437cd480b0fb7f7d71696446dc4d4b14b989d6f86c7b2ba7",
-      "source": "git"
+      "sha256": "1d4c9ce476c20ae6437cd480b0fb7f7d71696446dc4d4b14b989d6f86c7b2ba7"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "8c756425f0dc81f7f86bbeae29f132a80f1017a0cdbfa1532115256d12e865fb",
-      "source": "git"
+      "sha256": "74234eaea534ad7161b16cd45f2019e0af5b3a1be11658deb5bdbd243fdcc570"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "8794febcc302982a27dc0e59d671556f3fa1afc3d8aab3252914ac0bda6b5922",
-      "source": "git"
+      "sha256": "8794febcc302982a27dc0e59d671556f3fa1afc3d8aab3252914ac0bda6b5922"
     },
     {
-      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "2d216f1dee8037a190202c335e4c19857fc35e4bb9574fe8960d97fbb73e7397",
-      "source": "git"
+      "sha256": "2d216f1dee8037a190202c335e4c19857fc35e4bb9574fe8960d97fbb73e7397"
     },
     {
-      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
+      "commit": "bb044b98335ca431d1510406e2ee9fa940de741e",
       "path": "ooxml-spec/.github/workflows/ci.yml",
-      "sha256": "2c6cf746639d753e3a17d96fcdb2aef3b8f54460492d8aef5b7b01a30ad122a0",
+      "sha256": "9bfa28b2b584231f558cff1c882922134ee2b500ccdba234ce5b71dda281312b",
       "source": "git"
     },
     {
-      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
-      "path": "ooxml-spec/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
-      "source": "git"
-    },
-    {
-      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
-      "path": "ooxml-spec/.github/workflows/release.yml",
-      "sha256": "6b7e59cae131e7b6105a099e5b2f69026e0b6c8639674ed1919f6521348d896c",
-      "source": "git"
-    },
-    {
-      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
+      "commit": "bb044b98335ca431d1510406e2ee9fa940de741e",
       "path": "ooxml-spec/pyproject.toml",
-      "sha256": "075830ecf4c1f989af7e257a57e2fa5f3e84a628722fa57f6dc1e93463640282",
+      "sha256": "f1e68c5aeee8aed066655a784f9d4d7a506806345f623f9cf2f352c508bb597b",
       "source": "git"
     },
     {
-      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
+      "commit": "bb044b98335ca431d1510406e2ee9fa940de741e",
       "path": "ooxml-spec/uv.lock",
       "sha256": "96d12fa861266491f5515fbb294f39700aec9e707e5000a9544cabccdbf617f5",
       "source": "git"
@@ -3256,7 +3145,7 @@
     },
     {
       "path": "ooxml-stack/ci/ecosystem-policy.json",
-      "sha256": "a2f3cd9508eb6f85eda3b8fb40ffa943d2a96a026de0726716aaa1b9d46c4d93"
+      "sha256": "78277df966d4663b1b3e97fdcd36e43f2d03cf0a53ec3378f66ec171b37900d8"
     },
     {
       "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
@@ -3289,39 +3178,27 @@
       "source": "git"
     },
     {
-      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
+      "commit": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
-      "sha256": "8f50f8f6e0ec4af846a157db8bf725416a5d3924d11008fb5bef0a6969c06a1a",
+      "sha256": "d6e1ef51d11c4aed98782b335a295be6204ed48ff79e06b5d0baf0bb923bc318",
       "source": "git"
     },
     {
-      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
-      "path": "ooxml-test-framework/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
-      "source": "git"
-    },
-    {
-      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
-      "path": "ooxml-test-framework/.github/workflows/release.yml",
-      "sha256": "4b48091af22fb8c692527d4a64cea3fe9176e65671b36ab837b1280b194b507d",
-      "source": "git"
-    },
-    {
-      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
+      "commit": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
       "path": "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
-      "sha256": "b696e9eee787801ce6b86c2f0d9f175c87db438e2267fc266e4ff312ebfc40f8",
+      "sha256": "17393dc5a6518a894ce2d603a18e1e93ec6f311e4912a9d24f4cc1a8f83ebb1a",
       "source": "git"
     },
     {
-      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
+      "commit": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
       "path": "ooxml-test-framework/pyproject.toml",
-      "sha256": "7349d3b12ba235c4f65846456747c887436ba460ca19290605fff2d06ef2e9cf",
+      "sha256": "9ad2c10a85e3620fd0b5b16285567502ec0fcf773ca1905b9af66efe5376aac9",
       "source": "git"
     },
     {
-      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
+      "commit": "4d00f5e3b8aad7685fecc1b3f922a219ae733208",
       "path": "ooxml-test-framework/uv.lock",
-      "sha256": "b14b5eef020c64f6de9dd2acc4e289f032a58ae060832865e937268dd0ce095c",
+      "sha256": "b114bbdeabecd2894f71a88e08affb18ccab0af909577c872bf2ca8708a63b10",
       "source": "git"
     },
     {
@@ -3457,7 +3334,7 @@
       "source": "git"
     }
   ],
-  "inputs_digest": "8d5b68d98b313f5688fcc5a8000f53c96d54a7d28d7966ac6fab5a560e0ad403",
+  "inputs_digest": "9ec51b73e14bb4a21b55de4c1ac67cf88f29b348ea9b4b680581d5e9a49d1611",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3478,7 +3355,7 @@
       "layer": "test",
       "release_participation": true,
       "role": "release",
-      "version": "0.5.38",
+      "version": "0.5.35",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -3667,7 +3544,7 @@
           "version": "0.3.1"
         },
         {
-          "ref": "local-b53-20260928",
+          "ref": "v0.3.1",
           "repo": "ooxml-test-framework",
           "source_file": "ooxml-test-framework/pyproject.toml",
           "version": "0.3.1"

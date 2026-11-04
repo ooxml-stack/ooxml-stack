@@ -169,6 +169,7 @@ def _undeclared_diagnostics(
     declared: dict[str, Any],
     checkouts: dict[str, Any],
     timeout: int,
+    ignored: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     known = {
         entry.get("common_dir")
@@ -177,8 +178,12 @@ def _undeclared_diagnostics(
     }
     out = []
     for child in sorted(path for path in root.iterdir() if (path / ".git").exists()):
-        if child.name in declared or common_dir(child, timeout) in known:
-            continue  # a declared node, or an alternate worktree of one
+        if (
+            child.name in declared
+            or child.name in (ignored or set())
+            or common_dir(child, timeout) in known
+        ):
+            continue  # a declared node, an explicit non-node checkout, or an alternate worktree
         out.append(
             {
                 "code": "policy_repo_mismatch",
@@ -201,7 +206,8 @@ def local_facts(
         diagnostics.extend(_checkout_diagnostics(key, node, checkouts[key]))
     duplicates, duplicate_diagnostics = _duplicate_diagnostics(checkouts)
     diagnostics.extend(duplicate_diagnostics)
-    diagnostics.extend(_undeclared_diagnostics(root, declared, checkouts, timeout))
+    ignored = set((policy.get("workspace") or {}).get("ignored_checkouts") or [])
+    diagnostics.extend(_undeclared_diagnostics(root, declared, checkouts, timeout, ignored))
     return {
         "checkouts": checkouts,
         "duplicates": duplicates,
