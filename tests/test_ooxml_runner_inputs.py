@@ -27,6 +27,10 @@ def describe(tmp_path, repo, plan):
 
 def test_run_repository_refuses_unverified_plan_inputs(tmp_path, monkeypatch):
     monkeypatch.setattr(cli.docker_module, "platform_bucket", lambda: "default")
+    monkeypatch.setattr(cli.cache_module, "ensure", lambda *args, **kwargs: {
+        "schema_version": 1, "generation_id": "sha256:" + "c" * 64,
+        "ready": True, "components": [],
+    })
     repo = make_repo(tmp_path)
     plan = make_plan(tmp_path, repo, inputs=["nowhere/missing.json"])
     monkeypatch.setattr(cli, "_resolve", lambda **kwargs: {
