@@ -1,6 +1,5 @@
-"""
-
-# pyright: reportMissingImports=falseVersioned cache READY manifests and normal-run preflight."""
+# pyright: reportMissingImports=false
+"""Versioned cache READY manifests and normal-run preflight."""
 
 from __future__ import annotations
 
