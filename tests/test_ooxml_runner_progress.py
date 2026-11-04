@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import os
+import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -226,7 +227,7 @@ def test_a_partial_terminal_write_through_the_real_entry_is_recovered(tmp_path):
         "PYTHONPATH": str(ROOT),
         "OOXML_STACK_TOKEN": "fixture-token",
         "OOXML_CI_CACHE_ROOT": str(cache_root),
-        "OOXML_PLATFORM_BUCKET": "macos",
+        "OOXML_PLATFORM_BUCKET": "macos" if platform.system() == "Darwin" else "default",
     }
     argv = [
         sys.executable,

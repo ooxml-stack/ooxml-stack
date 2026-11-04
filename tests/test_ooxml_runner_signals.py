@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import os
+import platform
 import signal
 import subprocess
 import sys
@@ -60,7 +61,7 @@ def _start(tmp_path, repo, plan, output):
         "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
         "PYTHONPATH": str(ROOT),
         "OOXML_STACK_TOKEN": "fixture-token",
-        "OOXML_PLATFORM_BUCKET": "macos",
+        "OOXML_PLATFORM_BUCKET": "macos" if platform.system() == "Darwin" else "default",
         "OOXML_CI_CACHE_ROOT": str(tmp_path / "cache"),
     }
     argv = [
