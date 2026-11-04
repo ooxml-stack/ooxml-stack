@@ -2,7 +2,8 @@
   "schema_version": 1,
   "workspace": {
     "root_hint": "..",
-    "checkout_pattern": "<root>/<key>"
+    "checkout_pattern": "<root>/<key>",
+    "ignored_checkouts": ["ooxml-agent-skill", "ooxml-client"]
   },
   "input_binding": {
     "kind": "git_commit",
@@ -36,7 +37,7 @@
       "cadence": "per-commit",
       "visibility": "private",
       "release_participation": false,
-      "inputs": ["pyproject.toml", "uv.lock"],
+      "inputs": ["pyproject.toml", "uv.lock", ".github/workflows/ci.yml"],
       "note": "Node and impact graph are mandatory; release participation is a policy choice, not a derive-from-list fact."
     },
     {
