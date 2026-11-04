@@ -27,6 +27,6 @@ Source files scanned: 93.
 | `scripts/ooxml_ci/edges.py:84` | 84 | 62 |
 | `scripts/run_p98_office_check.py:120` | 120 | 56 |
 | `scripts/p98_mutation_cases.py:427` | 427 | 55 |
-| `ooxml_runner/plan.py:163` | 163 | 54 |
+| `ooxml_runner/plan.py:166` | 166 | 54 |
 | `scripts/p98_mutation_cases.py:484` | 484 | 53 |
 | `scripts/build_p98_coverage_budget.py:162` | 162 | 52 |
