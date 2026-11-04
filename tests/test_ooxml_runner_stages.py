@@ -262,6 +262,7 @@ def _run_entry(tmp_path, monkeypatch, adapter, seen, name="fixture_adapter"):
             plan={},
             binding={},
             image="fixture",
+            cache={},
             inputs={},
         ),
     )
@@ -326,6 +327,7 @@ def test_entry_main_refuses_a_runner_that_is_not_the_pinned_commit(
             plan={},
             binding={},
             image="fixture",
+            cache={},
             inputs={},
         ),
     )

@@ -8,6 +8,7 @@ to add up across them.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -19,8 +20,27 @@ from ooxml_runner import plan as plan_module
 
 
 def describe(tmp_path, repo, plan):
-    return cli.describe_repository(root=tmp_path, repo=REPO, commit="HEAD",
-                                   runner_commit=RUNNER_COMMIT, plan=plan)
+    return {"plan": {"inputs_reverified": plan_module.reverify_inputs(
+        plan_module.load(Path(plan)), tmp_path, REPO, snapshot.resolve_commit(repo, "HEAD")
+    )}}
+
+
+def test_run_repository_refuses_unverified_plan_inputs(tmp_path, monkeypatch):
+    monkeypatch.setattr(cli.docker_module, "platform_bucket", lambda: "default")
+    monkeypatch.setattr(cli.cache_module, "ensure", lambda *args, **kwargs: {
+        "schema_version": 1, "generation_id": "sha256:" + "c" * 64,
+        "ready": True, "components": [],
+    })
+    repo = make_repo(tmp_path)
+    plan = make_plan(tmp_path, repo, inputs=["nowhere/missing.json"])
+    monkeypatch.setattr(cli, "_resolve", lambda **kwargs: {
+        "root": tmp_path, "repo_path": repo, "repo": REPO, "commit": "a" * 40,
+        "runner": {"root": str(tmp_path), "commit": "a" * 40, "source_sha256": "b" * 64},
+        "plan": plan_module.load(Path(plan)), "binding": {},
+    })
+    with pytest.raises(plan_module.PlanError, match="not fully verified"):
+        cli.run_repository(root=tmp_path, repo=REPO, commit="HEAD",
+                           runner_commit="a" * 40, plan=plan, output=tmp_path / "out")
 
 
 def test_plan_input_drift_is_refused(tmp_path):
@@ -119,6 +139,71 @@ def test_every_declared_input_has_an_accounted_place(tmp_path):
     assert [entry["path"] for entry in payload["excluded"]] == [f"{REPO}/ci/environment.json"]
 
 
+def test_a_git_bound_input_is_checked_at_its_commit_not_the_dirty_worktree(tmp_path):
+    sibling = tmp_path / "python-docx"
+    sibling.mkdir()
+    snapshot.git(sibling, "init", "--quiet")
+    snapshot.git(sibling, "config", "user.email", "ci@example.invalid")
+    snapshot.git(sibling, "config", "user.name", "CI fixture")
+    (sibling / "pyproject.toml").write_text('[project]\nname = "fixture"\nversion = "1.0"\n')
+    snapshot.git(sibling, "add", ".")
+    snapshot.git(sibling, "commit", "--quiet", "-m", "fixture")
+    commit = snapshot.git(sibling, "rev-parse", "HEAD")
+    digest = hashlib.sha256((sibling / "pyproject.toml").read_bytes()).hexdigest()
+    manifest = [{
+        "path": "python-docx/pyproject.toml", "sha256": digest,
+        "source": "git", "commit": commit,
+    }]
+    (sibling / "pyproject.toml").write_text('{"dirty": true}')
+
+    checked, mismatched, unchecked, excluded = plan_module._classify(
+        manifest, tmp_path, REPO, None
+    )
+
+    assert checked == ["python-docx/pyproject.toml"]
+    assert mismatched == unchecked == excluded == []
+
+
+def test_an_unresolvable_git_commit_is_refused(tmp_path):
+    manifest = [{
+        "path": "python-docx/pyproject.toml", "sha256": "0" * 64,
+        "source": "git", "commit": "f" * 40,
+    }]
+    sibling = tmp_path / "python-docx"
+    sibling.mkdir()
+    snapshot.git(sibling, "init", "--quiet")
+    with pytest.raises(plan_module.PlanError, match="commit is unresolvable"):
+        plan_module._classify(manifest, tmp_path, REPO, None)
+
+
+def test_a_valid_commit_missing_the_declared_path_is_refused(tmp_path):
+    sibling = tmp_path / "python-docx"
+    sibling.mkdir()
+    snapshot.git(sibling, "init", "--quiet")
+    snapshot.git(sibling, "config", "user.email", "ci@example.invalid")
+    snapshot.git(sibling, "config", "user.name", "CI fixture")
+    (sibling / "README.md").write_text("x\n")
+    snapshot.git(sibling, "add", ".")
+    snapshot.git(sibling, "commit", "--quiet", "-m", "fixture")
+    commit = snapshot.git(sibling, "rev-parse", "HEAD")
+    manifest = [{
+        "path": "python-docx/pyproject.toml", "sha256": "0" * 64,
+        "source": "git", "commit": commit,
+    }]
+    with pytest.raises(plan_module.PlanError, match="does not contain declared path"):
+        plan_module._classify(manifest, tmp_path, REPO, None)
+
+
+def test_a_git_source_without_a_full_commit_is_refused(tmp_path):
+    repo = make_repo(tmp_path)
+    plan = make_plan(tmp_path, repo, inputs=[{
+        "path": "python-docx/pyproject.toml", "sha256": "0" * 64,
+        "source": "git", "commit": "short",
+    }])
+    with pytest.raises(plan_module.PlanError, match="lacks a full commit"):
+        plan_module.load(plan)
+
+
 def test_a_plan_without_an_input_manifest_is_refused(tmp_path):
     """A bare path list cannot be checked input by input, so it is not trusted."""
     repo = make_repo(tmp_path)
@@ -128,6 +213,5 @@ def test_a_plan_without_an_input_manifest_is_refused(tmp_path):
     Path(plan).write_text(json.dumps(payload))
 
     with pytest.raises(plan_module.PlanError, match="manifest entry is malformed"):
-        describe(tmp_path, repo, plan)
-
+        plan_module.load(plan)
 

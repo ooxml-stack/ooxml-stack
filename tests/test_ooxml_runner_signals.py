@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import os
+import platform
 import signal
 import subprocess
 import sys
@@ -24,17 +25,20 @@ from pathlib import Path
 import pytest
 from runner_fixtures import REPO, RUNNER_COMMIT, make_plan, make_repo
 
+from ooxml_runner import cache as cache_module
 from ooxml_runner import report as report_module
 
 ROOT = Path(__file__).resolve().parents[1]
 
 TRANSPORT = """
-import os, pathlib, sys, time
+import json, os, pathlib, sys, time
 base = pathlib.Path(__file__).resolve().parents[1]
 if sys.argv[1] == "info":
     print(1)
 elif sys.argv[1] == "rm":
     (base / "cleanup.called").write_text("called")
+elif sys.argv[1] == "image" and sys.argv[2] == "inspect":
+    print("linux/amd64|" + json.dumps(["fixture@sha256:" + "0" * 64]))
 elif sys.argv[1] == "run":
     sys.stdin.readline()
     (base / "ready").write_text("ready")
@@ -57,6 +61,8 @@ def _start(tmp_path, repo, plan, output):
         "PATH": str(_transport(tmp_path)) + os.pathsep + os.environ["PATH"],
         "PYTHONPATH": str(ROOT),
         "OOXML_STACK_TOKEN": "fixture-token",
+        "OOXML_PLATFORM_BUCKET": "macos" if platform.system() == "Darwin" else "default",
+        "OOXML_CI_CACHE_ROOT": str(tmp_path / "cache"),
     }
     argv = [
         sys.executable,
@@ -75,6 +81,8 @@ def _start(tmp_path, repo, plan, output):
         str(plan),
         "--output",
         str(output),
+        "--cache-root",
+        str(tmp_path / "cache"),
     ]
     return subprocess.Popen(
         argv,
@@ -119,8 +127,14 @@ def _interrupt(tmp_path, repo, plan, output, signum):
 @pytest.mark.parametrize("signum", [signal.SIGTERM, signal.SIGINT])
 def test_a_real_termination_signal_leaves_a_finished_failure_report(tmp_path, signum):
     repo = make_repo(tmp_path)
-    plan = make_plan(tmp_path, repo)
+    plan = make_plan(tmp_path, repo, inputs=[f"{REPO}/ci/environment.json"])
     output = tmp_path / "out"
+    cache = tmp_path / "cache"
+    for name in ("repositories", "corpus", "dotnet"):
+        component = cache / name
+        component.mkdir(parents=True)
+        (component / "marker").write_text(name)
+    cache_module.repair(cache)
 
     observed = _interrupt(tmp_path, repo, plan, output, signum)
 

@@ -212,6 +212,32 @@ def build(root: pathlib.Path) -> dict:
     return plan_mod.build_plan(inputs.gather_facts(root, policy, files, missing))
 
 
+def bind_commits(search_root: pathlib.Path, target_root: pathlib.Path) -> dict[str, str]:
+    """Bind fixture inputs to already committed sibling blobs."""
+    heads = {
+        key: head_sha(search_root / key)
+        for key in ("ooxml-core", "python-docx", "python-pptx", "ooxml-test-framework")
+    }
+    write(
+        target_root / "ooxml-operation-engine/ci/environment.json",
+        json.dumps({"repositories": heads}),
+    )
+    policy = json.loads((target_root / "ooxml-stack/ci/ecosystem-policy.json").read_text())
+    policy["input_binding"] = {
+        "kind": "git_commit",
+        "exempt_nodes": ["ooxml-stack", "ooxml-operation-engine"],
+        "commit_source": {
+            "file": "ooxml-operation-engine/ci/environment.json",
+            "field": "repositories",
+        },
+    }
+    write(target_root / "ooxml-operation-engine/pyproject.toml", '[project]\nname = "ooxml-operation-engine"\nversion = "0.1.54"\n')
+    write(target_root / "ooxml-operation-engine/uv.lock", "")
+    init_repo(target_root / "ooxml-operation-engine")
+    write(target_root / "ooxml-stack/ci/ecosystem-policy.json", json.dumps(policy, indent=2))
+    return heads
+
+
 def git(args: list[str], cwd: pathlib.Path) -> None:
     subprocess.run(
         ["git", *args],

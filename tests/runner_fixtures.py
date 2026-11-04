@@ -153,7 +153,11 @@ def _input_manifest(tmp_path, inputs):
     manifest = []
     for item in inputs:
         if isinstance(item, dict):
-            manifest.append({"path": item["path"], "sha256": item["sha256"]})
+            row = {"path": item["path"], "sha256": item["sha256"]}
+            for key in ("source", "commit"):
+                if item.get(key):
+                    row[key] = item[key]
+            manifest.append(row)
             continue
         path = tmp_path / item
         digest = (
@@ -199,7 +203,9 @@ def make_plan(
     return path
 
 
-def expected_for(repo, plan, stages=("alpha", "beta"), key=REPO, commit=None):
+def expected_for(
+    repo, plan, stages=("alpha", "beta"), key=REPO, commit=None
+):
     """The expectations a verifier re-derives from the request, never from a report."""
     loaded = plan_module.load(plan)
     resolved = commit or snapshot.resolve_commit(repo, "HEAD")
@@ -230,7 +236,9 @@ def passing_report(repo, plan, stages=("alpha", "beta"), **overrides):
         "commit": commit,
         "runner": {
             "commit": RUNNER_COMMIT,
-            "source_sha256": identity.identity()["source_sha256"],
+            "source_sha256": identity.source_sha256_at(
+                identity.PACKAGE_DIR.parent, RUNNER_COMMIT
+            ),
         },
         "plan": {
             "path": loaded["path"],

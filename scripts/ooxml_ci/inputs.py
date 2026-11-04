@@ -57,7 +57,17 @@ def checkout_dir(root: pathlib.Path, key: str) -> pathlib.Path:
 # ------------------------------------------------------------ input selection
 
 
-def _workflow_paths(root: pathlib.Path, key: str) -> list[str]:
+def _workflow_paths(root: pathlib.Path, key: str, commit: str | None = None) -> list[str]:
+    if commit:
+        from . import gitfacts
+
+        found: list[str] = []
+        for pattern in WORKFLOW_GLOBS:
+            found.extend(
+                f"{key}/{relpath}"
+                for relpath in sorted(gitfacts.commit_paths(root, key, commit, pattern))
+            )
+        return found
     found: list[str] = []
     for pattern in WORKFLOW_GLOBS:
         for path in sorted((root / key).glob(pattern)):
@@ -90,6 +100,41 @@ def _read(path: pathlib.Path) -> bytes | None:
     return path.read_bytes() if path.is_file() else None
 
 
+def bound_commits(root: pathlib.Path, policy: dict[str, Any]) -> tuple[dict[str, str], set[str]]:
+    """Resolve policy-bound node inputs to commit IDs, never worktree bytes."""
+    binding = policy.get("input_binding") or {}
+    if not binding:
+        return {}, set()
+    if binding.get("kind") != "git_commit":
+        raise InputError(f"unsupported input_binding kind: {binding.get('kind')!r}")
+    from . import gitfacts
+
+    exempt = set(binding.get("exempt_nodes") or [])
+    source = binding.get("commit_source") or {}
+    source_path = root / str(source.get("file", ""))
+    try:
+        declared = json.loads(source_path.read_text(encoding="utf-8"))
+        for part in str(source.get("field", "")).split("."):
+            declared = declared[part]
+    except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        raise InputError(f"input binding cannot read declared commits: {exc}") from exc
+    if not isinstance(declared, dict):
+        raise InputError("input binding declared commits must be an object")
+    commits: dict[str, str] = {}
+    for node in policy["nodes"]:
+        key = node["key"]
+        if key in exempt or not node.get("inputs"):
+            continue
+        commit = declared.get(key)
+        if not isinstance(commit, str) or not gitfacts.SHA_RE.fullmatch(commit):
+            raise InputError(f"input binding has no immutable commit for {key}")
+        code, _, _ = gitfacts.git(["cat-file", "-e", f"{commit}^{{commit}}"], root / key, 25)
+        if code != 0:
+            raise InputError(f"input binding commit is unresolvable for {key}: {commit}")
+        commits[key] = commit
+    return commits, exempt
+
+
 def _dynamic_version_paths(
     root: pathlib.Path, policy: dict[str, Any], files: dict[str, bytes]
 ) -> list[str]:
@@ -107,27 +152,47 @@ def _dynamic_version_paths(
     return sorted(set(extra))
 
 
+def _bound_blob(
+    root: pathlib.Path, key: str, commit: str, relpath: str
+) -> bytes | None:
+    from . import gitfacts
+
+    return gitfacts.commit_blob(root, key, commit, relpath.removeprefix(f"{key}/"))
+
+
 def select_inputs(
-    root: pathlib.Path, policy: dict[str, Any]
+    root: pathlib.Path, policy: dict[str, Any], binding=None
 ) -> tuple[dict[str, bytes], list[dict[str, Any]]]:
     """Capture every selected input exactly once, plus the missing-required list."""
     required, optional = required_and_optional_paths(root, policy)
+    commits, exempt = binding or bound_commits(root, policy)
+    bound = {key for key in commits if key not in exempt}
+    optional = [path for path in optional if path.split("/", 1)[0] not in bound]
+    for key in sorted(bound):
+        optional.extend(_workflow_paths(root, key, commits[key]))
     files: dict[str, bytes] = {}
     missing: list[dict[str, Any]] = []
-    for relpath in required:
-        blob = _read(root / relpath)
+    for relpath in sorted(set(required)):
+        key = relpath.split("/", 1)[0]
+        if key == HOST_KEY or relpath == f"{HOST_KEY}/{POLICY_RELPATH}":
+            blob = _read(root / relpath)
+        else:
+            blob = _bound_blob(root, key, commits[key], relpath) if key in bound else _read(root / relpath)
         if blob is None:
-            missing.append({"path": relpath, "why": "declared input is absent"})
+            why = f"commit {commits[key]} does not contain it" if key in bound else "declared input is absent"
+            missing.append({"path": relpath, "why": why})
         else:
             files[relpath] = blob
     for relpath in optional:
-        blob = _read(root / relpath)
+        key = relpath.split("/", 1)[0]
+        blob = _bound_blob(root, key, commits[key], relpath) if key in bound else _read(root / relpath)
         if blob is not None:
             files[relpath] = blob
     for relpath in _dynamic_version_paths(root, policy, files):
         if relpath in files:
             continue
-        blob = _read(root / relpath)
+        key = relpath.split("/", 1)[0]
+        blob = _bound_blob(root, key, commits[key], relpath) if key in bound else _read(root / relpath)
         if blob is None:
             missing.append({"path": relpath, "why": "dynamic version source is absent"})
         else:
@@ -135,7 +200,7 @@ def select_inputs(
     return files, missing
 
 
-def input_manifest(files: dict[str, bytes]) -> list[dict[str, str]]:
+def input_manifest(files: dict[str, bytes], sources: dict[str, dict[str, str]] | None = None) -> list[dict[str, str]]:
     """Name every declared input with its own digest.
 
     The plan has to state its input identity, not just a digest over whatever
@@ -143,8 +208,9 @@ def input_manifest(files: dict[str, bytes]) -> list[dict[str, str]]:
     then check the inputs it does have against the plan instead of silently
     skipping them, and can report the rest as unchecked rather than as a pass.
     """
+    sources = sources or {}
     return [
-        {"path": relpath, "sha256": hashlib.sha256(files[relpath]).hexdigest()}
+        {"path": relpath, "sha256": hashlib.sha256(files[relpath]).hexdigest(), **sources.get(relpath, {})}
         for relpath in sorted(files)
     ]
 
@@ -156,6 +222,10 @@ def inputs_digest(manifest: list[dict[str, str]]) -> str:
         digest.update(entry["path"].encode("utf-8"))
         digest.update(b"\0")
         digest.update(entry["sha256"].encode("ascii"))
+        digest.update(b"\0")
+        digest.update(entry.get("source", "").encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(entry.get("commit", "").encode("ascii"))
         digest.update(b"\0")
     return digest.hexdigest()
 
@@ -180,8 +250,15 @@ def gather_facts(
     policy: dict[str, Any],
     files: dict[str, bytes],
     missing: list[dict[str, Any]] | None = None,
+    binding=None,
 ) -> Facts:
-    manifest = input_manifest(files)
+    commits, exempt = binding or bound_commits(root, policy)
+    sources = {
+        relpath: {"source": "git", "commit": commits[relpath.split("/", 1)[0]]}
+        for relpath in files
+        if relpath.split("/", 1)[0] in commits and relpath.split("/", 1)[0] not in exempt
+    }
+    manifest = input_manifest(files, sources)
     facts = Facts(
         root=root,
         policy=policy,

@@ -24,10 +24,56 @@ from ooxml_runner import adapter as adapters
 from ooxml_runner import cli, docker, snapshot
 from ooxml_runner import report as report_module
 
+CACHE = {"schema_version": 1, "generation_id": "sha256:" + "c" * 64,
+         "ready": True, "components": []}
+
+
+@pytest.fixture(autouse=True)
+def _explicit_platform(monkeypatch):
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "default")
+    monkeypatch.setattr(docker.platform, "system", lambda: "Linux")
+    root = Path(__file__).resolve().parents[1]
+    observed = {"commit": RUNNER_COMMIT,
+                "source_sha256": cli.identity_module.source_sha256_at(root, RUNNER_COMMIT),
+                "root": str(root)}
+    monkeypatch.setattr(cli.identity_module, "identity", lambda: dict(observed))
+    def require_expected(observed, expected):
+        if observed.get("commit") != expected:
+            raise cli.identity_module.IdentityError("runner commit mismatch")
+        return {**observed, "commit": expected}
+
+    monkeypatch.setattr(cli.identity_module, "require_expected", require_expected)
+    monkeypatch.setattr(cli.cache_module, "ensure", lambda *args, **kwargs: dict(CACHE))
+    monkeypatch.setattr(
+        cli.plan_module,
+        "reverify_inputs",
+        lambda plan, root, repo, commit: {
+            "verified": True, "total": 0, "checked": 0, "unchecked": 0,
+            "mismatched": 0, "excluded": [], "reason": "fixture inputs",
+            "checked_paths": [], "mismatched_paths": [], "unchecked_paths": [],
+        },
+    )
+
 
 def _fixture(tmp_path):
     repo = make_repo(tmp_path)
     return repo, make_plan(tmp_path, repo), tmp_path / "out"
+
+
+def test_run_requires_a_platform_bucket_before_transport(tmp_path, monkeypatch):
+    repo, plan, output = _fixture(tmp_path)
+    monkeypatch.delenv("OOXML_PLATFORM_BUCKET", raising=False)
+    monkeypatch.setattr(docker, "execute", lambda *args: pytest.fail("transport ran without a bucket"))
+    with pytest.raises(docker.DockerError, match="OOXML_PLATFORM_BUCKET is required"):
+        _run(tmp_path, repo, plan, output)
+
+
+def test_run_refuses_a_macos_bucket_on_linux_before_transport(tmp_path, monkeypatch):
+    repo, plan, output = _fixture(tmp_path)
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "macos")
+    monkeypatch.setattr(docker, "execute", lambda *args: pytest.fail("transport ran on a mismatched host"))
+    with pytest.raises(docker.DockerError, match="requires macos, host is linux"):
+        _run(tmp_path, repo, plan, output)
 
 
 def _stub_transport(monkeypatch, behave):
@@ -209,7 +255,7 @@ def test_a_zero_exit_with_a_refused_report_is_recorded_as_a_failure(tmp_path, mo
     repo, plan, output = _fixture(tmp_path)
 
     def pass_but_wrong(reports):
-        payload = passing_report(repo, plan)
+        payload = passing_report(repo, plan, cache=dict(CACHE))
         payload["image"] = "other@sha256:" + "0" * 64
         report_module.save(reports, payload)
         return 0
@@ -229,7 +275,7 @@ def test_a_normal_run_still_reports_success(tmp_path, monkeypatch):
     repo, plan, output = _fixture(tmp_path)
 
     def pass_through(reports):
-        report_module.save(reports, passing_report(repo, plan))
+        report_module.save(reports, passing_report(repo, plan, cache=dict(CACHE)))
         return 0
 
     _stub_transport(monkeypatch, lambda real, reports, token, timeout, name: pass_through(reports))

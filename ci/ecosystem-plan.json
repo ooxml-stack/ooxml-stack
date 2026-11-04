@@ -1,5 +1,5 @@
 {
-  "contract": "Deterministic function of the selected input file paths and their bytes, read from the working tree (uncommitted edits included). Contains no HEAD, worktree, clock, network or resolved-ref fact; those live in the scan report.",
+  "contract": "Deterministic function of selected input paths, their bytes and declared source identity. Policy-bound node inputs come from immutable Git commits; only host/exempt inputs may use the working tree. Contains no HEAD, worktree, clock, network or resolved-ref fact; those live in the scan report.",
   "diagnostic_counts": {},
   "diagnostics": [],
   "edge_kinds_without_source": [
@@ -280,14 +280,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
+        "commit": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.6.19"
       },
@@ -462,7 +462,7 @@
         },
         {
           "file": "ooxml-operation-engine/.github/workflows/python-matrix.yml",
-          "line": 45
+          "line": 58
         }
       ],
       "source_file": "ooxml-operation-engine/.github/workflows/ci.yml",
@@ -514,14 +514,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "unknown",
-        "ref_raw": "eng-runtime-provider-20261005",
+        "ref_declared_kind": "sha",
+        "ref_raw": "e0ae238008f9101da0e11f96b51276aa4385952f",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-test-framework.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "4cc1327ce71c4372c1990befa8cc75bae52bfee0",
+        "commit": "e0ae238008f9101da0e11f96b51276aa4385952f",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.5.38"
       },
@@ -557,14 +557,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-docx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "2c7ca0bdf64bb7af385efa504de144d0987959d6",
+        "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "1.2.41"
       },
@@ -600,14 +600,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "f5f9ea57d11e86f0db1c926a6a604e0b0e663922",
+        "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "2.0.30"
       },
@@ -622,13 +622,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "e08564808211e310e7a5d8cf65d7468608c442ed",
+        "ref_raw": "651612eb5bee618947faf5cc79d335e5cf22a6c1",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "e08564808211e310e7a5d8cf65d7468608c442ed",
+        "commit": "651612eb5bee618947faf5cc79d335e5cf22a6c1",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -643,14 +643,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/python-xlsx.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "e9045c2e46f3f7575aaad8fea38fd4f0b45b8250",
+        "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
         "source": "ooxml-operation-engine/uv.lock",
         "version": "0.3.45"
       },
@@ -718,14 +718,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
+        "commit": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "source": "ooxml-stubs/uv.lock",
         "version": "0.6.19"
       },
@@ -808,14 +808,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
+        "commit": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "source": "python-docx/uv.lock",
         "version": "0.6.19"
       },
@@ -938,14 +938,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "304dd744425c63c67b66d39583c13d5aa526395c",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7d9903571aa8a20362598cd89d95bfd43abc7b05",
+        "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
         "source": "python-docx/uv.lock",
         "version": "0.2.35"
       },
@@ -981,14 +981,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
         "section": "dependency-groups",
         "url": "https://github.com/ooxml-stack/python-pptx.git",
         "version_spec": ">=2.0.29"
       },
       "expected": {
-        "commit": "f5f9ea57d11e86f0db1c926a6a604e0b0e663922",
+        "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
         "source": "python-docx/uv.lock",
         "version": "2.0.30"
       },
@@ -1002,14 +1002,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
+        "commit": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "source": "python-pptx/uv.lock",
         "version": "0.6.19"
       },
@@ -1101,14 +1101,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "304dd744425c63c67b66d39583c13d5aa526395c",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-stubs.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "7d9903571aa8a20362598cd89d95bfd43abc7b05",
+        "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
         "source": "python-pptx/uv.lock",
         "version": "0.2.35"
       },
@@ -1144,14 +1144,14 @@
     },
     {
       "declared": {
-        "ref_declared_kind": "tag",
-        "ref_raw": "chart-text-capability-20261025",
+        "ref_declared_kind": "rev",
+        "ref_raw": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "section": "project.dependencies",
         "url": "https://github.com/ooxml-stack/ooxml-core.git",
         "version_spec": null
       },
       "expected": {
-        "commit": "a658d5e23f7dbbfd6552941617bf17e1587e4d78",
+        "commit": "80c35ac63f339412759c2943ec715e75fb96eefd",
         "source": "python-xlsx/uv.lock",
         "version": "0.6.19"
       },
@@ -1247,8 +1247,8 @@
       "where": "scan"
     },
     {
-      "item": "expected commits recorded by locks/environment (file facts)",
-      "where": "plan"
+      "item": "source commit IDs bound to selected input paths",
+      "where": "plan inputs"
     }
   ],
   "full": {
@@ -3075,52 +3075,76 @@
   "host": "ooxml-stack",
   "inputs": [
     {
+      "commit": "aebee1b674ceff446f44ebc965e5d2255489de5b",
       "path": "ooxml-apps/.github/workflows/ci.yml",
-      "sha256": "b4d9d363fb3c086813a023dd6fd833ec959d09d9faacadfd7e05b64a49764e70"
+      "sha256": "b4d9d363fb3c086813a023dd6fd833ec959d09d9faacadfd7e05b64a49764e70",
+      "source": "git"
     },
     {
+      "commit": "aebee1b674ceff446f44ebc965e5d2255489de5b",
       "path": "ooxml-apps/.github/workflows/dependency-audit.yml",
-      "sha256": "c8e356ff891a4e4e551e86ba9a24a7807d15534fddd33496f86b4b162260a796"
+      "sha256": "c8e356ff891a4e4e551e86ba9a24a7807d15534fddd33496f86b4b162260a796",
+      "source": "git"
     },
     {
+      "commit": "aebee1b674ceff446f44ebc965e5d2255489de5b",
       "path": "ooxml-apps/.github/workflows/real-stack.yml",
-      "sha256": "c39e03537fee9e429ea3edeeb5d90cd939fda72db6b9f8aeb312115bb04fb68c"
+      "sha256": "c39e03537fee9e429ea3edeeb5d90cd939fda72db6b9f8aeb312115bb04fb68c",
+      "source": "git"
     },
     {
+      "commit": "aebee1b674ceff446f44ebc965e5d2255489de5b",
       "path": "ooxml-apps/pyproject.toml",
-      "sha256": "841a0023a40b573963d89cd606816cddfca3217e3f9f7a8297f72dee070e8755"
+      "sha256": "841a0023a40b573963d89cd606816cddfca3217e3f9f7a8297f72dee070e8755",
+      "source": "git"
     },
     {
+      "commit": "aebee1b674ceff446f44ebc965e5d2255489de5b",
       "path": "ooxml-apps/uv.lock",
-      "sha256": "3549e30dbc27c2370766648000546e355d6ac0cc3825c81817c478234ba36663"
+      "sha256": "3549e30dbc27c2370766648000546e355d6ac0cc3825c81817c478234ba36663",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/.github/workflows/ci.yml",
-      "sha256": "021458e5a10639967e34ef2371876011edb75de6d5e6666af40840bb2ca8caa1"
+      "sha256": "021458e5a10639967e34ef2371876011edb75de6d5e6666af40840bb2ca8caa1",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-      "sha256": "87cca40801123549eb8e12c67109d392e9cd5f29cc6271f925b898c6980ac9c2"
+      "sha256": "87cca40801123549eb8e12c67109d392e9cd5f29cc6271f925b898c6980ac9c2",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/.github/workflows/release-wheel.yml",
-      "sha256": "de67c40afcf5bc636f8957ec4e1f56e5605de1e334ac6134b2f1503a9cbdb720"
+      "sha256": "de67c40afcf5bc636f8957ec4e1f56e5605de1e334ac6134b2f1503a9cbdb720",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/.github/workflows/semantic-gate-report.yml",
-      "sha256": "cb00693c941f735f6a46ae31ab88c8fbffa2d00f731b4085223b2fb49b66784e"
+      "sha256": "cb00693c941f735f6a46ae31ab88c8fbffa2d00f731b4085223b2fb49b66784e",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/pyproject.toml",
-      "sha256": "a4d60de8fdd1c02c4330fde66834f528eb4c178e2a0f25af85f1596ce0607a54"
+      "sha256": "a4d60de8fdd1c02c4330fde66834f528eb4c178e2a0f25af85f1596ce0607a54",
+      "source": "git"
     },
     {
+      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
       "path": "ooxml-core/uv.lock",
-      "sha256": "d07c651eb72104812b5b2d21bbf0518d627797e17352ce4393b473d37d3b7253"
+      "sha256": "d07c651eb72104812b5b2d21bbf0518d627797e17352ce4393b473d37d3b7253",
+      "source": "git"
     },
     {
       "path": "ooxml-native-corpus/.github/workflows/ci.yml",
@@ -3131,60 +3155,88 @@
       "sha256": "ad31a6cf54f77af3323c6f95962e819dc5a4145727e8056e739da11cdeb1cb52"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/ci.yml",
-      "sha256": "82fefdfdb3d2bfa5ad4118474a1ca04c118dfd1e8153a25e26e1fb29246c8452"
+      "sha256": "82fefdfdb3d2bfa5ad4118474a1ca04c118dfd1e8153a25e26e1fb29246c8452",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/commit-delta.yml",
-      "sha256": "62badef8ee5a98467356f5fb73a90dd9eda564c9888a584511e8532ead33b174"
+      "sha256": "62badef8ee5a98467356f5fb73a90dd9eda564c9888a584511e8532ead33b174",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/dependency-audit.yml",
-      "sha256": "0dff29a59aa6e401be6c0dc6fe2b8cf0e3fddd0077f051916c31c9b4c74c6aad"
+      "sha256": "0dff29a59aa6e401be6c0dc6fe2b8cf0e3fddd0077f051916c31c9b4c74c6aad",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/ecosystem-plan-drift.yml",
-      "sha256": "5007083e6dbf6911670e91e2b69e51058df86cafd55f35d86a5fa9e9f3c1682e"
+      "sha256": "5007083e6dbf6911670e91e2b69e51058df86cafd55f35d86a5fa9e9f3c1682e",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/python-matrix.yml",
-      "sha256": "548a0d25814b8ca9a50b89072086a0e5edd66ca139025082d41e6aed6a1c966e"
+      "sha256": "fb2f46be2fa0a04783115fd154830f9968ce55356bf2a8efeb4e462c1c6d3367",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/.github/workflows/release-readiness.yml",
-      "sha256": "1d4c9ce476c20ae6437cd480b0fb7f7d71696446dc4d4b14b989d6f86c7b2ba7"
+      "sha256": "1d4c9ce476c20ae6437cd480b0fb7f7d71696446dc4d4b14b989d6f86c7b2ba7",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "b6c589d132ff65b4adbc8b1d69240fa2ff3cd95ed09f3fd57bd45f451c8769ce"
+      "sha256": "8c756425f0dc81f7f86bbeae29f132a80f1017a0cdbfa1532115256d12e865fb",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/pyproject.toml",
-      "sha256": "a60043bcaeb128ef44c495c55c9b3dfb517c98cc8fed498354091926ce85aff1"
+      "sha256": "8794febcc302982a27dc0e59d671556f3fa1afc3d8aab3252914ac0bda6b5922",
+      "source": "git"
     },
     {
+      "commit": "696c441995764122a875d1a8bc3588221db4f43f",
       "path": "ooxml-operation-engine/uv.lock",
-      "sha256": "7d2ebac50c1745e8f44018659d3656349e57f3fd5121d40210ca8ed0487fab7f"
+      "sha256": "2d216f1dee8037a190202c335e4c19857fc35e4bb9574fe8960d97fbb73e7397",
+      "source": "git"
     },
     {
+      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
       "path": "ooxml-spec/.github/workflows/ci.yml",
-      "sha256": "2c6cf746639d753e3a17d96fcdb2aef3b8f54460492d8aef5b7b01a30ad122a0"
+      "sha256": "2c6cf746639d753e3a17d96fcdb2aef3b8f54460492d8aef5b7b01a30ad122a0",
+      "source": "git"
     },
     {
+      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
       "path": "ooxml-spec/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
       "path": "ooxml-spec/.github/workflows/release.yml",
-      "sha256": "6b7e59cae131e7b6105a099e5b2f69026e0b6c8639674ed1919f6521348d896c"
+      "sha256": "6b7e59cae131e7b6105a099e5b2f69026e0b6c8639674ed1919f6521348d896c",
+      "source": "git"
     },
     {
+      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
       "path": "ooxml-spec/pyproject.toml",
-      "sha256": "075830ecf4c1f989af7e257a57e2fa5f3e84a628722fa57f6dc1e93463640282"
+      "sha256": "075830ecf4c1f989af7e257a57e2fa5f3e84a628722fa57f6dc1e93463640282",
+      "source": "git"
     },
     {
+      "commit": "34919621c3c06d1548956581e920812f9927bb7c",
       "path": "ooxml-spec/uv.lock",
-      "sha256": "96d12fa861266491f5515fbb294f39700aec9e707e5000a9544cabccdbf617f5"
+      "sha256": "96d12fa861266491f5515fbb294f39700aec9e707e5000a9544cabccdbf617f5",
+      "source": "git"
     },
     {
       "path": "ooxml-stack/.github/workflows/evidence-retention.yml",
@@ -3204,142 +3256,208 @@
     },
     {
       "path": "ooxml-stack/ci/ecosystem-policy.json",
-      "sha256": "541285817a966300676e185a9b144e57022e2d2a2631d9a60461380b024b2fd1"
+      "sha256": "a2f3cd9508eb6f85eda3b8fb40ffa943d2a96a026de0726716aaa1b9d46c4d93"
     },
     {
+      "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
       "path": "ooxml-stubs/.github/workflows/ci.yml",
-      "sha256": "55bf71085c4ecd8dd63f4bb367971b092990466221f9c70d0668aeb0f5d66586"
+      "sha256": "55bf71085c4ecd8dd63f4bb367971b092990466221f9c70d0668aeb0f5d66586",
+      "source": "git"
     },
     {
+      "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
       "path": "ooxml-stubs/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
       "path": "ooxml-stubs/.github/workflows/release.yml",
-      "sha256": "db802f0de796cfade8d3044027e886a31bac6e5afb5e317bb5415ddd38db119a"
+      "sha256": "db802f0de796cfade8d3044027e886a31bac6e5afb5e317bb5415ddd38db119a",
+      "source": "git"
     },
     {
+      "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
       "path": "ooxml-stubs/pyproject.toml",
-      "sha256": "b7d9df5c098c6dfe15988cfad21449dcad71b7b707be2241bf6224ba1aabc1c6"
+      "sha256": "ddc373540c8804993af204e7c19fa3a9c8f01928af5080b01a4f6449e51a0e81",
+      "source": "git"
     },
     {
+      "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
       "path": "ooxml-stubs/uv.lock",
-      "sha256": "9d6a96bc0ce8cde3c3862e9f0564fcfa8b0c330a384b66f72f92bc1369362648"
+      "sha256": "75ce624fafb5c9be038544eb4e44c5c9e74f64c6fae5de157482f00630427376",
+      "source": "git"
     },
     {
+      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
       "path": "ooxml-test-framework/.github/workflows/ci.yml",
-      "sha256": "8f50f8f6e0ec4af846a157db8bf725416a5d3924d11008fb5bef0a6969c06a1a"
+      "sha256": "8f50f8f6e0ec4af846a157db8bf725416a5d3924d11008fb5bef0a6969c06a1a",
+      "source": "git"
     },
     {
+      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
       "path": "ooxml-test-framework/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
       "path": "ooxml-test-framework/.github/workflows/release.yml",
-      "sha256": "4b48091af22fb8c692527d4a64cea3fe9176e65671b36ab837b1280b194b507d"
+      "sha256": "4b48091af22fb8c692527d4a64cea3fe9176e65671b36ab837b1280b194b507d",
+      "source": "git"
     },
     {
+      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
       "path": "ooxml-test-framework/.github/workflows/semantic-gate-report.yml",
-      "sha256": "b696e9eee787801ce6b86c2f0d9f175c87db438e2267fc266e4ff312ebfc40f8"
+      "sha256": "b696e9eee787801ce6b86c2f0d9f175c87db438e2267fc266e4ff312ebfc40f8",
+      "source": "git"
     },
     {
+      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
       "path": "ooxml-test-framework/pyproject.toml",
-      "sha256": "7349d3b12ba235c4f65846456747c887436ba460ca19290605fff2d06ef2e9cf"
+      "sha256": "7349d3b12ba235c4f65846456747c887436ba460ca19290605fff2d06ef2e9cf",
+      "source": "git"
     },
     {
+      "commit": "c3a115e1be5ce28ff90f64714620ceef8654377b",
       "path": "ooxml-test-framework/uv.lock",
-      "sha256": "b14b5eef020c64f6de9dd2acc4e289f032a58ae060832865e937268dd0ce095c"
+      "sha256": "b14b5eef020c64f6de9dd2acc4e289f032a58ae060832865e937268dd0ce095c",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/.github/workflows/ci.yml",
-      "sha256": "5ef2174ddd487828a9be23c0cf2fe9a3d5d22487e3e17f9ead2573345564328e"
+      "sha256": "5ef2174ddd487828a9be23c0cf2fe9a3d5d22487e3e17f9ead2573345564328e",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "ac77e568c27fae7edcd087343ee74e416560e88dce8ea6113aea2e66fa902869"
+      "sha256": "ac77e568c27fae7edcd087343ee74e416560e88dce8ea6113aea2e66fa902869",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/.github/workflows/semantic-gate-report.yml",
-      "sha256": "6d8f8d79d8b6a58e8e156259beeeb79edaf6ef3790e832eecd1c91f31871839d"
+      "sha256": "6d8f8d79d8b6a58e8e156259beeeb79edaf6ef3790e832eecd1c91f31871839d",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/pyproject.toml",
-      "sha256": "536bde5249ff37ce3555297c46f403f014cb348e27476efd3ea01a9813b1a58f"
+      "sha256": "ec79ed9a2c164d94dba73a4fde5d17e1ffaa6455c30e650f0b55a0b01a430565",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/src/docx/__init__.py",
-      "sha256": "dc5f0dc0c7faf42aaac56352286793ceb83abe388988f024431991119e985619"
+      "sha256": "dc5f0dc0c7faf42aaac56352286793ceb83abe388988f024431991119e985619",
+      "source": "git"
     },
     {
+      "commit": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
       "path": "python-docx/uv.lock",
-      "sha256": "421afc3fd98304b610cf7fe0c2407db0f7b7c116125a005e9aeeff6cf31c2b75"
+      "sha256": "86fab0b30a75dc39f37be5c46158e9e167a3307db4edf1ba43daf9836d16aea5",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/.github/workflows/ci.yml",
-      "sha256": "361b80b2837026d50e9eee1e66fc93ebd88c1577920463ea642e9d5480184015"
+      "sha256": "361b80b2837026d50e9eee1e66fc93ebd88c1577920463ea642e9d5480184015",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "add37445d286639dcb5959509955af2ea52e9d65caaa77411469a0f984d53e87"
+      "sha256": "add37445d286639dcb5959509955af2ea52e9d65caaa77411469a0f984d53e87",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/.github/workflows/semantic-gate-report.yml",
-      "sha256": "53cf5150a7ef2c3063b8e6dac4eacebc251f5618bfda7f6fb889abc8468000dd"
+      "sha256": "53cf5150a7ef2c3063b8e6dac4eacebc251f5618bfda7f6fb889abc8468000dd",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/.github/workflows/sync-to-gitee.yml",
-      "sha256": "7deae70b1622af4ea8999977bf74414800c99891e129b4d369e884869b5b8e91"
+      "sha256": "7deae70b1622af4ea8999977bf74414800c99891e129b4d369e884869b5b8e91",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/pyproject.toml",
-      "sha256": "45827a0d64bdd72c424b26ec307c083ab29b20bef845e2badd67c488adb8ad17"
+      "sha256": "b3519cb37e20a0cf1eeed790e5f5d58e4e55ee0ab1c69b71e4340d4586da0e48",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/src/pptx/__init__.py",
-      "sha256": "9b10b197ab18809a6f5c702f25dfd9489f18c0407b9203b8d2ca67e7f2343abb"
+      "sha256": "9b10b197ab18809a6f5c702f25dfd9489f18c0407b9203b8d2ca67e7f2343abb",
+      "source": "git"
     },
     {
+      "commit": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
       "path": "python-pptx/uv.lock",
-      "sha256": "f1279d882bb5da046e3485220ebfb9e2108b6e58f242da3e72ded44404f70fa8"
+      "sha256": "b61f6c80f17630e1fe41cb88262e45c087eb4487fb39a0b122d4433b6ba6d6dd",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/.github/workflows/ci.yml",
-      "sha256": "5e95e36f775f7ce272e4c86a5fffbd78fffaba49de8af5eee1dff9b968d8120d"
+      "sha256": "5e95e36f775f7ce272e4c86a5fffbd78fffaba49de8af5eee1dff9b968d8120d",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/.github/workflows/dependency-audit.yml",
-      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6"
+      "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/.github/workflows/native-corpus-gate.yml",
-      "sha256": "dcb09d7954603ea25aae4817f44932aa5f4d9bc6eb341fa6ba2b4edbed68ac8c"
+      "sha256": "dcb09d7954603ea25aae4817f44932aa5f4d9bc6eb341fa6ba2b4edbed68ac8c",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/.github/workflows/release.yml",
-      "sha256": "b817c9287413ce14eabbeb8e38343b8ba789eaa392f5abc84920458395e16850"
+      "sha256": "b817c9287413ce14eabbeb8e38343b8ba789eaa392f5abc84920458395e16850",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/pyproject.toml",
-      "sha256": "69f59bd74c698640a29f695fd44656b98e4e8bf2d2750da82dd0b0ccafe9289e"
+      "sha256": "841916ce79cce7c1e1ff62dabc2d4b23df2798251d856c313a2b986fa1444f56",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/src/xlsx/__init__.py",
-      "sha256": "e1efb57200c110b7caf23a98b2ad2d57ccaaebb76b82b635d327ae45b1e14ccc"
+      "sha256": "e1efb57200c110b7caf23a98b2ad2d57ccaaebb76b82b635d327ae45b1e14ccc",
+      "source": "git"
     },
     {
+      "commit": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
       "path": "python-xlsx/uv.lock",
-      "sha256": "936a14b97ec93f2d490861928798b5470b3c1ca86ea8040180833a661317b3fa"
+      "sha256": "7fba25f0f2466dad24b0265d7e46730f01002d7558fee3fe4cb9bfef1b23f7d5",
+      "source": "git"
     }
   ],
-  "inputs_digest": "aa8b29bf75faf6a51616b52677b4e393b5c6c903708a1c81a5a085998b8d264e",
+  "inputs_digest": "8d5b68d98b313f5688fcc5a8000f53c96d54a7d28d7966ac6fab5a560e0ad403",
   "kind": "ecosystem-plan",
   "nodes": [
     {
@@ -3426,7 +3544,7 @@
       "layer": "engine",
       "release_participation": true,
       "role": "release",
-      "version": "0.1.50",
+      "version": "0.1.54",
       "version_source": "pyproject.toml#project.version",
       "visibility": "private"
     },
@@ -3471,31 +3589,31 @@
     {
       "repos": [
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "80c35ac63f339412759c2943ec715e75fb96eefd",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "80c35ac63f339412759c2943ec715e75fb96eefd",
           "repo": "ooxml-stubs",
           "source_file": "ooxml-stubs/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "80c35ac63f339412759c2943ec715e75fb96eefd",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "80c35ac63f339412759c2943ec715e75fb96eefd",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.6.19"
         },
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "80c35ac63f339412759c2943ec715e75fb96eefd",
           "repo": "python-xlsx",
           "source_file": "python-xlsx/pyproject.toml",
           "version": "0.6.19"
@@ -3565,13 +3683,13 @@
     {
       "repos": [
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "304dd744425c63c67b66d39583c13d5aa526395c",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "0.2.35"
         },
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "304dd744425c63c67b66d39583c13d5aa526395c",
           "repo": "python-pptx",
           "source_file": "python-pptx/pyproject.toml",
           "version": "0.2.35"
@@ -3621,7 +3739,7 @@
     {
       "repos": [
         {
-          "ref": "eng-runtime-provider-20261005",
+          "ref": "e0ae238008f9101da0e11f96b51276aa4385952f",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.5.38"
@@ -3637,7 +3755,7 @@
     {
       "repos": [
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "a160ab3075c0bee8d55c3749f96e2c3d3b97752a",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "1.2.41"
@@ -3653,7 +3771,7 @@
     {
       "repos": [
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
           "repo": "python-docx",
           "source_file": "python-docx/pyproject.toml",
           "version": "2.0.30"
@@ -3669,7 +3787,7 @@
     {
       "repos": [
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "5151361729a8ade654c0f9124ba9635a7b45ce8c",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "2.0.30"
@@ -3685,7 +3803,7 @@
     {
       "repos": [
         {
-          "ref": "chart-text-capability-20261025",
+          "ref": "6e9aed4a0131398b02a2a4bc3ad25612769e3b70",
           "repo": "ooxml-operation-engine",
           "source_file": "ooxml-operation-engine/pyproject.toml",
           "version": "0.3.45"

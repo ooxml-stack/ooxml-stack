@@ -40,8 +40,8 @@ def utc_now() -> str:
 
 
 def new_report(
-    *, repository: str, commit: str, runner: dict, plan: dict, binding: dict, image: str, inputs: dict,
-    stages: list[str] = (),
+    *, repository: str, commit: str, runner: dict, plan: dict, binding: dict, image: str,
+    cache: dict[str, Any], inputs: dict, stages: list[str] = (),
 ) -> dict[str, Any]:
     """The skeleton a run starts from.
 
@@ -57,6 +57,7 @@ def new_report(
         "plan": dict(plan),
         "binding": dict(binding),
         "image": image,
+        "cache": dict(cache),
         "inputs": dict(inputs),
         "started_at": utc_now(),
         "finished_at": None,
@@ -179,6 +180,22 @@ def _verify_runner(report: dict[str, Any], expected: dict[str, Any]) -> None:
         raise ReportError("report runner source_sha256 does not match the pinned runner commit")
 
 
+def _verify_cache(report: dict[str, Any], expected: dict[str, Any]) -> None:
+    """The report must name the validated cache generation it executed with."""
+    expected_cache = expected.get("cache")
+    if expected_cache is None:
+        return
+    if not isinstance(expected_cache, dict) or not expected_cache:
+        raise ReportError("verification requires the validated cache generation")
+    cache = _mapping(report.get("cache"), "cache")
+    if cache.get("schema_version") != expected_cache.get("schema_version"):
+        raise ReportError("report cache schema does not match the validated generation")
+    if cache.get("generation_id") != expected_cache.get("generation_id"):
+        raise ReportError("report cache generation_id does not match the validated cache")
+    if cache.get("components") != expected_cache.get("components"):
+        raise ReportError("report cache components do not match the validated cache")
+
+
 def _verify_binding(report: dict[str, Any], expected: dict[str, Any]) -> None:
     """The report must name the workflow, jobs and adapter this plan resolved."""
     binding = _mapping(report.get("binding"), "binding")
@@ -239,6 +256,7 @@ def verify_generic(report: dict[str, Any], expected: dict[str, Any]) -> None:
     if plan.get("inputs_digest") != expected.get("inputs_digest"):
         raise ReportError("report inputs_digest does not match the requested plan")
     _verify_scope(plan, expected)
+    _verify_cache(report, expected)
     _verify_binding(report, expected)
     if report.get("status") != "pass":
         raise ReportError(f"report is not a pass: {report.get('status')!r}")

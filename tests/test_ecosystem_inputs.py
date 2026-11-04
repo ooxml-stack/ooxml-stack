@@ -9,8 +9,11 @@ import pytest
 from ecosystem_fixtures import (
     CORE_SHA,
     NODES,
+    bind_commits,
     build,
     build_workspace,
+    git,
+    init_repo,
     make_policy,
     write,
 )
@@ -99,6 +102,56 @@ def test_plan_changes_when_only_the_dynamic_version_source_changes(tmp_path):
     docx_after = next(n for n in after["nodes"] if n["key"] == "python-docx")
     assert docx_before["version"] == "1.2.0"
     assert docx_after["version"] == "1.2.1"
+
+
+def test_declared_pin_ignores_advanced_sibling_head(tmp_path):
+    root = build_workspace(tmp_path)
+    for key in ("ooxml-core", "python-docx", "python-pptx", "ooxml-test-framework"):
+        init_repo(root / key)
+    heads = bind_commits(root, root)
+    before = build(root)
+
+    write(
+        root / "ooxml-core/pyproject.toml",
+        '[project]\nname = "ooxml-core"\nversion = "9.9.9"\n',
+    )
+    git(["add", "pyproject.toml"], root / "ooxml-core")
+    git(["commit", "-qm", "advance"], root / "ooxml-core")
+    after = build(root)
+
+    assert before["inputs_digest"] == after["inputs_digest"]
+    core = next(n for n in after["nodes"] if n["key"] == "ooxml-core")
+    assert core["version"] == "0.6.0"
+    entry = next(i for i in after["inputs"] if i["path"] == "ooxml-core/pyproject.toml")
+    assert entry["source"] == "git"
+    assert entry["commit"] == heads["ooxml-core"]
+
+
+def test_declared_pin_mismatch_is_refused(tmp_path):
+    root = build_workspace(tmp_path)
+    for key in ("ooxml-core", "python-docx", "python-pptx", "ooxml-test-framework"):
+        init_repo(root / key)
+    bind_commits(root, root)
+    write(
+        root / "ooxml-operation-engine/ci/environment.json",
+        json.dumps({"repositories": {"ooxml-core": "f" * 40}}),
+    )
+    with pytest.raises(inputs.InputError, match="unresolvable for ooxml-core"):
+        inputs.select_inputs(root, inputs.load_policy(root))
+
+
+def test_declared_pin_missing_node_is_refused(tmp_path):
+    root = build_workspace(tmp_path)
+    for key in ("ooxml-core", "python-docx", "python-pptx", "ooxml-test-framework"):
+        init_repo(root / key)
+    heads = bind_commits(root, root)
+    del heads["ooxml-core"]
+    write(
+        root / "ooxml-operation-engine/ci/environment.json",
+        json.dumps({"repositories": heads}),
+    )
+    with pytest.raises(inputs.InputError, match="no immutable commit for ooxml-core"):
+        inputs.select_inputs(root, inputs.load_policy(root))
 
 
 def test_inputs_digest_excludes_the_plan_itself(tmp_path):
