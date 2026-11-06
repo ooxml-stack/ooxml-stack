@@ -159,8 +159,8 @@ reproducibility:
   wheelhouse_lock: release/native-wheelhouse-lock.json
   source_commits:
     client: 09c1762b6e3eb5231288cbb0703acf81de6c3dee
-    engine: 2c94f33e
-    core: 269edf47215400525a6bea4fe9c3bf7a9f4fc9bb
+    engine: adbec3a6
+    core: 21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920
     spec: 34919621c3c06d1548956581e920812f9927bb7c
     stubs: 304dd744425c63c67b66d39583c13d5aa526395c
     test_framework: fac79ec

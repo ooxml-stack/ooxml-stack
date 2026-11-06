@@ -110,33 +110,6 @@
         "ref_declared_kind": "none",
         "ref_raw": null,
         "section": "workflow",
-        "url": "https://github.com/ooxml-stack/ooxml-native-corpus.git",
-        "version_spec": null
-      },
-      "expected": {
-        "commit": null,
-        "source": null,
-        "version": null
-      },
-      "from": "ooxml-core",
-      "group": null,
-      "kind": "ci",
-      "purpose": "workflow_clone",
-      "role": "ci",
-      "sites": [
-        {
-          "file": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-          "line": 94
-        }
-      ],
-      "source_file": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-      "to": "ooxml-native-corpus"
-    },
-    {
-      "declared": {
-        "ref_declared_kind": "none",
-        "ref_raw": null,
-        "section": "workflow",
         "url": "https://github.com/ooxml-stack/ooxml-stack.git",
         "version_spec": null
       },
@@ -259,13 +232,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+        "ref_raw": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+        "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -391,13 +364,13 @@
     {
       "declared": {
         "ref_declared_kind": "sha",
-        "ref_raw": "38cb991cf4b612814cd092836cf59c81a44fb397",
+        "ref_raw": "a4421c93a4649ce77344bb10239d1f30159c3fee",
         "section": "repositories",
         "url": null,
         "version_spec": null
       },
       "expected": {
-        "commit": "38cb991cf4b612814cd092836cf59c81a44fb397",
+        "commit": "a4421c93a4649ce77344bb10239d1f30159c3fee",
         "source": "ooxml-operation-engine/ci/environment.json",
         "version": null
       },
@@ -1558,7 +1531,7 @@
               "if": null,
               "line": 41,
               "name": "Configure private dependency access",
-              "run": "if [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  git config --local --unset-all http.https://github.com/.extraheader || :\n  git config --global --unset-all http.https://github.com/.extraheader || :\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nelse\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  printf '%s\\n' \"$OOXML_TEST_FRAMEWORK_DEPLOY_KEY\" > ~/.ssh/ooxml_test_framework\n  printf '%s\\n' \"$PYTHON_PPTX_DEPLOY_KEY\" > ~/.ssh/python_pptx\n  printf '%s\\n' \"$PYTHON_DOCX_DEPLOY_KEY\" > ~/.ssh/python_docx\n  chmod 600 ~/.ssh/ooxml_spec ~/.ssh/ooxml_test_framework ~/.ssh/python_pptx ~/.ssh/python_docx\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\n\nHost github-ooxml-test-framework\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_test_framework\n  IdentitiesOnly yes\n\nHost github-python-pptx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_pptx\n  IdentitiesOnly yes\n\nHost github-python-docx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_docx\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-test-framework/ooxml-stack/ooxml-test-framework\".insteadOf \"https://github.com/ooxml-stack/ooxml-test-framework\"\n  git config --global url.\"ssh://git@github-python-pptx/ooxml-stack/python-pptx\".insteadOf \"https://github.com/ooxml-stack/python-pptx\"\n  git config --global url.\"ssh://git@github-python-docx/ooxml-stack/python-docx\".insteadOf \"https://github.com/ooxml-stack/python-docx\"\nfi\n",
+              "run": "git config --local --unset-all http.https://github.com/.extraheader || :\ngit config --global --unset-all http.https://github.com/.extraheader || :\nif [ -n \"$OOXML_TEST_FRAMEWORK_DEPLOY_KEY\" ]; then\n  mkdir -p ~/.ssh\n  printf '%s\\n' \"$OOXML_SPEC_DEPLOY_KEY\" > ~/.ssh/ooxml_spec\n  printf '%s\\n' \"$OOXML_TEST_FRAMEWORK_DEPLOY_KEY\" > ~/.ssh/ooxml_test_framework\n  printf '%s\\n' \"$PYTHON_PPTX_DEPLOY_KEY\" > ~/.ssh/python_pptx\n  printf '%s\\n' \"$PYTHON_DOCX_DEPLOY_KEY\" > ~/.ssh/python_docx\n  chmod 600 ~/.ssh/ooxml_spec ~/.ssh/ooxml_test_framework ~/.ssh/python_pptx ~/.ssh/python_docx\n  ssh-keyscan github.com >> ~/.ssh/known_hosts\n  cat >> ~/.ssh/config <<'EOF'\nHost github-ooxml-spec\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_spec\n  IdentitiesOnly yes\n\nHost github-ooxml-test-framework\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/ooxml_test_framework\n  IdentitiesOnly yes\n\nHost github-python-pptx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_pptx\n  IdentitiesOnly yes\n\nHost github-python-docx\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/python_docx\n  IdentitiesOnly yes\nEOF\n  git config --global url.\"ssh://git@github-ooxml-spec/ooxml-stack/ooxml-spec\".insteadOf \"https://github.com/ooxml-stack/ooxml-spec\"\n  git config --global url.\"ssh://git@github-ooxml-test-framework/ooxml-stack/ooxml-test-framework\".insteadOf \"https://github.com/ooxml-stack/ooxml-test-framework\"\n  git config --global url.\"ssh://git@github-python-pptx/ooxml-stack/python-pptx\".insteadOf \"https://github.com/ooxml-stack/python-pptx\"\n  git config --global url.\"ssh://git@github-python-docx/ooxml-stack/python-docx\".insteadOf \"https://github.com/ooxml-stack/python-docx\"\nelif [ -n \"$OOXML_STACK_TOKEN\" ]; then\n  AUTH_HEADER=\"$(printf 'x-access-token:%s' \"$OOXML_STACK_TOKEN\" | base64 | tr -d '\\n')\"\n  git config --global http.https://github.com/.extraheader \"AUTHORIZATION: basic $AUTH_HEADER\"\nfi\n",
               "shell": null,
               "uses": null
             },
@@ -3024,43 +2997,43 @@
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/.github/workflows/ci.yml",
-      "sha256": "021458e5a10639967e34ef2371876011edb75de6d5e6666af40840bb2ca8caa1",
+      "sha256": "6bd127ef102a8757d1ff60d0d5dfceb979369157c6b45d068b88342737ad8efe",
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/.github/workflows/dependency-audit.yml",
       "sha256": "de912ef2991747591137a35ee07de816a70d94816dd453a27ace932a2e1a5fa6",
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/.github/workflows/native-corpus-gate.yml",
-      "sha256": "87cca40801123549eb8e12c67109d392e9cd5f29cc6271f925b898c6980ac9c2",
+      "sha256": "d28bc255b1c65663cefdc3b97cfc09b531cc9967ddf29ca02967e57466d834e4",
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/.github/workflows/release-wheel.yml",
       "sha256": "de67c40afcf5bc636f8957ec4e1f56e5605de1e334ac6134b2f1503a9cbdb720",
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/.github/workflows/semantic-gate-report.yml",
-      "sha256": "cb00693c941f735f6a46ae31ab88c8fbffa2d00f731b4085223b2fb49b66784e",
+      "sha256": "e58c4417e3651e4d427a542c19d715275a7cce738f253794dc589969694720ce",
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/pyproject.toml",
       "sha256": "a4d60de8fdd1c02c4330fde66834f528eb4c178e2a0f25af85f1596ce0607a54",
       "source": "git"
     },
     {
-      "commit": "269edf47215400525a6bea4fe9c3bf7a9f4fc9bb",
+      "commit": "21ab20b2a8e7d96cdcf9b5aa6fc227dbc1d21920",
       "path": "ooxml-core/uv.lock",
       "sha256": "d07c651eb72104812b5b2d21bbf0518d627797e17352ce4393b473d37d3b7253",
       "source": "git"
@@ -3099,7 +3072,7 @@
     },
     {
       "path": "ooxml-operation-engine/ci/environment.json",
-      "sha256": "74234eaea534ad7161b16cd45f2019e0af5b3a1be11658deb5bdbd243fdcc570"
+      "sha256": "a3767269495062d6ce5e6b0679be0a48d2710610314f863afcb048d49d0b1db6"
     },
     {
       "path": "ooxml-operation-engine/pyproject.toml",
@@ -3145,7 +3118,7 @@
     },
     {
       "path": "ooxml-stack/ci/ecosystem-policy.json",
-      "sha256": "78277df966d4663b1b3e97fdcd36e43f2d03cf0a53ec3378f66ec171b37900d8"
+      "sha256": "9dcf9db61e939fdc3fa58683737110b273b340f10707630f93e755b217b28fce"
     },
     {
       "commit": "304dd744425c63c67b66d39583c13d5aa526395c",
@@ -3334,7 +3307,7 @@
       "source": "git"
     }
   ],
-  "inputs_digest": "9ec51b73e14bb4a21b55de4c1ac67cf88f29b348ea9b4b680581d5e9a49d1611",
+  "inputs_digest": "61361647c5b320cba708270b893b740559f9f8dc7942a68b60ccf18515927e00",
   "kind": "ecosystem-plan",
   "nodes": [
     {
