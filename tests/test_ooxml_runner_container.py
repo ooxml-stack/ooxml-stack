@@ -232,17 +232,25 @@ def test_missing_partition_is_refused_before_the_container_starts(monkeypatch):
 
 
 @pytest.mark.parametrize("bucket,system", [
-    ("default", "Darwin"), ("macos", "Linux"), ("dsh-runtime", "Linux"),
+    ("macos", "Linux"), ("dsh-runtime", "Linux"),
 ])
-def test_partition_must_match_the_host_platform(monkeypatch, bucket, system):
+def test_macos_partition_must_match_the_host_platform(monkeypatch, bucket, system):
+    """The macOS partitions execute their nodes directly, so a Linux host refuses."""
     monkeypatch.setenv("OOXML_PLATFORM_BUCKET", bucket)
-    with pytest.raises(docker.DockerError, match="requires .* host is"):
+    with pytest.raises(docker.DockerError, match="requires macos, host is"):
         docker.platform_bucket(system=system)
 
 
 def test_explicit_macos_partition_is_valid_on_macos(monkeypatch):
     monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "macos")
     assert docker.platform_bucket(system="Darwin") == "macos"
+
+
+@pytest.mark.parametrize("system", ["Darwin", "Linux"])
+def test_default_partition_runs_wherever_the_container_runs(monkeypatch, system):
+    """The default partition executes inside the linux/amd64 container itself."""
+    monkeypatch.setenv("OOXML_PLATFORM_BUCKET", "default")
+    assert docker.platform_bucket(system=system) == "default"
 
 
 def test_applescript_partition_is_explicitly_outside_the_container_transport(monkeypatch):

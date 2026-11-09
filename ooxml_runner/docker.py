@@ -79,18 +79,18 @@ def _platform_family(system=None):
     return normalized
 
 
-def _bucket_platform(bucket):
-    return "linux" if bucket == "default" else "macos"
-
-
 def platform_bucket(environ=None, *, system=None):
-    """The partition this run owns, required and compatible with the host.
+    """The partition this run owns, required and compatible with the transport.
 
     The engine's adapter reads this in the container to select the node IDs one
     platform owes. A whitelisted value is forwarded verbatim; an unknown value
     fails here, before a container starts, rather than silently unpartitioned.
-    ``default`` is the Linux partition and the macOS buckets must not run on a
-    Linux host; both directions fail before Docker is queried.
+    ``default`` is the Linux partition and executes inside the pinned
+    linux/amd64 container, so the container transport may be queried from any
+    host that provides that container. The macOS partitions execute their nodes
+    directly on a macOS host, so they must not run where those nodes cannot:
+    querying them from a Linux host fails here, before Docker is asked for a
+    container that would refuse their nodes anyway.
     """
     value = (os.environ if environ is None else environ).get(PLATFORM_BUCKET_ENV)
     if not value:
@@ -104,11 +104,12 @@ def platform_bucket(environ=None, *, system=None):
         )
     if value not in PLATFORM_BUCKETS:
         raise DockerError(f"unknown OOXML_PLATFORM_BUCKET {value!r}; expected one of {sorted(PLATFORM_BUCKETS)}")
+    if value == "default":
+        return value
     observed = _platform_family(system)
-    expected = _bucket_platform(value)
-    if observed != expected:
+    if observed != "macos":
         raise DockerError(
-            f"OOXML_PLATFORM_BUCKET {value!r} requires {expected}, host is {observed}"
+            f"OOXML_PLATFORM_BUCKET {value!r} requires macos, host is {observed}"
         )
     return value
 
