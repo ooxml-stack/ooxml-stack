@@ -4,7 +4,17 @@ import argparse
 from pathlib import Path
 
 
-AREAS = ("evidence", "release-evidence", "docs/evidence", ".uxe/evidence")
+AREAS = (
+    "evidence",
+    "release-evidence",
+    "docs/evidence",
+    ".uxe/evidence",
+    # Observed leak classes from workspace cleanup rounds: the engine's
+    # local-ci evidence directory and root-level generated reports were
+    # committed before the retention contract existed.
+    "reports",
+    "local-ci",
+)
 
 
 def placement_problems(root):
