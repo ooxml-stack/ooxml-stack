@@ -58,6 +58,43 @@ Follow the parent and each repository's own AGENTS.md for coding and Git rules.
   restoring files. Exclude archived `.git` pointer files during restoration;
   preserve the new checkout's Git metadata and document path dependencies.
 
+## Cleanup module
+
+Run this module before any bulk deletion. It exists so that cleanup is a
+mechanical process instead of a set of scattered task records.
+
+- Scope first. Cleanup acts on one declared container set per run: a task's
+  campaign snapshots, a task's process records, or one repository's caches.
+  Anything outside the declared scope is reported, not touched.
+- Task-record markdown is disposable once the task retires; evidence is not.
+  Keep `BEFORE-AFTER.md`, receipts, manifests, run results, transcripts and
+  budget receipts. Delete process markdown (goal, task, prompt, paid plan,
+  decision and acceptance records) at task retirement, and record the retention
+  reason while the task is active.
+- Third-party markdown inside `node_modules/`, `.venv/`, Go module caches and
+  staged toolchains is never a task record. Delete the whole rebuildable
+  directory instead of picking files inside it.
+- Rebuildable frozen copies follow the same rule. A campaign `engine/`
+  checkout and gate `live/` workdirs are recreated from the commit hash and
+  lock files recorded in the campaign result; delete them only after the
+  result, run results and receipts are verified present.
+- Deletion procedure: verify no process holds the tree (`lsof`/`pgrep`),
+  verify the evidence that justifies deletion, then delete. On macOS, Go
+  module caches and agent workspace copies carry read-only modes and
+  `com.apple.provenance` xattr: `rm` and Python `unlinkat` fail with EPERM.
+  `chmod -R u+w` then `rm -rf` works; do not grant extra privileges.
+- Staged runtimes for pending phases are retained, not cleaned. Deleting them
+  trades re-download time for space; record that trade instead of claiming
+  the files are disposable.
+- Stray task records at the workspace root violate the layout contract; they
+  move into the owning task container or are deleted with the same
+  verification. The root keeps no task markdown.
+- Record one inventory per cleanup run in the owning task's `cleanup/`
+  directory: scope, disposition per item, verification, and reclaimed space
+  from before/after free-space readings. Summaries of retired cleanups stay
+  in `.archive-backups/`; when the archive already holds the manifest, the
+  stray summary is deleted, not archived again.
+
 ## Verification and reporting
 
 - Project tests run on the user-authorized LAN host unless the user authorizes
